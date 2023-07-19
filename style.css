@@ -432,6 +432,12 @@ footer {
 	font-family: Arial;
 }
 
+@media only screen and (max-width: 1680px) {
+	.unit-container {
+		width: 90%;
+	}
+}
+
 @media only screen and (max-width: 500px) {
 	.unit-container {
 		display: block;
