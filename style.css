@@ -87,13 +87,13 @@ p {
 }
 
 .lobby h1 {
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	padding: 0.5em;
 }
 
 .lobby h2 {
-	font-family: HarmonyOS Sans Bold, Arial, Helvetica, sans-serif;
+	font-family: HarmonyOS Sans Bold, sans-serif;
 	font-size: 60px;
 	font-variant: small-caps;
 	line-height: 0.5em;
