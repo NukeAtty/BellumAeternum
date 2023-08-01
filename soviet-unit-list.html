@@ -3,29 +3,26 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="font">
-
 </head>
 
 <body>
 	<header>
-		<div class="header">
-		  <a href="#default" class="logo"><img src="src/logo.webp"></img></a>
-		  <div class="header-right">
-			<a class="active" href="index.html">Home</a>
+		<div class="header-left">
+			<a href="#default" class="logo"><img src="src/logo.webp"></img></a>
+		</div>
+		<div class="header-right">
 			<a href="#factions">Factions</a>
-			<a href="#units">Units</a>
+			<a href="soviet-unit-list.html">Units</a>
 			<a href="#concept">Blog</a>
 			<a href="#about">About</a>
-		  </div>
 		</div>
 	</header>
-	<main>
+	<main class="units">
 		<div class="faction-selector">
 			<a href="soviet-unit-list.html"><img src="src/soviet-button.webp"></img></a>
 			<a href="allied-unit-list.html"><img src="src/allied-button.webp"></img></a>
 		</div>
-		<h3 class="module-title">Soviet Vehicles</h3>
+		<h3>Soviet Vehicles</h3>
 		<div class="unit-container">
 			<div class="unit-container-left">
 				<img src="src/soviet-mcv.webp" alt="soviet mcv" alt="soviet mcv"></img>
@@ -108,31 +105,55 @@
 		</div>
 	</main>
 	<footer>
-		<div class="footer-logo">
-			<img src="src/logo.webp"></img>
-		</div>
-		<div class="footer-module">
-			<ul>
-				<p>Factions</p>
-				<li><a href="#Allied">Allied</a></li>
-				<li><a href="#Allied">Soviet</a></li>
-			</ul>
-			<ul>
-				<p>Units</p>
-				<li><a href="soviet-unit-list.html">Allied Units List</a></li>
-				<li><a href="allied-unit-list.html">Soviet Units List</a></li>
-			</ul>
-			<ul>
-				<p>Blog</p>
-				<li><a href="#Update">Update</a></li>
-				<li><a href="#Tutorial">Tutorial</a></li>
-			</ul>
-			<ul>
-				<p>About</p>
-				<li><a href="#Author">Author</a></li>
-				<li><a href="#Mod Skills">Contact</a></li>
-			</ul>
+		<div class="footer-container">
+			<div class="footer-left">
+				<img src="src/logo.webp"></img>
+			</div>
+			<div class="footer-right">
+				<ul>
+					<p>Factions</p>
+					<li><a href="#Allied">Allied</a></li>
+					<li><a href="#Allied">Soviet</a></li>
+				</ul>
+				<ul>
+					<p>Units</p>
+					<li><a href="soviet-unit-list.html">Allied Units List</a></li>
+					<li><a href="allied-unit-list.html">Soviet Units List</a></li>
+				</ul>
+				<ul>
+					<p>Blog</p>
+					<li><a href="#Update">Update</a></li>
+					<li><a href="#Concept">Concept</a></li>
+					<li><a href="#Tutorial">Tutorial</a></li>
+				</ul>
+				<ul>
+					<p>About</p>
+					<li><a href="#Contact">Contact</a></li>
+				</ul>
+			</div>
 		</div>
 	</footer>
+	
+	<script>
+		let slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		  let i;
+		  let slides = document.getElementsByClassName("slides");
+		  let dots = document.getElementsByClassName("dot");
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}    
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+	</script>
 </body>
 </html>
