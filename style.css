@@ -18,7 +18,10 @@ p {
 /*----------Header----------*/
 header {
 	display:flex;
-	background-image: linear-gradient(0deg, #dddddd 0%, #afafaf 10%, #939393 50%, #afafaf 90%, #939393 100%);
+	background-image: linear-gradient(0deg, #fff 0,#ddd 1%, #afafaf 10%, #939393 60%, #afafaf 90%, #939393 100%);
+	border-width: 0 0 5px 0;
+	border-color: #fff;
+	border-style: inset;
 }
 
 .header-left {
@@ -66,7 +69,10 @@ main {
 /*---------Footer----------*/
 footer {
 	text-align: center;
-	background-image: linear-gradient(180deg, #dddddd 0%, #afafaf 50%, #939393 100%);
+	background-image: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #939393 100%);
+	border-width: 5px 0 0 0;
+	border-color: #fff;
+	border-style: outset;
 }
 
 .footer-container {
@@ -95,7 +101,7 @@ footer {
 	list-style-type: none;
 }
 
-.footer-right P{
+.footer-right p{
 	text-align: left;
 }
 
@@ -300,6 +306,7 @@ footer {
 @media only screen and (max-width: 500px) {
 	header {
 		display:block;
+		padding-bottom: 12px;
 	}
 
 	.header-left {
@@ -309,7 +316,7 @@ footer {
 
 	.header-right {
 		margin: auto;
-		width: 100%;
+		width: 90%;
 		align-items: center;
 	}
 
@@ -322,6 +329,7 @@ footer {
 		color: darkred;
 		box-shadow: 0 0 5px white inset;
 		padding: 0.25em;
+		margin: 0.25em;
 		background:
 			linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
 			linear-gradient(0deg, red, black) border-box;
