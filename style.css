@@ -4,10 +4,10 @@
 
 body {
 	margin: 0;
-	background-color: #ccc;
+	background-color: #333;
 	background-image: url("src/background-pattern.webp");
-	background-attachment: repeat;
-	background-blend-mode: hard-light;
+	background-repeat: repeat;
+	background-blend-mode: normal;
 	color: #fff;
 }
 
@@ -127,8 +127,8 @@ footer {
 }
 
 .faction-selector img{
-	padding: 20px;
-	max-width: 240px;
+	padding: 12px;
+	max-width: 256px;
 	border-radius: 20%;
 	filter:  sepia(60%) drop-shadow(4px 4px 5px black);
 }
@@ -227,8 +227,6 @@ footer {
   animation-duration: 1.5s;
 }
 
-
-
 /*----------Units----------*/
 .units h3{
 	font-size: 24px;
@@ -239,24 +237,25 @@ footer {
 	display: flex;
 	margin: 10px auto;
 	padding: 0;
-	width: 80%;
+	width: 100%;
 	border-radius: 25px;
 	background-color: #dddddd10;
 	box-shadow: 0 0 12px #000;
 }
 
 .unit-container-left {
-	width: 30%;
+	width: 28%;
 	padding: 12px;
 }
 
 .unit-container-left img{
 	border-radius: 20px;
+	max-width: 360px;
 }
 
 .unit-container-mid{
 	display: block;
-	width: 10%;
+	width: 15%;
 }
 
 .unit-container-mid h4{
@@ -271,11 +270,11 @@ footer {
 	position: relative;
 	margin: auto;
 	max-width: 60px;
-	margin-top: 60px;
+	margin-top: calc(50% - 24px);
 }
 
 .unit-container-right{
-	width: 60%;
+	width: 57%;
 }
 
 .unit-container-right p{
@@ -552,6 +551,7 @@ footer {
 
 	.unit-container-right ul{
 		text-align: left;
+		padding: 0 0 2em 4em;
 	}
 	
 }
