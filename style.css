@@ -18,9 +18,9 @@ p {
 /*----------Header----------*/
 header {
 	display:flex;
-	background-image: linear-gradient(0deg, #fff 0,#ddd 1%, #afafaf 10%, #939393 60%, #afafaf 90%, #939393 100%);
+	background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-width: 0 0 5px 0;
-	border-color: #fff;
+	border-color: #c8c8c8;
 	border-style: inset;
 }
 
