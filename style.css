@@ -24,19 +24,18 @@ header {
 	border-style: inset;
 }
 
-.header-left {
+.navigation-button {
+	display: block;
 	margin: auto;
-	width: 38.2%
-
+	padding: 24px 0;
 }
 
-.header-right {
-	margin: auto;
-	width: 61.8%;
-	align-items: center;
+.navigation-button li {
+	display: inline;
+	list-style: none;
 }
 
-.header-right a{
+.navigation-button a{
 	text-align: center;
 	font-size: 24px;
 	font-family: sans-serif;
@@ -52,7 +51,7 @@ header {
     text-decoration: none;
 }
 
-.header-right a:hover{
+.navigation-button a:hover{
 	color: yellow;
 	text-shadow: 0 0 5px gold;
 	box-shadow: 0 0 2px black inset;
@@ -142,6 +141,39 @@ footer {
 .faction-selector img:hover {
 	filter:  sepia(0%) drop-shadow(2px 2px 5px black);
 }
+
+.cta-btn {
+	display: flex;
+	margin: auto;
+	width: 50%;
+	padding: 32px;
+}
+
+.cta-btn a{
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	font-family: sans-serif;
+	font-weight: 800;
+	color: darkred;
+	box-shadow: 0 0 5px white inset;
+	padding: 0.5em;
+	background:
+		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
+		linear-gradient(0deg, red, black) border-box;
+	border: 5px solid transparent;
+	border-radius: 20px;
+    text-decoration: none;
+}
+
+.cta-btn a:hover {
+	color: yellow;
+	text-shadow: 0 0 5px gold;
+	box-shadow: 0 0 2px black inset;
+	animation: btn-anim 2s infinite;
+}
+
 /*----------Lobby Page----------*/
 .lobby-page h1 {
 	font-family: HarmonyOS Sans Black,sans-serif;
@@ -306,44 +338,31 @@ footer {
 @media only screen and (max-width: 500px) {
 	header {
 		display:block;
-		padding-bottom: 12px;
+		padding-bottom: 6px;
 	}
 
-	.header-left {
+	.navigation-button {
 		margin: auto;
-		width: 50%;
+		padding: 6px 0;
+		width: 100%;
 	}
 
-	.header-right {
-		margin: auto;
-		width: 90%;
-		align-items: center;
-	}
-
-	.header-right a{
+	.navigation-button li {
 		display: block;
+		list-style: none;
 		text-align: center;
-		font-size: 18px;
-		font-family: sans-serif;
-		font-weight: 800;
-		color: darkred;
-		box-shadow: 0 0 5px white inset;
-		padding: 0.25em;
+		width: 100%;
 		margin: 0.25em;
-		background:
-			linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
-			linear-gradient(0deg, red, black) border-box;
-		border: 3px solid transparent;
-		border-radius: 20px;
-		text-decoration: none;
+	}
+	
+	.navigation-button a {
+		display: block;
+		margin: auto;
+		width: 75%;
+		padding: 0.25em;
+		font-size: 18px;
 	}
 
-	.header-right a:hover{
-		color: yellow;
-		text-shadow: 0 0 5px gold;
-		box-shadow: 0 0 2px black inset;
-		animation: btn-anim 2s infinite;
-	}
 
 	/*----------Main----------*/
 	main {
