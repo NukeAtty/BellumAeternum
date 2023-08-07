@@ -333,6 +333,15 @@ footer {
 
 
 /*Responsive*/
+/*----------Laptop----------*/
+@media only screen and (max-width: 1680px) {
+	/*----------Main----------*/
+	main {
+		display: block;
+		margin: auto;
+		width: 90%;
+	}
+}
 
 /*----------Phone----------*/
 @media only screen and (max-width: 500px) {
