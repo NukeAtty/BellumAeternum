@@ -237,8 +237,7 @@ footer {
 	border: 24px solid transparent;
 	background: radial-gradient(ellipse, #333 0, #464646 75%, #363636 90%, #262626 100%);
 	box-shadow: 0 0 24px #000;
-	width: 632px;
-	height: 568px;
+	max-width: 100%;
 	aspect-ratio: 632 / 568;
 }
 
