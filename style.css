@@ -661,7 +661,127 @@ footer {
 	.faction-selector img:hover {
 		filter:  sepia(0%) drop-shadow(2px 2px 5px black);
 	}
-	
+
+	/*----------Factions----------*/
+	.factions-page h1 {
+		font-family: HarmonyOS Sans Black,sans-serif;
+		font-size: 60px;
+		font-weight: 1200;
+		font-variant: small-caps;
+		line-height: 0.5em;
+		margin: auto;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	.zigzag-module {
+		display: block;
+	}
+
+	.zig-zag {
+		display: block;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+
+	.zig {
+		display: block;
+		width: 100%;
+	}
+
+	.zig img {
+		border-radius: 24px;
+		margin: auto;
+		padding: 12px;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.zig h3 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.5em;
+		margin: 24px;
+	}
+
+	.zig p {
+		margin: 12px 48px;
+	}
+
+	.zig a {
+		color: gold;
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: 600px;
+		text-decoration: none;
+		display: block;
+		margin: auto;
+		margin-left: 48px;
+		text-align: center;
+		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+		padding: 0.5em;
+		box-shadow: 0 0 12px #cc0000 inset;
+	}
+
+	.zig a:hover {
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+		box-shadow: 0 0 12px #330000 inset;
+	}
+
+	.zag {
+		display: block;
+		width: 100%;
+	}
+
+	.zag img {
+		border-radius: 24px;
+		margin: auto;
+		padding: 12px;
+		float: none;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.zag h3 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.5em;
+		margin: 24px 0px;
+	}
+
+	.zag p {
+		margin: 12px 0px;
+	}
+
+	.zag a {
+		color: gold;
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: 600px;
+		text-decoration: none;
+		display: block;
+		margin: auto;
+		margin-right: 48px;
+		text-align: center;
+		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+		padding: 0.5em;
+		box-shadow: 0 0 12px #cc0000 inset;
+	}
+
+	.zag a:hover {
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+		box-shadow: 0 0 12px #330000 inset;
+	}
+
 	/*----------Units----------*/
 	.unit-container {
 		display: block;
