@@ -100,15 +100,18 @@ footer {
 .footer-column p{
 	margin: 1em;
 	padding: 0 2em;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
-	font-weight: 500;
+	font-weight: 600;
 	text-align: left;
+	text-shadow: 0 0 2px #333;
 }
 
 .footer-column ul {
 	display: block;
 	margin: 1em;
 	padding: 0 2em;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	color: #666;
 	list-style-type: none;
@@ -121,13 +124,14 @@ footer {
 }
 
 .footer-column a{
-	font-size: 18px;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 20px;
 	color: #000;
 	text-decoration: none;
 }
 
 .footer-column a:hover {
-	color: #ff0000;
+	color: #aa0000;
 }
 
 /*----------Public Module----------*/
@@ -152,7 +156,7 @@ footer {
 .faction-selector img{
 	padding: 0px;
 	max-width: 256px;
-	border-radius: 48px;
+	border-radius: 32px;
 	border: 4px inset #000;
 	filter:  sepia(60%);
 }
@@ -540,7 +544,7 @@ footer {
 			
 	.footer-column {
 		display: block;
-		width: 80%;
+		width: 90%;
 	}
 
 	.footer-column P{
@@ -554,7 +558,7 @@ footer {
 	}
 
 	.footer-column a:hover {
-		color: #ff0000;
+		color: #aa0000;
 	}
 	
 	
@@ -661,8 +665,8 @@ footer {
 
 	.faction-selector img{
 		padding: 0;
-		max-width: 150px;
-		border-radius: 25%;
+		max-width: 140px;
+		border-radius: 24px;
 		filter:  sepia(60%);
 	}
 
