@@ -134,7 +134,14 @@ footer {
 .faction-selector {
 	display: flex;
 	margin: auto;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding: 12px;
 	width: 50%;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
 }
 
 .faction-selector a {
@@ -143,14 +150,15 @@ footer {
 }
 
 .faction-selector img{
-	padding: 12px;
+	padding: 0px;
 	max-width: 256px;
-	border-radius: 20%;
-	filter:  sepia(60%) drop-shadow(4px 4px 5px black);
+	border-radius: 48px;
+	border: 4px inset #000;
+	filter:  sepia(60%);
 }
 
 .faction-selector img:hover {
-	filter:  sepia(0%) drop-shadow(2px 2px 5px black);
+	filter:  sepia(0%) drop-shadow(0 0 15px #ddd);
 }
 
 .cta-btn {
@@ -643,7 +651,6 @@ footer {
 	/*----------Public Module----------*/
 	.faction-selector {
 		display: flex;
-		margin: auto;
 		width: 100%;
 	}
 
@@ -653,14 +660,10 @@ footer {
 	}
 
 	.faction-selector img{
-		padding: 8px;
+		padding: 0;
 		max-width: 160px;
 		border-radius: 25%;
-		filter:  sepia(60%) drop-shadow(4px 4px 5px black);
-	}
-
-	.faction-selector img:hover {
-		filter:  sepia(0%) drop-shadow(2px 2px 5px black);
+		filter:  sepia(60%);
 	}
 
 	/*----------Factions----------*/
