@@ -661,7 +661,7 @@ footer {
 
 	.faction-selector img{
 		padding: 0;
-		max-width: 160px;
+		max-width: 150px;
 		border-radius: 25%;
 		filter:  sepia(60%);
 	}
