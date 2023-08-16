@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="50.9836477%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="512" height="512" rx="57"></rect>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="矩形">
+            <use fill="#D8D8D8" xlink:href="#path-2"></use>
+            <rect stroke="#000000" stroke-width="12" stroke-linejoin="square" fill="url(#linearGradient-1)" x="6" y="6" width="500" height="500" rx="57"></rect>
+        </g>
+        <text id="B" font-family="TimesNewRomanPSMT, Times New Roman" font-size="420" font-weight="normal" fill="#AE0000">
+            <tspan x="47" y="319">B</tspan>
+        </text>
+        <text id="Æ" font-family="TimesNewRomanPSMT, Times New Roman" font-size="420" font-weight="normal" fill="#AE0000">
+            <tspan x="94" y="457">Æ</tspan>
+        </text>
+        <path d="M389.5,50.5386522 L402.789273,89.214324 L442.78444,90.232486 L411.01071,115.178194 L422.419039,154.498144 L389.5,131.214854 L356.580961,154.498144 L367.98929,115.178194 L336.21556,90.232486 L376.210727,89.214324 L389.5,50.5386522 Z" id="星形" stroke="#979797" fill="#AA0000"></path>
+    </g>
+</svg>
