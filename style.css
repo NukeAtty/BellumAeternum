@@ -430,6 +430,7 @@ footer {
 .unit-container-left img{
 	border-radius: 20px;
 	max-width: 360px;
+	aspect-ratio: 4 / 3;
 }
 
 .unit-container-mid{
