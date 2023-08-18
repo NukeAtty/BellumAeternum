@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="description" content="Bellum Aeternum is a Red Alert 2 Yuri's Revenge mod that improves graphics and reality.">
+<link rel="icon" type="image/x-icon" href="/src/favicon.svg">
+<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPEL1Y72V6');
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+    	{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Allied Units",
+      "item": "https://ra2be.com/allied-units.html"
+    	},
+    	{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Soviet Units",
+      "item": "https://ra2be.com/soviet-units.html"
+   		}
+   	]
+  }
+</script>
+<title>亘古之战 | 红警2玩家都应该玩的Mod</title>
+</head>
+
+<body>
+	<header class="header">
+		<ul class="navigation-button">
+			<li><a href="https://ra2be.com/">主页</a></li>
+			<li><a href="factions.html">阵营</a></li>
+			<li><a href="#blog">博客</a></li>
+			<li><a href="#about">资料</a></li>
+		</ul>
+	</header>
+	<!--Main-->
+	<main class="lobby-page">
+		<div class="entrance">红色警戒2：尤里的复仇Mod</div>
+		<h1>亘古之战</h1>
+		<p>亘古之战是一个改进了画质和真实度<i><b>红色警戒2：尤里的复仇</b></i> 大型补丁Mod.</p>
+		<p>以超强的细节，展示1960年代————原子朋克时期的风采.</p>
+		<div class="cta-btn">
+			<a href="#">下载链接</a>
+		</div>
+		<div class="slideshow-container">
+			<div class="slides fade">
+				<img src="src/soviet-invasion.webp" alt="Soviet Invasion">
+				<div class="slides-text">苏维埃入侵欧陆</div>
+			</div>
+			<div class="slides fade">
+				<img src="src/dummy-632x568.webp" alt="Dummy Image">
+				<div class="slides-text">NO SIGNAL</div>
+			</div>
+			<div class="slides fade">
+				<img src="src/dummy-632x568.webp" alt="Dummy Image">
+				<div class="slides-text">NO SIGNAL</div>
+			</div>
+		</div>
+		<div class="slideshow-dots">
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+		</div>
+		<h2>阵营</h2>
+		<p>盟军和苏联的争斗从来没有停息，这只是刚刚开始.</p>
+		<p>点击阵营图标来选择你想了解的阵营.</p>
+		<div class="faction-selector">
+			<a href="allied-units.html"><img src="src/allied-button.webp" alt="Allied Units"></img></a>
+			<a href="soviet-units.html"><img src="src/soviet-button.webp" alt="Soviet Units"></img></a>
+		</div>
+	</main>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<img src="src/logo.webp" alt="Bellum Aeternum Logo"></img>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="soviet-units.html">盟军单位列表</a></li>
+					<li><a href="allied-units.html">苏联单位列表</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>博客</p>
+				<ul>
+					<li><a href="#Update">更新</a></li>
+					<li><a href="#Concept">概念</a></li>
+					<li><a href="#Tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#Contact">联系作者</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+		let slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		  let i;
+		  let slides = document.getElementsByClassName("slides");
+		  let dots = document.getElementsByClassName("dot");
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}    
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+	</script>
+</body>
+</html>
