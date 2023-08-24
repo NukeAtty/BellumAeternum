@@ -39,7 +39,7 @@
 <title>Bellum Aeternum | A Mod For Red Alert 2 Lovers</title>
 </head>
 
-<body>
+<body id="panel">
 	<header class="header">
 		<ul class="navigation-button">
 			<li><a href="https://ra2be.com/">Home</a></li>
@@ -78,31 +78,31 @@
 		</div>
 
 		<div class="traits">
-			<h2>Why is Bellum Aeternum Special?</h2>
+			<h2>What Makes Bellum Aeternum Special?</h2>
 			<div class="traits-module">
 				<!--Trait One-->
 				<div class="traits-container">
-					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
+					<img src="src/new-mechanics.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>New Mechanics</h3>
-					<p>With the support of improved engine, much new mechanics has been added to the mod.</p>
+					<p>Much new mechanics has been added to the mod. For example, tank gun shell now has chance to bounce off armor and deals no damage.</p>
 				</div>
 				<!--Trait Two-->
 				<div class="traits-container">
-					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
+					<img src="src/redesigned-units.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Redesigned Units</h3>
-					<p>Old units had reborn, with new mechanics and roll, brings more challenge and joy.</p>
+					<p>Old units had been redesigned, now they are born with new mechanics and roll, brings more challenge to control and maximize joy.</p>
 				</div>
 				<!--Trait Three-->
 				<div class="traits-container">
-					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
+					<img src="src/improved-graphic.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Improved Graphics</h3>
-					<p>Projectiles, effects, wrecks, debris, all had been upgraded to a higher level. </p>
+					<p>Projectiles, explosion effects, tank wrecks, vehicle parts debris, manueverable tracks, all had been upgraded to a higher level. </p>
 				</div>
 				<!--Trait Four-->
 				<div class="traits-container">
-					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
+					<img src="src/rebalanced-skirmish.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Rebalanced Skirmish</h3>
-					<p>Instead of rush in numbers, now it is time to think more of tactic and strategy. </p>
+					<p>Rush in numbers is never fun, so now it is time to think more about tactic and strategy, go and survive from a skill-based battle. </p>
 				</div>
 			</div>
 		</div>
@@ -146,19 +146,6 @@
 	</footer>
 	
 	<script>
-		document.getElementById("panel").addEventListener("mousedown", lightOn);
-		document.getElementById("panel").addEventListener("mouseup", lightOff);
-		document.getElementById("panel").addEventListener("touchstart", lightOn);
-		document.getElementById("panel").addEventListener("touchend", lightOff);
-
-		function lightOn() {
-		  document.getElementById("signalLight").style.background = "radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%)";
-		}
-
-		function lightOff() {
-		  document.getElementById("signalLight").style.background = "radial-gradient(circle,#aaa 0, #666 50%, #666 100%)";
-		}
-
 		let slideIndex = 0;
 		showSlides();
 
@@ -178,6 +165,7 @@
 		  dots[slideIndex-1].className += " active";
 		  setTimeout(showSlides, 2000); // Change image every 2 seconds
 		}
+
 	</script>
 </body>
 </html>

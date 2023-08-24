@@ -18,6 +18,7 @@ p {
 
 /*----------Header----------*/
 header {
+	width: 100%;
 	display:flex;
 	background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-width: 0 0 5px 0;
@@ -198,15 +199,6 @@ footer {
 	animation: btn-anim 2s infinite;
 }
 
-#signalLight {
-	height: 16px;
-  width: 16px;
-  background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);
-  border-radius: 50%;
-  margin: auto;
-  margin-bottom: 12px;
-}
-
 /*------------------------------*/
 /*----------Lobby Page----------*/
 /*------------------------------*/
@@ -305,6 +297,7 @@ footer {
 
 .traits {
 	display: block;
+	margin: 96px 0;
 }
 
 .traits h2{
@@ -341,8 +334,9 @@ footer {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	font-weight: 600;
-	color: #000000;
+	color: #333333;
 	text-align: center;
+	text-shadow: 0 0 2px #666666;
 }
 
 .traits-container p{
