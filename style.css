@@ -350,6 +350,15 @@ footer {
 	border-radius: 10px;
 }
 
+#signalLight {
+	height: 16px;
+  width: 16px;
+  background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
 /*----------------------------*/
 /*----------Factions----------*/
 /*----------------------------*/

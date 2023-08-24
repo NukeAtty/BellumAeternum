@@ -85,24 +85,28 @@
 					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>New Mechanics</h3>
 					<p>With the support of improved engine, much new mechanics has been added to the mod.</p>
+					<div id="signalLight"></div>
 				</div>
 				<!--Trait Two-->
 				<div class="traits-container">
 					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Redesigned Units</h3>
 					<p>Old units had reborn, with new mechanics and roll, brings more challenge and joy.</p>
+					<div id="signalLight"></div>
 				</div>
 				<!--Trait Three-->
 				<div class="traits-container">
 					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Improved Graphics</h3>
 					<p>Projectiles, effects, wrecks, debris, all had been upgraded to a higher level. </p>
+					<div id="signalLight"></div>
 				</div>
 				<!--Trait Four-->
 				<div class="traits-container">
 					<img src="src/dummy-632x568.webp" alt="New Mechanics" width="auto" height="auto"></img>
 					<h3>Rebalanced Skirmish</h3>
 					<p>Instead of rush in numbers, now it is time to think more of tactic and strategy. </p>
+					<div id="signalLight"></div>
 				</div>
 			</div>
 		</div>
@@ -146,6 +150,19 @@
 	</footer>
 	
 	<script>
+		document.getElementsByClassName("traits-container").addEventListener("mousedown", lightOn);
+		document.getElementsByClassName("traits-container").addEventListener("mouseup", lightOff);
+		document.getElementsByClassName("traits-container").addEventListener("touchstart", lightOn);
+		document.getElementsByClassName("traits-container").addEventListener("touchend", lightOff);
+
+		function lightOn() {
+		  document.getElementById("signalLight").style.background = "radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%)";
+		}
+
+		function lightOff() {
+		  document.getElementById("signalLight").style.background = "radial-gradient(circle,#aaa 0, #666 50%, #666 100%)";
+		}
+
 		let slideIndex = 0;
 		showSlides();
 
