@@ -198,7 +198,9 @@ footer {
 	animation: btn-anim 2s infinite;
 }
 
+/*------------------------------*/
 /*----------Lobby Page----------*/
+/*------------------------------*/
 .lobby-page h1 {
 	font-family: HarmonyOS Sans Black,sans-serif;
 	font-size: 72px;
@@ -290,7 +292,67 @@ footer {
   animation-duration: 1.5s;
 }
 
+/*----------Traits Module----------*/
+
+.traits {
+	display: block;
+}
+
+.traits h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.traits-module {
+	display: flex;
+}
+
+.traits-container {
+	display: block;
+	width: 20%;
+	margin: auto;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.traits-container img{
+	display: block;
+	width: 90%;
+	margin: 12px auto;
+	border-radius: 32px;
+	border: 4px inset #000;
+	aspect-ratio: 1 / 1;
+}
+
+.traits-container h3{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: #000000;
+	text-align: center;
+}
+
+.traits-container p{
+	font-family: monospace;
+	font-size: 12px;
+	font-weight: 400;
+	color: #000000;
+	text-align: left;
+	line-height: 1.25em;
+	margin: 24px;
+	padding: 6px;
+	border: 2px solid #fff;
+	border-style: inset;
+	border-radius: 10px;
+}
+
+/*----------------------------*/
 /*----------Factions----------*/
+/*----------------------------*/
 .factions-page h1 {
 	font-family: HarmonyOS Sans Black,sans-serif;
 	font-size: 72px;
@@ -670,6 +732,64 @@ footer {
 		max-width: 140px;
 		border-radius: 24px;
 		filter:  sepia(60%);
+	}
+
+	/*----------Traits Module----------*/
+
+	.traits {
+		display: block;
+	}
+
+	.traits h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	.traits-module {
+		display: block;
+	}
+
+	.traits-container {
+		display: block;
+		width: 90%;
+		margin: 12px auto;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 36px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+	}
+
+	.traits-container img{
+		display: block;
+		width: 90%;
+		margin: 12px auto;
+		border-radius: 32px;
+		border: 4px inset #000;
+		aspect-ratio: 1 / 1;
+	}
+
+	.traits-container h3{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: 600;
+		color: #000000;
+		text-align: center;
+	}
+
+	.traits-container p{
+		font-family: monospace;
+		font-size: 12px;
+		font-weight: 400;
+		color: #000000;
+		text-align: left;
+		line-height: 1.25em;
+		margin: 24px;
+		padding: 6px;
+		border: 2px solid #fff;
+		border-style: inset;
+		border-radius: 10px;
 	}
 
 	/*----------Factions----------*/
