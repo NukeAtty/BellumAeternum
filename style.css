@@ -198,6 +198,15 @@ footer {
 	animation: btn-anim 2s infinite;
 }
 
+#signalLight {
+	height: 16px;
+  width: 16px;
+  background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
 /*------------------------------*/
 /*----------Lobby Page----------*/
 /*------------------------------*/
@@ -348,15 +357,6 @@ footer {
 	border: 2px solid #fff;
 	border-style: inset;
 	border-radius: 10px;
-}
-
-#signalLight {
-	height: 16px;
-  width: 16px;
-  background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);
-  border-radius: 50%;
-  margin: auto;
-  margin-bottom: 12px;
 }
 
 /*----------------------------*/
