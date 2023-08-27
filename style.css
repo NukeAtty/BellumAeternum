@@ -473,7 +473,13 @@ footer {
 }
 
 /*----------Units----------*/
-.units h3{
+.units h1{
+	font-size: 48px;
+	font-family: HarmonyOS Sans Black, sans-serif;
+	text-align: center;
+}
+
+.units h2{
 	font-size: 24px;
 	font-family: HarmonyOS Sans Black, sans-serif;
 	text-align: center;
@@ -504,7 +510,7 @@ footer {
 	width: 15%;
 }
 
-.unit-container-mid h4{
+.unit-container-mid h3{
 	padding: 0.5em;
 	margin: auto;
 	text-align: center;
