@@ -336,7 +336,7 @@ footer {
 	font-weight: 600;
 	color: #333333;
 	text-align: center;
-	text-shadow: 0 0 2px #666666;
+	text-shadow: 0 0 1px #666666;
 }
 
 .traits-container p{
@@ -351,6 +351,40 @@ footer {
 	border: 2px solid #fff;
 	border-style: inset;
 	border-radius: 10px;
+}
+
+/*----------Factions Module----------*/
+.factions-module {
+	margin: 128px;
+}
+
+.factions-module h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.factions-module p{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.faction-banner {
+	width: 100%;
+	margin: auto;
+}
+
+.faction-banner img{
+	display: block;
+	width: 95%;
+	margin: 20px auto;
+	background-color: #333;
+	border: 10px solid #333;
+	border-radius: 25px;
+	box-shadow: 0 0 15px #333;
 }
 
 /*----------------------------*/
@@ -799,6 +833,39 @@ footer {
 		border: 2px solid #fff;
 		border-style: inset;
 		border-radius: 10px;
+	}
+	/*----------Factions Module----------*/
+	.factions-module {
+		margin: auto;
+	}
+
+	.factions-module h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 32px;
+		font-weight: 600;
+		color: #000000;
+	}
+
+	.factions-module p{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	.faction-banner {
+		width: 100%;
+		margin: auto;
+	}
+
+	.faction-banner img{
+		display: block;
+		width: 95%;
+		margin: 20px auto;
+		background-color: #333;
+		border: 10px solid #333;
+		border-radius: 25px;
+		box-shadow: 0 0 15px #333;
 	}
 
 	/*----------Factions----------*/
