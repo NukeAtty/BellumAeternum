@@ -16,30 +16,68 @@ p {
 	margin: 0;
 }
 
+/*Animations*/
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes btn-anim {
+  0%,100%  {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(0deg, red, black) border-box;}
+  5%  {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(18deg, red, black) border-box;}
+  10% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(36deg, red, black) border-box;}
+  15% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(64deg, red, black) border-box;}
+  20% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(72deg, red, black) border-box;}
+  25% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(90deg, red, black) border-box;}
+  30% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(108deg, red, black) border-box;}
+  35% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(126deg, red, black) border-box;}
+  40% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(144deg, red, black) border-box;}
+  45% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(162deg, red, black) border-box;}
+  50% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(180deg, red, black) border-box;}
+  55% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(198deg, red, black) border-box;}
+  60% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(216deg, red, black) border-box;}
+  65% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(234deg, red, black) border-box;}
+  70% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(252deg, red, black) border-box;}
+  75% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(270deg, red, black) border-box;}
+  80% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(288deg, red, black) border-box;}
+  85% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(306deg, red, black) border-box;}
+  90% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(324deg, red, black) border-box;}
+  95% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(342deg, red, black) border-box;}
+}
+
+/*--------------------------*/
 /*----------Header----------*/
+/*--------------------------*/
 header {
 	width: 100%;
-	display:flex;
+	display: flex;
 	background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-width: 0 0 5px 0;
 	border-color: #c8c8c8;
 	border-style: inset;
 }
 
+.responsive-navigation {
+	display: none;
+	margin: 5px auto;
+	filter: drop-shadow(0 0 5px #000000);
+}
+
 .navigation-button {
-	display: block;
+	align-items: center;
+	display: flex;
 	margin: auto;
-	padding: 24px 0;
+	padding: 18px 0;
 }
 
 .navigation-button li {
-	display: inline;
 	list-style: none;
+	margin: 0 0.1vw;
 }
 
 .navigation-button a{
 	text-align: center;
-	font-size: 24px;
+	font-size: 18px;
 	font-family: sans-serif;
 	font-weight: 800;
 	color: darkred;
@@ -49,7 +87,7 @@ header {
 		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
 		linear-gradient(0deg, red, black) border-box;
 	border: 5px solid transparent;
-	border-radius: 20px;
+	border-radius: 16px;
     text-decoration: none;
 }
 
@@ -60,15 +98,19 @@ header {
 	animation: btn-anim 2s infinite;
 }
 
+/*------------------------*/
 /*----------Main----------*/
+/*------------------------*/
 main {
 	display: block;
 	margin: auto;
-	width: 75%;
 }
 
+/*-------------------------*/
 /*---------Footer----------*/
+/*-------------------------*/
 footer {
+	display: grid;
 	text-align: center;
 	background-image: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #939393 100%);
 	border-width: 5px 0 0 0;
@@ -82,15 +124,23 @@ footer {
 }
 
 .footer-left {
-	width: 20%;
+	width: 30%;
 	margin-top: 48px;
+}
+
+.footer-left img{
+	border-radius: 24px;
+	border: 4px solid #333333;
+	padding: 6px 2px;
+	background: linear-gradient(-45deg, #000000 0, #666666 50%, #000000 100%);
+	background-blend-mode: luminosity;
 }
 
 .footer-right {
 	display: flex;
 	overflow: auto;
 	float: left;
-	width: 80%;
+	width: 70%;
 }
 
 .footer-column {
@@ -100,18 +150,19 @@ footer {
 
 .footer-column p{
 	margin: 1em;
-	padding: 0 2em;
+	padding: 0 2vw;
+	color: #dddddd;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	font-weight: 600;
 	text-align: left;
-	text-shadow: 0 0 2px #333;
+	text-shadow: 0 1px 2px #333333;
 }
 
 .footer-column ul {
 	display: block;
 	margin: 1em;
-	padding: 0 2em;
+	padding: 0 2vw;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	color: #666;
@@ -135,14 +186,38 @@ footer {
 	color: #aa0000;
 }
 
+.footer-portals {
+	margin: 1vw;
+	background: linear-gradient(-45deg, #000000 0, #666666 40%, #000000 60%, #666666 80%, #000000 100%);
+	border-radius: 12px;
+	border: 3px solid #000000;
+	display: flex;
+	flex-flow: row-reverse;
+}
+
+.footer-portals a{
+	text-decoration: none;
+	margin: 0.5vw 0;
+	color: #ff3333;
+	text-shadow: 0 0 5px #ff0000;
+	font-family: HarmonyOS Sans Black, sans-serif;
+	font-weight: 600;
+	padding: 0 1.5vw;
+	border-left: 3px solid #ffffff;
+}
+
+.footer-portals a:hover {
+	color: #ffffcc;
+	text-shadow: 0 0 5px #ffcc00;
+	filter: drop-shadow(0 0 2px #ff3300);
+}
+
 /*----------Public Module----------*/
 .faction-selector {
 	display: flex;
-	margin: auto;
-	margin-top: 24px;
-	margin-bottom: 24px;
-	padding: 12px;
+	margin: 24px auto;
 	width: 50%;
+	padding: 12px;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
 	border: 4px outset #ddd;
@@ -202,37 +277,38 @@ footer {
 /*------------------------------*/
 /*----------Lobby Page----------*/
 /*------------------------------*/
-.lobby-page h1 {
+
+/*----------Overview Module----------*/
+.overview {
+	padding: 5vw;
+}
+
+.overview h1 {
 	font-family: HarmonyOS Sans Black,sans-serif;
 	font-size: 72px;
-	font-weight: 1200;
+	font-weight: 900;
 	font-variant: small-caps;
 	line-height: 0.5em;
 	margin: auto;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	text-align: center;
+	text-shadow: 0 0 10px #000000;
 }
 
-.lobby-page h2 {
+.overview h2 {
 	font-family: sans-serif;
-	font-size: 32px;
+	font-size: 24px;
 	text-align: center;
 }
 
-.lobby-page p {
+.overview p {
 	font-family: sans-serif;
 	font-size: 18px;
 	line-height: 1.5em;
 	text-align: center;
 }
 
-.entrance {
-	font-family: sans-serif;
-	font-size: 24px;
-	text-align: center;
-	margin: 1em;
-}
 
 .slideshow-container {
 	margin: auto;
@@ -293,25 +369,27 @@ footer {
   animation-duration: 1.5s;
 }
 
-/*----------Traits Module----------*/
 
-.traits {
+
+/*----------Features Module----------*/
+
+.features {
 	display: block;
-	margin: 96px 0;
+	margin: 5vw 5vw;
 }
 
-.traits h2{
+.features h2{
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 32px;
+	font-size: 48px;
 	font-weight: 600;
 	text-align: center;
 }
 
-.traits-module {
+.features-module {
 	display: flex;
 }
 
-.traits-container {
+.feature-container {
 	display: block;
 	width: 20%;
 	margin: auto;
@@ -321,7 +399,7 @@ footer {
 	box-shadow: 0 0 24px #000;
 }
 
-.traits-container img{
+.feature-container img{
 	display: block;
 	width: 90%;
 	margin: 12px auto;
@@ -330,7 +408,7 @@ footer {
 	aspect-ratio: 1 / 1;
 }
 
-.traits-container h3{
+.feature-container h3{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
 	font-weight: 600;
@@ -339,7 +417,7 @@ footer {
 	text-shadow: 0 0 1px #666666;
 }
 
-.traits-container p{
+.feature-container p{
 	font-family: monospace;
 	font-size: 12px;
 	font-weight: 400;
@@ -353,52 +431,25 @@ footer {
 	border-radius: 10px;
 }
 
-/*----------Factions Module----------*/
-.factions-module {
-	margin: 128px;
-}
 
-.factions-module h2{
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 32px;
-	font-weight: 600;
-	color: #ffffff;
-}
 
-.factions-module p{
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	color: #ffffff;
-}
-
-.faction-banner {
-	width: 100%;
-	margin: auto;
-}
-
-.faction-banner img{
-	display: block;
-	width: 95%;
-	margin: 20px auto;
-	background-color: #333;
-	border: 10px solid #333;
-	border-radius: 25px;
-	box-shadow: 0 0 15px #333;
-}
-
-/*----------------------------*/
 /*----------Factions----------*/
-/*----------------------------*/
-.factions-page h1 {
-	font-family: HarmonyOS Sans Black,sans-serif;
-	font-size: 72px;
-	font-weight: 1200;
-	font-variant: small-caps;
-	line-height: 0.5em;
+.factions {
 	margin: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	width: 60%;
+}
+
+.factions h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 48px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.factions p{
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5em;
 	text-align: center;
 }
 
@@ -408,10 +459,25 @@ footer {
 
 .zig-zag {
 	display: flex;
-	background-color: #dddddd20;
-	border-radius: 24px;
 	box-shadow: 0 1px 10px #000;
 	margin: 24px;
+	padding: 1vw;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.zag-zig {
+	display: flex;
+	flex-flow: row-reverse;
+	box-shadow: 0 1px 10px #000;
+	margin: 24px;
+	padding: 1vw;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
 }
 
 .zig {
@@ -421,82 +487,49 @@ footer {
 
 .zig img {
 	border-radius: 24px;
+	border: 6px solid #333333;
 	margin: auto;
-	padding: 12px;
-}
-
-.zig h3 {
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 36px;
-	font-weight: 600;
-	line-height: 1.5em;
-	margin: 24px 48px;
-}
-
-.zig p {
-	margin: 12px 48px;
-}
-
-.zig a {
-	color: gold;
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 24px;
-	font-weight: 600px;
-	text-decoration: none;
-	display: block;
-	margin: auto;
-	margin-left: 48px;
-	text-align: center;
-	background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-	padding: 0.5em;
-	box-shadow: 0 0 12px #cc0000 inset;
-}
-
-.zig a:hover {
-	color: yellow;
-	text-shadow: 0 0 5px yellow;
-	background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-	box-shadow: 0 0 12px #330000 inset;
+	max-width: 100%;
+	aspect-ratio: 1/1;
 }
 
 .zag {
-	display: block;
+	display: grid;
 	width: 50%;
-}
-
-.zag img {
-	border-radius: 24px;
-	margin: auto;
-	padding: 12px;
-	float: right;
+	padding: 0 2vw;
 }
 
 .zag h3 {
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 36px;
+	font-size: 48px;
 	font-weight: 600;
 	line-height: 1.5em;
-	margin: 24px 0px;
+	color: #000000;
+	margin: auto;
+	text-align: left;
 }
 
 .zag p {
+	color: #000000;
 	margin: 12px 0px;
 	padding-right: 48px;
+	text-align: left;
+	vertical-align: middle;
 }
 
 .zag a {
+	width: 100%;
 	color: gold;
-	font-family: HarmonyOS Sans, sans-serif;
+	font-family: HarmonyOS Sans Black, sans-serif;
 	font-size: 24px;
 	font-weight: 600px;
 	text-decoration: none;
-	display: block;
 	margin: auto;
-	margin-right: 48px;
 	text-align: center;
 	background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
 	padding: 0.5em;
 	box-shadow: 0 0 12px #cc0000 inset;
+	border-radius: 12px;
 }
 
 .zag a:hover {
@@ -506,7 +539,24 @@ footer {
 	box-shadow: 0 0 12px #330000 inset;
 }
 
+/*----------Blogs Module----------*/
+
+.blogs h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+
+/*-------------------------*/
 /*----------Units----------*/
+/*-------------------------*/
+
+.units {
+	width: 75%;
+	margin: auto;
+}
+
 .units h1{
 	font-size: 48px;
 	font-family: HarmonyOS Sans Black, sans-serif;
@@ -540,8 +590,9 @@ footer {
 }
 
 .unit-container-mid{
-	display: block;
+	display: grid;
 	width: 15%;
+	padding: 5% 0;
 }
 
 .unit-container-mid h3{
@@ -556,7 +607,8 @@ footer {
 	position: relative;
 	margin: auto;
 	max-width: 60px;
-	margin-top: calc(50% - 24px);
+	/*margin-top: calc(50% - 24px);*/
+	margin: auto;
 }
 
 .unit-container-right{
@@ -579,58 +631,324 @@ footer {
 	font-family: Arial;
 }
 
+/*--------------------!!!-------------------!!!--------------------*/
+/*--------------------!!! <<< Responsive>>> !!!--------------------*/
+/*--------------------!!!-------------------!!!--------------------*/
 
-/*Responsive*/
 /*----------Laptop----------*/
 @media only screen and (max-width: 1680px) {
 	/*----------Main----------*/
 	main {
 		display: block;
 		margin: auto;
-		width: 90%;
+	}
+	/*------------------------------*/
+	/*----------Lobby Page----------*/
+	.overview {
+	}
+	
+	.slideshow-container {
+		max-width: 60%;
+	}
+	
+	.features {
+		margin: 96px 2vw;
+	}
+	
+	.features-module {
+		display: flex;
+	}
+	
+	.feature-container{
+		margin: 1vw auto;
+		width: 20%;
+	}
+	
+	/*----------Factions----------*/
+	.factions {
+		width: 75%;
+	}
+	
+	/*-------------------------*/
+	/*----------Units----------*/
+	/*-------------------------*/
+
+	.units {
+		width: 80%;
 	}
 }
 
-/*----------Phone----------*/
-@media only screen and (max-width: 500px) {
-	header {
-		display:block;
-		padding-bottom: 6px;
-	}
-
-	.navigation-button {
-		margin: auto;
-		padding: 6px 0;
-		width: 90%;
-	}
-
-	.navigation-button li {
-		display: block;
-		list-style: none;
-		text-align: center;
-		width: 100%;
-		margin: 0.25em;
-	}
-	
-	.navigation-button a {
-		display: block;
-		margin: auto;
-		width: 75%;
-		padding: 0.25em;
-		font-size: 18px;
-	}
-
-
+/*----------Tablet----------*/
+@media only screen and (max-width: 1280px) {
 	/*----------Main----------*/
 	main {
 		display: block;
 		margin: auto;
-		width: 95%;
+	}
+	
+	/*----------Public Module----------*/
+	.faction-selector {
+		width: 60%;
+	}
+	
+	.faction-selector img{
+		max-width: 196px;
+	}
+	
+	.features-module {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.feature-container{
+		margin: 1vw auto;
+		width: 45%;
+	}
+	
+	/*----------Factions----------*/
+	.factions {
+		width: 90%;
+	}
+
+	.zigzag-module {
+		display: block;
+	}
+
+	.zig-zag {
+		display: block;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+	
+	.zag-zig {
+		display: block;
+		flex-direction: row;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+
+	.zig {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zig img {
+		display: block;
+		border-radius: 24px;
+		margin: auto;
+		width: 100%;
+		height: auto;
+	}
+
+	.zag {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zag h3 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.5em;
+		margin: auto;
+		text-align: center;
+	}
+
+	.zag p {
+		margin: 12px 12px;
+		padding-right: 0;
+	}
+
+	.zag a {
+		width: 100%;
+		color: gold;
+		font-family: HarmonyOS Sans Black, sans-serif;
+		font-size: 24px;
+		font-weight: 600px;
+		text-decoration: none;
+		margin: auto;
+		text-align: center;
+		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+		padding: 0.5em;
+		box-shadow: 0 0 12px #cc0000 inset;
+		border-radius: 12px;
+	}
+
+	.zag a:hover {
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+		box-shadow: 0 0 12px #330000 inset;
+	}
+		
+	/*-------------------------*/
+	/*----------Units----------*/
+	/*-------------------------*/
+	.units {
+		width: 100%;
+	}
+	
+	.unit-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.unit-container-left {
+		width: 50%;
+	}
+	
+	.unit-container-mid {
+		display: flex;
+		width: 50%;
+	}
+	
+	.unit-container-mid h3{
+		width: 80%;
+	}
+	
+	.unit-container-right {
+		display: flex;
+		width: 100%;
+	}
+	
+	.unit-container-right p {
+		width: 60%;
+	}
+	
+	.unit-container-right ul{
+		width: 40%;
+	}
+}
+
+/*----------Tablet Verticle----------*/
+@media only screen and (max-width: 768px) {
+	/*----------Overview Module----------*/
+	.slideshow-container {
+		max-width: 100%;
+		margin: 10vw;
+	}
+	
+	/*----------Factions Module----------*/
+	.factions {
+		width: 90%;
+	}
+
+	.zigzag-module {
+		display: block;
+	}
+
+	.zig-zag {
+		display: block;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+	
+	.zag-zig {
+		display: block;
+		flex-direction: row;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+
+	.zig {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zig img {
+		display: block;
+		border-radius: 24px;
+		margin: auto;
+		width: 100%;
+		height: auto;
+	}
+
+	.zag {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zag h3 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.5em;
+		margin: auto;
+		text-align: center;
+	}
+
+	.zag p {
+		margin: 12px 12px;
+		padding-right: 0;
+	}
+
+	.zag a {
+		width: 100%;
+		color: gold;
+		font-family: HarmonyOS Sans Black, sans-serif;
+		font-size: 24px;
+		font-weight: 600px;
+		text-decoration: none;
+		margin: auto;
+		text-align: center;
+		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+		padding: 0.5em;
+		box-shadow: 0 0 12px #cc0000 inset;
+		border-radius: 12px;
+	}
+
+	.zag a:hover {
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+		box-shadow: 0 0 12px #330000 inset;
+	}
+	
+	
+	/*-------------------------*/
+	/*----------Units----------*/
+	/*-------------------------*/
+	.units {
+		width: 100%;
+	}
+
+	.unit-container {
+		display: block;	
+	
+}
+
+/*----------Phone----------*/
+@media only screen and (max-width: 720px) {
+	header {
+	}
+
+	.responsive-navigation {
+		display: block;
+	}
+
+	.navigation-button {
+		display: none;
+	}
+
+	/*----------Main----------*/
+	main {
+		
 	}
 
 	/*---------Footer----------*/
 	footer {
-		display: block;
 	}
 	
 	.footer-container {
@@ -650,12 +968,17 @@ footer {
 	}
 			
 	.footer-column {
+		margin: auto;
 		display: block;
 		width: 90%;
 	}
 
 	.footer-column P{
-		text-align: left;
+		text-align: center;
+	}
+	
+	.footer-column li{
+		text-align: center;
 	}
 	
 	.footer-column a{
@@ -668,44 +991,48 @@ footer {
 		color: #aa0000;
 	}
 	
+	.footer-portals {
+		display: none;
+	}
+	
 	
 	/*----------Lobby Page----------*/
-	.lobby-page h1 {
+	/*----------Overview Module----------*/
+	.overview {
+		margin: 0;
+		padding: 5vw;
+	}
+
+	.overview h1 {
 		font-family: HarmonyOS Sans Black,sans-serif;
-		font-size: 48px;
-		font-weight: 1200;
+		font-size: 60px;
+		font-weight: 900;
 		font-variant: small-caps;
 		line-height: 1em;
 		margin: auto;
-		margin-top: 0.5em;
-		margin-bottom: 0.75em;
+		margin-top: 1em;
+		margin-bottom: 1em;
 		text-align: center;
+		text-shadow: 0 0 10px #000000;
 	}
 
-	.lobby-page h2 {
+	.overview h2 {
 		font-family: sans-serif;
-		font-size: 32px;
+		font-size: 24px;
 		text-align: center;
 	}
 
-	.lobby-page p {
-		font-family: sans-serif;
-		font-size: 14px;
-		line-height: 1.5em;
-		text-align: center;
-	}
-
-	.entrance {
+	.overview p {
 		font-family: sans-serif;
 		font-size: 18px;
+		line-height: 1.5em;
 		text-align: center;
-		margin:0.5em;
 	}
 	
 	.cta-btn {
 		width: 75%;
 	}
-
+	
 	.slideshow-container {
 		margin: 0;
 		max-width: 100%;
@@ -777,24 +1104,24 @@ footer {
 		filter:  sepia(60%);
 	}
 
-	/*----------Traits Module----------*/
-
-	.traits {
+	/*----------Features Module----------*/
+	.features {
 		display: block;
+		margin: 0 0;
 	}
 
-	.traits h2{
+	.features h2{
 		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 24px;
+		font-size: 32px;
 		font-weight: 600;
 		text-align: center;
 	}
 
-	.traits-module {
-		display: block;
+	.features-module {
+		display: flex;
 	}
 
-	.traits-container {
+	.feature-container {
 		display: block;
 		width: 90%;
 		margin: 12px auto;
@@ -804,7 +1131,7 @@ footer {
 		box-shadow: 0 0 24px #000;
 	}
 
-	.traits-container img{
+	.feature-container img{
 		display: block;
 		width: 90%;
 		margin: 12px auto;
@@ -813,7 +1140,7 @@ footer {
 		aspect-ratio: 1 / 1;
 	}
 
-	.traits-container h3{
+	.feature-container h3{
 		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 24px;
 		font-weight: 600;
@@ -821,7 +1148,7 @@ footer {
 		text-align: center;
 	}
 
-	.traits-container p{
+	.feature-container p{
 		font-family: monospace;
 		font-size: 12px;
 		font-weight: 400;
@@ -834,50 +1161,24 @@ footer {
 		border-style: inset;
 		border-radius: 10px;
 	}
-	/*----------Factions Module----------*/
-	.factions-module {
+
+	/*----------Factions----------*/
+	.factions {
 		margin: auto;
+		width: 95%;
 	}
 
-	.factions-module h2{
+	.factions h2{
 		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 32px;
 		font-weight: 600;
-		color: #000000;
+		text-align: center;
 	}
 
-	.factions-module p{
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		color: #000000;
-	}
-
-	.faction-banner {
-		width: 100%;
-		margin: auto;
-	}
-
-	.faction-banner img{
-		display: block;
-		width: 95%;
-		margin: 20px auto;
-		background-color: #333;
-		border: 10px solid #333;
-		border-radius: 25px;
-		box-shadow: 0 0 15px #333;
-	}
-
-	/*----------Factions----------*/
-	.factions-page h1 {
-		font-family: HarmonyOS Sans Black,sans-serif;
-		font-size: 60px;
-		font-weight: 1200;
-		font-variant: small-caps;
-		line-height: 0.5em;
-		margin: auto;
-		margin-top: 1em;
-		margin-bottom: 1em;
+	.factions p{
+		font-family: sans-serif;
+		font-size: 18px;
+		line-height: 1.5em;
 		text-align: center;
 	}
 
@@ -887,6 +1188,15 @@ footer {
 
 	.zig-zag {
 		display: block;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+	
+	.zag-zig {
+		display: block;
+		flex-direction: row;
 		background-color: #dddddd20;
 		border-radius: 24px;
 		box-shadow: 0 1px 10px #000;
@@ -902,60 +1212,14 @@ footer {
 	.zig img {
 		border-radius: 24px;
 		margin: auto;
-		padding: 12px;
 		max-width: 100%;
 		height: auto;
-	}
-
-	.zig h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
-		text-align: center;
-	}
-
-	.zig p {
-		margin: 12px 12px;
-	}
-
-	.zig a {
-		color: gold;
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		display: block;
-		margin: 24px;
-		margin-left: 24px;
-		margin-right: 24px;
-		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-	}
-
-	.zig a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
 	}
 
 	.zag {
-		display: block;
+		display: grid;
 		width: 100%;
 		padding:3px;
-	}
-
-	.zag img {
-		border-radius: 24px;
-		margin: auto;
-		padding: 12px;
-		float: none;
-		max-width: 100%;
-		height: auto;
 	}
 
 	.zag h3 {
@@ -974,14 +1238,13 @@ footer {
 
 	.zag a {
 		color: gold;
-		font-family: HarmonyOS Sans, sans-serif;
+		font-family: HarmonyOS Sans Black, sans-serif;
 		font-size: 24px;
 		font-weight: 600px;
 		text-decoration: none;
-		display: block;
-		margin: 24px;
-		margin-left: 24px;
-		margin-right: 24px;
+		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
 		text-align: center;
 		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
 		padding: 0.5em;
@@ -994,8 +1257,24 @@ footer {
 		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
 		box-shadow: 0 0 12px #330000 inset;
 	}
+	
+	/*----------Gallery Module----------*/
+	.gallery {
+		
+	}
+	
+	.gallery h2 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 32px;
+		font-weight: 600;
+		text-align: center;
+	}
 
 	/*----------Units----------*/
+	.units {
+		width: 90%;
+	}
+	
 	.unit-container {
 		display: block;
 		background-color: #dddddd10;
@@ -1018,7 +1297,7 @@ footer {
 		width: 100%;
 	}
 
-	.unit-container-mid h4{
+	.unit-container-mid h3{
 		width: 60%;
 		text-align: center;
 		font-size: 24px;
@@ -1031,10 +1310,12 @@ footer {
 	}
 	
 	.unit-container-right{
+		display: block;
 		width: 100%;
 	}
 
 	.unit-container-right p{
+		width: 100%;
 		font-size: 18px;
 		padding: 0 0.75em;
 		line-height: 1.5em;
@@ -1042,39 +1323,9 @@ footer {
 	}
 
 	.unit-container-right ul{
+		width: 100%;
 		text-align: left;
 		padding: 0 0 2em 4em;
 	}
 	
-}
-
-
-
-/*Animations*/
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes btn-anim {
-  0%,100%  {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(0deg, red, black) border-box;}
-  5%  {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(18deg, red, black) border-box;}
-  10% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(36deg, red, black) border-box;}
-  15% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(64deg, red, black) border-box;}
-  20% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(72deg, red, black) border-box;}
-  25% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(90deg, red, black) border-box;}
-  30% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(108deg, red, black) border-box;}
-  35% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(126deg, red, black) border-box;}
-  40% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(144deg, red, black) border-box;}
-  45% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(162deg, red, black) border-box;}
-  50% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(180deg, red, black) border-box;}
-  55% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(198deg, red, black) border-box;}
-  60% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(216deg, red, black) border-box;}
-  65% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(234deg, red, black) border-box;}
-  70% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(252deg, red, black) border-box;}
-  75% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(270deg, red, black) border-box;}
-  80% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(288deg, red, black) border-box;}
-  85% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(306deg, red, black) border-box;}
-  90% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(324deg, red, black) border-box;}
-  95% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(342deg, red, black) border-box;}
 }

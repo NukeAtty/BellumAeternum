@@ -40,82 +40,120 @@
 <title>Bellum Aeternum | A Mod For Red Alert 2 Lovers</title>
 </head>
 
-<body id="panel">
-	<header class="header">
+<body>
+	<header>
 		<ul class="navigation-button">
-			<li><a href="https://ra2be.com/">Home</a></li>
-			<li><a href="factions.html">Factions</a></li>
-			<li><a href="#blog">Blog</a></li>
-			<li><a href="#about">About</a></li>
+			<li><a href="#overview">Overview</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#factions">Factions</a></li>
+			<li><a href="#blogs">Blogs</a></li>
 		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com"><img src="src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
 	</header>
 	<!--Main-->
-	<main class="lobby-page">
-		<div class="entrance">Red Alert 2 Yuri's Revenge Mod</div>
-		<h1>Bellum Æternum</h1>
-		<p>Bellum Aeternum is a <i><b>Red Alert 2: Yuri's Revenge</b></i> mod with much improvement of graphics and incresement of reality.</p>
-		<p>With ascended level of details, this mod takes you back all the way to 1960s, the era of atomic punk.</p>
-		<div class="cta-btn">
-			<a onclick="notice()">GET IT NOW</a>
-		</div>
-		<div class="slideshow-container">
-			<div class="slides fade">
-				<img src="src/soviet-invasion.webp" alt="Soviet Invasion">
-				<div class="slides-text">SOVIET INVASION</div>
+	<main>
+		<div id="overview" class="overview">
+			<h1>Bellum Æternum</h1>
+			<h2>Red Alert 2 Yuri's Revenge Mod</h2>
+			<p>Bellum Æternum is a <i><b>Red Alert 2: Yuri's Revenge</b></i> mod with much improvement of graphics and incresement of reality.</p>
+			<p>With ascended level of details, this mod takes you back all the way to 1960s, the era of atomic punk.</p>
+			<div class="cta-btn">
+				<a onclick="notice()">MISSION START</a>
 			</div>
-			<div class="slides fade">
-				<img src="src/dummy-632x568.webp" alt="Dummy Image">
-				<div class="slides-text">NO SIGNAL</div>
+			<div class="slideshow-container">
+				<div class="slides fade">
+					<img src="src/soviet-invasion.webp" alt="Soviet Invasion">
+					<div class="slides-text">SOVIET INVASION</div>
+				</div>
+				<div class="slides fade">
+					<img src="src/dummy-632x568.webp" alt="Dummy Image">
+					<div class="slides-text">NO SIGNAL</div>
+				</div>
+				<div class="slides fade">
+					<img src="src/dummy-632x568.webp" alt="Dummy Image">
+					<div class="slides-text">NO SIGNAL</div>
+				</div>
 			</div>
-			<div class="slides fade">
-				<img src="src/dummy-632x568.webp" alt="Dummy Image">
-				<div class="slides-text">NO SIGNAL</div>
+			<div class="slideshow-dots">
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span> 
 			</div>
 		</div>
-		<div class="slideshow-dots">
-			<span class="dot"></span> 
-			<span class="dot"></span> 
-			<span class="dot"></span> 
-		</div>
-
-		<div class="traits">
-			<h2>What Makes Bellum Aeternum Special?</h2>
-			<div class="traits-module">
-				<!--Trait One-->
-				<div class="traits-container">
+		<!--------------------------------------->
+		<!------------Features Module------------>
+		<!--------------------------------------->
+		<div id="features" class="features">
+			<h2>What Makes Bellum Æternum Special?</h2>
+			<div class="features-module">
+				<!--Feature One-->
+				<div class="feature-container">
 					<img src="src/redesigned-units.webp" alt="Redesigned Units" width="auto" height="auto"></img>
 					<h3>Redesigned Units</h3>
 					<p>Old units had been redesigned, now they are born with new mechanics and roll, brings more challenge to control and maximized joy.</p>
 				</div>
-				<!--Trait Two-->
-				<div class="traits-container">
+				<!--Feature Two-->
+				<div class="feature-container">
 					<img src="src/improved-graphics.webp" alt="Improved Graphics" width="auto" height="auto"></img>
 					<h3>Improved Graphics</h3>
 					<p>Projectiles, explosion effects, tank wrecks, vehicle parts debris, manueverable tracks, all had been upgraded to a higher level. </p>
 				</div>
-				<!--Trait Three-->
-				<div class="traits-container">
+				<!--Feature Three-->
+				<div class="feature-container">
 					<img src="src/dummy-320x320.webp" alt="Epic Storyline" width="auto" height="auto"></img>
 					<h3>Epic Storyline</h3>
-					<p>Storyline has been reworked and more epic warfare is waiting for you, join this great war and earn the glory and medal for yourself!</p>
+					<p>Storyline has been reworked and more epic warfare is waiting for you, join this great war and earn the glory for yourself!</p>
 				</div>
-				<!--Trait Four-->
-				<div class="traits-container">
+				<!--Feature Four-->
+				<div class="feature-container">
 					<img src="src/dummy-320x320.webp" alt="Rebalanced Skirmish" width="auto" height="auto"></img>
 					<h3>Rebalanced Skirmish</h3>
 					<p>Rush in numbers is never fun, so now it is time to think more about tactic and strategy, go and survive from a skill-based battle. </p>
 				</div>
 			</div>
 		</div>
-		<div class="factions-module">
+		<!--------------------------------------->
+		<!------------Factions Module------------>
+		<!--------------------------------------->
+		<div id="factions" class="factions">
 			<h2>Factions</h2>
-			<p>The war between Allied and Soviet has never end, instead, it's just a begin.</p>
-			<div class="faction-selector">
-				<a href="allied-units.html"><img src="src/allied-button.webp" alt="Allied Units"></img></a>
-				<a href="soviet-units.html"><img src="src/soviet-button.webp" alt="Soviet Units"></img></a>
+			<p>The conflict between Allied and Soviet has never end, instead, it's just a begin.</p>
+			<div class="zigzag-module">
+				<!--Soviet-->
+				<div class="zig-zag">
+					<div class="zig">
+						<img src="src/soviet-impression.webp" alt="Soviet" width="auto" height="auto"></img>
+					</div>
+					<div class="zag">
+						<h3>Soviet</h3>
+						<p>The Soviet Red Army is directly lead by the Soviet Union, cooperates with armed forces of other socialist states such as Eastern European Union and Confederation of South America. Note that the People's Republic of China was previously in the Soviet Red Treaty, but after the Soviet Union invaded its northern teritory, China quit the treaty and becomes neutral. The Soviet is mainly using tesla technology and nuclear technology, which profoundly improved the energy supply and weapon power.</p>
+						<a href="soviet.html">Learn More</a>
+					</div>
+				</div>
+				<!--Allied-->
+				<div class="zag-zig">
+					<div class="zig">
+						<img src="src/allied-impression.webp" alt="Allied" width="auto" height="auto"></img>
+					</div>
+					<div class="zag">
+						<h3>Allied</h3>
+						<p>The Allied Force is formed by multiple North American and Western European states including the USA, Canada, UK, France and West Germany. The Allied lost its territory by over engaging Korean War and vacuuming its European defense. Only the Great Britain survived from the Soviet invasion. Under the pressure of the Soviet tank flood, the Allied has developed stealth technology and prism technology to prevent destruction from the Soviet Blitzkrieg.</p>
+						<a href="allied.html">Learn More</a>
+					</div>
+				</div>
 			</div>
 		</div>
+		<!-------------------------------------->
+		<!------------Gallery Module------------>
+		<!-------------------------------------->
+		<div id="blogs" class="blogs">
+			<h2>Blogs</h2>
+
+		</div>
 	</main>
+	<!--Footer-->
 	<footer>
 		<div class="footer-container">
 			<div class="footer-left">
@@ -123,18 +161,17 @@
 			</div>
 			<div class="footer-right">
 				<div class="footer-column">
-				<p>Units</p>
+				<p>Factions</p>
 				<ul>
-					<li><a href="soviet-units.html">Allied Units List</a></li>
-					<li><a href="allied-units.html">Soviet Units List</a></li>
+					<li><a href="allied.html">Allied</a></li>
+					<li><a href="soviet.html">Soviet</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
 				<p>Blog</p>
 				<ul>
-					<li><a href="#Update">Update</a></li>
-					<li><a href="#Concept">Concept</a></li>
-					<li><a href="#Tutorial">Tutorial</a></li>
+					<li><a href="#concept">Concept</a></li>
+					<li><a href="#tutorial">Mod Tutorial</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
@@ -145,31 +182,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">RA2DIY Forum</a>
+			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
+		</div>
 	</footer>
-	<script>
-		let slideIndex = 0;
-		showSlides();
-
-		function showSlides() {
-			let i;
-			let slides = document.getElementsByClassName("slides");
-			let dots = document.getElementsByClassName("dot");
-			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";  
-			}
-			slideIndex++;
-			if (slideIndex > slides.length) {slideIndex = 1}    
-			for (i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(" active", "");
-			}
-			slides[slideIndex-1].style.display = "block";  
-			dots[slideIndex-1].className += " active";
-			setTimeout(showSlides, 2000); // Change image every 2 seconds
-		}
-
-		function notice() {
-			alert("Bellum Aeternum will release alpha version later this year, check back soon!");
-		}
-	</script>
+	<!--External Javascript-->
+	<script src="be-slide.js"></script>
 </body>
 </html>
