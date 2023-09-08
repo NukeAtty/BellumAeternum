@@ -77,7 +77,7 @@ header {
 .navigation-button a{
 	text-align: center;
 	font-size: 18px;
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
 	font-weight: 800;
 	color: darkred;
 	box-shadow: 0 0 5px white inset;
@@ -283,7 +283,7 @@ footer {
 }
 
 .overview h1 {
-	font-family: HarmonyOS Sans Black,sans-serif;
+	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
 	font-size: 72px;
 	font-weight: 900;
 	font-variant: small-caps;
@@ -384,7 +384,7 @@ footer {
 }
 
 .features h2{
-	font-family: HarmonyOS Sans, sans-serif;
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
 	font-size: 48px;
 	font-weight: 600;
 	text-align: center;
@@ -426,14 +426,20 @@ footer {
 	font-family: monospace;
 	font-size: 12px;
 	font-weight: 400;
-	color: #000000;
+	color: #ffffff;
 	text-align: left;
 	line-height: 1.25em;
 	margin: 24px;
 	padding: 6px;
+	background-color: #010101;
+	border: 1px solid #ffffff;
+	border-style: ridge;
+	box-shadow: 1px 0 0px #000000;
+	/*
 	border: 2px solid #fff;
 	border-style: inset;
 	border-radius: 10px;
+	*/
 }
 
 
