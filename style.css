@@ -1163,14 +1163,11 @@ footer {
 		font-family: monospace;
 		font-size: 12px;
 		font-weight: 400;
-		color: #000000;
+		color: #ffffff;
 		text-align: left;
 		line-height: 1.25em;
 		margin: 24px;
 		padding: 6px;
-		border: 2px solid #fff;
-		border-style: inset;
-		border-radius: 10px;
 	}
 
 	/*----------Factions----------*/
