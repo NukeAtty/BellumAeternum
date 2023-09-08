@@ -51,10 +51,9 @@ p {
 header {
 	width: 100%;
 	display: flex;
-	background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-width: 0 0 5px 0;
-	border-color: #c8c8c8;
-	border-style: inset;
+	/*background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
+	background:
+		linear-gradient(180deg, #383838 0%, #404040 20%, #484848 40%, #505050 55%, #595959 65%, #616161 70%, #696969 75%, #797979 80%, #898d85 85%, #a5a5a5 90%, #aeb2ba 95%, #505050 100%);
 }
 
 .responsive-navigation {
@@ -67,7 +66,7 @@ header {
 	align-items: center;
 	display: flex;
 	margin: auto;
-	padding: 18px 0;
+	padding: 18px 0 36px 0;
 }
 
 .navigation-button li {
@@ -350,18 +349,24 @@ footer {
 }
 
 .dot {
-  height: 16px;
-  width: 16px;
-  margin: 8px;
-  background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+	height: 24px;
+	width: 24px;
+	margin: 8px;
+  /*background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);*/
+	background:
+		radial-gradient(circle,#aaa 0, #666 50%, #666 100%) padding-box,
+		radial-gradient(circle, #cccccc 0%, #ffffff 10%, #ffffff 50%, #333333 100%) border-box;
+	border: 3px solid transparent;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
 }
 
 .active {
-  background: radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%);
-  box-shadow: 0 0 5px #ff3333;
+	background:
+		radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%) padding-box,
+		radial-gradient(circle, #cccccc 0%, #ffffff 10%, #ffffff 50%, #333333 100%) border-box;
+	text-shadow: 0 0 5px #ff3333 inset;
 }
 
 .fade {
