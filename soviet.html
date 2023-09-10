@@ -9,13 +9,13 @@
 </head>
 
 <body>
-	<header class="header">
+	<header>
 		<ul class="navigation-button">
 			<li><a href="https://www.ra2be.com/">Home</a></li>
 			<li><a href="#soviet-overview">Overview</a></li>
-			<li><a href="#soviet-buildings">Buildings</a></li>
+			<li><a href="#soviet-structure">Structure</a></li>
 			<li><a href="#soviet-defense">Defense</a></li>
-			<li><a href="#soviet-special">Special</a></li>
+			<li><a href="#soviet-tactic">Tactic</a></li>
 			<li><a href="#soviet-infantry">Infantry</a></li>
 			<li><a href="#soviet-vehicle">Vehicle</a></li>
 		</ul>
@@ -25,150 +25,208 @@
 	</header>
 	<main>
 		<div class="units">
-			<div class="faction-selector">
-				<a href="allied.html"><img src="src/allied-button.webp"></img></a>
-				<a href="soviet.html"><img src="src/soviet-button.webp"></img></a>
-			</div>
 			<h1>Soviet</h1>
-			<h2 class="soviet-vehicle">Soviet Vehicles</h2>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/soviet-mcv.webp" alt="soviet mcv" width="360" height="270"></img>
+			<!------------Soviet Overview------------>
+			<div class="soviet-overview" id="soviet-overview">
+				<h2>Overview</h2>
+				<p></p>
+				<!--===[Global Module] Faction Selector===-->
+				<div class="faction-selector">
+					<div class="faction-container">
+						<a href="allied.html"><img src="src/allied-button.webp" alt="Allied"></a>
+						<p>Allied</p>
+					</div>
+					<div class="faction-container">
+					<a href="soviet.html"><img src="src/soviet-button.webp" alt="Soviet"></a>
+					<p>Soviet</p>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/soviet-mcv-icon-en.webp" alt="soviet mcv icon"></img>
-					<h3>Soviet MCV</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
-					<ul>
-						<li>Main Armament: N/A</li>
-						<li>Ammunition: N/A</li>
-						<li>Alpha Damage: N/A</li>
-						<li>Reload Time: N/A</li>
-						<li>Cost: 4000</li>
-						<li>Special Purpose: Deploy into Soviet Construction Site</li>
-					</ul>
+				<!--======================================-->
+			</div>
+			<div class="soviet-structure" id="soviet-structure">
+				<h2>Soviet Structures</h2>
+				<div class="unit-container" id="soviet-construction-yard">
+					<div class="unit-container-left">
+						<img src="src/soviet-construction-yard.webp" alt="Soviet Construction Yard" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Soviet Construction Yard Icon" width="60" height="48"></img>
+						<h3>Soviet Construction Yard</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
+						<ul>
+							<li>Prerequisite: N/A</li>
+							<li>Power: 0</li>
+							<li>Cost: 4000 (Potential)</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Undeploy into <a href="#soviet-mcv">Soviet Mobile Construction Vehicle</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/war-miner.webp" alt="war miner" width="360" height="270"></img>
+			<!------------Soviet Vehicles------------>
+			<div id="soviet-vehicle" class="soviet-vehicle">
+				<h2>Soviet Vehicles</h2>
+				<div class="unit-container" id="soviet-mcv">
+					<div class="unit-container-left">
+						<img src="src/soviet-mcv.webp" alt="Soviet MCV" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/soviet-mcv-icon-en.webp" alt="soviet mcv icon"></img>
+						<h3>Soviet MCV</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
+						<ul>
+							<li>Main Armament: N/A</li>
+							<li>Ammunition: N/A</li>
+							<li>Alpha Damage: N/A</li>
+							<li>Reload Time: N/A</li>
+							<li>Cost: 4000</li>
+							<li>Trait: Deploy into <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/war-miner-icon-en.webp" alt="war miner icon"></img>
-					<h3>War Miner</h3>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/war-miner.webp" alt="war miner" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/war-miner-icon-en.webp" alt="war miner icon"></img>
+						<h3>War Miner</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
+						<ul>
+							<li>Main Armament: 45mm 20-K</li>
+							<li>Ammunition: Armor Piercing High Explosive</li>
+							<li>Alpha Damage: 40</li>
+							<li>Reload Time: 2.3s</li>
+							<li>Cost: 1400</li>
+							<li>Trait: Harvest Ore</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-right">
-					<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
-					<ul>
-						<li>Main Armament: 45mm 20-K</li>
-						<li>Ammunition: Armor Piercing High Explosive</li>
-						<li>Alpha Damage: 40</li>
-						<li>Reload Time: 2.3s</li>
-						<li>Cost: 1400</li>
-						<li>Special Purpose: Harvest Ore</li>
-					</ul>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/rhino-tank.webp" alt="rhino tank" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/rhino-tank-icon-en.webp" alt="rhino tank icon" width="60" height="48"></img>
+						<h3>Rhino Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
+						<ul>
+							<li>Main Armament: 100mm D-56TS</li>
+							<li>Ammunition: Armor Piercing Compound Rigid</li>
+							<li>Alpha Damage: 250</li>
+							<li>Reload Time: 6s</li>
+							<li>Cost: 1600</li>
+							<li>Trait: N/A</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img class="unit-image" src="src/rhino-tank.webp" alt="rhino tank" width="360" height="270"></img>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/flak-track.webp" alt="Flak Track" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/flak-track-icon-en.webp" alt="flak track icon" width="60" height="48"></img>
+						<h3>Flak Track</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
+						<ul>
+							<li>Main Armament: 23mm AZP-23P</li>
+							<li>Ammunition: High Explosive</li>
+							<li>Alpha Damage: 30</li>
+							<li>Reload Time: N/A</li>
+							<li>Cost: 1000</li>
+							<li>Trait: Loads 5 Passengers</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/rhino-tank-icon-en.webp" alt="rhino tank icon" width="60" height="48"></img>
-					<h3>Rhino Tank</h3>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/dummy-360x270.webp" alt="Tesla Tank" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Tesla Tank icon" width="60" height="48"></img>
+						<h3>Tesla Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The TT-50 Tesla Tank is one of the most succeed special purpose armored vehicle, with the support of tesla technology, it armed with a set of hyper-power tesla coil, can destroy the electronic system and weapon handling system of enemy vehicles while doing damage.</p>
+						<ul>
+							<li>Main Armament: KT-5 Tesla Coil</li>
+							<li>Ammunition: Electricity</li>
+							<li>Alpha Damage: 600</li>
+							<li>Reload Time: 12s</li>
+							<li>Cost: 2200</li>
+							<li>Trait: Charge Tesla Coil</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-right">
-					<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
-					<ul>
-						<li>Main Armament: 100mm D-56TS</li>
-						<li>Ammunition: Armor Piercing Compound Rigid</li>
-						<li>Alpha Damage: 250</li>
-						<li>Reload Time: 6s</li>
-						<li>Cost: 1600</li>
-						<li>Special Purpose: N/A</li>
-					</ul>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/mobile-radar.webp" alt="Mobile Radar" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/mobile-radar-icon-en.webp" alt="Mobile Radar Icon" width="60" height="48"></img>
+						<h3>Mobile Radar</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Since the Allied Force in Western Europe uses stealth technology to counter the Soviet blitzkriegs, the Ministry of Defense Industry quickly projects new detection methods. Armed with P-34 high power radar, the mobile radar becomes the eagle's eyes for the Soviet army.</p>
+						<ul>
+							<li>Main Armament: P-34 HPR</li>
+							<li>Ammunition: Radiowave</li>
+							<li>Alpha Damage: N/A</li>
+							<li>Reload Time: N/A</li>
+							<li>Cost: 2400</li>
+							<li>Trait: Detect Stealth Units</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img class="unit-image" src="src/flak-track.webp" alt="Flak Track" width="360" height="270"></img>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/katyusha-rocket-artillery.webp" alt="Katyusha Rocket Artillery" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/katyusha-icon-en.webp" alt="Katyusha Rocket Artillery Icon" width="60" height="48"></img>
+						<h3>Katyusha Rocket Artillery</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The BM-15 Katyusha Rocket Artillery has been modified from its predecessor. With six large high explosive rockets, the Katyusha can destroy enemy structure in distance. However, it is vulnerable in closed quarter combat.</p>
+						<ul>
+							<li>Main Armament: Katyusha Rocket Launcher</li>
+							<li>Ammunition: HE</li>
+							<li>Alpha Damage: 650</li>
+							<li>Reload Time: 15s</li>
+							<li>Cost: 1600</li>
+							<li>Trait: N/A</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/flak-track-icon-en.webp" alt="flak track icon" width="60" height="48"></img>
-					<h3>Flak Track</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
-					<ul>
-						<li>Main Armament: 23mm AZP-23P</li>
-						<li>Ammunition: High Explosive</li>
-						<li>Alpha Damage: 30</li>
-						<li>Reload Time: N/A</li>
-						<li>Cost: 1000</li>
-						<li>Special Purpose: Load 5 Passengers</li>
-					</ul>
-				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img class="unit-image" src="src/dummy-360x270.webp" alt="Tesla Tank" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/xxicon.webp" alt="tesla track icon" width="60" height="48"></img>
-					<h3>Tesla Tank</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>The TT-50 Tesla Tank is one of the most succeed special purpose armored vehicle, with the support of tesla technology, it armed with a set of hyper-power tesla coil, can destroy the electronic system and weapon handling system of enemy vehicles while doing damage.</p>
-					<ul>
-						<li>Main Armament: KT-5 Tesla Coil</li>
-						<li>Ammunition: Electricity</li>
-						<li>Alpha Damage: 600</li>
-						<li>Reload Time: 12s</li>
-						<li>Cost: 2200</li>
-						<li>Special Purpose: Charge Tesla Coil</li>
-					</ul>
-				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img class="unit-image" src="src/katyusha-rocket-artillery.webp" alt="Katyusha Rocket Artillery" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/katyusha-icon-en.webp" alt="Katyusha Rocket Artillery Icon" width="60" height="48"></img>
-					<h3>Katyusha Rocket Artillery</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>The BM-15 Katyusha Rocket Artillery has been modified from its predecessor. With six large high explosive rockets, the Katyusha can destroy enemy structure in distance. However, it is vulnerable in closed quarter combat.</p>
-					<ul>
-						<li>Main Armament: Katyusha Rocket Launcher</li>
-						<li>Ammunition: HE</li>
-						<li>Alpha Damage: 650</li>
-						<li>Reload Time: 15s</li>
-						<li>Cost: 1600</li>
-						<li>Special Purpose: N/A</li>
-					</ul>
-				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img class="unit-image" src="src/apocalypse-tank.webp" alt="Apocalypse Tank" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/apocalypse-tank-icon-en.webp" alt="apocalypse track icon" width="60" height="48"></img>
-					<h3>Apocalypse Tank</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>The KV-550 "Apocalypse" is the ultimate successor of the Kliment Voroshilov Series, one of the most famous Soviet heavy tank production line. The heavy armored Apocalypse armed with twin barrel high velocity cannon and rocket launcher, playing the role of the superior devastator. </p>
-					<ul>
-						<li>Main Armament: 122mm BL-9X</li>
-						<li>Ammunition: Armor Piercing</li>
-						<li>Alpha Damage: 390 * 2</li>
-						<li>Reload Time: 12s</li>
-						<li>Cost: 3500</li>
-						<li>Special Purpose: Can crush light vehicles</li>
-					</ul>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img class="unit-image" src="src/apocalypse-tank.webp" alt="Apocalypse Tank" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/apocalypse-tank-icon-en.webp" alt="apocalypse track icon" width="60" height="48"></img>
+						<h3>Apocalypse Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The KV-550 "Apocalypse" is the ultimate successor of the Kliment Voroshilov Series, one of the most famous Soviet heavy tank production line. The heavy armored Apocalypse armed with twin barrel high velocity cannon and rocket launcher, playing the role of the superior devastator. </p>
+						<ul>
+							<li>Main Armament: 122mm BL-9X</li>
+							<li>Ammunition: Armor Piercing</li>
+							<li>Alpha Damage: 390 * 2</li>
+							<li>Reload Time: 12s</li>
+							<li>Cost: 3500</li>
+							<li>Trait: Can crush light vehicles</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

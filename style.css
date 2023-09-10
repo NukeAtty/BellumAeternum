@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box; 
 	font-family: sans-serif;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -49,11 +50,13 @@ p {
 /*----------Header----------*/
 /*--------------------------*/
 header {
+	position:relative;
 	width: 100%;
 	display: flex;
 	/*background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
 	background:
 		linear-gradient(180deg, #383838 0%, #404040 20%, #484848 40%, #505050 55%, #595959 65%, #616161 70%, #696969 75%, #797979 80%, #898d85 85%, #a5a5a5 90%, #aeb2ba 95%, #505050 100%);
+	z-index: 10;
 }
 
 .responsive-navigation {
@@ -66,14 +69,25 @@ header {
 	align-items: center;
 	display: flex;
 	margin: auto;
-	padding: 18px 0 36px 0;
+	padding: 0 5vw;
+	width: 80%;
+	/*background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
+	border: 1px solid #898d85;
+	border-style: outset;*/
 }
 
 .navigation-button li {
+	display: block;
 	list-style: none;
-	margin: 0 0.1vw;
+	margin: auto;
+	background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
+	border: 1px solid #898d85;
+	border-style: outset;
+	padding: 1.5vw;
+	width: 25%;
 }
 
+/*
 .navigation-button a{
 	text-align: center;
 	font-size: 18px;
@@ -83,18 +97,47 @@ header {
 	box-shadow: 0 0 5px white inset;
 	padding: 0.5em;
 	background:
-		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
+		linear-gradient(0deg, #999, #ddd) padding-box,
 		linear-gradient(0deg, red, black) border-box;
 	border: 5px solid transparent;
 	border-radius: 16px;
-    text-decoration: none;
+  text-decoration: none;
 }
+
 
 .navigation-button a:hover{
 	color: yellow;
 	text-shadow: 0 0 5px gold;
 	box-shadow: 0 0 2px black inset;
 	animation: btn-anim 2s infinite;
+}
+
+*/
+
+.navigation-button a{
+	display: block;
+	margin: auto;
+	align-items: center;
+	text-align: center;
+	font-size: 18px;
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-weight: 800;
+	padding: 0.5em;
+	color: goldenrod;
+	border: 2px solid #000000;
+	border-style: ridge;
+	background: rgb(214,4,8);
+	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
+	box-shadow: 0 0 5px #000000 inset;
+  text-decoration: none;
+}
+
+.navigation-button a:hover{
+	color: lightgoldenrodyellow;
+	text-shadow: 0 0 5px gold;
+	background: rgb(255,174,0);
+	background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
+	box-shadow: 0 0 2px darkred inset;
 }
 
 /*------------------------*/
@@ -215,7 +258,7 @@ footer {
 .faction-selector {
 	display: flex;
 	margin: 24px auto;
-	width: 50%;
+	width: 25vw;
 	padding: 12px;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
@@ -223,14 +266,26 @@ footer {
 	box-shadow: 0 0 24px #000;
 }
 
-.faction-selector a {
-	float: left;
+.faction-container {
+	display: grid;
 	margin: auto;
+	width: 10vw;
 }
 
-.faction-selector img{
+.faction-container p {
+	color: #ffffff;
+	font-size: 16px;
+	font-family: monospace;
+	background-color: #000000;
+	border: 1px solid #ffffff;
+	border-style: ridge;
+	text-align: center;
+}
+
+.faction-container img{
+	margin: auto;
 	padding: 0px;
-	max-width: 256px;
+	max-width: 10vw;
 	border-radius: 32px;
 	border: 4px inset #000;
 	filter:  sepia(60%);
@@ -564,14 +619,22 @@ footer {
 /*-------------------------*/
 
 .units {
-	width: 75%;
+	width: 80%;
+	padding: 5vw;
 	margin: auto;
 }
 
 .units h1{
-	font-size: 48px;
-	font-family: HarmonyOS Sans Black, sans-serif;
+	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-size: 72px;
+	font-weight: 900;
+	font-variant: small-caps;
+	line-height: 0.5em;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	text-align: center;
+	text-shadow: 0 0 10px #000000;
 }
 
 .units h2{
@@ -639,7 +702,13 @@ footer {
 
 .unit-container-right li{
 	font-size: 14px;
+	font-weight: 400;
 	font-family: Arial;
+}
+
+.unit-container-right a{
+	color: #ffffff;
+	font-weight: 600;
 }
 
 /*--------------------!!!-------------------!!!--------------------*/
@@ -648,6 +717,11 @@ footer {
 
 /*----------Laptop----------*/
 @media only screen and (max-width: 1680px) {
+
+	/*----------Header----------*/
+	.navigation-button {
+		width: 100%;
+	}
 	/*----------Main----------*/
 	main {
 		display: block;
@@ -685,12 +759,25 @@ footer {
 	/*-------------------------*/
 
 	.units {
-		width: 80%;
+		width: 100%;
 	}
 }
 
 /*----------Tablet----------*/
 @media only screen and (max-width: 1280px) {
+	/*----------Header----------*/
+	.navigation-button {
+		width: 100%;
+	}
+
+	.navigation-button li{
+		width: 15%;
+	}
+
+	.navigation-button a {
+		font-size: 10px;
+	}
+
 	/*----------Main----------*/
 	main {
 		display: block;
@@ -699,11 +786,19 @@ footer {
 	
 	/*----------Public Module----------*/
 	.faction-selector {
-		width: 60%;
+		width: 50%;
 	}
 	
+	.faction-container {
+		width: 20vw;
+	}
+
+	.faction-container p {
+		width: 10em;
+		margin: auto;
+	}
 	.faction-selector img{
-		max-width: 196px;
+		max-width: 20vw;
 	}
 	
 	.features-module {
@@ -1103,12 +1198,21 @@ footer {
 		width: 100%;
 	}
 
-	.faction-selector a {
+	.faction-container {
+		width: 100vw;
+	}
+
+	.faction-container p {
+		width: 5em;
+		margin: auto;
+	}
+
+	.faction-container a {
 		float: left;
 		margin: auto;
 	}
 
-	.faction-selector img{
+	.faction-container img{
 		padding: 0;
 		max-width: 140px;
 		border-radius: 24px;

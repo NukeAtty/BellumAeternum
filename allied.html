@@ -9,13 +9,13 @@
 </head>
 
 <body>
-	<header class="header">
+	<header>
 		<ul class="navigation-button">
 			<li><a href="https://www.ra2be.com/">Home</a></li>
 			<li><a href="#allied-overview">Overview</a></li>
-			<li><a href="#allied-buildings">Buildings</a></li>
+			<li><a href="#allied-structure">Structure</a></li>
 			<li><a href="#allied-defense">Defense</a></li>
-			<li><a href="#allied-special">Special</a></li>
+			<li><a href="#allied-tactic">Tactic</a></li>
 			<li><a href="#allied-infantry">Infantry</a></li>
 			<li><a href="#allied-vehicle">Vehicle</a></li>
 		</ul>
@@ -25,150 +25,231 @@
 	</header>
 	<main>
 		<div class="units">
-			<div class="faction-selector">
-				<a href="allied.html"><img src="src/allied-button.webp"></img></a>
-				<a href="soviet.html"><img src="src/soviet-button.webp"></img></a>
-			</div>
 			<h1>Allied</h1>
-			<h2 id="allied-vehicle">Allied Vehicles</h2>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/allied-mcv.webp" alt="Allied MCV" width="360" height="270"></img>
+			<!------------Allied Overview------------>
+			<div class="allied-overview" id="allied-overview">
+				<h2>Overview</h2>
+				<p>Formed by the United States, the Allied force is the military group combined by North American countries and Western European countries.</p>
+				<!--===[Global Module] Faction Selector===-->
+				<div class="faction-selector">
+					<div class="faction-container">
+						<a href="allied.html"><img src="src/allied-button.webp" alt="Allied"></a>
+						<p>Allied</p>
+					</div>
+					<div class="faction-container">
+					<a href="soviet.html"><img src="src/soviet-button.webp" alt="Soviet"></a>
+					<p>Soviet</p>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/allied-mcv-icon-en.webp" alt="Allied MCV Icon" width="60" height="48"></img>
-					<h3>Allied MCV</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>Modified from the Piterbuilt heavy load liner, the Allied M57 Mobile Construction Vehicle is capable of off-road ride. It is faster than its compatitor, but less armor protection.</p>
-					<ul>
-						<li>Main Armament: N/A</li>
-						<li>Ammunition: N/A</li>
-						<li>Alpha Damage: N/A</li>
-						<li>Reload Time: N/A</li>
-						<li>Cost: 4000</li>
-						<li>Special Purpose: Deploy into Allied Construction Site</li>
-					</ul>
+				<!--======================================-->
+			</div>
+			<div class="allied-structure" id="allied-structure">
+				<h2>Allied Structures</h2>
+				<div class="unit-container" id="allied-construction-yard">
+					<div class="unit-container-left">
+						<img src="src/allied-construction-yard.webp" alt="Allied Construction Yard" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Allied Construction Yard Icon" width="60" height="48"></img>
+						<h3>Allied Construction Yard</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
+						<ul>
+							<li>Prerequisite: N/A</li>
+							<li>Power: 0</li>
+							<li>Cost: 4000 (Potential)</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Undeploy into <a href="#allied-mcv">Allied Mobile Construction Vehicle</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/stealth-miner.webp" alt="stealth miner" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/stealth-miner-icon-en.webp" alt="Stealth Miner Icon" width="60" height="48"></img>
-					<h3>Stealth Miner</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>The M2 Stealth Miner is the newly designed ore miner that armed with the brand new stealth technology. Modified from light tank chassis, the Stealth Miner has decent mobility to harvest valuable resources.</p>
-					<ul>
-						<li>Main Armament: N/A</li>
-						<li>Ammunition: N/A</li>
-						<li>Alpha Damage: N/A</li>
-						<li>Reload Time: N/A</li>
-						<li>Cost: 1400</li>
-						<li>Traits: Stealth</li>
-					</ul>
-				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/grizzly-tank.webp" alt="grizzly tank"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/grizzly-tank-icon-en.webp" alt="grizzly tank icon" width="60" height="48"></img>
-					<h3>Grizzly Tank</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
-					<ul>
-						<li>Main Armament: 90mm M5</li>
-						<li>Ammunition: Armor Piercing</li>
-						<li>Alpha Damage: 240</li>
-						<li>Reload Time: 6s</li>
-						<li>Cost: 1600</li>
-						<li>Special Purpose: N/A</li>
-					</ul>
+			<div class="allied-defense" id="allied-defense">
+				<h2>Allied Defense</h2>
+				<div class="unit-container" id="allied-construction-yard">
+					<div class="unit-container-left">
+						<img src="src/allied-wall.webp" alt="Allied Wall" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Allied Wall Icon" width="60" height="48"></img>
+						<h3>Allied Wall</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The wall can prevent ambushes of enemy infantries and light vehicles, it can efficiently block attacks from machinegun.</p>
+						<ul>
+							<li>Prerequisite: Allied Construction Yard</li>
+							<li>Power: 0</li>
+							<li>Cost: 50</li>
+							<li>Main Armament: N/A</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Block infantries and light vehicles</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/ifv.webp" alt="IFV" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/ifv-icon-en.webp" alt="IFV icon" width="60" height="48"></img>
-					<h3>IFV</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
-					<ul>
-						<li>Main Armament: MIM-21 Surface to Air Missile</li>
-						<li>Ammunition: High Explosive</li>
-						<li>Alpha Damage: 120 * 6</li>
-						<li>Reload Time: 12s</li>
-						<li>Cost: 1200</li>
-						<li>Special Purpose: Crew Changes Weapon</li>
-					</ul>
-				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/stealth-tank.webp" alt="Stealth Tank" width="360" height="270"></img>
-				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/xxicon.webp" alt="stealth tank icon" width="60" height="48"></img>
-					<h3>Stealth Tank</h3>
-				</div>
-				<div class="unit-container-right">
-					<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
-					<ul>
-						<li>Main Armament: 105mm Recoilless Rifle M45</li>
-						<li>Ammunition: High Explosive Anti Tank</li>
-						<li>Alpha Damage: 320 * 4</li>
-						<li>Reload Time: 22s</li>
-						<li>Cost: 1400</li>
-						<li>Special Purpose: Stealth when stand still</li>
-					</ul>
+			<div class="allied-tactic" id="allied-tactic">
+				<h2>Allied Tactics</h2>
+				<div class="unit-container" id="allied-paratrooper">
+					<div class="unit-container-left">
+						<img src="src/allied-paratrooper.webp" alt="Allied Paratrooper" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-paratrooper-icon.webp" alt="Allied Paratrooper Icon" width="60" height="48"></img>
+						<h3>Paratrooper</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Paratrooper is the basic reinforcement tactic on battlefield.</p>
+						<ul>
+							<li>Prerequisite: Allied Air Command HQ</li>
+							<li>Cost: 500</li>
+							<li>Cooldown: 120 Seconds</li>
+							<li>Trait: 4 Assaulters, 4 Guardians</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/prism-tank.webp" alt="Prism Tank" width="360" height="270"></img>
+			<div class="allied-vehicle" id="allied-vehicle">
+				<h2>Allied Vehicles</h2>
+				<div class="unit-container" id="allied-mcv">
+					<div class="unit-container-left">
+						<img src="src/allied-mcv.webp" alt="Allied MCV" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-mcv-icon-en.webp" alt="Allied MCV Icon" width="60" height="48"></img>
+						<h3>Allied MCV</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Modified from the Piterbuilt heavy load liner, the Allied M57 Mobile Construction Vehicle is capable of off-road ride. It is faster than its compatitor, but less armor protection.</p>
+						<ul>
+							<li>Main Armament: N/A</li>
+							<li>Ammunition: N/A</li>
+							<li>Alpha Damage: N/A</li>
+							<li>Reload Time: N/A</li>
+							<li>Cost: 4000</li>
+							<li>Trait: Deploy into <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/prism-tank-icon-en.webp" alt="prism tank icon" width="60" height="48"></img>
-					<h3>Prism Tank</h3>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/stealth-miner.webp" alt="stealth miner" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/stealth-miner-icon-en.webp" alt="Stealth Miner Icon" width="60" height="48"></img>
+						<h3>Stealth Miner</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The M2 Stealth Miner is the newly designed ore miner that armed with the brand new stealth technology. Modified from light tank chassis, the Stealth Miner has decent mobility to harvest valuable resources.</p>
+						<ul>
+							<li>Main Armament: N/A</li>
+							<li>Ammunition: N/A</li>
+							<li>Alpha Damage: N/A</li>
+							<li>Reload Time: N/A</li>
+							<li>Cost: 1400</li>
+							<li>Trait: Stealth</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-right">
-					<p>T67 PMC is the experimental siege weapon of the Allied Force. Armed with Prism System, it can easily destroy enemy buildings and defenses. </p>
-					<ul>
-						<li>Main Armament: Prism Caster</li>
-						<li>Ammunition: Photum Flux</li>
-						<li>Alpha Damage: 400</li>
-						<li>Reload Time: 5.5s</li>
-						<li>Cost: 2400</li>
-						<li>Special Purpose: Photum Diffusion</li>
-					</ul>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/grizzly-tank.webp" alt="grizzly tank"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/grizzly-tank-icon-en.webp" alt="grizzly tank icon" width="60" height="48"></img>
+						<h3>Grizzly Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
+						<ul>
+							<li>Main Armament: 90mm M5</li>
+							<li>Ammunition: Armor Piercing</li>
+							<li>Alpha Damage: 240</li>
+							<li>Reload Time: 6s</li>
+							<li>Cost: 1600</li>
+							<li>Special Purpose: N/A</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="unit-container">
-				<div class="unit-container-left">
-					<img src="src/battle-fortress.webp" alt="Battle Fortress" width="360" height="270"></img>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/ifv.webp" alt="IFV" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/ifv-icon-en.webp" alt="IFV icon" width="60" height="48"></img>
+						<h3>IFV</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
+						<ul>
+							<li>Main Armament: MIM-21 Surface to Air Missile</li>
+							<li>Ammunition: High Explosive</li>
+							<li>Alpha Damage: 120 * 6</li>
+							<li>Reload Time: 12s</li>
+							<li>Cost: 1200</li>
+							<li>Special Purpose: Crew Changes Weapon</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-mid">
-					<img class="unit-icon" src="src/battle-fortress-icon-en.webp" alt="Battle Fortress icon" width="60" height="48"></img>
-					<h3>Battle Fortress</h3>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/stealth-tank.webp" alt="Stealth Tank" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="stealth tank icon" width="60" height="48"></img>
+						<h3>Stealth Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
+						<ul>
+							<li>Main Armament: 105mm Recoilless Rifle M45</li>
+							<li>Ammunition: High Explosive Anti Tank</li>
+							<li>Alpha Damage: 320 * 4</li>
+							<li>Reload Time: 22s</li>
+							<li>Cost: 1400</li>
+							<li>Special Purpose: Stealth when stand still</li>
+						</ul>
+					</div>
 				</div>
-				<div class="unit-container-right">
-					<p>The T111 Battle Fortress is the ultimate weapon of the Allied Force, it armed with destructive 155mm cannon and can destroy most enemy in one shot. Because of its decent armor, it is tough enough to push all the way to enemy base, and this make T111 the best assault tank. </p>
-					<ul>
-						<li>Main Armament: 155mm T11</li>
-						<li>Ammunition: Armor Piercing</li>
-						<li>Alpha Damage: 750</li>
-						<li>Reload Time: 12s</li>
-						<li>Cost: 3500</li>
-						<li>Special Purpose: Can crush light vehicles</li>
-					</ul>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/prism-tank.webp" alt="Prism Tank" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/prism-tank-icon-en.webp" alt="prism tank icon" width="60" height="48"></img>
+						<h3>Prism Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>T67 PMC is the experimental siege weapon of the Allied Force. Armed with Prism System, it can easily destroy enemy buildings and defenses. </p>
+						<ul>
+							<li>Main Armament: Prism Caster</li>
+							<li>Ammunition: Photum Flux</li>
+							<li>Alpha Damage: 400</li>
+							<li>Reload Time: 5.5s</li>
+							<li>Cost: 2400</li>
+							<li>Special Purpose: Photum Diffusion</li>
+						</ul>
+					</div>
+				</div>
+				<div class="unit-container">
+					<div class="unit-container-left">
+						<img src="src/battle-fortress.webp" alt="Battle Fortress" width="360" height="270"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/battle-fortress-icon-en.webp" alt="Battle Fortress icon" width="60" height="48"></img>
+						<h3>Battle Fortress</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The T111 Battle Fortress is the ultimate weapon of the Allied Force, it armed with destructive 155mm cannon and can destroy most enemy in one shot. Because of its decent armor, it is tough enough to push all the way to enemy base, and this make T111 the best assault tank. </p>
+						<ul>
+							<li>Main Armament: 155mm T11</li>
+							<li>Ammunition: Armor Piercing</li>
+							<li>Alpha Damage: 750</li>
+							<li>Reload Time: 12s</li>
+							<li>Cost: 3500</li>
+							<li>Special Purpose: Can crush light vehicles</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
