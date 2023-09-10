@@ -2,6 +2,7 @@
 	box-sizing: border-box; 
 	font-family: sans-serif;
 	scroll-behavior: smooth;
+	user-select: none;
 }
 
 body {
@@ -231,7 +232,7 @@ footer {
 	margin: 1vw;
 	background: linear-gradient(-45deg, #000000 0, #666666 40%, #000000 60%, #666666 80%, #000000 100%);
 	border-radius: 12px;
-	border: 3px solid #000000;
+	border: 3px solid #333333;
 	display: flex;
 	flex-flow: row-reverse;
 }
@@ -498,7 +499,7 @@ footer {
 
 
 
-/*----------Factions----------*/
+/*----------Factions Module----------*/
 .factions {
 	margin: auto;
 	width: 60%;
@@ -613,9 +614,9 @@ footer {
 	text-align: center;
 }
 
-/*-------------------------*/
-/*----------Units----------*/
-/*-------------------------*/
+/*------------------------------*/
+/*----------Units Page----------*/
+/*------------------------------*/
 
 .units {
 	width: 80%;
@@ -710,11 +711,194 @@ footer {
 	font-weight: 600;
 }
 
+/*---------------------------------*/
+/*----------Download Page----------*/
+/*---------------------------------*/
+
+.download h1{
+	font-size: 24px;
+	text-align: center;
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	margin: 48px auto 0 auto;
+}
+
+.download h2{
+	font-size: 48px;
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	text-align: center;
+	margin: 0 auto 48px auto;
+}
+
+.progress {
+	margin: auto 20vw;
+	padding: 1vw;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.progress img{
+	display: block;
+	margin: auto;
+	border: 4px inset #cccccc;
+	border-radius: 48px;
+}
+
+.dev-gauge {
+	text-align: center;
+}
+
+.dev-gauge label{
+	color: #000000;
+	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-size: 24px;
+	line-height: 2em;
+}
+
+.dev-gauge progress {
+  -webkit-appearance: none;
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+::-webkit-progress-bar {
+	display: block;
+  background-color: #000000;
+  height: 1vw;
+}
+
+::-webkit-progress-value {
+  /*background-color: #cc0000;*/
+  background: linear-gradient(90deg, #330000 0, #660000 40%, #cc0000 80%, #ff0000);
+  box-shadow: 0 0 6px #ff6666;
+}
+
+::-webkit-progress-inner-element {
+  border: 2px solid #cccccc;
+  border-style: inset;
+  height: calc(1vw + 4px);
+
+}
+
+.engine-container {
+	display: flex;
+	width: 75%;
+	margin: auto;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.engine {
+	width: 80%;
+	margin: 10vw auto;
+}
+
+.engine-container img {
+	max-width: 50%;
+	aspect-ratio: 632 / 460;
+}
+
+.engine-container-right {
+	width: 50%;
+	display: grid;
+}
+
+.engine-container-right h3{
+	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-size: 60px;
+	color: #000000;
+	margin: 0.5em 0 0 0;
+	height: 1em;
+}
+
+.engine-container-right p{
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-size: 24px;
+	color: #000000;
+	margin: 0 2em 0 0;
+}
+
+.engine-container-right a{
+	width: 50%;
+	color: gold;
+	font-family: HarmonyOS Sans Black, sans-serif;
+	font-size: 24px;
+	font-weight: 600px;
+	text-decoration: none;
+	margin: auto;
+	text-align: center;
+	background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+	padding: 0.5em;
+	box-shadow: 0 0 12px #cc0000 inset;
+	border-radius: 12px;
+}
+
+.engine-container-right a:hover {
+	color: yellow;
+	text-shadow: 0 0 5px yellow;
+	background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+	box-shadow: 0 0 12px #330000 inset;
+}
+
+.guide {
+	margin: auto;
+	width: 60%;
+}
+
+.guide-container {
+	display: block;
+	margin: 1vw auto;
+	padding: 0;
+	width: 100%;
+	border-radius: 25px;
+	background-color: #dddddd10;
+	box-shadow: 0 0 12px #000;
+}
+
+.guide-container p{
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-size: 24px;
+	color: #ffffff;
+	margin: auto 5vw;
+	padding: 1vw;
+}
+
+/*----------------------------*/
+/*----------404 Page----------*/
+/*----------------------------*/
+.four-o-four {
+	display: block;
+	margin: auto;
+}
+
+.four-o-four img{
+	display: block;
+	max-width: 50%;
+	margin: 48px auto;
+	background-color: #000000;
+	border: 8px ridge #cccccc;
+	border-radius: 48px;
+}
+
+.four-o-four h1 {
+	text-align: center;
+}
+
+.four-o-four h2 {
+	text-align: center;
+}
+
 /*--------------------!!!-------------------!!!--------------------*/
 /*--------------------!!! <<< Responsive>>> !!!--------------------*/
 /*--------------------!!!-------------------!!!--------------------*/
 
-/*----------Laptop----------*/
+/*----------================================----------*/
+/*----------==========Small Laptop==========----------*/
+/*----------================================----------*/
 @media only screen and (max-width: 1680px) {
 
 	/*----------Header----------*/
@@ -762,7 +946,9 @@ footer {
 	}
 }
 
-/*----------Tablet----------*/
+/*----------===================================----------*/
+/*----------==========Tablet Horizontal==========----------*/
+/*----------===================================----------*/
 @media only screen and (max-width: 1280px) {
 	/*----------Header----------*/
 	.navigation-button {
@@ -770,7 +956,7 @@ footer {
 	}
 
 	.navigation-button li{
-		width: 15%;
+		width: 25%;
 	}
 
 	.navigation-button a {
@@ -808,6 +994,206 @@ footer {
 	.feature-container{
 		margin: 1vw auto;
 		width: 45%;
+	}
+
+	/*------------------------------*/
+	/*----------Lobby Page----------*/
+	/*------------------------------*/
+
+	/*----------Factions----------*/
+	.factions {
+		width: 90%;
+	}
+
+	.zigzag-module {
+		display: block;
+	}
+
+	.zig-zag {
+		display: block;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+	
+	.zag-zig {
+		display: block;
+		flex-direction: row;
+		background-color: #dddddd20;
+		border-radius: 24px;
+		box-shadow: 0 1px 10px #000;
+		margin: 6px;
+	}
+
+	.zig {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zig img {
+		display: block;
+		border-radius: 24px;
+		margin: auto;
+		width: 100%;
+		height: auto;
+	}
+
+	.zag {
+		display: grid;
+		width: 100%;
+		padding:3px;
+	}
+
+	.zag h3 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.5em;
+		margin: auto;
+		text-align: center;
+	}
+
+	.zag p {
+		margin: 12px 12px;
+		padding-right: 0;
+	}
+
+	.zag a {
+		width: 100%;
+		color: gold;
+		font-family: HarmonyOS Sans Black, sans-serif;
+		font-size: 24px;
+		font-weight: 600px;
+		text-decoration: none;
+		margin: auto;
+		text-align: center;
+		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
+		padding: 0.5em;
+		box-shadow: 0 0 12px #cc0000 inset;
+		border-radius: 12px;
+	}
+
+	.zag a:hover {
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
+		box-shadow: 0 0 12px #330000 inset;
+	}
+
+	/*------------------------------*/		
+	/*----------Units Page----------*/
+	/*------------------------------*/
+	.units {
+		width: 100%;
+	}
+	
+	.unit-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.unit-container-left {
+		width: 50%;
+	}
+	
+	.unit-container-mid {
+		display: grid;
+		width: 50%;
+	}
+	
+	.unit-container-mid h3{
+		width: 80%;
+	}
+	
+	.unit-container-right {
+		display: flex;
+		width: 100%;
+	}
+	
+	.unit-container-right p {
+		width: 60%;
+	}
+	
+	.unit-container-right ul{
+		width: 40%;
+	}
+
+	/*---------------------------------*/
+	/*----------Download Page----------*/
+	/*---------------------------------*/
+
+	.progress {
+		margin: auto;
+		width: 90%;
+	}
+	.progress img{
+		max-width: 100%;
+		height: auto;
+	}
+	.engine {
+		width: 90%;
+	}
+	.engine-container {
+		display: block;
+		margin: auto;
+		width: 100%;
+	}
+	.engine-container img{
+		display: block;
+		max-width: 100%;
+		margin: auto;
+	}
+	.engine-container-right {
+		width: 100%;
+	}
+	.engine-container-right h3{
+		margin: 0.5em auto;
+	}
+
+	.engine-container-right p{
+		margin: 0.5em 1em;
+	}
+	.guide {
+		width: 90%;
+	}
+
+	/*----------------------------*/
+	/*----------404 Page----------*/
+	/*----------------------------*/
+	.four-o-four {
+		display: block;
+		margin: auto;
+	}
+
+	.four-o-four img{
+		display: block;
+		max-width: 50%;
+		margin: 48px auto;
+		background-color: #000000;
+		border: 8px ridge #cccccc;
+		border-radius: 48px;
+	}
+
+	.four-o-four h1 {
+		text-align: center;
+	}
+
+	.four-o-four h2 {
+		text-align: center;
+	}
+
+}
+
+/*----------===================================----------*/
+/*----------==========Tablet Verticle==========----------*/
+/*----------===================================----------*/
+@media only screen and (max-width: 960px) {
+	/*----------Overview----------*/
+	.slideshow-container {
+		max-width: 100%;
+		margin: 10vw;
 	}
 	
 	/*----------Factions----------*/
@@ -891,150 +1277,65 @@ footer {
 		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
 		box-shadow: 0 0 12px #330000 inset;
 	}
-		
+	
+	
 	/*-------------------------*/
 	/*----------Units----------*/
 	/*-------------------------*/
 	.units {
 		width: 100%;
 	}
-	
+
 	.unit-container {
 		display: flex;
-		flex-wrap: wrap;
 	}
-	
-	.unit-container-left {
+
+	.unit-container-mid{
+		display: grid;
+	}
+
+	.unit-container-right{
+		display: flex;
+	}
+
+	.unit-container-right p{
 		width: 50%;
 	}
-	
-	.unit-container-mid {
-		display: flex;
-		width: 50%;
-	}
-	
-	.unit-container-mid h3{
-		width: 80%;
-	}
-	
-	.unit-container-right {
-		display: flex;
-		width: 100%;
-	}
-	
-	.unit-container-right p {
-		width: 60%;
-	}
-	
+
 	.unit-container-right ul{
-		width: 40%;
-	}
-}
-
-/*----------Tablet Verticle----------*/
-@media only screen and (max-width: 768px) {
-	/*----------Overview Module----------*/
-	.slideshow-container {
-		max-width: 100%;
-		margin: 10vw;
+		width: 50%;
 	}
 	
-	/*----------Factions Module----------*/
-	.factions {
-		width: 90%;
-	}
-
-	.zigzag-module {
+	/*----------------------------*/
+	/*----------404 Page----------*/
+	/*----------------------------*/
+	.four-o-four {
 		display: block;
-	}
-
-	.zig-zag {
-		display: block;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-	
-	.zag-zig {
-		display: block;
-		flex-direction: row;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-
-	.zig {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zig img {
-		display: block;
-		border-radius: 24px;
 		margin: auto;
-		width: 100%;
-		height: auto;
 	}
 
-	.zag {
-		display: grid;
-		width: 100%;
-		padding:3px;
+	.four-o-four img{
+		display: block;
+		max-width: 90%;
+		margin: 128px auto;
+		background-color: #000000;
+		border: 8px ridge #cccccc;
+		border-radius: 48px;
 	}
 
-	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
+	.four-o-four h1 {
 		text-align: center;
 	}
 
-	.zag p {
-		margin: 12px 12px;
-		padding-right: 0;
-	}
-
-	.zag a {
-		width: 100%;
-		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		margin: auto;
+	.four-o-four h2 {
 		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-		border-radius: 12px;
 	}
 
-	.zag a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
-	}
-	
-	
-	/*-------------------------*/
-	/*----------Units----------*/
-	/*-------------------------*/
-	.units {
-		width: 100%;
-	}
-
-	.unit-container {
-		display: block;	
-	
 }
 
-/*----------Phone----------*/
+/*----------=========================----------*/
+/*----------==========Phone==========----------*/
+/*----------=========================----------*/
 @media only screen and (max-width: 720px) {
 	header {
 	}
@@ -1370,11 +1671,11 @@ footer {
 	}
 	
 	/*----------Gallery Module----------*/
-	.gallery {
-		
+	.blog {
+		width: 90%;
 	}
 	
-	.gallery h2 {
+	.blog h2 {
 		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 32px;
 		font-weight: 600;
@@ -1383,6 +1684,7 @@ footer {
 
 	/*----------Units----------*/
 	.units {
+		padding: 0;
 		width: 90%;
 	}
 	
@@ -1411,7 +1713,7 @@ footer {
 	.unit-container-mid h3{
 		width: 60%;
 		text-align: center;
-		font-size: 24px;
+		font-size: 18px;
 	}
 
 	.unit-container-mid img{
@@ -1438,5 +1740,105 @@ footer {
 		text-align: left;
 		padding: 2em 10vw;
 	}
-	
+
+	/*----------------------------------*/
+	/*----------Download Page-----------*/
+	/*----------------------------------*/
+
+	.download h2{
+		font-size: 32px;
+	}
+
+	.progress {
+		width: 90%;
+		margin: auto;
+	}
+
+	.progress img{
+		max-width: 100%;
+		height: auto;
+	}
+
+	.dev-gauge {
+		width: 100%;
+		margin: 5vw auto;
+	}
+
+	.dev-gauge label{
+		line-height: 1.5em;
+	}
+
+	.engine {
+		width: 100%;
+	}
+
+	.engine-container {
+		display: block;
+		width: 90%;
+	}
+
+	.engine-container img{
+		max-width: 100%;
+	}
+
+	.engine-container-right {
+		display: grid;
+		width: 100%;
+	}
+
+	.engine-container-right h3{
+		margin: 2vw auto;
+	}
+
+	.engine-container-right p{
+		margin: auto;
+	}
+
+	.guide {
+		width: 90%;
+	}
+
+	.guide-container p{
+		font-size: 16px;
+	}
+
+	/*----------------------------*/
+	/*----------404 Page----------*/
+	/*----------------------------*/
+	.four-o-four {
+		display: block;
+		margin: auto;
+	}
+
+	.four-o-four img{
+		display: block;
+		max-width: 100%;
+		margin: 48px auto;
+		background-color: #000000;
+		border: 8px ridge #cccccc;
+		border-radius: 48px;
+	}
+
+	.four-o-four h1 {
+		text-align: center;
+	}
+
+	.four-o-four h2 {
+		text-align: center;
+	}
+
+}
+
+/*----------Super Slim Phone----------*/
+@media only screen and (max-width: 300px) {
+	.faction-selector {
+		width: 100%;
+		margin: 0;
+	}
+
+	.faction-container img{
+		display:block;
+		margin: auto;
+		max-width: 90%;
+	}
 }
