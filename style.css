@@ -660,7 +660,7 @@ footer {
 .unit-container-left img{
 	border-radius: 20px;
 	max-width: 360px;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 4 / 3 !important;
 }
 
 .unit-container-mid{
@@ -1688,7 +1688,9 @@ footer {
 		text-align: center;
 	}
 
-	/*----------Units----------*/
+	/*-------------------------------*/
+	/*----------Units Page-----------*/
+	/*-------------------------------*/
 	.units {
 		padding: 0;
 		width: 90%;
@@ -1708,7 +1710,7 @@ footer {
 	}
 
 	.unit-container-left img{
-		width: 100%;
+		max-width: 100%;
 	}
 
 	.unit-container-mid{
