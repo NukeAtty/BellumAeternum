@@ -767,7 +767,7 @@ footer {
 ::-webkit-progress-bar {
 	display: block;
   background-color: #000000;
-  height: 2vw;
+  height: 2lh;
 }
 
 ::-webkit-progress-value {
@@ -779,7 +779,7 @@ footer {
 ::-webkit-progress-inner-element {
   border: 2px solid #cccccc;
   border-style: inset;
-  height: calc(2vw + 4px);
+  height: calc(2lh + 4px);
 
 }
 
