@@ -686,6 +686,7 @@ footer {
 }
 
 .unit-container-right{
+	display: grid;
 	width: 57%;
 }
 
@@ -760,13 +761,13 @@ footer {
   -webkit-appearance: none;
   display: block;
   width: 50%;
-  margin: auto;
+  margin: 24px auto 48px auto;
 }
 
 ::-webkit-progress-bar {
 	display: block;
   background-color: #000000;
-  height: 1vw;
+  height: 2vw;
 }
 
 ::-webkit-progress-value {
@@ -778,7 +779,7 @@ footer {
 ::-webkit-progress-inner-element {
   border: 2px solid #cccccc;
   border-style: inset;
-  height: calc(1vw + 4px);
+  height: calc(2vw + 4px);
 
 }
 
@@ -943,6 +944,11 @@ footer {
 
 	.units {
 		width: 100%;
+		padding: 1vw;
+	}
+
+	.unit-container-right {
+		width: 50%;
 	}
 }
 
