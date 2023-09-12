@@ -258,80 +258,6 @@ footer {
 	filter: drop-shadow(0 0 2px #ff3300);
 }
 
-/*----------Public Module----------*/
-.faction-selector {
-	display: flex;
-	margin: 24px auto;
-	width: 25vw;
-	padding: 12px;
-	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
-	border: 4px outset #ddd;
-	box-shadow: 0 0 24px #000;
-}
-
-.faction-container {
-	display: grid;
-	margin: auto;
-	width: 10vw;
-}
-
-.faction-container p {
-	color: #ffffff;
-	font-size: 16px;
-	font-family: monospace;
-	background-color: #000000;
-	border: 1px solid #ffffff;
-	border-style: ridge;
-	text-align: center;
-}
-
-.faction-container img{
-	margin: auto;
-	padding: 0px;
-	max-width: 10vw;
-	border-radius: 32px;
-	border: 4px inset #000;
-	filter:  sepia(60%);
-	aspect-ratio: 1 / 1;
-}
-
-.faction-selector img:hover {
-	filter:  sepia(0%) drop-shadow(0 0 15px #ddd);
-}
-
-.cta-btn {
-	display: flex;
-	margin: auto;
-	width: 50%;
-	padding: 32px;
-}
-
-.cta-btn a{
-	display: block;
-	margin: auto;
-	text-align: center;
-	font-size: 24px;
-	font-family: sans-serif;
-	font-weight: 800;
-	color: darkred;
-	box-shadow: 0 0 5px white inset;
-	padding: 0.5em;
-	background:
-		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
-		linear-gradient(0deg, red, black) border-box;
-	border: 5px solid transparent;
-	border-radius: 20px;
-    text-decoration: none;
-}
-
-.cta-btn a:hover {
-	color: yellow;
-	text-shadow: 0 0 5px gold;
-	box-shadow: 0 0 2px black inset;
-	animation: btn-anim 2s infinite;
-}
-
 /*------------------------------*/
 /*----------Lobby Page----------*/
 /*------------------------------*/
@@ -906,6 +832,82 @@ footer {
 	text-align: center;
 }
 
+
+/*----------Public Module----------*/
+.faction-selector {
+	display: flex;
+	margin: 24px auto;
+	width: 25vw;
+	padding: 12px;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.faction-container {
+	display: grid;
+	margin: auto;
+	width: 10vw;
+}
+
+.faction-container p {
+	color: #ffffff;
+	font-size: 16px;
+	font-family: monospace;
+	background-color: #000000;
+	border: 1px solid #ffffff;
+	border-style: ridge;
+	text-align: center;
+	width: 75%;
+}
+
+.faction-container img{
+	margin: auto;
+	padding: 0px;
+	max-width: 10vw;
+	border-radius: 32px;
+	border: 4px inset #000;
+	filter:  sepia(60%);
+	aspect-ratio: 1 / 1;
+}
+
+.faction-selector img:hover {
+	filter:  sepia(0%) drop-shadow(0 0 15px #ddd);
+}
+
+.cta-btn {
+	display: flex;
+	margin: auto;
+	width: 50%;
+	padding: 32px;
+}
+
+.cta-btn a{
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	font-family: sans-serif;
+	font-weight: 800;
+	color: darkred;
+	box-shadow: 0 0 5px white inset;
+	padding: 0.5em;
+	background:
+		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
+		linear-gradient(0deg, red, black) border-box;
+	border: 5px solid transparent;
+	border-radius: 20px;
+    text-decoration: none;
+}
+
+.cta-btn a:hover {
+	color: yellow;
+	text-shadow: 0 0 5px gold;
+	box-shadow: 0 0 2px black inset;
+	animation: btn-anim 2s infinite;
+}
+
 /*--------------------!!!-------------------!!!--------------------*/
 /*--------------------!!! <<< Responsive>>> !!!--------------------*/
 /*--------------------!!!-------------------!!!--------------------*/
@@ -998,7 +1000,6 @@ footer {
 	}
 
 	.faction-container p {
-		width: 10em;
 		margin: auto;
 	}
 	.faction-selector img{
@@ -1522,7 +1523,6 @@ footer {
 	}
 
 	.faction-container p {
-		width: 5em;
 		margin: auto;
 	}
 
