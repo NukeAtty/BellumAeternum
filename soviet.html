@@ -64,9 +64,10 @@
 				</div>
 				<!--======================================-->
 			</div>
+			<!------------Soviet Structures------------>
 			<div class="soviet-structure" id="soviet-structure">
 				<h2>Soviet Structures</h2>
-				<!------------Soviet Construction Yard------------>
+				<!-------[Soviet Construction Yard]------->
 				<div class="unit-container" id="soviet-construction-yard">
 					<div class="unit-container-left">
 						<img src="src/soviet-construction-yard.webp" alt="Soviet Construction Yard" width="360" height="270" loading="lazy"></img>
@@ -86,8 +87,8 @@
 						</ul>
 					</div>
 				</div>
-				<!------------Soviet Tesla Reactor------------>
-				<div class="unit-container" id="soviet-construction-yard">
+				<!-------[Soviet Tesla Reactor]------->
+				<div class="unit-container" id="soviet-tesla-reactor">
 					<div class="unit-container-left">
 						<img src="src/soviet-tesla-reactor.webp" alt="Soviet Tesla Reactor" width="360" height="270" loading="lazy"></img>
 					</div>
@@ -98,11 +99,32 @@
 					<div class="unit-container-right">
 						<p>Due to the rapidly growing of the Soviet tesla technology, a tesla reactor has replaced the ramshackle classic power plant. It is a cheaper solution of battlefield power supply.</p>
 						<ul>
-							<li>Prerequisite: Soviet Construction Yard</li>
+							<li>Prerequisite: <a href="soviet-construction-yard">Soviet Construction Yard</a></li>
 							<li>Power: 150</li>
 							<li>Cost: 600</li>
 							<li>Special Tactics: N/A</li>
 							<li>Trait: Release EMP when destroyed</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-------[Soviet Ore Refinery]------->
+			<div class="unit-container" id="soviet-ore-refinery">
+					<div class="unit-container-left">
+						<img src="src/dummy-360x270.webp" alt="Soviet Ore Refinery" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Soviet Ore Refinery Icon" width="60" height="48"></img>
+						<h3>Soviet Ore Refinery</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Ore Refinery is one of the most important income of credits. The ore will turn into raw materials transfer into credits to train soldiers and produce weapons.</p>
+						<ul>
+							<li>Prerequisite: <a href="#soviet-construction-yard">Soviet Construction Yard</a>, <a href="#soviet-tesla-reactor">Soviet Tesla Reactor</a></li>
+							<li>Power: -50</li>
+							<li>Cost: 2000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Provides a free <a href="#war-miner">War Miner</a> upon buildup</li>
 						</ul>
 					</div>
 				</div>
@@ -130,7 +152,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="unit-container">
+				<div class="unit-container" id="war-miner">
 					<div class="unit-container-left">
 						<img src="src/war-miner.webp" alt="war miner" width="360" height="270" loading="lazy"></img>
 					</div>
