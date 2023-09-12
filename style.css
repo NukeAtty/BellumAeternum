@@ -1,3 +1,7 @@
+html {
+	scroll-padding-top: 100px;
+}
+
 * {
 	box-sizing: border-box; 
 	font-family: sans-serif;
@@ -51,7 +55,7 @@ p {
 /*----------Header----------*/
 /*--------------------------*/
 header {
-	position:relative;
+	position:fixed;
 	width: 100%;
 	display: flex;
 	/*background-image: linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
@@ -146,6 +150,7 @@ header {
 main {
 	display: block;
 	margin: auto;
+	padding: 5vw 0;
 }
 
 /*-------------------------*/
