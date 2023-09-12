@@ -112,7 +112,6 @@ header {
 	box-shadow: 0 0 2px black inset;
 	animation: btn-anim 2s infinite;
 }
-
 */
 
 .navigation-button a{
@@ -635,6 +634,15 @@ footer {
 	margin-bottom: 1em;
 	text-align: center;
 	text-shadow: 0 0 10px #000000;
+}
+
+.units p{
+	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.5em;
+	text-align: center;
+	margin: auto;
 }
 
 .units h2{
