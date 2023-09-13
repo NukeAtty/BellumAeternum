@@ -1,5 +1,5 @@
 html {
-	scroll-padding-top: 110px;
+	scroll-padding-top: 7vw;
 }
 
 * {
@@ -123,7 +123,7 @@ header {
 	margin: auto;
 	align-items: center;
 	text-align: center;
-	font-size: 18px;
+	font-size: 1.5vw;
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
 	font-weight: 800;
 	padding: 0.5em;
@@ -1357,6 +1357,9 @@ footer {
 /*----------==========Phone==========----------*/
 /*----------=========================----------*/
 @media only screen and (max-width: 720px) {
+	html{
+		scroll-padding-top: 2.5lh;
+	}
 	header {
 	}
 
@@ -1723,6 +1726,7 @@ footer {
 	}
 
 	.unit-container-left img{
+		max-width: 90vw;
 		width: 100%;
 		height: auto;
 	}
