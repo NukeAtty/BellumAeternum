@@ -649,7 +649,10 @@ footer {
 
 .unit-container-right a{
 	color: #ffffff;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 13px;
 	font-weight: 600;
+	text-decoration: underline;
 }
 
 /*---------------------------------*/
