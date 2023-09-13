@@ -567,7 +567,13 @@ footer {
 	text-shadow: 0 0 10px #000000;
 }
 
-.units p{
+.units h2{
+	font-size: 24px;
+	font-family: HarmonyOS Sans Black, sans-serif;
+	text-align: center;
+}
+
+.overview p{
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
 	font-size: 24px;
 	font-weight: 500;
@@ -576,11 +582,6 @@ footer {
 	margin: auto;
 }
 
-.units h2{
-	font-size: 24px;
-	font-family: HarmonyOS Sans Black, sans-serif;
-	text-align: center;
-}
 .unit-container {
 	display: flex;
 	margin: 10px auto;
@@ -990,32 +991,6 @@ footer {
 		margin: auto;
 	}
 	
-	/*----------Public Module----------*/
-	.faction-selector {
-		width: 50%;
-	}
-	
-	.faction-container {
-		width: 20vw;
-	}
-
-	.faction-container p {
-		margin: auto;
-	}
-	.faction-selector img{
-		max-width: 20vw;
-	}
-	
-	.features-module {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	
-	.feature-container{
-		margin: 1vw auto;
-		width: 45%;
-	}
-
 	/*------------------------------*/
 	/*----------Lobby Page----------*/
 	/*------------------------------*/
@@ -1203,6 +1178,33 @@ footer {
 	.four-o-four h2 {
 		text-align: center;
 	}
+
+	/*----------Public Module----------*/
+	.faction-selector {
+		width: 50%;
+	}
+	
+	.faction-container {
+		width: 20vw;
+	}
+
+	.faction-container p {
+		margin: auto;
+	}
+	.faction-selector img{
+		max-width: 20vw;
+	}
+	
+	.features-module {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.feature-container{
+		margin: 1vw auto;
+		width: 45%;
+	}
+
 
 }
 
@@ -1514,32 +1516,6 @@ footer {
 	  background: radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%);
 	  box-shadow: 0 0 5px #ff3333;
 	}
-	
-	/*----------Public Module----------*/
-	.faction-selector {
-		display: flex;
-		width: 100%;
-	}
-
-	.faction-container {
-		width: 100vw;
-	}
-
-	.faction-container p {
-		margin: auto;
-	}
-
-	.faction-container a {
-		float: left;
-		margin: auto;
-	}
-
-	.faction-container img{
-		padding: 0;
-		max-width: 140px;
-		border-radius: 24px;
-		filter:  sepia(60%);
-	}
 
 	/*----------Features Module----------*/
 	.features {
@@ -1711,6 +1687,15 @@ footer {
 		padding: 0;
 		width: 90%;
 	}
+
+	.overview p{
+		font-family: HarmonyOS Sans, SF Pro, sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.5em;
+		text-align: left;
+		margin: auto;
+	}
 	
 	.unit-container {
 		display: block;
@@ -1853,13 +1838,41 @@ footer {
 		text-align: center;
 	}
 
+	/*---------------------------------*/
+	/*----------Public Module----------*/
+	/*---------------------------------*/
+	.faction-selector {
+		display: flex;
+		width: 100%;
+	}
+
+	.faction-container {
+		width: 50%;
+	}
+
+	.faction-container p {
+		font-family: monospace;
+		margin: auto;
+		text-align: center;
+	}
+
+	.faction-container a {
+		margin: auto;
+	}
+
+	.faction-container img{
+		padding: 0;
+		max-width: 30vw;
+		border-radius: 24px;
+		filter:  sepia(60%);
+	}
 }
 
 /*----------Super Slim Phone----------*/
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 360px) {
 	.faction-selector {
 		width: 100%;
-		margin: 0;
+		margin: 10vw 0;
 	}
 
 	.faction-container img{
