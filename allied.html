@@ -132,6 +132,57 @@
 						</ul>
 					</div>
 				</div>
+				<!-------[Allied Barracks]------->
+				<div class="unit-container" id="allied-barracks">
+					<div class="unit-container-left">
+						<img src="src/allied-barracks.webp" alt="Allied Barracks" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Allied Barracks Icon" width="60" height="48"></img>
+						<h3>Allied Barracks</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Barracks is the unique facility to train soldiers and crews.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-power-plant">Allied Power Plant</a></li>
+								</ol>
+							</li>
+							<li>Power: -10</li>
+							<li>Cost: 1000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Train soldiers</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Weapon Factory]------->
+				<div class="unit-container" id="allied-weapon-factory">
+					<div class="unit-container-left">
+						<img src="src/allied-weapon-factory.webp" alt="Allied Weapon Factory" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Allied Weapon Factory Icon" width="60" height="48"></img>
+						<h3>Allied Weapon Factory</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Weapon Factory is the facility to produce vehicles and helicopters.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 2000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Produce vehicles and helicopters</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<!------------Allied Defense------------>
 			<div class="allied-defense" id="allied-defense">
@@ -245,10 +296,14 @@
 					<div class="unit-container-right">
 						<p>The M2 Stealth Miner is the newly designed ore miner that armed with the brand new stealth technology. Modified from light tank chassis, the Stealth Miner has decent mobility to harvest valuable resources.</p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
 							<li>Main Armament: N/A</li>
 							<li>Ammunition: N/A</li>
-							<li>Alpha Damage: N/A</li>
-							<li>Reload Time: N/A</li>
 							<li>Cost: 1400</li>
 							<li>Trait: Stealth</li>
 						</ul>
@@ -266,10 +321,13 @@
 					<div class="unit-container-right">
 						<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
 							<li>Main Armament: 90mm M5</li>
 							<li>Ammunition: Armor Piercing</li>
-							<li>Alpha Damage: 240</li>
-							<li>Reload Time: 6s</li>
 							<li>Cost: 1600</li>
 							<li>Trait: N/A</li>
 						</ul>
@@ -287,10 +345,13 @@
 					<div class="unit-container-right">
 						<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
 							<li>Main Armament: MIM-21 Surface to Air Missile</li>
 							<li>Ammunition: High Explosive</li>
-							<li>Alpha Damage: 120 * 6</li>
-							<li>Reload Time: 12s</li>
 							<li>Cost: 1200</li>
 							<li>Trait: Crew changes weapon</li>
 						</ul>
@@ -308,10 +369,14 @@
 					<div class="unit-container-right">
 						<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-air-force-command-hq">Allied Air Force Command HQ</a></li>
+								</ol>
+							</li>
 							<li>Main Armament: 105mm Recoilless Rifle M45</li>
 							<li>Ammunition: High Explosive Anti Tank</li>
-							<li>Alpha Damage: 320 * 4</li>
-							<li>Reload Time: 22s</li>
 							<li>Cost: 1400</li>
 							<li>Trait: Stealth</li>
 						</ul>
