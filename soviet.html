@@ -139,7 +139,7 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="src/soviet-barracks-icon-en.webp" alt="Soviet Barracks Icon" width="60" height="48"></img>
-						<h3>Soviet Ore Refinery</h3>
+						<h3>Soviet Barracks</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The Barracks is the unique facility to train soldiers. It is a very important structure and one of the key prerequisite for other structures.</p>
@@ -154,6 +154,58 @@
 							<li>Cost: 100</li>
 							<li>Special Tactics: N/A</li>
 							<li>Trait: Train infantries</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Soviet Weapon Factory]------->
+				<div class="unit-container" id="soviet-weapon-factory">
+					<div class="unit-container-left">
+						<img src="src/dummy-360x270.webp" alt="Soviet Weapon Factory" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/soviet-weapon-factory-icon-en.webp" alt="Soviet Weapon Factory Icon" width="60" height="48"></img>
+						<h3>Soviet Weapon Factory</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Barracks is the unique facility to train soldiers. It is a very important structure and one of the key prerequisite for other structures.</p>
+						<ul>
+							<li>Prerequisites: 
+								<ol>
+									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+									<li><a href="#soviet-tesla-reactor">Soviet Tesla Reactor</a></li>
+									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 100</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Produce Vehicles</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Soviet Air Force Command HQ]------->
+				<div class="unit-container" id="soviet-airforce-command">
+					<div class="unit-container-left">
+						<img src="src/soviet-airforce-command.webp" alt="Soviet Air Force Command HQ" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/soviet-airforce-command-icon-en.webp" alt="Soviet Air Force Command HQ Icon" width="60" height="48"></img>
+						<h3>Soviet Air Force Command HQ</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Air Force Command Headquarter is the facility to manage all operation of air forces. The air force command headquarter can produce and park aircrafts, also provides ammo supply and repairing services.</p>
+						<ul>
+							<li>Prerequisites: 
+								<ol>
+									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+									<li><a href="#soviet-tesla-reactor">Soviet Tesla Reactor</a></li>
+									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 100</li>
+							<li>Special Tactics: Paratrooper</li>
+							<li>Trait: Produce Aircraft</li>
 						</ul>
 					</div>
 				</div>
@@ -249,10 +301,9 @@
 					<div class="unit-container-right">
 						<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
 						<ul>
+							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
 							<li>Main Armament: N/A</li>
 							<li>Ammunition: N/A</li>
-							<li>Alpha Damage: N/A</li>
-							<li>Reload Time: N/A</li>
 							<li>Cost: 4000</li>
 							<li>Trait: Deploy into <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
 						</ul>
@@ -270,10 +321,9 @@
 					<div class="unit-container-right">
 						<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
 						<ul>
+							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
 							<li>Main Armament: 45mm 20-K</li>
 							<li>Ammunition: Armor Piercing High Explosive</li>
-							<li>Alpha Damage: 40</li>
-							<li>Reload Time: 2.3s</li>
 							<li>Cost: 1400</li>
 							<li>Trait: Harvest Ore</li>
 						</ul>
@@ -291,10 +341,9 @@
 					<div class="unit-container-right">
 						<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
 						<ul>
+							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
 							<li>Main Armament: 100mm D-56TS</li>
 							<li>Ammunition: Armor Piercing Compound Rigid</li>
-							<li>Alpha Damage: 250</li>
-							<li>Reload Time: 6s</li>
 							<li>Cost: 1600</li>
 							<li>Trait: N/A</li>
 						</ul>
@@ -312,10 +361,9 @@
 					<div class="unit-container-right">
 						<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
 						<ul>
+							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
 							<li>Main Armament: 23mm AZP-23P</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Alpha Damage: 30</li>
-							<li>Reload Time: N/A</li>
+							<li>Ammunition: Armor Piercing High Explosive</li>
 							<li>Cost: 1000</li>
 							<li>Trait: Loads 5 Passengers</li>
 						</ul>
@@ -333,10 +381,14 @@
 					<div class="unit-container-right">
 						<p>The TT-50 Tesla Tank is one of the most succeed special purpose armored vehicle, with the support of tesla technology, it armed with a set of hyper-power tesla coil, can destroy the electronic system and weapon handling system of enemy vehicles while doing damage.</p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+									<li>Soviet Radar</li>
+								</ol>
+							</li>
 							<li>Main Armament: KT-5 Tesla Coil</li>
 							<li>Ammunition: Electricity</li>
-							<li>Alpha Damage: 600</li>
-							<li>Reload Time: 12s</li>
 							<li>Cost: 2200</li>
 							<li>Trait: Charge Tesla Coil</li>
 						</ul>
@@ -354,6 +406,12 @@
 					<div class="unit-container-right">
 						<p>Since the Allied Force in Western Europe uses stealth technology to counter the Soviet blitzkriegs, the Ministry of Defense Industry quickly projects new detection methods. Armed with P-34 high power radar, the mobile radar becomes the eagle's eyes for the Soviet army.</p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+									<li>Soviet Radar</li>
+								</ol>
+							</li>
 							<li>Main Armament: P-34 HPR</li>
 							<li>Ammunition: Radiowave</li>
 							<li>Alpha Damage: N/A</li>
@@ -375,12 +433,16 @@
 					<div class="unit-container-right">
 						<p>The BM-15 Katyusha Rocket Artillery has been modified from its predecessor. With six large high explosive rockets, the Katyusha can destroy enemy structure in distance. However, it is vulnerable in closed quarter combat.</p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+									<li>Soviet Radar</li>
+								</ol>
+							</li>
 							<li>Main Armament: Katyusha Rocket Launcher</li>
-							<li>Ammunition: HE</li>
-							<li>Alpha Damage: 650</li>
-							<li>Reload Time: 15s</li>
+							<li>Ammunition: High Explosive</li>
 							<li>Cost: 1600</li>
-							<li>Trait: N/A</li>
+							<li>Trait: Long Distance</li>
 						</ul>
 					</div>
 				</div>
@@ -396,10 +458,14 @@
 					<div class="unit-container-right">
 						<p>The KV-550 "Apocalypse" is the ultimate successor of the Kliment Voroshilov Series, one of the most famous Soviet heavy tank production line. The heavy armored Apocalypse armed with twin barrel high velocity cannon and rocket launcher, playing the role of the superior devastator. </p>
 						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+									<li>Soviet Battle Lab</li>
+								</ol>
+							</li>
 							<li>Main Armament: 122mm BL-9X</li>
 							<li>Ammunition: Armor Piercing</li>
-							<li>Alpha Damage: 390 * 2</li>
-							<li>Reload Time: 12s</li>
 							<li>Cost: 3500</li>
 							<li>Trait: Can crush light vehicles</li>
 						</ul>
