@@ -726,6 +726,24 @@ footer {
 
 }
 
+.dev-gauge-specific {
+	text-align: center;
+}
+
+.dev-gauge-specific label{
+	color: #000000;
+	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-size: 20px;
+	line-height: 2em;
+}
+
+.dev-gauge-specific progress{
+  -webkit-appearance: none;
+  display: block;
+  width: 50%;
+  margin: 32px auto;
+}
+
 .engine-container {
 	display: flex;
 	width: 75%;
