@@ -1,3 +1,13 @@
+@font-face {
+	font-family: "Furore";
+	src: url("src/font/furore.otf");
+}
+
+@font-face {
+	font-family: "Typingrad";
+	src: url("src/font/typingrad.otf");
+}
+
 html {
 	scroll-padding-top: 7vw;
 }
@@ -124,7 +134,7 @@ header {
 	align-items: center;
 	text-align: center;
 	font-size: 1.5vw;
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: Furore, HarmonyOS Sans, SF Pro, sans-serif;
 	font-weight: 800;
 	padding: 0.5em;
 	color: goldenrod;
@@ -496,7 +506,7 @@ footer {
 }
 
 .zag h3 {
-	font-family: HarmonyOS Sans, sans-serif;
+	font-family: Typingrad, HarmonyOS Sans, sans-serif;
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 1.5em;
@@ -516,7 +526,7 @@ footer {
 .zag a {
 	width: 100%;
 	color: gold;
-	font-family: HarmonyOS Sans Black, sans-serif;
+	font-family: Furore, HarmonyOS Sans Black, sans-serif;
 	font-size: 24px;
 	font-weight: 600px;
 	text-decoration: none;
