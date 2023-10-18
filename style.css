@@ -914,7 +914,7 @@ footer {
 	margin: auto;
 	text-align: center;
 	font-size: 24px;
-	font-family: sans-serif;
+	font-family: Furore, sans-serif;
 	font-weight: 800;
 	color: darkred;
 	box-shadow: 0 0 5px white inset;
@@ -1658,7 +1658,7 @@ footer {
 	}
 
 	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
+		font-family: Typingrad, HarmonyOS Sans, sans-serif;
 		font-size: 36px;
 		font-weight: 600;
 		line-height: 1.5em;
@@ -1673,7 +1673,7 @@ footer {
 
 	.zag a {
 		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
+		font-family: Furore, HarmonyOS Sans Black, sans-serif;
 		font-size: 24px;
 		font-weight: 600px;
 		text-decoration: none;
