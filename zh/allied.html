@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="description" content="Allied specific information and units list of Bellum Aeternum, a Red Alert 2 Yuri's Revenge Mod with graphic improvement and reality increasement.">
+<link rel="icon" type="image/svg" href="/src/favicon.svg">
+<link rel="canonical" href="https://ra2be.com/allied.html" />
+<title>Allied | Bellum Æternum: A Mod for Red Alert 2 Lovers</title>
+<script type="application/ld+json">
+  {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Bellum Æternum",
+			"item": "https://ra2be.com"
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Allied",
+			"item": "https://ra2be.com/allied.html"
+		}
+	]
+  }
+</script>
+</head>
+
+<body>
+	<header>
+		<ul class="navigation-button">
+			<li><a href="https://www.ra2be.com">Home</a></li>
+			<li><a href="#allied-overview">Overview</a></li>
+			<li><a href="#allied-structure">Structure</a></li>
+			<li><a href="#allied-defense">Defense</a></li>
+			<li><a href="#allied-tactic">Tactic</a></li>
+			<li><a href="#allied-infantry">Infantry</a></li>
+			<li><a href="#allied-vehicle">Vehicle</a></li>
+		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com"><img src="src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
+	</header>
+	<main>
+		<div class="units">
+			<h1>Allied</h1>
+			<!------------Allied Overview------------>
+			<div class="overview" id="allied-overview">
+				<h2>Overview</h2>
+				<p>Formed by the United States of America, the Allied force is the military group that combined military forces from North American states and Western European states. The scientific teams of the Allied Force has mastered optics theories, and applied them into stealth technology and prism technology.</p>
+				<!--===[Global Module] Faction Selector===-->
+				<div class="faction-selector">
+					<div class="faction-container">
+						<a href="allied.html"><img src="src/allied-button.webp" alt="Allied" width="auto"  height="auto"></a>
+						<p>Allied</p>
+					</div>
+					<div class="faction-container">
+						<a href="soviet.html"><img src="src/soviet-button.webp" alt="Soviet" width="auto"  height="auto"></a>
+						<p>Soviet</p>
+					</div>
+				</div>
+				<!--======================================-->
+			</div>
+			<!------------Allied Structures------------>
+			<div class="allied-structure" id="allied-structure">
+				<h2>Allied Structures</h2>
+				<!-------[Allied Construction Yard]------->
+				<div class="unit-container" id="allied-construction-yard">
+					<div class="unit-container-left">
+						<img src="src/allied-construction-yard.webp" alt="Allied Construction Yard" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="Allied Construction Yard Icon" width="60" height="48"></img>
+						<h3>Allied Construction Yard</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
+						<ul>
+							<li>Prerequisite: N/A</li>
+							<li>Power: 0</li>
+							<li>Cost: 4000 (Potential)</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Undeploy into <a href="#allied-mcv">Allied Mobile Construction Vehicle</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Power Plant]------->
+				<div class="unit-container" id="allied-power-plant">
+					<div class="unit-container-left">
+						<img src="src/allied-power-plant.webp" alt="Allied Power Plant" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-power-plant-icon-en.webp" alt="Allied Power Plant Icon" width="60" height="48"></img>
+						<h3>Allied Power Plant</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Power Plant is the power supply on the battlefield. Since it is using the traditional method to generate power, the generator is filled with hydrogen gas, and it will cause explosion when destroyed.</p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+							<li>Power: 150</li>
+							<li>Cost: 800</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Explodes when destroyed</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Ore Refinery]------->
+				<div class="unit-container" id="allied-ore-refinery">
+					<div class="unit-container-left">
+						<img src="src/allied-ore-refinery.webp" alt="Allied Ore Refinery" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-ore-refinery-icon-en.webp" alt="Allied Ore Refinery Icon" width="60" height="48"></img>
+						<h3>Allied Ore Refinery</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Ore Refinery is for refining valuable resources from the ore, and transfer them into credits in order to train more soldiers and produce more weapons.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-power-plant">Allied Power Plant</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 2000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Provides a free <a href="#stealth-miner">Stealth Miner</a> upon buildup</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Barracks]------->
+				<div class="unit-container" id="allied-barracks">
+					<div class="unit-container-left">
+						<img src="src/allied-barracks.webp" alt="Allied Barracks" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-barracks-icon-en.webp" alt="Allied Barracks Icon" width="60" height="48"></img>
+						<h3>Allied Barracks</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Barracks is the unique facility to train soldiers and crews.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-power-plant">Allied Power Plant</a></li>
+								</ol>
+							</li>
+							<li>Power: -10</li>
+							<li>Cost: 1000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Train soldiers</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Weapon Factory]------->
+				<div class="unit-container" id="allied-weapon-factory">
+					<div class="unit-container-left">
+						<img src="src/allied-weapon-factory.webp" alt="Allied Weapon Factory" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-weapon-factory-icon-en.webp" alt="Allied Weapon Factory Icon" width="60" height="48"></img>
+						<h3>Allied Weapon Factory</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Weapon Factory is the facility to produce vehicles and helicopters.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 2000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Produce vehicles and helicopters</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Battle Command]------->
+				<div class="unit-container" id="allied-battle-command">
+					<div class="unit-container-left">
+						<img src="src/allied-battle-command.webp" alt="Allied Battle Command" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-battle-command-icon-en.webp" alt="Allied Battle Command Icon" width="60" height="48"></img>
+						<h3>Allied Battle Command</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Battle Command is the core facility to build advanced battle control, provides radar service and spy plane communications.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 1000</li>
+							<li>Special Tactics: Spy Plane</li>
+							<li>Trait: Provides Radar service</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Allied Battle Lab]------->
+				<div class="unit-container" id="allied-battle-lab">
+					<div class="unit-container-left">
+						<img src="src/allied-battle-lab.webp" alt="Allied Battle Lab" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-battle-lab-icon-en.webp" alt="Allied Battle Lab Icon" width="60" height="48"></img>
+						<h3>Allied Battle Lab</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Battle Lab is the advanced technology provider of the Allied Force, which unlocks various structures, defenses, soldier equipment and battle vehicles.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+								</ol>
+							</li>
+							<li>Power: -100</li>
+							<li>Cost: 3000</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Unlock higher tier technologies</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!------------Allied Defense------------>
+			<div class="allied-defense" id="allied-defense">
+				<h2>Allied Defense</h2>
+				<!-------[Allied Wall]------->
+				<div class="unit-container" id="allied-wall">
+					<div class="unit-container-left">
+						<img src="src/allied-wall.webp" alt="Allied Wall" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-wall-icon-en.webp" alt="Allied Wall Icon" width="60" height="48"></img>
+						<h3>Allied Wall</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The wall can prevent ambushes of enemy infantries and light vehicles, it can efficiently block attacks from machinegun.</p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+							<li>Power: 0</li>
+							<li>Cost: 50</li>
+							<li>Main Armament: N/A</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Obstruct infantries and light vehicles</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Pillbox]------->
+				<div class="unit-container" id="pillbox">
+					<div class="unit-container-left">
+						<img src="src/pillbox.webp" alt="Pillbox" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/pillbox-icon-en.webp" alt="Pillbox Icon" width="60" height="48"></img>
+						<h3>Pillbox</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Pillbox is an effective way to counter infantries and light-armored vehicles. </p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+								</ol>
+							</li>
+							<li>Power: 0</li>
+							<li>Cost: 500</li>
+							<li>Main Armament: M2HB</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Counter infantries</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Prism Tower]------->
+				<div class="unit-container" id="prism-tower">
+					<div class="unit-container-left">
+						<img src="src/prism-tower.webp" alt="Prism Tower" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/prism-tower-icon-en.webp" alt="Prism Tower Icon" width="60" height="48"></img>
+						<h3>Prism Tower</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Prism tower is the ultimate defense method of the Allied Forece. Prism tower has a superior mechanism, the Prism Forwarding, which means multiple prism towers weaves a supporting network, and reorganize beam from every tower into a hyperbeam.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+								</ol>
+							</li>
+							<li>Power: -50</li>
+							<li>Cost: 1500</li>
+							<li>Main Armament: Prism Reflector</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Prism forwarding</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Stealth Generator]------->
+				<div class="unit-container" id="stealth-generator">
+					<div class="unit-container-left">
+						<img src="src/stealth-generator.webp" alt="Stealth Generator" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/stealth-generator-icon-en.webp" alt="Stealth Generator Icon" width="60" height="48"></img>
+						<h3>Stealth Generator</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The stealth generator is one of the highest technology of the Allied Force. When power up, the stealth generator giveth stealth coating to units and structures within a range, and hide them from enemy attack.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+								</ol>
+							</li>
+							<li>Power: -100</li>
+							<li>Cost: 2000</li>
+							<li>Main Armament: N/A</li>
+							<li>Special Tactics: N/A</li>
+							<li>Trait: Generate stealth</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Satellite Telecom]------->
+				<div class="unit-container" id="satellite-telecom">
+					<div class="unit-container-left">
+						<img src="src/satellite-telecom.webp" alt="Satellite Telecom" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/satellite-telecom-icon-en.webp" alt="Satellite Telecom Icon" width="60" height="48"></img>
+						<h3>Satellite Telecom</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Satellite Telecom provides direct link to military satellite and navigate fortress bombers from homeland to launch air-strike. It is profoundly useful for battle with complex electromagnetic environment.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+								</ol>
+							</li>
+							<li>Power: -100</li>
+							<li>Cost: 2500</li>
+							<li>Main Armament: N/A</li>
+							<li>Special Tactics: Fortress Bombing</li>
+							<li>Trait: Provides radar service</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!------------Allied Tactics------------>
+			<div class="allied-tactic" id="allied-tactic">
+				<h2>Allied Tactics</h2>
+				<!-------[Allied Paratrooper]------->
+				<div class="unit-container" id="allied-paratrooper">
+					<div class="unit-container-left">
+						<img src="src/allied-paratrooper.webp" alt="Allied Paratrooper" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-paratrooper-icon-en.webp" alt="Allied Paratrooper Icon" width="60" height="48"></img>
+						<h3>Paratrooper</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Paratrooper is the basic reinforcement tactic on battlefield. Paradrop an infantry squad to anywhere on the battlefield and assault the enemy by surprise.</p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-air-force-commmand-hq">Allied Air Force Command HQ</a></li>
+							<li>Cost: 500</li>
+							<li>Cooldown: 120 Seconds</li>
+							<li>Trait: 4 Assaulters, 4 Guardians</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!------------Allied Infantries------------>
+			<div class="allied-infantry" id="allied-infantry">
+				<h2>Allied Infantries</h2>
+				<!-------[Assaulter]------->
+				<div class="unit-container" id="assaulter">
+					<div class="unit-container-left">
+						<img src="src/assaulter.webp" alt="Assaulter" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/assaulter-icon-en.webp" alt="Assaulter Icon" width="60" height="48"></img>
+						<h3>Assaulter</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Assaulter is the basic trooper of the Allied Force. The assaulters are armed with not only M16 Automatic Rifle, but also M1919 Machinegun which provides stronger fire power. Be aware that only deployed assaulters can use the machinegun.</p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-barracks">Allied Barracks</a></li>
+							<li>Main Armament: M16 Automatic Rifle</li>
+							<li>Cost: 200</li>
+							<li>Traits:
+								<ol>
+									<li>Occupy structures</li>
+									<li>Drive neutral vehicles</li>
+								</ol>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Guardian]------->
+				<div class="unit-container" id="guardian">
+					<div class="unit-container-left">
+						<img src="src/guardian.webp" alt="Guardian" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/guardian-icon-en.webp" alt="Guardian Icon" width="60" height="48"></img>
+						<h3>Guardian</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied Guardians are heavily armed trooper of the army. They have armed with M16 automatic rifle and anti-tank rocket launcher, when deployed, they are able to use the anti-tank rocket launcher.</p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-barracks">Allied Barracks</a></li>
+							<li>Main Armament: M16 Automatic Rifle</li>
+							<li>Cost: 400</li>
+							<li>Traits:
+								<ol>
+									<li>Occupy structures</li>
+									<li>Uncrushable when deployed</li>
+								</ol>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Engineer]------->
+				<div class="unit-container" id="allied-engineer">
+					<div class="unit-container-left">
+						<img src="src/dummy-360x270.webp" alt="Allied Engineer" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-engineer-icon-en.webp" alt="Allied Engineer Icon" width="60" height="48"></img>
+						<h3>Engineer</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Engineer is one of the most important role on the battlefield, either repair a building for allies, or capture a building from enemies. Of course, engineers works with knowledge, not force, so they need to be well protected.</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: Toolbox</li>
+							<li>Cost: 500</li>
+							<li>Traits:
+								<ol>
+									<li>Repair structures and bridges</li>
+									<li>Capture buildings</li>
+								</ol>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Sniper]------->
+				<div class="unit-container" id="sniper">
+					<div class="unit-container-left">
+						<img src="src/sniper.webp" alt="Sniper" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/sniper-icon-en.webp" alt="Sniper Icon" width="60" height="48"></img>
+						<h3>Sniper</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The Allied force</p>
+						<ul>
+							<li>Prerequisite:
+								<ol>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: M40A5</li>
+							<li>Cost: 800</li>
+							<li>Traits: Attack infantries inside buildings</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Commando]------->
+				<div class="unit-container" id="commando">
+					<div class="unit-container-left">
+						<img src="src/commando.webp" alt="Commando" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/commando-icon-en.webp" alt="Commando Icon" width="60" height="48"></img>
+						<h3>Commando</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Regroup from Navy SEAL, the Allied commandos are armed with new submachine gun and C4 explosive, conducting special warfare that creating break-through point on the battlefield.</p>
+						<ul>
+							<li>Prerequisite: 
+								<ol>
+									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: MP5 Submachinegun</li>
+							<li>Cost: 1000</li>
+							<li>Traits: Swim</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!------------Allied Vehicles------------>
+			<div class="allied-vehicle" id="allied-vehicle">
+				<h2>Allied Vehicles</h2>
+				<!-------[Allied MCV]------->
+				<div class="unit-container" id="allied-mcv">
+					<div class="unit-container-left">
+						<img src="src/allied-mcv.webp" alt="Allied MCV" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/allied-mcv-icon-en.webp" alt="Allied MCV Icon" width="60" height="48"></img>
+						<h3>Allied MCV</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>Modified from the Piterbuilt heavy load liner, the Allied M57 Mobile Construction Vehicle is capable of off-road ride. It is faster than its compatitor, but less armor protection.</p>
+						<ul>
+							<li>Prerequisites: 
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li>Allied Service Depot</li>
+								</ol>
+							</li>
+							<li>Main Armament: N/A</li>
+							<li>Ammunition: N/A</li>
+							<li>Cost: 4000</li>
+							<li>Trait: Deploy into <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Stealth Miner]------->
+				<div class="unit-container" id="stealth-miner">
+					<div class="unit-container-left">
+						<img src="src/stealth-miner.webp" alt="stealth miner" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/stealth-miner-icon-en.webp" alt="Stealth Miner Icon" width="60" height="48"></img>
+						<h3>Stealth Miner</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The HV41 Stealth Miner is the newly designed ore miner that armed with the brand new stealth technology. Modified from light tank chassis, the Stealth Miner has decent mobility to harvest valuable resources.</p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: N/A</li>
+							<li>Ammunition: N/A</li>
+							<li>Cost: 1400</li>
+							<li>Trait: Stealth</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Grizzly Tank]------->
+				<div class="unit-container" id="grizzly-tank">
+					<div class="unit-container-left">
+						<img src="src/grizzly-tank.webp" alt="grizzly tank" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/grizzly-tank-icon-en.webp" alt="grizzly tank icon" width="60" height="48"></img>
+						<h3>Grizzly Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
+						<ul>
+							<li>Prerequisite: <a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+							<li>Main Armament: 90mm M5</li>
+							<li>Ammunition: Armor Piercing</li>
+							<li>Cost: 1600</li>
+							<li>Trait: N/A</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[IFV]------->
+				<div class="unit-container" id="ifv">
+					<div class="unit-container-left">
+						<img src="src/ifv.webp" alt="IFV" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/ifv-icon-en.webp" alt="IFV icon" width="60" height="48"></img>
+						<h3>I.F.V.</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: MIM-21 Surface to Air Missile</li>
+							<li>Ammunition: High Explosive</li>
+							<li>Cost: 1200</li>
+							<li>Trait: Crew changes weapon</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Stealth Tank]------->
+				<div class="unit-container" id="stealth-tank">
+					<div class="unit-container-left">
+						<img src="src/stealth-tank.webp" alt="Stealth Tank" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/xxicon.webp" alt="stealth tank icon" width="60" height="48"></img>
+						<h3>Stealth Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: 105mm Recoilless Rifle M45</li>
+							<li>Ammunition: High Explosive Anti Tank</li>
+							<li>Cost: 1400</li>
+							<li>Trait: Stealth</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Dawnhawk Transport]------->
+				<div class="unit-container" id="dawnhawk-transport">
+					<div class="unit-container-left">
+						<img src="src/dawnhawk-transport.webp" alt="Dawnhawk-transport" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/dawnhawk-transport-icon-en.webp" alt="Dawnhawk Transport" width="60" height="48"></img>
+						<h3>Dawnhawk Transport</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The UH-0 Dawnhawk is one of the most successful transport helicopter for the Allied Force. It has a large cabin that infantries can shoot from inside. Also, it possesses a radar set that can detect stealth units in the sky.</p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+								</ol>
+							</li>
+							<li>Main Armament: none</li>
+							<li>Ammunition: N/A</li>
+							<li>Cost: 1500</li>
+							<li>Trait: 
+								<ul>
+									<li>Crew combat</li>
+									<li>Detect stealth</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Prism Tank]------->
+				<div class="unit-container" id="prism-tank">
+					<div class="unit-container-left">
+						<img src="src/prism-tank.webp" alt="Prism Tank" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/prism-tank-icon-en.webp" alt="prism tank icon" width="60" height="48"></img>
+						<h3>Prism Tank</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>T67 PMC is the experimental siege weapon of the Allied Force. Armed with Prism System, it can easily destroy enemy buildings and defenses. </p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li>Allied Battle Lab</li>
+								</ol>
+							</li>
+							<li>Main Armament: Prism Caster</li>
+							<li>Ammunition: Photum Flux</li>
+							<li>Cost: 2400</li>
+							<li>Trait: Photum diffusion</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Battle Fortress]------->
+				<div class="unit-container" id="battle-fortress">
+					<div class="unit-container-left">
+						<img src="src/battle-fortress.webp" alt="Battle Fortress" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="src/battle-fortress-icon-en.webp" alt="Battle Fortress icon" width="60" height="48"></img>
+						<h3>Battle Fortress</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>The T111 Battle Fortress is the ultimate weapon of the Allied Force, it armed with destructive 155mm cannon and can destroy most enemy in one shot. Because of its decent armor, it is tough enough to push all the way to enemy base, and this make T111 the best assault tank. </p>
+						<ul>
+							<li>Prerequisites:
+								<ol>
+									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li>Allied Battle Lab</li>
+								</ol>
+							</li>
+							<li>Main Armament: 155mm T11</li>
+							<li>Ammunition: Armor Piercing</li>
+							<li>Cost: 3500</li>
+							<li>Trait: Crush light vehicles</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<a href="https://www.ra2be.com"><img src="src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>Factions</p>
+				<ul>
+					<li><a href="allied.html">Allied</a></li>
+					<li><a href="soviet.html">Soviet</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>Blog</p>
+				<ul>
+					<li><a href="#Update">Concept</a></li>
+					<li><a href="#Tutorial">Tutorial</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>About</p>
+				<ul>
+					<li><a href="#Contact">Contact</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">RA2DIY Forum</a>
+			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
+		</div>
+	</footer>
+</body>
+</html>
