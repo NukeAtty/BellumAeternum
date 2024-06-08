@@ -50,24 +50,24 @@
 			<h1>盟军</h1>
 			<!------------Allied Overview------------>
 			<div class="overview" id="allied-overview">
-				<h2>Overview</h2>
-				<p>Formed by the United States of America, the Allied force is the military group that combined military forces from North American states and Western European states. The scientific teams of the Allied Force has mastered optics theories, and applied them into stealth technology and prism technology.</p>
+				<h2>阵营</h2>
+				<p>由美国和西欧国家主导建立的联盟，拥有强大的空军和高精度武器。盟军在光学领域拥有强大的技术积累，落地了隐形发生器、光学棱镜聚能炮等多项技术。</p>
 				<!--===[Global Module] Faction Selector===-->
 				<div class="faction-selector">
 					<div class="faction-container">
 						<a href="allied.html"><img src="../src/allied-button.webp" alt="Allied" width="auto"  height="auto"></a>
-						<p>Allied</p>
+						<p>盟军</p>
 					</div>
 					<div class="faction-container">
 						<a href="soviet.html"><img src="../src/soviet-button.webp" alt="Soviet" width="auto"  height="auto"></a>
-						<p>Soviet</p>
+						<p>苏联</p>
 					</div>
 				</div>
 				<!--======================================-->
 			</div>
 			<!------------Allied Structures------------>
 			<div class="allied-structure" id="allied-structure">
-				<h2>Allied Structures</h2>
+				<h2>盟军建筑</h2>
 				<!-------[Allied Construction Yard]------->
 				<div class="unit-container" id="allied-construction-yard">
 					<div class="unit-container-left">
@@ -75,16 +75,16 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/xxicon.webp" alt="Allied Construction Yard Icon" width="60" height="48"></img>
-						<h3>Allied Construction Yard</h3>
+						<h3>盟军建造场</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
+						<p>建造场是所有前线建设的基础。建造场不可以直接被建造，而是由机动基地车直接展开部署而得。</p>
 						<ul>
-							<li>Prerequisite: N/A</li>
-							<li>Power: 0</li>
-							<li>Cost: 4000 (Potential)</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Undeploy into <a href="#allied-mcv">Allied Mobile Construction Vehicle</a></li>
+							<li>建造前提：无</li>
+							<li>能耗： 0</li>
+							<li>费用：4000（基地车）</li>
+							<li>战术：无</li>
+							<li>特性：部署收起为<a href="#allied-mcv">盟军机动基地车</a></li>
 						</ul>
 					</div>
 				</div>
@@ -95,16 +95,16 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-power-plant-icon-ch.webp" alt="Allied Power Plant Icon" width="60" height="48"></img>
-						<h3>Allied Power Plant</h3>
+						<h3>盟军发电厂</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Power Plant is the power supply on the battlefield. Since it is using the traditional method to generate power, the generator is filled with hydrogen gas, and it will cause explosion when destroyed.</p>
+						<p>发电厂是战场中基础的电力供应设备，没有电力，前线的武器生产和防御设施将会停摆。盟军发电厂是传统火力发电厂的代表，其发电机组内部充满氢气，因此在被摧毁时会引发剧烈的氢气爆炸。</p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-construction-yard">Allied Construction Yard</a></li>
-							<li>Power: 150</li>
-							<li>Cost: 800</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Explodes when destroyed</li>
+							<li>建造前提：<a href="#allied-construction-yard">盟军建造场</a></li>
+							<li>能耗：+150</li>
+							<li>费用：800</li>
+							<li>战术：无</li>
+							<li>特性：摧毁后引发氢气爆炸</li>
 						</ul>
 					</div>
 				</div>
@@ -115,21 +115,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-ore-refinery-icon-ch.webp" alt="Allied Ore Refinery Icon" width="60" height="48"></img>
-						<h3>Allied Ore Refinery</h3>
+						<h3>盟军矿石精炼厂</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Ore Refinery is for refining valuable resources from the ore, and transfer them into credits in order to train more soldiers and produce more weapons.</p>
+						<p>矿石精炼厂可以将战场上宝贵的矿石精炼为资源，用于生产建筑和武器，以及换取经济资源。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-power-plant">Allied Power Plant</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-power-plant">盟军发电厂</a></li>
 								</ol>
 							</li>
-							<li>Power: -50</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Provides a free <a href="#stealth-miner">Stealth Miner</a> upon buildup</li>
+							<li>能耗：-50</li>
+							<li>费用：2000</li>
+							<li>战术：无</li>
+							<li>特性：建造时提供一辆<a href="#stealth-miner">隐形采矿车</a></li>
 						</ul>
 					</div>
 				</div>
@@ -140,21 +140,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-barracks-icon-ch.webp" alt="Allied Barracks Icon" width="60" height="48"></img>
-						<h3>Allied Barracks</h3>
+						<h3>盟军兵营</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Barracks is the unique facility to train soldiers and crews.</p>
+						<p>兵营是前线的基础训练设施，可以训练步兵。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-power-plant">Allied Power Plant</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-power-plant">盟军发电厂</a></li>
 								</ol>
 							</li>
-							<li>Power: -10</li>
-							<li>Cost: 1000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Train soldiers</li>
+							<li>能耗：-10</li>
+							<li>费用：1000</li>
+							<li>战术：无</li>
+							<li>特性：训练步兵</li>
 						</ul>
 					</div>
 				</div>
@@ -165,22 +165,22 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-weapon-factory-icon-ch.webp" alt="Allied Weapon Factory Icon" width="60" height="48"></img>
-						<h3>Allied Weapon Factory</h3>
+						<h3>盟军武器工厂</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Weapon Factory is the facility to produce vehicles and helicopters.</p>
+						<p>武器工厂是前线的基础生产设施，可以制造装甲车辆以及直升机。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
 								</ol>
 							</li>
-							<li>Power: -50</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Produce vehicles and helicopters</li>
+							<li>能耗：-50</li>
+							<li>费用：2000</li>
+							<li>战术：无</li>
+							<li>特性：生产载具。</li>
 						</ul>
 					</div>
 				</div>
@@ -191,21 +191,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-battle-command-icon-ch.webp" alt="Allied Battle Command Icon" width="60" height="48"></img>
-						<h3>Allied Battle Command</h3>
+						<h3>盟军作战控制中心</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Battle Command is the core facility to build advanced battle control, provides radar service and spy plane communications.</p>
+						<p>作战控制中心是前线的必要指挥设施，其搭载了一整套通讯设备和雷达装置，可以提供雷达并且呼叫来自本土的侦察机。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
 								</ol>
 							</li>
-							<li>Power: -50</li>
-							<li>Cost: 1000</li>
-							<li>Special Tactics: Spy Plane</li>
-							<li>Trait: Provides Radar service</li>
+							<li>能耗：-50</li>
+							<li>费用：1000</li>
+							<li>战术：侦察机</li>
+							<li>特性：提供雷达</li>
 						</ul>
 					</div>
 				</div>
@@ -216,29 +216,29 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-battle-lab-icon-ch.webp" alt="Allied Battle Lab Icon" width="60" height="48"></img>
-						<h3>Allied Battle Lab</h3>
+						<h3>盟军作战实验室</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied Battle Lab is the advanced technology provider of the Allied Force, which unlocks various structures, defenses, soldier equipment and battle vehicles.</p>
+						<p>盟军作战实验室可以为战场前线提供更高的科技，解锁新的建筑、防御和武器。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Power: -100</li>
-							<li>Cost: 3000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Unlock higher tier technologies</li>
+							<li>能耗：-100</li>
+							<li>费用：3000</li>
+							<li>战术：无</li>
+							<li>特性：解锁高等级科技</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!------------Allied Defense------------>
 			<div class="allied-defense" id="allied-defense">
-				<h2>Allied Defense</h2>
+				<h2>盟军防御</h2>
 				<!-------[Allied Wall]------->
 				<div class="unit-container" id="allied-wall">
 					<div class="unit-container-left">
@@ -246,17 +246,17 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-wall-icon-ch.webp" alt="Allied Wall Icon" width="60" height="48"></img>
-						<h3>Allied Wall</h3>
+						<h3>围墙</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The wall can prevent ambushes of enemy infantries and light vehicles, it can efficiently block attacks from machinegun.</p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-construction-yard">Allied Construction Yard</a></li>
-							<li>Power: 0</li>
-							<li>Cost: 50</li>
-							<li>Main Armament: N/A</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Obstruct infantries and light vehicles</li>
+							<li>建造前提：<a href="#allied-construction-yard">盟军建造场</a></li>
+							<li>能耗：0</li>
+							<li>费用：50</li>
+							<li>主武器：无</li>
+							<li>战术：无</li>
+							<li>特性：阻挡步兵和地面载具</li>
 						</ul>
 					</div>
 				</div>
@@ -267,22 +267,22 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/pillbox-icon-ch.webp" alt="Pillbox Icon" width="60" height="48"></img>
-						<h3>Pillbox</h3>
+						<h3>机枪碉堡</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Pillbox is an effective way to counter infantries and light-armored vehicles. </p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
 								</ol>
 							</li>
-							<li>Power: 0</li>
-							<li>Cost: 500</li>
-							<li>Main Armament: M2HB</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Counter infantries</li>
+							<li>能耗：0</li>
+							<li>费用：500</li>
+							<li>主武器：M2重机枪</li>
+							<li>战术：无</li>
+							<li>特性：反步兵</li>
 						</ul>
 					</div>
 				</div>
@@ -293,23 +293,23 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/prism-tower-icon-ch.webp" alt="Prism Tower Icon" width="60" height="48"></img>
-						<h3>Prism Tower</h3>
+						<h3>光棱塔</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Prism tower is the ultimate defense method of the Allied Forece. Prism tower has a superior mechanism, the Prism Forwarding, which means multiple prism towers weaves a supporting network, and reorganize beam from every tower into a hyperbeam.</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Power: -50</li>
-							<li>Cost: 1500</li>
-							<li>Main Armament: Prism Reflector</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Prism forwarding</li>
+							<li>能耗： -50</li>
+							<li>费用：1500</li>
+							<li>主武器：光学棱镜组</li>
+							<li>战术：无</li>
+							<li>特性：光子增幅</li>
 						</ul>
 					</div>
 				</div>
@@ -320,23 +320,23 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/stealth-generator-icon-ch.webp" alt="Stealth Generator Icon" width="60" height="48"></img>
-						<h3>Stealth Generator</h3>
+						<h3>隐形发生器</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The stealth generator is one of the highest technology of the Allied Force. When power up, the stealth generator giveth stealth coating to units and structures within a range, and hide them from enemy attack.</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
-									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
+									<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
 								</ol>
 							</li>
-							<li>Power: -100</li>
-							<li>Cost: 2000</li>
-							<li>Main Armament: N/A</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Generate stealth</li>
+							<li>能耗：-100</li>
+							<li>费用：2000</li>
+							<li>主武器：无</li>
+							<li>战术：无</li>
+							<li>特性：提供范围隐形</li>
 						</ul>
 					</div>
 				</div>
@@ -347,30 +347,30 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/satellite-telecom-icon-ch.webp" alt="Satellite Telecom Icon" width="60" height="48"></img>
-						<h3>Satellite Telecom</h3>
+						<h3>卫星通讯器</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Satellite Telecom provides direct link to military satellite and navigate fortress bombers from homeland to launch air-strike. It is profoundly useful for battle with complex electromagnetic environment.</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-construction-yard">Allied Construction Yard</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
-									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
+									<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
 								</ol>
 							</li>
-							<li>Power: -100</li>
-							<li>Cost: 2500</li>
-							<li>Main Armament: N/A</li>
-							<li>Special Tactics: Fortress Bombing</li>
-							<li>Trait: Provides radar service</li>
+							<li>能耗：-100</li>
+							<li>费用：2500</li>
+							<li>主武器：无</li>
+							<li>战术：堡垒轰炸</li>
+							<li>特性：提供雷达</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!------------Allied Tactics------------>
 			<div class="allied-tactic" id="allied-tactic">
-				<h2>Allied Tactics</h2>
+				<h2>盟军战术</h2>
 				<!-------[Allied Paratrooper]------->
 				<div class="unit-container" id="allied-paratrooper">
 					<div class="unit-container-left">
@@ -378,22 +378,22 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-paratrooper-icon-ch.webp" alt="Allied Paratrooper Icon" width="60" height="48"></img>
-						<h3>Paratrooper</h3>
+						<h3>空降步兵</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Paratrooper is the basic reinforcement tactic on battlefield. Paradrop an infantry squad to anywhere on the battlefield and assault the enemy by surprise.</p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-air-force-commmand-hq">Allied Air Force Command HQ</a></li>
-							<li>Cost: 500</li>
-							<li>Cooldown: 120 Seconds</li>
-							<li>Trait: 4 Assaulters, 4 Guardians</li>
+							<li>建造前提：<a href="#allied-air-force-commmand-hq">盟军空指部</a></li>
+							<li>费用：500</li>
+							<li>加载时间：120秒</li>
+							<li>特性：4名<a href="#assaulter">突击兵</a>, 4名<a href="#guardian">重装兵</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!------------Allied Infantries------------>
 			<div class="allied-infantry" id="allied-infantry">
-				<h2>Allied Infantries</h2>
+				<h2>盟军步兵</h2>
 				<!-------[Assaulter]------->
 				<div class="unit-container" id="assaulter">
 					<div class="unit-container-left">
@@ -401,18 +401,18 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/assaulter-icon-ch.webp" alt="Assaulter Icon" width="60" height="48"></img>
-						<h3>Assaulter</h3>
+						<h3>突击兵</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The Allied Assaulter is the basic trooper of the Allied Force. The assaulters are armed with not only M16 Automatic Rifle, but also M1919 Machinegun which provides stronger fire power. Be aware that only deployed assaulters can use the machinegun.</p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-barracks">Allied Barracks</a></li>
-							<li>Main Armament: M16 Automatic Rifle</li>
-							<li>Cost: 200</li>
-							<li>Traits:
+							<li>训练前提：<a href="#allied-barracks">盟军兵营</a></li>
+							<li>主武器：M16自动步枪</li>
+							<li>费用：200</li>
+							<li>特性：
 								<ol>
-									<li>Occupy structures</li>
-									<li>Drive neutral vehicles</li>
+									<li>进驻建筑</li>
+									<li>驾驶载具</li>
 								</ol>
 							</li>
 						</ul>
@@ -430,13 +430,13 @@
 					<div class="unit-container-right">
 						<p>The Allied Guardians are heavily armed trooper of the army. They have armed with M16 automatic rifle and anti-tank rocket launcher, when deployed, they are able to use the anti-tank rocket launcher.</p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-barracks">Allied Barracks</a></li>
-							<li>Main Armament: M16 Automatic Rifle</li>
-							<li>Cost: 400</li>
-							<li>Traits:
+							<li>训练前提：<a href="#allied-barracks">盟军兵营</a></li>
+							<li>主武器：M16 Automatic Rifle</li>
+							<li>费用：400</li>
+							<li>特性：
 								<ol>
-									<li>Occupy structures</li>
-									<li>Uncrushable when deployed</li>
+									<li>进驻建筑</li>
+									<li>部署后无法碾压</li>
 								</ol>
 							</li>
 						</ul>
@@ -449,23 +449,23 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-engineer-icon-ch.webp" alt="Allied Engineer Icon" width="60" height="48"></img>
-						<h3>Engineer</h3>
+						<h3>工程师</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Engineer is one of the most important role on the battlefield, either repair a building for allies, or capture a building from enemies. Of course, engineers works with knowledge, not force, so they need to be well protected.</p>
 						<ul>
-							<li>Prerequisite:
+							<li>训练前提：
 								<ol>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: Toolbox</li>
-							<li>Cost: 500</li>
-							<li>Traits:
+							<li>主武器：工具箱</li>
+							<li>费用：500</li>
+							<li>特性：
 								<ol>
-									<li>Repair structures and bridges</li>
-									<li>Capture buildings</li>
+									<li>维修己方建筑和桥梁</li>
+									<li>占领建筑</li>
 								</ol>
 							</li>
 						</ul>
@@ -478,20 +478,25 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/sniper-icon-ch.webp" alt="Sniper Icon" width="60" height="48"></img>
-						<h3>Sniper</h3>
+						<h3>狙击兵</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The Allied force</p>
+						<p>狙击兵可以精准命中步兵的弱点进行远程射击。同时，狙击兵可以将轻型载具中的驾驶员射杀后使其停滞并由己方步兵驾驶。更甚，狙击兵可以通过窗户对建筑中进驻的步兵进行清除。</p>
 						<ul>
-							<li>Prerequisite:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: M40A5</li>
-							<li>Cost: 800</li>
-							<li>Traits: Attack infantries inside buildings</li>
+							<li>主武器：M40A5</li>
+							<li>费用：1000</li>
+							<li>特性：
+								<ol>
+									<li>射杀轻型载具驾驶员</li>
+									<li>射杀进驻建筑的步兵</li>
+								</ol>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -502,27 +507,27 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/commando-icon-ch.webp" alt="Commando Icon" width="60" height="48"></img>
-						<h3>Commando</h3>
+						<h3>突击兵</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>Regroup from Navy SEAL, the Allied commandos are armed with new submachine gun and C4 explosive, conducting special warfare that creating break-through point on the battlefield.</p>
+						<p>突击兵主要由海军的海豹突击队组成，擅长两栖作战和渗透破坏任务。</p>
 						<ul>
-							<li>Prerequisite: 
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-barracks">Allied Barracks</a></li>
-									<li><a href="#allied-battle-lab">Allied Battle Lab</a></li>
+									<li><a href="#allied-barracks">盟军兵营</a></li>
+									<li><a href="#allied-battle-lab">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: MP5 Submachinegun</li>
-							<li>Cost: 1000</li>
-							<li>Traits: Swim</li>
+							<li>主武器：MP5微型冲锋枪</li>
+							<li>费用：1000</li>
+							<li>特性：渡水</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!------------Allied Vehicles------------>
 			<div class="allied-vehicle" id="allied-vehicle">
-				<h2>Allied Vehicles</h2>
+				<h2>盟军载具</h2>
 				<!-------[Allied MCV]------->
 				<div class="unit-container" id="allied-mcv">
 					<div class="unit-container-left">
@@ -530,21 +535,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/allied-mcv-icon-ch.webp" alt="Allied MCV Icon" width="60" height="48"></img>
-						<h3>Allied MCV</h3>
+						<h3>盟军机动基地车</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>Modified from the Piterbuilt heavy load liner, the Allied M57 Mobile Construction Vehicle is capable of off-road ride. It is faster than its compatitor, but less armor protection.</p>
 						<ul>
-							<li>Prerequisites: 
+							<li>建造前提： 
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-									<li>Allied Service Depot</li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
+									<li>盟军维修厂</li>
 								</ol>
 							</li>
-							<li>Main Armament: N/A</li>
-							<li>Ammunition: N/A</li>
-							<li>Cost: 4000</li>
-							<li>Trait: Deploy into <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+							<li>主武器：无</li>
+							<li>弹种：无</li>
+							<li>费用：4000</li>
+							<li>特性：部署展开为<a href="#allied-construction-yard">盟军建造场</a></li>
 						</ul>
 					</div>
 				</div>
@@ -555,21 +560,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/stealth-miner-icon-ch.webp" alt="Stealth Miner Icon" width="60" height="48"></img>
-						<h3>Stealth Miner</h3>
+						<h3>隐形采矿车</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The HV41 Stealth Miner is the newly designed ore miner that armed with the brand new stealth technology. Modified from light tank chassis, the Stealth Miner has decent mobility to harvest valuable resources.</p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-ore-refinery">Allied Ore Refinery</a></li>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: N/A</li>
-							<li>Ammunition: N/A</li>
-							<li>Cost: 1400</li>
-							<li>Trait: Stealth</li>
+							<li>主武器：无</li>
+							<li>弹种：无</li>
+							<li>费用：1400</li>
+							<li>特性：可以隐形</li>
 						</ul>
 					</div>
 				</div>
@@ -585,11 +590,11 @@
 					<div class="unit-container-right">
 						<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
 						<ul>
-							<li>Prerequisite: <a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-							<li>Main Armament: 90mm M5</li>
-							<li>Ammunition: Armor Piercing</li>
-							<li>Cost: 1600</li>
-							<li>Trait: N/A</li>
+							<li>建造前提：<a href="#allied-weapon-factory">盟军武器工厂</a></li>
+							<li>主武器：90mm M5</li>
+							<li>弹种：Armor Piercing</li>
+							<li>费用：1600</li>
+							<li>特性：初始载具</li>
 						</ul>
 					</div>
 				</div>
@@ -600,20 +605,20 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/ifv-icon-ch.webp" alt="IFV icon" width="60" height="48"></img>
-						<h3>I.F.V.</h3>
+						<h3>多功能步兵车</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: MIM-21 Surface to Air Missile</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Cost: 1200</li>
-							<li>Trait: Crew changes weapon</li>
+							<li>主武器：MIM-21地空导弹</li>
+							<li>弹种：高爆弹</li>
+							<li>费用：1200</li>
+							<li>特性：跟随乘员切换炮塔</li>
 						</ul>
 					</div>
 				</div>
@@ -624,21 +629,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/xxicon.webp" alt="stealth tank icon" width="60" height="48"></img>
-						<h3>Stealth Tank</h3>
+						<h3>隐形坦克</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: 105mm Recoilless Rifle M45</li>
-							<li>Ammunition: High Explosive Anti Tank</li>
-							<li>Cost: 1400</li>
-							<li>Trait: Stealth</li>
+							<li>主武器：105毫米M45无后坐力炮</li>
+							<li>弹种：破甲弹</li>
+							<li>费用：1400</li>
+							<li>特性：隐形</li>
 						</ul>
 					</div>
 				</div>
@@ -649,24 +654,24 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/dawnhawk-transport-icon-ch.webp" alt="Dawnhawk Transport" width="60" height="48"></img>
-						<h3>Dawnhawk Transport</h3>
+						<h3>晓鹰直升机</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The UH-0 Dawnhawk is one of the most successful transport helicopter for the Allied Force. It has a large cabin that infantries can shoot from inside. Also, it possesses a radar set that can detect stealth units in the sky.</p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-									<li><a href="#allied-battle-command">Allied Battle Command</a></li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: none</li>
-							<li>Ammunition: N/A</li>
-							<li>Cost: 1500</li>
-							<li>Trait: 
+							<li>主武器：无</li>
+							<li>弹种：无</li>
+							<li>费用：1500</li>
+							<li>特性：
 								<ul>
-									<li>Crew combat</li>
-									<li>Detect stealth</li>
+									<li>乘员可对外开火</li>
+									<li>探测隐形</li>
 								</ul>
 							</li>
 						</ul>
@@ -679,21 +684,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/prism-tank-icon-ch.webp" alt="prism tank icon" width="60" height="48"></img>
-						<h3>Prism Tank</h3>
+						<h3>光棱坦克</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>T67 PMC is the experimental siege weapon of the Allied Force. Armed with Prism System, it can easily destroy enemy buildings and defenses. </p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-									<li>Allied Battle Lab</li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
+									<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: Prism Caster</li>
-							<li>Ammunition: Photum Flux</li>
-							<li>Cost: 2400</li>
-							<li>Trait: Photum diffusion</li>
+							<li>主武器：光子棱镜炮</li>
+							<li>弹种：光子射流</li>
+							<li>费用：2400</li>
+							<li>特性：光学散射</li>
 						</ul>
 					</div>
 				</div>
@@ -704,21 +709,21 @@
 					</div>
 					<div class="unit-container-mid">
 						<img class="unit-icon" src="../src/battle-fortress-icon-ch.webp" alt="Battle Fortress icon" width="60" height="48"></img>
-						<h3>Battle Fortress</h3>
+						<h3>战斗要塞</h3>
 					</div>
 					<div class="unit-container-right">
 						<p>The T111 Battle Fortress is the ultimate weapon of the Allied Force, it armed with destructive 155mm cannon and can destroy most enemy in one shot. Because of its decent armor, it is tough enough to push all the way to enemy base, and this make T111 the best assault tank. </p>
 						<ul>
-							<li>Prerequisites:
+							<li>建造前提：
 								<ol>
-									<li><a href="#allied-weapon-factory">Allied Weapon Factory</a></li>
-									<li>Allied Battle Lab</li>
+									<li><a href="#allied-weapon-factory">盟军武器工厂</a></li>
+									<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
 								</ol>
 							</li>
-							<li>Main Armament: 155mm T11</li>
-							<li>Ammunition: Armor Piercing</li>
-							<li>Cost: 3500</li>
-							<li>Trait: Crush light vehicles</li>
+							<li>主武器：155mm T11</li>
+							<li>弹种：穿甲弹</li>
+							<li>费用：3500</li>
+							<li>特性：碾压载具</li>
 						</ul>
 					</div>
 				</div>
@@ -735,27 +740,27 @@
 				<div class="footer-column">
 				<p>Factions</p>
 				<ul>
-					<li><a href="allied.html">Allied</a></li>
-					<li><a href="soviet.html">Soviet</a></li>
+					<li><a href="allied.html">盟军</a></li>
+					<li><a href="soviet.html">苏军</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
 				<p>Blog</p>
 				<ul>
-					<li><a href="#Update">Concept</a></li>
-					<li><a href="#Tutorial">Tutorial</a></li>
+					<li><a href="#Update">概念图</a></li>
+					<li><a href="#Tutorial">教程</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
 				<p>About</p>
 				<ul>
-					<li><a href="#Contact">Contact</a></li>
+					<li><a href="#Contact">联系方式</a></li>
 				</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-portals">
-			<a href="https://www.ra2diy.com">RA2DIY Forum</a>
+			<a href="https://www.ra2diy.com">红警DIY论坛</a>
 			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
 		</div>
 	</footer>
