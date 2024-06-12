@@ -578,7 +578,7 @@ footer {
 
 .units {
 	width: 80%;
-	padding: 5vw;
+	padding: 2vw;
 	margin: auto;
 }
 
@@ -1010,6 +1010,10 @@ footer {
 
 	.unit-container-right {
 		width: 50%;
+	}
+
+	.unit-container-mid h3{
+		font-size:20px;
 	}
 }
 
