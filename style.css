@@ -82,6 +82,7 @@ header {
 
 .navigation-button {
 	display: flex;
+	justify-items: center;
 	margin: auto;
 	/*background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
 	border: 1px solid #898d85;
@@ -89,6 +90,7 @@ header {
 }
 
 .navigation-button{
+
 	padding-inline-start: 0;
 }
 
@@ -961,7 +963,9 @@ footer {
 
 	/*----------Header----------*/
 	.navigation-button {
-		width: 100%;
+		display: flex;
+		justify-items: center;
+		/*width: 100%;*/
 	}
 	/*----------Main----------*/
 	main {
