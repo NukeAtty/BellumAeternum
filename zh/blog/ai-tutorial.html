@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇AI教程，提供最全面的AI修改方法和原理。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<link rel="canonical" href="https://ra2be.com/download.html" />
+	<link rel="alternate" href="https://ra2be.com/download.html" hreflang="zh-Hans" />
+	<meta name="robots" content="noindex, nofollow">
+	<title>AI教程 | 万世之战：为红警2带来前所未有的体验</title>
+</head>
+<body>
+	<header>
+		<ul class="navigation-button">
+			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
+			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
+			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
+		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com/zh/"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>尤里的复仇：AI教程</h1>
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+							<a id="h2" href="#intro">AI原理介绍</a>
+							<a id="h2" href="#rules">Rules改动</a>
+							<a id="h2" href="#ai">AI改动</a>
+							<a id="h3" href="#ai-taskforce">特遣小队·TaskForce</a>
+							<a id="h3" href="#ai-script">脚本·Script</a>
+							<a id="h3" href="#ai-team">小队·Team</a>
+							<a id="h3" href="#ai-trigger">触发·Trigger</a>
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<h2 id="intro">AI原理介绍</h2>
+					<p>AI主要分为两个大的部分，一个为Rules(md).ini部分的改动，另一个为Ai(md).ini。</p>
+					<h2 id="rules">Rules改动</h2>
+					<p>施工中……</p>
+					<h2 id="ai">AI改动</h2>
+					<p>AI改动意为更改Ai(md).ini文件。AI(md).ini主要分为4大板块，即特遣部队、脚本、小队和触发。</p>
+					<p>以下说明各个部分的作用。</p>
+					<ul>
+						<li>特遣部队：主要负责定义一支小队的兵种内容。</li>
+						<li>脚本：主要负责定义一支小队的行动方式。</li>
+						<li>小队：小队的载体，里面记录了其用于构成的特遣部队以及用于行动准则的脚本。</li>
+						<li>触发：小队形成的条件。</li>
+					</ul>
+					<p>整个AI行动的方式如下：</p>
+					<ol>
+						<li>触发条件满足后，开始创建小队。</li>
+						<li>小队的内容由特遣部队定义，小队会等到特遣部队定义的兵种集齐后开始行动。</li>
+						<li>小队的行动方式由脚本定义。</li>
+					</ol>
+					<h3 id="ai-taskforce">特遣部队·TaskForce</h3>
+					<p>特遣部队的代码构成方式比较简单，首先需要再[TaskForces]中注册你的特遣部队名称。</p>
+					<p>接下来详细定义特遣部队，格式如下：</p>
+					<div class="code-presentation">
+						<p>[TaskForceName]	;特遣部队的注册名，不得超过24个英文字符，只能是英文。</p>
+						<p>Name=Name of the Task Force	;特遣部队的名称，用于描述你的特遣部队，不会被游戏读取。</p>
+						<p>0=1,MTNK	;格式为N=X,Y | N=序列，X=数量，Y=单位注册名</p>
+						<p>1=2,SREF</p>
+						<p>...</p>
+						<p>5=3,FV</p>
+						<p>Group=-1 ;无特殊需要建议保留原值-1。</p>
+					</div>
+					<p>需要注意的是，特遣部队的序列需要严格按照升序写单位，并且最大到5。</p>
+					<h3 id="ai-script">脚本·Script</h3>
+					<p>脚本需要在[ScriptTypes]注册表中注册。</p>
+					<p>脚本的格式如下：</p>
+					<div class="code-presentation">
+						<p>[ScriptName]	;脚本的注册名，不得超过24个英文字符</p>
+						<p>0=X,Y</p>
+						<p>1=X,Y</p>
+						<p>2=X,Y</p>
+						<p>...</p>
+						<p>49=X,Y</p>
+					</div>
+					<div class="ai-script">
+						<table>
+							<tr>
+								<th>指令</th>
+								<th>指令介绍</th>
+								<th>参数</th>
+								<th>参数介绍</th>
+							</tr>
+							<tr>
+								<td rowspan="12">0</td>
+								<td rowspan="12">攻击最近的目标（间谍无法执行，陆军只判定地面单位，海军只判定水面单位）</td>
+								<td>0</td>
+								<td>任何目标([VehicleTypes]/[AircraftTypes]/[InfantryTypes]/[BuildingTypes])(Aircraft类无法执行此项。)</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>同0,0(其实根本没有0,1，空项自动判定成0,0)</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>建筑物([BuildingTypes])</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>资源类([BuildingTypes]/[VehicleTypes]/[AircraftTypes],Storag>0)</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>步兵([InfantryTypes])</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>载具([VehicleTypes]/[AircraftTypes])</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>工厂([BuildingTypes],Factory=)</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>防御建筑([BuildingTypes],Primary=)</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>同0,0(同样是空项)</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>电厂([BuildingTypes],BuildCat=Power)</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>可驻军建筑([BuildingTypes],CanOccupyFire=yes)</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>中立科技建筑([BuildingTypes],NeedsEngineer=yes)</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>攻击n号路径点，工程师/间谍/突击队都可以用这句完成占领/渗透/清理。</td>
+								<td style="color: #0066ff">n</td>
+								<td>路径点编号</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>移动到n号路径点(Waypoint)。</td>
+								<td style="color: #0066ff">n</td>
+								<td>路径点编号</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>移动到n号单元标记(CellTag)。</td>
+								<td style="color: #0066ff">n</td>
+								<td>单元标记编号</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>警戒(Guard)状态保持n秒</td>
+								<td style="color: #0066ff">n</td>
+								<td>单位：秒</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>跳转到当前Script的第n行。</td>
+								<td style="color: #0066ff">n</td>
+								<td>n=索引号+1</td>
+							</tr>
+							<tr>
+								<td rowspan="4">8</td>
+								<td rowspan="4">释放乘客</td>
+								<td>0</td>
+								<td>保留运输工具和乘客执行接下来的指令。</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>只保留运输工具。</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>只保留乘客。</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>全解散。</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>部署。(步兵、基地车、武装直升机皆有效)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>跟随最近的友好单位。(如果写在Script的第一行，将会无条件跟随产生的第一个小队)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td rowspan="5">5</td>
+								<td rowspan="5">进入第n种状态(通常能在Rules里找到并修改相应状态)，无法执行该Script内接下来的任何指令。(可以通过重组至其他小队来终止任务)</td>
+								<td>5</td>
+								<td>Guard - 防御，只攻击进入射程内的敌人。</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Enter - 进入建筑或运输工具。AI会自动找寻附近的建筑物进驻。</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Area Guard - 区域防御，会主动迎击附近的敌人。</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>Hunt - 猎杀敌人。非Aircraft单位有AA=yes的武器时会优先搜寻敌方Aircraft类单位，但是无视Balloon类单位。Aircraft类单位会按0,3寻敌。(伞兵默认执行此状态。海军有效。默认无法重组，但是可以改)</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>Construction - 在建筑建立的位置造建筑。(车辆部署建筑同样有效)</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>队伍中存在有Passengers位置的运输工具，并且其余单位Size和PhysicalSize满足运输条件时，乘客们进入运输工具。(实际使用时，一个队伍里只能存在1个运输工具)(运输步兵时可以在14,0之后加43,0保证单位装载完毕，运输车辆时不可接43,0)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>变为执行第n号脚本，理论上可以用来实现超过50行的脚本。</td>
+								<td style="color: #0066ff">n</td>
+								<td>n为该脚本在注册列表中的顺序号而非索引号，从0开始，所以为索引号+1。</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>改变小队，让当前小队加入第n号小队，理论上可以用来实现超过6行的大队。</td>
+								<td style="color: #0066ff">n</td>
+								<td>n为该小队在注册列表中的顺序号而非索引号，从0开始，所以为索引号+1。</td>
+							</tr>
+							<tr>
+								<td>21</td>
+								<td>分散部队。</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td rowspan="8">42</td>
+								<td rowspan="8">改变朝向。</td>
+								<td>0</td>
+								<td>北</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>东北</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>东</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>东南</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>南</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>西南</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>西</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>西北</td>
+							</tr>						
+							<tr>
+								<td>43</td>
+								<td>等待运输单位完全装载完毕。运载步兵时可以用在14,0之后，运载车辆时不要使用。</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td rowspan="4">46</td>
+								<td rowspan="4">攻击指定建筑N。(工程师为占领、间谍为渗透、Assaulter=yes的单位为清驻兵、海军可用此指令攻击陆地建筑)</td>
+								<td>-1 + N</td>
+								<td>选择指定建筑中威胁最小的。</td>
+							</tr>
+							<tr>
+								<td>65535 + N</td>
+								<td>选择指定建筑中威胁最大的。</td>
+							</tr>
+							<tr>
+								<td>131071 + N</td>
+								<td>选择指定建筑中距离最近的。</td>
+							</tr>
+							<tr>
+								<td>196607 + N</td>
+								<td>选择指定建筑中距离最远的。</td>
+							</tr>
+							<tr>
+								<td rowspan="4">47</td>
+								<td rowspan="4">移动到N指定敌方或中立建筑附近。N的计算方法同上，"附近"的范围由CloseEnough指定。(海军可用)</td>
+								<td>-1 + N</td>
+								<td>选择指定建筑中威胁最小的。</td>
+							</tr>
+							<tr>
+								<td>65535 + N</td>
+								<td>选择指定建筑中威胁最大的。</td>
+							</tr>
+							<tr>
+								<td>131071 + N</td>
+								<td>选择指定建筑中距离最近的。</td>
+							</tr>
+							<tr>
+								<td>196607 + N</td>
+								<td>选择指定建筑中距离最远的。</td>
+							</tr>
+							<tr>
+								<td>49</td>
+								<td>任务执行成功。小队每执行一次49号指令，都会在该AITrigger中增加AITriggerSuccessWeightDelta的权重。如果被消灭之前没能执行49号指令，则减少AITriggerFailureWeightDelta * AITriggerTrackRecordCoefficient的权重。</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td>53</td>
+								<td>在敌人基地附近集合，距离由AISafeDistance决定。(海军有效)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td>54</td>
+								<td>在友方基地附近集合。距离由AISafeDistance决定，Ares中由AIFriendlyDistance决定。(海军有效)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td>55</td>
+								<td>如果铁幕就绪，则为该小队罩铁幕。</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+							<tr>
+								<td rowspan="4">56</td>
+								<td rowspan="4">如果超时空传送就绪，则传送该小队至指定建筑物N</td>
+								<td>-1 + N</td>
+								<td>选择指定建筑中威胁最小的。</td>
+							</tr>
+							<tr>
+								<td>65535 + N</td>
+								<td>选择指定建筑中威胁最大的。</td>
+							</tr>
+							<tr>
+								<td>131071 + N</td>
+								<td>选择指定建筑中距离最近的。</td>
+							</tr>
+							<tr>
+								<td>196607 + N</td>
+								<td>选择指定建筑中距离最远的。</td>
+							</tr>
+							<tr>
+								<td rowspan="12">57</td>
+								<td rowspan="12">如果超时空传送就绪，则传送该小队至指定类别周边。</td>
+								<td>0</td>
+								<td>任何目标([VehicleTypes]/[AircraftTypes]/[InfantryTypes]/[BuildingTypes])(Aircraft类无法执行此项。)</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>同0,0(其实根本没有0,1，空项自动判定成0,0)</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>建筑物([BuildingTypes])</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>资源类([BuildingTypes]/[VehicleTypes]/[AircraftTypes],Storag>0)</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>步兵([InfantryTypes])</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>载具([VehicleTypes]/[AircraftTypes])</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>工厂([BuildingTypes],Factory=)</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>防御建筑([BuildingTypes],Primary=)</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>同0,0(同样是空项)</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>电厂([BuildingTypes],BuildCat=Power)</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>可驻军建筑([BuildingTypes],CanOccupyFire=yes)</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>中立科技建筑([BuildingTypes],NeedsEngineer=yes)</td>
+							</tr>
+							<tr>
+								<td rowspan="4">58</td>
+								<td rowspan="4">移动到指定友方建筑N附近。(海军可用)</td>
+								<td>-1 + N</td>
+								<td>选择指定建筑中威胁最小的。</td>
+							</tr>
+							<tr>
+								<td>65535 + N</td>
+								<td>选择指定建筑中威胁最大的。</td>
+							</tr>
+							<tr>
+								<td>131071 + N</td>
+								<td>选择指定建筑中距离最近的。</td>
+							</tr>
+							<tr>
+								<td>196607 + N</td>
+								<td>选择指定建筑中距离最远的。</td>
+							</tr>
+							<tr>
+								<td>64</td>
+								<td>进驻最近的可驻军建筑。(即使是用来占己方碉堡)</td>
+								<td>0</td>
+								<td>固定参数</td>
+							</tr>
+						</table>
+					</div>
+					<h2 id="ai-team">小队·Team</h2>
+					<p>小队的代码构成方式比较像Rules(md).ini的形式，即先在[TeamTypes]中注册小队，然后再为小队增加各类标签。</p>
+					<p>小队的代码构成如下：</p>
+					<div class="code-presentation">
+						<p>[TeamName]	;小队的注册名，不得超过24个英文字符，只能是英文。</p>
+						<p>Name=Name of the Team ;小队的名称，用于描述你的小队，不会被游戏读取。</p>
+						<p><del>VeteranLevel=1</del> ;无效。</p>
+						<p>MindControlDecision=0 ;心灵控制单位控制敌人后，被控制者的行为。</p>
+						<p>Loadable=no ;是否有运载单位。</p>
+						<p>Annoyance=no ;是否会还击一次。</p>
+						<p><del>GuardSlower=no</del> ;无效。</p>
+						<p><del>House=&lt;none&gt;</del> ;无效。</p>
+						<p>Recruiter=no ;是否会从低优先级队伍中调取成员。</p>
+						<p>Autocreate=no ;是否结合地图预制单位生效。</p>
+						<p>Prebuild=no; 是否会提前建造队伍。</p>
+						<p>Reinforce=yes ;是否会强制补充损失的成员。</p>
+						<p><del>Droppod=no</del> ;无效。</p>
+						<p><del>UseTransportOrigin=no</del> ;无效。</p>
+						<p><del>Whiner=no</del> ;无效。</p>
+						<p>Aggressive=yes ;是否为进攻型小队。</p>
+						<p>Suicide=no ;是否会还击。</p>
+						<p>Priority=7 ;优先级</p>
+						<p>Max=1 ;最大小队数量</p>
+						<p>TechLevel=0 ;科技等级</p>
+						<p>Group=-1 ;没有特殊需要就写-1。</p>
+						<p><del>OnTransOnly=no</del> ;无效。</p>
+						<p>AvoidThreats=yes ;是否避免威胁。</p>
+						<p><del>IonImmune=no</del> ;无效。
+						<p>TransportsReturnOnUnload=no ;完成运输后载具是否回基地。</p>
+						<p>AreTeamMembersRecruitable=yes ;队伍成员是否能被调取。</p>
+						<p>IsBaseDefense=no ;是否为基地防御小队。</p>
+						<p>OnlyTargetHouseEnemy=no ;是否只针对敌方。</p>
+						<p>Script=ScriptName ;小队行动的脚本。</p>
+						<p>TaskForce=TaskForceName ;小队构成的特遣部队。</p>
+					</div>
+					<p>下面用一个表格讲解一下有效代码的作用和用途：</p>
+					<h2 id="ai-trigger">触发·Trigger</h2>
+					<p>触发均需要放在[AITriggerTypes]之后，这个可以视作注册表和本体的合并项目。</p>
+					<p>触发的格式如下：</p>
+					<div class="code-presentation">
+						<p>TriggerName = Trigger Name,7654321-G,&lt;all&gt;,3,1,GAREFN,0A00000002000000000000000000000000000000000000000000000000000000,250,50,500,1,0,1,0,&lt;none&gt;,1,1,1</p>
+					</div>
+					<p>触发的各项参数解释如下(从上往下)：</p>
+					<div class="ai-trigger">
+						<table>
+							<tr>
+								<th>触发名称</th>
+								<td colspan="9">随意写，但一定要是英文，同时不能有其他符号。</td>
+							</tr>
+							<tr>
+								<th>第一小队</th>
+								<td colspan="9">在[TeamTypes]中注册过的小队。</td>
+							</tr>
+							<tr>
+								<th>所属国家</th>
+								<td colspan="9">在Rules(md).ini中[Country]注册表中的国家。</td>
+							</tr>
+							<tr>
+								<th>科技等级</th>
+								<td colspan="9">无特殊需要可以写1，如果有特殊模式可以按模式需要自行拟定。</td>
+							</tr>
+							<tr>
+								<th>触发前提</th>
+								<td>-1: 任何条件</td>
+								<td>0: 敌方拥有(前提)指定的单位(插件无效)</td>
+								<td>1: 己方拥有(前提)指定的单位(插件无效)</td>
+								<td>2: 敌方电力黄</td>
+								<td>3: 敌方电力红(间谍偷电成功时有效）</td>
+								<td>4: 敌方金钱大于或等于</td>
+								<td>5: 本方铁幕装置就绪</td>
+								<td>6: 本方超时空传送就绪</td>
+								<td>7: 中立方拥有(前提)指定的单位</td>
+							</tr>
+							<tr>
+								<th>前提条件</th>
+								<td>&lt;all&gt</td>
+								<td>单位名称</td>
+								<td>单位名称</td>
+								<td>&lt;all&gt</td>
+								<td>&lt;all&gt</td>
+								<td>&lt;all&gt</td>
+								<td>&lt;all&gt</td>
+								<td>单位名称</td>
+							</tr>
+							<tr>
+								<th>条件参数</th>
+								<td colspan="9">64位长度，16进制。前10位有效。前8位代表数值，第9、10位代表算法值。详情见<a href="#prerequisite-parameter">条件参数详解</a></td>
+							</tr>
+							<tr>
+								<th>基础权重</th>
+								<td colspan="9">0~5000, 0为不触发，5000为满足条件必触发</td>
+							</tr>
+							<tr>
+								<th>权重下限</th>
+								<td colspan="9">0~5000, 0为不触发，5000为满足条件必触发</td>
+							</tr>
+							<tr>
+								<th>权重上限</th>
+								<td colspan="9">0~5000, 0为不触发，5000为满足条件必触发</td>
+							</tr>
+							<tr>
+								<th>游戏模式</th>
+								<td colspan="4">0: 战役模式</td>
+								<td colspan="4">1: 遭遇战模式</td>
+							</tr>
+							<tr>
+								<th>无效参数</th>
+								<td colspan="9">0</td>
+							</tr>
+							<tr>
+								<th>阵营</th>
+								<td colspan="2">1: 盟军</td>
+								<td colspan="2">2: 苏联</td>
+								<td colspan="2">3: 尤里</td>
+								<td colspan="2">4: 第四阵营</td>
+								<td>n:第n阵营</td>
+							</tr>
+							<tr>
+								<th>第二小队</th>
+								<td colspan="9">在[TeamTypes]中注册过的小队</td>
+							</tr>
+							<tr>
+								<th>简单的敌人是否触发？</th>
+								<td colspan="4">0: 不触发</td>
+								<td colspan="4">1: 触发</td>
+							</tr>
+							<tr>
+								<th>中等的敌人是否触发？</th>
+								<td colspan="4">0: 不触发</td>
+								<td colspan="4">1: 触发</td>
+							</tr>
+							<tr>
+								<th>冷酷的敌人是否触发？</th>
+								<td colspan="4">0: 不触发</td>
+								<td colspan="4">1: 触发</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+				<a href="https://www.ra2be.com/zh/"><img src="../../src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+				</div>
+				<div class="lang-selector">
+					<a href="https://www.ra2be.com/download.html"><img src="../../src/en-flag.svg" alt="English" width="auto" height="30px"></a>
+					<a href="https://www.ra2be.com/zh/download.html"><img src="../../src/zh-flag.svg" alt="Chinese" width="auto" height="30px"></a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="allied.html">盟军</a></li>
+					<li><a href="soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>博客</p>
+				<ul>
+					<li><a href="#Update">概念图</a></li>
+					<li><a href="#Tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#Contact">联系方式</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">红警DIY论坛</a>
+			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
+		</div>
+	</footer>
+</body>

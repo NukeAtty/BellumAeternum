@@ -3,9 +3,41 @@
 	src: url("src/font/furore.otf");
 }
 
+/*HarmonyOS Sans Settings*/
 @font-face {
-	font-family: "Typingrad";
-	src: url("src/font/typingrad.otf");
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf");
+	font-weight: 100
+}
+
+@font-face {
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf");
+	font-weight: 300
+}
+
+@font-face {
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf");
+	font-weight: normal
+}
+
+@font-face {
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf");
+	font-weight: 500
+}
+
+@font-face {
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf");
+	font-weight: bold
+}
+
+@font-face {
+	font-family: "HarmonyOS Sans";
+	src: url("src/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf");
+	font-weight: 900
 }
 
 html {
@@ -30,6 +62,10 @@ body {
 
 p {
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
 }
 
 /*Animations*/
@@ -59,6 +95,15 @@ p {
   85% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(306deg, red, black) border-box;}
   90% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(324deg, red, black) border-box;}
   95% {background: linear-gradient(0deg, #666, #bbb) padding-box, linear-gradient(342deg, red, black) border-box;}
+}
+
+@keyframes button-press {
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0.98);
+	}
 }
 
 /*--------------------------*/
@@ -195,18 +240,23 @@ footer {
 	background-blend-mode: hard-light;
 }
 
-.lang-selector img{
-	border-radius: 20%;
-	border: 1px solid #333333;
+.lang-selector {
+	margin: auto;
+	border-radius: 10px;
+	width: 30%;
+	border: 2px solid #333333;
 	background: linear-gradient(-45deg, #000000 0, #666666 50%, #000000 100%);
 	background-blend-mode: hard-light;
-	max-width: 40px;
+}
+
+.lang-selector img{
   object-fit: cover;
   filter: brightness(70%);
+  aspect-ratio: 47/23;
+  margin: 5px auto;
 }
 
 .lang-selector img:hover {
-	border: 2px solid #333333;
   filter: brightness(100%);
 }
 
@@ -565,11 +615,81 @@ footer {
 
 /*----------Blogs Module----------*/
 
-.blogs h2 {
+.main-blogs h2 {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 48px;
 	font-weight: 600;
 	text-align: center;
+}
+
+.main-blogs h3 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 32px;
+	font-weight: 500;
+	text-align: left;
+}
+
+.main-blogs-section {
+	margin: auto 5vw;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.main-blogs-container {
+
+}
+
+.main-blogs-container a{
+	display: block;
+	padding: 1vw;
+	margin: auto;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+	text-decoration: none;
+	color: #333;
+	font-size: 24px;
+	line-height: 1em;
+}
+
+.main-blogs-container a:hover {
+	box-shadow: 0 0 12px #333;
+	animation-name: button-press;
+  animation-duration: 0.2s;
+  animation-iteration-count:1;
+  animation-fill-mode: both;
+}
+
+.main-blogs-container img{
+	margin: auto;
+	border-radius: 24px;
+	border: 2px solid #333;
+}
+
+.blog-dots{
+	text-align: right;
+}
+
+.blog-dot {
+	height: 24px;
+	width: 24px;
+	margin: 2px;
+  /*background: radial-gradient(circle,#aaa 0, #666 50%, #666 100%);*/
+	background:
+		radial-gradient(circle,#aaa 0, #666 50%, #666 100%) padding-box,
+		radial-gradient(circle, #cccccc 0%, #ffffff 10%, #ffffff 50%, #333333 100%) border-box;
+	border: 3px solid transparent;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.main-blogs-container a:hover .blog-dot {
+	background:
+		radial-gradient(circle,#ffcc33 0, #ff3333 50%, #ff3333 100%) padding-box,
+		radial-gradient(circle, #cccccc 0%, #ffffff 10%, #ffffff 50%, #333333 100%) border-box;
+	text-shadow: 0 0 5px #ff3333 inset;
 }
 
 /*------------------------------*/
@@ -876,6 +996,159 @@ footer {
 	text-align: center;
 }
 
+/*-----------------------------*/
+/*----------Blog Page----------*/
+/*-----------------------------*/
+
+.blog {
+	margin: 5vw auto;
+}
+
+.blog h1 {
+	font-size: 48px;
+	text-align: center;
+}
+
+.blog-main {
+	display: flex;
+	flex-flow: row;
+	padding: 0;
+	margin: auto;
+}
+
+.blog-left {
+	width: 20%;
+	padding: 1vw;
+}
+
+.blog.right {
+	width: 5%;
+}
+
+.chap-nav {
+	position: fixed;
+	display: block;
+	width: auto;
+	margin: auto;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 36px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.chap-nav p{
+	font-size: 24px;
+	font-family: Furore, Harmony;
+	text-align: center;
+	color: #000;
+}
+
+.chaps {
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	background-blend-mode: hard-light;
+	border-radius: 24px;
+	margin: 0.5em;
+	padding: 0.5em;
+}
+
+.chaps a {
+	text-decoration: none;
+	font-family: HarmonyOS Sans, sans-serif;
+	display: block;
+	color: #fff;
+	margin: 0.5em;
+	padding: 0.5em;
+	text-shadow: 1px 0 1px #000;
+}
+
+#h2 {
+	font-weight: 700;
+}
+
+#h3 {
+	font-weight: normal;
+	margin-left: 4em;
+	padding: 0.25em;
+}
+
+.chaps a:hover {
+	display: block;
+	color: #fff;
+	background: radial-gradient(circle, #dd9000 20%, #e30000 90%, #660000 100%);
+	border-radius: 5px;
+	box-shadow: 0 0 5px #ff000060;
+}
+
+.blog-content {
+	display: block;
+	margin: 1vw auto;
+	padding: 2vw;
+	width: 70%;
+	border-radius: 25px;
+	background-color: #dddddd10;
+	box-shadow: 0 0 12px #000;
+}
+
+.code-presentation {
+	display: inline-block;
+	/*background-color: #0c0c0c;*/
+	background: linear-gradient(-45deg, #0c0c0c 0, #151515 50%, #0c0c0c 100%);
+	background-blend-mode: hard-light;
+	margin: 1em 0;
+	padding: 1em;
+	border-radius: 10px;
+	border: 1px solid #fff;
+}
+
+.code-presentation p,del {
+	font-family: monospace;
+	font-size: 14px;
+	color: #009900;
+	text-shadow: 0 0 3px #00ff00;
+}
+
+.blog-content h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	text-align: left;
+	color:#fff;
+}
+.blog-content h3{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: normal;
+	font-size: 28px;
+	text-align: left;
+	color:#fff;
+}
+
+.blog-content a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.ai-script table, th, tr, td {
+	border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
+
+.ai-script td:nth-child(odd){
+	background-color: #dddddd25;
+	text-align: center;
+	font-weight: bold;
+	width: 5%;
+}
+
+.ai-trigger table, th, tr, td {
+	border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
+
+.ai-trigger td {
+	width: 10%;
+}
 
 /*----------Public Module----------*/
 .faction-selector {
@@ -1682,7 +1955,7 @@ footer {
 	}
 
 	.zag h3 {
-		font-family: Typingrad, HarmonyOS Sans, sans-serif;
+		font-family: Furore, HarmonyOS Sans, sans-serif;
 		font-size: 36px;
 		font-weight: 600;
 		line-height: 1.5em;
