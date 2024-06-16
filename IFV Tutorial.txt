@@ -1,0 +1,25 @@
+How to Edit an IFV? 
+With Yuri's Revenge
+	Limit
+		There is a annoying limitation for the original platform of Yuri's Revenge to edit an IFV, that is the unit can only be named as [FV]. Therefore, the only thing you can do is to edit the function of an IFV instead of create a new one. Also, the number of swapable modes are also limited to 18, so you must consider your design carefully.
+	Weapon system
+		The weapon system of an IFV is rather confusing. 
+		First, you need a Gunner=yes tag.
+		Second, you need to create several weapons with WeaponX flag for the IFV, to make it usable.
+		X start with 1, so the Weapon1 is the original weapon for IFV.
+		At last, you need to give all infantries that you want to influence the weapon on IFV a IFVMode= tag.
+		The parameter for IFVMode= starts from 0, which means an infantry with IFVMode=0 uses the original weapon (Weapon1) of the IFV.
+	Name system
+		The name system of the IFV is also annoying. There are three options:
+		1. Rocket IFV (original)
+		2. Repair IFV (with Engineer)
+		3. Machinegun IFV (with GI or Conscript)
+		Everything else would named follow the rule below:
+		1. If the infantry has UseOwnName=yes tag, the IFV will show the name of the content in front of its name.
+		2. If the infantry has UseOwnName=no tag, the IFV will show as its original name, which is Rocket IFV.
+
+With Ares
+	No Limit
+		With Ares, there won't be much limitation, which means you can add the IFV logic to any ground vehicle you want, and supports much more swapable modes to be added.
+	Weapon system
+	Name system
