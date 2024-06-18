@@ -2020,6 +2020,40 @@ footer {
 		text-align: center;
 	}
 
+	.main-blogs-container {
+		width: 100%;
+	}
+
+	.main-blogs-container a{
+		display: block;
+		padding: 0.5em;
+		margin: auto;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 32px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+		text-decoration: none;
+		color: #333;
+		font-size: 16px;
+		line-height: 1em;
+	}
+
+	.main-blogs-container a:hover {
+		box-shadow: 0 0 12px #333;
+		animation-name: button-press;
+	  animation-duration: 0.2s;
+	  animation-iteration-count:1;
+	  animation-fill-mode: both;
+	}
+
+	.main-blogs-container img{
+		margin: auto;
+		border-radius: 24px;
+		border: 2px solid #333;
+		width: 100%;
+		height: auto;
+	}
+
 	/*-------------------------------*/
 	/*----------Units Page-----------*/
 	/*-------------------------------*/
@@ -2152,6 +2186,188 @@ footer {
 	.guide-container p{
 		font-size: 16px;
 	}
+
+	/*----------------------------------*/
+	/*----------Blog List Page----------*/
+	/*----------------------------------*/
+	.blog-section {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 5vw auto;
+	}
+
+	.blog-section h2 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: 700;
+		font-size: 36px;
+		text-align: left;
+		color:#fff;
+	}
+
+	/*-----------------------------*/
+	/*----------Blog Page----------*/
+	/*-----------------------------*/
+
+	.blog {
+		width: 100%;
+		margin: 50px auto;
+	}
+
+	.blog h1 {
+		font-size: 32px;
+		text-align: center;
+	}
+
+	.blog-main {
+		display: flex;
+		flex-flow: column;
+		padding: 0;
+		margin: auto;
+	}
+
+	.blog-left {
+		width: 90%;
+		padding: 0;
+		margin: auto;
+	}
+
+	.chap-nav {
+		position: relative;
+		display: block;
+		width: auto;
+		margin: auto;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 36px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+	}
+
+	.chap-nav p{
+		font-size: 24px;
+		font-family: Furore, Harmony;
+		text-align: center;
+		color: #000;
+	}
+
+	.chaps {
+		background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+		background-blend-mode: hard-light;
+		border-radius: 24px;
+		margin: 0.5em;
+		padding: 0.5em;
+	}
+
+	.chaps a {
+		text-decoration: none;
+		font-family: HarmonyOS Sans, sans-serif;
+		display: block;
+		color: #fff;
+		margin: 0.5em;
+		padding: 0.5em;
+		text-shadow: 1px 0 1px #000;
+	}
+
+	#h2 {
+		font-weight: 700;
+	}
+
+	#h3 {
+		font-weight: normal;
+		margin-left: 4em;
+		padding: 0.25em;
+	}
+
+	.chaps a:hover {
+		display: block;
+		color: #fff;
+		background: radial-gradient(circle, #dd9000 20%, #e30000 90%, #660000 100%);
+		border-radius: 5px;
+		box-shadow: 0 0 5px #ff000060;
+	}
+
+	.blog-content {
+		display: block;
+		margin: 1em auto;
+		padding: 1em;
+		width: 90%;
+		border-radius: 25px;
+		background-color: #dddddd10;
+		box-shadow: 0 0 12px #000;
+	}
+
+	.code-presentation {
+		display: inline-block;
+		/*background-color: #0c0c0c;*/
+		background: linear-gradient(-45deg, #0c0c0c 0, #151515 50%, #0c0c0c 100%);
+		background-blend-mode: hard-light;
+		margin: 1em 0;
+		padding: 1em;
+		border-radius: 10px;
+		border: 1px solid #fff;
+		word-break: break-all;
+	}
+
+	.code-presentation p,del {
+		font-family: monospace;
+		font-size: 14px;
+		color: #009900;
+		text-shadow: 0 0 3px #00ff00;
+	}
+
+	.blog-content h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: 700;
+		font-size: 28px;
+		text-align: left;
+		color:#fff;
+	}
+	.blog-content h3{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: normal;
+		font-size: 24px;
+		text-align: left;
+		color:#fff;
+	}
+
+	.blog-content a {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.ai-script {
+		overflow-x: auto;
+	}
+
+	.ai-trigger {
+		overflow-x: auto;
+	}
+
+	.ai-script table, th, tr, td {
+		border: 1px solid #fff;
+	  border-collapse: collapse;
+	  padding: 0.5em;
+		width: 100%;
+	}
+
+	.ai-script td:nth-child(odd){
+		background-color: #dddddd25;
+		text-align: center;
+		font-weight: bold;
+		width: 5%;
+	}
+
+	.ai-trigger table, th, tr, td {
+		border: 1px solid #fff;
+	  border-collapse: collapse;
+	  padding: 0.5em;
+		overflow-x: auto;
+		border-collapse: collapse;	  
+	}
+
+	.ai-trigger td {
+		width: 10%;
+	}
+
 
 	/*----------------------------*/
 	/*----------404 Page----------*/
