@@ -996,6 +996,24 @@ footer {
 	text-align: center;
 }
 
+/*----------------------------------*/
+/*----------Blog List Page----------*/
+/*----------------------------------*/
+.blog-section {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 5vw auto;
+	width: 75%;
+}
+
+.blog-section h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	text-align: left;
+	color:#fff;
+}
+
 /*-----------------------------*/
 /*----------Blog Page----------*/
 /*-----------------------------*/
