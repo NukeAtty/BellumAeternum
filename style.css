@@ -1044,7 +1044,8 @@ footer {
 }
 
 .chap-nav {
-	position: fixed;
+	position: sticky;
+	top: 7vw;
 	display: block;
 	width: auto;
 	margin: auto;
