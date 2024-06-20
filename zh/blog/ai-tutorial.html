@@ -92,13 +92,29 @@
 						<p>AINavalYardAdjacency=20          ;AI能建造船厂的距离，单位为单元格(Cell)。</p>
 						<p>DisabledDisguiseDetectionPercent=15,5,2 ;(困难、中等、简单)的AI识破幻影坦克的概率。概率虽然低，但人越多越容易识破。</p>
 						<p>AIAutoDeployFrameDelay=15,25,100 ;AI部署步兵的延迟。</p>
-						<p>AISuperDefenseProbability=90,50,10; (困难、中等、简单)的AI使用保护类型（铁幕、力场护盾）超级武器的概率。</p>
-						<p>AISuperDefenseFrames=50;this is how long the alert lasts, in case Force Shield is not quite ready</p>
-						<p>AISuperDefenseDistance=12;number of cells from 'Center" of base will trigger my considering Force Shield</p>
+						<p>AISuperDefenseProbability=90,50,10; (困难、中等、简单)的AI使用护盾类型（铁幕、力场护盾）超级武器的概率。</p>
+						<p>AISuperDefenseFrames=50;AI使用护盾类型的超级武器保护自己的延迟。</p>
+						<p>AISuperDefenseDistance=12;从基地中心开始算多少距离是AI使用护盾保护的范围，单位为单元格(Cell)。</p>
 					</div>
 					<h3 id="rules-combatdamage">[CombatDamage]</h3>
+					<div class="code-presentation">
+						<p>Crush=1.8    ;在该距离时AI的载具会直接碾压可碾压的步兵以取代开火，单位为单元格(Cell)。</p>
+					</div>
 					<h3 id="rules-ai">[AI]</h3>
 					<h3 id="rules-iq">[IQ]</h3>
+					<div >
+						<p>[IQ]</p>
+						<p>MaxIQLevels=5           ; the maximum number of discrete IQ levels</p>
+						<p>SuperWeapons=4          ; super weapons are automatically fired by computer</p>
+						<p>Production=5            ; building/unit production is automatically controlled by computer</p>
+						<p>GuardArea=2             ; newly produced units start in guard area mode</p>
+						<p>RepairSell=1            ; allowed to choose repair or sell of damaged buildings</p>
+						<p>AutoCrush=2             ; automatically try to crush antogonists if possible</p>
+						<p>Scatter=2               ; will scatter from incoming threats [grenades and such]</p>
+						<p>ContentScan=3           ; will consider contents of transport when picking good target</p>
+						<p>Aircraft=3              ; automatically replace aircraft</p>
+						<p>Harvester=2             ; automatically replace lost harvesters</p>
+						<p>SellBack=2              ; allowed to sell buildings</p>
 					<h2 id="ai">AI改动</h2>
 					<p>AI改动意为更改Ai(md).ini文件。AI(md).ini主要分为4大板块，即特遣部队、脚本、小队和触发。</p>
 					<p>以下说明各个部分的作用。</p>
