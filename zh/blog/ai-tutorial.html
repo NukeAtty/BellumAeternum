@@ -51,7 +51,43 @@
 					<h2 id="rules">Rules改动</h2>
 					<p>施工中……</p>
 					<h3 id="rules-general">[General]</h3>
-					<p>[General]部分是Rules(md).ini中的重要组成部分。</p>
+					<p>[General]部分是Rules(md).ini中的重要组成部分。下面列举出[General]中可以左右AI的标签，以下标签的数值均为尤里的复仇原版数值，可作为修改的参考。</p>
+					<div class="code-presentation">
+						<p>BaseBias=2                ;敌人靠近AI时的威胁倍数值，作用是影响AI对单位威胁的敏感度。值越高越敏感度越高。</p>
+						<p>BaseDefenseDelay=.25      ;AI排除防御部队应对基地威胁的延迟时间，单位为分钟。</p>
+						<p>CloseEnough=2.25          ;AI执行“移动到”指令时，视为完成接近的距离值。</p>
+						<p>Stray=2.0                 ;小队在执行任务时，不会导致小队重组的偏离直径值，单位为单元格(Cell)。</p>
+						<p>RelaxedStray=3.0          ;执行集结指令（53和54号指令）时，以这个数值代替Stray以适应大部队作战。</p>
+						<p>SuspendDelay=2            ;小队暂停任务后恢复执行任务的时间，单位为分钟。</p>
+						<p>SuspendPriority=1         ;小队的任务如果在这个权重值之下，就会暂停任务转而参与基地防御。</p>
+						<p>GuardModeStray=2.0		 ;小队在防御模式下，不会导致小队重组的偏离直径值，单位为(Cell)。</p>
+						<p>TeamDelays=2000,2500,3500 ;(困难、中等、简单)的AI出小队的间隔，单位为帧。</p>
+						<p>AIHateDelays=30,50,70     ;(困难、中等、简单)的AI选择敌人的时间间间隔，单位为帧。</p>
+						<p>AIAlternateProductionCreditCutoff=1000 ;AI的资金低于这个数值就不再花钱</p>
+						<br>
+						<p>MultiplayerAICM=400,0,0.  ;(困难、中等、简单)的AI初始资金加成。<span id="formula">初始资金=设定资金*(x+100)/100</span></p>
+						<p>AIVirtualPurifiers=4,2,0. ;(困难、中等、简单)的AI采集矿石转化成的资金加成。<span id="formula">转化资金*x</span></p>
+						<p>AISlaveMinerNumber=4,3,2. ;(困难、中等、简单)的AI生产的奴隶矿场数量。</p>
+						<p>HarvestersPerRefinery=2,2,1. ;(困难、中等、简单)的AI会为每个矿场配备的矿车数量。</p>
+						<p>AIExtraRefineries=2,1,0.  ;(困难、中等、简单)的AI会额外建造的矿场数量。</p>
+						<br>
+						<p>MinimumAIDefensiveTeams=1,1,1    ;(困难、中等、简单)的AI会生产的基地防御的最小小队数量。</p>
+						<p>MaximumAIDefensiveTeams=2,2,2    ;(困难、中等、简单)的AI会生产的基地防御的最大小队数量。</p>
+						<p>TotalAITeamCap=30,30,30          ;(困难、中等、简单)的AI会生产的最大小队数量。</p>
+						<p>UseMinDefenseRule=yes            ;AI在创建每个小队之前都会将“已有MinimumAIDefensiveTeams数量的防御小队”作为前提。</p>
+						<p>DissolveUnfilledTeamDelay=5000	;AI在多久之后会解散一只不完整的小队，单位为帧。</p>
+						<br>
+						<p>AISafeDistance=20         ;距离敌人基地多远之外AI认为是安全距离，单位为单元格(Cell)。</p>
+						<p>AIMinorSuperReadyPercent=.7      ;次级超级武器（铁幕、超时空）充能到这个百分比时，AI会将其作为触发。</p>
+						<p>AlliedBaseDefenseCounts=25,20,6  ;(困难、中等、简单)的盟军AI生产防御建筑的数量参数。计算公式见下方：</p>
+						<p>SovietBaseDefenseCounts=25,22,6  ;(困难、中等、简单)的苏军AI生产防御建筑的数量参数。计算公式见下方：</p>
+						<p>ThirdBaseDefenseCounts=25,22,6   ;(困难、中等、简单)的第三阵营AI生产防御建筑的数量参数。计算公式见下方：</p>
+						<p><span id="formula">((基地建筑总价值-2000)/1500 * GDIBaseDefenseCoefficient) + 3*(该参数-1)</span></p>
+						<p>AIPickWallDefensePercent=50,25,10;(困难、中等、简单)的AI用围墙来代替防御建筑的概率</p>
+						<p>AIRestrictReplaceTime=400        ;AI的建筑被摧毁后，用电厂、矿场、围墙或者防御建筑代替的时间，单位为帧。</p>
+						<p>ThreatPerOccupant=10             ;AI对每一个进驻建筑的步兵判定的威胁值。</p>
+						<p>ApproachTargetResetMultiplier=1.5 ;AI判定目标移动的参数。AI通过武器射程判定目标，而如果这个目标移动到武器射程*该参数之外，AI将判定该目标为移动目标，并重新接近敌人。</p>
+					</div>
 					<h3 id="rules-combatdamage">[CombatDamage]</h3>
 					<h3 id="rules-ai">[AI]</h3>
 					<h3 id="rules-iq">[IQ]</h3>
