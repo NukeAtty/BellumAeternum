@@ -1121,8 +1121,15 @@ footer {
 .code-presentation p,del {
 	font-family: monospace;
 	font-size: 14px;
-	color: #009900;
-	text-shadow: 0 0 3px #00ff00;
+	color: #00ff00;
+	text-shadow: 0 0 3px #00cc00;
+	user-select: text;
+}
+
+.code-presentation ::selection {
+  color: #ffffff;
+  background: #009900;
+  text-shadow: 0 0 2px #00ff00;
 }
 
 .blog-content h2{
