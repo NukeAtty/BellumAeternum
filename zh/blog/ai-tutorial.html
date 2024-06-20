@@ -88,7 +88,7 @@
 						<p>ThreatPerOccupant=10             ;AI对每一个进驻建筑的步兵判定的威胁值。</p>
 						<p>ApproachTargetResetMultiplier=1.5 ;AI判定目标移动的参数。AI通过武器射程判定目标，而如果这个目标移动到武器射程*该参数之外，AI将判定该目标为移动目标，并重新接近敌人。</p>
 						<p>NormalTargetingDelay=27;gs These provide explicit control of targeting rates in frames.  Guard Area is lower since it scans twice as far, but 27,36 are just the defaults from TS</p>
-						<p>AINavalYardAdjacency=20 ;gs distance in cells the Computer can place his Naval Yard from his Con Yard</p>
+						<p>AINavalYardAdjacency=20          ;AI能建造船厂的距离，单位为单元格(Cell)。</p>
 						<p>DisabledDisguiseDetectionPercent=15,5,2 ;gs h,m,e Damn I love this section.  This is the percent chance that an individual unit will detect a Mirage Tank who is fake-blinking (from Firing).  This is per unit, so even a lowish number is near automatic when the computer has 10 guys nearby</p>
 						<p>AIAutoDeployFrameDelay=15,25,100 ;//gs h,m,e The number of frames that the AI will wait to deploy his GI's that are in Guard mode so that they don't bounce up and down</p>
 						<p>MaximumBuildingPlacementFailures=3 ;gs If the computer gets hung up on thinking it can place something but being unable to clear the space (too jammed with people) then bail after this many failures.  The computer will try every 45 (PlacementDelay) frames, so that can tell you how long he'll try for it</p>
