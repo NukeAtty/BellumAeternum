@@ -3,6 +3,11 @@
 	src: url("src/font/furore.otf");
 }
 
+@font-face {
+	font-family: "Neon";
+	src: url("src/font/MonaspaceNeon-Regular.otf");
+}
+
 /*HarmonyOS Sans Settings*/
 @font-face {
 	font-family: "HarmonyOS Sans";
@@ -486,7 +491,7 @@ footer {
 }
 
 .feature-container p{
-	font-family: monospace;
+	font-family: Neon, monospace;
 	font-size: 12px;
 	font-weight: 400;
 	color: #ffffff;
@@ -1120,7 +1125,7 @@ footer {
 }
 
 .code-presentation p,del {
-	font-family: monospace;
+	font-family: Neon, monospace;
 	font-size: 14px;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
@@ -1215,7 +1220,7 @@ footer {
 .faction-container p {
 	color: #ffffff;
 	font-size: 16px;
-	font-family: monospace;
+	font-family: Neon, monospace;
 	background-color: #000000;
 	border: 1px solid #ffffff;
 	border-style: ridge;
@@ -1928,7 +1933,7 @@ footer {
 	}
 
 	.feature-container p{
-		font-family: monospace;
+		font-family: Neon, monospace;
 		font-size: 12px;
 		font-weight: 400;
 		color: #ffffff;
@@ -2334,7 +2339,7 @@ footer {
 	}
 
 	.code-presentation p,del {
-		font-family: monospace;
+		font-family: Neon, monospace;
 		font-size: 14px;
 		color: #00ff00;
 		text-shadow: 0 0 3px #00cc00;
@@ -2434,7 +2439,7 @@ footer {
 	}
 
 	.faction-container p {
-		font-family: monospace;
+		font-family: Neon, monospace;
 		margin: auto;
 		text-align: center;
 	}

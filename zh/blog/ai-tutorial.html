@@ -101,20 +101,25 @@
 						<p>Crush=1.8    ;在该距离时AI的载具会直接碾压可碾压的步兵以取代开火，单位为单元格(Cell)。</p>
 					</div>
 					<h3 id="rules-ai">[AI]</h3>
+						<p></p>
+						<div class="code-presentation">
+							
+						</div>
 					<h3 id="rules-iq">[IQ]</h3>
+					<p>[IQ]的设置主要和地图相结合，比如在任务中有些敌人不会修理建筑，不会自动生产，这就是[IQ]的功劳。在遭遇战中，[IQ]全部是最大数值。</p>
 					<div class="code-presentation">
 						<p>[IQ]</p>
-						<p>MaxIQLevels=5           ; the maximum number of discrete IQ levels</p>
-						<p>SuperWeapons=4          ; super weapons are automatically fired by computer</p>
-						<p>Production=5            ; building/unit production is automatically controlled by computer</p>
-						<p>GuardArea=2             ; newly produced units start in guard area mode</p>
-						<p>RepairSell=1            ; allowed to choose repair or sell of damaged buildings</p>
-						<p>AutoCrush=2             ; automatically try to crush antogonists if possible</p>
-						<p>Scatter=2               ; will scatter from incoming threats [grenades and such]</p>
-						<p>ContentScan=3           ; will consider contents of transport when picking good target</p>
-						<p>Aircraft=3              ; automatically replace aircraft</p>
-						<p>Harvester=2             ; automatically replace lost harvesters</p>
-						<p>SellBack=2              ; allowed to sell buildings</p>
+						<p>MaxIQLevels=5           ; IQ的最大值</p>
+						<p>SuperWeapons=4          ; 可以使用超级武器的最小IQ值</p>
+						<p>Production=5            ; 可以自动建造建筑的最小IQ值</p>
+						<p>GuardArea=2             ; 可以让新单位进入区域警戒状态的最小IQ值</p>
+						<p>RepairSell=1            ; 可以维修或者卖掉建筑以获取最大收益的最小IQ值</p>
+						<p>AutoCrush=2             ; 自动碾压单位的最小IQ值</p>
+						<p>Scatter=2               ; 可以躲避炮弹的最小IQ值</p>
+						<p>ContentScan=3           ; 懂得扫描乘员威胁度的最小IQ值</p>
+						<p>Aircraft=3              ; 懂得生产飞行器的最小IQ值</p>
+						<p>Harvester=2             ; 懂得补充矿车的最小IQ值</p>
+						<p>SellBack=2              ; 懂得卖掉建筑攒经费的最小IQ值</p>
 					</div>
 					<h2 id="ai">AI改动</h2>
 					<p>AI改动意为更改Ai(md).ini文件。AI(md).ini主要分为4大板块，即特遣部队、脚本、小队和触发。</p>
