@@ -101,7 +101,7 @@
 						<p>Crush=1.8    ;在该距离时AI的载具会直接碾压可碾压的步兵以取代开火，单位为单元格(Cell)。</p>
 					</div>
 					<h3 id="rules-ai">[AI]</h3>
-						<p>[AI]部分让AI理解一些建筑功能的设定，告诉AI该建造什么，建造的建筑的用途是什么。</p>
+						<p>[AI]部分是Rules(md).ini中对AI的基本定义，比如告诉AI有哪些建筑可以建造、各个建筑的定义、防御建筑的数量等。</p>
 						<div class="code-presentation">
 							<p>[AI]</p>
 							<p>BuildConst=GACNST,NACNST,YACNST	;AI会建造的基地</p>
@@ -119,6 +119,19 @@
 							<p>SovietBaseDefenses=NALASR,NABNKR,TESLA,NAFLAK	;苏军AI会建造的防御武器，无视BuildLimit和RequiredHouse。</p>
 							<p>ThirdBaseDefenses=YAGGUN,YAPSYT,NATBNK	;第三阵营AI会建造的防御武器，无视BuildLimit和RequiredHouse。</p>
 							<p>AIForcePredictionFudge=5,25,80	;AI根据敌人单位造价的总和，选择防空、反装甲、反步兵的防御建筑。</p>
+							<br>
+							<p>NodBaseDefenseCoefficient=1.2	;只影响SovietBaseDefenseCounts的计算。</p>
+							<p>GDIBaseDefenseCoefficient=1.5 	;只影响AlliedBaseDefenseCounts的计算。</p>
+							<p>ComputerBaseDefenseResponse=3	;AI响应基地被攻击或者ToProtect单位被攻击的敌人的参数。具体算法未知。</p>
+							<br>
+							<p>PatrolScan=.016         ;AI执行巡逻任务时搜索敌人的时间。(单位:分钟)</p>
+							<p>CreditReserve=100       ;AI在资金少于这个数就不会维修建筑了。</p>
+							<p>PathDelay=.01           ;单位拥堵后再次尝试通过的时间间隔。(单位:分钟)</p>
+							<p>BlockagePathDelay=60    ;再次尝试通过但仍无法通过则绕路的时间。(单位:帧)</p>
+							<p>AutocreateTime=1        ;创建一支带有AutoCreate=yes小队的时间（单位：分钟）</p>
+							<br>
+							<p>Paranoid=yes            ;AI玩家是否针对人类玩家。</p>
+							<p>AIBaseSpacing=1         ;AI生产建筑的最小间隔，单位为单元格(Cell)。</p>
 						</div>
 					<h3 id="rules-iq">[IQ]</h3>
 					<p>[IQ]的设置主要和地图相结合，比如在任务中有些敌人不会修理建筑，不会自动生产，这就是[IQ]的功劳。在遭遇战中，[IQ]全部是最大数值。</p>
