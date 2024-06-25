@@ -22,4 +22,5 @@ With Ares
 	No Limit
 		With Ares, there won't be much limitation, which means you can add the IFV logic to any ground vehicle you want, and supports much more swapable modes to be added.
 	Weapon system
+		In Ares, the weapon system is rather different from the original one.
 	Name system
