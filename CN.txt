@@ -18,7 +18,7 @@ Tunnel Hub
 Battle Bunker
 	Leaves tunnel entry after destroyed.
 	Can build together and shift.
-Arty
+Field Artillery
 Microwave Projector[SW]
 	Microwave Attack
 
@@ -39,8 +39,6 @@ Skyarc Tank
 	57mm
 Mine Layer
 	Mine
-Microwave Tank
-	Red Tint
 Repair Truck
 	Repair Wreck
 Kunlun Howitzer
