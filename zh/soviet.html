@@ -82,7 +82,7 @@
 						<ul>
 							<li>建造前提：无</li>
 							<li>能耗：0</li>
-							<li>费用：4000（基地车）</li>
+							<li>费用：2000（基地车）</li>
 							<li>战术：无</li>
 							<li>特性：收起部署为<a href="#soviet-mcv">苏联机动基地车</a></li>
 						</ul>
@@ -158,13 +158,13 @@
 						</ul>
 					</div>
 				</div>
-				<!-------[Soviet Weapon Factory]------->
+				<!-------[苏联武器工厂]------->
 				<div class="unit-container" id="soviet-weapon-factory">
 					<div class="unit-container-left">
-						<img src="../src/soviet-weapon-factory.webp" alt="Soviet Weapon Factory" width="360" height="270" loading="lazy"></img>
+						<img src="../src/soviet-weapon-factory.webp" alt="苏联武器工厂" width="360" height="270" loading="lazy"></img>
 					</div>
 					<div class="unit-container-mid">
-						<img class="unit-icon" src="../src/soviet-weapon-factory-icon-ch.webp" alt="Soviet Weapon Factory Icon" width="60" height="48"></img>
+						<img class="unit-icon" src="../src/soviet-weapon-factory-icon-ch.webp" alt="苏联武器工厂 Icon" width="60" height="48"></img>
 						<h3>苏联武器工厂</h3>
 					</div>
 					<div class="unit-container-right">
@@ -184,13 +184,13 @@
 						</ul>
 					</div>
 				</div>
-				<!-------[Soviet Radar]------->
+				<!-------[苏联雷达]------->
 				<div class="unit-container" id="soviet-radar">
 					<div class="unit-container-left">
-						<img src="../src/soviet-radar.webp" alt="Soviet Radar" width="360" height="270" loading="lazy"></img>
+						<img src="../src/soviet-radar.webp" alt="苏联雷达" width="360" height="270" loading="lazy"></img>
 					</div>
 					<div class="unit-container-mid">
-						<img class="unit-icon" src="../src/soviet-radar-icon-ch.webp" alt="Soviet Radar Icon" width="60" height="48"></img>
+						<img class="unit-icon" src="../src/soviet-radar-icon-ch.webp" alt="苏联雷达 Icon" width="60" height="48"></img>
 						<h3>苏联雷达</h3>
 					</div>
 					<div class="unit-container-right">
@@ -308,7 +308,7 @@
 							</li>
 							<li>能耗：-100</li>
 							<li>费用：2500</li>
-							<li>战术：无</li>
+							<li>战术：<a href="#planned-economy">计划经济</a></li>
 							<li>特性：载具打75折</li>
 						</ul>
 					</div>
@@ -332,7 +332,6 @@
 							<li>建造前提： <a href="#soviet-construction-yard">苏联建造场</a></li>
 							<li>能耗： 0</li>
 							<li>费用：100</li>
-							<li>战术：无</li>
 							<li>特性：阻挡步兵和地面载具</li>
 						</ul>
 					</div>
@@ -359,7 +358,6 @@
 							<li>主武器：12.7毫米AK612</li>
 							<li>弹种：穿甲弹</li>
 							<li>费用：500</li>
-							<li>战术：无</li>
 							<li>特性：反步兵和轻型载具</li>
 						</ul>
 					</div>
@@ -386,7 +384,6 @@
 							<li>主武器：85毫米ZiS-S-53U防空炮</li>
 							<li>弹种：高爆弹</li>
 							<li>费用：1000</li>
-							<li>战术：无</li>
 							<li>特性：防空</li>
 						</ul>
 					</div>
@@ -410,11 +407,10 @@
 									<li><a href="#soviet-radar">苏联雷达</a></li>
 								</ol>
 							</li>
-							<li>能耗： -50</li>
+							<li>能耗： -75</li>
 							<li>主武器：充能线圈</li>
 							<li>弹种：高压电流</li>
 							<li>费用：1500</li>
-							<li>战术：无</li>
 							<li>特性：可以被<a href="#tesla-trooper">磁爆步兵</a>和<a href="#tesla-trooper">磁能坦克</a>充能</li>
 						</ul>
 					</div>
@@ -480,9 +476,28 @@
 						<p>用马克思主义和列宁主义策反敌人。</p>
 						<ul>
 							<li>使用前提： <a href="#intelligence-agency">情报中心</a></li>
+							<li>费用：2000</li>
+							<li>加载时间：150秒</li>
+							<li>特性：策反敌军单位</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[PlannedEconomy]------->
+				<div class="unit-container" id="planned-economy">
+					<div class="unit-container-left">
+						<img src="src/dummy-360x270.webp" alt="Planned Economy" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="../src/planned-economy-icon-ch.webp" alt="计划经济图标" width="60" height="48"></img>
+						<h3>计划经济</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>为了体现计划经济的优越性，苏联的中央政府会给在战场上的所有指挥官进行持续性拨款。</p>
+						<ul>
+							<li>使用前提：<a href="#intelligence-agency">工业工厂</a></li>
 							<li>费用：0</li>
 							<li>加载时间：120秒</li>
-							<li>特性：策反敌军单位</li>
+							<li>特性：获得1,0000点资金</li>
 						</ul>
 					</div>
 				</div>
@@ -577,7 +592,7 @@
 								</ol>
 							</li>
 							<li>主武器：N2T磁暴枪</li>
-							<li>费用：800</li>
+							<li>费用：600</li>
 							<li>特性：
 								<ol>
 									<li>无法被碾压</li>
@@ -626,16 +641,21 @@
 						<img src="../src/soviet-mcv.webp" alt="Soviet MCV" width="360" height="270" loading="lazy"></img>
 					</div>
 					<div class="unit-container-mid">
-						<img class="unit-icon" src="../src/soviet-mcv-icon-ch.webp" alt="Soviet MCV Icon"></img>
+						<img class="unit-icon" src="../src/soviet-mcv-icon-ch.webp" alt="苏联机动基地车图标"></img>
 						<h3>苏联机动基地车</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
+						<p>CA-55是苏联最新型的机动基地车，其采用了高压缩展开技术，并将已经停止开发的972工程作为底盘————这个四履带底盘可以让CA-55在复杂地形下也能畅通无阻，并大幅度提升了其越野性能</p>
 						<ul>
-							<li>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+							<li>建造前提：
+								<ol>
+									<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+									<li><a href="#soviet-radar">苏联雷达</a></li>
+								</ol>
+							</li>
 							<li>主武器：无</li>
 							<li>弹种：无</li>
-							<li>费用：4000</li>
+							<li>费用：2000</li>
 							<li>特性：部署展开为<a href="#soviet-construction-yard">苏联建造场</a></li>
 						</ul>
 					</div>
@@ -650,9 +670,9 @@
 						<h3>武装采矿车</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
+						<p>BH-2武装采矿车是从翻新后的T-34中型坦克改装而来的特殊用途车辆。因为装备有45毫米高射速炮，BH-2武装采矿车可以抵抗住敌军轻步兵和轻型载具的袭扰。</p>
 						<ul>
-							<li>建造前提： <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+							<li>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
 							<li>主武器：45毫米20-K坦克炮</li>
 							<li>弹种：高爆穿甲弹</li>
 							<li>费用：1400</li>
@@ -670,9 +690,9 @@
 						<h3>犀牛坦克</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
+						<p>T-56犀牛坦克是T-44坦克的继承者，其拥有低矮的造型以降低被弹面积，同时拥有大角度的首上，可以创造高强度的等效装甲。同时，因为本身自重较轻，犀牛坦克拥有不错的机动性和通过性，是苏军最坚实可靠的装甲力量。</p>
 						<ul>
-							<li>建造前提： <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+							<li>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
 							<li>主武器：100毫米D-56TS坦克炮</li>
 							<li>弹种：硬芯穿甲弹</li>
 							<li>费用：1600</li>
@@ -690,9 +710,9 @@
 						<h3>防空履带车</h3>
 					</div>
 					<div class="unit-container-right">
-						<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
+						<p>BTR-152Z防空履带车是由BTR-152装甲运兵车改进而来的防空单位，其悬挂系统被改进为半履带，可以有效承受23毫米防空炮带来的后坐力，并提高越野性能。23毫米高射炮不仅在可以用于防空，更可以将高炮放平，用于对步兵集群的大规模杀伤。</p>
 						<ul>
-							<li>建造前提： <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+							<li>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
 							<li>主武器：23毫米AZP-23P防空炮</li>
 							<li>弹种：高爆穿甲弹</li>
 							<li>费用：1000</li>
@@ -714,8 +734,8 @@
 						<ul>
 							<li>建造前提：
 								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
+									<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+									<li><a href="#soviet-radar">苏联雷达</a></li>
 								</ol>
 							</li>
 							<li>主武器：N100T磁暴线圈</li>
@@ -739,8 +759,8 @@
 						<ul>
 							<li>建造前提：
 								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
+									<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+									<li><a href="#soviet-radar">苏联雷达</a></li>
 								</ol>
 							</li>
 							<li>主武器：P-34高功率雷达</li>
@@ -764,8 +784,8 @@
 						<ul>
 							<li>建造前提：
 								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
+									<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+									<li><a href="#soviet-radar">苏联雷达</a></li>
 								</ol>
 							</li>
 							<li>主武器：BM-15火箭发射器</li>
@@ -789,8 +809,8 @@
 						<ul>
 							<li>建造前提：
 								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
+									<li><a href="#soviet-battle-lab">苏联作战实验室</a></li>
 								</ol>
 							</li>
 							<li>主武器：122毫米BL-9X线膛炮</li>
@@ -817,8 +837,8 @@
 						<ul>
 							<li>建造前提：
 								<ol>
-									<li><a href="#soviet-airforce-command">Soviet Air Force Command HQ</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
+									<li><a href="#soviet-airforce-command">苏联空指部</a></li>
+									<li><a href="#soviet-radar">苏联雷达</a></li>
 								</ol>
 							</li>
 							<li>主武器：KS1空地导弹</li>
