@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title>原版AI分析 | 万世之战：为红警2带来前所未有的体验</title>
+</head>
+<body>
+	<header>
+		<ul class="navigation-button">
+			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
+			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
+			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
+		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com/zh/"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>尤里的复仇：原版AI分析</h1>
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+							<a href="#scripts">原版脚本</a>
+							<a href="#teams">原版小队</a>
+							<a href="#triggers">原版触发</a>
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					原版尤里的复仇AI虽然写的烂，但对于新手来说是个不错的参照。然而，因为原版AI各类数据命名的诡异，让很多人看着很混乱，在这里做一个详细的总结与分析。
+					<h2 id="scripts">原版脚本</h2>
+					<div class="ai-trigger">
+						<table>
+							<tr>
+								<th>脚本名称</th>
+								<th>注册编号</th>
+								<th>动作</th>
+							</tr>
+							<tr>
+								<td>Allied Refinery Guard（盟军矿场防御）</td>
+								<td>0C9C878C-G</td>
+								<td>
+									<ol>
+										<li>移动到威胁最小的[GAREFN]附近</li>
+										<li>保持警戒状态10秒</li>
+										<li>移动到最远的[GAREFN]附近</li>
+										<li>保持警戒状态10秒</li>
+										<li>移动到最远的[GAREFN]附近</li>
+										<li>保持警戒状态10秒</li>
+										<li>从第一个动作开始循环</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>Allied Base Guard - Tech（盟军基地防御-高科）</td>
+								<td>0CE4CC8C-G</td>
+								<td>
+									<ol>
+										<li>移动到威胁最小的[GATECH]附近</li>
+										<li>进入范围警戒状态</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>Allied Base Defense（盟军基地防御）</td>
+								<td>0CE4C2DC-G</td>
+								<td>
+									<ol>
+										<li>移动到威胁最小的[GACNST]附近</li>
+										<li>进入范围警戒状态</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Attack Buildings（常规攻击建筑）</td>
+								<td>0CE4EC8C-G</td>
+								<td>
+									<ol>
+										<li>于己方基地外围集结</li>
+										<li>于敌方基地外围集结</li>
+										<li>攻击建筑</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Attack Buildings（通用攻击建筑）</td>
+								<td>0CE4EC8C-G</td>
+								<td>
+									<ol>
+										<li>于己方基地外围集结</li>
+										<li>于敌方基地外围集结</li>
+										<li>攻击建筑</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Factory Attack（通用攻击工厂）</td>
+								<td>0612EDBC-G</td>
+								<td>
+									<ol>
+										<li>于己方基地外围集结</li>
+										<li>进入附近堡垒</li>
+										<li>于敌方基地外围集结</li>
+										<li>攻击工厂类建筑</li>
+										<li>完成目标</li>
+										<li>攻击建筑</li>
+										<li>攻击任意单位</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Oil Derrick Capture（通用油井占领）</td>
+								<td>0C94D80C-G</td>
+								<td>
+									<ol>
+										<li>占领[CAOILD]</li>
+										<li>攻击工厂类建筑</li>
+										<li>攻击电力类建筑</li>
+										<li>攻击任意单位</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Airport Capture（通用机场占领）</td>
+								<td>09B4DB1C-G</td>
+								<td>
+									<ol>
+										<li>占领[CAAIRP]</li>
+										<li>攻击工厂类建筑</li>
+										<li>攻击电力类建筑</li>
+										<li>攻击任意建筑</li>
+									</ol>
+								</td>
+							</tr>
+							<tr>
+								<td>General Fast Factory Attack（通用快攻工厂）</td>
+								<td>0ABA756C-G</td>
+								<td>
+									<ol>
+										<li>在敌方基地外围集结</li>
+										<li>攻击工厂类建筑</li>
+										<li>完成目标</li>
+										<li>攻击防御建筑</li>
+										<li>攻击任意建筑</li>
+										<li>攻击任意单位</li>
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<h2 id="triggers">原版触发</h2>
+					<div class="ai-trigger">
+						<table>
+							<tr>
+								<th>触发名称</th>
+								<th>触发条件</th>
+								<th>触发小队</th>
+								<th>阵营</th>
+								<th>困难度</th>
+								<th>权重</th>
+							</tr>
+							<tr>
+								<td>Allied Anti-Nuke 1(盟军反核弹1号)</td>
+								<td>敌方拥有[NAMISL]（核弹发射井）</td>
+								<td><a href="#08DA125C-G">08DA125C-G</a></td>
+								<td>盟军</td>
+								<td>中等、困难</td>
+								<td>70</td>
+							</tr>
+							<tr>
+								<td>Allied Anti-Weather (盟军反天气控制仪)</td>
+								<td>敌方拥有[GAWEAT]（天气控制仪）</td>
+								<td><a href="#0A6E513C-G">0A6E513C-G</a></td>
+								<td>盟军</td>
+								<td>中等、困难</td>
+								<td>70</td>
+							</tr>
+							<tr>
+								<td>Allied Base guard - Adv (盟军高级基地防御)</td>
+								<td>己方拥有[GATECH]（盟军作战实验室）</td>
+								<td><a href="#0A6E513C-G">0CE4CA3C-G</a></td>
+								<td>盟军</td>
+								<td>中等、困难</td>
+								<td>70</td>
+							</tr>
+							<tr>
+								<td>Allied Base Guard - Basic (盟军基础基地防御)</td>
+								<td>敌方金钱大于等于0</td>
+								<td><a href="#0A6E513C-G">0CE4CA3C-G</a></td>
+								<td>盟军</td>
+								<td>简单、中等、困难</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<td>Allied Base guard - Tech (盟军基础高科防御)</td>
+								<td>己方拥有[GATECH]（盟军作战实验室）</td>
+								<td><a href="#0A6E513C-G">0CE4CEFC-G</a></td>
+								<td>盟军</td>
+								<td>中等、困难</td>
+								<td>40</td>
+							</tr>
+							<tr>
+								<td>Allied Base Guard - War (盟军基础工厂防御)</td>
+								<td>己方拥有[GAWEAP]（盟军战车工厂）</td>
+								<td><a href="#0A6E513C-G">06175EFC-G</a></td>
+								<td>盟军</td>
+								<td>中等、困难</td>
+								<td>40</td>
+							</tr>
+						</table>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+				<a href="https://www.ra2be.com/zh/"><img src="../../src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+				</div>
+				<div class="lang-selector">
+					<a href="https://www.ra2be.com"><img src="../../src/english.webp" alt="English" width="auto" height="30px"></a>
+					<a href="https://www.ra2be.com/zh/blog/ai-tutorial.html"><img src="../../src/chinese.webp" alt="Chinese" width="auto" height="30px"></a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>博客</p>
+				<ul>
+					<li><a href="../blog.html#concept">概念</a></li>
+					<li><a href="../blog.html#tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#Contact">联系方式</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">红警DIY论坛</a>
+			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
+		</div>
+	</footer>
+</body>
