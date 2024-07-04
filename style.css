@@ -1138,24 +1138,6 @@ footer {
   text-shadow: 0 0 2px #00ff00;
 }
 
-.code-presentation #formula {
-	color: #000000;
-	font-size: 12px;
-	background-color: #00ff00;
-	border-radius: 4px;
-	margin: 0 2px;
-	padding: 0 2px;
-}
-
-.code-presentation #ares {
-	color: #000000;
-	font-size: 10px;
-	background-color: #ff0000;
-	border-radius: 2px;
-	margin: 0 2px;
-	padding: 0 2px;
-}
-
 .blog-content h2{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: 700;
@@ -1170,32 +1152,31 @@ footer {
 	text-align: left;
 	color:#fff;
 }
+.blog-content h4{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: normal;
+	font-size: 22px;
+	text-align: left;
+	color:#fff;
+	line-height: 1em;
+}
 
 .blog-content a {
 	color: #fff;
 	text-decoration: underline;
 }
 
-.ai-script table, th, tr, td {
+.general-table {
+	margin-bottom:1em;
+}
+
+.general-table table, th, tr, td {
 	border: 1px solid #fff;
   border-collapse: collapse;
   padding: 0.5em;
 }
 
-.ai-script td:nth-child(odd){
-	background-color: #dddddd25;
-	text-align: center;
-	font-weight: bold;
-	width: 5%;
-}
-
-.ai-trigger table, th, tr, td {
-	border: 1px solid #fff;
-  border-collapse: collapse;
-  padding: 0.5em;
-}
-
-.ai-trigger td {
+.general-table td {
 	width: 10%;
 }
 

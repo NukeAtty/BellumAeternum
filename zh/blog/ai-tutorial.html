@@ -7,6 +7,50 @@
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
 	<meta name="robots" content="noindex, nofollow">
 	<title>AI教程 | 万世之战：为红警2带来前所未有的体验</title>
+
+	<!--Internal Styles-->
+	<style>
+		.ai-script table, th, tr, td {
+			border: 1px solid #fff;
+		  border-collapse: collapse;
+		  padding: 0.5em;
+		}
+
+		.ai-script td:nth-child(odd){
+			background-color: #dddddd25;
+			text-align: center;
+			font-weight: bold;
+			width: 5%;
+		}
+
+		.ai-trigger table, th, tr, td {
+			border: 1px solid #fff;
+		  border-collapse: collapse;
+		  padding: 0.5em;
+		}
+
+		.ai-trigger td {
+			width: 10%;
+		}
+
+		.code-presentation #formula {
+			color: #000000;
+			font-size: 12px;
+			background-color: #00ff00;
+			border-radius: 4px;
+			margin: 0 2px;
+			padding: 0 2px;
+		}
+
+		.code-presentation #ares {
+			color: #000000;
+			font-size: 10px;
+			background-color: #ff0000;
+			border-radius: 2px;
+			margin: 0 2px;
+			padding: 0 2px;
+		}
+	</style>
 </head>
 <body>
 	<header>
@@ -65,11 +109,11 @@
 						<p>AIHateDelays=30,50,70     ;(困难、中等、简单)的AI选择敌人的时间间间隔，单位为帧。</p>
 						<p>AIAlternateProductionCreditCutoff=1000 ;AI的资金低于这个数值就不再花钱</p>
 						<br>
-						<p>MultiplayerAICM=400,0,0.  ;(困难、中等、简单)的AI初始资金加成。<span id="formula">初始资金=设定资金*(x+100)/100</span></p>
-						<p>AIVirtualPurifiers=4,2,0. ;(困难、中等、简单)的AI采集矿石转化成的资金加成。<span id="formula">转化资金*x</span></p>
-						<p>AISlaveMinerNumber=4,3,2. ;(困难、中等、简单)的AI生产的奴隶矿场数量。</p>
-						<p>HarvestersPerRefinery=2,2,1. ;(困难、中等、简单)的AI会为每个矿场配备的矿车数量。</p>
-						<p>AIExtraRefineries=2,1,0.  ;(困难、中等、简单)的AI会额外建造的矿场数量。</p>
+						<p>MultiplayerAICM=400,0,0	;(困难、中等、简单)的AI初始资金加成。<span id="formula">初始资金=设定资金*(x+100)/100</span></p>
+						<p>AIVirtualPurifiers=4,2,0 ;(困难、中等、简单)的AI采集矿石转化成的资金加成。<span id="formula">转化资金*x</span></p>
+						<p>AISlaveMinerNumber=4,3,2 ;(困难、中等、简单)的AI生产的奴隶矿场数量。</p>
+						<p>HarvestersPerRefinery=2,2,1 ;(<span style="color:deepskyblue">盟军</span>、<span style="color:coral">苏联</span>、<span style="color:magenta;">尤里</span>)的AI会为每个矿场配备的矿车数量。</p>
+						<p>AIExtraRefineries=2,1,0  ;(困难、中等、简单)的AI会额外建造的矿场数量。</p>
 						<br>
 						<p>MinimumAIDefensiveTeams=1,1,1    ;(困难、中等、简单)的AI会生产的基地防御的最小小队数量。</p>
 						<p>MaximumAIDefensiveTeams=2,2,2    ;(困难、中等、简单)的AI会生产的基地防御的最大小队数量。</p>
@@ -553,7 +597,7 @@
 						<p>[TeamName]	;小队的注册名，不得超过24个英文字符，只能是英文。</p>
 						<p>Name=Name of the Team ;小队的名称，用于描述你的小队，不会被游戏读取。</p>
 						<p><del>VeteranLevel=1</del> ;无效。</p>
-						<p>MindControlDecision=0 ;心灵控制单位控制敌人后，被控制者的行为。</p>
+						<p>MindControlDecision=0 ;小队的心灵控制单位在控制敌人之后，被控制者的行为。</p>
 						<p>Loadable=no ;是否有运载单位。</p>
 						<p>Annoyance=no ;是否会还击一次。</p>
 						<p><del>GuardSlower=no</del> ;无效。</p>
@@ -581,7 +625,103 @@
 						<p>Script=ScriptName ;小队行动的脚本。</p>
 						<p>TaskForce=TaskForceName ;小队构成的特遣部队。</p>
 					</div>
-					<p>下面用一个表格讲解一下有效代码的作用和用途：</p>
+					<p>下面，对各个标签做出详细解释：</p>
+					<h4>Aggresive和Suiside组合：</h4>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>适用脚本</th>
+								<th>Aggresive</th>
+								<th>Suicide</th>
+								<th>敌人进入警戒范围</th>
+								<th>受到敌人攻击</th>
+							</tr>
+							<tr>
+								<td rowspan="4">攻击类脚本(0,1,46,59)</td>
+								<td>yes</td>
+								<td>yes</td>
+								<td>无视敌人，执行脚本</td>
+								<td>无视敌人攻击，执行脚本</td>
+							</tr>
+							<tr>
+								<td>yes</td>
+								<td>no</td>
+								<td>无视敌人，执行脚本</td>
+								<td>攻击并追击敌军，一旦攻击完成（敌人被消灭或隐形），继续执行脚本</td>
+							</tr>
+							<tr>
+								<td>no</td>
+								<td>yes</td>
+								<td>无视敌人，执行脚本</td>
+								<td>无视敌人攻击，执行脚本</td>
+							</tr>
+							<tr>
+								<td>no</td>
+								<td>no</td>
+								<td>无视敌人，执行脚本</td>
+								<td>攻击并追击敌军，一旦攻击完成（敌人被消灭或隐形），继续执行脚本</td>
+							</tr>
+							<tr></tr>
+							<tr>
+								<td rowspan="4">移动类脚本(3,47,53)</td>
+								<td>yes</td>
+								<td>yes</td>
+								<td>无视敌人，执行脚本</td>
+								<td>无视敌人攻击，执行脚本</td>
+							</tr>
+							<tr>
+								<td>yes</td>
+								<td>no</td>
+								<td>在移动到目标地点的同时对敌执行攻击(无炮塔单位只会迎击前方敌军)。如果小队所有成员都迎击，小队会放弃执行脚本投入战斗。战斗结束后，小队会继续执行下一行脚本。</td>
+								<td>攻击并追击敌军，如果小队所有成员都迎击，小队会放弃执行脚本投入战斗。战斗结束后，小队会继续执行下一行脚本。</td>
+							</tr>
+							<tr>
+								<td>no</td>
+								<td>yes</td>
+								<td>无视敌人，执行脚本</td>
+								<td>无视敌人攻击，执行脚本</td>
+							</tr>
+							<tr>
+								<td>no</td>
+								<td>no</td>
+								<td>在移动到目标地点的同时对敌执行攻击(无炮塔单位只会迎击前方敌军)。</td>
+								<td>在移动到目标地点的同时对敌执行攻击(无炮塔单位只会迎击前方敌军)。如果敌军逃跑，小队会开始追击。如果小队赶到敌军的地点，则会放弃当前脚本，在战斗之后执行下一行脚本。如果小队在未赶到敌军地点时战斗结束，小队会继续执行当前脚本。</td>
+							</tr>
+						</table>
+					</div>
+					<h4>MindControlDecision相关参数：</h4>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>参数</th>
+								<th>描述</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>不使用这个逻辑</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>招募</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>送进部队回收站</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>送进生化发电厂</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>搜索敌人</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>什么也不做</td>
+							</tr>
+						</table>
+					</div>
 					<h2 id="ai-trigger">触发·Trigger</h2>
 					<p>触发均需要放在[AITriggerTypes]之后，这个可以视作注册表和本体的合并项目。</p>
 					<p>触发的格式如下：</p>
