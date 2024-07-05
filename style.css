@@ -1196,17 +1196,13 @@ footer {
 }
 
 .general-table {
-	margin-bottom:1em;
+	margin-bottom: 1em;
 }
 
 .general-table table, th, tr, td {
 	border: 1px solid #fff;
   border-collapse: collapse;
   padding: 0.5em;
-}
-
-.general-table td {
-	width: 10%;
 }
 
 /*----------Public Module----------*/
@@ -2376,37 +2372,19 @@ footer {
 		text-decoration: underline;
 	}
 
-	.ai-script {
+	.general-table {
 		overflow-x: auto;
 	}
 
-	.ai-trigger {
-		overflow-x: auto;
-	}
-
-	.ai-script table, th, tr, td {
-		border: 1px solid #fff;
-	  border-collapse: collapse;
-	  padding: 0.5em;
-		width: 100%;
-	}
-
-	.ai-script td:nth-child(odd){
-		background-color: #dddddd25;
-		text-align: center;
-		font-weight: bold;
-		width: 5%;
-	}
-
-	.ai-trigger table, th, tr, td {
+	.general-table table, tr, th, td {
 		border: 1px solid #fff;
 	  border-collapse: collapse;
 	  padding: 0.5em;
 		overflow-x: auto;
-		border-collapse: collapse;	  
+		border-collapse: collapse;
 	}
 
-	.ai-trigger td {
+	.general-table td{
 		width: 10%;
 	}
 

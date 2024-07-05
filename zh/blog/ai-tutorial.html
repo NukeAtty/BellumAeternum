@@ -11,8 +11,8 @@
 	<style>
 		.ai-script table, th, tr, td {
 			border: 1px solid #fff;
-		  border-collapse: collapse;
-		  padding: 0.5em;
+			border-collapse: collapse;
+			padding: 0.5em;
 		}
 
 		.ai-script td:nth-child(odd){
@@ -24,8 +24,8 @@
 
 		.ai-trigger table, th, tr, td {
 			border: 1px solid #fff;
-		  border-collapse: collapse;
-		  padding: 0.5em;
+		  	border-collapse: collapse;
+		  	padding: 0.5em;
 		}
 
 		.ai-trigger td {
@@ -48,6 +48,42 @@
 			border-radius: 2px;
 			margin: 0 2px;
 			padding: 0 2px;
+		}
+
+		@media only screen and (max-width: 720px) {
+				.ai-script {
+					overflow-x: auto;
+				}
+
+				.ai-trigger {
+					overflow-x: auto;
+				}
+
+				.ai-script table, th, tr, td {
+					border: 1px solid #fff;
+				  border-collapse: collapse;
+				  padding: 0.5em;
+					width: 100%;
+				}
+
+				.ai-script td:nth-child(odd){
+					background-color: #dddddd25;
+					text-align: center;
+					font-weight: bold;
+					width: 5%;
+				}
+
+				.ai-trigger table, th, tr, td {
+					border: 1px solid #fff;
+				  	border-collapse: collapse;
+				 	 padding: 0.5em;
+					overflow-x: auto;
+					border-collapse: collapse;	  
+				}
+
+				.ai-trigger td {
+					width: 10%;
+				}
 		}
 	</style>
 </head>
