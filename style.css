@@ -1039,6 +1039,35 @@ footer {
 	margin: auto;
 }
 
+.blog-info {
+	display: flex;
+	justify-content: center;
+}
+
+.update-time {
+	display: inline-flex;
+	margin: auto;
+	padding: 0.5em;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 12px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.update-time p{
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	background-blend-mode: hard-light;
+	border-radius: 6px;
+	margin: 0.5em;
+	padding: 0.5em;
+	font-family: Neon, monospace;
+	font-size: 14px;
+	color: #00ff00;
+	text-shadow: 0 0 3px #00cc00;
+	user-select: text;
+	text-align: center;
+}
+
 .blog-left {
 	width: 20%;
 	padding: 1vw;
