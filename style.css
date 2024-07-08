@@ -1142,6 +1142,12 @@ footer {
 	box-shadow: 0 0 12px #000;
 }
 
+.blog-content p{
+	font-family: HarmonyOS Sans;
+	font-size: 16px;
+	color: #fff;
+}
+
 .code-presentation {
 	display: inline-block;
 	/*background-color: #0c0c0c;*/
