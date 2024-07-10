@@ -792,6 +792,9 @@ footer {
 
 .unit-container-right ul{
 	text-align: left;
+	columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
 }
 
 .unit-container-right li{
