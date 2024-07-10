@@ -50,6 +50,49 @@
 			padding: 0 2px;
 		}
 
+		.comparator {
+			display: block;
+			width: 100%;
+			margin: 1em auto;
+			padding: 2vw;
+			background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+			border-radius: 36px;
+			border: 4px outset #ddd;
+			box-shadow: 0 0 24px #000;
+		}
+
+		.comparator label{
+			color: #333;
+		}
+
+		.comparator p{
+			color: #333;
+			font-size: 22px;
+			font-weight: bold;
+		}
+
+		#hexOutput {
+			display: block;
+			/*background-color: #0c0c0c;*/
+			background: linear-gradient(-45deg, #0c0c0c 0, #151515 50%, #0c0c0c 100%);
+			background-blend-mode: hard-light;
+			margin: 1em 0;
+			padding: 1em;
+			border-radius: 10px;
+			border: 1px solid #fff;
+			font-family: Neon, monospace;
+			font-size: 14px;
+			color: #00ff00;
+			text-shadow: 0 0 3px #00cc00;
+			user-select: text;
+		}
+
+		#hexOutput::selection {
+			color: #ffffff;
+			background: #009900;
+			text-shadow: 0 0 2px #00ff00;
+		}
+
 		@media only screen and (max-width: 720px) {
 				.ai-script {
 					overflow-x: auto;
@@ -813,8 +856,8 @@
 								<td>单位名称</td>
 							</tr>
 							<tr>
-								<th>条件参数</th>
-								<td colspan="9">64位长度，16进制。前10位有效。前8位代表数值，第9、10位代表算法值。详情见<a href="#prerequisite-parameter">条件参数详解</a></td>
+								<th>条件对比参数</th>
+								<td colspan="9">64位长度，16进制。前10位有效。前8位代表数值，第9、10位代表算法值。详情见<a href="#prerequisite-parameter">条件对比参数详解</a></td>
 							</tr>
 							<tr>
 								<th>基础权重</th>
@@ -869,7 +912,24 @@
 						<p>前8位代表数字，为16进制，可以通过10进制转16进制的转换器进行转换。比如十进制中的100，转换成8位的16进制就是00000064。</p>
 						<p>在此之后，必须以两位为单位，将16进制的数字倒着写，于是上述16进制数就成为64000000。</p>
 						<p>最后，将条件附加在16进制数的后面，00：<，01：≤，02：=，03：≥，04：>，05：≠</p>
-						<p>比如，大于等于100，就写作0000006403，然后在后面添加54个0即可放进触发中。</p>
+						<p>比如，大于等于100，就写作6400000003，然后在后面添加54个0即可放进触发中。</p>
+						<p>为了方便，可以用下面这个小工具进行计算：</p>
+						<div class="comparator">
+							<label for="comparisonSelect">选择对比符号：</label>
+							<select id="comparisonSelect">
+							    <option value="00"><</option>
+							    <option value="01">≤</option>
+							    <option value="02">=</option>
+						        <option value="03">≥</option>
+						        <option value="04">></option>
+						        <option value="05">≠</option>
+							</select>
+    						<label for="decimalInput">输入对比数字：</label>
+    						<input type="number" id="decimalInput" placeholder="输入任意整数">
+    					    <button onclick="convertToHex()">生成</button>
+    					    <p>生成结果：</p>
+   					        <label id="hexOutput"></label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -915,4 +975,28 @@
 			<a href="https://www.ppmforums.com/">Project Perfect Mod</a>
 		</div>
 	</footer>
+	<script>
+        function convertToHex() {
+            const decimalValue = parseInt(document.getElementById('decimalInput').value, 10);
+            const comparisonValue = document.getElementById('comparisonSelect').value;
+
+            // Convert decimal to hex and pad to 8 digits
+            let hexValue = decimalValue.toString(16).toUpperCase().padStart(8, '0');
+
+            // Split into 4 pieces and reverse the order
+            const hexPieces = [
+                hexValue.slice(0, 2),
+                hexValue.slice(2, 4),
+                hexValue.slice(4, 6),
+                hexValue.slice(6, 8)
+            ].reverse();
+
+            // Join the pieces and add the comparison value
+            const reversedHexValue = hexPieces.join('');
+            const finalHexValue = reversedHexValue + comparisonValue + '0'.repeat(54);
+
+            // Display the result
+            document.getElementById('hexOutput').innerText = finalHexValue;
+        }
+    </script>
 </body>
