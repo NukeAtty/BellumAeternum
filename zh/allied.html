@@ -438,8 +438,34 @@
 							</li>
 							<li>能耗：-100</li>
 							<li>费用：2000</li>
-							<li>战术：堡垒轰炸</li>
+							<li>战术：<a href="#fortress-bombing">堡垒轰炸</a></li>
 							<li>特性：提供雷达</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Weather Machine]------->
+				<div class="unit-container" id="weather-machine">
+					<div class="unit-container-left">
+						<img src="../src/weather-machine.webp" alt="天气控制仪" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="../src/weather-machine-icon-ch.webp" alt="天气控制仪图标" width="60" height="48"></img>
+						<h3>天气控制仪</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>天气控制仪是盟军的终极大规模杀伤性武器。天气控制仪通过聚焦光束发射到对流层，改变对流层分子运动趋势，并在指定坐标形成闪电风暴。</p>
+						<ul>
+							<li>建造前提：
+								<ol>
+									<li><a href="#allied-construction-yard">盟军建造场</a></li>
+									<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
+									<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
+								</ol>
+							</li>
+							<li>能耗：-200</li>
+							<li>费用：4000</li>
+							<li>战术：闪电风暴</li>
+							<li>特性：超级武器</li>
 						</ul>
 					</div>
 				</div>
@@ -468,7 +494,7 @@
 				</div>
 				<!-------[Fortress Bombing]------->
 				<div class="unit-container" id="fortress-bombing">
-					<div class="../unit-container-left">
+					<div class="unit-container-left">
 						<img src="../src/tropofortress.webp" alt="对流层堡垒轰炸机" width="360" height="270" loading="lazy"></img>
 					</div>
 					<div class="unit-container-mid">
@@ -478,10 +504,29 @@
 					<div class="unit-container-right">
 						<p>SBX-47对流层堡垒轰炸机是盟军的超音速低空轰炸机，速度极快，普通的防空武器很难对付。对流层堡垒轰炸机每次轰炸任务会携带5枚高爆炸弹，投向目标区域。记住，在轰炸任务开始后一定要让友军撤离目标区域，炸弹的杀伤力不容小觑。</p>
 						<ul>
-							<li>使用前提：<a href="#satellite-telecom"></a>卫星通讯器</li>
+							<li>使用前提：<a href="#satellite-telecom">卫星通讯器</a></li>
 							<li>费用：2000</li>
 							<li>冷却时间：120秒</li>
 							<li>特性：投放5枚CBU-32高爆炸弹</li>
+						</ul>
+					</div>
+				</div>
+				<!-------[Lightning Storm]------->
+				<div class="unit-container" id="lightning-storm">
+					<div class="unit-container-left">
+						<img src="../src/dummy-360x270.webp" alt="闪电风暴" width="360" height="270" loading="lazy"></img>
+					</div>
+					<div class="unit-container-mid">
+						<img class="unit-icon" src="../src/lightning-storm-icon-ch.webp" alt="闪电风暴图标" width="60" height="48"></img>
+						<h3>闪电风暴</h3>
+					</div>
+					<div class="unit-container-right">
+						<p>闪电风暴形成后，将对地面的一切物体造成毁灭性打击。</p>
+						<ul>
+							<li>使用前提：<a href="#weather-machine">天气控制仪</a></li>
+							<li>费用：0</li>
+							<li>冷却时间：120秒</li>
+							<li>特性：超级武器</li>
 						</ul>
 					</div>
 				</div>
