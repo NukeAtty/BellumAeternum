@@ -193,17 +193,17 @@
 						<p>BaseBias=2                ;敌人靠近AI时的威胁倍数值，作用是影响AI对单位威胁的敏感度。值越高越敏感度越高。</p>
 						<p>BaseDefenseDelay=.25      ;AI派出防御部队应对基地威胁的延迟时间，单位为分钟。</p>
 						<p>CloseEnough=2.25          ;AI执行“移动到”指令时，视为完成接近的距离值。</p>
-						<p>Stray=2.0                 ;小队在执行任务时，不会导致小队重组的偏离直径值，单位为单元格(Cell)。</p>
-						<p>RelaxedStray=3.0          ;执行集结指令（53和54号指令）时，以这个数值代替Stray以适应大部队作战。</p>
+						<p>Stray=2.0                 ;小队在执行任务时，不会导致小队重组的偏离直径值，单位为单元格(Cell)。建议值：4-5。</p>
+						<p>RelaxedStray=3.0          ;执行集结指令（53和54号指令）时，以这个数值代替Stray以适应大部队作战。建议值：5-7。</p>
 						<p>SuspendDelay=2            ;小队暂停任务后恢复执行任务的时间，单位为分钟。</p>
 						<p>SuspendPriority=1         ;小队的任务如果在这个权重值之下，就会暂停任务转而参与基地防御。</p>
-						<p>GuardModeStray=2.0		 ;小队在防御模式下，不会导致小队重组的偏离直径值，单位为(Cell)。</p>
-						<p>TeamDelays=2000,2500,3500 ;(困难、中等、简单)的AI出小队的间隔，单位为帧。</p>
-						<p>AIHateDelays=30,50,70     ;(困难、中等、简单)的AI选择敌人的时间间间隔，单位为帧。</p>
+						<p>GuardModeStray=2.0		 ;小队在防御模式下，不会导致小队重组的偏离直径值，单位为(Cell)。建议值：3-4。</p>
+						<p>TeamDelays=2000,2500,3500 ;(困难、中等、简单)的AI出小队的间隔，单位为帧。建议值：100以下。</p>
+						<p>AIHateDelays=30,50,70     ;(困难、中等、简单)的AI选择敌人的时间间间隔，单位为帧。最好保持一个比较低的值。</p>
 						<p>AIAlternateProductionCreditCutoff=1000 ;AI的资金低于这个数值就不再花钱</p>
 						<br>
 						<p>MultiplayerAICM=400,0,0	;(困难、中等、简单)的AI初始资金加成。<span id="formula">初始资金=设定资金*(x+100)/100</span></p>
-						<p>AIVirtualPurifiers=4,2,0 ;(困难、中等、简单)的AI采集矿石转化成的资金加成。<span id="formula">转化资金*x</span></p>
+						<p>AIVirtualPurifiers=4,2,0 ;(困难、中等、简单)的AI采集矿石转化成的资金加成。<span id="formula">转化资金=原本资金*(1+x*0.25)</span></p>
 						<p>AISlaveMinerNumber=4,3,2 ;(困难、中等、简单)的AI生产的奴隶矿场数量。</p>
 						<p>HarvestersPerRefinery=2,2,1 ;(<span style="color:deepskyblue">盟军</span>、<span style="color:coral">苏联</span>、<span style="color:magenta;">尤里</span>)的AI会为每个矿场配备的矿车数量。</p>
 						<p>AIExtraRefineries=2,1,0  ;(困难、中等、简单)的AI会额外建造的矿场数量。</p>
@@ -255,7 +255,7 @@
 							<p>AlliedBaseDefenses=GAPILL,ATESLA,NASAM	;盟军AI会建造的防御武器，无视BuildLimit和RequiredHouse。</p>
 							<p>SovietBaseDefenses=NALASR,NABNKR,TESLA,NAFLAK	;苏军AI会建造的防御武器，无视BuildLimit和RequiredHouse。</p>
 							<p>ThirdBaseDefenses=YAGGUN,YAPSYT,NATBNK	;第三阵营AI会建造的防御武器，无视BuildLimit和RequiredHouse。</p>
-							<p>AIForcePredictionFudge=5,25,80	;AI根据敌人单位造价的总和，选择防空、反装甲、反步兵的防御建筑。</p>
+							<p>AIForcePredictionFudge=5,25,80	;AI根据敌人单位造价的总和，选择防御建筑进行建造。三个值为困难、中等、简单的敌人所用的参数，理论上来说数值越小越智能。</p>
 							<br>
 							<p>NodBaseDefenseCoefficient=1.2	;只影响SovietBaseDefenseCounts的计算。</p>
 							<p>GDIBaseDefenseCoefficient=1.5 	;只影响AlliedBaseDefenseCounts的计算。</p>
@@ -301,7 +301,7 @@
 						<li>小队招募的成员内容由特遣部队定义，小队会等到特遣部队定义的兵种集齐后开始行动。</li>
 						<li>小队的行动方式由脚本定义。</li>
 					</ol>
-					<p>AI(md).ini中，小队和触发是占大部分篇幅的内容，因为其必须是独立存在的，而特遣部队和脚本则可以共用。</p>
+					<p>AI(md).ini中，小队和触发是占大部分篇幅的内容，因为触发是不可以共用的。小队可以被多个触发共用，而特遣部队和脚本则通用型更高。</p>
 					<h3 id="ai-taskforce">特遣部队·TaskForce</h3>
 					<p>特遣部队的代码构成方式比较简单，首先需要再[TaskForces]中注册你的特遣部队名称。</p>
 					<p>接下来详细定义特遣部队，格式如下：</p>
@@ -326,6 +326,7 @@
 						<p>...</p>
 						<p>49=X,Y</p>
 					</div>
+					<p>以下表格只列出适合在遭遇战中使用的脚本指令。</p>
 					<div class="ai-script">
 						<table>
 							<tr>
