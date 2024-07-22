@@ -1,0 +1,29 @@
+This mod is currently under development, and here I will make a report of the current procedure and status.
+
+1. Units:
+
+All player-buildable units has been fully completed, however, there will be some minor changes for the sake of balance. Hidden units are still working in progress.
+
+2. Decoration:
+
+Good decorations can level up the gaming experience. However, decos take a long period of time to build, including civilian stuff, map overlays, terrain enhancement etc. Decoration will be applied during mapping works, and they will be introduced as soon as new maps come out.
+
+3. Skirmish Maps:
+
+Mapping is another hiking for modding. Currently, there are two skirmish maps are under development, both of them has finished basic terrain building and need a deeper levels of decoration. Skirmish maps will be totally replaced with Bellum Aeternum special, in order to enhance them with better AI and graphics.
+
+4. Campaign:
+
+Bellum Aeternum is a mod that comes with campaign: you got to describe what's going on in your mod, right? As I mentioned, mapping takes a huge amount of time, so it won't be released too soon. Good news is, the first mission of Allied faction has 80% done, just need a few decoration to the map.
+
+5. AI:
+
+The basic strategy of AI in skirmish has been finished. Well, even they're "basic", it is about 80% of the whole AI system. Next step will be generating more interesting AI actions, and make the AI fun to fight with. 
+
+6. Sound:
+
+Sound is important for a video game, but now it's still on a low priority level.
+
+7. GUI:
+
+GUI is another important part of a mod, at least you can tell the difference between this mod and that mod. Before everything has completed, there won't be a big change for GUI. Now just several loading screen and some background swap.
