@@ -570,7 +570,6 @@ footer {
 	filter:brightness(100%);
 }
 
-
 .factions-description {
   position: absolute;
   width: 100%;
@@ -877,8 +876,9 @@ footer {
 
 .engine-container {
 	display: flex;
+	flex-flow: row;
 	width: 75%;
-	margin: auto;
+	margin: 1em auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
 	border: 4px outset #ddd;
@@ -892,12 +892,14 @@ footer {
 
 .engine-container img {
 	max-width: 50%;
-	aspect-ratio: 632 / 460;
+	height: auto;
 }
 
 .engine-container-right {
 	width: 50%;
-	display: grid;
+	display: flex;
+	flex-flow: column;
+	margin: 1em;
 }
 
 .engine-container-right h3{
