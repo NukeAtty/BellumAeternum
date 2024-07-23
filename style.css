@@ -1023,6 +1023,15 @@ footer {
 	color:#fff;
 }
 
+.blog-section h3 {
+	display:block;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: left;
+	color: #333;
+}
+
 /*-----------------------------*/
 /*----------Blog Page----------*/
 /*-----------------------------*/
