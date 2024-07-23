@@ -1979,6 +1979,72 @@ footer {
 		text-align: center;
 	}
 
+	.factions-impression {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		box-shadow: 0 1px 10px #000;
+		margin: auto;
+		padding: 1vw;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 36px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+		width: 100%;
+	}
+
+	.factions-container {
+		margin: 1em auto;
+		width: 90%;
+		position: relative;
+	}
+
+	.factions-container a{
+	}
+
+	.factions-container img{
+	  width: 100%;
+	  height: auto;
+	  border: 3px solid #000 inset;
+	 	border-radius: 20px;
+	 	z-index: -1;
+	 	filter:brightness(50%);
+	}
+
+	.factions-container img:hover {
+		filter:brightness(100%);
+	}
+
+
+	.factions-description {
+	  position: absolute;
+	  width: 100%;
+	  bottom: 5%;
+	 	margin: 0.5em 0;
+	  background-color: #00000050;
+	  padding: 0 1em;
+	  box-sizing: border-box;
+	  z-index: 1;
+	  color: #ffffff;
+	}
+
+	.factions-description h3{
+		font-size: 18px;
+		margin: 0.2em 0;
+		border-bottom: 2px solid #fff;
+		text-align: left;
+		text-shadow: 2px 2px 2px #000;
+		line-height: 1.5em;
+	}
+
+	.factions-description p{
+		font-size: 12px;
+	  text-align: left;
+		text-shadow: 2px 2px 2px #000;
+		line-height: 1.25em;
+	}
+
+
 	.zigzag-module {
 		display: block;
 	}
@@ -2060,7 +2126,7 @@ footer {
 		width: 90%;
 	}
 	
-	.blog h2 {
+	.main-blogs h2 {
 		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 32px;
 		font-weight: 600;
@@ -2069,6 +2135,11 @@ footer {
 
 	.main-blogs-container {
 		width: 100%;
+	}
+
+	.main-blogs-container h3 {
+		font-size: 24px;
+		text-align: center;
 	}
 
 	.main-blogs-container a{
