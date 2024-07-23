@@ -560,13 +560,13 @@ footer {
 .factions-container img{
   width: 100%;
   height: auto;
-  border: 3px solid #000 inset;
+  border: 4px inset #000;
  	border-radius: 20px;
  	z-index: -1;
  	filter:brightness(50%);
 }
 
-.factions-container img:hover {
+.factions-container img:hover{
 	filter:brightness(100%);
 }
 
@@ -2008,11 +2008,7 @@ footer {
 	  border: 3px solid #000 inset;
 	 	border-radius: 20px;
 	 	z-index: -1;
-	 	filter:brightness(50%);
-	}
-
-	.factions-container img:hover {
-		filter:brightness(100%);
+	 	filter:brightness(100%);
 	}
 
 
