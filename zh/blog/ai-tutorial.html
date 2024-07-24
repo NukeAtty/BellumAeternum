@@ -144,7 +144,7 @@
 	<header>
 		<ul class="navigation-button">
 			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
-			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
+			<li><a href="https://www.ra2be.com/zh/blog.html">文章</a></li>
 			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
 		</ul>
 		<div class="responsive-navigation">
@@ -157,7 +157,7 @@
 			<h1>尤里的复仇：AI教程</h1>
 			<div class="blog-info">
 				<div class="update-time">
-					<p>最后更新时间：<time datetime="2024-07-10 18:00">2024/07/10</time></p>
+					<p>最后更新时间：<time datetime="2024-07-24 18:00">2024/07/24</time></p>
 				</div>
 			</div>
 			<div class="blog-main">
@@ -275,7 +275,7 @@
 					<div class="code-presentation">
 						<p>[IQ]</p>
 						<p>MaxIQLevels=5           ; IQ的最大值</p>
-						<p>SuperWeapons=4          ; 可以使用超级武器的最小IQ值</p>
+						<p>SuperWeapons=4          ; 可以自动使用超级武器的最小IQ值</p>
 						<p>Production=5            ; 可以自动建造建筑的最小IQ值</p>
 						<p>GuardArea=2             ; 可以让新单位进入区域警戒状态的最小IQ值</p>
 						<p>RepairSell=1            ; 可以维修或者卖掉建筑以获取最大收益的最小IQ值</p>
@@ -286,6 +286,9 @@
 						<p>Harvester=2             ; 懂得补充矿车的最小IQ值</p>
 						<p>SellBack=2              ; 懂得卖掉建筑攒经费的最小IQ值</p>
 					</div>
+					<p>在遭遇战中，玩家的IQ为0，电脑的IQ为5。</p>
+					<p>通过将IQ设置为0，可以让玩家实现很多电脑才具备的功能，比如把RepairSell设置为0，玩家就可以不用点维修按钮实现自动维修（经过大量验证，AI自动维修把玩家的建筑卖掉的可能性非常低）；把AutoCrush设置为0玩家的坦克也可以自动碾压敌方步兵；把Scatter设置为0玩家的单位可以自动躲炮弹；把GuardArea设置为0玩家的单位就会在视野范围内自动找架打。但超级武器、生产类型的词条设置为0无效。</p>
+					<p>个人来说不建议将IQ的内容设置为0，因为玩家本身就比电脑拥有更强的应变能力，如果让玩家拥有这些自动操作手段，那么游戏性也会变得非常低。</p>
 					<h2 id="ai">AI改动</h2>
 					<p>AI改动意为更改Ai(md).ini文件。AI(md).ini主要分为4大板块，即特遣部队、脚本、小队和触发。</p>
 					<p>以下说明各个部分的作用。</p>
@@ -967,7 +970,7 @@
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>博客</p>
+				<p>文章</p>
 				<ul>
 					<li><a href="../blog.html#concept">概念</a></li>
 					<li><a href="../blog.html#tutorial">教程</a></li>
