@@ -524,6 +524,7 @@ footer {
 	font-size: 48px;
 	font-weight: 600;
 	text-align: center;
+	margin: auto;
 }
 
 .factions p{
@@ -531,6 +532,7 @@ footer {
 	font-size: 18px;
 	line-height: 1.5em;
 	text-align: center;
+	margin: 1em auto;
 }
 
 .factions-impression {
@@ -874,6 +876,53 @@ footer {
 
 }
 
+.specific-progress {
+	display: block;
+	/*background-color: #0c0c0c;*/
+	background: linear-gradient(-45deg, #0c0c0c 0, #151515 50%, #0c0c0c 100%);
+	background-blend-mode: hard-light;
+	margin: 1em 0;
+	padding: 1em;
+	border-radius: 10px;
+	border: 1px solid #fff;
+}
+
+.specific-progress h3 {
+	font-family: monospace;
+	font-size: 24px;
+	color: #000000;
+	background-color: #00ff00;
+	border-radius: 5px;
+	text-align: center;
+	text-shadow: 0 0 3px #00cc00;
+	padding: 0.2em;
+}
+
+.specific-progress h4 {
+	font-family: Neon, monospace;
+	font-size: 18px;
+	color: #00ff00;
+	text-shadow: 0 0 3px #00cc00;
+	line-height: 1.5em;
+	margin: 0.5em auto;
+	user-select: text;
+}
+
+.specific-progress p,del {
+	font-family: Neon, monospace;
+	font-size: 14px;
+	color: #00ff00;
+	text-shadow: 0 0 3px #00cc00;
+	line-height: 1.5em;
+	margin:auto;
+	user-select: text;
+}
+
+.engine {
+	width: 80%;
+	margin: 10vw auto;
+}
+
 .engine-container {
 	display: flex;
 	flex-flow: row;
@@ -885,13 +934,15 @@ footer {
 	box-shadow: 0 0 24px #000;
 }
 
-.engine {
-	width: 80%;
-	margin: 10vw auto;
+.engine-container-left {
+	display: flex;
+	width: 50%;
 }
 
-.engine-container img {
-	max-width: 50%;
+.engine-container-left img {
+	align-items: center;
+	margin: auto;
+	width: 90%;
 	height: auto;
 }
 
@@ -904,27 +955,28 @@ footer {
 
 .engine-container-right h3{
 	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
-	font-size: 60px;
-	color: #000000;
+	font-size: 48px;
+	line-height: 1em;
+	color: #333;
 	margin: 0.5em 0 0 0;
 	height: 1em;
 }
 
 .engine-container-right p{
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	color: #000000;
 	margin: 0 2em 0 0;
 }
 
 .engine-container-right a{
-	width: 50%;
+	width: auto;
 	color: gold;
 	font-family: HarmonyOS Sans Black, sans-serif;
 	font-size: 24px;
 	font-weight: 600px;
 	text-decoration: none;
-	margin: auto;
+	margin: 1em auto;
 	text-align: center;
 	background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
 	padding: 0.5em;
@@ -956,7 +1008,7 @@ footer {
 
 .guide-container p{
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	color: #ffffff;
 	margin: auto 5vw;
 	padding: 1vw;
