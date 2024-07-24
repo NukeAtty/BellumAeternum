@@ -1,0 +1,20 @@
+Bellum Æternum Sound Script
+
+Mobile Radar:
+Select:
+
+Move:
+
+Dagger:
+Select:
+	- Dagger's here.
+	- Pride of the Allied airforce.
+	- Where's the destination?
+
+Move:
+	- I'll be there right away.
+	- 
+
+Attack:
+	- Missile launch confirmed.
+	- Full speed ahead.
