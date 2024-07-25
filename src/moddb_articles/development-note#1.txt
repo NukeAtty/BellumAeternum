@@ -1,0 +1,23 @@
+Title: Development QA #1
+Summary: The first developement note of Bellum Æternum, declares both how the game will look like and some philosophy of development.
+
+
+What's the meaning of the name?
+Bellum Æternum is a latin term which means eternal warfare. As the title describes, we human beings has continuously conflict from the very beginning all the way till now. Not for philosophic thinking, just narratively bring it to the game. Bellum Æternum will have a story line that is close to what might happened in the history (or some already happened), and bring the warfare to everyone who has a knowledge base about them.
+
+How will the mod look like?
+Since the mod is still under development, I can't guarantee you the final result, but I can share some detailed information.
+1. The units design will keep their original traits, and make some improvement. 
+For example, people always joking about Grizzly tank being too paper, but actually the Western tank designs have considered armor toughness a lot more than the Soviet did. Therefore, a reborn of Grizzly tank, named M54A2, has been added to the mod, which has very balanced armor, firepower and mobility.
+2. Remastered tech tree. I want to make sure every unit you get will have something special, not a another clone unit (well, except MBT). That is why the unit might be under the same name, but they works differently. Also, there is no navy, beacuse navy is such a pain in the veinhole, bad scale, bad AI.
+3. The graphic will be improved, there are a lot to talk about, but I'll make it short.
+	-Tank tracks have animations now.
+	-Gun shot will have trail.
+	-Rocket and missile improved trail.
+	-Improved explosion images.
+	-Destroyed units remains wreck.
+	-Civilian stuff expansion, you might see your grandpa's car in this mod.
+   Of course those are far from the entire thing, I will release more gallery in the future on ModDB channel.
+4. The skirmish map will be completely reworked, I'm not completely satisfied what WESTWOOD made. Also, because there isn't any navy, I want to make sure you can reach your enemy.
+5. New story line, like I said, close to the real world. Time period has been set to 1950s to 1960s, which is the golden age for human beings (Big tech leaps, yet under loaded nuke). It means there will be unique campaign! I love campaign, because campaign can really showcase the whole mod.
+As a result, you will see a mod which looks Red Alert 2, but it isn't Red Alert 2, it's more like a Red Alert 2B or not 2B.
