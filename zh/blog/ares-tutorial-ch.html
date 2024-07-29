@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="Ares战神平台中文教程，提供最详细的Ares中文教程。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Ares中文教程 | 万世之战：为红警2带来前所未有的体验</title>
+	<style>
+		span{
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		code{
+			font-family: Neon, monospace;
+			font-size: 14px;
+			font-weight: normal;
+			background-color: #ffffff30;
+			border: 1px solid #ffffff;
+			border-radius: 5px;
+			padding: 0.2em;
+			margin: 0 0.2em;
+			user-select: text;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul class="navigation-button">
+			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
+			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
+			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
+		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com/zh/"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>Ares战神平台中文教程</h1>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>最后更新时间：<time datetime="2024-07-05 18:00">2024/07/29</time></p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+							<a id="h2" href="#tib-restore">泰伯利亚之日逻辑还原</a>
+							<a id="h3" href="#sell-unit">变卖单位</a>
+							<a id="h3" href="#amphibious-apc">两栖单位水中图像</a>
+							<a id="h3" href="#em-pulse">电磁脉冲（EMP）</a>
+							<a id="h3" href="#firestorm-wall">火风暴墙</a>
+							<a id="h3" href="#laser-fense">激光墙</a>
+							<a id="h3" href="#spotlight">探照灯</a>
+							<a id="h3" href="#vehicle-thief">偷车贼</a>
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<p></p>
+					<h2 id="tib-restore">泰伯利亚之日逻辑还原</h2>
+					<h3 id="sell-unit">变卖单位</h3>
+					<p>在泰伯利亚之日中，你可以将停放在建筑平台上的单位通过雷达旁边的<b>变卖</b>按钮卖掉，而在尤里的复仇中，你可以通过<code>Action=SellUnit</code>的超级武器来实现这个功能。但是，当你试图用这个方法来变卖坦克碉堡中的单位时，就会报错。Ares修复了这个问题。</p>
+					<hr>
+					<h3 id="amphibious-apc">两栖单位水中图像</h3>
+					<p>在泰伯利亚之日中，两栖运兵车（APC）在水中会切换成沉入水中的图像，其VXL文件也从apc.vxl变成了apcw.vxl。在Ares中，可以通过以下代码来实现这个功能。</p>
+					<div class="code-presentation">
+						<p>
+							<p>[VehicleTypes]</p>
+							<p>1=APC</p>
+							<p>2=APCW</p>
+							<br>
+							<p>[APC]</p>
+							<p>Image=APC</p>
+							<p>WaterImage=APCW	;水中图像的单位名称</p>
+							<br>
+							<p>[APCW]</p>
+							<p>Image=APCW</p>
+						</p>
+					</div>
+					<p>需要注意的是，这里WaterImage内需要填入一个完整的单位，这个原理和采矿车倒矿时的<code>UnloadingClass</code>类似。</p>
+					<hr>
+					<h3 id="em-pulse">电磁脉冲（EMP）</h3>
+					<p>电磁脉冲逻辑在泰伯利亚之日中被大量使用，在这里稍微阐述一下其功能和特点：</p>
+					<ol>
+						<li>主要功能：使被击中的单位失效，即无法执行任何命令。</li>
+						<li>悬浮单位（比如遥控坦克和气垫船）会失去悬浮能力落到地面，在水上的悬浮单位会沉入水中。</li>
+						<li>被影响的单位会播放一段动画，该动画在<code>[General]</code>中的<code>EMPulseSparkles=</code>定义。</li>
+						<li>VXL单位会附着一层黑色的涂层（SHP不会）。</li>
+						<li>可以收起为单位的建筑仍然可以被收起，但该单位依然会被EMP所影响。</li>
+						<li>飞行器（AircraftTypes）会立刻坠毁。</li>
+						<li>发电厂会停止发电。</li>
+						<li>工厂会停止生产。</li>
+						<li>防御武器会无法开火。</li>
+						<li>裂缝产生器会停止生成黑幕。</li>
+						<li>激光墙生成器会停止生成激光。</li>
+						<li>遥控中心会停止工作，遥控坦克也会失控。</li>
+						<li>搭载带有<code>IsPowered=yes</code>的超级武器的建筑会停止加载超级武器或释放超级武器。</li>
+						<li>雷达将停止提供小地图。</li>
+						<li>间谍卫星会停止提供探测全图。</li>
+						<li>使用子机武器的单位（航母、V3火箭等）会停止释放子机，已经释放的子机会立刻坠毁。</li>
+						<li>奴隶矿场的奴隶会停止工作</li>
+						<li>在卸载矿石或者变身的单位会在卸载或变身结束后收到影响。</li>
+						<li>矿车在EMP效果结束之后继续执行采矿命令。</li>
+					</ol>
+					<h4>为弹头定义EMP效果</h4>
+					<p>接下来是新EMP的代码。在泰伯利亚之日中，代码比较固定，其使用<code>Damage=</code>来定义EMP的效果时长，但Ares可以在造成伤害的同时附着EMP效果，因此泰伯利亚之日中的<code>EMEffect=yes</code>在Ares中无效。</p>
+					<div class="code-presentation">
+						<p>[EMPWarhead]</p>
+						<p>EMP.Duration=60 ;EMP效果的持续时间，填入整数，单位为帧(15帧=1秒)，默认为0。</p>
+						<p>EMP.Cap=60 ；EMP效果的最大持续时间，填入整数，单位为帧，默认为-1，即直接设置到最高。</p>
+					</div>
+					<p>解释一下上面两个代码的作用，持续时间这个比较好理解，就是在弹头击中目标后EMP会持续多长时间才会消除，相当于在目标单位上设置一个计时器，计时器倒计时结束后单位脱离EMP效果。第二个值我们分情况讨论：</p>
+					<ul>
+						<li>当<code>EMP.Cap</code>设置的值大于0时，那么EMP效果则会叠加，叠加的最大值为EMP.Cap的值。</li>
+						<li>当<code>EMP.Cap=0</code>时，那么EMP效果也会叠加，但不限制最大值。</li>
+						<li>当<code>EMP.Cap=-1</code>时，那么EMP效果不叠加。当目标单位上的EMP计时器小于该值时，EMP计时器会直接调整为<code>EMP.Cap</code>所指定的值，当目标单位上的EMP计时器大于该值时，保留EMP计时器原本的值。</li>
+					</ul>
+					<p>当然，在弹头的<code>Verses</code>为0%时，EMP同样是无法施加的。</p>
+					<p>解除EMP：如果将EMP看成是控制技能，那么就可以利用负值来将弹头定义成解控技能。</p>
+					<p>如果将<code>EMP.Duration</code>的值定义为负数，那么在不同的<code>EMP.Cap</code>值下，将会呈现不同的效果：</p>
+					<ul>
+						<li>当<code>EMP.Cap=-1</code>时，目标单位上的EMP计数器将会加上<code>EMP.Duration</code>的负值。</li>
+						<li>当<code>EMP.Cap</code>大于0时，目标单位的EMP计数器如果小于<code>EMP.Cap</code>所设置的值，那么将会加上<code>EMP.Duration</code>所指定的负值。如果目标单位的EMP计数器大于<code>EMP.Cap</code>的值时，那么其计数器的值会变成<code>EMP.Cap</code>所指定的值。</li>
+						<li>当<code>EMP.Cap=0</code>时，只要<code>EMP.Duration</code>是负值，那么目标单位的EMP计时器会立刻归零，单位会直接恢复正常。</li>
+					</ul>
+					<h4>EMP免疫</h4>
+					<p>EMP免疫可以通过几种方法获得，首先就是代码<code>ImmuneToEMP=yes</code>，单位在未设置这条代码的情况下，其遵循以下默认规则：</p>
+					<ol>
+						<li>建筑：
+							<ul>
+								<li>如果建筑带有<code>Powered=yes</code>或者<code>Power</code>被设置为负值，默认<code>ImmuneToEMP=no</code>，即不免疫。</li>
+								<li>如果建筑是雷达、超级武器（带有<code>SuperWeapon</code>和<code>SuperWeapon2</code>的建筑）、可收起为单位（建造场等）、遥控设施（遥控中心等）、裂缝产生器、隐形探测器、激光墙生成器时，默认<code>ImmuneToEMP=no</code>，即不免疫。</li>
+							</ul>
+						</li>
+						<li>步兵：除了带有<code>Cyborg=yes</code>的步兵，其他都默认<code>ImmuneToEMP=yes</code>，即免疫。</li>
+						<li>载具：除了不带<code>Organic=yes</code>的载具和飞行器，其他都默认<code>ImmuneToEMP=no</code>，即不免疫。</li>
+					</ol>
+					<p>EMP免疫还可以通过在<code>VeteranAbilities</code>和<code>EliteAbilities</code>标签中添加<code>EMPIMMUNE</code>使单位在升级后获得EMP免疫。</p>
+					<p>同时，也可以通过自定义护甲、弹头影响目标来获得对EMP的免疫效果。</p>
+					<h4>微观定义EMP效果</h4>
+					<p>除了在弹头上定义EMP的施加效果，Ares也支持在单位上修改EMP的被施加效果。</p>
+					<div class="code-presentation">
+						<p>[HTNK]</p>
+						<p>EMP.Modifier=1.0 ;小数，被施加的EMP计时器会乘以这个数值。</p>
+						<br>
+						<p>[APOC]</p>
+						<p>EMP.Modifier=0.5 ;天启坦克有先进的抗电磁能力，EMP效果减半</p>
+					</div>
+					<h4>EMP消灭机制</h4>
+					<p>根据上述EMP机制来看，飞行器在被EMP击中后会直接坠毁，但直升机、飞艇等单位并不算做是飞行器，因此Ares提供了可以通过EMP来直接消灭单位的机制。</p>
+					<div class="code-presentation">
+						<p>[SCHP]</p>
+						<p>EMP.Threshold=10 ;填入yes或no，或者inair，或者代表帧数的整数。</p>
+					</div>
+					<ul>
+						<li>当<code>EMP.Threshold=</code>被设置为一个正整数时，单位的EMP在达到这个数字后就会被消灭。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为yes时，效果同等于<code>EMP.Threshold=1</code>，即被EMP影响后立刻被消灭。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为一个负整数时，单位只会在空中时，EMP计时器达到该负数的绝对值后才会坠毁。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为inair时，效果同等于<code>EMP.Threshold=-1</code>，即在空中被EMP影响后立刻坠毁。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为0时，不使用该机制。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为no时，不使用该机制。</li>
+					</ul>
+					<h4>EMP效果动画</h4>
+					<p>在泰伯利亚之日中，被EMP弹头击中的单位身上会播放一个定义于<code>General</code>中<code>EMPulseSparkles</code>的动画。这个动画也是所有EMP效果的默认动画。</p>
+					<p>在Ares中可以进行微观定义：</p>
+					<div class="code-presentation">
+						<p>[HTNK]</p>
+						<p>EMP.Sparkles=EMP_FX01 ;动画名，需要在[Animations]注册并在Art中定义，默认为全局定义的动画。设置为none则取消动画。</p>
+					</div>
+					<p>同时，也可以在弹头上定义。由弹头定义的EMP动画会拥有最高的优先级，会覆盖全局定义的动画或单位上定义的动画。</p>
+					<div class="code-presentation">
+						<p>[EMPWarhead]</p>
+						<p>EMP.Sparkles=EMP_FX01 ;动画名，需要在[Animations]注册并在Art中定义。</p>
+					</div>
+					<h4>EMP恢复后行为</h4>
+					<p>可以通过修改全局代码修改EMP效果消退后的行为。</p>
+					<div class="code-presentation">
+						<p>[CombatDamage]</p>
+						<p>EMPAIRecoverMission=AreaGuard ;填入行为，默认为Hunt，即寻找目标。</p>
+					</div>
+					<hr>
+					<h3 id="firestorm-wall">火风暴墙</h3>
+					<p>在泰伯利亚之日中的火风暴墙以及其超级武器可以在尤里的复仇上实现了。</p>
+					<p>在这里先对泰伯利亚之日中的火风暴墙做一个特性介绍：</p>
+					<ol>
+						<li>火风暴墙是一座可通过的墙体，火风暴是其配套的超级武器。</li>
+						<li>在火风暴超级武器启动时，火风暴墙会升起一道屏障，将墙体上方飞过的任何抛射体击毁。</li>
+						<li>在火风暴超级武器启动时，任何在火风暴墙上方试图通过的单位都会被立刻摧毁，并且不会有乘员逃生。</li>
+						<li>火风暴墙只有在火风暴超级武器未启动时变卖。</li>
+						<li>火风暴超级武器是充能超级武器，这点会在火风暴超级武器中介绍。</li>
+					</ol>
+					<p><code>IgnoresFirestorm=</code>标签会依然遵循，即带有<code>IgnoresFirestorm=yes</code>的单位或抛射体不会被火风暴墙摧毁。</p>
+					<h4>定义火风暴墙</h4>
+					<p>火风暴墙会自动连接附近的相同建筑，其SHP文件总共128帧，64帧为本体，64帧为阴影。本体的64帧中，包含有16帧非启动状态的墙体，16帧非启动状态的破损墙体，16帧启动状态的墙体和16帧启动状态的破损墙体。每个16帧之内则记录了墙体的组成部分，详情请参考泰伯利亚之日的火风暴墙SHP文件。</p>
+					<div class="code-presentation">
+						<p>[GAFSDF]</p>
+						<p>Firestorm.Wall=yes ;该建筑是否是火风暴墙。</p>
+					</div>
+					<h4>全局设置</h4>
+					<div class="code-presentation">
+						<p>[CombatDamage]</p>
+						<p>FirestormWarhead=C4 ;火风暴墙摧毁物体时所用的弹头，默认为C4Warhead=中设置的弹头，不能为none。</p>
+						<br>
+						<p>[General]</p>
+						<p>DamageToFirestormDamageCoefficient=0.1 ;火风暴墙造成的伤害和减少启动时间的参数，这个参数越大，火风暴墙在造成伤害后持续的时间越短。默认是0.0。</p>
+						<br>
+						<p>[AudioVisual]</p>
+						<p>FirestormActiveAnim=GAFSDF_A ;火风暴墙启动时的建筑动画，使用建筑调色盘，默认为GAFSDF_A。</p>
+						<p>FirestormIdleAnim=FSIDLE ;火风暴墙启动时建筑上方的屏障动画，使用建筑调色盘，默认为FSIDLE。</p>
+						<p>FirestormGroundAnim=FSGRND ;火风暴墙启动时摧毁地面单位的动画，使用动画调色盘，默认为FSGRND。</p>
+						<p>FirestormAirAnim=FSAIR ;火风暴墙启动时摧毁飞行器或者抛射体的动画，默认为FSAIR。</p>
+					</div>
+					<h4>地图脚本动作</h4>
+					<p>Ares为火风暴墙添加了<code>92</code>号动作用于启动火风暴墙，以及<code>93</code>号动作用于关闭火风暴墙。通过脚本动作启动的火风暴墙不消耗电力，时间也无限制。</p>
+					<hr>
+					<h3 id="laser-fense">激光墙</h3>
+					<p>激光墙是泰伯利亚之日中的逻辑，在尤里的复仇1.000中依然有效，但在尤里的复仇1.001补丁中被废除，并无法生成激光。理论上来说WESTWOOD并不是有意删除这个功能的，而是一场意外。</p>
+					<p>在Ares中，激光墙的用法和泰伯利亚之日中一样，通过定义墙体和激光来实现，因此可以直接照抄泰伯利亚之日的代码。下面先介绍一下激光墙的特性。</p>
+					<ol>
+						<li>激光墙分为墙体和激光两个建筑，墙体通过<code>LaserFencePost=yes</code>定义，而激光通过<code>LaserFence=yes</code>定义。</li>
+						<li>激光不会受到任何伤害，而激光墙体会。当激光墙体被摧毁时，激光则会失效。</li>
+						<li>激光墙如果缺少电力，激光也会失效，并允许通过。</li>
+						<li>当停电的激光墙恢复电力，而激光墙正有单位在通过，这个通过的单位则会被摧毁。</li>
+					</ol>
+					<hr>
+					<h3 id="multi-engineer">多工程师占领</h3>
+					<p>多工程师占领是红警1中用来平衡工程师的一种机制，即工程师无法直接占领敌军建筑，而是对其造成伤害。Ares恢复了这个功能，但只支持遭遇战中使用这个功能。</p>
+					<div class="code-presentation">
+						<p>[General]</p>
+						<p>EngineerCaptureLevel=1.0 ;敌方建筑在什么百分比血量以下才能被占领，填入小数，代表百分比，默认为1.0。</p>
+						<p>EngineerDamage=500 ;工程师会对敌方建筑造成多少百分比伤害，填入小数，代表百分比，默认为0.0。</p>
+						<p>EngineerAlwaysCaptureTech=yes ;工程师是否可以直接占领科技建筑，默认为yes。</p>
+					</div>
+					<p>多工程师占领功能可以通过UI上的勾选框选择开启或关闭，以下代码是用在uimd.ini中的代码。</p>
+					<div class="code-presentation">
+						<p>[UISettings]</p>
+						<p>AllowMultiEngineer=yes</p>
+					</div>
+					<p>多工程师占领勾选框旁的文字可以通过ra2md.csf中的<code>GUI:MultiEngineer</code>修改。</p>
+					<hr>
+					<h3 id="spotlight">探照灯</h3>
+					<p>探照灯是泰伯利亚之日中哨戒塔所投射的灯光，这个灯光完全是由系统生成。Ares使得这个功能不仅能用在建筑上，而是可以用在四大单位（建筑、步兵、载具、飞行器）类型上，并且可以跟着单位移动，并根据单位朝向的改变投射方向。</p>
+					<div class="code-presentation">
+						<p>[TechnoType]</p>
+						<p>HasSpotlight=yes ;开启探照灯功能</p>
+						<p>Spotlight.StartHeight=200 ;探照灯的光源高度，必须大于0，默认为430。</p>
+						<p>Spotlight.Distance=512 ;光源与光照点的距离，默认为1024。</p>
+						<p>Spotlight.AttachedTo=turret ;光源的所依附的部件，填入body（车体）或turret（炮塔）。</p>
+						<p>Spotlight.DisableRed=no ;探照灯是否不会渲染红色，默认为no。</p>
+						<p>Spotlight.DisableGreen=no ;探照灯是否不会渲染绿色，默认为no。</p>
+						<p>Spotlight.DisableBlue=no ;探照灯是否不会渲染蓝色，默认为no。</p>
+						<p>Spotlight.DisableColor=no ;探照灯是否会将照到的地方变暗而非变量，默认为no。</p>
+					</div>
+					<hr>
+					<h3 id="vehicle-thief">偷车贼</h3>
+					<p>Ares支持在尤里的复仇中实现和泰伯利亚之日的变异劫持者相同的单位，并且不用<code>Thief=yes</code>，<code>Infiltrate=yes</code>或者<code>Agent=yes</code>。并且这个逻辑支持更多的细节定义，详情见<a href="#hijacker">劫持者</a>部分。</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+				<a href="https://www.ra2be.com/zh/"><img src="../../src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+				</div>
+				<div class="lang-selector">
+					<a href="https://www.ra2be.com"><img src="../../src/english.webp" alt="English" width="auto" height="30px"></a>
+					<a href="https://www.ra2be.com/zh/blog/ares-tutorial-ch.html"><img src="../../src/chinese.webp" alt="Chinese" width="auto" height="30px"></a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>博客</p>
+				<ul>
+					<li><a href="../blog.html#concept">概念</a></li>
+					<li><a href="../blog.html#tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#Contact">联系方式</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">红警DIY论坛</a>
+		</div>
+	</footer>
+</body>
