@@ -5,20 +5,20 @@ Allied Campaign Chapter 1
 Mission 1: Night Raid - Ambleteuse, France
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
-Mission 2: Snowblind - Stantsiya Svyazi
+Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective: Raid the Soviet Nuclear Base and Destroy the Nuclear Launcher.
 
-Mission 3: 
-
-
+Mission 3: Siege - Leavenworth, Germany
+	Objective: Siege the Soviet Base in Leavenworth.
 
 Mission N: 
 	Objective: Escort the Prismarine convoys to airport.
 
 Mission X: Homeland Defense - St.Combs, Aberdeenshire, UK
-	Objective:
+	Objective: Take the experimental away from Aberdeenshire.
 
-Mission Y: 
+Mission Y: Biohazzard - Quartzsite, Arizona, USA
+	Objective: Defend Quartzsite from zombie flood.
 
 
 Soviet Campaign Chapter 1
