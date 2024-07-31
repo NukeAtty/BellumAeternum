@@ -1,6 +1,8 @@
 Storyline:
 
-Allied Campaign Chapter 1
+Allied Campaign Chapter 1 - Rebelion
+The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
+
 
 Mission 1: Night Raid - Ambleteuse, France
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
@@ -8,8 +10,29 @@ Mission 1: Night Raid - Ambleteuse, France
 Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective: Raid the Soviet Nuclear Base and Destroy the Nuclear Launcher.
 
-Mission 3: Siege - Leavenworth, Germany
-	Objective: Siege the Soviet Base in Leavenworth.
+Mission 3: 
+
+Mission 4: 
+
+Mission 5: 
+
+Mission 6: PHAEDRA Operation - Normandy, France
+	Objective: Destroy the Soviet forces in Normandy beach.
+
+Allied Campaign Chapter 2 - 
+Allied has successfully liberate France, but an interior mess has broke out.
+
+Mission 1: Fishy - Fisherman's Bay,Vik, Iceland
+	Objective: Destroy military base on Iceland.
+
+Mission 2: - Cuba
+	Objective: Assassinate Cuban leader.
+
+Mission 3: 
+
+
+
+
 
 Mission N: 
 	Objective: Escort the Prismarine convoys to airport.
