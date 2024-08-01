@@ -7,10 +7,19 @@ The Soviet troops have controlled half of the western Europe, and the Allied in 
 Mission 1: Night Raid - Ambleteuse, France
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
+	Objective 1: Destroy the flak base on the Ambleteuse seaside.
+	Objective 2: Capture the Soviet radar to blind enemy.
+	Objective 3: Destroy the Soviet base in Ambleteuse.
+
 Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
-	Objective: Raid the Soviet Nuclear Base and Destroy the Nuclear Launcher that deters the United States.
+	Objective: Raid the Soviet nuclear base and destroy the nuke launcher that deters the United States.
+
+	Objective 1: Destroy the defensive structures in Stantsiya Svyazi.
+	Objective 2: Search for the Soviet nuclear base.
+	Objective 3: Destroy the nuke launcher before the snow storm comes.
 
 Mission 3: 
+
 
 Mission 4: 
 
@@ -49,8 +58,8 @@ Soviet Campaign Chapter 1
 Mission 1: Iron Flood - Leipzig, Germany
 	Objective: Destroy West German base in Leipzig.
 
-Mission 2:  - France
-	Objective: Destroy 
+Mission 2: Under Cover - Nevada, USA
+	Objective: Destroy the Nuclear Base in the US.
 
 Mission 3: Lightning Strike - Bermuda, Atlantic
 	Objective: Destroy the Allied experimental on Bermuda island.
