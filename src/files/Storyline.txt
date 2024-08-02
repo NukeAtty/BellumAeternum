@@ -25,7 +25,7 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 
 Mission 3: 
 	Brief:
-		The operation has done well, Soviet is now gathering forces to defende their East.
+		The operation has done well, the Soviets are sending more troops to the East.
 		Now it's time to create more advantage for the Allied Force in Western Europe.
 
 	
@@ -76,7 +76,7 @@ Mission 1: Iron Flood - Meinz, Germany
 
 	Failure: All units destroyed.
 
-Mission 2: 
+Mission 2: No Fighting in the War Room - Metz, France
 	Brief: 
 		We're close to Paris, but the KGB has passed an important information.
 		There is an abandoned Allied Battle Command center, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
