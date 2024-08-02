@@ -12,15 +12,22 @@ Mission 1: Night Raid - Ambleteuse, France
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
 Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
-	Brief: 
+	Brief:
+		The night raid in Ambleteuse is strong and powerful, but not enough.
+		The Soviet will fight back soon, so we need to let them know what a real pain is.
+		The intel has discovered a nuke launcher will be sent to Germany from East, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
 
-	Objective: Raid the Soviet nuclear base and destroy the nuke launcher that deters the United States.
+	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
 
 	Objective 1: Destroy the defensive structures in Stantsiya Svyazi.
 	Objective 2: Search for the Soviet nuclear base.
-	Objective 3: Destroy the nuke launcher before the snow storm comes.
+	Objective 3: Destroy the nuke launcher before it escape.
 
 Mission 3: 
+	Brief:
+		The operation has done well, Soviet is now gathering forces to defende their East.
+		Now it's time to create more advantage for the Allied Force in Western Europe.
+
 	
 
 Mission 4: 
@@ -28,6 +35,10 @@ Mission 4:
 Mission 5: 
 
 Mission 6: PHAEDRA Operation - Normandy, France
+	Brief:
+		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
+		Operation name PHAEDRA, we are going to land on the Normandy Beach.
+
 	Objective: Destroy the Soviet forces in Normandy beach.
 
 Allied Campaign Season 2 - 
@@ -36,8 +47,7 @@ Allied has successfully liberate France, but an interior mess has broke out.
 Mission 1: Fishy - Fisherman's Bay,Vik, Iceland
 	Objective: Destroy military base on Iceland.
 
-Mission 2: - Cuba
-	Objective: Assassinate Cuban leader.
+Mission 2: 
 
 Mission 3: 
 
@@ -57,15 +67,38 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Campaign Chapter 1
 
-Mission 1: Iron Flood - Leipzig, Germany
+Mission 1: Iron Flood - Meinz, Germany
 	Objective: Destroy West German base in Meinz
 
-Mission 2: Hands on Throat - St.Georges Island, Atlantic
-	Brief: We have captured Paris, but the Americans will never let it happen, so we have to build an air base to cut off American bombers from North America.
+	Objective 1: Destroy the air base in Meinz outskirt.
+	Objective 2: Deploy a Soviet base in Meinz outskirt.
+	Objective 3: Cross the Rhine River and destroy the Allied force in Meinz.
 
-	Objective: Clear the military force on St.Georges Island and build a Soviet Airforce Command HQ.
+	Failure: All units destroyed.
 
-Mission 3: 
+Mission 2: 
+	Brief: 
+		We're close to Paris, but the KGB has passed an important information.
+		There is an abandoned Allied Battle Command center, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
+		The Allied force has sent troops to there, so we have to get it before the Allied does.
+
+	Objective 1: Find the Battle Command Center.
+	Objective 2: Capture the Battle Command Center.
+	Objective 3: Defense the Battle Command Center while passing data.
+
+	Failure: Battle Command Center destroyed.
+
+Mission 3: Hands on Throat - Bermuda, Atlantic
+	Brief:
+		We have captured Paris, but due to the Allied plans, there will be bombers with nuclear bomb flying through the Atlantic ocean to support the UK.
+		Therefore, we have to build an airbase at the front door of the USA to cut the flight line off.
+
+	Objective: Clear the Allied force on St.Georges Island and build a Soviet Airforce Command HQ.
+
+	Objective 1: Destroy the defensive structures on the beace.
+	Objective 2: Deploy a base on St.David's Island.
+	Objective 3: Build an Airforce Command HQ. 
+
 
 Mission 4: 
 	Objective:
