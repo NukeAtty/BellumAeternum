@@ -10,11 +10,13 @@ Select:
 	- Dagger's here.
 	- Pride of the Allied airforce.
 	- Where's the destination?
+	- Master of the sky.
+	- Supersonic jet.
 
 Move:
 	- I'll be there right away.
-	- 
+	- Full speed ahead.
 
 Attack:
 	- Missile launch confirmed.
-	- Full speed ahead.
+	- Enemy locked.
