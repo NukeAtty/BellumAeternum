@@ -1,0 +1,128 @@
+Storyline:
+
+Allied Campaign Season 1
+The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
+
+
+Mission 1: Night Raid - Ambleteuse, France
+	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
+
+	Objective 1: Destroy the flak base on the Ambleteuse seaside.
+	Objective 2: Capture the Soviet radar to blind enemy.
+	Objective 3: Destroy the Soviet base in Ambleteuse.
+
+Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
+	Brief:
+		The night raid in Ambleteuse is strong and powerful, but not enough.
+		The Soviet will fight back soon, so we need to let them know what a real pain is.
+		The intel has discovered a nuke launcher will be sent to Germany from East, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
+
+	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
+
+	Objective 1: Destroy the Soviet camp at the foothill.
+	Objective 2: Destroy the Soviet base at the foothill.
+	Objective 3: Search and destroy the nuke launcher before it escape.
+
+Mission 3:  
+	Brief:
+		The operation has done well, the Soviets are sending more troops to the East.
+		Now it's time to create more advantage for the Allied Force in Western Europe.
+		One of our spy from the MI6 has just escaped from Berlin, named George Blake, and he holds most important informations.
+		He is now in Northern Germany, and we have to rescue him.
+
+	Objective 1: Destroy the Soviets guard on the coast.
+	Objective 2: Rescue George Blake.
+	Objective 3: Escort the convoy to the landing zone.
+
+Mission 4: 
+	Brief: 
+		Mr.Blake has brought us a huge amount of information. He claims that 
+
+
+Mission 5: 
+
+Mission 6: PHAEDRA Operation - Normandy, France
+	Brief:
+		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
+		Operation name PHAEDRA, we are going to land on the Normandy Beach.
+
+	Objective: Destroy the Soviet forces in Normandy beach.
+
+Allied Campaign Season 2 - 
+Allied has successfully liberate France, but an interior mess has broke out.
+
+Mission 1: Fishy - Fisherman's Bay,Vik, Iceland
+	Objective: Destroy military base on Iceland.
+
+Mission 2: 
+
+Mission 3: 
+
+
+
+
+
+Mission N: 
+	Objective: Escort the Prismarine convoys to airport.
+
+Mission X: Homeland Defense - St.Combs, Aberdeenshire, UK
+	Objective: Take the experimental away from Aberdeenshire.
+
+Mission Y: Biohazzard - Quartzsite, Arizona, USA
+	Objective: Defend Quartzsite from zombie flood.
+
+
+Soviet Campaign Chapter 1
+
+Mission 1: Iron Flood - Meinz, Germany
+	Objective: Destroy West German base in Meinz
+
+	Objective 1: Destroy the air base in Meinz outskirt.
+	Objective 2: Deploy a Soviet base in Meinz outskirt.
+	Objective 3: Cross the Rhine River and destroy the Allied force in Meinz.
+
+	Failure: All units destroyed.
+
+Mission 2: No Fighting in the War Room - Metz, France
+	Brief: 
+		We're close to Paris, but the KGB has passed an important information.
+		There is an abandoned Allied Battle Command center, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
+		The Allied force has sent troops to there, so we have to get it before the Allied does.
+
+	Objective 1: Find the Battle Command Center.
+	Objective 2: Capture the Battle Command Center.
+	Objective 3: Defense the Battle Command Center while passing data.
+
+	Failure: Battle Command Center destroyed.
+
+Mission 3: Hands on Throat - Bermuda, Atlantic
+	Brief:
+		We have captured Paris, but due to the Allied plans, there will be bombers with nuclear bomb flying through the Atlantic ocean to support the UK.
+		Therefore, we have to build an airbase at the front door of the USA to cut the flight line off.
+
+	Objective: Clear the Allied force on St.Georges Island and build a Soviet Airforce Command HQ.
+
+	Objective 1: Destroy the defensive structures on the beace.
+	Objective 2: Deploy a base on St.David's Island.
+	Objective 3: Build an Airforce Command HQ. 
+
+
+Mission 4: 
+	Objective:
+
+Mission 5: 
+	Objective:
+
+Mission 6: 
+	Objective:
+
+Soviet Campaign Chapter 2
+
+Mission 6: Full-spectrum Barrage Jamming - Moscow, Soviet Russia
+
+
+Mission N: Tesla Shock - Leipzig, Germany
+	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
+
+Mission X: Unloyalty - Prague, Czechoslovakia
+	Objective: Control the airport
