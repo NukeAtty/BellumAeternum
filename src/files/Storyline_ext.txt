@@ -23,23 +23,27 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective 2: Destroy the Soviet base at the foothill.
 	Objective 3: Search and destroy the nuke launcher before it escape.
 
-Mission 3:  
+Mission 3: - Rotterdam, Netherland
 	Brief:
 		The operation has done well, the Soviets are sending more troops to the East.
-		Now it's time to create more advantage for the Allied Force in Western Europe.
-		One of our spy from the MI6 has just escaped from Berlin, named George Blake, and he holds most important informations.
-		He is now in Northern Germany, and we have to rescue him.
+		According to the London HQ, one of our spy from the MI6 has escaped from Berlin but trapped in Netherland.
+		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
+		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
 
-	Objective 1: Destroy the Soviets guard on the coast.
-	Objective 2: Rescue George Blake.
-	Objective 3: Escort the convoy to the landing zone.
+	Objective: Rescue George Blake at Rotterdam.
+
+	Objective 1: Destroy the Soviets guard.
+	Objective 2: Rescue George Blake from the Soviet detention center.
+	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
 Mission 4: 
 	Brief: 
-		Mr.Blake has brought us a huge amount of information. He claims that 
+		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
+		One of them is 
 
 
 Mission 5: 
+	Objective
 
 Mission 6: PHAEDRA Operation - Normandy, France
 	Brief:
@@ -95,30 +99,37 @@ Mission 2: No Fighting in the War Room - Metz, France
 
 	Failure: Battle Command Center destroyed.
 
-Mission 3: Hands on Throat - Bermuda, Atlantic
+Mission 3: 
+
+
+Mission 4: Counter Strike - Dunkerque, France
+	Objective: Defense the Dunkerque beach.
+
+Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 	Brief:
-		We have captured Paris, but due to the Allied plans, there will be bombers with nuclear bomb flying through the Atlantic ocean to support the UK.
-		Therefore, we have to build an airbase at the front door of the USA to cut the flight line off.
+		We have just noticed that the Allied Force are testing some sort of secret weapon in Bermuda.
+		They might have use this weapon to against us in the battle of Europe.
+		Commander, it is your turn to stop them in Bermuda island.
 
-	Objective: Clear the Allied force on St.Georges Island and build a Soviet Airforce Command HQ.
+	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
 
-	Objective 1: Destroy the defensive structures on the beace.
-	Objective 2: Deploy a base on St.David's Island.
-	Objective 3: Build an Airforce Command HQ. 
-
-
-Mission 4: 
-	Objective:
-
-Mission 5: 
-	Objective:
+	Objective 1: Destroy the defensive structures on the beach.
+	Objective 2: Find the Allied secret weapon.
+	Objective 3: Capture the Allied battle lab and analyse the data there.
 
 Mission 6: 
-	Objective:
+	Brief: 
+		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
+		Our spy in the UK claims that the Allied forces will launch an attack Normandy beach.
+		Commander, it's your turn to stop the Allieds from their counter attack.
+	Objective: Defend the Normandy Beach.
 
-Soviet Campaign Chapter 2
+Soviet Campaign Season 2
+Mission 1: Peace Treaty - Cairo, Egypt
+	Objective: Guard the peace summit.
 
-Mission 6: Full-spectrum Barrage Jamming - Moscow, Soviet Russia
+Soviet Campaign Season 3
+Mission 1: Full-spectrum Barrage Jamming - Moscow, Soviet Russia
 
 
 Mission N: Tesla Shock - Leipzig, Germany

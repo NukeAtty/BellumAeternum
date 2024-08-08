@@ -1228,11 +1228,21 @@ footer {
 .blog-content p{
 	font-family: HarmonyOS Sans;
 	font-size: 16px;
+	font-weight: 300;
 	color: #fff;
 	line-height: 1.5em;
 }
 
+.blog-content b{
+	font-family: HarmonyOS Sans;
+	font-size: 16px;
+	font-weight: 500;
+}
+
 .blog-content li{
+	font-family: HarmonyOS Sans;
+	font-size: 16px;
+	font-weight: 300;
 	line-height: 1.5em;
 }
 
@@ -1273,13 +1283,17 @@ footer {
 	font-size: 36px;
 	text-align: left;
 	color:#fff;
+	margin-bottom: 0.25em;
 }
 .blog-content h3{
 	font-family: HarmonyOS Sans, sans-serif;
-	font-weight: normal;
+	font-weight: 500;
 	font-size: 28px;
 	text-align: left;
 	color:#fff;
+	line-height: 1em;
+	margin-bottom: 0.25em;
+	margin-top: 0.5em;
 }
 .blog-content h4{
 	font-family: HarmonyOS Sans, sans-serif;
@@ -1291,8 +1305,15 @@ footer {
 }
 
 .blog-content a {
+	font-family: HarmonyOS Sans;
+	font-size: 16px;
+	font-weight: 500;
 	color: #fff;
 	text-decoration: underline;
+}
+
+.blog-content a:hover {
+	color: #f00;
 }
 
 .general-table {
