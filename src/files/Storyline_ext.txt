@@ -23,27 +23,22 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective 2: Destroy the Soviet base at the foothill.
 	Objective 3: Search and destroy the nuke launcher before it escape.
 
-Mission 3: 
+Mission 3: - Rotterdam, Netherland
 	Brief:
 		The operation has done well, the Soviets are sending more troops to the East.
-		Now it's time to create more advantage for the Allied Force in Western Europe.
-		One of our spy from the MI6 has just escaped from Berlin, named George Blake, and he holds most important informations.
-		He is now in Northern Germany, and we have to rescue him.
+		According to the London HQ, one of our spy from the MI6 has escaped from Berlin but trapped in Netherland.
+		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
+		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
 
-	Objective 1: Destroy the Soviets guard on the coast.
-	Objective 2: Rescue George Blake.
-	Objective 3: Escort the convoy to the landing zone.
+	Objective: Rescue George Blake at Rotterdam.
+
+	Objective 1: Destroy the Soviets guard.
+	Objective 2: Rescue George Blake from the Soviet detention center.
+	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
 Mission 4: 
 	Brief: 
-		Mr.Blake has brought us a huge amount of information. He claims that the Soviets are on the way of attacking our Airforce base in Greenland.
-		We need to go there and prepare for the attack, if we can't hold it, at least take our new experimental weapon away.
-
-	Objective: Defend the airbase in Greenland.
-
-	Objective 1: Build defense around the airforce base.
-	Objective 2: Defend the airforce base.
-	Objective 3: Hold the line until the experimental weapon leave.
+		Mr.Blake has brought us a huge amount of information. 
 
 
 Mission 5: 
