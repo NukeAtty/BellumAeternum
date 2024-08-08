@@ -38,7 +38,8 @@ Mission 3: - Rotterdam, Netherland
 
 Mission 4: 
 	Brief: 
-		Mr.Blake has brought us a huge amount of information. 
+		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
+		One of them is 
 
 
 Mission 5: 
@@ -98,7 +99,13 @@ Mission 2: No Fighting in the War Room - Metz, France
 
 	Failure: Battle Command Center destroyed.
 
-Mission 3: Dark 'N' Stormy - Bermuda, Atlantic
+Mission 3: 
+
+
+Mission 4: Counter Strike - Dunkerque, France
+	Objective: Defense the Dunkerque beach.
+
+Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 	Brief:
 		We have just noticed that the Allied Force are testing some sort of secret weapon in Bermuda.
 		They might have use this weapon to against us in the battle of Europe.
@@ -108,17 +115,14 @@ Mission 3: Dark 'N' Stormy - Bermuda, Atlantic
 
 	Objective 1: Destroy the defensive structures on the beach.
 	Objective 2: Find the Allied secret weapon.
-	Objective 3: Capture the Allied battle lab on the St.Georges Island. 
-
-
-Mission 4: Counter Strike - Dunkerque, France
-	Objective: Defense the Dunkerque beach.
-
-Mission 5: 
-	Objective: 
+	Objective 3: Capture the Allied battle lab and analyse the data there.
 
 Mission 6: 
-	Objective:
+	Brief: 
+		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
+		Our spy in the UK claims that the Allied forces will launch an attack Normandy beach.
+		Commander, it's your turn to stop the Allieds from their counter attack.
+	Objective: Defend the Normandy Beach.
 
 Soviet Campaign Season 2
 Mission 1: Peace Treaty - Cairo, Egypt
