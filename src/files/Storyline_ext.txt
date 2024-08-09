@@ -36,11 +36,18 @@ Mission 3: - Rotterdam, Netherland
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-Mission 4: 
+Mission 4: Radiation Wave - 
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
-		One of them is 
+		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
+		As Mr.Blake described, the Soviets are sending nuclear waste to Germany, in order to experiment their radiation troop.
+		Our mission is to stop them, destroy the radiation convoy.
 
+	Objective: Destroy the Radiation Convoy.
+
+	Objective 1: Find the Soviet supply outpost.
+	Objective 2: Destroy the vanguard of the convoy.
+	Objective 3: Take the nuclear waste truck to the disposal area.
 
 Mission 5: 
 	Objective
@@ -51,6 +58,10 @@ Mission 6: PHAEDRA Operation - Normandy, France
 		Operation name PHAEDRA, we are going to land on the Normandy Beach.
 
 	Objective: Destroy the Soviet forces in Normandy beach.
+
+	Objective 1: Build a frontline base.
+	Objective 2: Support the ally.
+	Objective 3: Destroy the Soviet base.
 
 Allied Campaign Season 2 - 
 Allied has successfully liberate France, but an interior mess has broke out.
@@ -100,6 +111,9 @@ Mission 2: No Fighting in the War Room - Metz, France
 	Failure: Battle Command Center destroyed.
 
 Mission 3: 
+	Brief:
+		Our intel has analyzed the informations you have passed from the Allied Battle Command Center, and there is something interesting.
+		The Allied planned to assassinate one of our scientist,
 
 
 Mission 4: Counter Strike - Dunkerque, France
