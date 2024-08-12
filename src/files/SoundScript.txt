@@ -2,21 +2,54 @@ Bellum Æternum Sound Script
 
 Mobile Radar:
 Select:
+	- Mobile Radar reporting.
+	- Adjusting frequency.
+	- Ready to scan.
+	- Radar system operational.
 
 Move:
+	- Setting up the dish.
+	- Nothing can hide from us.
+	- Changing position.
+	- Spreding radio wave.
 
 Dagger:
 Select:
 	- Dagger's here.
 	- Pride of the Allied airforce.
-	- Where's the destination?
 	- Master of the sky.
 	- Supersonic jet.
 
 Move:
 	- I'll be there right away.
 	- Full speed ahead.
+	- Calibrating airspeed.
+	- Command received.
 
 Attack:
 	- Missile launch confirmed.
 	- Enemy locked.
+	- Let's take 'em out!
+	- Easy target.
+
+Die:
+	-Eject! Eject!
+	-Bail out!
+	-Mayday! Mayday!
+
+Radiation Tank:
+Select:
+	-Radiation shell fully loaded.
+	-
+
+Move:
+	-Destination?
+	-
+
+Attack:
+	-
+	-
+
+Tesla Assaulter:
+Select:
+	-
