@@ -36,7 +36,7 @@ Mission 3: - Rotterdam, Netherland
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-Mission 4: Radiation Wave - 
+Mission 4: Radiation Wave - Germany
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
 		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
@@ -90,11 +90,11 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 Soviet Campaign Chapter 1
 
 Mission 1: Iron Flood - Meinz, Germany
-	Objective: Destroy West German base in Meinz
+	Objective: Destroy West German base in Mainz
 
 	Objective 1: Destroy the air base in Meinz outskirt.
 	Objective 2: Deploy a Soviet base in Meinz outskirt.
-	Objective 3: Cross the Rhine River and destroy the Allied force in Meinz.
+	Objective 3: Cross the Rhine River and destroy the Allied force in Mainz.
 
 	Failure: All units destroyed.
 
@@ -113,8 +113,12 @@ Mission 2: No Fighting in the War Room - Metz, France
 Mission 3: 
 	Brief:
 		Our intel has analyzed the informations you have passed from the Allied Battle Command Center, and there is something interesting.
-		The Allied planned to assassinate one of our scientist,
+		The Allied planned to assassinate one of our scientist, and now he's taking flight back to Poland.
+		Our fighter has already taken off to secure the sky, and you need to head to there and secure the ground.
 
+	Objective 1: Establish a front line base in Germany.
+	Objective 2: Head to the crashing site on time.
+	Objective 3: Rescue the scientist.
 
 Mission 4: Counter Strike - Dunkerque, France
 	Objective: Defense the Dunkerque beach.
