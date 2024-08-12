@@ -23,7 +23,7 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective 2: Destroy the Soviet base at the foothill.
 	Objective 3: Search and destroy the nuke launcher before it escape.
 
-Mission 3: - Rotterdam, Netherland
+Mission 3: Vesper - Rotterdam, Netherland
 	Brief:
 		The operation has done well, the Soviets are sending more troops to the East.
 		According to the London HQ, one of our spy from the MI6 has escaped from Berlin but trapped in Netherland.
@@ -36,11 +36,11 @@ Mission 3: - Rotterdam, Netherland
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-Mission 4: Radiation Wave - Germany
+Mission 4: The Desolation - Germany
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
 		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
-		As Mr.Blake described, the Soviets are sending nuclear waste to Germany, in order to experiment their radiation troop.
+		As Mr.Blake described, the Soviets are sending nuclear waste to Germany, in order to experiment their radiation troops.
 		Our mission is to stop them, destroy the radiation convoy.
 
 	Objective: Destroy the Radiation Convoy.
@@ -98,10 +98,10 @@ Mission 1: Iron Flood - Meinz, Germany
 
 	Failure: All units destroyed.
 
-Mission 2: No Fighting in the War Room - Metz, France
+Mission 2: Crack the Ice - Metz, France
 	Brief: 
-		We're close to Paris, but the KGB has passed an important information.
-		There is an abandoned Allied Battle Command center, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
+		We're close to Paris, but the French garrison is still powerful. 
+		There is an abandoned Allied Battle Command center in Metz, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
 		The Allied force has sent troops to there, so we have to get it before the Allied does.
 
 	Objective 1: Find the Battle Command Center.
@@ -110,15 +110,15 @@ Mission 2: No Fighting in the War Room - Metz, France
 
 	Failure: Battle Command Center destroyed.
 
-Mission 3: 
+Mission 3: Night Fall - Hamburg, Germany
 	Brief:
 		Our intel has analyzed the informations you have passed from the Allied Battle Command Center, and there is something interesting.
 		The Allied planned to assassinate one of our scientist, and now he's taking flight back to Poland.
 		Our fighter has already taken off to secure the sky, and you need to head to there and secure the ground.
 
-	Objective 1: Establish a front line base in Germany.
-	Objective 2: Head to the crashing site on time.
-	Objective 3: Rescue the scientist.
+	Objective 1: Head to the crash site.
+	Objective 2: Protect the crash site from the Allied force.
+	Objective 3: Rescue the scientist and escort him to the local helipad.
 
 Mission 4: Counter Strike - Dunkerque, France
 	Objective: Defense the Dunkerque beach.
@@ -138,7 +138,7 @@ Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 Mission 6: 
 	Brief: 
 		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
-		Our spy in the UK claims that the Allied forces will launch an attack Normandy beach.
+		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
 		Commander, it's your turn to stop the Allieds from their counter attack.
 	Objective: Defend the Normandy Beach.
 
