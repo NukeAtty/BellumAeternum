@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇粒子系统详细中文教程。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title>粒子系统教程 | 万世之战：为红警2带来前所未有的体验</title>
+	<style>
+		span{
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		code{
+			font-family: Neon, monospace;
+			font-size: 14px;
+			font-weight: normal;
+			background-color: #ffffff30;
+			border: 1px solid #ffffff;
+			border-radius: 5px;
+			padding: 0.2em;
+			margin: 0 0.2em;
+			user-select: text;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul class="navigation-button">
+			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
+			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
+			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
+		</ul>
+		<div class="responsive-navigation">
+			<a href="https://www.ra2be.com/zh/"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>尤里的复仇：粒子系统教程</h1>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>最后更新时间：<time datetime="2024-08-13 18:00">2024/08/13</time></p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+							<a id="h2" href="#particles">粒子（Particles）</a>
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<p>粒子（Particles），指的是游戏中渲染的一种颗粒。这种颗粒可以通过一系列参数控制其动作，并通过制定图像来做到一系列的模拟效果。比如，游戏中残血的坦克冒烟，这实际上就是一种通过粒子实现的动画，每一朵烟雾都是一个动画，通过参数控制其从低到高的运动方式和渐隐效果。</p>
+					<p>粒子系统（ParticleSystems），指的是粒子的控制系统。同样拿冒烟距离，粒子系统可以控制这个烟雾的扩散范围、密度等。</p>
+					<h2 id="particles">粒子（Particles）</h2>
+					<p>粒子的设定比起粒子系统（ParticleSystems）的设定更加重要，因为粒子在没有粒子系统的情况下也可以被使用，这个我们后续再讲。</p>
+					<h3 id="smoke">烟雾粒子</h3>
+					<p>标志性代码：<code>BehavesLike=Smoke</code></p>
+					<p>烟雾粒子的重要特征有如下几点：</p>
+					<ol>
+						<li>粒子会在地面至少5个Lepton单位处悬浮。</li>
+						<li>粒子只能用SHP格式的图像。</li>
+						<li>粒子会根据<code>WindEffect=</code>的设定来改变其运动轨迹。</li>
+
+					</ol>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+				<a href="https://www.ra2be.com/zh/"><img src="../../src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+				</div>
+				<div class="lang-selector">
+					<a href="https://www.ra2be.com"><img src="../../src/english.webp" alt="English" width="auto" height="30px"></a>
+					<a href="https://www.ra2be.com/zh/blog/ares-tutorial-ch.html"><img src="../../src/chinese.webp" alt="Chinese" width="auto" height="30px"></a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>博客</p>
+				<ul>
+					<li><a href="../blog.html#concept">概念</a></li>
+					<li><a href="../blog.html#tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#Contact">联系方式</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.ra2diy.com">红警DIY论坛</a>
+		</div>
+	</footer>
+</body>
