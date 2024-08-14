@@ -1,6 +1,6 @@
 Storyline:
 
-Allied Campaign Season 1
+Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
 
 
@@ -15,7 +15,7 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Brief:
 		The night raid in Ambleteuse is strong and powerful, but not enough.
 		The Soviet will fight back soon, so we need to let them know what a real pain is.
-		The intel has discovered a nuke launcher will be sent to Germany from East, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
+		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
 
 	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
 
@@ -23,34 +23,46 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective 2: Destroy the Soviet base at the foothill.
 	Objective 3: Search and destroy the nuke launcher before it escape.
 
+	Failure: All units destroyed.
+
 Mission 3: Vesper - Rotterdam, Netherland
 	Brief:
-		The operation has done well, the Soviets are sending more troops to the East.
-		According to the London HQ, one of our spy from the MI6 has escaped from Berlin but trapped in Netherland.
+		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
+		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin but trapped in Netherland.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
 		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
 
 	Objective: Rescue George Blake at Rotterdam.
 
-	Objective 1: Destroy the Soviets guard.
+	Objective 1: Destroy the Soviets guards.
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-Mission 4: The Desolation - Germany
+	Failure: Mr.Blake died.
+
+Mission 4: The Desolation - Emden, Germany
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
 		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
-		As Mr.Blake described, the Soviets are sending nuclear waste to Germany, in order to experiment their radiation troops.
-		Our mission is to stop them, destroy the radiation convoy.
+		As Mr.Blake described, the radiation trooper you've seen during the rescue mission is called desolator, and the Soviets are sending nuclear material to Germany, in order to supply their desolator force.
+		Our mission is to stop them, cut their ammo from the source and ease our counter attack in the future.
 
 	Objective: Destroy the Radiation Convoy.
 
 	Objective 1: Find the Soviet supply outpost.
 	Objective 2: Destroy the vanguard of the convoy.
-	Objective 3: Take the nuclear waste truck to the disposal area.
+	Objective 3: Destroy the nuclear material truck.
 
 Mission 5: 
-	Objective
+	Brief:
+		We have successfully destroyed the Soviet nuclear material convoy, and proved Mr.Blake is still one of us.
+		According to Mr.Blake, there is a coup d'etat happening in Mexico city, and their government needs our support.
+		While most of our troops are in the UK, general want you to take a group of taskforce, to supressess the coup d'etat.
+
+	Objective 1: Go into the city and find the secret headquater of the rebellion.
+	Objective 2: Defense the Allied base from the rebellion.
+
+	Failure: All units destroyed.
 
 Mission 6: PHAEDRA Operation - Normandy, France
 	Brief:
@@ -87,7 +99,7 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 	Objective: Defend Quartzsite from zombie flood.
 
 
-Soviet Campaign Chapter 1
+Soviet Campaign Chapter 1: Red Dawn
 
 Mission 1: Iron Flood - Meinz, Germany
 	Objective: Destroy West German base in Mainz
@@ -110,7 +122,7 @@ Mission 2: Crack the Ice - Metz, France
 
 	Failure: Battle Command Center destroyed.
 
-Mission 3: Night Fall - Hamburg, Germany
+Mission 3: Night Fall - Wangerland, Germany
 	Brief:
 		Our intel has analyzed the informations you have passed from the Allied Battle Command Center, and there is something interesting.
 		The Allied planned to assassinate one of our scientist, and now he's taking flight back to Poland.
@@ -120,8 +132,8 @@ Mission 3: Night Fall - Hamburg, Germany
 	Objective 2: Protect the crash site from the Allied force.
 	Objective 3: Rescue the scientist and escort him to the local helipad.
 
-Mission 4: Counter Strike - Dunkerque, France
-	Objective: Defense the Dunkerque beach.
+Mission 4: 
+	Objective: 
 
 Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 	Brief:
@@ -135,7 +147,7 @@ Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 	Objective 2: Find the Allied secret weapon.
 	Objective 3: Capture the Allied battle lab and analyse the data there.
 
-Mission 6: 
+Mission 6: Hold the Line - Normandy, France
 	Brief: 
 		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
 		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
