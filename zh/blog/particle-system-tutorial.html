@@ -3,10 +3,10 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../../style.css">
-	<meta name="description" content="红色警戒2：尤里的复仇粒子系统详细中文教程。">
+	<meta name="description" content="红色警戒2：尤里的复仇关于粒子的详细中文教程。">
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
 	<meta name="robots" content="noindex, nofollow">
-	<title>粒子系统教程 | 万世之战：为红警2带来前所未有的体验</title>
+	<title>粒子教程 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
 		span{
 			font-size: 16px;
@@ -40,7 +40,7 @@
 	<!--Main-->
 	<main>
 		<div class="blog">
-			<h1>尤里的复仇：粒子系统教程</h1>
+			<h1>尤里的复仇：粒子教程</h1>
 			<div class="blog-info">
 				<div class="update-time">
 					<p>最后更新时间：<time datetime="2024-08-13 18:00">2024/08/13</time></p>
@@ -59,17 +59,117 @@
 				<div class="blog-content">
 					<p>粒子（Particles），指的是游戏中渲染的一种颗粒。这种颗粒可以通过一系列参数控制其动作，并通过制定图像来做到一系列的模拟效果。比如，游戏中残血的坦克冒烟，这实际上就是一种通过粒子实现的动画，每一朵烟雾都是一个动画，通过参数控制其从低到高的运动方式和渐隐效果。</p>
 					<p>粒子系统（ParticleSystems），指的是粒子的控制系统。同样拿冒烟距离，粒子系统可以控制这个烟雾的扩散范围、密度等。</p>
+					<h2 id="ralation">粒子和粒子系统的关系</h2>
+					<p>粒子和粒子系统虽然可以共用一些代码，但其两者是完全不同的东西。</p>
+					<ul>
+						<li>粒子需要在[Particles]下注册，而粒子系统则是在[ParticleSystems]下注册。</li>
+						<li>粒子系统可以调用粒子，但粒子被调用不一定要用粒子系统。</li>
+						<li>粒子系统没有粒子就不可以使用，但粒子没有粒子系统依然可以使用。</li>
+					</ul>
 					<h2 id="particles">粒子（Particles）</h2>
-					<p>粒子的设定比起粒子系统（ParticleSystems）的设定更加重要，因为粒子在没有粒子系统的情况下也可以被使用，这个我们后续再讲。</p>
+					<p>粒子的设定比起粒子系统（ParticleSystems）的设定更加重要，WESTWOOD在游戏中预设了几种粒子，只需要简单定义便可以为自己所用。</p>
 					<h3 id="smoke">烟雾粒子</h3>
+					<p>烟雾粒子在游戏中的使用极其广泛，比如单位残血的时候冒烟，矿场倒矿之后烟囱的烟等等。</p>
 					<p>标志性代码：<code>BehavesLike=Smoke</code></p>
 					<p>烟雾粒子的重要特征有如下几点：</p>
 					<ol>
 						<li>粒子会在地面至少5个Lepton单位处悬浮。</li>
 						<li>粒子只能用SHP格式的图像。</li>
 						<li>粒子会根据<code>WindEffect=</code>的设定来改变其运动轨迹。</li>
-
 					</ol>
+					<p>烟雾粒子可以使用的代码如下：</p>
+					<table>
+						<th>
+							<td>代码</td>
+							<td>赋值</td>
+							<td>默认值</td>
+							<td>注释</td>
+						</th>
+						<tr>
+							<td>MaxDC=</td>
+							<td>整数，单位：帧</td>
+							<td>0</td>
+							<td>该粒子在多少帧之后才会产生伤害。</td>
+						</tr>
+						<tr>
+							<td>MaxEC=</td>
+							<td>帧数，单位：帧</td>
+							<td>0</td>
+							<td>该粒子最多持续多少帧。</td>
+						</tr>
+						<tr>
+							<td>Damage=</td>
+							<td>整数，单位：无</td>
+							<td>0</td>
+							<td>粒子所在单元格中每一帧所造成的伤害。</td>
+						</tr>
+						<tr>
+							<td>Warhead=</td>
+							<td>弹头</td>
+							<td>无</td>
+							<td>粒子造成伤害所使用的弹头。</td>
+						</tr>
+						<tr>
+							<td>StartFrame=</td>
+							<td>整数</td>
+							<td>无</td>
+							<td>粒子动画由哪一帧开始。</td>
+						</tr>
+						<tr>
+							<td>NumLoopFrames=</td>
+							<td>整数</td>
+							<td>无</td>
+							<td>粒子动画在一轮循环中总共持续多少帧。</td>
+						</tr>
+						<tr>
+							<td>Translucency=</td>
+							<td>整数（0/25/50/75）</td>
+							<td>0</td>
+							<td>粒子动画的透明度，该透明度会覆盖art.ini中指定的透明度。</td>
+						</tr>
+						<tr>
+							<td>WindEffect=</td>
+							<td>整数（0~5）</td>
+							<td>0</td>
+							<td>粒子的运动受风力影响度，风向在[General]中的WindDirection里设置。</td>
+						</tr>
+						<tr>
+							<td>Velocity=</td>
+							<td>小数</td>
+							<td>0.0</td>
+							<td>粒子的运动速度。</td>
+						</tr>
+						<tr>
+							<td>Deacc=</td>
+							<td>小数</td>
+							<td>0.0</td>
+							<td>粒子运动减速的因数。</td>
+						</tr>
+						<tr>
+							<td>Radius=</td>
+							<td>整数，单位：Lepton</td>
+							<td>未知</td>
+							<td>粒子的扩散范围。（原版中并没有任何示例）</td>
+						</tr>
+						<tr>
+							<td>DeleteOnStateLimit=</td>
+							<td>布尔值（yes/no）</td>
+							<td>no</td>
+							<td>如果为no，粒子会在动画播放完毕后自动消失。如果为yes，粒子会在动画播放完毕后呈无动画状态续存。</td>
+						</tr>
+						<tr>
+							<td>EndStateAI</td>
+							<td>整数，单位：帧</td>
+							<td>0</td>
+							<td>制定粒子动画的最后一帧。</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
 					<hr>
 				</div>
 			</div>
