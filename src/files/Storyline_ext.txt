@@ -53,8 +53,17 @@ Mission 4: The Desolation（荒芜之地） - Emden, Germany
 	Objective 2: Destroy the vanguard of the convoy.
 	Objective 3: Destroy the nuclear material truck.
 
-Mission 5: 
+	Failure: Nuclear material truck leaves/ All units destroyed.
+
+Mission 5: Arctic Mayhem（极地混乱） - Thuler Air Base, Greenland
 	Brief:
+		The operation in Emden is brilliant, the Soviets are force to send more troops to deal with the radiation polution there.
+		The Americans are sending more troops to Britain, but Burmuda has been captured by the Soviets and they have built an airbase there.
+		General decided to change the transportation route to Greenland, and he want to you to guarantee the safety of Thule air base.
+
+	Objective: Defense the Thule air base.
+
+	Failure: All flights destroyed.
 
 Mission 6: PHAEDRA Operation（霸王行动） - Normandy, France
 	Brief:
