@@ -15,3 +15,9 @@ AircraftTypes:
 		ART - FORTRESS
 		Weapon1 - FortressBomb - Aerial - CBU32
 		DeathWeapon - BlimpBomb
+
+
+Animations:
+	FIRE1 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - 
+	FIRE2 - [Particle]
+	FIRE1S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - 
