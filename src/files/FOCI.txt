@@ -1,0 +1,17 @@
+Fully Organised Coding INIs
+
+VehicleTypes:
+	MTNK:
+		ART - MTNK
+		Weapon1 - 90mmM5 - APShell - M392
+		Weapon1E - 90mmM5 - APShell - M392 - S_CLSN22
+		Debris - M54VD
+		[Phobos] Death Animation - GTNKEXP - TWLT036
+
+
+
+AircraftTypes:
+	FORTRESS:
+		ART - FORTRESS
+		Weapon1 - FortressBomb - Aerial - CBU32
+		DeathWeapon - BlimpBomb
