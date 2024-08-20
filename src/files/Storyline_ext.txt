@@ -48,7 +48,7 @@ Mission 3: Vesper（黄昏微光） - Rotterdam, Netherland
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-	Failure: Mr.Blake died.
+	Failure: Mr.Blake lost.
 
 Mission 4: The Desolation（荒芜之地） - Emden, Germany
 	Brief: 
@@ -175,6 +175,11 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France
 		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
 		Commander, it's your turn to stop the Allieds from their counter attack.
 	Objective: Defend the Normandy Beach.
+
+	Objective 1: Build up a frontline base.
+	Objective 2: Defend the beach.
+
+	Final: The Allied uses its Weather Control Device and wiped out the Normandy frontline.
 
 Soviet Campaign Season 2
 Mission 1: Peace Treaty - Cairo, Egypt
