@@ -1,0 +1,23 @@
+Fully Organised Coding INIs
+
+VehicleTypes:
+	MTNK:
+		Weapon1 - 90mmM5 - APShell - M392
+		Weapon1E - 90mmM5 - APShell - M392 - S_CLSN22
+
+	MRDR:
+		Weapon1 - RadiowaveTrace
+
+
+AircraftTypes:
+	FORTRESS:
+		Weapon1 - FortressBomb - Aerial - CBU32
+		DeathWeapon - BlimpBomb
+
+
+Animations:
+	FIRE1 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - [Particle]SmallGreySmoke - [ART]SGRYSMK1
+	FIRE2 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - [Particle]SmallGreySmoke - [ART]SGRYSMK1
+	FIRE3 - [Particle]SmallGreySmoke - 
+	FIRE1S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - [ART]FLMSPRK
+	FIRE2S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - [ART]FLMSPRK
