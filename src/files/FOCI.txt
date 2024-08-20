@@ -18,6 +18,8 @@ AircraftTypes:
 
 
 Animations:
-	FIRE1 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - 
-	FIRE2 - [Particle]
-	FIRE1S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - 
+	FIRE1 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - [Particle]SmallGreySmoke - [ART]SGRYSMK1
+	FIRE2 - [Particle]FlameSparkParticle - [Warhead]SmokeCarrier - [Sys]ForestFireSmokeSys - [Particle]SmallGreySmoke - [ART]SGRYSMK1
+	FIRE3 - [Particle]SmallGreySmoke - 
+	FIRE1S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - [ART]FLMSPRK
+	FIRE2S - [Warhead]SparkCarrier - [Sys]FlameSparkSys - [Particle]FlameSparkParticle - [ART]FLMSPRK
