@@ -2,12 +2,11 @@ Fully Organised Coding INIs
 
 VehicleTypes:
 	MTNK:
-		ART - MTNK
 		Weapon1 - 90mmM5 - APShell - M392
 		Weapon1E - 90mmM5 - APShell - M392 - S_CLSN22
-		Debris - M54VD
-		[Phobos] Death Animation - GTNKEXP - TWLT036
 
+	MRDR:
+		Weapon1 - RadiowaveTrace
 
 
 AircraftTypes:
