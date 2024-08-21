@@ -1469,6 +1469,40 @@ footer {
 	}
 }
 
+/*------------------------*/
+/*----------Maps----------*/
+/*------------------------*/
+
+.maps {
+	display: block;
+	width: 90%;
+	margin: 5vw;
+}
+
+.maps h1 {
+	text-align: center;
+}
+
+.map-board {
+	display: flex;
+	flex-flow: row;
+}
+
+.map-container {
+	display: block;
+	margin: 1em;
+	padding: 1em;
+	background-color: #333;
+}
+
+.map-container img{
+	width: 480px;
+}
+
+.map-contasiner h3{
+	text-align: center;
+}
+
 /*----------===================================----------*/
 /*----------==========Tablet Horizontal==========----------*/
 /*----------===================================----------*/
