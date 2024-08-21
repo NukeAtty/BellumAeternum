@@ -7,8 +7,14 @@ The United Nation Force cannot push further more to North Korea, while the Sovie
 1952 - Reshuffle
 The Washington DC decided to reshuffle the United Nation Force to the Allied Force, with standardised arsenal and intel.
 
-1954 - The Troop Vacuum 
-When the Allied force supports Korean war, The western Europe was experiencing troop vacuum, and Soviet spies has reported to Moscow, then the Soviet leader start to prepare the invasion.
+1953 - The Troop Vacuum 
+When the Allied force supports Korean war, The western Europe was experiencing troop vacuum, and Soviet spies has reported to Moscow, then the Soviet leader Joseph Stalin has launched attack on West Germany. Although there are still Allied garrison, but since more advanced weapons has been sent to Korea, the remaining Allied troops has failed very quickly.
+After the Soviet army entirely captured Germany, the Allied force realised a new war will break out in Europe, so they start to send most nuclear weapons to France. France has strong fortification, and the Allied believes that with nuclear weapons, the Soviets wouldn't dare to push further.
+
+1954 - Crack the Ice
+The Soviets launched a sudden attack at Metz, France, and wiped out the Allied force. Meanwhile, they have captured a battle command center, which loaded the entire Allied military deployment in Europe. After that, the Soviet intellegence agency co-operated with special forces, sabotaged all nuclear base in France. Without worrying about nuclear bombs, the Soviets easily captured Paris, and the Allied forces had to retreat to Great Britain from Dunkirk. 
+However, the Allieds were committed to win the Korean war, and doesn't know much about what's happenning in Europe. Finally, the Allied forces has taken control of the entire Korean peninsula, and Chinese volunteer army has retreated to the border.
+
 
 Allied Campaign Season 1: Counter Strike（全力反击）
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
@@ -112,30 +118,34 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Iron Flood（钢铁洪流） - Meinz, Germany
-	Objective: Destroy West German base in Mainz
+Mission 1: Crack the Ice（打破僵局） - Metz, France
+	Brief: 
+		We will make our next leap soon, but we've collected that the Allied has most of their nuclear weapon sended to France.
+		There is an Allied Intelligence Center in Metz, if we can capture them, we might get the details of Allied defense in Western Europe.
+		The Allied force has sent troops to there, so we have to get it before the Allied does.
 
-	Objective 1: Destroy the air base in Meinz outskirt.
-	Objective 2: Deploy a Soviet base in Meinz outskirt.
-	Objective 3: Cross the Rhine River and destroy the Allied force in Mainz.
+	Objective 1: Clear the Allied forces by the Battle Command Center.
+	Objective 2: Capture the Intelligence Center.
+	Objective 3: Defense the Intelligence Center while collecting informations.
+
+	Failure: Intelligence Center destroyed.
+
+Mission 2: Shadow Strike（核影无痕）- Lyon, France
+	Brief:
+		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
+		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
+
+	Objective: Sabotage the Allied Nuclear Base
+
+	Objective 1: Find a way to slip into the nuclear base.
+	Objective 2: Find the nuke silo.
+	Objective 3: Sabotage the nuke silo.
 
 	Failure: All units destroyed.
 
-Mission 2: Crack the Ice（打破僵局） - Metz, France
-	Brief: 
-		We're close to Paris, but the French garrison is still powerful. 
-		There is an abandoned Allied Battle Command center in Metz, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
-		The Allied force has sent troops to there, so we have to get it before the Allied does.
-
-	Objective 1: Find the Battle Command Center.
-	Objective 2: Capture the Battle Command Center.
-	Objective 3: Defense the Battle Command Center while passing data.
-
-	Failure: Battle Command Center destroyed.
-
 Mission 3: Night Fall（夜幕降临） - Wangerland, Germany
 	Brief:
-		Our intel has analyzed the informations you have passed from the Allied Battle Command Center, and there is something interesting.
+		With Allied nuclear base sabotaged, we have easily broken into Paris and captured the entire France.
 		The Allied planned to assassinate one of our scientist of Tesla technology, Nikolai, and now he's taking flight back to Poland.
 		Our fighter has already taken off to secure the sky, but you still need to head to Germany to secure the ground.
 
@@ -150,7 +160,7 @@ Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
 	Brief:
 		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
 		He predit that the Allied will use those data to develop some sort of weather control device.
-		Our submarines has located the unusual movement of the Allied marines, in Bermuda.
+		Meanwhile, our submarines has located unusual movements of the Allied marines, in Bermuda.
 
 	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
 
@@ -160,7 +170,7 @@ Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
 
 Mission 5: Unimpeded（畅通无阻） - France
 	Brief:
-		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse, France.
+		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse.
 		The landed Allied force has established a base in Ambleteuse, and they prepare to push to Paris.
 		Commander, it is our turn to give those Allieds a lesson.
 
