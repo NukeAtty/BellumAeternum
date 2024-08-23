@@ -48,6 +48,8 @@ Background:
 		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin but trapped in Netherland.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
 		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
+		根据伦敦总部的情报，一名军情六处驻柏林站的间谍在荷兰被苏军控制，他的名字叫乔治·布莱克。布莱克先生手头有苏军部署的重要情报，因此我们需要到荷兰解救他。
+		我们这次的任务就是到荷兰的洛特丹，消灭控制那里的苏军，并解救乔治·布莱克。
 
 	Objective: Rescue George Blake at Rotterdam.
 
