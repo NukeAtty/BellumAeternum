@@ -1,21 +1,38 @@
 Storyline:
+故事线：
 
-Allied Campaign Season 1
-The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
+Background:
+背景：
+1951年：朝鲜战争
+联合国军未能在朝鲜取得全面胜利，而此时的苏联则大力加强自己的竣备建设，同时在战场上秘密支援朝鲜。
+
+1952年：重整军力
+华盛顿政府意识到事态的严重性，希望可以在朝鲜战场早日分出胜负，于是决定将联合国军改组为盟军（The Allied），同时统一情报系统和装备生产线。这一决议由美国的军工复合体大力支持，但英国、法国、加拿大和澳大利亚则对这一决议颇有不满。经历了三个月的改组后，盟军继续介入朝鲜战场。
+
+1953年：兵力真空
+在持续的消耗战中，盟军为了快速结束战斗，于是开始从欧洲开始抽调兵力和装备。意识到西欧兵力真空的约瑟夫·斯大林决定直接向西欧施压，打乱美国的军力部署。于是，驻扎在东德的苏军开始向西德推进。盟军在欧洲的驻军因为缺少装备，很快边开始溃败，最终德国全境被苏联占领。实际上，盟军之所以敢于将欧洲的兵力和装备调走，是因为美国秘密将大部分核武器通过格陵兰图森空军基地运向了欧洲，并在法国建立了9个核武基地。
+
+1954年：打破僵局（苏联战役开始）
+苏联于1948年-1954在西欧部署了大量的间谍网，同时通过收买、贿赂等手段也渗透了大量的西欧的军事部门。为了顺利占领法国，苏联军事委员会启动了”破冰行动“————通过占领盟军在法国边境的军事基地获取关于核武基地的军事情报。很快，法国梅斯地区的一个军事基地便遭到了苏军的突袭，苏军成功获取了所有的情报。在此之后，苏军派遣特遣队，向法国内部进行渗透，并在间谍的帮助下，于一天夜里袭击了盟军的9个核武基地，最终将它们一起破坏。此时的盟军正在朝鲜战场大幅推进，志愿军和朝鲜人民军被推到了中朝边境，而当布鲁塞尔的盟军总指挥部发现核武基地被破坏时，苏军已经开始了对法国的进攻。很快，法国全境被苏军占领，同时苏军还贡献了布鲁塞尔的盟军总指挥部，而法国的盟军则大多集结到了敦刻尔克，乘船穿越英吉利海峡，到英国进行整备。
+
+1955年：大战爆发（盟军战役开始）
 
 
-Mission 1: Night Raid - Ambleteuse, France
+
+盟军战役第一季:全力反击
+
+任务1：暗夜突袭 - 昂布勒特斯，法国
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
 	Objective 1: Destroy the flak base on the Ambleteuse seaside.
 	Objective 2: Capture the Soviet radar to blind enemy.
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
-Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
+任务2：雪盲之殇 - 通信站，苏俄
 	Brief:
 		The night raid in Ambleteuse is strong and powerful, but not enough.
 		The Soviet will fight back soon, so we need to let them know what a real pain is.
-		The intel has discovered a nuke launcher will be sent to Germany from East, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
+		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
 
 	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
 
@@ -23,34 +40,60 @@ Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
 	Objective 2: Destroy the Soviet base at the foothill.
 	Objective 3: Search and destroy the nuke launcher before it escape.
 
-Mission 3: - Rotterdam, Netherland
+	Failure: All units destroyed.
+
+任务3：黄昏微光 - 洛特丹，荷兰
 	Brief:
-		The operation has done well, the Soviets are sending more troops to the East.
-		According to the London HQ, one of our spy from the MI6 has escaped from Berlin but trapped in Netherland.
+		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
+		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin but trapped in Netherland.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
 		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
+		根据伦敦总部的情报，一名军情六处驻柏林站的间谍在荷兰被苏军控制，他的名字叫乔治·布莱克。布莱克先生手头有苏军部署的重要情报，因此我们需要到荷兰解救他。
+		我们这次的任务就是到荷兰的洛特丹，消灭控制那里的苏军，并解救乔治·布莱克。
 
 	Objective: Rescue George Blake at Rotterdam.
 
-	Objective 1: Destroy the Soviets guard.
+	Objective 1: Destroy the Soviets guards.
 	Objective 2: Rescue George Blake from the Soviet detention center.
 	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
 
-Mission 4: 
+	Failure: Mr.Blake lost.
+
+任务4：荒芜之地 - 埃姆登，德国
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
-		One of them is 
+		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
+		As Mr.Blake described, the radiation trooper you've seen during the rescue mission is called desolator, and the Soviets are sending nuclear material to Germany, in order to supply their desolator force.
+		Our mission is to stop them, cut their ammo from the source and ease our counter attack in the future.
 
+	Objective: Destroy the Radiation Convoy.
 
-Mission 5: 
-	Objective
+	Objective 1: Find the Soviet supply outpost.
+	Objective 2: Destroy the vanguard of the convoy.
+	Objective 3: Destroy the nuclear material truck.
 
-Mission 6: PHAEDRA Operation - Normandy, France
+	Failure: Nuclear material truck leaves/ All units destroyed.
+
+任务5：极地混乱 - 图勒空军基地，格陵兰
+	Brief:
+		The operation in Emden is brilliant, the Soviets are force to send more troops to deal with the radiation polution there.
+		The Americans are sending more troops to Britain, but Burmuda has been captured by the Soviets and they have built an airbase there.
+		General decided to change the transportation route to Greenland, and he want to you to guarantee the safety of Thule air base.
+
+	Objective: Defense the Thule air base.
+
+	Failure: All flights destroyed.
+
+任务6：霸王行动- 诺曼底，法国
 	Brief:
 		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
 		Operation name PHAEDRA, we are going to land on the Normandy Beach.
 
 	Objective: Destroy the Soviet forces in Normandy beach.
+
+	Objective 1: Build a frontline base.
+	Objective 2: Support the ally.
+	Objective 3: Destroy the Soviet base.
 
 Allied Campaign Season 2 - 
 Allied has successfully liberate France, but an interior mess has broke out.
@@ -76,40 +119,51 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 	Objective: Defend Quartzsite from zombie flood.
 
 
-Soviet Campaign Chapter 1
+苏联战役第一季：赤色黎明
 
-Mission 1: Iron Flood - Meinz, Germany
-	Objective: Destroy West German base in Meinz
+任务1：打破僵局 - 梅斯，法国
+	Brief: 
+		We will make our next leap soon, but we've collected that the Allied has most of their nuclear weapon sended to France.
+		There is an Allied Intelligence Center in Metz, if we can capture them, we might get the details of Allied defense in Western Europe.
+		The Allied force has sent troops to there, so we have to get it before the Allied does.
 
-	Objective 1: Destroy the air base in Meinz outskirt.
-	Objective 2: Deploy a Soviet base in Meinz outskirt.
-	Objective 3: Cross the Rhine River and destroy the Allied force in Meinz.
+	Objective 1: Clear the Allied forces by the Battle Command Center.
+	Objective 2: Capture the Intelligence Center.
+	Objective 3: Defense the Intelligence Center while collecting informations.
+
+	Failure: Intelligence Center destroyed.
+
+任务2：核影无痕 - 里昂，法国
+	Brief:
+		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
+		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
+
+	Objective: Sabotage the Allied Nuclear Base
+
+	Objective 1: Find a way to slip into the nuclear base.
+	Objective 2: Find the nuke silo.
+	Objective 3: Sabotage the nuke silo.
 
 	Failure: All units destroyed.
 
-Mission 2: No Fighting in the War Room - Metz, France
-	Brief: 
-		We're close to Paris, but the KGB has passed an important information.
-		There is an abandoned Allied Battle Command center, if we can capture them, we will be able to know the details of Allied defense in Western Europe.
-		The Allied force has sent troops to there, so we have to get it before the Allied does.
-
-	Objective 1: Find the Battle Command Center.
-	Objective 2: Capture the Battle Command Center.
-	Objective 3: Defense the Battle Command Center while passing data.
-
-	Failure: Battle Command Center destroyed.
-
-Mission 3: 
-
-
-Mission 4: Counter Strike - Dunkerque, France
-	Objective: Defense the Dunkerque beach.
-
-Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
+任务3：夜幕降临 - 旺格兰，德国
 	Brief:
-		We have just noticed that the Allied Force are testing some sort of secret weapon in Bermuda.
-		They might have use this weapon to against us in the battle of Europe.
-		Commander, it is your turn to stop them in Bermuda island.
+		With Allied nuclear base sabotaged, we have easily broken into Paris and captured the entire France.
+		The Allied planned to assassinate one of our scientist of Tesla technology, Nikolai, and now he's taking flight back to Poland.
+		Our fighter has already taken off to secure the sky, but you still need to head to Germany to secure the ground.
+
+	Opening:
+		Allied Dagger squad shot down the MiGs and the passenger plane.
+
+	Objective 1: Head to the crash site.
+	Objective 2: Protect the crash site from the Allied force.
+	Objective 3: Rescue the scientist and escort him to the local helipad.
+
+任务4：黑暗风暴 - 百慕大，大西洋
+	Brief:
+		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
+		He predit that the Allied will use those data to develop some sort of weather control device.
+		Meanwhile, our submarines has located unusual movements of the Allied marines, in Bermuda.
 
 	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
 
@@ -117,23 +171,39 @@ Mission 5: Dark 'N' Stormy - Bermuda, Atlantic
 	Objective 2: Find the Allied secret weapon.
 	Objective 3: Capture the Allied battle lab and analyse the data there.
 
-Mission 6: 
+任务5：畅通无阻 - 代伏勒，法国
+	Brief:
+		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse.
+		The landed Allied force has established a base in Ambleteuse, and they prepare to push to Paris.
+		Commander, it is our turn to give those Allieds a lesson.
+
+	Objective 1: Bombard the Allied convoy.
+	Objective 2: Establish a base.
+	Objective 3: Stop the Allied force from pushing through.
+
+
+Mission 6: Hold the Line（坚守阵地） - Normandy, France
 	Brief: 
 		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
-		Our spy in the UK claims that the Allied forces will launch an attack Normandy beach.
+		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
 		Commander, it's your turn to stop the Allieds from their counter attack.
 	Objective: Defend the Normandy Beach.
+
+	Objective 1: Build up a frontline base.
+	Objective 2: Defend the beach.
+
+	Final: The Allied uses its Weather Control Device and wiped out the Normandy frontline.
 
 Soviet Campaign Season 2
 Mission 1: Peace Treaty - Cairo, Egypt
 	Objective: Guard the peace summit.
 
+Mission N: Tesla Shock（磁暴震荡） - Leipzig, Germany
+	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
+
 Soviet Campaign Season 3
 Mission 1: Full-spectrum Barrage Jamming - Moscow, Soviet Russia
 
-
-Mission N: Tesla Shock - Leipzig, Germany
-	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
 
 Mission X: Unloyalty - Prague, Czechoslovakia
 	Objective: Control the airport
