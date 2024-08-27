@@ -546,11 +546,11 @@ footer {
 /*----------Archive Page----------*/
 /*--------------------------------*/
 
-.archive {
-	margin: 3vw, 5vw;
+.archives {
+	margin: 3vw 6vw;
 }
 
-.archive h1 {
+.archives h1 {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 60px;
 	font-weight: black;
@@ -560,7 +560,7 @@ footer {
 	color: #fff;
 }
 
-.archive p {
+.archives p {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	font-weight: normal;
@@ -661,13 +661,32 @@ footer {
 .maps h2 {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 36px;
-	font-weight: 600;
+	font-weight: bold;
 	text-align: center;
 	margin: auto;
 }
 
-.maps-container {
+.maps h3{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	text-align: left;
+	margin: auto;
+}
 
+.map-section {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+}
+
+.map-container {
+	width: 33%;
+}
+
+.map-container img{
+	max-width: 100%;
+	height: auto;
 }
 
 /*------------------------------*/
