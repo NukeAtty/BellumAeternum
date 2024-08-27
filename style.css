@@ -1068,7 +1068,7 @@ footer {
 .blog-section {
 	display: flex;
 	flex-flow: row wrap;
-	margin: 5vw auto;
+	margin: 1vw auto;
 	width: 100%;
 }
 
