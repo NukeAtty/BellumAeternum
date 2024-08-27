@@ -163,6 +163,15 @@ a {
 	}
 }
 
+@keyframes button-slight-lift {
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(1.05);
+	}
+}
+
 /*----------------------------*/
 /*---------- Header ----------*/
 /*----------------------------*/
@@ -537,6 +546,30 @@ footer {
 /*----------Archive Page----------*/
 /*--------------------------------*/
 
+.archive {
+	margin: 3vw, 5vw;
+}
+
+.archive h1 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 60px;
+	font-weight: black;
+	line-height: 0.5em;
+	margin: 0.5em auto;
+	text-align: center;
+	color: #fff;
+}
+
+.archive p {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 0.5em;
+	margin: auto;
+	text-align: center;
+	color: #fff;
+}
+
 /*----------Factions Module----------*/
 .factions {
 	margin: auto;
@@ -545,7 +578,7 @@ footer {
 
 .factions h2{
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 48px;
+	font-size: 36px;
 	font-weight: 600;
 	text-align: center;
 	margin: auto;
@@ -617,6 +650,24 @@ footer {
 	text-align: center;
 	text-shadow: 2px 2px 2px #000;
 	line-height: 1.0em;
+}
+
+/*---------- Map Module ----------*/
+.maps {
+	margin: auto;
+	width: 60%;
+}
+
+.maps h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 36px;
+	font-weight: 600;
+	text-align: center;
+	margin: auto;
+}
+
+.maps-container {
+
 }
 
 /*------------------------------*/
@@ -983,39 +1034,77 @@ footer {
 /*----------Blog List Page----------*/
 /*----------------------------------*/
 .blog-list {
-	display: block;
+	margin: 3vw 6vw;
+}
+
+.blog-list h1 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 60px;
+	font-weight: black;
+	line-height: 0.5em;
+	margin: 0.5em auto;
+	text-align: center;
+	color: #fff;
+}
+
+.blog-list p {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 0.5em;
 	margin: auto;
+	text-align: center;
+	color: #fff;
+}
+
+.blog-list h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+	text-align: left;
+	color:#fff;
 }
 
 .blog-section {
 	display: flex;
 	flex-flow: row wrap;
 	margin: 5vw auto;
-	width: 75%;
+	width: 100%;
 }
 
-.blog-section
-
-.blog-section h2 {
-	font-family: HarmonyOS Sans, sans-serif;
-	font-weight: 700;
-	font-size: 36px;
-	text-align: left;
-	color:#fff;
+.blog-container {
+	display: block;
+	width: 25%;
+	border-radius: 20px;
+	border: 5px outset #333;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 }
 
-.blog-section h3 {
+.blog-container:hover {
+	animation-name: button-slight-lift;
+  animation-duration: 0.2s;
+	animation-iteration-count:1;
+	animation-fill-mode: both;
+	box-shadow: 0 0 10px #f00;
+}
+
+.blog-container img{
+	margin: auto;
+	max-width: 100%;
+	padding: 0.5vw;
+	border-radius: 20px;
+	aspect-ratio: 4/3;
+}
+
+.blog-container h3 {
 	display:block;
+	margin: 0.5em;
+	max-width: 90%;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: normal;
 	font-size: 24px;
 	text-align: left;
 	color: #333;
-}
-
-.blog-container {
-	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	display: block;
 }
 
 /*-----------------------------*/
