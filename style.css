@@ -113,6 +113,29 @@ a {
 	text-decoration: none;
 }
 
+/*---------- Scroll Bar ----------*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+  width: 50%;
+  border: 3px inset #ccc; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background:linear-gradient(0deg, #ffffff 0%, #aeb2ba 5%, #595959 15%, #cccccc 65%, #cccccc 90%, #aeb2ba 95%, #ffffff 100%);
+	border: 2px outset #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background:linear-gradient(0deg, #ffffff 0%, #aeb2ba 5%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 95%, #ffffff 100%);
+}
+
 /*================================*/
 /*========== Animations ==========*/
 /*================================*/
@@ -168,7 +191,7 @@ a {
 		transform: scale(1);
 	}
 	100%{
-		transform: scale(1.05);
+		transform: scale(1.01);
 	}
 }
 
@@ -199,44 +222,20 @@ header {
 	/*background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
 	border: 1px solid #898d85;
 	border-style: outset;*/
+	width: 60%;
 }
 
 .navigation-button{
 	display: flex;
-	list-style: none;
+	flex-flow: column;
+	align-items: stretch;
 	margin: auto;
 	background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
 	border: 1px solid #898d85;
 	border-style: outset;
 	padding: 1vw;
-	width: auto;
+	width: 100%;
 }
-
-/*
-.navigation-button a{
-	text-align: center;
-	font-size: 18px;
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
-	font-weight: 800;
-	color: darkred;
-	box-shadow: 0 0 5px white inset;
-	padding: 0.5em;
-	background:
-		linear-gradient(0deg, #999, #ddd) padding-box,
-		linear-gradient(0deg, red, black) border-box;
-	border: 5px solid transparent;
-	border-radius: 16px;
-  text-decoration: none;
-}
-
-
-.navigation-button a:hover{
-	color: yellow;
-	text-shadow: 0 0 5px gold;
-	box-shadow: 0 0 2px black inset;
-	animation: btn-anim 2s infinite;
-}
-*/
 
 .navigation-button a{
 	display: block;
@@ -254,6 +253,7 @@ header {
 	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
 	box-shadow: 0 0 5px #000000 inset;
   text-decoration: none;
+  width: 100%;
 }
 
 .navigation-button a:hover{
@@ -572,7 +572,7 @@ footer {
 
 /*----------Factions Module----------*/
 .factions {
-	margin: auto;
+	margin: 5vw auto;
 	width: 60%;
 }
 
@@ -654,7 +654,7 @@ footer {
 
 /*---------- Map Module ----------*/
 .maps {
-	margin: auto;
+	margin: 5vw auto;
 	width: 60%;
 }
 
@@ -682,11 +682,28 @@ footer {
 
 .map-container {
 	width: 33%;
+	margin: 1em 0;
+	background-color: #000;
+	background: linear-gradient(180deg, #ffffff75 0%, #99999950 50%, #00000025 100%);
+	padding: 0.5em;
+	border: 2px solid #333333;
 }
 
 .map-container img{
 	max-width: 100%;
 	height: auto;
+}
+
+.map-container h4{
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	margin: 0.5em auto;
+	line-height: 1.25em;
+}
+
+.map-container:hover {
+	border:2px solid #f00;
 }
 
 /*------------------------------*/
@@ -889,12 +906,12 @@ footer {
 .specific-progress {
 	display: block;
 	/*background-color: #0c0c0c;*/
-	background: linear-gradient(-45deg, #0c0c0c 0, #151515 50%, #0c0c0c 100%);
+	background-image: url(src/pattern.svg);
 	background-blend-mode: hard-light;
 	margin: 1em 0;
 	padding: 1em;
 	border-radius: 10px;
-	border: 1px solid #fff;
+	border: 5px inset #333;
 }
 
 .specific-progress h3 {
@@ -1092,7 +1109,8 @@ footer {
 }
 
 .blog-container {
-	display: block;
+	display: flex;
+	flex-flow: column;
 	width: 25%;
 	border-radius: 20px;
 	border: 5px outset #333;
@@ -1124,6 +1142,26 @@ footer {
 	font-size: 24px;
 	text-align: left;
 	color: #333;
+}
+
+.dots {
+	display: flex;
+	flex-flow: row;
+	justify-content: right;
+	margin: 0 1vw;
+}
+
+.dot {
+	height: 15px;
+  width: 15px;
+  margin: 10px 5px;
+	background: radial-gradient(circle, #c00 0%, #c00 50%, #600 100%);
+	border-radius: 50%;
+	border: 2px inset #333;
+}
+
+.blog-container:hover .dot {
+	background: radial-gradient(circle, #fc0 0%, #c00 75%, #c00 100%);
 }
 
 /*-----------------------------*/
@@ -1490,40 +1528,6 @@ footer {
 	.unit-container-mid h3{
 		font-size:20px;
 	}
-}
-
-/*------------------------*/
-/*----------Maps----------*/
-/*------------------------*/
-
-.maps {
-	display: block;
-	width: 90%;
-	margin: 5vw;
-}
-
-.maps h1 {
-	text-align: center;
-}
-
-.map-board {
-	display: flex;
-	flex-flow: row;
-}
-
-.map-container {
-	display: block;
-	margin: 1em;
-	padding: 1em;
-	background-color: #333;
-}
-
-.map-container img{
-	width: 480px;
-}
-
-.map-contasiner h3{
-	text-align: center;
 }
 
 /*----------===================================----------*/
