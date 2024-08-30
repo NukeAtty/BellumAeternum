@@ -287,55 +287,90 @@ footer {
 
 .footer-container {
 	display: flex;
-	width: 100%;
+	flex-flow: row;
+	width: 80%;
+	margin: auto;
 }
 
 .footer-left {
+	display: flex;
+	flex-flow: column;
 	width: 30%;
-	margin-top: 48px;
 }
 
-.footer-logo img{
-	border-radius: 24px;
-	border: 4px solid #333333;
-	background: linear-gradient(-45deg, #000000 0, #666666 50%, #000000 100%);
-	background-blend-mode: hard-light;
+.footer-logo {
+	display: flex;
+	flex-flow: row;
+	margin: 1em 0;
+}
+
+.footer-logo p{
+	color: #333;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+	margin: auto 0.5em;
 }
 
 .lang-selector {
-	margin: auto;
+	display: flex;
+	flex-flow: column;
+	justify-content: left;
+	background-image: url(src/pattern.svg);
 	border-radius: 10px;
-	width: 30%;
-	border: 2px solid #333333;
-	background: linear-gradient(-45deg, #000000 0, #666666 50%, #000000 100%);
-	background-blend-mode: hard-light;
+	border: 2px inset #333;
+	padding: 0.5em;
+	width: 50%;
 }
 
-.lang-selector img{
-  object-fit: cover;
-  filter: brightness(70%);
-  aspect-ratio: 47/23;
-  margin: 5px auto;
+.lang-selector p {
+	padding: 0.25em auto;
+	margin: 0.25em auto;
+	color: #fff;
+	font-size: 12px;
+	text-shadow: 0 0 2px #0c0;
+	border-bottom: 1px solid #fff;
 }
 
-.lang-selector img:hover {
-  filter: brightness(100%);
+.lang-list {
+	display: flex;
+	flex-flow: row;
+}
+
+.lang-list a{
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	border-left: 2px solid #f00;
+	padding: 0 0.5em;
+	margin: 0 0.5em;
+	width: 50%;
+	margin: auto;
+}
+
+.lang-list a:first-child {
+	border-left: none;
+	padding: 0;
+}
+
+.lang-list a:hover {
+	color:red;
 }
 
 .footer-right {
 	display: flex;
+	flex-flow: left;
 	overflow: auto;
-	float: left;
 	width: 70%;
 }
 
 .footer-column {
 	display: block;
 	width: 33%;
+	margin: 1vw;
 }
 
 .footer-column p{
-	margin: 1em;
 	padding: 0 2vw;
 	color: #dddddd;
 	font-family: HarmonyOS Sans, sans-serif;
@@ -347,7 +382,6 @@ footer {
 
 .footer-column ul {
 	display: block;
-	margin: 1em;
 	padding: 0 2vw;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
@@ -431,6 +465,17 @@ footer {
 	font-size: 16px;
 	line-height: 1.5em;
 	text-align: center;
+}
+
+.overview a {
+	text-decoration: none;
+	color: #ff0;
+	text-decoration-line: underline;
+}
+
+.overview a:hover {
+	color: #f00;
+	text-decoration-line: none;
 }
 
 .link-button{
@@ -540,6 +585,7 @@ footer {
 	border: 5px inset #000;
 	margin: auto;
 	width: 100%;
+	height: auto;
 }
 
 /*--------------------------------*/
