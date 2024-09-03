@@ -2083,14 +2083,16 @@ footer {
 		margin: 2vw 6vw;
 	}
 
-	.responsive-navigation a,img{
-		margin: auto;
+	.responsive-navigation img{
+		margin: auto 0;
+		max-width: 36px;
 	}
 
 	.responsive-navigation-buttons {
 		display: flex;
 		flex-flow: row;
 		justify-content: right;
+		width: 90%;
 	}
 
 	.responsive-navigation-buttons a{
@@ -2104,6 +2106,13 @@ footer {
 		background: rgb(214,4,8);
 		background: radial-gradient(circle, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
 		padding: 0.5em;
+	}
+
+	.responsive-navigation-buttons a:lang(zh-Hans){
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 18px;
+		line-height: 1em;
+		margin: auto 0.5em;
 	}
 
 	.navigation-buttons {
