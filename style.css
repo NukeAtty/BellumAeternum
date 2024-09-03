@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: "Soviet Style";
+	src: url("src/font/Soviet-Style.ttf");
+}
+
+@font-face {
 	font-family: "Neon";
 	src: url("src/font/MonaspaceNeon-Regular.otf");
 }
@@ -2091,8 +2096,9 @@ footer {
 	.responsive-navigation-buttons a{
 		text-decoration:none;
 		color: #ff0;
-		font-family: furore;
-		font-size: 14px;
+		font-family: Soviet Style;
+		font-size: 22px;
+		line-height: 0.5em;
 		margin: auto 0.5em;
 		border: 2px ridge #333;
 		background: rgb(214,4,8);
