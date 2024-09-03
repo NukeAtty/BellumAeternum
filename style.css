@@ -2091,11 +2091,12 @@ footer {
 	.responsive-navigation-buttons a{
 		text-decoration:none;
 		color: #ff0;
-		font-size: 18px;
+		font-family: furore;
+		font-size: 14px;
 		margin: auto 0.5em;
 		border: 2px ridge #333;
 		background: rgb(214,4,8);
-		background: radial-gradient(circle, #d60408 0%, #ce0000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
+		background: radial-gradient(circle, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
 		padding: 0.5em;
 	}
 
