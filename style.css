@@ -787,13 +787,14 @@ footer {
 	text-align: center;
 }
 
-.overview p{
+.faction-overview p{
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.5em;
 	text-align: center;
 	margin: auto;
+	width: 60%;
 }
 
 .unit-container {
@@ -1441,49 +1442,6 @@ footer {
 	border: 1px solid #fff;
   border-collapse: collapse;
   padding: 0.5em;
-}
-
-/*----------Public Module----------*/
-.faction-selector {
-	display: flex;
-	margin: 24px auto;
-	width: 25vw;
-	padding: 12px;
-	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
-	border: 4px outset #ddd;
-	box-shadow: 0 0 24px #000;
-}
-
-.faction-container {
-	display: grid;
-	margin: auto;
-	width: 10vw;
-}
-
-.faction-container p {
-	color: #ffffff;
-	font-size: 16px;
-	font-family: Neon, monospace;
-	background-color: #000000;
-	border: 1px solid #ffffff;
-	border-style: ridge;
-	text-align: center;
-	width: 75%;
-}
-
-.faction-container img{
-	margin: auto;
-	padding: 0px;
-	max-width: 10vw;
-	border-radius: 32px;
-	border: 4px inset #000;
-	filter:  sepia(60%);
-	aspect-ratio: 1 / 1;
-}
-
-.faction-selector img:hover {
-	filter:  sepia(0%) drop-shadow(0 0 15px #ddd);
 }
 
 .cta-btn {
