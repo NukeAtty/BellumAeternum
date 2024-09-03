@@ -2624,7 +2624,8 @@ footer {
 	/*----------------------------------*/
 
 	.download h2{
-		font-size: 32px;
+		font-size: 24px;
+		margin: 1em auto;
 	}
 
 	.progress {
@@ -2636,6 +2637,7 @@ footer {
 	.progress img{
 		max-width: 100%;
 		height: auto;
+		border-radius: 24px;
 	}
 
 	.dev-gauge {
@@ -2652,8 +2654,11 @@ footer {
 	}
 
 	.engine-container {
-		display: block;
+		display: flex;
+		flex-flow: column;
 		width: 90%;
+		margin: 3vw auto;
+		border-radius: 18px;
 	}
 
 	.engine-container-left {
@@ -2685,8 +2690,16 @@ footer {
 		width: 90%;
 	}
 
+	.guide-container {
+		margin: auto;
+		padding: 0.5em;
+		border-radius: 18px;
+	}
+
 	.guide-container p{
 		font-size: 16px;
+		line-height: 1.25em;
+		margin: 0.5em;
 	}
 
 	/*----------------------------------*/
