@@ -2630,6 +2630,7 @@ footer {
 	.progress {
 		width: 90%;
 		margin: auto;
+		border-radius: 24px;
 	}
 
 	.progress img{
