@@ -646,7 +646,7 @@ footer {
   justify-content: center;
 	box-shadow: 0 1px 10px #000;
 	margin: auto;
-	padding: 1vw;
+	padding: auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
 	border: 4px outset #ddd;
@@ -2224,6 +2224,7 @@ footer {
 	.overview {
 		margin: 0;
 		padding: 5vw;
+		width: 100%;
 	}
 
 	.overview h1 {
