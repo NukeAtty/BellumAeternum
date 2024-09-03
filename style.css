@@ -440,6 +440,8 @@ footer {
 .overview {
 	display: block;
 	padding: 2vw;
+	width: 60%;
+	margin: auto;
 }
 
 .overview h1 {
