@@ -688,7 +688,6 @@ footer {
   width: 100%;
   bottom: 4%;
  	margin: 0;
-  background-color: #00000050;
   border-radius: 20px;
   padding: 0;
   box-sizing: border-box;
@@ -1704,81 +1703,8 @@ footer {
 		width: 90%;
 	}
 
-	.zigzag-module {
-		display: block;
-	}
-
-	.zig-zag {
-		display: block;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-	
-	.zag-zig {
-		display: block;
-		flex-direction: row;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-
-	.zig {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zig img {
-		display: block;
-		border-radius: 24px;
-		margin: auto;
-		width: 100%;
-		height: auto;
-	}
-
-	.zag {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
-		text-align: center;
-	}
-
-	.zag p {
-		margin: 12px 12px;
-		padding-right: 0;
-	}
-
-	.zag a {
-		width: 100%;
-		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		margin: auto;
-		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-		border-radius: 12px;
-	}
-
-	.zag a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
+	.factions-impression {
+		width: 60%;
 	}
 
 	/*------------------------------*/		
@@ -1933,84 +1859,10 @@ footer {
 		width: 90%;
 	}
 
-	.zigzag-module {
-		display: block;
+	.factions-impression{
+		width: 90%;
 	}
 
-	.zig-zag {
-		display: block;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-	
-	.zag-zig {
-		display: block;
-		flex-direction: row;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-
-	.zig {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zig img {
-		display: block;
-		border-radius: 24px;
-		margin: auto;
-		width: 100%;
-		height: auto;
-	}
-
-	.zag {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
-		text-align: center;
-	}
-
-	.zag p {
-		margin: 12px 12px;
-		padding-right: 0;
-	}
-
-	.zag a {
-		width: 100%;
-		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		margin: auto;
-		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-		border-radius: 12px;
-	}
-
-	.zag a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
-	}
-	
-	
 	/*-------------------------*/
 	/*----------Units----------*/
 	/*-------------------------*/
@@ -2065,9 +1917,9 @@ footer {
 
 }
 
-/*----------=========================----------*/
-/*----------==========Phone==========----------*/
-/*----------=========================----------*/
+/*----------================================----------*/
+/*----------========== Smart Phone==========----------*/
+/*----------================================----------*/
 @media only screen and (max-width: 720px) {
 	html{
 		scroll-padding-top: 56px;
@@ -2908,46 +2760,7 @@ footer {
 		text-align: center;
 	}
 
-	/*---------------------------------*/
-	/*----------Public Module----------*/
-	/*---------------------------------*/
-	.faction-selector {
-		display: flex;
-		width: 100%;
-	}
-
-	.faction-container {
-		width: 50%;
-	}
-
-	.faction-container p {
-		font-family: Neon, monospace;
-		margin: auto;
-		text-align: center;
-	}
-
-	.faction-container a {
-		margin: auto;
-	}
-
-	.faction-container img{
-		padding: 0;
-		max-width: 30vw;
-		border-radius: 24px;
-		filter:  sepia(60%);
-	}
-}
-
 /*----------Super Slim Phone----------*/
 @media only screen and (max-width: 360px) {
-	.faction-selector {
-		width: 100%;
-		margin: 10vw 0;
-	}
 
-	.faction-container img{
-		display:block;
-		margin: auto;
-		max-width: 90%;
-	}
 }
