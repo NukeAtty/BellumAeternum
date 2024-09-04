@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: "Soviet Style";
+	src: url("src/font/Soviet-Style.ttf");
+}
+
+@font-face {
 	font-family: "Neon";
 	src: url("src/font/MonaspaceNeon-Regular.otf");
 }
@@ -440,6 +445,8 @@ footer {
 .overview {
 	display: block;
 	padding: 2vw;
+	width: 60%;
+	margin: auto;
 }
 
 .overview h1 {
@@ -644,7 +651,7 @@ footer {
   justify-content: center;
 	box-shadow: 0 1px 10px #000;
 	margin: auto;
-	padding: 1vw;
+	padding: auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
 	border: 4px outset #ddd;
@@ -681,7 +688,6 @@ footer {
   width: 100%;
   bottom: 4%;
  	margin: 0;
-  background-color: #00000050;
   border-radius: 20px;
   padding: 0;
   box-sizing: border-box;
@@ -781,13 +787,14 @@ footer {
 	text-align: center;
 }
 
-.overview p{
+.faction-overview p{
 	font-family: HarmonyOS Sans, SF Pro, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.5em;
 	text-align: center;
 	margin: auto;
+	width: 60%;
 }
 
 .unit-container {
@@ -865,6 +872,125 @@ footer {
 	font-weight: 600;
 	text-decoration: underline;
 }
+
+/*-------------------------------------*/
+/*----------Secret Units Page----------*/
+/*-------------------------------------*/
+
+.secret-units {
+	width: 60%;
+	margin: auto;
+}
+
+.secret-units table,tr,th,td{
+	border-spacing: 0;
+}
+
+.secret-units table {
+	width: 100%;
+}
+
+.secret-units th {
+	background-color: #600;
+	border: 1px ridge #ddd;
+}
+
+.secret-units tr {
+	background-color: #666;
+}
+
+.secret-units td {
+	padding: 0.5em;
+}
+
+.secret-units-faction img{
+	display: block;
+	max-width: 60px;
+	height: auto;
+	aspect-ratio: 1/1;
+	margin: auto;
+}
+
+.secret-units-icon img{
+	display: block;
+	aspect-ratio: 5/4;
+	margin: auto;
+}
+
+.secret-unit-container {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 10px auto;
+	padding: 0;
+	width: 100%;
+	border-radius: 25px;
+	background-color: #dddddd10;
+	box-shadow: 0 0 12px #000;
+}
+
+.secret-unit-container-left {
+	padding: 12px;
+}
+
+.secret-unit-container-left img{
+	border-radius: 20px;
+	max-width: 100%;
+}
+
+.secret-unit-container-mid{
+	display: flex;
+	flex-flow: column;
+	padding: 5% 0;
+}
+
+.secret-unit-container-mid h3{
+	padding: 0.5em;
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+}
+
+.secret-unit-container-mid img{
+	display: block;
+	position: relative;
+	margin: auto;
+	max-width: 60px;
+	margin: auto;
+}
+
+.secret-unit-container-right{
+	display: grid;
+	width: 100%;
+}
+
+.secret-unit-container-right p{
+	font-size: 18px;
+	padding: 1em;
+	line-height: 1.5em;
+	text-align: left;
+}
+
+.secret-unit-container-right ul{
+	text-align: left;
+	columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.secret-unit-container-right li{
+	font-size: 14px;
+	font-weight: 400;
+	font-family: Arial;
+}
+
+.secret-unit-container-right a{
+	color: #ffffff;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
 
 /*---------------------------------*/
 /*----------Download Page----------*/
@@ -1437,49 +1563,6 @@ footer {
   padding: 0.5em;
 }
 
-/*----------Public Module----------*/
-.faction-selector {
-	display: flex;
-	margin: 24px auto;
-	width: 25vw;
-	padding: 12px;
-	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
-	border: 4px outset #ddd;
-	box-shadow: 0 0 24px #000;
-}
-
-.faction-container {
-	display: grid;
-	margin: auto;
-	width: 10vw;
-}
-
-.faction-container p {
-	color: #ffffff;
-	font-size: 16px;
-	font-family: Neon, monospace;
-	background-color: #000000;
-	border: 1px solid #ffffff;
-	border-style: ridge;
-	text-align: center;
-	width: 75%;
-}
-
-.faction-container img{
-	margin: auto;
-	padding: 0px;
-	max-width: 10vw;
-	border-radius: 32px;
-	border: 4px inset #000;
-	filter:  sepia(60%);
-	aspect-ratio: 1 / 1;
-}
-
-.faction-selector img:hover {
-	filter:  sepia(0%) drop-shadow(0 0 15px #ddd);
-}
-
 .cta-btn {
 	display: flex;
 	margin: auto;
@@ -1697,81 +1780,8 @@ footer {
 		width: 90%;
 	}
 
-	.zigzag-module {
-		display: block;
-	}
-
-	.zig-zag {
-		display: block;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-	
-	.zag-zig {
-		display: block;
-		flex-direction: row;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-
-	.zig {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zig img {
-		display: block;
-		border-radius: 24px;
-		margin: auto;
-		width: 100%;
-		height: auto;
-	}
-
-	.zag {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
-		text-align: center;
-	}
-
-	.zag p {
-		margin: 12px 12px;
-		padding-right: 0;
-	}
-
-	.zag a {
-		width: 100%;
-		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		margin: auto;
-		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-		border-radius: 12px;
-	}
-
-	.zag a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
+	.factions-impression {
+		width: 60%;
 	}
 
 	/*------------------------------*/		
@@ -1926,84 +1936,10 @@ footer {
 		width: 90%;
 	}
 
-	.zigzag-module {
-		display: block;
+	.factions-impression{
+		width: 90%;
 	}
 
-	.zig-zag {
-		display: block;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-	
-	.zag-zig {
-		display: block;
-		flex-direction: row;
-		background-color: #dddddd20;
-		border-radius: 24px;
-		box-shadow: 0 1px 10px #000;
-		margin: 6px;
-	}
-
-	.zig {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zig img {
-		display: block;
-		border-radius: 24px;
-		margin: auto;
-		width: 100%;
-		height: auto;
-	}
-
-	.zag {
-		display: grid;
-		width: 100%;
-		padding:3px;
-	}
-
-	.zag h3 {
-		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.5em;
-		margin: auto;
-		text-align: center;
-	}
-
-	.zag p {
-		margin: 12px 12px;
-		padding-right: 0;
-	}
-
-	.zag a {
-		width: 100%;
-		color: gold;
-		font-family: HarmonyOS Sans Black, sans-serif;
-		font-size: 24px;
-		font-weight: 600px;
-		text-decoration: none;
-		margin: auto;
-		text-align: center;
-		background: radial-gradient(ellipse, #a00000 0%, #660000 40%, #330000 80%, #330000 100%);
-		padding: 0.5em;
-		box-shadow: 0 0 12px #cc0000 inset;
-		border-radius: 12px;
-	}
-
-	.zag a:hover {
-		color: yellow;
-		text-shadow: 0 0 5px yellow;
-		background: radial-gradient(ellipse, #dd0000 20%, #a00000 40%, #660000 80%, #660000 100%);
-		box-shadow: 0 0 12px #330000 inset;
-	}
-	
-	
 	/*-------------------------*/
 	/*----------Units----------*/
 	/*-------------------------*/
@@ -2058,9 +1994,9 @@ footer {
 
 }
 
-/*----------=========================----------*/
-/*----------==========Phone==========----------*/
-/*----------=========================----------*/
+/*----------================================----------*/
+/*----------========== Smart Phone==========----------*/
+/*----------================================----------*/
 @media only screen and (max-width: 720px) {
 	html{
 		scroll-padding-top: 56px;
@@ -2076,25 +2012,36 @@ footer {
 		margin: 2vw 6vw;
 	}
 
-	.responsive-navigation a,img{
-		margin: auto;
+	.responsive-navigation img{
+		margin: auto 0;
+		max-width: 36px;
 	}
 
 	.responsive-navigation-buttons {
 		display: flex;
 		flex-flow: row;
 		justify-content: right;
+		width: 90%;
 	}
 
 	.responsive-navigation-buttons a{
 		text-decoration:none;
 		color: #ff0;
-		font-size: 18px;
+		font-family: Soviet Style;
+		font-size: 22px;
+		line-height: 0.5em;
 		margin: auto 0.5em;
 		border: 2px ridge #333;
 		background: rgb(214,4,8);
-		background: radial-gradient(circle, #d60408 0%, #ce0000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
+		background: radial-gradient(circle, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
 		padding: 0.5em;
+	}
+
+	.responsive-navigation-buttons a:lang(zh-Hans){
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 18px;
+		line-height: 1em;
+		margin: auto 0.5em;
 	}
 
 	.navigation-buttons {
@@ -2222,6 +2169,7 @@ footer {
 	.overview {
 		margin: 0;
 		padding: 5vw;
+		width: 100%;
 	}
 
 	.overview h1 {
@@ -2621,17 +2569,20 @@ footer {
 	/*----------------------------------*/
 
 	.download h2{
-		font-size: 32px;
+		font-size: 24px;
+		margin: 1em auto;
 	}
 
 	.progress {
 		width: 90%;
 		margin: auto;
+		border-radius: 24px;
 	}
 
 	.progress img{
 		max-width: 100%;
 		height: auto;
+		border-radius: 24px;
 	}
 
 	.dev-gauge {
@@ -2648,8 +2599,11 @@ footer {
 	}
 
 	.engine-container {
-		display: block;
+		display: flex;
+		flex-flow: column;
 		width: 90%;
+		margin: 3vw auto;
+		border-radius: 18px;
 	}
 
 	.engine-container-left {
@@ -2681,8 +2635,16 @@ footer {
 		width: 90%;
 	}
 
+	.guide-container {
+		margin: auto;
+		padding: 0.5em;
+		border-radius: 18px;
+	}
+
 	.guide-container p{
 		font-size: 16px;
+		line-height: 1.25em;
+		margin: 0.5em;
 	}
 
 	/*----------------------------------*/
@@ -2875,46 +2837,7 @@ footer {
 		text-align: center;
 	}
 
-	/*---------------------------------*/
-	/*----------Public Module----------*/
-	/*---------------------------------*/
-	.faction-selector {
-		display: flex;
-		width: 100%;
-	}
-
-	.faction-container {
-		width: 50%;
-	}
-
-	.faction-container p {
-		font-family: Neon, monospace;
-		margin: auto;
-		text-align: center;
-	}
-
-	.faction-container a {
-		margin: auto;
-	}
-
-	.faction-container img{
-		padding: 0;
-		max-width: 30vw;
-		border-radius: 24px;
-		filter:  sepia(60%);
-	}
-}
-
 /*----------Super Slim Phone----------*/
 @media only screen and (max-width: 360px) {
-	.faction-selector {
-		width: 100%;
-		margin: 10vw 0;
-	}
 
-	.faction-container img{
-		display:block;
-		margin: auto;
-		max-width: 90%;
-	}
 }
