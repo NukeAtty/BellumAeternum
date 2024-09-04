@@ -96,7 +96,7 @@ html {
 
 * {
 	box-sizing: border-box; 
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	scroll-behavior: smooth;
 	user-select: none;
 }
@@ -600,7 +600,7 @@ footer {
 /*--------------------------------*/
 
 .archives {
-	margin: 3vw 6vw;
+	margin: 3vw auto;
 }
 
 .archives h1 {
@@ -702,6 +702,50 @@ footer {
 	text-align: center;
 	text-shadow: 2px 2px 2px #000;
 	line-height: 1.0em;
+}
+
+/*---------- Mechanics Module -----------*/
+.mechanics {
+	width: 60%;
+	margin: auto;
+}
+
+.mechanics h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+}
+
+.mechanics p{
+	margin: auto;
+	line-height: 1em;
+}
+
+.mechanics-container {
+	display:flex;
+	flex-flow: column;
+	margin: 3vw auto;
+	width: 80%;
+}
+
+.mechanics-container a{
+	font-size: 24px;
+	color: #333;
+	line-height: 1em;
+	text-align: center;
+	text-decoration: none;	
+	border: 5px ridge #ccc;
+	background:linear-gradient(0deg, #666666 0%, #cccccc 15%, #ffffff 65%, #cccccc 90%, #666666 100%);
+	margin: 1px 5vw;
+	padding: 0.5em;
+}
+
+.mechanics-container a:hover {
+	box-shadow: 0 3px 3px #000;
+	color: #f00;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 }
 
 /*---------- Map Module ----------*/
@@ -879,7 +923,13 @@ footer {
 
 .secret-units {
 	width: 60%;
-	margin: auto;
+	margin: 3vw auto;
+}
+
+.secret-units h1 {
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
 }
 
 .secret-units table,tr,th,td{
@@ -909,6 +959,7 @@ footer {
 	height: auto;
 	aspect-ratio: 1/1;
 	margin: auto;
+	border-radius: 5px;
 }
 
 .secret-units-icon img{
@@ -919,7 +970,7 @@ footer {
 
 .secret-unit-container {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column;
 	margin: 10px auto;
 	padding: 0;
 	width: 100%;
@@ -928,29 +979,31 @@ footer {
 	box-shadow: 0 0 12px #000;
 }
 
-.secret-unit-container-left {
+.secret-unit-container-image {
 	padding: 12px;
 }
 
-.secret-unit-container-left img{
+.secret-unit-container-image img{
+	display: block;
+	margin: auto;
 	border-radius: 20px;
 	max-width: 100%;
 }
 
-.secret-unit-container-mid{
+.secret-unit-container-info{
 	display: flex;
-	flex-flow: column;
-	padding: 5% 0;
+	flex-flow: row;
+	margin: auto;
 }
 
-.secret-unit-container-mid h3{
+.secret-unit-container-info h3{
 	padding: 0.5em;
 	margin: auto;
 	text-align: center;
 	font-size: 24px;
 }
 
-.secret-unit-container-mid img{
+.secret-unit-container-info img{
 	display: block;
 	position: relative;
 	margin: auto;
@@ -958,32 +1011,32 @@ footer {
 	margin: auto;
 }
 
-.secret-unit-container-right{
-	display: grid;
+.secret-unit-container-stats{
+	display: flex;
+	flex-flow: row wrap;
 	width: 100%;
+	margin: auto;
 }
 
-.secret-unit-container-right p{
+.secret-unit-container-stats p{
 	font-size: 18px;
 	padding: 1em;
 	line-height: 1.5em;
 	text-align: left;
 }
 
-.secret-unit-container-right ul{
+.secret-unit-container-stats ul{
+	margin: 1vw auto;
 	text-align: left;
-	columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
 }
 
-.secret-unit-container-right li{
+.secret-unit-container-stats li{
 	font-size: 14px;
 	font-weight: 400;
 	font-family: Arial;
 }
 
-.secret-unit-container-right a{
+.secret-unit-container-stats a{
 	color: #ffffff;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 13px;
@@ -2029,6 +2082,32 @@ footer {
 		line-height: 1.0em;
 	}
 
+	/*---------- Mechanics Module -----------*/
+	.mechanics {
+		width: 80%;
+		margin: auto;
+	}
+
+	.mechanics h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		text-align: center;
+		margin: auto;
+	}
+
+	.mechanics p{
+		margin: auto;
+		line-height: 1em;
+	}
+
+	.mechanics-container {
+		display:flex;
+		flex-flow: column;
+		margin: 3vw auto;
+		width: 80%;
+	}
+
 	/*---------- Map Module ----------*/
 	.maps {
 		margin: 5vw auto;
@@ -2591,17 +2670,19 @@ footer {
 		justify-content: center;
 		box-shadow: 0 1px 10px #000;
 		margin: auto;
-		padding: 1vw;
+		padding: 0;
 		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-		border-radius: 36px;
+		border-radius: 24px;
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
 		width: 100%;
 	}
 
 	.factions-container {
-		margin: 1em auto;
-		width: 90%;
+		margin: 0.5em auto;
+		width: 95%;
+		height: auto;
+		aspect-ratio: 1/1;
 		position: relative;
 	}
 
@@ -2609,9 +2690,10 @@ footer {
 	}
 
 	.factions-container img{
+		display: block;
+		margin: auto;
 	  width: 100%;
 	  height: auto;
-	  border: 3px solid #000 inset;
 	 	border-radius: 20px;
 	 	z-index: -1;
 	 	filter:brightness(100%);
@@ -2642,6 +2724,36 @@ footer {
 	  text-align: left;
 		text-shadow: 2px 2px 2px #000;
 		line-height: 1.25em;
+	}
+
+	/*---------- Mechanics Module -----------*/
+	.mechanics {
+		width: 100%;
+		margin: auto;
+	}
+
+	.mechanics h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+		margin: 1em auto;
+	}
+
+	.mechanics p{
+		margin: auto;
+		line-height: 1em;
+	}
+
+	.mechanics-container {
+		display:flex;
+		flex-flow: column;
+		margin: 3vw auto;
+		width: 80%;
+	}
+
+	.mechanics-container a{
+		font-size: 18px;
 	}
 
 	/*---------- Map Module ----------*/
