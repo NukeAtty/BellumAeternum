@@ -1620,29 +1620,20 @@ footer {
 	}
 	/*------------------------------*/
 	/*----------Lobby Page----------*/
+	/*------------------------------*/
 	.overview {
-	}
-	
-	.slideshow-container {
-		max-width: 60%;
-	}
-	
-	.features {
-		margin: 96px 2vw;
-	}
-	
-	.features-module {
-		display: flex;
-	}
-	
-	.feature-container{
-		margin: 1vw auto;
-		width: 20%;
 	}
 	
 	/*----------Factions----------*/
 	.factions {
 		width: 75%;
+	}
+
+
+	/*----------Maps--------------*/
+	.maps {
+		width: 80%;
+		margin: auto;
 	}
 	
 	/*-------------------------*/
@@ -1928,19 +1919,168 @@ footer {
 /*----------==========Tablet Verticle==========----------*/
 /*----------===================================----------*/
 @media only screen and (max-width: 960px) {
-	/*----------Overview----------*/
-	.slideshow-container {
-		max-width: 100%;
-		margin: 10vw;
-	}
-	
-	/*----------Factions----------*/
-	.factions {
-		width: 90%;
+
+	/*--------------------------------*/
+	/*----------Archive Page----------*/
+	/*--------------------------------*/
+
+	.archives {
+		margin: 3vw 6vw;
 	}
 
-	.factions-impression{
-		width: 90%;
+	.archives h1 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 48px;
+		font-weight: black;
+		line-height: 0.5em;
+		margin: 0.5em auto;
+		text-align: center;
+		color: #fff;
+	}
+
+	.archives p {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 18px;
+		font-weight: normal;
+		line-height: 0.5em;
+		margin: auto;
+		text-align: center;
+		color: #fff;
+	}
+
+	/*----------Factions Module----------*/
+	.factions {
+		margin: 5vw auto;
+		width: 100%;
+	}
+
+	.factions h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: 600;
+		text-align: center;
+		margin: auto;
+	}
+
+	.factions p{
+		font-family: sans-serif;
+		font-size: 18px;
+		line-height: 1.5em;
+		text-align: center;
+		margin: 1em auto;
+	}
+
+	.factions-impression {
+	  display: flex;
+	  flex-flow: row;
+	  justify-content: center;
+		box-shadow: 0 1px 10px #000;
+		margin: auto;
+		padding: auto;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 36px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+		width: 80%;
+	}
+
+	.factions-container {
+		margin: 1em;
+		width: 50%;
+		position: relative;
+	}
+
+	.factions-container a{
+		width: 50%;
+	}
+
+	.factions-container img{
+	  width: 100%;
+	  height: auto;
+	  border: 4px inset #000;
+	 	border-radius: 20px;
+	 	z-index: -1;
+	 	filter:brightness(50%);
+	 	aspect-ratio: 1/1;
+	}
+
+	.factions-container img:hover{
+		filter:brightness(100%);
+	}
+
+	.factions-description {
+	  position: absolute;
+	  width: 100%;
+	  bottom: 4%;
+	 	margin: 0;
+	  border-radius: 20px;
+	  padding: 0;
+	  box-sizing: border-box;
+	  z-index: 1;
+	  color: #ffffff;
+	}
+
+	.factions-description h3{
+		font-size: 28px;
+		margin: 0.2em 0;
+		/*border-bottom: 2px solid #fff;*/
+		text-align: center;
+		text-shadow: 2px 2px 2px #000;
+		line-height: 1.0em;
+	}
+
+	/*---------- Map Module ----------*/
+	.maps {
+		margin: 5vw auto;
+		width: 100%;
+	}
+
+	.maps h2 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		text-align: center;
+		margin: auto;
+	}
+
+	.maps h3{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 24px;
+		font-weight: normal;
+		text-align: left;
+		margin: auto;
+	}
+
+	.map-section {
+		display: flex;
+		flex-flow: row;
+		width: 100%;
+	}
+
+	.map-container {
+		width: 33%;
+		margin: 1em 0;
+		background-color: #000;
+		background: linear-gradient(180deg, #ffffff75 0%, #99999950 50%, #00000025 100%);
+		padding: 0.5em;
+		border: 2px solid #333333;
+	}
+
+	.map-container img{
+		max-width: 100%;
+		height: auto;
+	}
+
+	.map-container h4{
+		font-size: 18px;
+		font-weight: normal;
+		text-align: left;
+		margin: 0.5em auto;
+		line-height: 1.25em;
+	}
+
+	.map-container:hover {
+		border:2px solid #f00;
 	}
 
 	/*-------------------------*/
@@ -1994,6 +2134,108 @@ footer {
 	.four-o-four h2 {
 		text-align: center;
 	}
+
+	/*----------------------------------*/
+	/*----------Blog List Page----------*/
+	/*----------------------------------*/
+	.blog-list {
+		margin: 3vw 6vw;
+	}
+
+	.blog-list h1 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 48px;
+		font-weight: black;
+		line-height: 0.5em;
+		margin: 0.5em auto;
+		text-align: center;
+		color: #fff;
+	}
+
+	.blog-list p {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+		line-height: 1em;
+		margin: auto;
+		text-align: center;
+		color: #fff;
+	}
+
+	.blog-list h2 {
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: bold;
+		font-size: 32px;
+		text-align: left;
+		color:#fff;
+	}
+
+	.blog-section {
+		display: flex;
+		flex-flow: row wrap;
+		margin: 1vw auto;
+		width: 100%;
+	}
+
+	.blog-container {
+		display: flex;
+		flex-flow: column;
+		width: 33%;
+		border-radius: 20px;
+		border: 5px outset #333;
+		padding: 0.5vw;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	}
+
+	.blog-container:hover {
+		animation-name: button-slight-lift;
+	  animation-duration: 0.2s;
+		animation-iteration-count:1;
+		animation-fill-mode: both;
+		box-shadow: 0 0 10px #f00;
+	}
+
+	.blog-container img{
+		margin: auto;
+		max-width: 100%;
+		height: auto;
+		padding: 0;
+		border-radius: 12px;
+		border: 4px inset #333;
+		aspect-ratio: 4/3;
+	}
+
+	.blog-container h3 {
+		display:block;
+		margin: 0.5em;
+		max-width: 90%;
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: bold;
+		font-size: 18px;
+		text-align: center;
+		line-height: 1em;
+		color: #333;
+	}
+
+	.dots {
+		display: flex;
+		flex-flow: row;
+		justify-content: right;
+		margin: 0 1vw;
+	}
+
+	.dot {
+		height: 15px;
+	  width: 15px;
+	  margin: 10px 5px;
+		background: radial-gradient(circle, #c00 0%, #c00 50%, #600 100%);
+		border-radius: 50%;
+		border: 2px inset #333;
+	}
+
+	.blog-container:hover .dot {
+		background: radial-gradient(circle, #fc0 0%, #c00 75%, #c00 100%);
+	}	
 
 }
 
@@ -2381,7 +2623,6 @@ footer {
 	  width: 100%;
 	  bottom: 1%;
 	 	margin: 0.5em 0;
-	  background-color: #00000050;
 	  padding: 0 1em;
 	  box-sizing: border-box;
 	  z-index: 1;
@@ -2389,7 +2630,7 @@ footer {
 	}
 
 	.factions-description h3{
-		font-size: 18px;
+		font-size: 24px;
 		margin: 0.25em 0;
 		text-align: center;
 		text-shadow: 2px 2px 2px #000;
