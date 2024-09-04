@@ -2754,6 +2754,7 @@ footer {
 
 	.mechanics-container a{
 		font-size: 18px;
+		font-weight: bold;
 	}
 
 	/*---------- Map Module ----------*/
@@ -2810,6 +2811,24 @@ footer {
 
 	.map-container:hover {
 		border:2px solid #f00;
+	}
+
+	/*-------------------------------------*/
+	/*----------Secret Units Page----------*/
+	/*-------------------------------------*/
+
+	.secret-units {
+		width: 90%;
+		margin: 15vw auto;
+	}
+
+	.secret-units h1 {
+		font-size: 36px;
+	}
+
+	.secret-units-container-image img{
+		max-width: 100%;
+		height: auto;
 	}
 
 	/*-------------------------------*/
