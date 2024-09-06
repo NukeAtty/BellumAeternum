@@ -1651,6 +1651,50 @@ footer {
 	animation: btn-anim 2s infinite;
 }
 
+/*----------------------------------*/
+/*---------- Contact Page ----------*/
+/*----------------------------------*/
+.contact {
+	margin: 3vw auto;
+}
+
+.contact h1 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 60px;
+	font-weight: black;
+	line-height: 0.5em;
+	margin: 0.5em auto;
+	text-align: center;
+	color: #fff;
+}
+
+.contact p {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 0.5em;
+	margin: auto;
+	text-align: center;
+	color: #fff;
+}
+
+.contact-zigzag {
+	display: flex;
+	flex-flow: row;
+}
+
+.zig {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+}
+
+.zag {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+}
+
 /*--------------------!!!-------------------!!!--------------------*/
 /*--------------------!!! <<< Responsive>>> !!!--------------------*/
 /*--------------------!!!-------------------!!!--------------------*/
@@ -1972,6 +2016,11 @@ footer {
 /*----------==========Tablet Verticle==========----------*/
 /*----------===================================----------*/
 @media only screen and (max-width: 960px) {
+
+	/*----------Main Page----------*/
+	.overview h1 {
+		line-height: 1em;
+	}
 
 	/*--------------------------------*/
 	/*----------Archive Page----------*/
