@@ -462,13 +462,13 @@ footer {
 }
 
 .overview h2 {
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 32px;
 	text-align: center;
 }
 
 .overview p {
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	line-height: 1.5em;
 	text-align: center;
@@ -520,7 +520,7 @@ footer {
 }
 
 .news h2{
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 32px;
 	text-align: left;
 	margin: 0.5em;
@@ -568,7 +568,7 @@ footer {
 
 .news-container-right a{
 	color: #333;
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: normal;
 	font-size: 24px;
 	margin: 0.5em 0;
@@ -638,7 +638,7 @@ footer {
 }
 
 .factions p{
-	font-family: sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	line-height: 1.5em;
 	text-align: center;
@@ -813,7 +813,7 @@ footer {
 }
 
 .units h1{
-	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans Black, sans-serif;
 	font-size: 72px;
 	font-weight: 900;
 	font-variant: small-caps;
@@ -832,7 +832,7 @@ footer {
 }
 
 .faction-overview p{
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 1.5em;
@@ -906,7 +906,7 @@ footer {
 .unit-container-right li{
 	font-size: 14px;
 	font-weight: 400;
-	font-family: Arial;
+	font-family: HarmonyOS Sans, sans-serif;
 }
 
 .unit-container-right a{
@@ -1033,7 +1033,7 @@ footer {
 .secret-unit-container-stats li{
 	font-size: 14px;
 	font-weight: 400;
-	font-family: Arial;
+	font-family: HarmonyOS Sans, sans-serif;
 }
 
 .secret-unit-container-stats a{
@@ -1052,13 +1052,13 @@ footer {
 .download h1{
 	font-size: 24px;
 	text-align: center;
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	margin: 48px auto 0 auto;
 }
 
 .download h2{
 	font-size: 48px;
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	text-align: center;
 	margin: 0 auto 48px auto;
 }
@@ -1097,8 +1097,9 @@ footer {
 
 .dev-gauge label{
 	color: #000000;
-	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
+	font-weight: black;
 	line-height: 2em;
 }
 
@@ -1140,7 +1141,7 @@ footer {
 }
 
 .specific-progress h3 {
-	font-family: monospace;
+	font-family: Neon, monospace;
 	font-size: 24px;
 	color: #000000;
 	background-color: #00ff00;
@@ -1206,8 +1207,9 @@ footer {
 }
 
 .engine-container-right h3{
-	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 48px;
+	font-weight: black;
 	line-height: 1em;
 	color: #333;
 	margin: 0.5em 0 0 0;
@@ -1215,7 +1217,7 @@ footer {
 }
 
 .engine-container-right p{
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	color: #000000;
 	margin: 0 2em 0 0;
@@ -1224,9 +1226,9 @@ footer {
 .engine-container-right a{
 	width: auto;
 	color: gold;
-	font-family: HarmonyOS Sans Black, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 24px;
-	font-weight: 600px;
+	font-weight: black;
 	text-decoration: none;
 	margin: 1em auto;
 	text-align: center;
@@ -1259,7 +1261,7 @@ footer {
 }
 
 .guide-container p{
-	font-family: HarmonyOS Sans, SF Pro, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	color: #ffffff;
 	margin: auto 5vw;
@@ -1465,7 +1467,7 @@ footer {
 
 .chap-nav p{
 	font-size: 24px;
-	font-family: Furore, Harmony;
+	font-family: Furore, sans-serif;
 	text-align: center;
 	color: #000;
 }
@@ -1517,7 +1519,7 @@ footer {
 }
 
 .blog-content p{
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	color: #fff;
@@ -1526,13 +1528,13 @@ footer {
 }
 
 .blog-content b{
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 }
 
 .blog-content li{
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.5em;
@@ -1598,7 +1600,7 @@ footer {
 }
 
 .blog-content a {
-	font-family: HarmonyOS Sans;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	color: #fff;
@@ -1791,7 +1793,7 @@ footer {
 	}
 
 	.news h2{
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 18px;
 		text-align: left;
 		margin: 0.5em;
@@ -1839,7 +1841,7 @@ footer {
 
 	.news-container-right a{
 		color: #333;
-		font-family: HarmonyOS Sans;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-weight: normal;
 		font-size: 16px;
 		margin: 0.5em 0;
@@ -2065,7 +2067,7 @@ footer {
 	}
 
 	.factions p{
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 18px;
 		line-height: 1.5em;
 		text-align: center;
@@ -2547,9 +2549,9 @@ footer {
 	}
 
 	.overview h1 {
-		font-family: HarmonyOS Sans Black,sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 48px;
-		font-weight: 900;
+		font-weight: black;
 		font-variant: small-caps;
 		line-height: 1em;
 		margin: auto;
@@ -2560,13 +2562,13 @@ footer {
 	}
 
 	.overview h2 {
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 24px;
 		text-align: center;
 	}
 
 	.overview p {
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 16px;
 		line-height: 1.5em;
 		text-align: center;
@@ -2592,7 +2594,7 @@ footer {
 	}
 
 	.news h2{
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 18px;
 		text-align: left;
 		margin: 0.5em;
@@ -2640,7 +2642,7 @@ footer {
 
 	.news-container-right a{
 		color: #333;
-		font-family: HarmonyOS Sans;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-weight: normal;
 		font-size: 16px;
 		margin: 0.5em 0;
@@ -2706,7 +2708,7 @@ footer {
 	}
 
 	.factions p{
-		font-family: sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 16px;
 		line-height: 1.25em;
 		text-align: center;
@@ -2889,7 +2891,7 @@ footer {
 	}
 
 	.faction-overview p{
-		font-family: HarmonyOS Sans, SF Pro, sans-serif;
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 1.5em;
@@ -3126,7 +3128,7 @@ footer {
 
 	.chap-nav p{
 		font-size: 24px;
-		font-family: Furore, Harmony;
+		font-family: Furore, sans-serif;
 		text-align: center;
 		color: #000;
 	}
