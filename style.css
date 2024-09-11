@@ -2874,7 +2874,11 @@ footer {
 		font-size: 36px;
 	}
 
-	.secret-units-container-image img{
+	.secret-unit-container {
+		padding-bottom: 10px;
+	}
+
+	.secret-unit-container-image img{
 		max-width: 100%;
 		height: auto;
 	}
