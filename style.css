@@ -515,7 +515,7 @@ footer {
 	margin: auto;
 	border: 5px outset #ccc;
 	background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%), url("src/background-pattern.webp") left top repeat;
-	background-blend-mode: multiply;
+	background-blend-mode: color-dodge;
 	border-radius: 10px;
 }
 
@@ -1788,7 +1788,7 @@ footer {
 		margin: auto;
 		border: 5px outset #ccc;
 		background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%), url("src/background-pattern.webp") left top repeat;
-		background-blend-mode: multiply;
+	background-blend-mode: color-dodge;
 		border-radius: 10px;
 	}
 
@@ -2589,7 +2589,7 @@ footer {
 		margin: auto;
 		border: 5px outset #ccc;
 		background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%), url("src/background-pattern.webp") left top repeat;
-		background-blend-mode: multiply;
+	background-blend-mode: color-dodge;
 		border-radius: 10px;
 	}
 
