@@ -1576,6 +1576,9 @@ footer {
 	text-align: left;
 	color:#fff;
 	margin-bottom: 0.25em;
+	background-color: #ffffff25;
+	border-left: 4px solid #c00;
+	padding: 0 0.5em;
 }
 .blog-content h3{
 	font-family: HarmonyOS Sans, sans-serif;
