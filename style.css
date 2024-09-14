@@ -1685,18 +1685,65 @@ footer {
 .contact-zigzag {
 	display: flex;
 	flex-flow: row;
+	width: 60%;
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	border-radius: 20px;
+	margin: 1em auto;
+	padding: 1em;
+}
+
+.contact-zagzig {
+	display: flex;
+	flex-flow: row-reverse;
+	width: 60%;
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	border-radius: 20px;
+	margin: 1em auto;
+	padding: 1em;
 }
 
 .zig {
 	display: flex;
 	flex-flow: column;
 	width: 50%;
+	margin: auto;
+	justify-content: center;
 }
 
 .zag {
 	display: flex;
 	flex-flow: column;
 	width: 50%;
+	margin: auto;
+	justify-content: center;
+}
+
+.zig img {
+	border-radius: 20px;
+}
+
+.zag img {
+	border-radius: 20px;
+}
+
+.zig h2 {
+	font-size: 32px;
+}
+
+.zag h2 {
+	font-size: 32px;
+}
+
+.zig p {
+	font-size: 16px;
+	line-height: 1.25em;
+	text-align: left;
+}
+
+.zag p {
+	font-size: 16px;
+	line-height: 1.25em;
+	text-align: left;
 }
 
 /*--------------------!!!-------------------!!!--------------------*/
