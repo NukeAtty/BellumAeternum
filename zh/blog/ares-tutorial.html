@@ -3,10 +3,36 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../../style.css">
-	<meta name="description" content="Ares战神平台中文教程，提供最详细的Ares中文教程。">
+	<meta name="description" content="尤里的复仇Mod平台：Ares的中文教程，提供最准确的教程翻译以及实战经验。">
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
-	<meta name="robots" content="noindex, nofollow">
+	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/blog/ares-tutorial.html" />
 	<title>Ares中文教程 | 万世之战：为红警2带来前所未有的体验</title>
+	<script type="application/ld+json">
+	  {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "万世之战",
+				"item": "https://ra2be.com/zh/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "博客",
+				"item": "https://ra2be.com/zh/blog.html"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Ares中文教程",
+				"item": "https://ra2be.com/zh/blog/ares-tutorial.html"
+			}
+		]
+	  }
+	</script>
 	<style>
 		span{
 			font-size: 16px;
@@ -28,13 +54,27 @@
 </head>
 <body>
 	<header>
-		<ul class="navigation-button">
-			<li><a href="https://www.ra2be.com/zh/">主页</a></li>
-			<li><a href="https://www.ra2be.com/zh/blog.html">博客</a></li>
-			<li><a href="https://www.ra2be.com/zh/download.html">下载</a></li>
-		</ul>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
 		<div class="responsive-navigation">
-			<a href="https://www.ra2be.com/zh/"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<a href="https://ra2be.com/zh"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="../archives.html">档案库</a>
+				<a href="../blog.html">博客</a>
+				<a href="../download.html">下载</a>
+			</div>
 		</div>
 	</header>
 	<!--Main-->
@@ -53,13 +93,7 @@
 						<p>快速导航</p>
 						<div class="chaps">
 							<a id="h2" href="#tib-restore">泰伯利亚之日逻辑还原</a>
-							<a id="h3" href="#sell-unit">变卖单位</a>
-							<a id="h3" href="#amphibious-apc">两栖单位水中图像</a>
-							<a id="h3" href="#em-pulse">电磁脉冲（EMP）</a>
-							<a id="h3" href="#firestorm-wall">火风暴墙</a>
-							<a id="h3" href="#laser-fense">激光墙</a>
-							<a id="h3" href="#spotlight">探照灯</a>
-							<a id="h3" href="#vehicle-thief">偷车贼</a>
+							<a id="h2" href="#new-enhanced-logic">新增或改进的逻辑</a>
 						</div>
 					</div>
 				</div>
@@ -85,7 +119,7 @@
 							<p>Image=APCW</p>
 						</p>
 					</div>
-					<p>需要注意的是，这里WaterImage内需要填入一个完整的单位，这个原理和采矿车倒矿时的<code>UnloadingClass</code>类似。</p>
+					<p>需要注意的是，这里WaterImage内需要填入一个完整的单位，这个原理和采矿车倒矿时的<code>UnloadingClass</code>类似。同时，这里WaterImage内的单位只是图像的变化，并不会变成另一个单位，因此不需要在AI中做改动。</p>
 					<hr>
 					<h3 id="em-pulse">电磁脉冲（EMP）</h3>
 					<p>电磁脉冲逻辑在泰伯利亚之日中被大量使用，在这里稍微阐述一下其功能和特点：</p>
@@ -164,12 +198,12 @@
 						<li>当<code>EMP.Threshold=</code>被设置为一个正整数时，单位的EMP在达到这个数字后就会被消灭。</li>
 						<li>当<code>EMP.Threshold=</code>被设置为yes时，效果同等于<code>EMP.Threshold=1</code>，即被EMP影响后立刻被消灭。</li>
 						<li>当<code>EMP.Threshold=</code>被设置为一个负整数时，单位只会在空中时，EMP计时器达到该负数的绝对值后才会坠毁。</li>
-						<li>当<code>EMP.Threshold=</code>被设置为inair时，效果同等于<code>EMP.Threshold=-1</code>，即在空中被EMP影响后立刻坠毁。</li>
+						<li>当<code>EMP.Threshold=</code>被设置为inair时，效果同等于<code>EMP.Threshold=-1</code>，即在空中被EMP影响后立刻坠毁，这也是默认值。因此，如果你不希望直升机或者飞艇在收到EMP攻击时立刻坠毁，手动为它设置<code>EMP.Thresshold=no</code>。</li>
 						<li>当<code>EMP.Threshold=</code>被设置为0时，不使用该机制。</li>
 						<li>当<code>EMP.Threshold=</code>被设置为no时，不使用该机制。</li>
 					</ul>
 					<h4>EMP效果动画</h4>
-					<p>在泰伯利亚之日中，被EMP弹头击中的单位身上会播放一个定义于<code>General</code>中<code>EMPulseSparkles</code>的动画。这个动画也是所有EMP效果的默认动画。</p>
+					<p>在泰伯利亚之日中，被EMP弹头击中的单位身上会播放一个定义于<code>[General]</code>中<code>EMPulseSparkles</code>的动画。这个动画也是所有EMP效果的默认动画。</p>
 					<p>在Ares中可以进行微观定义：</p>
 					<div class="code-presentation">
 						<p>[HTNK]</p>
@@ -262,6 +296,29 @@
 					<hr>
 					<h3 id="vehicle-thief">偷车贼</h3>
 					<p>Ares支持在尤里的复仇中实现和泰伯利亚之日的变异劫持者相同的单位，并且不用<code>Thief=yes</code>，<code>Infiltrate=yes</code>或者<code>Agent=yes</code>。并且这个逻辑支持更多的细节定义，详情见<a href="#hijacker">劫持者</a>部分。</p>
+					<h2 id="new-enhanced-logic">新增或改进的逻辑</h2>
+					<h3>新增护甲类型和弹头抗性</h3>
+					<p>新增护甲类型需要新建一个注册表<code>[ArmorTypes]</code>，在注册表中注册新增的护甲，同时直接为其赋予一个默认值。方法如下：</p>
+					<div class="code-presentation">
+						<p>[ArmorTypes]</p>
+						<p>iron=steel</p>
+						<p>plastic=100%</p>
+					</div>
+					<p>格式为X=Y，X是护甲的名称，Y可以是一个已存在的护甲名，也可以是一个百分比值。</p>
+					<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有具备iron护甲的单位在未被重新定义抗性的弹头上都会以<code>steel</code>的抗性作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
+					<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为对所有弹头的默认抗性，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
+					<div class="code-presentation">
+						<p>[Warhead]</p>
+						<p>Versus.plastic=200%</p>
+					</div>
+					<p>语句为<code>Versus.护甲名=抗性值</code>，护甲名即在<code>[ArmorTypes]</code>中注册过的护甲名，而抗性值填入一个百分比数字。</p>
+					<h4>护甲抗性的特殊值</h4>
+					<p>在原版中，护甲抗性的特殊值如下：</p>
+					<ul>
+						<li>0%: 无法主动攻击，无法反击，无法自动寻敌。</li>
+						<li>1%: 无法反击，无法自动寻敌。</li>
+						<li>2%: 无法自动寻敌。</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -271,38 +328,42 @@
 		<div class="footer-container">
 			<div class="footer-left">
 				<div class="footer-logo">
-				<a href="https://www.ra2be.com/zh/"><img src="../../src/logo.webp" alt="Bellum Aeternum" width="208" height="80"></a>
+					<img src="../../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
 				</div>
 				<div class="lang-selector">
-					<a href="https://www.ra2be.com/blog.html"><img src="../../src/english.webp" alt="English" width="auto" height="30px"></a>
-					<a href="https://www.ra2be.com/zh/blog/ares-tutorial-ch.html"><img src="../../src/chinese.webp" alt="Chinese" width="auto" height="30px"></a>
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com/blog.html">EN</a>
+						<a href="https://ra2be.com/zh/blog/ares-tutorial.html">中</a>
+					</div>
 				</div>
 			</div>
 			<div class="footer-right">
 				<div class="footer-column">
 				<p>阵营</p>
 				<ul>
-					<li><a href="../allied.html">盟军</a></li>
-					<li><a href="../soviet.html">苏联</a></li>
+					<li><a href="allied.html">盟军</a></li>
+					<li><a href="soviet.html">苏联</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>博客</p>
+				<p>文章</p>
 				<ul>
-					<li><a href="../blog.html#concept">概念</a></li>
-					<li><a href="../blog.html#tutorial">教程</a></li>
+					<li><a href="blog.html#concept">概念</a></li>
+					<li><a href="blog.html#tutorial">教程</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
 				<p>关于</p>
 				<ul>
-					<li><a href="#Contact">联系方式</a></li>
+					<li><a href="#contact">联系作者</a></li>
 				</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-portals">
-			<a href="https://www.ra2diy.com">红警DIY论坛</a>
+			<a href="https://www.ra2diy.com">RA2DIY论坛</a>
 		</div>
 	</footer>
 </body>
