@@ -1,0 +1,59 @@
+ThirdSide:
+	Buildings: 
+		Power Plant
+
+		Ore Refinery
+
+		Barracks
+
+		Weapon Factory
+
+		Intelligence Bureau
+
+		Airpad
+
+		Battle Lab
+
+		Nitro Unit
+
+		Supply Center
+
+	Defense:
+		Wall
+
+		Battle Bunker
+
+		Tank Bunker
+
+		Tunnel Pivot
+			Tunnel Advancing
+
+		Shockwave Device
+
+	Infantries:
+		Liberation Guard
+
+		Tank Hunter
+
+		Engineer
+
+		Demolisher
+
+		Spy
+
+	Vehicles:
+		Amphibious Miner
+
+		Main Tank
+
+		AA Tank
+
+		APC
+
+		Mine Layer
+
+		Microwave Tank
+
+		WZ-111
+
+	Aircraft:
