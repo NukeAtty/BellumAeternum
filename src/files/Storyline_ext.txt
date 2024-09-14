@@ -163,7 +163,7 @@ Mission 3: Night Fall（夜幕降临） - Wangerland, Germany
 Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
 	Brief:
 		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
-		He predit that the Allied will use those data to develop some sort of weather control device.
+		He predicts that the Allied will use those data to develop some sort of weather control device.
 		Meanwhile, our submarines has located unusual movements of the Allied marines, in Bermuda.
 
 	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
