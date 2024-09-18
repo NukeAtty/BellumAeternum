@@ -1,12 +1,12 @@
 [Siege Mode]
 General Rules:
 	1. Infantry Only.
-	2. The one who captured the base wins.
+	2. The one who destroyed the base wins.
 	3. Credits comes from oil drills.
 	4. In order to capture the oil drill, you need to defeat the guard.
-	5. There are three dirlls in the map.
-	6. There are 9 guards on the map.
-	7. Capturing the power plant at the center of the map provides radar.
+	5. There are three dirlls on the map.
+	6. There are 6 road guards on the map.
+	7. There are three tower on the map, each tower provides powerplant support.
 
 Sides:
 	1. There are three areas on the map:
@@ -19,8 +19,33 @@ Sides:
 			= Grand Cannon: Provides Ranged Shot
 			= Radar Scanner: Provides Beacon
 		- FR:
-			= Hospital: Provides Trainning.
-			= Airborne: Provides Paratrooper.
+			= Hospital: Provides Self Heal.
+			= Airport: Provides Paratrooper.
 		- BL:
 			= Airport: Provides airstrike.
-			= Machineshop: Provides
+			= Machineshop: Provides.
+
+Units:
+	1. Can use provided infantries:
+		- Assaulter
+		- Guardian
+		- Sniper
+		- Tesla Trooper
+		- Engineer
+
+	2. Vehicles are new:
+		- Mobile Battering Ram: PassiveAcquire/Unundeployable
+		- Mobile Rocket Launcher: PassiveAcquire/Unundeployable
+		- Mobile Artillery: No PassiveAcquire/Unundeployable
+		- Mobile Gun Turret: PassiveAcquire/Unundeployable
+
+Buildings:
+	1. Start Buildings:
+		- Construction Yard
+		- Barracks
+		- Weapon Factory
+		- Nuke Launcher: after gathering enough power, the nuke launcher can launch.
+
+	2. Map Buildings:
+		- Gate: for all fortress.
+		- Oil Drill: generates credits.
