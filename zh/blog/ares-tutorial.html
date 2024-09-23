@@ -305,20 +305,38 @@
 						<p>plastic=100%</p>
 					</div>
 					<p>格式为X=Y，X是护甲的名称，Y可以是一个已存在的护甲名，也可以是一个百分比值。</p>
-					<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有具备iron护甲的单位在未被重新定义抗性的弹头上都会以<code>steel</code>的抗性作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
-					<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为对所有弹头的默认抗性，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
+					<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有弹头对iron的伤害百分比都会等于对<code>steel</code>护甲的值作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
+					<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为所有弹头的伤害百分比默认值，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
 					<div class="code-presentation">
 						<p>[Warhead]</p>
-						<p>Versus.plastic=200%</p>
+						<p>Versus.plastic=200%	;对新增护甲plastic造成的伤害百分比。</p>
 					</div>
-					<p>语句为<code>Versus.护甲名=抗性值</code>，护甲名即在<code>[ArmorTypes]</code>中注册过的护甲名，而抗性值填入一个百分比数字。</p>
+					<p>语句为<code>Versus.护甲名=伤害百分比</code>，护甲名即在<code>[ArmorTypes]</code>中注册过的护甲名。</p>
 					<h4>护甲抗性的特殊值</h4>
 					<p>在原版中，护甲抗性的特殊值如下：</p>
 					<ul>
 						<li>Verses=0%: 无法主动攻击，无法反击，无法自动寻敌。</li>
 						<li>Verses=1%: 无法反击，无法自动寻敌。</li>
-						<li>Verses=2%: 无法自动寻敌。</li>
+						<li>Verses=2%: 无法自动攻击。</li>
 					</ul>
+					<p>现在Ares引入了一个新的控制机制：（*为注册过的护甲名）</p>
+					<ul>
+						<li>Versus.*.ForceFire=[yes/no]	;是否可以对目标护甲强制攻击、</li>
+						<li>Versus.*.Retaliate=[yes/no]	;是否可以反击目标护甲的单位。</li>
+						<li>Versus.*.PassiveAcquire=[yes/no] ;是否可以自动攻击带有目标护甲的单位。</li>
+					</ul>
+					<p>下面用一段代码来演示：</p>
+					<div class="code-presentation">
+						<p>[Warhead]</p>
+						<p>Verses=100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%</p>
+						<p>Versus.concrete.ForceFire=no</p>
+						<p>Versus.heavy.Retaliate=no</p>
+						<p>Versus.none.PassiveAcquire=no</p>
+					</div>
+					<p>以上代码虽然对所有护甲的伤害百分比都是100%，但无法攻击混凝土护甲，同时不会对重甲载具反击，也不会主动攻击无甲步兵。</p>
+					<span>注意：尤里的复仇原版代码中Versus被拼错成Verses，Acquire被拼错成Aquire，这两个单词在Ares的代码中使用的是正确的拼法。</span>
+					<h4>免疫机制</h4>
+					
 				</div>
 			</div>
 		</div>
