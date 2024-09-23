@@ -336,7 +336,29 @@
 					<p>以上代码虽然对所有护甲的伤害百分比都是100%，但无法攻击混凝土护甲，同时不会对重甲载具反击，也不会主动攻击无甲步兵。</p>
 					<span>注意：尤里的复仇原版代码中Versus被拼错成Verses，Acquire被拼错成Aquire，这两个单词在Ares的代码中使用的是正确的拼法。</span>
 					<h4>免疫机制</h4>
-					
+					<p>在原版中，<code>ImmuneTo*</code>标签被用作对特定弹头的免疫机制，比如<code>ImmuneToRadiation</code>被用作免疫所有来自<code>Radiation=yes</code>的弹头伤害，但这种机制的局限性比较大：一来能用作免疫机制的代码有限，二来单位还是可以攻击，只是无法造成伤害。</p>
+					<p>Ares通过自定义护甲来解决了这个问题，你可以在保留原有机制的基础上实现新的免疫机制。以下做出一个示例：</p>
+					<div class="code-presentation">
+						<p>[ArmorTypes]</p>
+						<p>superheavy=heavy	;注册护甲，新的超重型护甲调用重甲的伤害百分比值。</p>
+						<hr>
+						<p>[MAUS]	;单位注册名</p>
+						<p>Armor=superheavy	;超重型护甲。</p>
+						<hr>
+						<p>[Para]	;美国大兵的武器</p>
+						<p>Versus.superheavy=0%</p>
+						<p>Versus.superheavy.ForceFire=yes</p>
+						<p>Versus.superheavy.Retaliate=yes</p>
+						<p>Versus.superheavy.PassiveAcquire=yes</p>
+					</div>
+					<p>以上代码展示的就是一个超重型坦克的护甲，普通的机枪无法造成伤害，但坦克炮可以。</p>
+					<hr>
+					<h3>独立定义航空器的装填时间</h3>
+					<p>在原版中，航空器的装填时间是由全局标签<code>ReloadRate=</code>定义的，而在Ares中，这个全局标签可以在航空器上单独使用。同时，全局标签的值则是默认值。</p>
+					<div class="code-presentation">
+						<p>[ORCA]</p>
+						<p>ReloadRate=.3 ;该航空器的装填时间，单位为分钟。</p>
+					</div>
 				</div>
 			</div>
 		</div>
