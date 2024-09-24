@@ -33,7 +33,7 @@ Mission 1: Night Raid（暗夜突袭） - Ambleteuse, France
 
 Mission 2: Snowblind（雪盲之殇） - Stantsiya Svyazi, Soviet Russia
 	Brief:
-		The night raid in Ambleteuse is strong and powerful, but not enough.
+		The night raid in Ambleteuse is strong and powerful, but it's just a beginning.
 		The Soviet will fight back soon, so we need to let them know what a real pain is.
 		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
 
@@ -203,7 +203,7 @@ Mission N: Tesla Shock（磁暴震荡） - Leipzig, Germany
 	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
 
 Soviet Campaign Season 3
-Mission 1: Full-spectrum Barrage Jamming - Moscow, Soviet Russia
+Mission 1: (Полноспектральное заградительное подавление)Full-spectrum Barrage Jamming - Moscow, Soviet Russia
 
 
 Mission X: Unloyalty - Prague, Czechoslovakia
