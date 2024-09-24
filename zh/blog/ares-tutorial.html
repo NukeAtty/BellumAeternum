@@ -305,20 +305,60 @@
 						<p>plastic=100%</p>
 					</div>
 					<p>格式为X=Y，X是护甲的名称，Y可以是一个已存在的护甲名，也可以是一个百分比值。</p>
-					<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有具备iron护甲的单位在未被重新定义抗性的弹头上都会以<code>steel</code>的抗性作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
-					<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为对所有弹头的默认抗性，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
+					<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有弹头对iron的伤害百分比都会等于对<code>steel</code>护甲的值作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
+					<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为所有弹头的伤害百分比默认值，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
 					<div class="code-presentation">
 						<p>[Warhead]</p>
-						<p>Versus.plastic=200%</p>
+						<p>Versus.plastic=200%	;对新增护甲plastic造成的伤害百分比。</p>
 					</div>
-					<p>语句为<code>Versus.护甲名=抗性值</code>，护甲名即在<code>[ArmorTypes]</code>中注册过的护甲名，而抗性值填入一个百分比数字。</p>
+					<p>语句为<code>Versus.护甲名=伤害百分比</code>，护甲名即在<code>[ArmorTypes]</code>中注册过的护甲名。</p>
 					<h4>护甲抗性的特殊值</h4>
 					<p>在原版中，护甲抗性的特殊值如下：</p>
 					<ul>
 						<li>Verses=0%: 无法主动攻击，无法反击，无法自动寻敌。</li>
 						<li>Verses=1%: 无法反击，无法自动寻敌。</li>
-						<li>Verses=2%: 无法自动寻敌。</li>
+						<li>Verses=2%: 无法自动攻击。</li>
 					</ul>
+					<p>现在Ares引入了一个新的控制机制：（*为注册过的护甲名）</p>
+					<ul>
+						<li>Versus.*.ForceFire=[yes/no]	;是否可以对目标护甲强制攻击、</li>
+						<li>Versus.*.Retaliate=[yes/no]	;是否可以反击目标护甲的单位。</li>
+						<li>Versus.*.PassiveAcquire=[yes/no] ;是否可以自动攻击带有目标护甲的单位。</li>
+					</ul>
+					<p>下面用一段代码来演示：</p>
+					<div class="code-presentation">
+						<p>[Warhead]</p>
+						<p>Verses=100%,100%,100%,100%,100%,100%,100%,100%,100%,100%,100%</p>
+						<p>Versus.concrete.ForceFire=no</p>
+						<p>Versus.heavy.Retaliate=no</p>
+						<p>Versus.none.PassiveAcquire=no</p>
+					</div>
+					<p>以上代码虽然对所有护甲的伤害百分比都是100%，但无法攻击混凝土护甲，同时不会对重甲载具反击，也不会主动攻击无甲步兵。</p>
+					<span>注意：尤里的复仇原版代码中Versus被拼错成Verses，Acquire被拼错成Aquire，这两个单词在Ares的代码中使用的是正确的拼法。</span>
+					<h4>免疫机制</h4>
+					<p>在原版中，<code>ImmuneTo*</code>标签被用作对特定弹头的免疫机制，比如<code>ImmuneToRadiation</code>被用作免疫所有来自<code>Radiation=yes</code>的弹头伤害，但这种机制的局限性比较大：一来能用作免疫机制的代码有限，二来单位还是可以攻击，只是无法造成伤害。</p>
+					<p>Ares通过自定义护甲来解决了这个问题，你可以在保留原有机制的基础上实现新的免疫机制。以下做出一个示例：</p>
+					<div class="code-presentation">
+						<p>[ArmorTypes]</p>
+						<p>superheavy=heavy	;注册护甲，新的超重型护甲调用重甲的伤害百分比值。</p>
+						<hr>
+						<p>[MAUS]	;单位注册名</p>
+						<p>Armor=superheavy	;超重型护甲。</p>
+						<hr>
+						<p>[Para]	;美国大兵的武器</p>
+						<p>Versus.superheavy=0%</p>
+						<p>Versus.superheavy.ForceFire=yes</p>
+						<p>Versus.superheavy.Retaliate=yes</p>
+						<p>Versus.superheavy.PassiveAcquire=yes</p>
+					</div>
+					<p>以上代码展示的就是一个超重型坦克的护甲，普通的机枪无法造成伤害，但坦克炮可以。</p>
+					<hr>
+					<h3>独立定义航空器的装填时间</h3>
+					<p>在原版中，航空器的装填时间是由全局标签<code>ReloadRate=</code>定义的，而在Ares中，这个全局标签可以在航空器上单独使用。同时，全局标签的值则是默认值。</p>
+					<div class="code-presentation">
+						<p>[ORCA]</p>
+						<p>ReloadRate=.3 ;该航空器的装填时间，单位为分钟。</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -348,10 +388,10 @@
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>文章</p>
+				<p>资料</p>
 				<ul>
-					<li><a href="blog.html#concept">概念</a></li>
-					<li><a href="blog.html#tutorial">教程</a></li>
+					<li><a href="../archives.html">档案库</a></li>
+					<li><a href="../blog.html">博客</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
