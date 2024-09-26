@@ -195,6 +195,16 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France
 
 	Final: The Allied uses its Weather Control Device and wiped out the Normandy frontline.
 
+	Script:
+		1. Allied landing craft on the beach, Soviet mig attacks it.
+		2. More Allied landing craft coming, and allied tropofortress destroys the frontline defenses.
+		3. Allied landing craft transport base and build structures.
+		4. Start defending, timer start<Next Wave of Enemy: XX:XX>.
+		<Gain Control>
+		<AI Start Attacking>
+		5. Lightning Storm coming.
+		6.
+
 Soviet Campaign Season 2
 Mission 1: Peace Treaty - Cairo, Egypt
 	Objective: Guard the peace summit.
