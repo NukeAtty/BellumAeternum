@@ -31,24 +31,10 @@ Mission 1: Night Raid（暗夜突袭） - Ambleteuse, France
 	Objective 2: Capture the Soviet radar to blind enemy.
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
-Mission 2: Snowblind（雪盲之殇） - Stantsiya Svyazi, Soviet Russia
-	Brief:
-		The night raid in Ambleteuse is strong and powerful, but it's just a beginning.
-		The Soviet will fight back soon, so we need to let them know what a real pain is.
-		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
-
-	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
-
-	Objective 1: Destroy the Soviet camp at the foothill.
-	Objective 2: Destroy the Soviet base at the foothill.
-	Objective 3: Search and destroy the nuke launcher before it escape.
-
-	Failure: All units destroyed.
-
-Mission 3: Vesper（黄昏微光） - Rotterdam, Netherland
+Mission 2: Vesper（黄昏微光） - Rotterdam, Netherland
 	Brief:
 		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
-		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin but trapped in Netherland.
+		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in Netherland.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
 		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
 
@@ -60,7 +46,7 @@ Mission 3: Vesper（黄昏微光） - Rotterdam, Netherland
 
 	Failure: Mr.Blake lost.
 
-Mission 4: The Desolation（荒芜之地） - Emden, Germany
+Mission 3: The Desolation（荒芜之地） - Emden, Germany
 	Brief: 
 		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
 		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
@@ -74,6 +60,19 @@ Mission 4: The Desolation（荒芜之地） - Emden, Germany
 	Objective 3: Destroy the nuclear material truck.
 
 	Failure: Nuclear material truck leaves/ All units destroyed.
+
+Mission 4: Snowblind（雪盲之殇） - October Revolution Island, Soviet Russia
+	Brief:
+		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Alaska.
+		To prevent any danger when we transporting troops to Greenland, we need to clear this base and destroy the nuke launchers there.
+
+	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
+
+	Objective 1: Destroy the Soviet camp at the foothill.
+	Objective 2: Destroy the Soviet base at the foothill.
+	Objective 3: Search and destroy the nuke launcher before it escape.
+
+	Failure: All units destroyed.
 
 Mission 5: Arctic Mayhem（极地混乱） - Thuler Air Base, Greenland
 	Brief:

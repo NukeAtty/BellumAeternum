@@ -1,56 +1,75 @@
 
 PVP Only:
-[Siege Mode]
+[Citadel Mode]
+
+Forced Settings:
+	1. Money=10000
+	2. UnitCount=0
+	3. TechLevel=3
+	4. GameSpeed=1
+	5. BridgeDestruction=no
+	6. ShadowGrow=yes
+	7. Shroud=yes
+	8. Crates=yes
+	9. MultiEngineer=no
+	10. AlliesAllowed=no
+	11. ShortGame=yes
+	12. FogOfWar=yes
+	13. MCVRedeploys=yes
+	14. AllyChangeAllowed=no
+
 General Rules:
-	1. Infantry Only.
-	2. The one who destroyed the base wins.
+	1. Basic Infantry Only(E1/E2/FLAKT/GGI/ENGINEER/SENGINEER).
+	2. Base destroyed loses.
 	3. Credits comes from oil drills.
 	4. In order to capture the oil drill, you need to defeat the guard.
 	5. There are three dirlls on the map.
-	6. There are 6 road guards on the map.
-	7. There are three towers on the map, each tower provides powerplant support.
+	6. There are 6 road guards (SHK) on the map.
+	7. There are three towers on the map, capturing the tower autobuild a gate.
+	8. Each tower has a guard vehicle, change sides upon destroyed.
+	9. A juncture in the middle provides additional credits.
 
-Sides:
+Map:
+	[Tribulatio Mons]
+	Description:
 	1. There are three areas on the map:
-		- Highland
-		- Valley
-		- Plains
+		- Alpine Forest
+		- Tarnished Plains
+		- Lowland Sound
 
 	2. Each area has two special facilities:
-		- OG: 
-			= Grand Cannon: Provides Ranged Shot
-			= Radar Scanner: Provides Beacon
-		- FR:
+		- Plateau Forest: 
+			= Grand Cannon: Provides Ranged Shot (5 Shots, Reload: 3600)
+			= Radar Scanner: Provides Beacon Tactic (3:00).
+		- Tarnished Plains:
 			= Hospital: Provides Self Heal.
-			= Airport: Provides Paratrooper.
-		- BL:
-			= Airport: Provides airstrike.
-			= Machineshop: Provides.
+			= Control Tower: Provides Paratrooper Tactic (3:00).
+		- Lowland Sound:
+			= Airport: Provides airstrike (5:00).
+			= Machineshop: Provides Minelayer Tactic (3:00).
 
-Units:
-	1. Can use provided infantries:
-		- Assaulter
-		- Guardian
-		- Sniper
-		- Tesla Trooper
-		- Engineer
+	Units:
+		1. Can use provided infantries:
+			- Assaulter
+			- Guardian
+			- Engineer
+			- Conscripe
+			- RPG Trooper
 
-	2. Vehicles are new:
-		- Mobile Battering Ram: PassiveAcquire/Unundeployable
-		- Mobile Rocket Launcher: PassiveAcquire/Unundeployable
-		- Mobile Artillery: No PassiveAcquire/Unundeployable
-		- Mobile Gun Turret: PassiveAcquire/Unundeployable
+		2. Vehicles are new:
+			- Mobile Battering Ram: NoPassiveAcquire/Unundeployable/CloseRange
+			- Mobile Rocket Launcher: PassiveAcquire/Unundeployable/AllRange
+			- Mobile Artillery: No PassiveAcquire/Unundeployable/LongRange
 
-Buildings:
-	1. Start Buildings:
-		- Construction Yard
-		- Barracks
-		- Weapon Factory
-		- Nuke Launcher: after gathering enough power, the nuke launcher can launch.
+	Buildings:
+		1. Start Buildings:
+			- Construction Yard
+			- Barracks
+			- Weapon Factory
 
-	2. Map Buildings:
-		- Gate: for all fortress.
-		- Oil Drill: generates credits.
+		2. Map Buildings:
+			- Gate: for all towers.
+			- Oil Drill: generates credits.
 
 
 [Hide&Seek Mode]
@@ -59,5 +78,4 @@ Units:
 	MCV will be cloakable, but shows up after deployed.
 
 Rules:
-	One side will gain mobile radar as free unit.
-	Once started, 
+	
