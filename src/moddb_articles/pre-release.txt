@@ -1,0 +1,38 @@
+Greetings RA2 Lovers, I'm happy to announce that the alpha version of Bellum Aeternum will be released soon! As mentioned on the official website, the alpha version of the game will be released on the end of September 2024, but delayed to the beginning of October, due to some bug fixing and content expansion. The specifications of Bellum Aeternum can be previewed here, and stay tune for the pre-release.
+
+
+
+
+Content Overview
+
+Here, I will make any intro simple, in plain English:
+
+Only Allied and Soviet available, no specific countries, no Yuri.
+Less units, more function for single unit.
+No navy.
+Simple tech tree, you don't need to seek through icons and test them one-by-one.
+Not very Sci-fi, more of a classic style, 1950s-60s.
+Technical Overview
+Works along with Ares and Phobos, both will be contained in the zip file.
+Yuri's Revenge itself won't be contained, and please prepare a clean, unmodded Yuri’s Revenge 1.001.
+No CnCNet XNA client available at this stage, and will be released in further development.
+Only Skirmish available, campaign is under development.
+The purpose of pre-released alpha version is bug testing and gathering data for the sake of balancing.
+Only 3 skirmish map available, because high quality map takes couple of months to make.
+Details to be Noticed
+Basic infantries can capture civilian vehicles, and civilian vehicles won't be attacked by enemy until passengers fire (best for engi-rush).
+Infantries can't anti-air no more.
+Vehicles are very pricy, the economy will be bad until you have the economic structures (e.g.Ore Purifier), so spend your credits carefully and efficiently.
+Veteran and elite units don't change weapon, so they won't be too overpowered.
+Fighters (e.g. Mig) can attack aircrafts (e.g. Kirov), but Attacker (e.g. Intruder) can't.
+Feedback
+
+As mentioned above, this version is meant to gather gameplay data, in order to make this mod better. If you have something to say about this mod, you can post your comment or write a review on MODDB page (no discord channel at this stage, sorry).
+
+What feedback do I demand?
+
+Balancing: any units with overpowered stats.
+Bugs: any graphical/mechanical/literal mistakes.
+Errors: any IE(Internal Error) circumstances.
+
+Also, any question about Bellum Aeternum is welcome, and I would love to answer them in future Q&As.
