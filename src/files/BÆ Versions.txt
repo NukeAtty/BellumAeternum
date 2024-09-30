@@ -1,0 +1,21 @@
+BÆ Versions:
+Zh: 
+	Alpha v0.1: test
+	Alpha v0.2: bug fixes, graphic improvements
+	Alpha v0.3: bug fixes, graphic improvements, rebalance, content expansion
+	Alpha v0.4: bug fixes, content expansion, rebalance
+	Alpha v0.5: bug fixes, content expansiion, rebalance
+
+	Beta v0.6: Campaign (first season) available.
+	Beta v0.7: Campaign bug fix.
+	Beta v0.8: Campaign bug fix.
+	Beta v0.9: DTA client.
+
+	GA 1.0
+
+EN:
+	Bellum Æternum Alpha:
+	Bellum Æternum Beta:
+	Bellum Æternum GA:
+
+	Bellum Æternum Halloween 2024
