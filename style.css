@@ -1074,6 +1074,25 @@ footer {
 	color: #000;
 }
 
+
+.mod-download {
+	margin: 2em;
+}
+
+.mod-download p{
+	line-height: 1.5em;
+}
+
+.mod-download code {
+	user-select: text;
+}
+
+.mod-download img{
+	max-width: 30%;
+	height: auto;
+}
+
+
 .progress {
 	margin: auto 20vw;
 	padding: 1vw;
@@ -1097,9 +1116,8 @@ footer {
 .dev-gauge label{
 	color: #000000;
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 24px;
-	font-weight: black;
-	line-height: 2em;
+	font-size: 16px;
+	line-height: 1em;
 }
 
 .dev-gauge progress {
