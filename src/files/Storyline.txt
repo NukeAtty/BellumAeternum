@@ -10,13 +10,13 @@ Background:
 华盛顿政府意识到事态的严重性，希望可以在朝鲜战场早日分出胜负，于是决定将联合国军改组为盟军（The Allied），同时统一情报系统和装备生产线。这一决议由美国的军工复合体大力支持，但英国、法国、加拿大和澳大利亚则对这一决议颇有不满。经历了三个月的改组后，盟军继续介入朝鲜战场。
 
 1953年：兵力真空
-在持续的消耗战中，盟军为了快速结束战斗，于是开始从欧洲开始抽调兵力和装备。意识到西欧兵力真空的约瑟夫·斯大林决定直接向西欧施压，打乱美国的军力部署。于是，驻扎在东德的苏军开始向西德推进。盟军在欧洲的驻军因为缺少装备，很快边开始溃败，最终德国全境被苏联占领。实际上，盟军之所以敢于将欧洲的兵力和装备调走，是因为美国秘密将大部分核武器通过格陵兰图森空军基地运向了欧洲，并在法国建立了9个核武基地。
+在持续的消耗战中，盟军为了快速结束战斗，于是开始从欧洲开始抽调兵力和装备。意识到西欧兵力真空的约瑟夫·斯大林决定直接向西欧施压，打乱美国的军力部署。于是，驻扎在东德的苏军开始向西德推进。盟军在欧洲的驻军因为缺少装备，很快边开始溃败，最终德国全境被苏联占领。实际上，盟军之所以敢于将欧洲的兵力和装备调走，是因为美国秘密将大部分核武器通过格陵兰图森空军基地运向了欧洲，并在法国和英国建立了9个核武基地。而这次战略运输被苏联情报部门知晓，于是开始了新的作战行动。
 
 1954年：打破僵局（苏联战役开始）
-苏联于1948年-1954在西欧部署了大量的间谍网，同时通过收买、贿赂等手段也渗透了大量的西欧的军事部门。为了顺利占领法国，苏联军事委员会启动了”破冰行动“————通过占领盟军在法国边境的军事基地获取关于核武基地的军事情报。很快，法国梅斯地区的一个军事基地便遭到了苏军的突袭，苏军成功获取了所有的情报。在此之后，苏军派遣特遣队，向法国内部进行渗透，并在间谍的帮助下，于一天夜里袭击了盟军的9个核武基地，最终将它们一起破坏。此时的盟军正在朝鲜战场大幅推进，志愿军和朝鲜人民军被推到了中朝边境，而当布鲁塞尔的盟军总指挥部发现核武基地被破坏时，苏军已经开始了对法国的进攻。很快，法国全境被苏军占领，同时苏军还贡献了布鲁塞尔的盟军总指挥部，而法国的盟军则大多集结到了敦刻尔克，乘船穿越英吉利海峡，到英国进行整备。
+苏联于1948年-1954在西欧部署了大量的间谍网，同时通过收买、贿赂等手段也渗透了大量的西欧的军事部门。为了顺利占领法国，苏联军事委员会启动了”破冰行动“————通过占领盟军在法国边境的军事基地获取关于核武基地的军事情报。在此之后，苏军派遣特遣队，向法国内部进行渗透，并在间谍的帮助下，于一天夜里袭击了盟军的9个核武基地，最终将它们一起瘫痪。此时的盟军正在朝鲜战场大幅推进，志愿军和朝鲜人民军被推到了中朝边境，而当布鲁塞尔的盟军总指挥部发现核武基地被破坏时，苏军已经开始了对法国的进攻。很快，法国全境被苏军占领，同时苏军还攻陷了布鲁塞尔的盟军总指挥部，而法国的盟军则大多集结到了敦刻尔克，乘船穿越英吉利海峡，到英国进行整备。
 
 1955年：大战爆发（盟军战役开始）
-
+盟军在撤退到英国后，便停止了在朝鲜的军事行动，将战略重心转移到欧洲。盟军在伦敦成立了临时总部，并和MI6一起构建了情报中心。很快，一次军事行动便有了眉目。盟军认为，现在欧洲大陆的一切都是未知数，因此可以派遣一些新晋指挥官分批次秘密登陆欧洲大陆，并从中训练一些军事人才，对日后的大规模登陆做准备。于是，盟军开启了暗夜突袭行动，十几个盟军作战小队秘密登录法国西部的海岸线，对苏联驻地进行突袭。这次的行动只有一支小队获得了成功。
 
 
 盟军战役第一季:全力反击
@@ -28,28 +28,11 @@ Background:
 	Objective 2: Capture the Soviet radar to blind enemy.
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
-任务2：雪盲之殇 - 通信站，苏俄
+任务2：黄昏微光 - 洛特丹，荷兰
 	Brief:
-		The night raid in Ambleteuse is strong and powerful, but not enough.
-		The Soviet will fight back soon, so we need to let them know what a real pain is.
-		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
-
-	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
-
-	Objective 1: Destroy the Soviet camp at the foothill.
-	Objective 2: Destroy the Soviet base at the foothill.
-	Objective 3: Search and destroy the nuke launcher before it escape.
-
-	Failure: All units destroyed.
-
-任务3：黄昏微光 - 洛特丹，荷兰
-	Brief:
-		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
-		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin but trapped in Netherland.
-		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
-		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
-		根据伦敦总部的情报，一名军情六处驻柏林站的间谍在荷兰被苏军控制，他的名字叫乔治·布莱克。布莱克先生手头有苏军部署的重要情报，因此我们需要到荷兰解救他。
-		我们这次的任务就是到荷兰的洛特丹，消灭控制那里的苏军，并解救乔治·布莱克。
+		根据伦敦总部的情报，一名军情六处驻柏林站的情报人员在苏联进攻前逃出了德国，然而在荷兰被苏联控制。
+		他的手头有重要情报，因此我们需要到荷兰解救他。
+		我们这次的任务就是到荷兰的洛特丹，解救我们的情报人员，并将他带回伦敦。
 
 	Objective: Rescue George Blake at Rotterdam.
 
@@ -59,26 +42,30 @@ Background:
 
 	Failure: Mr.Blake lost.
 
-任务4：荒芜之地 - 埃姆登，德国
-	Brief: 
-		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
-		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
-		As Mr.Blake described, the radiation trooper you've seen during the rescue mission is called desolator, and the Soviets are sending nuclear material to Germany, in order to supply their desolator force.
-		Our mission is to stop them, cut their ammo from the source and ease our counter attack in the future.
+任务3：
+	简报：
+		根据情报，
 
-	Objective: Destroy the Radiation Convoy.
 
-	Objective 1: Find the Soviet supply outpost.
-	Objective 2: Destroy the vanguard of the convoy.
-	Objective 3: Destroy the nuclear material truck.
+任务4：雪盲之殇 - 十月革命岛，苏俄
+	简报：
+		根据CIA的情报，苏联极有可能在北冰洋建立了一个核武库，用于制衡格陵兰的图勒空军基地。
+		因此，我们应该主动出击，将那个核武库摧毁，以保证盟军可以从美国源源不断地运送军事援助到欧洲。
+		这次的目标选在十月革命岛，您需要摧毁那里的苏军基地，并将部署在那里的核武器一网打尽。
 
-	Failure: Nuclear material truck leaves/ All units destroyed.
+	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
+
+	Objective 1: Destroy the Soviet camp at the foothill.
+	Objective 2: Destroy the Soviet base at the foothill.
+	Objective 3: Search and destroy the nuke launcher before it escape.
+
+	Failure: All units destroyed.
 
 任务5：极地混乱 - 图勒空军基地，格陵兰
-	Brief:
-		The operation in Emden is brilliant, the Soviets are force to send more troops to deal with the radiation polution there.
-		The Americans are sending more troops to Britain, but Burmuda has been captured by the Soviets and they have built an airbase there.
-		General decided to change the transportation route to Greenland, and he want to you to guarantee the safety of Thule air base.
+	简报：
+		随着我们在百慕大的空军基地被摧毁，所有支援欧洲的盟军力量必须全部从格陵兰启程。
+		在十月革命岛摧毁的核武器显然是假的，而苏联也极有可能直接从地面武装突袭图勒空军基地。
+		我们必须保护图勒空军基地，这是最后能援助欧洲的地方了。
 
 	Objective: Defense the Thule air base.
 
@@ -122,16 +109,16 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 苏联战役第一季：赤色黎明
 
 任务1：打破僵局 - 梅斯，法国
-	Brief: 
-		We will make our next leap soon, but we've collected that the Allied has most of their nuclear weapon sended to France.
-		There is an Allied Intelligence Center in Metz, if we can capture them, we might get the details of Allied defense in Western Europe.
-		The Allied force has sent troops to there, so we have to get it before the Allied does.
+	简报：
+		我们已经取得了德国全境的控制权，驻扎在西德的盟军从德国逃到了布鲁塞尔。
+		虽然此时更应该追击盟军在布鲁塞尔的残部，而将军认为法国一定会对布鲁塞尔进行全力支援，因此我们将直接对法国进行突袭。
+		我们的任务是攻打法国的梅斯，将那里的盟军部队一网打尽。
 
-	Objective 1: Clear the Allied forces by the Battle Command Center.
-	Objective 2: Capture the Intelligence Center.
-	Objective 3: Defense the Intelligence Center while collecting informations.
+	任务目标1：将梅斯外围驻扎的盟军警戒哨清除。
+	任务目标2：进入梅斯，消灭盟军的主基地。
+	任务目标3：占领盟军驻梅斯的指挥部。
 
-	Failure: Intelligence Center destroyed.
+	失败条件：所有单位被摧毁。
 
 任务2：核影无痕 - 里昂，法国
 	Brief:
@@ -140,30 +127,17 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 	Objective: Sabotage the Allied Nuclear Base
 
-	Objective 1: Find a way to slip into the nuclear base.
-	Objective 2: Find the nuke silo.
-	Objective 3: Sabotage the nuke silo.
+	目标任务1：控制女间谍潜伏进入盟军的军事基地。
+	目标任务2：找到核武器发射井。
+	目标任务3：让工程师进入核武器发射井。
 
-	Failure: All units destroyed.
+	失败条件：女间谍死亡。
 
-任务3：夜幕降临 - 旺格兰，德国
-	Brief:
-		With Allied nuclear base sabotaged, we have easily broken into Paris and captured the entire France.
-		The Allied planned to assassinate one of our scientist of Tesla technology, Nikolai, and now he's taking flight back to Poland.
-		Our fighter has already taken off to secure the sky, but you still need to head to Germany to secure the ground.
-
-	Opening:
-		Allied Dagger squad shot down the MiGs and the passenger plane.
-
-	Objective 1: Head to the crash site.
-	Objective 2: Protect the crash site from the Allied force.
-	Objective 3: Rescue the scientist and escort him to the local helipad.
+任务3：
 
 任务4：黑暗风暴 - 百慕大，大西洋
 	Brief:
-		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
-		He predit that the Allied will use those data to develop some sort of weather control device.
-		Meanwhile, our submarines has located unusual movements of the Allied marines, in Bermuda.
+		我们的潜艇部队发现了盟军在大西洋的百慕大群岛建立了一个奇怪的装置，我们要赶往那里进行调查。
 
 	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
 
@@ -173,9 +147,7 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 任务5：畅通无阻 - 代伏勒，法国
 	Brief:
-		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse.
-		The landed Allied force has established a base in Ambleteuse, and they prepare to push to Paris.
-		Commander, it is our turn to give those Allieds a lesson.
+		盟军的小分队已经在欧陆建立了前进基地，我们需要给他们设计一个圈套。
 
 	Objective 1: Bombard the Allied convoy.
 	Objective 2: Establish a base.

@@ -46,13 +46,9 @@ Mission 2: Vesper（黄昏微光） - Rotterdam, Netherland
 
 	Failure: Mr.Blake lost.
 
-Mission 3: The Desolation（荒芜之地） - Emden, Germany
+Mission 3: The Desolation（荒芜之地） - Rotterdam
 	Brief: 
-		Mr.Blake has brought us a huge amount of information about Soviet troops in Germany.
-		General Corbin thinks he isn't trustable, but our intel claims they've had a full inquiry that he has no problem. General wants you to examinate his loyalty.
-		As Mr.Blake described, the radiation trooper you've seen during the rescue mission is called desolator, and the Soviets are sending nuclear material to Germany, in order to supply their desolator force.
-		Our mission is to stop them, cut their ammo from the source and ease our counter attack in the future.
-
+		Soviet has 
 	Objective: Destroy the Radiation Convoy.
 
 	Objective 1: Find the Soviet supply outpost.
