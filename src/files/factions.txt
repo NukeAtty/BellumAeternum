@@ -2,18 +2,18 @@ Allied:
 
 	French:
 		Vehicles
-			SHRV	;Speed Miner
-			LTNK	;Lillet Tank
-			LFV		;Lynx FV
+			CMIN -> SHRV	;Speed Miner
+			MTNK -> LTNK	;Lillet Tank
+			FV -> LFV		;Lynx FV
 
-			HOWI	;Howitzer
-			FTNK	;Foch Assault Gun
+			SREF -> HOWI	;Howitzer
+			BFRT -> FTNK	;Foch Assault Gun
 
 	British:
 		Vehicles
-			HMIN	;Heavy Miner
-			CTNK	;Centurion Tank
+			CMIN -> HMIN	;Heavy Miner
+			MTNK -> CTNK	;Centurion Tank
 			
-			AVRE	;AVRE
+			SREF -> AVRE	;Black Prince AVRE
 
-			OBLT	;FV215D Obliterator
+			BFRT -> OBLT	;FV215D Obliterator
