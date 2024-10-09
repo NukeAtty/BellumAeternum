@@ -4,7 +4,14 @@ Allied:
 		Vehicles
 			CMIN -> SHRV	;Speed Miner
 			MTNK -> LTNK	;Lillet Tank
-			FV -> LFV		;Lynx FV
+			FV -> EBR		;EBR (Engin Blindé de Reconnaissance)
+				;Original: EBR
+				;GI: Light EBR
+				;GGI: Rocket EBR
+				;ENGI: Repair EBR
+				;SNIPE: Sniper EBR
+				;GHOST: 
+			MGTK -> ELC		;ELC
 
 			SREF -> HOWI	;Howitzer
 			BFRT -> FTNK	;Foch Assault Gun
@@ -13,6 +20,7 @@ Allied:
 		Vehicles
 			CMIN -> HMIN	;Heavy Miner
 			MTNK -> CTNK	;Centurion Tank
+			FV	-> SFV		;Saladin
 			
 			SREF -> AVRE	;Black Prince AVRE
 
