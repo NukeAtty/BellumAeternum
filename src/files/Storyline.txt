@@ -40,18 +40,18 @@ Background:
 	任务目标3：进攻并摧毁苏军设立在假日公园（Holiday Park de Horn）的指挥部。
 
 任务3：黄昏微光 - 洛特丹，荷兰
-	Brief:
+	简报：
 		根据伦敦总部的情报，一名军情六处驻柏林站的情报人员在苏联进攻前逃出了德国，然而在荷兰被苏联控制。
 		他的手头有重要情报，因此我们需要到荷兰解救他。
 		我们这次的任务就是到荷兰的洛特丹，解救我们的情报人员，并将他带回伦敦。
 
-	Objective: Rescue George Blake at Rotterdam.
+	任务目标：解救乔治·布莱克。
 
-	Objective 1: Destroy the Soviets guards.
-	Objective 2: Rescue George Blake from the Soviet detention center.
-	Objective 3: Destroy the Soviet reinforcements head to Rotterdam.
+	任务目标1：摧毁苏联在洛特丹的守备力量。
+	任务目标2：到达乔治·布莱克的住所。
+	任务目标3：消灭苏联前来支援的军力。
 
-	Failure: Mr.Blake lost.
+	失败条件：乔治·布莱克死亡、所有单位被消灭。
 
 
 任务4：雪盲之殇 - 十月革命岛，苏俄
@@ -80,20 +80,20 @@ Background:
 	任务目标2：在运输机补给完毕之前抵御住苏联地面部队的进攻。
 	任务目标3：摧毁苏联的前线基地。
 
-	Failure: All flights destroyed.
+	失败条件：塔台被摧毁、所有运输机被摧毁
 
 任务6：霸王行动- 诺曼底，法国
 	简报：
 		这一天终于来了！盟军运输艇已经在怀特岛（Isle of Wight）完成了集结，是时候让巴黎重归自由！
 		行动代号：霸王——我们的目的地是法国的诺曼底海滩，这将是一场艰苦的战斗！
-		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
-		Operation name PHAEDRA, we are going to land on the Normandy Beach.
 
-	Objective: Destroy the Soviet forces in Normandy beach.
+	任务目标：在诺曼底地区登陆并摧毁苏联守军。
 
-	Objective 1: Build a frontline base.
-	Objective 2: Support the ally.
-	Objective 3: Destroy the Soviet base.
+	任务目标1：在滩头建立一座基地。
+	任务目标2：支援友军的进攻。
+	任务目标3：摧毁苏联守军的指挥部。
+
+	失败条件：所有单位被摧毁。
 
 
 第二季：
