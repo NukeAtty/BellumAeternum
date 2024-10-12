@@ -1,0 +1,9 @@
+Allied:
+	M26 Pershing -> M46 Patton -> T42 -> M54 -> M54A1 -> M54A2
+
+	M54 Varients:
+		M54A1: 
+
+Soviet:
+	T-44 -> T-54 Prototype -> T-54 -> T-56 -> T-56A -> T-56B
+
