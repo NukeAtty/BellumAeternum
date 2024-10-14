@@ -19,12 +19,18 @@ After the Soviet army entirely captured Germany, the Allied force realised a new
 The Soviets launched a sudden attack at Metz, France, and wiped out the Allied force. Meanwhile, they have captured a battle command center, which loaded the entire Allied military deployment in Europe. After that, the Soviet intellegence agency co-operated with special forces, sabotaged all nuclear base in France. Without worrying about nuclear bombs, the Soviets easily captured Paris, and the Allied forces had to retreat to Great Britain from Dunkirk. 
 However, the Allieds were committed to win the Korean war, and doesn't know much about what's happenning in Europe. Finally, the Allied forces has taken control of the entire Korean peninsula, and Chinese volunteer army has retreated to the border.
 
+Mission Types:
+	SNEAK
+	ATTACK
+	DEFEND
+	BATTLE
+	RESCUE
 
 Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
 
 
-Mission 1: Night Raid - Ambleteuse, France
+Mission 1: Night Raid - Ambleteuse, France [SNEAK]
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
 	Objective 1: Destroy the flak base on the Ambleteuse seaside.
@@ -33,7 +39,7 @@ Mission 1: Night Raid - Ambleteuse, France
 
 	Failure: Tanya falls.
 
-Mission 2: Two Of A Kind - Den Helder, Netherland
+Mission 2: Two Of A Kind - Den Helder, Netherland [ATTACK]
 	Brief:
 
 	Objective 1:
@@ -42,7 +48,7 @@ Mission 2: Two Of A Kind - Den Helder, Netherland
 
 	Failure: 
 
-Mission 3: Vesper - Rotterdam, Netherland
+Mission 3: Vesper - Rotterdam, Netherland [RESCUE]
 	Brief:
 		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
 		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in Netherland.
@@ -57,7 +63,7 @@ Mission 3: Vesper - Rotterdam, Netherland
 
 	Failure: Mr.Blake lost.
 
-Mission 4: Snowblind - October Revolution Island, Soviet Russia
+Mission 4: Snowblind - October Revolution Island, Soviet Russia [ATTACK]
 	Brief:
 		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Alaska.
 		To prevent any danger when we transporting troops to Greenland, we need to clear this base and destroy the nuke launchers there.
@@ -70,7 +76,7 @@ Mission 4: Snowblind - October Revolution Island, Soviet Russia
 
 	Failure: All units destroyed.
 
-Mission 5: Arctic Mayhem - Thule Air Base, Greenland
+Mission 5: Arctic Mayhem - Thule Air Base, Greenland [DEFEND]
 	Brief:
 		Obviously it's a trap. The Soviets knows transpotation will begin if we attack their arctic base.
 		Now we have to do everything we can to stop the Soviets invading Greenland, and our next destination is Thule airforce base.
@@ -79,7 +85,7 @@ Mission 5: Arctic Mayhem - Thule Air Base, Greenland
 
 	Failure: Control tower destroyed.
 
-Mission 6: Operation Dominus - Normandy, France
+Mission 6: Operation Dominus - Normandy, France [ATTACK]
 	Brief:
 		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
 		Operation name: Dominus. we are going to land on the Normandy Beach.
@@ -116,7 +122,7 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Shadow Strike - Lyon, France
+Mission 1: Shadow Strike - Lyon, France [SNEAK]
 	Brief:
 		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
 		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
@@ -129,11 +135,22 @@ Mission 1: Shadow Strike - Lyon, France
 
 	Failure: All units destroyed.
 
-Mission 2: 
+Mission 2: -  [ATTACK]
+	Brief:
 
-Mission 3: 
 
-Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
+Mission 3: Arcana Obscura - Florida, USA [RESCUE]
+	Brief:
+		An Allied scientist has sent a mail to our ambassador in Cuba.
+		He claims he has information about the Allied's new mass-destructive weapon.
+		He's now imprisoned inside his lab in Florida, and our general decide to rescue him.
+		His lab is hidden inside the Everglades National Park, so we have to find that lab and rescue the scientist.
+
+	Objective: Find the scientist and rescue him.
+
+	Objective: Find the entrance of the 
+
+Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Brief:
 		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
 		He predicts that the Allied will use those data to develop some sort of weather control device.
@@ -145,7 +162,7 @@ Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
 	Objective 2: Find the Allied secret weapon.
 	Objective 3: Capture the Allied battle lab and analyse the data there.
 
-Mission 5: Unimpeded（畅通无阻） - Desvres, France
+Mission 5: Unimpeded（畅通无阻） - Desvres, France [BATTLE]
 	Brief:
 		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse.
 		The landed Allied force has established a base in Ambleteuse, and they prepare to push to Paris.
@@ -156,7 +173,7 @@ Mission 5: Unimpeded（畅通无阻） - Desvres, France
 	Objective 3: Stop the Allied force from pushing through.
 
 
-Mission 6: Hold the Line（坚守阵地） - Normandy, France
+Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 	Brief: 
 		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
 		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
