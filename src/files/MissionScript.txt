@@ -28,8 +28,8 @@ NPC:
 
 
 	[Time Passes=720]
-	[Carolyn]我们的侦察机观察到苏联人的登陆部队。(Our spy plane has discovered the Soviet invasion.)
-	[Carolyn]指挥官，做好防守准备！(Commander, ready for combat!)
+	[Carolyn]我们的侦察机观察到苏联人的登陆部队。(Our spy plane has detected the Soviet invasion.)
+	[Carolyn]指挥官，做好防守准备！(Commander, get ready for combat!)
 
 	任务目标2：抵御住苏军的进攻
 	第一波：
@@ -68,3 +68,11 @@ NPC:
 	[Carolyn]我们一起去。
 
 	任务目标：摧毁苏联的前线基地。
+
+	结语：
+	[Carolyn]谢谢你保护了格陵兰……也保护了我。(Thank you for protecting Greenland, and me.)
+	[Carolyn]说真的，如果没有你，我无法想象我如何独自面对这千军万马。（To be honest, I can't imagine how bad it will be without you.）
+	[Carolyn]如果有时间，我希望今晚可以和你喝一杯。(If you have time, let's have a drink tonight.)
+	[Commander]抱歉，我刚收到伦敦总部的通知，我需要马上赶到欧洲指挥登陆战。
+	[Carolyn]真是遗憾。(Oh, What a pity.)
+	[Carolyn]好吧，下次吧，亲爱的指挥官。(Well, see you next time, darling.)
