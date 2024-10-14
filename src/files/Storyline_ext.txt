@@ -116,19 +116,7 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Crack the Ice（打破僵局） - Metz, France
-	Brief: 
-		We will make our next leap soon, but we've collected that the Allied has most of their nuclear weapon sended to France.
-		There is an Allied Intelligence Center in Metz, if we can capture them, we might get the details of Allied defense in Western Europe.
-		The Allied force has sent troops to there, so we have to get it before the Allied does.
-
-	Objective 1: Clear the Allied forces by the Battle Command Center.
-	Objective 2: Capture the Intelligence Center.
-	Objective 3: Defense the Intelligence Center while collecting informations.
-
-	Failure: Intelligence Center destroyed.
-
-Mission 2: Shadow Strike（核影无痕）- Lyon, France
+Mission 1: Shadow Strike - Lyon, France
 	Brief:
 		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
 		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
@@ -141,18 +129,9 @@ Mission 2: Shadow Strike（核影无痕）- Lyon, France
 
 	Failure: All units destroyed.
 
-Mission 3: Night Fall（夜幕降临） - Wangerland, Germany
-	Brief:
-		With Allied nuclear base sabotaged, we have easily broken into Paris and captured the entire France.
-		The Allied planned to assassinate one of our scientist of Tesla technology, Nikolai, and now he's taking flight back to Poland.
-		Our fighter has already taken off to secure the sky, but you still need to head to Germany to secure the ground.
+Mission 2: 
 
-	Opening:
-		Allied Dagger squad shot down the MiGs and the passenger plane.
-
-	Objective 1: Head to the crash site.
-	Objective 2: Protect the crash site from the Allied force.
-	Objective 3: Rescue the scientist and escort him to the local helipad.
+Mission 3: 
 
 Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic
 	Brief:
