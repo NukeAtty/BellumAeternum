@@ -20,18 +20,29 @@ The Soviets launched a sudden attack at Metz, France, and wiped out the Allied f
 However, the Allieds were committed to win the Korean war, and doesn't know much about what's happenning in Europe. Finally, the Allied forces has taken control of the entire Korean peninsula, and Chinese volunteer army has retreated to the border.
 
 
-Allied Campaign Season 1: Counter Strike（全力反击）
+Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
 
 
-Mission 1: Night Raid（暗夜突袭） - Ambleteuse, France
+Mission 1: Night Raid - Ambleteuse, France
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
 	Objective 1: Destroy the flak base on the Ambleteuse seaside.
 	Objective 2: Capture the Soviet radar to blind enemy.
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
-Mission 2: Vesper（黄昏微光） - Rotterdam, Netherland
+	Failure: Tanya falls.
+
+Mission 2: Two Of A Kind - Den Helder, Netherland
+	Brief:
+
+	Objective 1:
+	Objective 2:
+	Objective 3:
+
+	Failure: 
+
+Mission 3: Vesper - Rotterdam, Netherland
 	Brief:
 		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
 		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in Netherland.
@@ -46,18 +57,7 @@ Mission 2: Vesper（黄昏微光） - Rotterdam, Netherland
 
 	Failure: Mr.Blake lost.
 
-Mission 3: The Desolation（荒芜之地） - Rotterdam
-	Brief: 
-		Soviet has 
-	Objective: Destroy the Radiation Convoy.
-
-	Objective 1: Find the Soviet supply outpost.
-	Objective 2: Destroy the vanguard of the convoy.
-	Objective 3: Destroy the nuclear material truck.
-
-	Failure: Nuclear material truck leaves/ All units destroyed.
-
-Mission 4: Snowblind（雪盲之殇） - October Revolution Island, Soviet Russia
+Mission 4: Snowblind - October Revolution Island, Soviet Russia
 	Brief:
 		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Alaska.
 		To prevent any danger when we transporting troops to Greenland, we need to clear this base and destroy the nuke launchers there.
@@ -70,20 +70,19 @@ Mission 4: Snowblind（雪盲之殇） - October Revolution Island, Soviet Russi
 
 	Failure: All units destroyed.
 
-Mission 5: Arctic Mayhem（极地混乱） - Thuler Air Base, Greenland
+Mission 5: Arctic Mayhem - Thule Air Base, Greenland
 	Brief:
-		The operation in Emden is brilliant, the Soviets are force to send more troops to deal with the radiation polution there.
-		The Americans are sending more troops to Britain, but Burmuda has been captured by the Soviets and they have built an airbase there.
-		General decided to change the transportation route to Greenland, and he want to you to guarantee the safety of Thule air base.
+		Obviously it's a trap. The Soviets knows transpotation will begin if we attack their arctic base.
+		Now we have to do everything we can to stop the Soviets invading Greenland, and our next destination is Thule airforce base.
 
 	Objective: Defense the Thule air base.
 
-	Failure: All flights destroyed.
+	Failure: Control tower destroyed.
 
-Mission 6: PHAEDRA Operation（霸王行动） - Normandy, France
+Mission 6: Operation Dominus - Normandy, France
 	Brief:
 		Our time has come! The Allied Forces has gathered plenty of landing crafts, it's time to liberate Paris!
-		Operation name PHAEDRA, we are going to land on the Normandy Beach.
+		Operation name: Dominus. we are going to land on the Normandy Beach.
 
 	Objective: Destroy the Soviet forces in Normandy beach.
 
