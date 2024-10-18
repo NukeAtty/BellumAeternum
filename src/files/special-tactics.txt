@@ -1,0 +1,12 @@
+Special Tactics:
+	Universal:
+		WEAP:
+			Repair Crane: Repairs Buildings and Vehicles
+
+		WEAP + AIRC:
+			Mobile Crane: Repairs Vehicles
+
+		TECH + AIRC:
+			Airborne Tanks
+
+	
