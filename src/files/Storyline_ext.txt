@@ -122,16 +122,16 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Shadow Strike - Lyon, France [SNEAK]
+Mission 1:  - Brussel, Belgium
 	Brief:
 		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
 		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
 
-	Objective: Sabotage the Allied Nuclear Base
+	Objective: Destroy the Allied Headquater.
 
-	Objective 1: Find a way to slip into the nuclear base.
-	Objective 2: Find the nuke silo.
-	Objective 3: Sabotage the nuke silo.
+	Objective 1: Clear the Allied outskirt defense.
+	Objective 2: Destroy the Allied Headquater.
+	Objective 3: Capture the escaping Allied generals.
 
 	Failure: All units destroyed.
 
