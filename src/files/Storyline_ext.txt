@@ -135,8 +135,13 @@ Mission 1:  - Brussel, Belgium
 
 	Failure: All units destroyed.
 
-Mission 2: -  [ATTACK]
+Mission 2: - Cuba [ATTACK]
 	Brief:
+	Objective: Save Revolution Leader of Cuba.
+
+	Objective 1:
+	Objective 2:
+	Objective 3:
 
 
 Mission 3: Arcana Obscura - Florida, USA [RESCUE]
