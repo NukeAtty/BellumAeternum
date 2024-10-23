@@ -124,22 +124,12 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 	Objective: Defend Quartzsite from zombie flood.
 
 Soviet Prologue:
-Mission 0: 
+Mission 0: - Brussel, Belgium
+	Objective: Destroy the Allied Headquater
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1:  - Brussel, Belgium
-	Brief:
-		We have successfully got all deployment location of the Allied forces, and furthermore, we've got the location of all their nuclear base.
-		Now it's time to sabotage all of them, and you will be the commander of a special branch, to destroy one of nine nuclear base in France.
-
-	Objective: Destroy the Allied Headquater.
-
-	Objective 1: Clear the Allied outskirt defense.
-	Objective 2: Destroy the Allied Headquater.
-	Objective 3: Capture the escaping Allied generals.
-
-	Failure: All units destroyed.
+Mission 1: 
 
 Mission 2: - Cuba [ATTACK]
 	Brief:
