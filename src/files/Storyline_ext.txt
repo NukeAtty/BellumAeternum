@@ -26,6 +26,10 @@ Mission Types:
 	BATTLE
 	RESCUE
 
+Allied Prologue:
+Mission 0: Echo Of The Past - Dunkerque, France
+	Objective: Protect transport to the port.
+
 Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
 
@@ -119,6 +123,8 @@ Mission X: Homeland Defense - St.Combs, Aberdeenshire, UK
 Mission Y: Biohazzard - Quartzsite, Arizona, USA
 	Objective: Defend Quartzsite from zombie flood.
 
+Soviet Prologue:
+Mission 0: 
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
