@@ -130,8 +130,9 @@ Mission 0: - Brussel, Belgium
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
 Mission 1: 
+	Objective: 
 
-Mission 2: - Cuba [ATTACK]
+Mission 2: - Mexico [ATTACK]
 	Brief:
 	Objective: Save Revolution Leader of Cuba.
 
