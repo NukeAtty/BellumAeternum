@@ -143,7 +143,9 @@ Mission 2: - Mexico [ATTACK]
 
 Mission 3: Arcana Obscura -  [RESCUE]
 	Brief:
-		
+	
+	Objective:
+
 	Objective 1:
 	Objective 2:
 	Objective 3:
