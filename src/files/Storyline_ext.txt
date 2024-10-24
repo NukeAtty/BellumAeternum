@@ -108,9 +108,9 @@ Mission 1: Fishy - Fisherman's Bay,Vik, Iceland
 
 Mission 2: 
 
-Mission 3: 
+Mission 3: One Path Ends
 
-
+Mission 6: Victory or Death
 
 
 
@@ -198,8 +198,7 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 		6.
 
 Soviet Campaign Season 2
-Mission 1: Peace Treaty - Cairo, Egypt
-	Objective: Guard the peace summit.
+Mission 1: Out of the Shadows
 
 Mission N: Tesla Shock（磁暴震荡） - Leipzig, Germany
 	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
