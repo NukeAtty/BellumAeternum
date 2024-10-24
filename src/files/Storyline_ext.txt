@@ -25,9 +25,10 @@ Mission Types:
 	DEFEND
 	BATTLE
 	RESCUE
+	ESCORT
 
 Allied Prologue:
-Mission 0: Echo Of The Past - Dunkerque, France
+Mission 0: Echo Of The Past - Dunkerque, France (ESCORT)
 	Objective: Protect transport to the port.
 
 Allied Campaign Season 1: Counter Strike
@@ -54,7 +55,6 @@ Mission 2: Two Of A Kind - Den Helder, Netherland [ATTACK]
 
 Mission 3: Vesper - Rotterdam, Netherland [RESCUE]
 	Brief:
-		The operation has done well, but it seems that is only an ordinary missile launcher, well, our intel isn't always right.
 		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in Netherland.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
 		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
