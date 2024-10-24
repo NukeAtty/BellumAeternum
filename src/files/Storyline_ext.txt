@@ -141,16 +141,12 @@ Mission 2: - Mexico [ATTACK]
 	Objective 3:
 
 
-Mission 3: Arcana Obscura - Florida, USA [RESCUE]
+Mission 3: Arcana Obscura -  [RESCUE]
 	Brief:
-		An Allied scientist has sent a mail to our ambassador in Cuba.
-		He claims he has information about the Allied's new mass-destructive weapon.
-		He's now imprisoned inside his lab in Florida, and our general decide to rescue him.
-		His lab is hidden inside the Everglades National Park, so we have to find that lab and rescue the scientist.
-
-	Objective: Find the scientist and rescue him.
-
-	Objective: Find the entrance of the 
+		
+	Objective 1:
+	Objective 2:
+	Objective 3:
 
 Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Brief:
