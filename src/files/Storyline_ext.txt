@@ -124,7 +124,7 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 	Objective: Defend Quartzsite from zombie flood.
 
 Soviet Prologue:
-Mission 0: - Brussel, Belgium
+Mission 0: No Quarter - Brussel, Belgium
 	Objective: Destroy the Allied Headquater
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
