@@ -1,11 +1,8 @@
 [DTA]
-Version=Alpha0.2
-UpdaterVersion=Alpha0.3
+Version=Alpha0.3
 
 [FileVersions]
 expandmd99.mix=1529016379598818020416321413819218910719163,5467
 
 [AddOns]
-
-[ArchivedFiles]
 
