@@ -1,6 +1,5 @@
 [DTA]
 Version=Alpha0.3
-UpdaterVersion=Alpha0.3
 
 [FileVersions]
 Maps\Standard\verdanthills.map=11124187782496104130133812418024124272239,252
@@ -8,6 +7,4 @@ Maps\Standard\verdanthills.png=922093168110323621944230125230174121215224,1331
 
 [AddOns]
 COMPONENT_ID=659111124321815715723115214185911572319146,3
-
-[ArchivedFiles]
 
