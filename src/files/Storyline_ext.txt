@@ -69,7 +69,7 @@ Mission 3: Vesper - Rotterdam, Netherland [RESCUE]
 
 Mission 4: Snowblind - October Revolution Island, Soviet Russia [ATTACK]
 	Brief:
-		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Alaska.
+		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Arctics.
 		To prevent any danger when we transporting troops to Greenland, we need to clear this base and destroy the nuke launchers there.
 
 	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
