@@ -1,4 +1,4 @@
-ThirdSide:
+ThirdSide:	P.L.A.
 	Buildings: 
 		Power Plant
 
@@ -14,7 +14,7 @@ ThirdSide:
 
 		Battle Lab
 
-		Nitro Unit
+		Nitro Unit (AddOn)
 
 		Supply Center
 
@@ -31,22 +31,22 @@ ThirdSide:
 		Shockwave Device
 
 	Infantries:
-		Liberation Guard
+		Vanguard
 
 		Tank Hunter
 
 		Engineer
 
-		Demolisher
+		Breacher
 
-		Spy
+		Agent
 
 	Vehicles:
 		Amphibious Miner
 
-		Main Tank
+		 Tank
 
-		AA Tank
+		Flak Tank
 
 		APC
 

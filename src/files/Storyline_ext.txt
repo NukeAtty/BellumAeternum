@@ -35,6 +35,10 @@ The Soviet troops have controlled half of the western Europe, and the Allied in 
 
 
 Mission 1: Night Raid - Ambleteuse, France [SNEAK]
+	Brief:
+		The intel has discovered several possible breakthrough to Europe, and the London Headquater will launch a night raid soon.
+		Destination, Ambleteuse. We have to establish a front base there, and this is our first step in Europe.
+
 	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
 
 	Objective 1: Destroy the flak base on the Ambleteuse seaside.
@@ -54,9 +58,10 @@ Mission 2: Two Of A Kind - Den Helder, Netherland [ATTACK]
 
 Mission 3: Vesper - Rotterdam, Netherland [RESCUE]
 	Brief:
-		However, according to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in Netherland.
+		We have successfully established another front base in Den Helder, and now we're able to send more troops to break into Europe.
+		According to the London HQ, one of our brilliant spy from the MI6 has escaped from Berlin before the Soviet invasion, but now trapped in a safe room in Rotterdam.
 		His name is George Blake, and he holds most important information about Soviet military deployment in Germany.
-		Our mission is head to Rotterdam, Netherland, and rescue Mr. Blake.
+		Our mission is head to Rotterdam, and rescue Mr. Blake.
 
 	Objective: Rescue George Blake at Rotterdam.
 
@@ -68,7 +73,7 @@ Mission 3: Vesper - Rotterdam, Netherland [RESCUE]
 
 Mission 4: Snowblind - October Revolution Island, Soviet Russia [ATTACK]
 	Brief:
-		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Arctics.
+		We will start counter attack on Europe soon, but the Soviet has a nuclear base on the October Revolution Island that deters the Arctic Circle.
 		To prevent any danger when we transporting troops to Greenland, we need to clear this base and destroy the nuke launchers there.
 
 	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
