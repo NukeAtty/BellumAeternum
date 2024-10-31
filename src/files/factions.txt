@@ -2,26 +2,28 @@ Allied:
 
 	French:
 		Vehicles
-			CMIN -> SHRV	;Speed Miner
-			MTNK -> LTNK	;Lillet Tank
-			FV -> EBR		;EBR (Engin Blindé de Reconnaissance)
+			CMIN -> SHRV	;[Speed Miner]Speed Miner
+			MTNK -> LTNK	;[Lillet Tank]Lillet Tank
+			FV -> EBR		;[EBR]EBR (Engin Blindé de Reconnaissance)
 				;Original: EBR
 				;GI: Light EBR
 				;GGI: Rocket EBR
 				;ENGI: Repair EBR
 				;SNIPE: Sniper EBR
-				;GHOST: 
-			MGTK -> ELC		;ELC
+				;GHOST: Gattling EBR
+			MGTK -> ELC		;[Light Tank]Light Tank
 
-			SREF -> HOWI	;Howitzer
-			BFRT -> FTNK	;Foch Assault Gun
+			SREF -> HOWI	;[Howitzer]Howitzer
+			BFRT -> FTNK	;[Foch]Foch Assault Cannon
 
 	British:
 		Vehicles
-			CMIN -> HMIN	;Heavy Miner
-			MTNK -> CTNK	;Centurion Tank
-			FV	-> SFV		;Saladin
+			CMIN -> HMIN	;[Heavy Miner]Heavy Miner
+			MTNK -> CTNK	;[Centurion Tank]Centurion Tank
+			FV	-> SFV		;[Saladin I.F.V.]Saladin I.F.V.
 			
-			SREF -> AVRE	;Black Prince AVRE
+			MGTK -> MGTK
+			SHAD -> AVRE	;[AVRE]Black Prince AVRE
 
-			BFRT -> OBLT	;FV215D Obliterator
+			SREF -> OBLT	;[Obliterator]FV215D Obliterator
+			BFRT -> CONQ	;[Conqueror Tank]Conqueror Tank
