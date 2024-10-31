@@ -91,11 +91,20 @@
 					<h3>Mod适配</h3>
 					<p>Mod适配主要分为以下几个部分：</p>
 					<ol>
-						<li>阵营适配：在Resources/GameOptions.ini中定义。</li>
+						<li>游戏适配：在Resources/GameOptions.ini中定义。</li>
 						<li>地图适配：在INIs/MPMaps.ini中定义。</li>
 						<li>战役适配：在INIs/Battle.ini中定义。</li>
 						<li>模式适配：在INIs/Modes/的ini文件定义。</li>
 					</ol>
+					<h4>游戏适配</h4>
+					<p>我们直接打开Resource文件夹中的GameOptions.ini，便可以编辑其代码来适配你的Mod。这里我直接用万世之战的代码做举例：</p>
+					<div class="code-presentation">
+						<p>[General]	;这一部分是对于阵营的全局设定，包含了一些杂项。</p>
+						<p>Sides=Allied,Soviet	;阵营，这里的阵营是在遭遇战设置界面的阵营，和rules.ini无关。</p>
+						<p>InternalSideIndices=0,8	;国家序号，这个连接上面阵营和rules.ini中阵营的桥梁。比如上面的Allied，在rules.ini中对应的是0号国家，而Soviet则对应的是8号国家。</p>
+						<p>StartingLocationAngularVelocity=0.01 ;这句和下面一句指定的是地图上选择初始位置动画的转动速度。</p>
+						<p>ReservedStartingLocationAngularVelocity=0.01</p>
+					</div>
 					<h3>界面定制</h3>
 					<p>界面定制也是通过各种ini来实现。</p>
 					<h3>功能定制</h3>
