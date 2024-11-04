@@ -133,8 +133,12 @@ Mission 0: No Quarter - Brussel, Belgium
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: 
-	Objective: 
+Mission 1: Obscured Labyrinthe - Ferrère, France
+	Objective: Find the Satellite Telecom and destroy it.
+
+	Objective 1: Push into the village.
+	Objective 2: Set up a radar.
+	Objective 3: Find the Satellite Telecom.
 
 Mission 2: - Mexico [ATTACK]
 	Brief:
@@ -145,14 +149,14 @@ Mission 2: - Mexico [ATTACK]
 	Objective 3:
 
 
-Mission 3: Arcana Obscura -  [RESCUE]
-	Brief:
-	
-	Objective:
+Mission 3: Obscured Labyrinthe - Ferrère, France
+	Brief: 
+		
+	Objective: Find the Satellite Telecom and destroy it.
 
-	Objective 1:
-	Objective 2:
-	Objective 3:
+	Objective 1: Push into the village.
+	Objective 2: Set up a radar.
+	Objective 3: Find the Satellite Telecom.
 
 Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Brief:

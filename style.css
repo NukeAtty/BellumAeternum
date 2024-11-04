@@ -418,7 +418,7 @@ footer {
 	border-radius: 12px;
 	border: 3px solid #333333;
 	display: flex;
-	flex-flow: row;
+	flex-flow: row-reverse;
 }
 
 .footer-portals a{
@@ -428,13 +428,17 @@ footer {
 	text-shadow: 0 0 5px #ff0000;
 	font-family: HarmonyOS Sans Black, sans-serif;
 	font-weight: 600;
-	padding: 0 0.5vw;
+	padding: 0 1vw;
 }
 
 .footer-portals a:hover {
 	color: #ffffcc;
 	text-shadow: 0 0 5px #ffcc00;
 	filter: drop-shadow(0 0 2px #ff3300);
+}
+
+.footer-portal img{
+	margin: auto 2em;
 }
 
 /*------------------------------*/
