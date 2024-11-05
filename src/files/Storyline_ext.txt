@@ -30,6 +30,9 @@ Allied Prologue:
 Mission 0: Echo Of The Past - Dunkerque, France (ESCORT)
 	Objective: Protect transport to the port.
 
+	Objective 1: Hold the fort and defense the attack.
+	Objective 2: Protect transports to the port.
+
 Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
 
@@ -133,36 +136,50 @@ Mission 0: No Quarter - Brussel, Belgium
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Obscured Labyrinthe - Ferrère, France
-	Objective: Find the Satellite Telecom and destroy it.
+Mission 1: In Deep - Rason, North Korea
+	Objective: Rescue the surrounded volunteer army in North Korea.
 
-	Objective 1: Push into the village.
-	Objective 2: Set up a radar.
-	Objective 3: Find the Satellite Telecom.
+	Objective 1: Clear the Allied forces that siege the stronghold of the Volunteer Army.
+	Objective 2: Defense the stronghold until reinforcements arrives.
+	Objective 3: 
 
-Mission 2: - Mexico [ATTACK]
+Mission 2: Entanglement - Vladivostok, Soviet Russia
 	Brief:
-	Objective: Save Revolution Leader of Cuba.
 
-	Objective 1:
-	Objective 2:
-	Objective 3:
+	Objective: 
 
+	Objective 1: 
+	Objective 2: 
+	Objective 3: 
 
-Mission 3: Obscured Labyrinthe - Ferrère, France
+Mission 3: Honour of the Waves (荣誉电波) - Ferrère, France
 	Brief: 
+		Our defense in France have experienced percision strike, and while we rebuild our base, our general want you to launch an investigation.
+		According to National Security Committee, one of our spy has infiltrated into an Allied communication base, but he has lost connection.
+		Lieutenant [] from National Security Committe will go with you, take back our spy, and destroy the Allied communication base.
 		
-	Objective: Find the Satellite Telecom and destroy it.
+	Objective: Find the Allied Communication Base and destroy it.
 
 	Objective 1: Push into the village.
-	Objective 2: Set up a radar.
+	Objective 2: Set up a radar and receive the radio wave.
 	Objective 3: Find the Satellite Telecom.
 
-Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
+	<You can win by destroy all bases, but if you destroyed the true telecom at first attack, you will be able to receive 10000 additional credits in the next episode.>
+
+Mission 4: Obscured Labyrinthe - 
+	Brief: 
+
+	Objective: 
+
+	Objective 1: 
+	Objective 2: 
+	Objective 3: 
+
+Mission 5: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Brief:
-		Nikolai said the German lab was once captured by the Allied force, and they have taken some data related to the ionosphere away.
-		He predicts that the Allied will use those data to develop some sort of weather control device.
-		Meanwhile, our submarines has located unusual movements of the Allied marines, in Bermuda.
+		Our submarine battalion has observed some abnormal movements of the Allied ships.
+		They've transported unknown equipments to St.Georges Island in the Bermudas.
+		Your job is to launch an sudden strike to Bermudas, and find out what their plans are.
 
 	Objective: Clear the Allied force on St.Georges Island and find the secret weapon.
 
@@ -170,20 +187,9 @@ Mission 4: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Objective 2: Find the Allied secret weapon.
 	Objective 3: Capture the Allied battle lab and analyse the data there.
 
-Mission 5: Unimpeded（畅通无阻） - Desvres, France [BATTLE]
-	Brief:
-		I've heard the Allied force has a legendary commander who launched a strike on the beach of Ambleteuse.
-		The landed Allied force has established a base in Ambleteuse, and they prepare to push to Paris.
-		Commander, it is our turn to give those Allieds a lesson.
-
-	Objective 1: Bombard the Allied convoy.
-	Objective 2: Establish a base.
-	Objective 3: Stop the Allied force from pushing through.
-
-
 Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 	Brief: 
-		We have sucessfully brought back some data about the weather machine, but our Premier refuse to believe it.
+		We have reported what's going on in Bermuda, and our intelligence are analysing the information.
 		Our spy in the UK claims that the Allied forces will launch an attack on the Normandy beach.
 		Commander, it's your turn to stop the Allieds from their counter attack.
 	Objective: Defend the Normandy Beach.
