@@ -1,0 +1,9 @@
+Honor of the Waves
+
+Principle:
+
+1. Generate Random Number [Action 502]
+2. Variable Comparison: [Event 508]
+	If x = 1: Build in waypoint 1
+	If x = 2: Build in waypoint 2
+	If x = 3: Build in waypoint 3
