@@ -155,15 +155,15 @@ Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 Mission 1: Entanglement - Vladivostok, Soviet Russia
 	Brief:
 		The Allied forces in Korea has pushed all the way to Vladivostok, we must stop them from capturing our far east.
-		Our intelligence agency has passed some information that the Allieds are using poison gas in Korea.
+
 	Objective: Evacuate all civilians.
 
-	Objective 1: Clear the Allied forces that siege the stronghold of the Volunteer Army.
-	Objective 2: Defense the stronghold until reinforcements arrives.
+	Objective 1: Destroy all Allied force landed on Russky Island.
+	Objective 2: Retreat to 
 	Objective 3: 
 
-Mission 2:  - 
-	Brief:
+Mission 2: Crack the Ice - 
+	Brief: 
 
 	Objective: 
 
