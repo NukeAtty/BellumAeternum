@@ -25,7 +25,8 @@ Season 2 - 1958 ~ 1964
 	Allied: One Path End
 	Soviet: Red Alert
 Season 3 - 1964 ~ 1969
-	Allied: 
+	Allied: War Eternal
+	Soviet: 
 
 Mission Types:
 	SNEAK
@@ -155,14 +156,13 @@ Mission 1: Entanglement - Vladivostok, Soviet Russia
 	Brief:
 		The Allied forces in Korea has pushed all the way to Vladivostok, we must stop them from capturing our far east.
 		Our intelligence agency has passed some information that the Allieds are using poison gas in Korea.
-		We must defend our homeland and 
-	Objective: Rescue the surrounded volunteer army in North Korea.
+	Objective: Evacuate all civilians.
 
 	Objective 1: Clear the Allied forces that siege the stronghold of the Volunteer Army.
 	Objective 2: Defense the stronghold until reinforcements arrives.
 	Objective 3: 
 
-Mission 2: Entanglement - 
+Mission 2:  - 
 	Brief:
 
 	Objective: 
