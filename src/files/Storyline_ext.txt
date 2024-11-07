@@ -18,6 +18,15 @@ After the Soviet army entirely captured Germany, the Allied force realised a new
 The Soviets launched a sudden attack at Metz, France, and wiped out the Allied force. Meanwhile, they have captured a battle command center, which loaded the entire Allied military deployment in Europe. After that, the Soviet intellegence agency co-operated with special forces, sabotaged all nuclear base in France. Without worrying about nuclear bombs, the Soviets easily captured Paris, and the Allied forces had to retreat to Great Britain from Dunkirk. 
 However, the Allieds were committed to win the Korean war, and doesn't know much about what's happenning in Europe. Finally, the Allied forces has taken control of the entire Korean peninsula, and Chinese volunteer army has retreated to the border.
 
+Season 1 - 1954 ~ 1958
+	Allied: Counter Strike
+	Soviet: Red Dawn
+Season 2 - 1958 ~ 1964
+	Allied: One Path End
+	Soviet: Red Alert
+Season 3 - 1964 ~ 1969
+	Allied: 
+
 Mission Types:
 	SNEAK
 	ATTACK
@@ -27,11 +36,17 @@ Mission Types:
 	ESCORT
 
 Allied Prologue:
-Mission 0: Echo Of The Past - Dunkerque, France (ESCORT)
+Mission 0: Echo Of The Past - Dunkerque, France (New Urban) (DEFENSE)
 	Objective: Protect transport to the port.
 
-	Objective 1: Hold the fort and defense the attack.
-	Objective 2: Protect transports to the port.
+	Objective 1: Reinforce the Fort des Dunes.
+		Fail: All buildings destroyed.
+	Objective 2: Hold the line until retreat finished.
+		Fail: All objects destroyed.
+	Objective 3: Reach the evacuation zone.
+
+<Message>
+	Reach the Fort des Dunes.
 
 Allied Campaign Season 1: Counter Strike
 The Soviet troops have controlled half of the western Europe, and the Allied in England has started to fight back.
@@ -136,14 +151,18 @@ Mission 0: No Quarter - Brussel, Belgium
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: In Deep - Rason, North Korea
+Mission 1: Entanglement - Vladivostok, Soviet Russia
+	Brief:
+		The Allied forces in Korea has pushed all the way to Vladivostok, we must stop them from capturing our far east.
+		Our intelligence agency has passed some information that the Allieds are using poison gas in Korea.
+		We must defend our homeland and 
 	Objective: Rescue the surrounded volunteer army in North Korea.
 
 	Objective 1: Clear the Allied forces that siege the stronghold of the Volunteer Army.
 	Objective 2: Defense the stronghold until reinforcements arrives.
 	Objective 3: 
 
-Mission 2: Entanglement - Vladivostok, Soviet Russia
+Mission 2: Entanglement - 
 	Brief:
 
 	Objective: 
