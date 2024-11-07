@@ -1,0 +1,846 @@
+2023/8/22
+
+MTNK:
+	1.Cost change to 1600
+FV:
+	1.Cost change to 1200
+	2.Weapon Name change from AirInterceptMissile to CLAWS
+	3.Warhead change from AIM6X to SLAAM(stands for Surface Launched Anti Air Missile)
+BFRT:
+	1.Added Secondary Weapon TwinM2HB
+	2.Adjust FLH
+	3.Add Ammo System
+	4.Cost change to 3500
+HTNK:
+	1.Cost change to 1600
+HTK:
+	1.Cost change to 1000
+APOC:
+	1.Cost change to 3500
+
+
+2023/8/23
+
+SREF ADDED!
+FV:
+	1.Repair Arm ROF change to 60
+HTK:
+	1.ROF Change to 6
+GI:
+	1.M1919 ROF Change to 6
+FV:
+	1.M2HB ROF Change to 6
+Palette:
+	Added New VPL & PAL for VXL -> UNIBLU(TEM/SNO/URB/UBN/DES/LUN)
+
+2023/8/24
+
+Houses changed, no countries but factions.
+SNIPE:
+	Belongs to allied
+DESO:
+	Belongs to soviet
+BFRT:
+	Fix twin M2HB doesn't fire
+	Fix BFRTA can't group
+FV:
+	Can't bounce shell
+HTK:
+	Can't bounce shell
+SREF:
+	Can't bounce shell
+
+2023/8/25
+
+Urban Combat range bonus increased to 7, damage multiplier decrease to 1.0, ROF increase to 1.5
+
+2023/8/27
+
+HARV ADDED! With new mechanics!
+
+GTNKHULL/HTNKHULL:
+	Can't be driven no more!
+
+2023/8/28
+
+CMIN ADDED! With new mechanics and roll!
+
+2023/9/1
+
+Katyusha ADDED! With 6 Rocket
+
+2023/9/4
+
+ZEP added hit sound
+
+2023/9/6
+
+DESO changed color, Deso can kill occupants
+
+RadColor changed to Chelonkov Blue
+
+Urban Combat Mechanic Added
+
+2023/9/7
+
+DESO Palette Fixed.
+
+BUS ADDED.
+
+2023/9/9
+
+RTRUCK ADDED!
+
+AmericanParadropSpecial Icon Changed
+
+2023/9/10
+
+Mobile Radar Icon
+AmericanParadrop Content Change to 4 GI and 4 GGI
+BFRT added WalkRate to have slower track rate
+CMIN added no bounce shell code
+GI and GGI changed FLH
+
+2023/9/11
+
+GAPOWR added hydrogen explode
+NAPOWR added tesla pulse explode
+GAREFN , GACNST changed stats
+
+FLAKT ADDED! RPG as weapon, need test AA
+
+Forest Fire Logic Added ! 
+Scotch and Flamer Logic Added !
+
+Death Anim Added!
+
+Bloody Corpse Added!
+
+2023/9/12
+
+CONS ADDED! 
+SHK and DESO's weapon no scorch!
+
+AP Die animation added!
+
+Screen Shaken Added!
+
+Airstrike Airplane Design: https://en.wikipedia.org/wiki/Yakovlev_Yak-28
+
+2023/9/13
+
+STIRE and MTIRE debris added! for buses and sedans.
+
+SNIPE penetrate structures! Changed Weapon.
+
+Fire Effect Enhanced.
+
+Conscript fixed icon.
+
+2023/9/14
+
+Lot more new icons!
+
+Stealth Generator Added!
+
+2023/9/18
+
+NAAIRC Final, need snow frames.
+
+Soviet Paradrop added.
+
+2023/9/19
+
+Katyusha tested.
+
+2023/9/20
+
+BUS changed to COACH
+
+2023/9/21
+
+TTNK start voxeling
+
+2023/9/22
+
+Katyusha's weapon and reload system revised, need remodeling.
+
+Battle Bunker SW added, needs revise, mechanic first and icon second.
+
+2023/9/23
+
+TTNK ADDED! need VXL and desinated turret anim.
+
+2023/9/25
+
+TTNK Voxel in progress. Gattling logic doesn't support multi-turret.Turret- anim doesn't seem very good, can be only apply on gattling machinegun.
+
+2023/10/8
+
+MIG added! 
+
+TTNK Need to revise, either change design or change weapon. Gattling Logic can't charge tesla coil.
+
+
+2023/10/9
+
+MIG Icon Added! Need to change weapon.Need to change trailer.
+
+2023/10/10
+MIG Trailer revised.
+
+2023/10/11
+TTNK Changed weapon, now has assault bolt to charge TESLA.
+
+2023/10/14
+MIG changed weapon.
+MGTK added, need revise VXL.
+
+
+2023/10/15
+FV more turret added.
+Multi Missile tested, not satisfied. Need revise.
+Forest Fire added smoke.
+
+2023/10/18
+GAPOWR no crewed, added burned body debris.
+Forest Fire fixed effect.
+TTNK weapon need revise.
+need to delete ROBO.
+
+2023/10/19
+Verdant Hill changed Trigger, need test if stuck again.
+
+2024/5/16
+Icon updates.
+IFV Need Multiple FLH.
+Rifle deal less damage to Medium Armor.
+
+2024/5/25
+Icon updates.
+NAINTE added, DefectionSpecial added.
+CSF updates.
+
+2024/5/26
+Dawnhawk Transport added. Need for weapon.
+Icon updates.
+CSF updates.
+
+2024/5/27
+GAPILL Weapon needed, NALASR Weapon needed.
+NATSLA EMP Needed, Spy icon needed.
+Icon updates.
+Powerups Rules updated. need to reorganize chances and redesign purposes using 3 animations.
+SHAD Weapon needed. ORCA Weapon needed.
+
+2024/6/3
+LoadingScreen Added!
+HTK Nerfed Weapon.
+SHAD Buffed Speed.
+
+2024/6/4
+TTNK ROF Buffed, Damage Nerfed.Now can bounce AP.
+EVA Sound for Tropofortress Bombing and Stealth Unit Detected, need change audio.
+
+2024/6/9
+MiG AI Buildable, need test for aircraft bug.
+MRDR need AI.
+
+2024/6/10
+MiG AI Complete, MRDR AI Complete.
+FLAKT name change.
+Soviet Spy AI.
+IFV Turret Fix.Need Bomb Turret and Rad Turret.
+IFV MIM21 Added Missile Fire Particle System.
+IFV Added Gattling Turret for SEAL
+ORCA napalm missile finished, thinking about adjusting death weapon.
+FORTRESS bombing finished, thinking about nerfing a bit.
+Fortress Bombing AITargeting change.
+MiG AA Combat.
+NALASR added, weapon finished.
+GAPILL Weapon finished.
+
+2024/6/11
+MAKE VXLs!
+FLAKTUR, SAM, FORTRESS, FALC!!!
+NALASR reworked turret.
+NASAM weapon finished, with good fire anim.
+NASAM VXL still working, need brighter color.
+NASAM weapon buffed missile speed.
+
+2024/6/12
+AI change for ORCA/MIG, need to test MIG.
+NASAM VXL finished, buffed missile speed.
+FORTRESS and ORCA CellSpread fixed.
+ORCA CellSpread fixed. Added damage, need test.
+
+2024/6/13
+ORCA weapon passed test.
+Buffed Tank Guns to Structures.
+
+2024/6/15
+BFRT AI Added.
+FORTRESS VOXEL Added.FORTRESS need more epic bomb,
+TTNK Secondary burst fixed, need test.
+
+2024/6/17
+TTNK FLH fixed.
+Shell speed adjusted, need test.
+Rearranged Superweapon damages.
+rearranged bullet damage to STEEL, buffed TTNK anti STEEL, need test.
+Changed Defection range to 6, need test.
+GAAIRC need to copy ggaircmk to every terrain.
+Reduced Soviet Units price.
+Buffed NAFLAK
+Buffed Kirov
+
+2024/6/18
+ORCA VXL COMPLETED! so do its icon. debuffed speed.buffed HP.
+TTNK nerfed anti STEEL, too OP.
+Buffed TESLA and ATESLA, TESLA added EMP, ATESLA added damage.
+Changed Defection range to 8, nerf time to 2:30, need test.
+BFRT Speed buffed.
+APOC Speed buffed, Opportunity Fire Buffed.
+Rearranged GHOST weapon and warhead, need test.
+Buffed M1919 range.
+
+2024/6/19
+Buffed Katyusha Accuracy and Range
+Katyusha AI Changed
+
+2024/6/22
+Katyusha no retaliate
+Team retaliate
+Auto retaliate repel civilian
+HARV lowered price
+Buffed Bullet damage to Heavy armor, need test.
+
+2024/6/23
+TTNK/SREF/APOC added wreck, SREF tur need debris.
+GUI BG Added.
+Mobile Radar added Radiowave tracer weapon, need test.
+
+2024/6/25
+Mobile Radar weapon tested, thinking about add timer.
+Engineer repair wreck tested, don't work, maybe used in future China.
+Soviet CMIN hunt AI added, need test.
+
+2024/6/27
+Soviet CMIN hunt AI failed, Abort.
+Defection Animation Added.
+Katyusha Launch Particle System Added.
+Buffed MRDR's detection range and HP, need to test if weapon hit ally.
+
+2024/6/28
+Nerfed Building repair rate, too fast used to be.
+
+2024/6/29
+Sniper Bullet buffed speed.
+Nerfed RPG/LAW speed and ROT.
+Working on Zombies.
+
+2024/6/30
+Armor resign. MGTK change to medium, SREF change to medium.
+Power Supply Added.
+Radiation Bombing Added.
+Financial Interest Added.
+
+2024/7/2
+APOC,BFRT immune to EMP.
+Reworked TTNKHULL.
+
+2024/7/3
+CAPC Added, VXL need rework, too small. Need test if Soviet can get it too.
+
+2024/7/4
+CAPC won't get by Soviet after test.
+SDEM code added, Stealth Demolisher.
+
+2024/7/7
+PICK added, STANG fixed width.
+Mission No.1 Working.
+ZEP VXL&Icon Finished, need to rework weapon.
+
+2024/7/8
+Units ranged adjusted.Nerfed RPG/LAW range.
+Buffed M40FV ROF.
+
+2024/7/11
+AI Safe Distance rearranged.
+More Buildings with WantsExtraSpace=yes
+AI Extra Count for WEAP/AIRC
+Soviet AI Almost Completed, need reMCV.
+Rearranged TechLevel.
+Nuke/LightningStorm Icon Added.
+
+2024/7/14
+Bus Stop Added. 4 sides.
+MGTK icon added.
+Need reproduce HARV script.
+Locomotive Added, need cargo car and train car.
+
+2024/7/15
+Buffed Katyusha Elite Accuracy.
+AI Fixed bugs.
+
+2024/7/18
+DGGR added.
+Allied AI Finished.
+
+2024/7/18
+Map working.
+
+2024/7/18
+MODDB page live!
+
+2024/7/22
+VerdantHill finished.
+
+2024/7/24
+All01TMD trigger finished, need polish.
+
+2024/7/25
+SpyPlane distinguished
+Bouncing effect reworked, now the best.
+Dagger audio added.
+
+2024/7/28
+SpyPlane Audio Fixed.
+
+2024/7/29
+RDTK added, need to fix FLH. need death weapon.
+Wreck Fire need to test particle system.
+
+2024/7/30
+RDTK Fixed FLH.
+FV added Rad Turret.
+FV and HTK nerfed HP.
+M134 Minigun nerfed damage.
+
+2024/8/1
+RDTK added stolen tech prerequisite
+TAST finished, need to polish weapon.
+
+2024/8/2
+Fire effect fixed.
+Warehouse Added.
+
+2024/8/4
+Castle added.
+NAAIRC remastered.
+Allied 1st Mission finished.
+STRK (Soviet truck) added.
+CAPIPE added.
+
+2024/8/6
+Allied Mission 02 WIP.
+V3 Rocket renamed Nuke Launcher.
+TRPT (Troop Truck) added.
+
+2024/8/7
+CAPC WIP. Need animated tracks and icons.
+
+2024/8/8
+CAPC ADDED. Spy Effect of TECH added.
+Need rearrange Spy Effect for Barracks and Weapon Factory.
+All02SMD Fixed light, tested triggers.
+
+2024/8/9
+All02SMD update.
+
+2024/8/10
+GRFXTXT for both sides.
+NAVENT added.
+
+2024/8/11
+TAST fix size.
+CAWCRN Added.
+AIBasePlanningSide fix.
+Mission polish.
+Theme fix.
+Spy fixed double side problem, need test.
+
+2024/8/12
+LOCOMOTIVE animation added.
+Weapons rearranged.
+DamageSparkSystem added for all tanks.
+LOCOMOTIVE particle need to change spawn location(find a way!).
+
+2024/8/13
+LOCOMOTIVE train smoke fixed.(AutoFire XD)
+
+2024/8/14
+AMBU added.
+Train link problem solved.
+
+2024/8/17
+Train Station added.
+DESO rad gun reworked.
+
+2024/8/18
+Minor fix of code.
+Added poison gas power up.
+
+2024/8/19
+RBMBR WIP.
+
+2024/8/20
+RBMBR Added, Radiation Bombing fixed.
+
+2024/8/21
+Civilian PICK/SUVB/SUVW recolored.
+
+2024/8/22
+New map Mt.Thunderhead started.
+KATYUSHA/STRK/TRPT/OILT fixed window.
+HTNK fixed color. Need fix wheels.
+
+2024/8/23
+TAXI added! 
+
+2024/8/24
+Radiation Bombing improved effects.
+Mt.Thunderhead finished terrain shaping.
+
+2024/8/25
+Fixed Damage spark on Vehicles.
+Siege Chopper Added.
+Smoking effect of Gunfires.
+CAR added.
+
+2024/8/26
+Fixed smoking effect of M60.
+Fix GI and GGI FLH.
+
+2024/8/29
+FTRK added Water Gun.
+RA2TS_L.BIK finished.
+
+2024/8/30
+FTRK added.
+PTRUCK added.
+
+2024/8/31
+WINI added.
+COP added.
+
+2024/9/1
+BUS Added.
+LIMO Added.
+SCHP Wreck added.
+SNIPE projectile changed to InvisibleLow
+
+2024/9/2
+FRLN Added.
+
+2024/9/3
+Mt.Thunderhead WIP.
+SSPYP WIP.
+
+2024/9/4
+SSPYP Added. Icon Added.
+
+2024/9/5
+SSPYP Wreck Added, SCHP and SSPYP wreck need water image.
+Water wreck test completed.
+
+2024/9/6
+SCHP, SSPYP Wreck and water wreck added.
+FV Wreck added.
+MRDR Wreck Added, need to set radar dish.
+Fixed MRDR Die Sound.
+Added Radiation Bomb Explosion Sound.
+
+2024/9/7
+ORCA Wreck and Water wreck added.
+MRDR wreck added radar dish.
+HTK Wreck added.
+DGGR Wreck and Water wreck added.
+SHAD abandoned the Wreck system.WWSB!
+MIG Wreck and water wreck Added.
+Mt.Thunderhead Rain Sound Added.
+BFRT Wreck added, give a DontScore, and fixed crush slow down.
+APOC fixed crush slow down.
+
+2024/9/8
+ASPYP Added, wreck and water wreck added.
+RBMBR Wreck and Water wreck added.
+TAST Wreck Added.
+RDTK Wreck fixed.
+KATYUSHA Wreck added.
+
+2024/9/9
+SHAD Wreck and Water wreck added, I'm a genius!
+
+Check List of Alpha Test:
+
+VXL:
+	SPDP/APDP(ALL:C130/SOV:AN12)
+
+Code:
+	AI add hidden units.
+
+SW:
+	GATECH/NATECH needs new superweapon and cancel force shield.
+
+Future Design:
+	Allied troop truck: GMC M35
+
+2024/9/15:
+Alpha Test Started.
+
+2024/9/16:
+Soviet PDPLANE = SPDP is working.
+
+2024/9/17:
+SPDP added, need wrecks.
+
+2024/9/18:
+Nerfed RPG Launcher/LAW range to 6.
+RPG Launcher Inf Death Fix.
+Buffed Tesla Coil Weapon range to 8.
+
+Need to give ZEP a EMP can't kill.
+Need to rearrange weapon ranges.
+
+
+2024/9/21:
+GAAIRC swapped model, added snow theatre.
+GAAIRC radar won't move without power.
+GAROBO radar won't move without power.
+GAROBO/NARADR added spy effect.
+
+2024/9/22:
+APDP Added.
+
+2024/9/23:
+Old APDP too small, new one WIP.
+
+2024/9/24:
+new APDP finished.
+
+2024/9/25:
+CAHANG (Aviation Hangar) added.
+Buffed SHK shooting range,warhead and damage. Need Test.
+Change DESO armor to flak. Need Test.
+Buffed Stealth Tank shooting range to 7.
+
+2024/9/26:
+CAHANG added.
+TTNK change damage from 180 to 100.
+BFRT buffed HP from 2000 to 2200.
+
+2024/9/28:
+BFRT change HP from 2200 to 2000, BFRTA change HP from 1200 to 1500,nerfed acceleration factor from 0.05 to 0.01.
+
+2024/9/29:
+Buffed TAST HP to 1800.
+Nerfed MRDR HP to 500.
+BFRT Buffed HP from 2000 to 2200, BFRTA change HP from 1500 to 1000.
+RDTK Buffed HP from 1600 to 1700. 
+
+2024/9/30:
+Alpha English version complete.
+
+2024/10/1:
+Story line rearrange.
+
+2024/10/2:
+Added LCRF.
+Added Hero insignia.
+
+2024/10/6:
+Rearranged ALL01TMD
+Fixed Sniper can't clean occpants.
+
+2024/10/7:
+GTNK change VXL.
+Improved light applied.
+ALL05SMD WIP.
+
+2024/10/8:
+DTA Client Recompiled, translation WIP.
+Tested Cargo Plane Take Off, successful.
+ACPG and ACPT added, need rework model for ACPG.
+
+2024/10/9:
+ALL05SMD WIP.
+FVS Added.
+
+2024/10/10:
+ALL05SMD WIP.
+
+2024/10/17:
+TTNK Changed Damage to 150, ROF to 340
+
+2024/10/19:
+NAINTE Remastered.
+HTNK Remastering.
+
+2024/10/22:
+Balancing and Bug fixing.
+
+2024/10/23:
+DTA Client Mission Speed Adjustable.
+
+V0.2 Change
+
+Rebalance:
+1. RPG Trooper and Guardian adjusted the shooting range to 6.
+2. Tesla Coil ajusted the shooting range to 8.
+3. Commando changed weapon.
+4. Prism Tank changed prerequisite to Allied Battle Lab.
+5. Prism Tank can deal more damage to vehicles.
+6. Intruder napalm burning effect deals less damage than before.
+7. Hospital increased strength to 2000.
+8. Reduced self heal effect of Machine Shop and Hospital.
+9. Reduced cost of Assaulter and Guardian to 150 and 350.
+10.Mobile Radar decrease hit point to 500.
+11.Radiation Tank increased hit point to 1700.
+12.Desolator change to flak armor.
+13.Increased damage to concrete buildings for Tesla Tank and Tesla Assaulter.
+14.Decreased radiation level of Radiation Tank shell.
+15.Decreased radiation level of Radiation IFV.
+
+Bug Fixed:
+
+1. Soviet Air Force Command HQ fixed animation when unpowered.
+2. Dagger fixed FLH.
+3. Kirov Airship won't be destroyed when affected by EMP.
+4. Soviet engineer enter IFV will change to repair IFV.
+5. Fixed Tesla Assaulter can't be obtained.
+6. Fixed helicopter crashing glitch.
+7. Fixed Sniper IFV can't hit target.
+8. Fixed wreck can promote problem.
+9. Fixed Nuclear Reactor can't be damaged by Radiation Tank.
+10.Fixed vehicles stop on crushing fence.
+11.Allied Battle Command Center fixed animation when unpowered.
+12.Fixed Commando can't bomb vehicles when elite.
+13.Fixed MiG dealing too much damage to big buildings.
+14.Fixed Intruder dealing too much damage to big buildings.
+15.Fixed miners are in the crate.
+16.Fixed Battle Fortress provides doubled experience.
+17.Fixed wrong data in unit descriptions.
+18.Fixed Radiation Tank deals no damage to Desolator.
+
+Improvement:
+1. RPG Trooper fixed killing animation.
+2. Aircraft repair speed increased.
+3. Buffed trajectory speed for AP/APCR shell.
+4. Commando will use submachinegun to attack light vehicles.
+
+
+New Stuff:
+1. Soviet Paradrop Plane added.
+2. Changed Allied Airforce Command HQ model.
+3. Changed Tech Airfield to Control Tower.
+
+
+V0.3
+
+
+V0.2改动内容：
+平衡性：
+1.火箭筒步兵的主武器和重装兵的部署武器射程削减到6.5格，且无法穿过围墙。
+2.磁暴线圈的射程增加到8格。
+3.特种兵调整武器伤害参数。
+4.光棱坦克的建造前提改为盟军作战实验室。
+5.光棱坦克对载具伤害小幅度提升。
+6.入侵者战机对混凝土建筑的灼烧伤害降低。
+7.市民医院的耐久度提升到2000，耐久度回复降低。
+8.机械车间的耐久度回复降低。
+9.盟军突击兵和重装兵价格降到150和350。
+10.机动雷达车耐久度降低到500。
+11.辐射坦克耐久度提升到1700。
+12.辐射工兵的护甲改为中甲。
+13.磁暴坦克、磁暴突击炮对混凝土建筑伤害增加。
+14.削减了辐射坦克的辐射等级。
+15.削减了辐射步兵车的辐射等级。
+
+BUG修复：
+1.苏联空指部在没电的时候动画会停止。
+2.短剑战机修复了开火坐标。
+3.基洛夫空艇收到电磁脉冲影响也不会瞬间摧毁。
+4.修复了苏联工程师进入多功能步兵车炮塔错误问题。
+5.修复了磁暴突击炮无法被获得的问题。
+6.修复了直升机下落时的问题。
+7.修复了狙击步兵车无法击中目标的问题。
+8.修复了残骸能升级的问题。
+9.修复了核电站不能被辐射坦克造成伤害的问题。
+10.修复了载具碾压栅栏后不前进的问题。
+11.盟军作战控制中心在没电的时候动画会停止。
+12.修复了特种兵升级精英后无法炸载具的问题。
+13.修复了米格战机对大型建筑的伤害过高问题。
+14.修复了入侵者战机对大型建筑的伤害过高问题。
+15.修复了箱子能开出矿车的问题。
+16.修复了战斗要塞双倍经验的问题。
+17.修复了单位介绍中的数据错误。
+18.修复了辐射坦克打辐射工兵没有伤害的问题。
+
+改进：
+1.火箭筒步兵消灭步兵的动画改成了直接击碎。
+2.增加了AP弹和APCR弹的初速度。
+3.雷达和作战控制中心被间谍渗透后地图全黑。
+4.盟军紧急电源可以被间谍渗透，效果为【电力释放】战术重置倒计时。
+5.特种兵在攻击轻型载具时将会使用冲锋枪。
+6.步兵的升级图标缩小。
+
+新内容：
+1.苏联伞兵机更换为安东诺夫运输机。
+2.盟军伞兵机更换为大力神运输机。
+3.盟军空指部更换模型。
+4.科技机场替换为科技塔台。
+
+
+V0.3改动内容:
+
+平衡性：
+1.磁暴步兵对建筑伤害降低。
+2.磁暴坦克射速降低，可在移动中开火，耐久度提升到1550。
+3.犀牛坦克增加起步速度和转向速度。
+4.多功能步兵车极速增加到9，起步速度增加。
+5.防空履带车极速增加到7，起步速度增加。
+6.光棱坦克起步速度小幅度增加。
+7.精英级别的坦克将熟练掌握射击技巧，避免跳弹。
+8.修复了部分坦克建造时间过长的问题。
+9.修复了入侵者攻击机燃烧弹攻击建筑伤害过低的问题。
+10.火力箱子和护甲箱子的增益系数降低。
+11.间谍视野降低到6格。
+12.军犬的生命值增加，视野略微降低。
+13.动员兵、突击兵、火箭筒步兵、辐射工兵视野增加。
+14.隐形坦克、辐射坦克、隐形运兵车、视野降低。
+15.战斗要塞、攻城直升机视野增加。
+16.天启坦克转向速度降低。
+17.磁暴突击炮装填时间增加，并且有导电效果。取消电磁脉冲释放。
+18.攻坚直升机伤害提升，射程提升。
+19.多功能步兵车的防空导弹爆发速度略微降低。
+20.机动雷达车取消武器，降低价格为1600。
+21.天启坦克装填时间增加到18秒。
+22.晓鹰直升机现在无法升级，但乘员依然可以开火后升级。
+
+BUG修复：
+1.修复了狙击手无法杀死建筑驻军的问题。
+2.修复了入侵者攻击机的开火动画坐标。
+3.修复了辐射坦克开火弹窗的问题。
+4.修复了部分单位升级增加视野无效的问题。
+5.修复了晓鹰直升机在降落瞬间起飞被击毁的图像bug。
+
+改进：
+1.防空履带车模型修正黑点。
+2.灰熊坦克更换模型。
+3.更换了情报中心的模型。
+4.犀牛坦克更换模型。
+5.增加了间谍偷级图标。
+6.更改了载具模型的光源。
+7.更换了遭遇战的载入图。
+
+新内容：
+1.增加任务单位——灰熊坦克（极地型）
+2.增加任务单位——犀牛坦克（原型车）
+
+Add New Map
+
+
+V0.3剩余内容：
+1. 直升机旋翼碎片去掉所属色
+2.
