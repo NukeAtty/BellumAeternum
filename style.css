@@ -1634,6 +1634,17 @@ footer {
 	color: #f00;
 }
 
+.blog-content figcaption {
+	font-family: monospace;
+	font-size: 14px;
+	background-color: #333;
+	text-align: center;
+	border: 1px dashed #fff;
+	width: 20%;
+	margin: auto;
+	padding: 0.5em;
+}
+
 .general-table {
 	margin-bottom: 1em;
 }
@@ -2532,6 +2543,7 @@ footer {
 		flex-flow: column;
 		justify-content: center;
 		background-image: url(src/pattern.svg);
+		background-blend-mode: luminosity;
 		border-radius: 10px;
 		border: 2px inset #333;
 		margin: auto;
