@@ -1094,7 +1094,6 @@ footer {
 	height: auto;
 }
 
-
 .progress {
 	margin: auto 20vw;
 	padding: 1vw;
@@ -1108,7 +1107,7 @@ footer {
 	display: block;
 	margin: auto;
 	border: 4px inset #cccccc;
-	border-radius: 48px;
+	border-radius: 24px;
 }
 
 .dev-gauge {
