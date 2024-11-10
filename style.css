@@ -1360,6 +1360,7 @@ footer {
 	border-radius: 20px;
 	border: 5px outset #333;
 	padding: 0.5vw;
+	margin: 0 0.5vw;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 }
 
@@ -3306,6 +3307,17 @@ footer {
 	.blog-content img {
 		max-width: 100%;
 		height: auto;
+	}
+
+	.blog-content figcaption {
+		font-family: monospace;
+		font-size: 12px;
+		background-color: #333;
+		text-align: center;
+		border: 1px dashed #fff;
+		width: 100%;
+		margin: auto;
+		padding: 0.5em;
 	}
 
 	.general-table {
