@@ -571,7 +571,7 @@ footer {
 	color: #333;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: normal;
-	font-size: 24px;
+	font-size: 20px;
 	margin: 0.5em 0;
 	padding: 0.5em;
 	background-color: #ffffff;
@@ -580,7 +580,7 @@ footer {
 
 .news-container-right a:hover {
 	color: #f00;
-	font-size: 24px;
+	font-size: 20px;
 	border-left: 5px solid #c00;
 }
 
