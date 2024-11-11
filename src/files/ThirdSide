@@ -1,59 +1,62 @@
 ThirdSide:	P.L.A.
 	Buildings: 
-		Power Plant
+		Power Plant（发电厂）
 
-		Ore Refinery
+		Ore Refinery（矿石精炼厂）
 
-		Barracks
+		Barracks（兵营）
 
-		Weapon Factory
+		Weapon Factory（武器工厂）
 
-		Intelligence Bureau
+		Intelligence Bureau（情报局）
 
-		Airpad
+		Airpad（停机坪）
 
-		Battle Lab
+		Battle Lab（作战实验室）
 
-		Nitro Unit (AddOn)
+		Nitro Unit (AddOn)（氮气装置）
 
-		Supply Center
+		Supply Center（补给中心）
+			Algricultural Support（农业支援）
 
 	Defense:
 		Wall
 
-		Battle Bunker
+		Battle Bunker（战斗碉堡）
 
-		Tank Bunker
+		Tank Bunker（坦克碉堡）
 
-		Tunnel Pivot
-			Tunnel Advancing
+		Tunnel Hub（地道枢纽）
+			Tunnel Advancing（地道掘进）
 
-		Shockwave Device
+		Shockwave Device（微波发射器）
 
 	Infantries:
-		Vanguard
+		Vanguard（尖兵）
 
-		Tank Hunter
+		Tank Hunter（反坦克兵）
 
-		Engineer
+		Engineer（工程师）
 
-		Breacher
+		Breacher（爆破兵）
 
-		Agent
+		Agent（特工）
 
 	Vehicles:
-		Amphibious Miner
+		Type 63 Amphibious Miner（两栖采矿车）
 
-		 Tank
+		Type 59 Battle Tank
 
-		Flak Tank
+		Type 63 Flak Tank（防空坦克）
 
-		APC
+		Type 63 Amphibious Tank（两栖坦克）
 
-		Mine Layer
+		Type 60 Mine Layer（布雷车）
 
-		Microwave Tank
+		Type 59 Kunlun Howitzer（昆仑榴弹炮）
 
-		WZ-111
+		Obj.111 （）
+
+		Type 56 
 
 	Aircraft:
