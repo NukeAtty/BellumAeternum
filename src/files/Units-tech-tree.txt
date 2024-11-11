@@ -1,9 +1,16 @@
 Allied:
-	M26 Pershing -> M46 Patton -> T42 -> M54 -> M54A1 -> M54A2
-
-	M54 Varients:
-		M54A1: 
+	M26 Pershing -> T42 -> M54 -> M54A1 -> M54A2
+	T67 -> T67 GMC -> T67 PMC
 
 Soviet:
-	A-43(T-34M) -> T-44 -> T-44-100 -> T-56 -> T-56A -> T-56B
+	T-44 -> A-56 -> T-56A -> T-56B
+	T-44 -> T-50 -> TT-50
+	KV-5 -> KV-550
 
+PLA:
+	Type 59 -> Type 59 L
+	T-34-85 -> Type 63 FK
+	PT-76 -> Type 63 LQ
+	
+	WZ-111 -> WZ-311
+	WZ-111 -> WZ-111-6

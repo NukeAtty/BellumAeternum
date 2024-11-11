@@ -13,7 +13,7 @@ AIFireSaleDelay=0         ; integer, number of frames
 AIAllToHunt=true          ; boolean
 GatherWhenMCVDeploy=true  ; boolean
 
-[GAAIRC]
+[GAAIRC]		;Nightly Build Phobos
 Units.RepairRate=		;Default URepairRate
 Units.RepairStep=		;Default RepairStep
 Units.RepairPercent=  ; floating point value, percents or absolute
