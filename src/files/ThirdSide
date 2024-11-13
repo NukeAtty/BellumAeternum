@@ -1,5 +1,5 @@
 ThirdSide:	P.L.A.
-	Buildings: 
+	Buildings: (POWR,REFN,BRRK,WEAP,RADR,AIRC,TECH,ECON,APWR)
 		Power Plant（发电厂）
 
 		Ore Refinery（矿石精炼厂）
@@ -19,46 +19,50 @@ ThirdSide:	P.L.A.
 		Supply Center（补给中心）
 			Algricultural Support（农业支援）
 
-	Defense:
-		Wall
+	Defense: (WALL,BNKR,FLAK,TOWR,UTIL1,UTIL2)
+		Wall $100
 
-		Battle Bunker（战斗碉堡）
+		Battle Bunker（战斗碉堡）$500
 
-		Tank Bunker（坦克碉堡）
+		Tank Bunker（坦克碉堡） $500
 
-		Tunnel Hub（地道枢纽）
+		Tunnel Hub（地道枢纽） $1000
 			Tunnel Advancing（地道掘进）
 
-		Shockwave Device（微波发射器）
+		Shockwave Device（微波发射器） $5000
 
-	Infantries:
-		Vanguard（尖兵）
+	Infantries: (BSE,AT,ENGI,ASLT,ADV)
+		Vanguard（尖兵）$100
 
-		Tank Hunter（反坦克兵）
+		Tank Hunter（反坦克兵）$300
 
-		Engineer（工程师）
+		Engineer（工程师）$500
 
-		Breacher（爆破兵）
+		Breacher（爆破兵）$200
 			Primary:
 			Secondary: 
 
-		Agent（特工）
+		Agent（特工）$1000
 
-	Vehicles:
-		Type 63 Amphibious Miner（两栖采矿车）
+	Vehicles: (T1:MINR/TNK/AATK/ T2:UTIL1/UTIL2/UTIL3 T3: TNK/SIEGE)
+		T1:
+		Type 63 Amphibious Miner（两栖采矿车）$1200
 
-		Type 59 Charger Tank (战马坦克)
+		Type 59 Charger Tank (战马坦克) $1400
 
-		Type 63 Flak Tank（防空坦克）
+		Type 63 Flak Tank（防空坦克） $800
 
-		Type 63 Amphibious Tank（两栖坦克）
+		T2:
+		Type 63 Amphibious Tank（两栖坦克） $1000
 
-		Type 60 Mine Layer（布雷车）
+		Type 60 Mine Layer（布雷车）$800
 
-		Type 59 Kunlun Howitzer（昆仑榴弹炮）
+		Type 59 Kunlun Howitzer（昆仑榴弹炮）$1600
 
-		Obj.111 Draconis Tank（真龙坦克）
+		T3:
+		Obj.111 Draconis Tank（真龙坦克）$2500
 
-		Type 56 Eagle Attacker （雄鹰攻击机）
+		
 
 	Aircraft:
+		Type 56 Eagle Attacker （雄鹰攻击机）$1800
