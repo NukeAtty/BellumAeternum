@@ -1,64 +1,100 @@
 ThirdSide:	P.L.A.
-	Buildings: 
-		Power Plant（发电厂）
+	Buildings: (POWR,REFN,BRRK,WEAP,RADR,AIRC,TECH,ECON,APWR)
+		Power Plant（发电厂）	$600
+			ID: ZAPOWR
+			Prerequisite: ZACNST
 
-		Ore Refinery（矿石精炼厂）
+		Ore Refinery（矿石精炼厂） $2000
+			ID: ZAREFN
+			Prerequisite: ZAPOWR
 
-		Barracks（兵营）
+		Barracks（兵营） $1000
+			ID: ZABRCK
+			Prerequisite: ZAPOWR
 
-		Weapon Factory（武器工厂）
+		Weapon Factory（武器工厂） $2000
+			ID: ZAWEAP
+			Prerequisite: ZAPOWR,ZABRCK
 
-		Intelligence Bureau（情报局）
+		Intelligence Bureau（情报局） $1000
+			ID: ZAINTB
+			Prerequisite: ZAPOWR,ZAREFN
 
-		Airpad（停机坪）
+		Airpad（停机坪） $1000
+			ID: ZAAIRC
+			Prerequisite: ZAPOWR,ZAINTB
 
-		Battle Lab（作战实验室）
+		Battle Lab（作战实验室） $3000
+			ID: ZATECH
+			Prerequisite: ZAWEAP,ZAINTB
 
-		Nitro Unit (AddOn)（氮气装置）
+		Nitro Unit (AddOn)（氮气装置） $300
+			ID: ZAUPWR
+			Prerequisite: ZATECH
 
-		Supply Center（补给中心）
-			Algricultural Support（农业支援）
+		Supply Center（补给中心） $2500
+			ID: ZAINTB
+			Prerequisite: ZATECH
+			ST: Algricultural Support（农业支援）
 
-	Defense:
-		Wall
+	Defense: (WALL,BNKR,FLAK,TOWR,UTIL1,UTIL2)
+		Wall $100
+			ID: ZAWALL
+			Prerequisite: ZACNST
 
-		Battle Bunker（战斗碉堡）
+		Battle Bunker（战斗碉堡）$500
+			ID: ZABNKR
+			Prerequisite: ZABRCK
 
-		Tank Bunker（坦克碉堡）
+		Tank Bunker（坦克碉堡） $500
+			ID: ZATBKR
+			Prerequisite: ZAWEAP
 
-		Tunnel Hub（地道枢纽）
+		AA Gun (高射炮) $1000
+			ID: ZAAAGN
+			Prerequisite: ZAPOWR,ZAINTE
+
+		Tunnel Hub（地道枢纽） $1000
+			ID: ZATUNH
+			Prerequisite: ZAINTE
 			Tunnel Advancing（地道掘进）
 
-		Shockwave Device（微波发射器）
+		[SW]Shockwave Device（微波发射器） $5000
 
-	Infantries:
-		Vanguard（尖兵）
+	Infantries: (BSE,AT,ENGI,ASLT,ADV)
+		Vanguard（尖兵）$100
 
-		Tank Hunter（反坦克兵）
+		Tank Hunter（反坦克兵）$300
 
-		Engineer（工程师）
+		Engineer（工程师）$500
 
-		Breacher（爆破兵）
+		Breacher（爆破兵）$200
 			Primary:
 			Secondary: 
 
-		Agent（特工）
+		Agent（特工）$1000
 
-	Vehicles:
-		Type 63 Amphibious Miner（两栖采矿车）
+	Vehicles: (T1:MINR/TNK/AATK/ T2:UTIL1/UTIL2/UTIL3 T3: TNK/SIEGE)
+		T1:
+		Type 63 Amphibious Miner（两栖采矿车）$1200
 
-		Type 59 Charger Tank (战马坦克)
+		120 Charger Tank (战马坦克) $1400
 
-		Type 63 Flak Tank（防空坦克）
+		301 Flak Tank（防空坦克） $800
+			特征：62式底盘+二连装37毫米高炮
 
-		Type 63 Amphibious Tank（两栖坦克）
+		T2:
+		211 Amphibious Tank（两栖坦克） $1000
 
-		Type 60 Mine Layer（布雷车）
+		Type 60 Mine Layer（布雷车）$800
 
-		Type 59 Kunlun Howitzer（昆仑榴弹炮）
+		Type 59 Kunlun Howitzer（昆仑榴弹炮）$1600
 
-		Obj.111 （）
-
-		Type 56 Eagle Attacker （雄鹰攻击机）
+		T3:
+		111-6 Draconis Tank（真龙坦克）$2500
 
 	Aircraft:
+		T2:
+		Type 56 Eagle Attacker （雄鹰攻击机）$1800
+
+		T3:
