@@ -1,34 +1,62 @@
 ThirdSide:	P.L.A.
 	Buildings: (POWR,REFN,BRRK,WEAP,RADR,AIRC,TECH,ECON,APWR)
 		Power Plant（发电厂）	$600
+			ID: ZAPOWR
+			Prerequisite: ZACNST
 
 		Ore Refinery（矿石精炼厂） $2000
+			ID: ZAREFN
+			Prerequisite: ZAPOWR
 
 		Barracks（兵营） $1000
+			ID: ZABRCK
+			Prerequisite: ZAPOWR
 
 		Weapon Factory（武器工厂） $2000
+			ID: ZAWEAP
+			Prerequisite: ZAPOWR,ZABRCK
 
 		Intelligence Bureau（情报局） $1000
+			ID: ZAINTB
+			Prerequisite: ZAPOWR,ZAREFN
 
 		Airpad（停机坪） $1000
+			ID: ZAAIRC
+			Prerequisite: ZAPOWR,ZAINTB
 
 		Battle Lab（作战实验室） $3000
+			ID: ZATECH
+			Prerequisite: ZAWEAP,ZAINTB
 
 		Nitro Unit (AddOn)（氮气装置） $300
+			ID: ZAUPWR
+			Prerequisite: ZATECH
 
 		Supply Center（补给中心） $2500
-			Algricultural Support（农业支援）
+			ID: ZAINTB
+			Prerequisite: ZATECH
+			ST: Algricultural Support（农业支援）
 
 	Defense: (WALL,BNKR,FLAK,TOWR,UTIL1,UTIL2)
 		Wall $100
+			ID: ZAWALL
+			Prerequisite: ZACNST
 
 		Battle Bunker（战斗碉堡）$500
+			ID: ZABNKR
+			Prerequisite: ZABRCK
 
 		Tank Bunker（坦克碉堡） $500
+			ID: ZATBKR
+			Prerequisite: ZAWEAP
 
 		AA Gun (高射炮) $1000
+			ID: ZAAAGN
+			Prerequisite: ZAPOWR,ZAINTE
 
 		Tunnel Hub（地道枢纽） $1000
+			ID: ZATUNH
+			Prerequisite: ZAINTE
 			Tunnel Advancing（地道掘进）
 
 		[SW]Shockwave Device（微波发射器） $5000
