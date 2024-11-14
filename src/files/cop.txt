@@ -1,0 +1,6 @@
+Campaign Object-oriented Producer
+
+需要解决的问题：
+1. ini文件的读取和写入
+2. UI的设计
+3. 功能的添加
