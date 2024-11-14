@@ -20,4 +20,4 @@ def reader(text):
             captured_text.append(line.strip())
     
     # Join all captured lines into a single string
-    return ' '.join(captured_text)
+    return captured_text

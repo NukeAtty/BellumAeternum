@@ -17,4 +17,7 @@ root.resizable(True, True)
 message = tk.Label(root, text="战役面向对象制作器")
 message.pack()
 
+message = tk.Lable(root, text="触发")
+
+
 root.mainloop()

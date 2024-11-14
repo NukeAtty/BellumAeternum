@@ -1,5 +1,6 @@
 [Triggers]
-ID=Americans,0,GameStart,0,1,1,1,0
+01000000=Americans,<none>,GameStart,0,1,1,1,0
+01000002=Russians,<none>,EnemyAttack,0,1,1,1,0
 [Events]
 ID=NUM,E1,E1P1,E1P2
 [Actions]
