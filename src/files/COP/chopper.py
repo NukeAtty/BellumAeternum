@@ -1,6 +1,6 @@
 from scripter import *
 
-def TriggerChopper(CapturedText):
+def TriggerChopper(CapturedTriggers):
 	FirstSplit = []
 	TriggerIDList = []
 	TriggerHouseList = []
@@ -37,3 +37,6 @@ def TriggerChopper(CapturedText):
 		Trigger = Triggers(ID,House,LinkedTrigger,Name,Disabled,Easy,Normal,Hard,Persistence)
 		TriggersList.append(Trigger)
 	return TriggersList
+
+def EventChopper(CapturedEvents):
+	

@@ -4,8 +4,13 @@ from chopper import *
 from scripter import *
 
 COPWorkflow = loader("workflow.txt")
-InitialFile = reader(COPWorkflow)
-Triggers = TriggerChopper(InitialFile)
+InitialTriggers = TriggerReader(COPWorkflow)
+Triggers = TriggerChopper(InitialTriggers)
+InitialEvents = EventReader(COPWorkflow)
+Events = EventChopper(InitialEvents)
 
+print("Triggers: ")
 for x in range (0, len(Triggers)):
 	Triggers[x].printTrigger()
+
+print("Events: ")

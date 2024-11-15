@@ -1,4 +1,4 @@
-def reader(text):
+def TriggerReader(text):
     # Split the text by lines
     lines = text.readlines()
     # Initialize a flag to detect when we are inside the trigger block
@@ -20,4 +20,19 @@ def reader(text):
             captured_text.append(line.strip())
     
     # Join all captured lines into a single string
+    return captured_text
+
+def EventReader(text):
+    lines = text.readlines()
+    capturing = False
+    captured_text = []
+
+    for line in lines:
+        if '[Events]' in line:
+            capturing = True
+            continue
+        elif '[' in line and capturing:
+            break
+        elif capturing:
+            captured_text.append(line.strip())
     return captured_text
