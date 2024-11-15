@@ -11,8 +11,8 @@ def TriggerChopper(CapturedTriggers):
 	TriggerNormalList = []
 	TriggerHardList = []
 	TriggerPersistenceList = []
-	for i in range (0,len(CapturedText)):
-		FirstSplit.append(CapturedText[i].split("="))
+	for i in range (0,len(CapturedTriggers)):
+		FirstSplit.append(CapturedTriggers[i].split("="))
 		TriggerIDList.append(FirstSplit[i][0])
 		TriggerHouseList.append(FirstSplit[i][1].split(",")[0])
 		TriggerLinkedTriggerList.append(FirstSplit[i][1].split(",")[1])
@@ -24,7 +24,7 @@ def TriggerChopper(CapturedTriggers):
 		TriggerPersistenceList.append(FirstSplit[i][1].split(",")[7])
 
 	TriggersList = []
-	for j in range (0,len(CapturedText)):
+	for j in range (0,len(CapturedTriggers)):
 		ID = TriggerIDList[j]
 		House = TriggerHouseList[j]
 		LinkedTrigger = TriggerLinkedTriggerList[j]
@@ -39,4 +39,8 @@ def TriggerChopper(CapturedTriggers):
 	return TriggersList
 
 def EventChopper(CapturedEvents):
-	
+	FirstSplit = []
+	for i in range (0,len(CapturedEvents)):
+		FirstSplit.append(CapturedEvents[i].split("="))
+		EventIDList.append(CapturedEvents[i][0])
+		EventQuantityList.append()
