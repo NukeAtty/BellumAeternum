@@ -49,4 +49,3 @@ def EventChopper(CapturedEvents):
 		SecondSplit.append(CapturedEvents[i][1])
 	for j in range (0,len(CapturedEvents)):
 		EventQuantityList.append(SecondSplit[i].split(",")[0])
-		if 
