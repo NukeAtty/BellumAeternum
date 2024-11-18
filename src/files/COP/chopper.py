@@ -40,7 +40,13 @@ def TriggerChopper(CapturedTriggers):
 
 def EventChopper(CapturedEvents):
 	FirstSplit = []
+	EventIDList = []
+	SecondSplit = []
+	EventQuantityList = []
 	for i in range (0,len(CapturedEvents)):
 		FirstSplit.append(CapturedEvents[i].split("="))
 		EventIDList.append(CapturedEvents[i][0])
-		EventQuantityList.append()
+		SecondSplit.append(CapturedEvents[i][1])
+	for j in range (0,len(CapturedEvents)):
+		EventQuantityList.append(SecondSplit[i].split(",")[0])
+		if 
