@@ -21,14 +21,16 @@ One night after the Allied refuse to leave, the Soviet army starts to invade the
 
 1955 - Prologue
 
-
-Season 1 - 1955 ~ 1960
+Season 1 - 1955 ~ 1956
 	Allied: Counter Strike
 	Soviet: Red Dawn
-Season 2 - 1960 ~ 1965
+Season 2 - 1957 ~ 1958
+
+Season 3 - 1959 ~ 1962
 	Allied: One Path End
 	Soviet: Red Alert
-Season 3 - 1965 ~ 1970
+
+Season 4 - 1963 ~ 1964
 	Allied: War Eternal
 	Soviet: 
 
@@ -233,15 +235,17 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 		5. Lightning Storm coming.
 		6.
 
-Soviet Campaign Season 2
-Mission 1: Out of the Shadows
+Soviet Campaign Season 4
+Mission 1: Out of the Shadows - 
 
-Mission N: Tesla Shock（磁暴震荡） - Leipzig, Germany
+Mission 5: Tesla Shock（磁暴震荡） - Leipzig, Germany
 	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
 
-Soviet Campaign Season 3
+Mission 6: Order from Shadow (暗影指令) - Soviet Russia
+	Objective: Raid the Vila of Khrushchev
+
+Soviet Campaign Season 5
 Mission 1: (Полноспектральное заградительное подавление)Full-spectrum Barrage Jamming - Moscow, Soviet Russia
 
-
-Mission X: Unloyalty - Prague, Czechoslovakia
+Mission 5: Unloyalty - Prague, Czechoslovakia
 	Objective: Control the airport
