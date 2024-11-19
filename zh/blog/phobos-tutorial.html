@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title> | 万世之战：为红警2带来前所未有的体验</title>
+	<style>
+		#version {
+			vertical-align: middle;
+			font-size: 12px;
+			font-family: monospace;
+			background-color: #f00;
+			border-radius: 4px;
+			margin: auto;
+			padding: 1px;
+			color: #ccc;
+			text-align: center;
+		}
+
+		#versionx {
+			vertical-align: middle;
+			font-size: 12px;
+			font-family: monospace;
+			background-color: #900;
+			border-radius: 4px;
+			margin: auto;
+			padding: 1px;
+			color: #ccc;
+			text-align: center;			
+		}
+
+		code {
+			font-family: monospace;
+			font-size: 12px;
+			font-weight: normal;
+			border: 1px dotted #fff;
+			border-radius: 4px;
+			background-color: #000;
+			padding: 0.2em 0.4em;
+			margin: 0 0.2em 0 0;
+			user-select: text;
+			text-align: center;
+		}
+
+		#comment {
+			border: 1px dashed #fff;
+			font-size: 14px;
+			font-weight: 100;
+			padding: 0.2em;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+		<div class="responsive-navigation">
+			<a href="https://ra2be.com/zh"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="../archives.html">档案库</a>
+				<a href="../blog.html">博客</a>
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1></h1>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>最后更新时间：<time datetime="2024-11-19 18:00">2024/11/19</time></p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+							<a id="h2" href="#new-enhanced-logic">全新或增强逻辑</a>
+							<a id="h2" href="#fixed-logic">修复或改善逻辑</a>
+							<a id="h2" href="#ai-script">AI编写和地图编辑</a>
+							<a id="h2" href="#user-interface">用户图形界面</a>
+							<a id="h2" href="#misc">杂项</a>
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<h1>Phobos中文教程</h1>
+					<h2>前言</h2>
+					<h3>关于教程</h3>
+					<p>本教程基于Phobos的英文版教程和中文版教程编撰，转载请署名nuke，并给出本页面的超链接。</p>
+					<p>因为Phobos版本比较多，前言中会做出相应的介绍，以免实操的时候出现“货不对板”的情况。</p>
+					<h3>Phobos的版本和说明</h3>
+					<p>Phobos总共有三个类型：</p>
+					<ol>
+						<li>稳定版：通过大量测试，Bug最少的版本。时至教程编撰日期，Phobos的稳定版本号为v0.3.0.1。</li>
+						<li>开发版：通过测试，Bug比较少的版本。时至教程编撰日期，Phobos的开发版为b44。</li>
+						<li>测试版：集合了最新功能，但可能存在Bug。</li>
+					</ol>
+					<p>如果是新入门的Modder，比较推荐使用稳定版。如果是比较有经验的Modder，推荐使用功能更多的开发版。如果是深度精通代码的Modder可以使用测试版，但这类Modder通常能看懂原文，所以不做讨论。</p>
+					<p><b>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">bXX</span>的标签标记开发版版本号。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span></b>字样。</p>
+					<h3>术语目录表</h3>
+					<ul>
+						<ol>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</ol>
+						<ol>布尔值：开关参数值，填入true或false，或者yes或no。</ol>
+					</ul>
+					<!--New Logic-->
+					<h2 id="new-enhanced-logic">全新或增强逻辑</h2>
+					<h3 id="new-types">新的机制</h3>
+					<button type="button" class="collapsible">附加效果（AE）<span id="version">b41</span></button>
+					<div class="col-content">
+						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
+						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<span>DurationOverrides</span>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
+						<p><code>Cumulative</code>定义该附加效果的时长是否可叠加，参数为布尔值。如果被设置为<code>True</code>，表示相同附加效果的存在时长可以叠加。</p>
+						<p><code>Cumulative.MaxCount</code>定义该附加效果的最大叠加层数。为正整数来定义相同附加效果可以叠加的层数，如果设为负数，相同附加效果则可以无限叠加。如果某单位的附加效果已经达到了可携带的最高层数但继续附加，则最新的附加效果会替换掉持续时长最短的效果。</p>
+						<p><code>Powered</code>定义拥有该附加效果的单位在<abbr title="遥控坦克断电或被电磁脉冲击中">瘫痪</abbr>中是否会改变附加效果的动画。</p>
+						<p><code>DiscardOn</code>定义该附加效果会在什么条件下会消失，默认为<code>none</code>，可以填入多个参数，参数详解如下：</p>
+						<ul>
+							<li><code>entry</code>：单位离开地图时，如进入建筑或进入载具。</li>
+							<li><code>move</code>：单位移动时，如果是建筑则无视这个效果。</li>
+							<li><code>stationary</code>：单位静止时，如果是建筑则无视这个效果。</li>
+							<li><code>drain</code>：单位被带有<code>DrainWeapon=true</code>的吸取武器攻击时。</li>
+							<li><code>inrange</code>：单位在附加效果来源的攻击范围之内时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
+							<li><code>outofrange</code>：单位在附加效果来源的攻击范围之外时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
+							<li><code>firing</code>：单位开火时，子机武器或吸取武器等特殊武器同样受影响。</li>
+						</ul>
+						<p><code>PenetratesIronCurtain</code>定义该附加效果是否对带有铁幕的单位有效，参数为布尔值。</p>
+						<p><code>PenetratesForceShield</code>定义该附加效果是否对带有力场护盾的单位有效，参数为布尔值，默认为<code>PenetratesIronCurtain</code>的值。</p>
+						<br>
+						<p><code>Animation</code>定义该附加效果的动画，该动画会自动循环播放，无视Art.ini中的LoopCount。</p>
+					</div>
+					<button type="button" class="collapsible">自定义辐射类型</button>
+					<div class="col-content">
+						<p>现在任何武器都可以拥有自定义的辐射类型。使用自定义辐射需要创建一个新的注册表<code>[RadiationTypes]</code>，并注册新的辐射名称。</p>
+						<p><b>全局定义：</b></p>
+						<p>开启自定义辐射参数需要在全局代码<code>[Radiation]</code>中加入<code>UseGlobalRadApplicationDelay</code>，参数为布尔值。如果设定为True，那么新增加的辐射会使用全局的辐射参数，反之设定为False，那么则可以定义辐射的属性。</p>
+						<p><b>辐射定义：</b></p>
+						<p><code>RadApplicationDelay.Building</code>定义该辐射类型的对建筑的效果，参数为整数，填入大于0的值将伤害建筑。</p>
+						<p><code>RadBuildingDamageMaxCount</code><span id="version">b43</span>限制辐射对建筑的最多伤害的次数，参数为整数。和<code>CellSpread</code>的机制类似，因为建筑通常占有多个地格，因此辐射也会对建筑造成每个地格叠加的伤害，所以需要用这段代码来控制伤害。填入负值代表不做限制。</p>
+						<p><code>RadSiteWarhead.Detonate</code>定义是否让辐射的弹头附带其他弹头效果而不是单纯的伤害比例控制，参数为布尔值。原版中辐射场的弹头只用于伤害控制，因此单位走到辐射场中不会有受击的动画。</p>
+						<p id="comment">笔者注：若非特殊需求建议把这个功能关掉，非常消耗性能。</p>
+						<p><code>RadSiteWarhead.Detonate.Full</code>定义是否只保留弹头的范围伤害和Phobos专属的弹头效果，参数为布尔值。</p>
+						<p><code>RadHasOwner</code>定义该辐射类型是否附带所属信息，填入布尔值。填入true则被该辐射所击杀的敌军单位会记录在玩家游戏数据中，同时也可以自定义其他相关的弹头设置，比如利用<code>AffectsAllies</code>来控制辐射是否影响友军。</p>
+						<p><code>RadHasInvoker</code>定义该辐射类型是否附带击杀者信息，填入布尔值。填入true则释放该辐射的单位可以通过辐射击杀的单位获得经验值。</p>
+						<p><b>为武器添加自定义辐射：</b></p>
+						<p><code>RadType</code>：定义武器附带的辐射类型。</p>
+						<p><b>代码示例：</b></p>
+						<p>在<code>rules.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[Radiation]	;全局控制</p>
+							<p>UseGlobalRadApplicationDelay=no ;开启自定义辐射参数</p>
+							<br>
+							<p>[RadiationTypes]</p>
+							<p>0=NewRadiation</p>
+							<br>
+							<p>[NewWeapon]</p>
+							<p>RadType=NewRadiation</p>
+							<br>
+							<p>[NewRadiation]</p>
+							<p>RadDurationMultiple=1 ;控制辐射的存续时间，公式为RadLevel * RadDurationMultiple<p>
+							<p>RadApplicationDelay=16 ;控制辐射造成伤害的间隔</p>
+							<p>RadApplicationDelay.Building=32 ;控制辐射对建筑造成伤害的间隔</p>
+							<p>RadBuildingDamageMaxCount=-1 ;控制辐射对建筑造成伤害的最高次数</p>
+							<p>RadLevelMax=500 ;控制辐射的在单元格内最高值</p>
+							<p>RadLevelDelay=90 ;重新计算辐射量的间隔</p>
+							<p>RadLightDelay=90 ;重新计算辐射光照的间隔</p>
+							<p>RadLevelFactor=0.2 ;辐射伤害参数，公式为RadLevel * RadLevelFactor</p>
+							<p>RadLightFactor=0.1 ;辐射光照参数</p>
+							<p>RadTintFactor=1.0 ;辐射染色参数</p>
+							<p>RadColor=0,255,0  ;辐射颜色的RGB值</p>
+							<p>RadSiteWarhead=RadSite ;辐射伤害的弹头</p>
+							<p>RadSiteWarhead.Detonate=false ;辐射弹头效果是否开启</p>
+							<p>RadSiteWarhead.Detonate.Full=true ;是否开启全部弹头效果</p>
+							<p>RadHasOwner=false ;辐射是否带所属</p>
+							<p>RadHasInvoker=false ;辐射击杀是否给辐射源单位经验</p>
+						</div>
+					</div>
+					<button type="button" class="collapsible">激光拖尾</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">护盾</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<h3 id="enhanced-animation">动画</h3>
+					<button type="button" class="collapsible">动画生成单位</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">动画附加粒子系统</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">自定义动画可视方</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">独立的动画音效</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<h3 id="enhanced-building">建筑</h3>
+					<button type="button" class="collapsible">自定义建筑延伸</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">建筑升级扩展</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">可摧毁障碍建筑</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">电厂增幅器</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">间谍效果</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<!--Enhanced Infantries-->
+					<h3 id="enhanced-infantry">步兵</h3>
+					<button type="button" class="collapsible">匍匐/部署步兵开火坐标</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">默认间谍伪装</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">非人类步兵死亡动画</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">分享弹药</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">奴隶阵营自定义</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">自定义奴隶解救语音</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">在水中使用陆地动作序列</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<!--Enhanced Projectile-->
+					<h3 id="enhanced-projectile">抛射体</h3>
+					<button type="button" class="collapsible">抛射体拦截</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">弹道类抛射体</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">溅射逻辑扩展</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">抛射体阻挡逻辑扩展</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+					<button type="button" class="collapsible">末端反射武器</button>
+					<div class="col-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="allied.html">盟军</a></li>
+					<li><a href="soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>文章</p>
+				<ul>
+					<li><a href="blog.html#concept">概念</a></li>
+					<li><a href="blog.html#tutorial">教程</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#contact">联系作者</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
+		</div>
+	</footer>
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var content = this.nextElementSibling;
+		    if (content.style.maxHeight){
+		      content.style.maxHeight = null;
+		    } else {
+		      content.style.maxHeight = content.scrollHeight + "px";
+		    } 
+		  });
+		}
+	</script>
+</body>

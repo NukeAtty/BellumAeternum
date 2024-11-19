@@ -1688,6 +1688,46 @@ footer {
 	animation: btn-anim 2s infinite;
 }
 
+
+
+.collapsible {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 0.5em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.col-content {
+  padding: 0.5em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #333333;
+}
+
 /*----------------------------------*/
 /*---------- Contact Page ----------*/
 /*----------------------------------*/
