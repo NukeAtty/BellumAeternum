@@ -167,13 +167,13 @@
 							<p>[Radiation]	;全局控制</p>
 							<p>UseGlobalRadApplicationDelay=no ;开启自定义辐射参数</p>
 							<br>
-							<p>[RadiationTypes]</p>
-							<p>0=NewRadiation</p>
+							<p>[RadiationTypes] ;新的注册表</p>
+							<p>0=NewRadiation ;注册新的辐射类型</p>
 							<br>
-							<p>[NewWeapon]</p>
-							<p>RadType=NewRadiation</p>
+							<p>[NewWeapon] ;带辐射的武器</p>
+							<p>RadType=NewRadiation ;辐射类型</p>
 							<br>
-							<p>[NewRadiation]</p>
+							<p>[NewRadiation] ;定义新的辐射类型</p>
 							<p>RadDurationMultiple=1 ;控制辐射的存续时间，公式为RadLevel * RadDurationMultiple<p>
 							<p>RadApplicationDelay=16 ;控制辐射造成伤害的间隔</p>
 							<p>RadApplicationDelay.Building=32 ;控制辐射对建筑造成伤害的间隔</p>
@@ -194,7 +194,43 @@
 					</div>
 					<button type="button" class="collapsible">激光拖尾</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>激光拖尾是一种全新的拖尾方式，其可定义透明度、宽度和颜色。</p>
+						<p>激光拖尾可以使用在单位、抛射体和VXL碎片上。</p>
+						<p>附着对象是单位时支持多个激光拖尾，并可以定义其FLH坐标。对于有多个组件（如坦克的炮塔）的单位，可以自定义激光拖尾附着的部件。</p>
+						<p><b>代码示例：</b></p>
+						<p>在<code>art.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[LaserTrailTypes] ;激光拖尾的注册表</p>
+							<p>0=NewTrail ;注册新的激光拖尾</p>
+							<br>
+							<p>[NewTrail] ;定义新的激光拖尾</p>
+							<p>IsHouseColor=false ;激光拖尾是否是所属色</p>
+							<p>Color=255,0,0 ;激光拖尾的RGB颜色</p>
+							<p>FadeDuration=64 ;激光拖尾持续的时间，值越大持续时间越长</p>
+							<p>Thickness=4 ;激光拖尾的宽度</p>
+							<p>SegmentLength=128 ;每一段激光的长度</p>
+							<p>IgnoreVertical=false ;附着对象在垂直移动时不会产生激光拖尾</p>
+							<p>IsIntense=false ;boolean, whether the laser is "supported" (AKA prism forwarding)</p>
+							<p>CloakVisible=false ;附着对象在隐身之后是否会显示激光拖尾</p>
+							<p>CloakVisible.DetectedOnly=false  ;附着对象在被探测到（非显形）后是否会显示激光拖尾</p>
+							<br>
+							<p>[NewProjectile] ;抛射体图像</p>
+							<p>LaserTrail.Types=NewTrail ;抛射体的激光拖尾，可以使用列表表示多个拖尾。</p>
+							<br>
+							<p>[NewUnit] ;单位图像</p>
+							<p>LaserTrail1.Types=NewTrail ;单位的第一条激光拖尾</p>
+							<p>LaserTrail2.Type=NewTrail ;单位的第二条激光拖尾</p>
+							<p>LaserTrail1.FLH=0,-50,0 ;第一条激光拖尾的起始坐标</p>
+							<p>LaserTrail2.FLH=0,50,0 ;第二条激光拖尾的起始坐标</p>
+							<p>LaserTrail1.IsOnTurret=false ;第一条激光拖尾是否附着在单位的炮塔上</p>
+							<p>LaserTrail2.IsOnTurret=false ;第二条激光拖尾是否附着在单位的炮塔上</p>
+						</div>
+						<br>
+						<p>在<code>rules.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[NewVoxelAnim] ;VXL碎片</p>
+							<p>LaserTrail.Types=NewTrail  ;VXL碎片的激光拖尾，可以使用列表表示多个拖尾。</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">护盾</button>
 					<div class="col-content">
