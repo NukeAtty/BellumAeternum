@@ -1691,6 +1691,7 @@ footer {
 
 
 .collapsible {
+	display: block;
 	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: bold;
 	font-size: 18px;
@@ -1709,15 +1710,17 @@ footer {
 }
 
 .collapsible:after {
-  content: '\002B';
+	content: '\254B';
+  /*content: '\002B';*/
   color: white;
   font-weight: bold;
   float: right;
-  margin-left: 5px;
+  margin: auto;
 }
 
 .active:after {
-  content: "\2212";
+	content: '\2501';
+  /*content: "\2212";*/
 }
 
 .col-content {
