@@ -1,0 +1,17 @@
+类型：
+	对象（Object）
+		单位（Techno）
+			建筑（Building）
+			步兵（Infantry）
+			载具（Vehicles）
+			飞行器（Aircraft）
+		动画（Animation）
+		粒子（Particle）
+		覆盖物（Overlay）
+		污染（Smudge）
+		地形对象（Terrain）
+	武器（Weapon）
+	抛射体（Projectile）
+	弹头（Warhead）
+	超级武器（Super Weapon）
+	VXL碎片（VoxelAnim）
