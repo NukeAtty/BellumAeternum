@@ -6,7 +6,7 @@
 	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
 	<meta name="robots" content="noindex, nofollow">
-	<title> | 万世之战：为红警2带来前所未有的体验</title>
+	<title>Phobos中文教程 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
 		#version {
 			vertical-align: middle;
@@ -58,6 +58,16 @@
 			font-weight: bold;
 			padding: 0.2em;
 			background-color: #c00;
+		}
+
+		#subhead {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		#subhead:before {
+			content:'\2605';
+			color: #f00;
 		}
 	</style>
 </head>
@@ -126,8 +136,9 @@
 					<p><b>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">bXX</span>的标签标记开发版版本号。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span></b>字样。</p>
 					<h3>术语目录表</h3>
 					<ul>
-						<ol>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</ol>
-						<ol>布尔值：开关参数值，填入true或false，或者yes或no。</ol>
+						<li>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</li>
+						<li>布尔值（Boolean）：开关参数值，填入true或false，或者yes或no。</li>
+						<li>列表（List）：多个值的集合，用英文的逗号<code>,</code>隔开。</li>
 					</ul>
 					<!--New Logic-->
 					<h2 id="new-enhanced-logic">全新或增强逻辑</h2>
@@ -244,6 +255,14 @@
 					</div>
 					<button type="button" class="collapsible">护盾</button>
 					<div class="col-content">
+						<p id="subhead">护盾的注册：</p>
+						<p>护盾作为一种新的对象，是需要新建一个注册表的。</p>
+						<p>在<code>rules.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[ShieldTypes]</p>
+							<p>1=NewShield</p>
+						</div>
+						<p id="subhead">护盾的定义：</p>
 						<p>护盾本质上可以看做是让单位拥有一个独立装甲和强度（血量）的第二血条，具备以下基础特性：</p>
 						<ul>
 							<li>护盾在下列状态下不会掉强度：
@@ -266,6 +285,7 @@
 						<p><code>Respawn</code>定义护盾重生的强度值，参数和<code>SelfHealing</code>一致。</p>
 						<p><code>SelfHealing.Rate</code>定义护盾恢复强度的间隔，参数为小数，单位为分钟（游戏内）。设置为0.0的时候直接将护盾恢复成满强度。</p>
 						<p><code>Respawn.Rate</code>定义护盾重生的间隔，参数为小数，单位为每分钟（游戏内）。设置为0.0的时候直接生成一个满强度护盾。</p>
+						<p id="subhead"><b>护盾的图像：</b></p>
 						<p><code>IdleAnim</code>定义护盾生效时播放的动画，该动画会无视<code>LoopCount</code>无限循环，并可以用下列代码定义：</p>
 						<ul>
 							<li><code>IdleAnim.ConditionYellow</code>和<code>IdleAnim.ConditionRed</code>定义该护盾在强度值呈黄色和红色的状态下所播放的不同的护盾动画。如果不设置<code>IdleAnim.ConditionRed</code>，在血条呈红色时将会调用<code>IdleAnim.ConditionYellow</code>的动画；如果<code>IdleAnim.ConditionYellow</code>也不设置，将直接使用<code>IdleAnim</code>的动画。血条呈黄色和红色的百分比可以在<code>[AudioVisual]</code>中的<code>ConditionYellow</code>和<code>ConditionRed</code>中设置。</li>
@@ -282,18 +302,81 @@
 						<p><code>PassPercent</code>定义护盾会被穿透的伤害的百分比，参数为小数，默认为0.0，即不会被穿透。</p>
 						<p><code>AllowTransfer</code>定义护盾是否在单位变形（原版武装直升机逻辑或者Ares的变形逻辑）后继承，默认为true，即可以继承。</p>
 						<p>带有<code>Psychedelic=yes</code>的弹头（神经毒气）默认无视护盾，如果没有<code>ImmuneToBerserk</code>，带护盾的单位一样会无差别攻击。同时，免疫神经毒气的单位也无法避免被该类型弹头作为目标，因此可以使用自定义护甲来避免这种情况发生。</p>
-						<p>有护盾的单位会显示血条和护盾条，即便护盾消失，护盾条也会呈现为一个空框。下列代码是关于护盾条的定义：</p>
+						<p id="subhead"><b>护盾的界面：</b></p>
+						<p>有护盾的单位会显示血条和护盾条，如果护盾是可再生的，那么护盾强度即便归零也会呈现为一个空框。护盾的护盾条图像可以在在<code>[AudioVisual]</code>部分定义，下列代码是关于护盾条的定义：</p>
 						<ul>
 							<li>默认情况下，建筑的血条使用<span style="color:orange">pips.shp</span>的第6帧作为护盾条，其他单位则使用第17针作为护盾条。</li>
 							<li><code>Pips.Shield</code>可以自定义非建筑单位的护盾条，<code>Pips.Shield.Building</code>定义建筑单位的护盾条，参数为整数，表示第几帧。如果只填入一个值，代表护盾条一直会显示该帧的样式，如果填入三个值，那么三个值分别表示“绿色护盾条”“黄色护盾条”和“红色护盾条”所用帧的样式。如果填入-1，那么则使用上述的默认值。</li>
 							<li><code>Pips.Shield.Background</code>可以定义非建筑单位的护盾条边框，默认使用<span style="color:orange">pipbrd.shp</span>，第四帧被用作步兵的护盾条边框，第三帧被用作其他单位的护盾条边框。</li>
 							<li><code>Pips.Shield.Building.Empty</code>可以定义建筑单位的护盾条非满格时的底色，默认使用<span style="color:orange">pips.shp</span>的第一帧。</li>
+							<li><code>BracketDelta</code>可以定义护盾条的纵向位置，和原版<code>PixelSelectionBracketDelta</code>类似，负值向上移动，正值向下移动，单位为像素。对建筑无效。</li>
 						</ul>
+						<p>代码示例：</p>
+						<div class="code-presentation">
+							<p>[AudioVisual]</p>
+							<p>Pips.Shield=-1,-1,-1 ;单位的护盾条</p>
+							<p>Pips.Shield.Building=-1,-1,-1 ;建筑的护盾条</p>
+							<p>Pips.Shield.Background=PIPBRD.SHP ;护盾条边框</p>
+							<p>Pips.Shield.Building.Empty=0 ;建筑上非满强度护盾的底色</p>
+						</div>
+						<p>如果你不想使用全局定义的护盾条，也可以在不同类型的护盾上做微观定义：</p>
+						<div class="code-presentation">
+							<p>[Shield]</p>
+							<p>Pips=-1,-1,-1 ;单位的护盾条</p>
+							<p>Pips.Building=-1,-1,-1 ;建筑的护盾条</p>
+							<p>Pips.Background=pipbrd.shp ;护盾条边框</p>
+							<p>Pips.Building.Empty=0 ;建筑上非满强度护盾的底色</p>
+						</div>
+						<p id="subhead">弹头相关设置：</p>
+						<p><code>Shield.Penetrate</code>定义该弹头是否能无视护盾直接对目标血量造成伤害。</p>
+						<p><code>Shield.Break</code>定义该弹头是否能在伤害计算之前就破盾。</p>
+						<p><code>Shield.BreakAnim</code>定义该弹头在破盾时的动画，这个设置将覆盖护盾中<code>BreakAnim</code>所定义的动画。</p>
+						<p><code>Shield.HitAnim</code>定义该弹头在击中护盾时的动画，这个设置将覆盖护盾中<code>HitAnim</code>所定义的动画。</p>
+						<p><code>Shield.BreakWeapon</code>定义该弹头破盾后的破盾武器，这个设置将覆盖护盾中<code>BreakWeapon</code>所定义的武器。</p>
+						<p><code>Shield.AbsorbPercent</code>定义该弹头被护盾所吸收的量，这个设置将覆盖护盾中<code>AbsorbPercent</code>所定义的量。</p>
+						<p><code>Shield.PassPercent</code>定义该弹头能穿过护盾伤害生命值的量，这个设置将覆盖护盾中<code>PassPercent</code>所定义的量。</p>
+						<p><code>Shield.Respawn.Rate</code>和<code>Shield.Respawn.Amount</code>定义该弹头击中护盾后该护盾的再生间隔和再生耐久值，这个设置将覆盖护盾中<code>Respawn.Rate</code>和<code>Respawn.Amount</code>所定义的值，如果间隔填入负值或者再生值填入小于等于0的值将不会覆盖。这个效果的时长由<code>Shield.Respawn.Duration</code>控制。</p>
+						<p><code>Shield.Respawn.ResetTimer</code>定义被该弹头击中的护盾的再生计时器是否重置，填入布尔值。</p>
+						<p><code>Shield.SelfHealing.Rate</code>和<code>Shield.SelfHealing.Amount</code>定义被该弹头击中的护盾的耐久恢复间隔和耐久恢复值，这个设置将覆盖护盾中<code>SelfHealing.Rate</code>和<code>SelfHealing.Amount</code>所定义的值，如果间隔填入负值或者恢复值填入小于等于0的值将不会覆盖。这个效果的时长由<code>Shield.SelfHealing.Duration</code>控制。</p>
+						<p><code>Shield.SelfHealing.ResetTimer</code>定义被该弹头击中的护盾的耐久恢复计时器是否重置，填入布尔值。</p>
+						<p><code>Shield.AffectsTypes</code>定义会被该弹头的护盾修改器所影响的护盾，填入护盾类型，支持列表。</p>
+						<p><code>Shield.AttachTypes</code>和<code>Shield.RemoveTypes</code>定义被（正<code>Verses</code>值的）该弹头击中后附加一个护盾或者移除一个护盾，填入护盾类型，支持列表，但通常只有列表中第一个护盾会生效。</p>
+						<p><code>Shield.ReplaceOnly</code>定义</p>
+
 					</div>
 					<h3>动画</h3>
 					<button type="button" class="collapsible">动画生成单位</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
+						<p><code>CreateUnit</code>定义该动画生成的单位，只能填一个。</p>
+						<p><code>CreateUnit.Owner</code>定义该动画生成的单位所属，只有在动画附带所属信息时才会生效。参数为下列预设值：</p>
+						<ul>
+							<li><code>Invoker</code>：调用动画的对象的所属方</li>
+							<li><code>Killer</code>：摧毁该单位的所属方。</li>
+							<li><code>Victim</code>：被摧毁单位的所属方。</li>
+							<li><code>Civilian</code>：平民方。</li>
+							<li><code>Special</code>：特殊方。</li>
+							<li><code>Neutral</code>：中立方。</li>
+							<li><code>Random</code>：随机。</li>
+						</ul>
+						<p>动画带有所属信息的方法如下：</p>
+						<ul>
+							<li>Phobos的<code>DestroyAnim</code></li>
+							<li>弹头的<code>AnimList</code>和Phobos的弹头<code>SplashList</code></li>
+							<li>41号地图触发动作</li>
+						</ul>
+						<p><code>CreateUnit.RemapAnim</code>定义该动画是否用单位调色盘绘制并且自带所属色，参数为布尔值。</p>
+						<p><code>CreateUnit.Mission</code>定义该动画生成的单位出现后的任务。</p>
+						<p><code>CreateUnit.AIMission</code>定义该动画生成的单位所属方是AI控制时的任务。<span id="versionx">N/A</span></p>
+						<p><code>CreateUnit.Facing</code>定义该动画生成的单位朝向，参数为0-255的值，0为两点钟方向，224为12点钟方向。</p>
+						<p><code>CreateUnit.RandomFacing</code>定义该动画生成的单位朝向是否随机，参数为布尔值。</p>
+						<p><code>CreateUnit.InheritFacings</code>定义该动画生成的单位朝向是否继承生成该动画的单位，单位为布尔值。</p>
+						<p><code>CreateUnit.InheritTurretFacings</code>定义该动画生成的单位炮塔朝向是否继承生成该动画的单位，单位为布尔值，不支持Jumpjet类载具（如直升机等）。</p>
+						<p><code>CreateUnit.ConsiderPathfinding</code>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成，参数为布尔值。</p>
+						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。<span id="version">b37</span></p>
+						<p><code>CreateUnit.SpawnParachutedInAir</code>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，参数为布尔值。在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</p>
+						<p><code>CreateUnit.SpawnAnim</code></p>
+						<p><code>CreateUnit.SpawnHeight</code></p>
 					</div>
 					<button type="button" class="collapsible">动画附加粒子系统</button>
 					<div class="col-content">
@@ -381,15 +464,15 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
 					<h3>超级武器</h3>
-					<button type="button" class="collapsible">AI使用超级武器延时<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">AI使用超级武器延时<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<button type="button" class="collapsible">单位变形<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">单位变形<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<button type="button" class="collapsible">电磁脉冲设定<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">电磁脉冲设定<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
@@ -397,20 +480,20 @@
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<button type="button" class="collapsible">超级武器连续释放<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">超级武器连续释放<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<button type="button" class="collapsible">弹头和武器释放<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">弹头和武器释放<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
-					<button type="button" class="collapsible">自定义超级武器栏目<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">自定义超级武器栏目<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>
 					<h3>单位</h3>
-					<button type="button" class="collapsible">自定义子机扩展<span id="#version">bXX</span></button>
+					<button type="button" class="collapsible">自定义子机扩展<span id="version">bXX</span></button>
 					<div class="col-content">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</div>

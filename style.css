@@ -17,37 +17,37 @@
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf");
-	font-weight: 100
+	font-weight: 100;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf");
-	font-weight: 300
+	font-weight: 300;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf");
-	font-weight: normal
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf");
-	font-weight: 500
+	font-weight: 500;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf");
-	font-weight: bold
+	font-weight: bold;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf");
-	font-weight: 900
+	font-weight: black;
 }
 
 @font-face {
@@ -59,31 +59,31 @@
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf");
-	font-weight: 300
+	font-weight: 300;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf");
-	font-weight: normal
+	font-weight: 400;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.ttf");
-	font-weight: 500
+	font-weight: 500;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf");
-	font-weight: bold
+	font-weight: bold;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf");
-	font-weight: 900
+	font-weight: black;
 }
 
 /*================================*/
@@ -1542,7 +1542,7 @@ footer {
 .blog-content p{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 300;
 	color: #fff;
 	line-height: 1.5em;
 	margin-top: 0.5em;
@@ -1551,13 +1551,13 @@ footer {
 .blog-content b{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: black;
 }
 
 .blog-content li{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 300;
 	line-height: 1.5em;
 }
 
@@ -1626,7 +1626,7 @@ footer {
 .blog-content a {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 300;
 	color: #fff;
 	text-decoration: underline;
 }
@@ -2538,7 +2538,7 @@ footer {
 	}
 
 	.responsive-navigation-buttons a:lang(zh-Hans){
-		font-family: HarmonyOS Sans, sans-serif;
+		font-family: HarmonyOS Sans SC, sans-serif;
 		font-size: 18px;
 		line-height: 1em;
 		margin: auto 0.5em;
