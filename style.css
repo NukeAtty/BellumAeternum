@@ -11,6 +11,7 @@
 @font-face {
 	font-family: "Neon";
 	src: url("src/font/MonaspaceNeon-Regular.otf");
+	font-weight: normal;
 }
 
 /*HarmonyOS Sans Settings*/
@@ -65,13 +66,13 @@
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf");
-	font-weight: 400;
+	font-weight: normal;
 }
 
 @font-face {
 	font-family: "HarmonyOS Sans SC";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.ttf");
-	font-weight: 500;
+	font-weight: 600;
 }
 
 @font-face {
@@ -1457,6 +1458,7 @@ footer {
 	padding: 0.5em;
 	font-family: Neon, monospace;
 	font-size: 14px;
+	font-weight: normal;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
 	user-select: text;
@@ -1580,6 +1582,7 @@ footer {
 .code-presentation p,del {
 	font-family: Neon, monospace;
 	font-size: 14px;
+	font-weight: normal;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
 	user-select: text;

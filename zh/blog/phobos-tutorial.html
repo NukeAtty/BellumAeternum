@@ -139,6 +139,7 @@
 						<li>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</li>
 						<li>布尔值（Boolean）：开关参数值，填入true或false，或者yes或no。</li>
 						<li>列表（List）：多个值的集合，用英文的逗号<code>,</code>隔开。</li>
+						<li>建筑插件（PowersUp）：指的是类似泰伯利亚之日中GDI的发电厂涡轮，必须以其他建筑为基础才能放置的建筑。</li>
 					</ul>
 					<!--New Logic-->
 					<h2 id="new-enhanced-logic">全新或增强逻辑</h2>
@@ -312,6 +313,7 @@
 							<li><code>BracketDelta</code>可以定义护盾条的纵向位置，和原版<code>PixelSelectionBracketDelta</code>类似，负值向上移动，正值向下移动，单位为像素。对建筑无效。</li>
 						</ul>
 						<p>代码示例：</p>
+						<p>在<code>rules.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[AudioVisual]</p>
 							<p>Pips.Shield=-1,-1,-1 ;单位的护盾条</p>
@@ -320,6 +322,7 @@
 							<p>Pips.Shield.Building.Empty=0 ;建筑上非满强度护盾的底色</p>
 						</div>
 						<p>如果你不想使用全局定义的护盾条，也可以在不同类型的护盾上做微观定义：</p>
+						<p>在<code>rules.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[Shield]</p>
 							<p>Pips=-1,-1,-1 ;单位的护盾条</p>
@@ -380,122 +383,149 @@
 					</div>
 					<button type="button" class="collapsible">动画附加粒子系统</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">自定义动画可视方</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">独立的动画音效</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<h3>建筑</h3>
 					<button type="button" class="collapsible">自定义建筑延伸</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">建筑升级扩展</button>
+					<button type="button" class="collapsible">建筑插件扩展</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p><code>PowersUp.Owner</code>定义该建筑插件现在可以定义放置的建筑的所属方，需要注意的是当插件放入建筑后，插件的所属方自动变更为该建筑所属方。参数为预设值，可填入下列值：</p>
+						<ul>
+							<li><code>none</code>：不可放置</li>
+							<li><code>owner</code>或者<code>self</code>：仅可放在自己的建筑上</li>
+							<li><code>allies</code>或者<code>ally</code>：仅可放在盟友的建筑上</li>
+							<li><code>team</code>：可以放在自己和盟友的建筑上</li>
+							<li><code>enemies</code>或者<code>enemy</code>：仅可放在敌人的建筑上</li>
+							<li><code>all</code>：自己、盟友和敌人的建筑上均可放置</li>
+						</ul>
+						<p><code>PowersUp.Buildings</code>定义该建筑插件可以放在哪些建筑上，参数为列表，可以填入多个建筑。</p>
+						<p id="alert">注意：因技术限制，使用Phobos的<code>PowersUp.Buildings</code>时，该插件不支持Ares提供的插件作为建造前提功能。如果使用原版的<code>PowersUpBuilding</code>则可以提供这个功能，请自行取舍。</p>
+						<p>代码示例：</p>
+						<p>在<code>rules.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[NewUpgrade] ;插件建筑</p>
+							<p>PowersUp.Owner=Self ;放置建筑允许的所属方</p>
+							<p>PowersUp.Buildings=NAPOWR,NANRCT ;可以放置的建筑</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">可摧毁障碍建筑</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">电厂增幅器</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>当电厂增幅器存在于地图上时，会改变该所属方的电厂电量，如果电厂增幅器被摧毁，电量则会回归原本数值。</p>
+						<p>电厂增幅器和电厂最大的区别就在于，电厂是直接增减总电量，而电厂增幅器需要在有电厂的情况下才会改变总电量。</p>
+						<p>代码展示：</p>
+						<p>在<code>rules.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[NAPWRE] ;Power Enhancer</p>
+							<p>PowerPlantEnhancer.PowerPlants=NAPOWR,NANRCT ;可以增幅的电厂</p>
+							<p>PowerPlantEnhancer.Amount=0 ;增幅电力的量</p>
+							<p>PowerPlantEnhancer.Factor=1.5 ;增幅电力的倍数</p>
+							<button id="copy-code" onclick="Clipboard()">COPY TO CLIPBOARD</button>
+						</div>
 					</div>
 					<button type="button" class="collapsible">间谍效果</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Infantries-->
 					<h3>步兵</h3>
 					<button type="button" class="collapsible">匍匐/部署步兵开火坐标</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">默认间谍伪装</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">非人类步兵死亡动画</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">分享弹药</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">奴隶阵营自定义</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">自定义奴隶解救语音</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">在水中使用陆地动作序列</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Projectile-->
 					<h3>抛射体</h3>
 					<button type="button" class="collapsible">抛射体拦截</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">弹道类抛射体</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">溅射逻辑扩展</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">抛射体阻挡逻辑扩展</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">末端反射武器</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<h3>超级武器</h3>
 					<button type="button" class="collapsible">AI使用超级武器延时<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">单位变形<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">电磁脉冲设定<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">虚拟投送</button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">超级武器连续释放<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">弹头和武器释放<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<button type="button" class="collapsible">自定义超级武器栏目<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 					<h3>单位</h3>
 					<button type="button" class="collapsible">自定义子机扩展<span id="version">bXX</span></button>
 					<div class="col-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>敬请期待……</p>
 					</div>
 				</div>
 			</div>
@@ -558,6 +588,19 @@
 		      content.style.maxHeight = content.scrollHeight + "px";
 		    } 
 		  });
+		}
+
+		function Clipboard() {
+		  // Get the text field
+		  var copyText = document.getElementByClassName("code-presentation");
+
+		  // Select the text field
+		  copyText.select();
+		  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+		   // Copy the text inside the text field
+		  navigator.clipboard.writeText(copyText.value);
+		  document.getElementById("copy-code").innerHTML = "COPIED !";
 		}
 	</script>
 </body>
