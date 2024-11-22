@@ -151,11 +151,10 @@ Mission Y: Biohazzard - Quartzsite, Arizona, USA
 
 Soviet Prologue:
 Mission 0: No Quarter - Brussel, Belgium
-	Objective: Destroy the Allied Headquater
+	Objective: Destroy the Allied Headquarter
 
-	Objective 1: Repair the bridge and cross the Senne river.
-	Objective 2: Breakthrough the Allied defenses.
-	Objective 3: Capture the Allied headquarters.
+	Objective 1: Breakthrough the Allied defenses.
+	Objective 2: Destroy the Allied headquarters.
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
@@ -166,7 +165,7 @@ Mission 1: Entanglement - Vladivostok, Soviet Russia
 	Objective: Evacuate all civilians.
 
 	Objective 1: Destroy all Allied force landed on Russky Island.
-	Objective 2: Retreat to 
+	Objective 2: Retreat to the city and build defenses.
 	Objective 3: 
 
 Mission 2: Crack the Ice - 
