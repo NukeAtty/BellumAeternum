@@ -344,7 +344,8 @@
 						<p><code>Shield.SelfHealing.ResetTimer</code>定义被该弹头击中的护盾的耐久恢复计时器是否重置，填入布尔值。</p>
 						<p><code>Shield.AffectsTypes</code>定义会被该弹头的护盾修改器所影响的护盾，填入护盾类型，支持列表。</p>
 						<p><code>Shield.AttachTypes</code>和<code>Shield.RemoveTypes</code>定义被（正<code>Verses</code>值的）该弹头击中后附加一个护盾或者移除一个护盾，填入护盾类型，支持列表，但通常只有列表中第一个护盾会生效。</p>
-						<p><code>Shield.ReplaceOnly</code>定义</p>
+						<p><code>Shield.ReplaceOnly</code>定义<code>Shield.AttachTypes</code>中的护盾是否会按位置替换Shield.RemoveTypes中的护盾，参数为布尔值。如果前者少于后者，那么多余的被移除的护盾被前者的最后一个护盾替换。默认no。
+</p>
 
 					</div>
 					<h3>动画</h3>
@@ -378,8 +379,8 @@
 						<p><code>CreateUnit.ConsiderPathfinding</code>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成，参数为布尔值。</p>
 						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。<span id="version">b37</span></p>
 						<p><code>CreateUnit.SpawnParachutedInAir</code>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，参数为布尔值。在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</p>
-						<p><code>CreateUnit.SpawnAnim</code></p>
-						<p><code>CreateUnit.SpawnHeight</code></p>
+						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
+						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
 					</div>
 					<button type="button" class="collapsible">动画附加粒子系统</button>
 					<div class="col-content">
@@ -434,7 +435,6 @@
 							<p>PowerPlantEnhancer.PowerPlants=NAPOWR,NANRCT ;可以增幅的电厂</p>
 							<p>PowerPlantEnhancer.Amount=0 ;增幅电力的量</p>
 							<p>PowerPlantEnhancer.Factor=1.5 ;增幅电力的倍数</p>
-							<button id="copy-code" onclick="Clipboard()">COPY TO CLIPBOARD</button>
 						</div>
 					</div>
 					<button type="button" class="collapsible">间谍效果</button>
