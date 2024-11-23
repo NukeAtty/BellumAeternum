@@ -79,3 +79,60 @@ Units:
 
 Rules:
 	
+
+
+[WorldOfTanks Mode]
+Meta:
+	Economy Comes when destroyed enemy tanks.
+Map:
+	Shrouded
+
+Buildings:
+	Allied:
+		AMCV -> GACNST -> GAWEAP -> American Liscense
+															 -> UK Liscense
+															 -> French Liscense
+
+		American Liscense:
+			Tier 1: M4A3 Sherman
+			Tier 2: M26 Pershing
+			Tier 3: M46 Patton I
+			Tier 4: M47 Patton II
+			Tier 5: M48 Patton III
+			Tier 6: M54A2 Grizzly
+
+		UK Liscense:
+			Tier 1: Cromwell
+			Tier 2: Comet
+			Tier 3: Centurion Mk.1
+			Tier 4: Centurion Mk.3
+			Tier 5: Centurion Mk.7
+			Tier 6: Centurion Mk.7/1
+
+		French Liscense:
+			Tier 1: M4A3 Sherman
+			Tier 2: ELC AMX
+			Tier 3: AMX-13
+			Tier 4: AMX-13/75
+			Tier 5: AMX-13/90
+			Tier 6: AMX-15 Lillet
+
+	Soviet:
+		SMCV -> NACNST -> NAWEAP -> Russian Liscense
+															 -> Chinese Liscense
+
+		Russian Liscense:
+			Tier 1: T-34-76
+			Tier 2: T-34-85
+			Tier 3: T-44
+			Tier 4: T-54
+			Tier 5: A-56
+			Tier 6: T-56A Rhino
+
+		Chinese Liscense:
+			Tier 1: T-34-76
+			Tier 2: T-34-85
+			Tier 3: T-34-85G
+			Tier 4: 120
+			Tier 5: 120-1
+			Tier 6: 120C Charger
