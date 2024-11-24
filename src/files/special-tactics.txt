@@ -4,9 +4,7 @@ Special Tactics:
 			Repair Crane: Repairs Buildings and Vehicles
 
 		WEAP + AIRC:
-			Mobile Crane: Repairs Vehicles
+			Land Mine
 
 		TECH + AIRC:
 			Airborne Tanks
-
-	

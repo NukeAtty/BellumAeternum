@@ -14,10 +14,24 @@
 			font-family: monospace;
 			background-color: #f00;
 			border-radius: 4px;
-			margin: auto;
-			padding: 1px;
+			padding: 1px 4px;
+			margin: auto 2px;
 			color: #ccc;
 			text-align: center;
+			line-height: 16px;
+		}
+
+		.collapsible #version {
+			vertical-align: top;
+			font-size: 12px;
+			font-family: monospace;
+			background-color: #f00;
+			border-radius: 4px;
+			padding: 1px 4px;
+			margin: auto 2px;
+			color: #ccc;
+			text-align: left;
+			line-height: 20px;
 		}
 
 		#versionx {
@@ -26,10 +40,24 @@
 			font-family: monospace;
 			background-color: #900;
 			border-radius: 4px;
-			margin: auto;
-			padding: 1px;
+			padding: 1px 4px;
+			margin: auto 2px;
 			color: #ccc;
-			text-align: center;			
+			text-align: center;
+			line-height: 16px;	
+		}
+
+		.collapsible #versionx {
+			vertical-align: top;
+			font-size: 12px;
+			font-family: monospace;
+			background-color: #900;
+			border-radius: 4px;
+			padding: 1px 4px;
+			margin: auto 2px;
+			color: #ccc;
+			text-align: left;
+			line-height: 20px;
 		}
 
 		code {
@@ -133,7 +161,7 @@
 						<li>测试版：集合了最新功能，但可能存在Bug。</li>
 					</ol>
 					<p>如果是新入门的Modder，比较推荐使用稳定版。如果是比较有经验的Modder，推荐使用功能更多的开发版。如果是深度精通代码的Modder可以使用测试版，但这类Modder通常能看懂原文，所以不做讨论。</p>
-					<p><b>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">bXX</span>的标签标记开发版版本号。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span></b>字样。</p>
+					<p><b>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">DEV</span>的标签标记，意为开发版。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span></b>的标签标记，意为暂时无法直接下载使用。</p>
 					<h3>术语目录表</h3>
 					<ul>
 						<li>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</li>
@@ -144,7 +172,7 @@
 					<!--New Logic-->
 					<h2 id="new-enhanced-logic">全新或增强逻辑</h2>
 					<h3>新的机制</h3>
-					<button type="button" class="collapsible">附加效果（AE）<span id="version">b41</span></button>
+					<button type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
 						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<span>DurationOverrides</span>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
@@ -173,7 +201,7 @@
 						<p>开启自定义辐射参数需要在全局代码<code>[Radiation]</code>中加入<code>UseGlobalRadApplicationDelay</code>，参数为布尔值。如果设定为True，那么新增加的辐射会使用全局的辐射参数，反之设定为False，那么则可以定义辐射的属性。</p>
 						<p><b>辐射定义：</b></p>
 						<p><code>RadApplicationDelay.Building</code>定义该辐射类型的对建筑的效果，参数为整数，填入大于0的值将伤害建筑。</p>
-						<p><code>RadBuildingDamageMaxCount</code><span id="version">b43</span>限制辐射对建筑的最多伤害的次数，参数为整数。和<code>CellSpread</code>的机制类似，因为建筑通常占有多个地格，因此辐射也会对建筑造成每个地格叠加的伤害，所以需要用这段代码来控制伤害。填入负值代表不做限制。</p>
+						<p><code>RadBuildingDamageMaxCount</code><span id="version">DEV</span>限制辐射对建筑的最多伤害的次数，参数为整数。和<code>CellSpread</code>的机制类似，因为建筑通常占有多个地格，因此辐射也会对建筑造成每个地格叠加的伤害，所以需要用这段代码来控制伤害。填入负值代表不做限制。</p>
 						<p><code>RadSiteWarhead.Detonate</code>定义是否让辐射的弹头附带其他弹头效果而不是单纯的伤害比例控制，参数为布尔值。原版中辐射场的弹头只用于伤害控制，因此单位走到辐射场中不会有受击的动画。</p>
 						<p id="comment">笔者注：若非特殊需求建议把这个功能关掉，非常消耗性能。</p>
 						<p><code>RadSiteWarhead.Detonate.Full</code>定义是否只保留弹头的范围伤害和Phobos专属的弹头效果，参数为布尔值。</p>
@@ -182,7 +210,7 @@
 						<p><b>为武器添加自定义辐射：</b></p>
 						<p><code>RadType</code>：定义武器附带的辐射类型。</p>
 						<p><b>代码示例：</b></p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[Radiation]	;全局控制</p>
 							<p>UseGlobalRadApplicationDelay=no ;开启自定义辐射参数</p>
@@ -247,7 +275,7 @@
 							<p>LaserTrail2.IsOnTurret=false ;第二条激光拖尾是否附着在单位的炮塔上</p>
 						</div>
 						<br>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[NewVoxelAnim] ;VXL碎片</p>
 							<p>LaserTrail.Types=NewTrail  ;VXL碎片的激光拖尾，可以使用列表表示多个拖尾。</p>
@@ -258,7 +286,7 @@
 					<div class="col-content">
 						<p id="subhead">护盾的注册：</p>
 						<p>护盾作为一种新的对象，是需要新建一个注册表的。</p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[ShieldTypes]</p>
 							<p>1=NewShield</p>
@@ -270,9 +298,9 @@
 								<ol>
 									<li>被超时空弹头攻击时</li>
 									<li>在被铁幕或者力场护盾保护时</li>
-									<li>单位拥有<code>Immune=true</code>时<span id="version">b37</span></li>
-									<li>单位被自身所免疫的弹头攻击时<span id="version">b37</span></li>
-									<li>单位被盟友攻击时<span id="version">b37</span></li>
+									<li>单位拥有<code>Immune=true</code>时<span id="version">DEV</span></li>
+									<li>单位被自身所免疫的弹头攻击时<span id="version">DEV</span></li>
+									<li>单位被盟友攻击时<span id="version">DEV</span></li>
 								</ol>
 							</li>
 							<li>护盾在未消失的情况下，负数伤害会修复护盾强度，届时所有的负数伤害会被护盾吸收。除非负数伤害的弹头带有<code>Shield.Penetrate=true</code>语句，否则无法在有护盾的情况下为单位增加血量。</li>
@@ -297,7 +325,7 @@
 						<p><code>IdleAnim.TemporalAction</code>定义单位在被超时空弹头击中后的护盾动画。</p>
 						<p><code>BreakAnim</code>定义破盾动画。</p>
 						<p><code>HitAnim</code>定义护盾的受击动画。</p>
-						<p><code>HitFlash</code>定义护盾的受击闪光。可以在弹头上使用<code>Shield.HitFlash=false</code>来关闭闪光。伤害越高闪光越亮，同时可以在护盾中定义<code>HitFlash.FixedSize</code>来控制亮度（取值范围以4为增量，从81到252，范围之外无效）。闪光颜色可以用<code>HitFlash.Red/Green/Blue</code>来控制RGB色，参数为布尔值，表示开启或关闭该颜色。如果把<code>HitFlash.Black</code>设置为True，则闪光会变成黑色，并无视一切颜色控制。<span id="version">b43</span></p>
+						<p><code>HitFlash</code>定义护盾的受击闪光。可以在弹头上使用<code>Shield.HitFlash=false</code>来关闭闪光。伤害越高闪光越亮，同时可以在护盾中定义<code>HitFlash.FixedSize</code>来控制亮度（取值范围以4为增量，从81到252，范围之外无效）。闪光颜色可以用<code>HitFlash.Red/Green/Blue</code>来控制RGB色，参数为布尔值，表示开启或关闭该颜色。如果把<code>HitFlash.Black</code>设置为True，则闪光会变成黑色，并无视一切颜色控制。<span id="version">DEV</span></p>
 						<p><code>BreakWeapon</code>定义破盾时释放的武器，武器会在单位的地格引爆。</p>
 						<p><code>AbsorbPercent</code>定义护盾能承受伤害的百分比，参数为小数，默认为1.0，即全部承受。如果小于1.0，那么伤害将会穿破护盾，扣除相应的单位血量。</p>
 						<p><code>PassPercent</code>定义护盾会被穿透的伤害的百分比，参数为小数，默认为0.0，即不会被穿透。</p>
@@ -313,7 +341,7 @@
 							<li><code>BracketDelta</code>可以定义护盾条的纵向位置，和原版<code>PixelSelectionBracketDelta</code>类似，负值向上移动，正值向下移动，单位为像素。对建筑无效。</li>
 						</ul>
 						<p>代码示例：</p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[AudioVisual]</p>
 							<p>Pips.Shield=-1,-1,-1 ;单位的护盾条</p>
@@ -322,7 +350,7 @@
 							<p>Pips.Shield.Building.Empty=0 ;建筑上非满强度护盾的底色</p>
 						</div>
 						<p>如果你不想使用全局定义的护盾条，也可以在不同类型的护盾上做微观定义：</p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[Shield]</p>
 							<p>Pips=-1,-1,-1 ;单位的护盾条</p>
@@ -344,9 +372,10 @@
 						<p><code>Shield.SelfHealing.ResetTimer</code>定义被该弹头击中的护盾的耐久恢复计时器是否重置，填入布尔值。</p>
 						<p><code>Shield.AffectsTypes</code>定义会被该弹头的护盾修改器所影响的护盾，填入护盾类型，支持列表。</p>
 						<p><code>Shield.AttachTypes</code>和<code>Shield.RemoveTypes</code>定义被（正<code>Verses</code>值的）该弹头击中后附加一个护盾或者移除一个护盾，填入护盾类型，支持列表，但通常只有列表中第一个护盾会生效。</p>
-						<p><code>Shield.ReplaceOnly</code>定义<code>Shield.AttachTypes</code>中的护盾是否会按位置替换Shield.RemoveTypes中的护盾，参数为布尔值。如果前者少于后者，那么多余的被移除的护盾被前者的最后一个护盾替换。默认no。
-</p>
-
+						<p><code>Shield.ReplaceOnly</code>定义<code>Shield.AttachTypes</code>中的护盾是否会按位置替换Shield.RemoveTypes中的护盾，参数为布尔值。如果前者少于后者，那么多余的被移除的护盾被前者的最后一个护盾替换。默认no。</p>
+						<p><code>Shield.ReplaceNonRespawning</code>定义<code>Shield.AttachTypes</code>中的护盾是否会替换无法再生的护盾。</p>
+						<p><code>Shield.MinimumReplaceDelay</code>定义<code>Shield.ReplaceNonRespawning</code>在多长时间之后替换之前无法再生的护盾。</p>
+						<p><code>Shield.InheritStateOnReplace</code>定义用<code>Shield.ReplaceOnly</code>替换的护盾是否继承之前护盾的强度值，并重置再生计时器和强度恢复计时器。</p>
 					</div>
 					<h3>动画</h3>
 					<button type="button" class="collapsible">动画生成单位</button>
@@ -377,7 +406,7 @@
 						<p><code>CreateUnit.InheritFacings</code>定义该动画生成的单位朝向是否继承生成该动画的单位，单位为布尔值。</p>
 						<p><code>CreateUnit.InheritTurretFacings</code>定义该动画生成的单位炮塔朝向是否继承生成该动画的单位，单位为布尔值，不支持Jumpjet类载具（如直升机等）。</p>
 						<p><code>CreateUnit.ConsiderPathfinding</code>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成，参数为布尔值。</p>
-						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。<span id="version">b37</span></p>
+						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。<span id="version">DEV</span></p>
 						<p><code>CreateUnit.SpawnParachutedInAir</code>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，参数为布尔值。在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</p>
 						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
 						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
@@ -413,7 +442,7 @@
 						<p><code>PowersUp.Buildings</code>定义该建筑插件可以放在哪些建筑上，参数为列表，可以填入多个建筑。</p>
 						<p id="alert">注意：因技术限制，使用Phobos的<code>PowersUp.Buildings</code>时，该插件不支持Ares提供的插件作为建造前提功能。如果使用原版的<code>PowersUpBuilding</code>则可以提供这个功能，请自行取舍。</p>
 						<p>代码示例：</p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[NewUpgrade] ;插件建筑</p>
 							<p>PowersUp.Owner=Self ;放置建筑允许的所属方</p>
@@ -429,7 +458,7 @@
 						<p>当电厂增幅器存在于地图上时，会改变该所属方的电厂电量，如果电厂增幅器被摧毁，电量则会回归原本数值。</p>
 						<p>电厂增幅器和电厂最大的区别就在于，电厂是直接增减总电量，而电厂增幅器需要在有电厂的情况下才会改变总电量。</p>
 						<p>代码展示：</p>
-						<p>在<code>rules.ini</code>中：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[NAPWRE] ;Power Enhancer</p>
 							<p>PowerPlantEnhancer.PowerPlants=NAPOWR,NANRCT ;可以增幅的电厂</p>
@@ -445,23 +474,70 @@
 					<h3>步兵</h3>
 					<button type="button" class="collapsible">匍匐/部署步兵开火坐标</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在步兵在匍匐开火或部署开火时可以使用新的开火坐标定位来覆盖<code>PrimaryFireFLH</code>和<code>SecondaryFireFLH</code>，同时也可以自定义Burst开火时每一发的开火坐标。</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[E1]</p>
+							<p>PronePrimaryFireFLH=0,0,0 ;主武器匍匐开火时的坐标</p>
+							<p>ProneSecondaryFireFLH=0,0,0 ;副武器匍匐开火时的坐标</p>
+							<p>DeployedPrimaryFireFLH=0,0,0 ;主武器部署开火时的坐标</p>
+							<p>DeployedSecondaryFireFLH=0,0,0 ;副武器部署开火时的坐标</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">默认间谍伪装</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>步兵现在可以使用<code>DefaultDisguise</code>微观定义默认的间谍伪装，读取阵营高于Ares中阵营的<code>DefaultDisguise</code>。</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[SSPY] ;Soviet Spy</p>
+							<p>DefaultDisguise=E2 ;默认伪装的步兵</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">非人类步兵死亡动画</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>拥有<code>NotHuman=yes</code>标签的步兵现在在死亡时可以随机从动画序列中挑选<code>Die1</code>到<code>Die5</code>播放。注意，确保你的步兵是有这些动画序列的，如果没有，在死亡时将不会播放任何动画。</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[YDOG] ;Yuri Dog</p>
+							<p>NotHuman.RandomDeathSequence=yes ;是否播放随机死亡动画</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">分享弹药</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>如果一个带有<code>OpenTopped=yes</code>的载具使用了弹药机制（<code>Ammo</code>），同时乘员也使用了弹药机制，就可以让载具为乘员补充弹药，并可以定义哪些乘员才可以补充弹药。注意，载具必须可以自动补充弹药。</p>
+						<p><code>Ammo.Shared</code>定义乘员和载具是否分享弹药，参数为布尔值。</p>
+						<p><code>Ammo.Shared.Group</code>定义该弹药的分组，相当于规定弹药的规格，参数为整数。只有乘员和载具设置了相同的数值时才可以分享弹药。填入-1则载具可以给所有乘员补充弹药。</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[BFRT] ;Battle Fortress</p>
+							<p>...</p>
+							<p>OpenTopped=yes ;乘员是否可以向外射击</p>
+							<p>Ammo=5 ;弹药</p>
+							<p>Reload=120 ;装填时间</p>
+							<p>Ammo.Shared=yes ;是否分享弹药</p>
+							<p>Ammo.Shared.Group=1 ;弹药分组</p>
+							<br>
+							<p>[SNIPE] ;Sniper</p>
+							<p>Ammo.Shared=yes ;是否分享弹药</p>
+							<p>Ammo.Shared.Group=1 ;弹药分组</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">奴隶阵营自定义</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以自定义奴隶矿场被摧毁后奴隶的归属。</p>
+						<p><code>Slaved.OwnerWhenMasterKilled</code>定义奴隶矿场被摧毁后奴隶的归属，参数为以下预设值：</p>
+						<ul>
+							<li><code>suicide</code>：奴隶在奴隶矿场被摧毁后死亡。</li>
+							<li><code>master</code>：奴隶在奴隶矿场被摧毁后归属奴隶矿场的所属方。</li>
+							<li><code>neutral</code>：奴隶在奴隶矿场被摧毁后归属中立方。</li>
+							<li><code>killer</code>：奴隶在奴隶矿场被摧毁后归属摧毁奴隶矿场的所属方。（原版方案）</li>
+						</ul>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div id="slaves-house" class="code-presentation">
+							<p>[SLAV]</p>
+							<p>Slaved=yes ;是否为奴隶</p>
+							<p>Slaved.OwnerWhenMasterKilled=killer ;奴隶矿场被摧毁后的归属方</p>
+						</div>
 					</div>
 					<button type="button" class="collapsible">自定义奴隶解救语音</button>
 					<div class="col-content">
@@ -475,7 +551,12 @@
 					<h3>抛射体</h3>
 					<button type="button" class="collapsible">抛射体拦截</button>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在Phobos实现了类似《将军：绝命时刻》中美国复仇者防空车的抛射体拦截功能。拥有此功能的单位会自动扫描射程内可以拦截的抛射体，并使用相应的武器进行拦截。</p>
+						<p id="subhead">抛射体的定义</p>
+						<p><code>Interceptable</code>定义该抛射体是否可以被拦截，参数为布尔值。</p>
+						<p><code>Armor</code>定义该抛射体所使用的装甲，抛射体拦截武器最终遵循</p>
+						<p><code></code></p>
+						<p><code></code></p>
 					</div>
 					<button type="button" class="collapsible">弹道类抛射体</button>
 					<div class="col-content">
@@ -494,15 +575,15 @@
 						<p>敬请期待……</p>
 					</div>
 					<h3>超级武器</h3>
-					<button type="button" class="collapsible">AI使用超级武器延时<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">单位变形<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">单位变形<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">电磁脉冲设定<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">电磁脉冲设定<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
@@ -510,20 +591,20 @@
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">超级武器连续释放<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">超级武器连续释放<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">弹头和武器释放<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">弹头和武器释放<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自定义超级武器栏目<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">自定义超级武器栏目<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>单位</h3>
-					<button type="button" class="collapsible">自定义子机扩展<span id="version">bXX</span></button>
+					<button type="button" class="collapsible">自定义子机扩展<span id="version">DEV</span></button>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
@@ -588,19 +669,6 @@
 		      content.style.maxHeight = content.scrollHeight + "px";
 		    } 
 		  });
-		}
-
-		function Clipboard() {
-		  // Get the text field
-		  var copyText = document.getElementByClassName("code-presentation");
-
-		  // Select the text field
-		  copyText.select();
-		  copyText.setSelectionRange(0, 99999); // For mobile devices
-
-		   // Copy the text inside the text field
-		  navigator.clipboard.writeText(copyText.value);
-		  document.getElementById("copy-code").innerHTML = "COPIED !";
 		}
 	</script>
 </body>

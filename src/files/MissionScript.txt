@@ -76,3 +76,8 @@ NPC:
 	[Commander]抱歉，我刚收到伦敦总部的通知，我需要马上赶到欧洲指挥登陆战。
 	[Carolyn]真是遗憾。(Oh, What a pity.)
 	[Carolyn]好吧，下次吧，亲爱的指挥官。(Well, see you next time, darling.)
+
+苏联战役0：毫不留情（No Quarter）
+
+第一阶段：
+	
