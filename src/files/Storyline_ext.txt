@@ -43,7 +43,7 @@ Mission Types:
 	ESCORT
 
 Allied Prologue:
-Mission 0: Echo Of The Past - Dunkerque, France (New Urban) (DEFENSE)
+Mission 0: Echo Of The Past - Dunkerque, France (Temperate) (DEFENSE)
 	Objective: Protect transport to the port.
 
 	Objective 1: Reinforce the Fort des Dunes.
