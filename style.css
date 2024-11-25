@@ -1054,7 +1054,7 @@ footer {
 /*---------------------------------*/
 
 .download h1{
-	font-size: 24px;
+	font-size: 60px;
 	text-align: center;
 	font-family: HarmonyOS Sans, sans-serif;
 	margin: 48px auto 0 auto;
@@ -1097,11 +1097,30 @@ footer {
 	height: auto;
 }
 
+.download-section {
+	margin: auto 20vw;
+	padding: 1vw;
+	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border-radius: 12px;
+	border: 4px outset #ddd;
+	box-shadow: 0 0 24px #000;
+}
+
+.download-section h2 {
+
+}
+
+.download-section a{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
 .progress {
 	margin: auto 20vw;
 	padding: 1vw;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
+	border-radius: 12px;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
 }
@@ -3091,9 +3110,23 @@ footer {
 	/*----------Download Page-----------*/
 	/*----------------------------------*/
 
+	.download h1{
+		font-size: 36px;
+	}
+
 	.download h2{
 		font-size: 24px;
 		margin: 1em auto;
+	}
+
+	.download-section {
+		margin: auto;
+		padding: 1vw;
+		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		border-radius: 12px;
+		border: 4px outset #ddd;
+		box-shadow: 0 0 24px #000;
+		width: 90%;
 	}
 
 	.progress {
