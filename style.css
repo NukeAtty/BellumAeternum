@@ -1748,7 +1748,7 @@ footer {
 }
 
 .col-content {
-  padding: 0.5em;
+  padding: 0 0.5em;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;

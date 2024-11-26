@@ -22,16 +22,16 @@
 		}
 
 		.collapsible #version {
-			vertical-align: top;
+			vertical-align: middle;
 			font-size: 12px;
 			font-family: monospace;
 			background-color: #f00;
 			border-radius: 4px;
 			padding: 1px 4px;
-			margin: auto 2px;
+			margin: auto 0.5em;
 			color: #ccc;
 			text-align: left;
-			line-height: 20px;
+			line-height: 1em;
 		}
 
 		#versionx {
@@ -83,17 +83,24 @@
 		#alert {
 			border: 1px dashed #fcc;
 			font-size: 14px;
-			font-weight: bold;
+			font-weight: normal;
 			padding: 0.2em;
-			background-color: #c00;
+			background-color: #933;
 		}
 
-		#subhead {
+		.blog-content h4{
 			font-size: 18px;
-			font-weight: bold;
+			margin: 2px auto;
 		}
 
-		#subhead:before {
+		h5{
+			font-size: 20px;
+			font-weight: bold;
+			line-height: 1em;
+			margin: 1em auto;
+		}
+
+		h5:before {
 			content:'\2605';
 			color: #f00;
 		}
@@ -139,8 +146,8 @@
 					<div class="chap-nav">
 						<p>快速导航</p>
 						<div class="chaps">
-							<a id="h2" href="#new-enhanced-logic">全新或增强逻辑</a>
-							<a id="h2" href="#fixed-logic">修复或改善逻辑</a>
+							<a id="h2" href="#new-enhanced-logic">全新或增强的逻辑</a>
+							<a id="h2" href="#fixed-logic">修复或改善的逻辑</a>
 							<a id="h2" href="#ai-script">AI编写和地图编辑</a>
 							<a id="h2" href="#user-interface">用户图形界面</a>
 							<a id="h2" href="#misc">杂项</a>
@@ -161,18 +168,23 @@
 						<li>测试版：集合了最新功能，但可能存在Bug。</li>
 					</ol>
 					<p>如果是新入门的Modder，比较推荐使用稳定版。如果是比较有经验的Modder，推荐使用功能更多的开发版。如果是深度精通代码的Modder可以使用测试版，但这类Modder通常能看懂原文，所以不做讨论。</p>
-					<p><b>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">DEV</span>的标签标记，意为开发版。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span></b>的标签标记，意为暂时无法直接下载使用。</p>
-					<h3>术语目录表</h3>
+					<p>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">DEV</span>的标签标记，意为开发版。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span>的标签标记，意为暂时无法直接下载使用。</p>
+					<h3>代码术语目录表</h3>
 					<ul>
-						<li>单位（TechnoType）：建筑、防御建筑、步兵、载具和飞行器的统称。</li>
 						<li>布尔值（Boolean）：开关参数值，填入true或false，或者yes或no。</li>
 						<li>列表（List）：多个值的集合，用英文的逗号<code>,</code>隔开。</li>
-						<li>建筑插件（PowersUp）：指的是类似泰伯利亚之日中GDI的发电厂涡轮，必须以其他建筑为基础才能放置的建筑。</li>
+						<li>浮点值（Float）：指的是用小数表示任意实数的值，比如1为整数，其浮点值就要写为1.0或者1.00等待小数点的值。</li>
+					</ul>
+					<h3>红警内部属于目录表：</h3>
+					<ul>
+						<li>对象（ObjectType）：所有游戏内可视物的总称，包括单位、动画、粒子、地形、覆盖物、污染等。</li>
+						<li>单位（TechnoType）：建筑、步兵、载具和飞行器的总称。</li>
+						<li>建筑插件（PowersUp）：指的是类似泰伯利亚之日中GDI发电厂涡轮、必须以其他建筑为基础才能放置的建筑。</li>
 					</ul>
 					<!--New Logic-->
-					<h2 id="new-enhanced-logic">全新或增强逻辑</h2>
+					<h2 id="new-enhanced-logic">全新或增强的逻辑</h2>
 					<h3>新的机制</h3>
-					<button type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
 						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<span>DurationOverrides</span>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
@@ -194,7 +206,7 @@
 						<br>
 						<p><code>Animation</code>定义该附加效果的动画，该动画会自动循环播放，无视Art.ini中的LoopCount。</p>
 					</div>
-					<button type="button" class="collapsible">自定义辐射类型</button>
+					<h4 type="button" class="collapsible">自定义辐射类型</h4>
 					<div class="col-content">
 						<p>现在任何武器都可以拥有自定义的辐射类型。使用自定义辐射需要创建一个新的注册表<code>[RadiationTypes]</code>，并注册新的辐射名称。</p>
 						<p><b>全局定义：</b></p>
@@ -241,7 +253,7 @@
 							<p>RadHasInvoker=true ;辐射击杀是否给辐射源单位经验</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">激光拖尾</button>
+					<h4 type="button" class="collapsible">激光拖尾</h4>
 					<div class="col-content">
 						<p>激光拖尾是一种全新的拖尾方式，其可定义透明度、宽度和颜色。</p>
 						<p>激光拖尾可以使用在单位、抛射体和VXL碎片上。</p>
@@ -282,16 +294,16 @@
 						</div>
 						<p id="alert">注意：激光拖尾非常消耗性能，因为游戏不存在GPU渲染，过多的激光拖尾会让游戏变得非常卡，不论你的电脑多高端。一、建议不要为单位或抛射体过多的挂激光拖尾；二、建议将<code>SegmentLength</code>尽量调高。三、建议将<code>FadeDuration</code>尽量调低。</p>
 					</div>
-					<button type="button" class="collapsible">护盾</button>
+					<h4 type="button" class="collapsible">护盾</h4>
 					<div class="col-content">
-						<p id="subhead">护盾的注册：</p>
+						<h5>护盾的注册：</h5>
 						<p>护盾作为一种新的对象，是需要新建一个注册表的。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[ShieldTypes]</p>
 							<p>1=NewShield</p>
 						</div>
-						<p id="subhead">护盾的定义：</p>
+						<h5>护盾的定义：</h5>
 						<p>护盾本质上可以看做是让单位拥有一个独立装甲和强度（血量）的第二血条，具备以下基础特性：</p>
 						<ul>
 							<li>护盾在下列状态下不会掉强度：
@@ -314,7 +326,7 @@
 						<p><code>Respawn</code>定义护盾重生的强度值，参数和<code>SelfHealing</code>一致。</p>
 						<p><code>SelfHealing.Rate</code>定义护盾恢复强度的间隔，参数为浮点值，单位为分钟（游戏内）。设置为0.0的时候直接将护盾恢复成满强度。</p>
 						<p><code>Respawn.Rate</code>定义护盾重生的间隔，参数为浮点值，单位为每分钟（游戏内）。设置为0.0的时候直接生成一个满强度护盾。</p>
-						<p id="subhead"><b>护盾的图像：</b></p>
+						<h5>护盾的图像：</h5>
 						<p><code>IdleAnim</code>定义护盾生效时播放的动画，该动画会无视<code>LoopCount</code>无限循环，并可以用下列代码定义：</p>
 						<ul>
 							<li><code>IdleAnim.ConditionYellow</code>和<code>IdleAnim.ConditionRed</code>定义该护盾在强度值呈黄色和红色的状态下所播放的不同的护盾动画。如果不设置<code>IdleAnim.ConditionRed</code>，在血条呈红色时将会调用<code>IdleAnim.ConditionYellow</code>的动画；如果<code>IdleAnim.ConditionYellow</code>也不设置，将直接使用<code>IdleAnim</code>的动画。血条呈黄色和红色的百分比可以在<code>[AudioVisual]</code>中的<code>ConditionYellow</code>和<code>ConditionRed</code>中设置。</li>
@@ -331,7 +343,7 @@
 						<p><code>PassPercent</code>定义护盾会被穿透的伤害的百分比，参数为浮点值，默认为0.0，即不会被穿透。</p>
 						<p><code>AllowTransfer</code>定义护盾是否在单位变形（原版武装直升机逻辑或者Ares的变形逻辑）后继承，默认为true，即可以继承。</p>
 						<p>带有<code>Psychedelic=yes</code>的弹头（神经毒气）默认无视护盾，如果没有<code>ImmuneToBerserk</code>，带护盾的单位一样会无差别攻击。同时，免疫神经毒气的单位也无法避免被该类型弹头作为目标，因此可以使用自定义护甲来避免这种情况发生。</p>
-						<p id="subhead"><b>护盾的界面：</b></p>
+						<h5>护盾的界面：</h5>
 						<p>有护盾的单位会显示血条和护盾条，如果护盾是可再生的，那么护盾强度即便归零也会呈现为一个空框。护盾的护盾条图像可以在在<code>[AudioVisual]</code>部分定义，下列代码是关于护盾条的定义：</p>
 						<ul>
 							<li>默认情况下，建筑的血条使用<span style="color:orange">pips.shp</span>的第6帧作为护盾条，其他单位则使用第17针作为护盾条。</li>
@@ -358,7 +370,7 @@
 							<p>Pips.Background=pipbrd.shp ;护盾条边框</p>
 							<p>Pips.Building.Empty=0 ;建筑上非满强度护盾的底色</p>
 						</div>
-						<p id="subhead">弹头相关设置：</p>
+						<h5>弹头相关设置：</h5>
 						<p><code>Shield.Penetrate</code>定义该弹头是否能无视护盾直接对目标血量造成伤害。</p>
 						<p><code>Shield.Break</code>定义该弹头是否能在伤害计算之前就破盾。</p>
 						<p><code>Shield.BreakAnim</code>定义该弹头在破盾时的动画，这个设置将覆盖护盾中<code>BreakAnim</code>所定义的动画。</p>
@@ -378,7 +390,7 @@
 						<p><code>Shield.InheritStateOnReplace</code>定义用<code>Shield.ReplaceOnly</code>替换的护盾是否继承之前护盾的强度值，并重置再生计时器和强度恢复计时器。</p>
 					</div>
 					<h3>动画</h3>
-					<button type="button" class="collapsible">动画生成单位</button>
+					<h4 type="button" class="collapsible">动画生成单位</h4>
 					<div class="col-content">
 						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
 						<p><code>CreateUnit</code>定义该动画生成的单位，只能填一个。</p>
@@ -411,24 +423,24 @@
 						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
 						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
 					</div>
-					<button type="button" class="collapsible">动画附加粒子系统<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">动画附加粒子系统<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自定义动画可视方<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">自定义动画可视方<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">独立的动画音效<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">独立的动画音效<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>建筑</h3>
-					<button type="button" class="collapsible">自定义建筑延伸<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">自定义建筑延伸<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">建筑插件扩展</button>
+					<h4 type="button" class="collapsible">建筑插件扩展</h4>
 					<div class="col-content">
 						<p><code>PowersUp.Owner</code>定义该建筑插件现在可以定义放置的建筑的所属方，需要注意的是当插件放入建筑后，插件的所属方自动变更为该建筑所属方。参数为预设值，可填入下列值：</p>
 						<ul>
@@ -449,11 +461,11 @@
 							<p>PowersUp.Buildings=NAPOWR,NANRCT ;可以放置的建筑</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">可摧毁障碍建筑<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">可摧毁障碍建筑<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">电厂增幅器</button>
+					<h4 type="button" class="collapsible">电厂增幅器</h4>
 					<div class="col-content">
 						<p>当电厂增幅器存在于地图上时，会改变该所属方的电厂电量，如果电厂增幅器被摧毁，电量则会回归原本数值。</p>
 						<p>电厂增幅器和电厂最大的区别就在于，电厂是直接增减总电量，而电厂增幅器需要在有电厂的情况下才会改变总电量。</p>
@@ -466,13 +478,13 @@
 							<p>PowerPlantEnhancer.Factor=1.5 ;增幅电力的倍数</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">间谍效果<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">间谍效果<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Infantries-->
 					<h3>步兵</h3>
-					<button type="button" class="collapsible">匍匐/部署步兵开火坐标</button>
+					<h4 type="button" class="collapsible">匍匐/部署步兵开火坐标</h4>
 					<div class="col-content">
 						<p>现在步兵在匍匐开火或部署开火时可以使用新的开火坐标定位来覆盖<code>PrimaryFireFLH</code>和<code>SecondaryFireFLH</code>，同时也可以自定义Burst开火时每一发的开火坐标。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -484,7 +496,7 @@
 							<p>DeployedSecondaryFireFLH=0,0,0 ;副武器部署开火时的坐标</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">默认间谍伪装</button>
+					<h4 type="button" class="collapsible">默认间谍伪装</h4>
 					<div class="col-content">
 						<p>步兵现在可以使用<code>DefaultDisguise</code>微观定义默认的间谍伪装，读取阵营高于Ares中阵营的<code>DefaultDisguise</code>。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -493,7 +505,7 @@
 							<p>DefaultDisguise=E2 ;默认伪装的步兵</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">非人类步兵死亡动画</button>
+					<h4 type="button" class="collapsible">非人类步兵死亡动画</h4>
 					<div class="col-content">
 						<p>拥有<code>NotHuman=yes</code>标签的步兵现在在死亡时可以随机从动画序列中挑选<code>Die1</code>到<code>Die5</code>播放。注意，确保你的步兵是有这些动画序列的，如果没有，在死亡时将不会播放任何动画。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -502,7 +514,7 @@
 							<p>NotHuman.RandomDeathSequence=yes ;是否播放随机死亡动画</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">分享弹药</button>
+					<h4 type="button" class="collapsible">分享弹药</h4>
 					<div class="col-content">
 						<p>如果一个带有<code>OpenTopped=yes</code>的载具使用了弹药机制（<code>Ammo</code>），同时乘员也使用了弹药机制，就可以让载具为乘员补充弹药，并可以定义哪些乘员才可以补充弹药。注意，载具必须可以自动补充弹药。</p>
 						<p><code>Ammo.Shared</code>定义乘员和载具是否分享弹药，参数为布尔值。</p>
@@ -522,7 +534,7 @@
 							<p>Ammo.Shared.Group=1 ;弹药分组</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">奴隶阵营自定义</button>
+					<h4 type="button" class="collapsible">奴隶阵营自定义</h4>
 					<div class="col-content">
 						<p>现在可以自定义奴隶矿场被摧毁后奴隶的归属。</p>
 						<p><code>Slaved.OwnerWhenMasterKilled</code>定义奴隶矿场被摧毁后奴隶的归属，参数为以下预设值：</p>
@@ -539,26 +551,26 @@
 							<p>Slaved.OwnerWhenMasterKilled=killer ;奴隶矿场被摧毁后的归属方</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">自定义奴隶解救语音</button>
+					<h4 type="button" class="collapsible">自定义奴隶解救语音<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">在水中使用陆地动作序列</button>
+					<h4 type="button" class="collapsible">在水中使用陆地动作序列<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Projectile-->
 					<h3>抛射体</h3>
-					<button type="button" class="collapsible">抛射体拦截</button>
+					<h4 type="button" class="collapsible">抛射体拦截</h4>
 					<div class="col-content">
 						<p>现在Phobos实现了类似《将军：绝命时刻》中美国复仇者防空车的抛射体拦截功能。拥有此功能的单位会自动扫描射程内可以拦截的抛射体，并使用相应的武器进行拦截。</p>
-						<p id="subhead">抛射体的定义</p>
+						<h5>抛射体的定义：</h5>
 						<p><code>Interceptable</code>定义该抛射体是否可以被拦截，参数为布尔值。</p>
 						<p><code>Armor</code>定义该抛射体所使用的装甲。</p>
 						<p><code>Strength</code>定义该抛射体的血量，血量被将至0或以下抛射体引爆。</p>
 						<p><code>Interceptable.DeleteOnIntercept</code>定义该抛射体在被摧毁时是否会直接被删除而不会引爆弹头。</p>
 						<p><code>Interceptable.WeaponOverride</code>将会覆盖该弹头被拦截后引爆的武器，拦截单位上的相同设置拥有更高优先级。</p>
-						<p id="subhead">拦截单位的定义</p>
+						<h5>拦截单位的定义：</h5>
 						<p><code>Interceptor</code>定义该单位是否可以拦截抛射体，参数为布尔值。</p>
 						<p><code>Interceptor.Weapon</code>定义该单位用哪个武器拦截抛射体，参数为0或1，0代表主武器，1代表副武器。根据拦截抛射体的高度，拦截武器的抛射体可能需要加入<code>AG=yes</code>和<code>AA=yes</code>。</p>
 						<p><code>Interceptor.CanTargetHouses</code>定义该单位可以拦截哪些所属方的抛射体，参数为下列预设值：</p>
@@ -594,13 +606,13 @@
 							<p>Secondary=InterceptLaser</p>
 							<p>Interceptor=true ;该单位是否是抛射体拦截单位</p>
 							<p>Interceptor.Weapon=1 ;该单位用于拦截抛射体的武器</p>
-							<p>Interceptor.CanTargetHouses=enemies; </p>
-							<p>Interceptor.GuardRange=3.0; </p>
-							<p>Interceptor.VeteranGuardRange=3.5 ;</p>
-							<p>Interceptor.EliteGuardRange=4.0 ;</p>
-							<p>Interceptor.MinimumGuardRange=0.0 ;</p>
-							<p>Interceptor.VeteranMinimumGuardRange= ;</p>
-							<p>Interceptor.EliteMinimumGuardRange= ;</p>
+							<p>Interceptor.CanTargetHouses=enemies ;该单位能拦截哪些阵营的抛射体</p>
+							<p>Interceptor.GuardRange=3.0 ;该单位对抛射体的警戒范围</p>
+							<p>Interceptor.VeteranGuardRange=3.5 ;老兵级别对抛射体的警戒范围</p>
+							<p>Interceptor.EliteGuardRange=4.0 ;精英级别对抛射体的警戒范围</p>
+							<p>Interceptor.MinimumGuardRange=0.0 ;该单位对抛射体的最近警戒范围</p>
+							<p>Interceptor.VeteranMinimumGuardRange=0.0 ;老兵级别对抛射体的最近警戒范围</p>
+							<p>Interceptor.EliteMinimumGuardRange=0.0 ;精英级别对抛射体的最近警戒范围</p>
 							<p>Interceptor.DeleteOnIntercept=false ;是否直接删除抛射体</p>
 							<p>Interceptor.WeaponOverride=SmallExplosion ;被拦截的抛射体引爆的武器</p>
 							<p>Interceptor.WeaponReplaceProjectile=false ;是否改变抛射体性质</p>
@@ -608,100 +620,253 @@
 							<p>Interceptor.KeepIntact=false ;拦截后抛射体是否继续移动</p>
 						</div>
 					</div>
-					<button type="button" class="collapsible">弹道类抛射体</button>
+					<h4 type="button" class="collapsible">弹道类抛射体</h4>
+					<div class="col-content">
+						<p>弹道类抛射体是一种全新的抛射体模式，其独立于四大抛射体（<code>Invisio</code>，<code>ROT</code>，<code>Arcing</code>，<code>Vertical</code>）之外，因此禁止和四大抛射体混用。目前弹道类抛射体只推出了两种弹道模式，即直线弹道和轰炸弹道。</p>
+						<p><code>Trajectory</code>定义使用哪种弹道的抛射体，参数为弹道模式的预设名称，<code>Straight</code>为直线弹道（平射），<code>Bombard</code>为轰击弹道（曲射）。</p>
+						<p><code>Trajectory.Speed</code>定义抛射体的速度，参数为浮点值。和原版在武器上用<code>Speed</code>控制速度不同，弹道类抛射体的速度需要再抛射体代码中定义。</p>
+						<h5>直线弹道</h5>
+						<p>如字面意义解释，直线弹道的弹体会以一条直线飞向目标。</p>
+						<p><span id="version">DEV</span><code>Trajectory.Straight.DetonationDistance</code>定义抛射体在离目标多少距离之外即被引爆，参数为浮点值，单位为单元格。填入0的情况下视为不设置最大距离。</p>
+						<p><span id="version">DEV</span><code>Trajectory.Straight.ApplyRangeModifiers</code>定义是否在武器射程增减（如附加效果）后对<code>Trajectory.Straight.DetonationDistance</code>的距离进行等值的增减，参数为布尔值。</p>
+						<p><span id="version">DEV</span><code>Trajectory.Straight.TargetSnapDistance</code>定义最远的预判距离，即在该距离之内，弹道会预判敌人的走向，参数为浮点值，单位为单元格。</p>
+						<p><span id="version">DEV</span><code>Trajectory.Straight.PassThrough</code>定义抛射体是否会在击中目标后不引爆弹头，而是朝着<code>Trajectory.Straight.DetonationDistance</code>所指定的距离继续飞行，参数为布尔值。这个设置将改变抛射体的角度，如果在同一高度抛射体则会直线飞行。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[MGBullet]</p>
+							<p>Trajectory=Straight ;使用直线弹道</p>
+							<p>Trajectory.Speed=150.0 ;弹道速度</p>
+							<p>Trajectory.Straight.DetonationDistance=0.4 ;抛射体自爆的最大距离</p>
+							<p>Trajectory.Straight.ApplyRangeModifiers=false ;引爆距离是否根据武器射程变化而变化</p>
+							<p>Trajectory.Straight.TargetSnapDistance=0.5 ;预判距离</p>
+							<p>Trajectory.Straight.PassThrough=false ;击中目标是否穿透然后继续飞行</p>
+						</div>
+						<p id="comment">笔者注：直线弹道配合激光拖尾可以轻松实现机枪曳光弹效果，但为了命中率考虑弹道速度应该加大。</p>
+						<h5>轰击弹道</h5>
+						<p>和直线弹道类似，但抛射体会瞄准目标上方，发射后作自由落体下坠然后在目标引爆。</p>
+						<p><code>Trajectory.Bombard.Height</code>定义抛射体会瞄准距离目标多高的位置，填入浮点值，单位为高度值</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[Howitzer]</p>
+							<p>Trajectory=Bombard ;使用轰炸弹道</p>
+							<p>Trajectory.Bombard.Height=5.0 ;轰炸弹道的曲线高度</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">溅射逻辑扩展</h4>
+					<div class="col-content">
+						<p>溅射逻辑现在可以在地面或者建筑上触发。</p>
+						<p><code>Shrapnel.AffectsGround</code>定义该抛射体在地面引爆时是否会触发溅射，参数为布尔值。</p>
+						<p><code>Shrapnel.AffectsBuildings</code>定义该抛射体在建筑引爆时是否会触发溅射，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[LargeCometP]</p>
+							<p>ShrapnelWeapon=CometFragment ;溅射武器，需要在[WeaponTypes]注册</p>
+							<p>ShrapnelCount=5 ;溅射数量</p>
+							<p>Shrapnel.AffectsGround=true ;打到地面是否溅射</p>
+							<p>Shrapnel.AffectsBuildings=true ;打到建筑是否溅射</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">抛射体阻挡逻辑扩展<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">溅射逻辑扩展</button>
-					<div class="col-content">
-						<p>敬请期待……</p>
-					</div>
-					<button type="button" class="collapsible">抛射体阻挡逻辑扩展</button>
-					<div class="col-content">
-						<p>敬请期待……</p>
-					</div>
-					<button type="button" class="collapsible">末端反射武器</button>
+					<h4 type="button" class="collapsible">末端反射武器<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>超级武器</h3>
-					<button type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">单位变形<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">单位变形<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">电磁脉冲设定<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">电磁脉冲设定<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">虚拟投送</button>
+					<h4 type="button" class="collapsible">虚拟投送</h4>
+					<div class="col-content">
+						<p>虚拟投送的定义是在地图之外投送一个建筑物，这个建筑物是无法在游戏中看到的，也无法被攻击。虚拟投送的目的是，在视觉上不建造建筑的情况下可以实现一些建筑的效果。</p>
+						<p>和Ares的超级武器定义比较不同，它不受超级武器<code>Type</code>和释放坐标的限制。可以理解为超级武器的一个衍生功能。</p>
+						<p><code>LimboDelivery.Types</code>定义该超级武器所投放的建筑类型，参数为建筑的注册名的列表。</p>
+						<p><code>LimboDelivery.IDs</code>定义该超级武器所投放的建筑编号，参数为整数，目的是让建筑可以被摧毁。</p>
+						<p><code>LimboKill.Affects</code>定义该超级武器可以移除哪一所属方的虚拟投送的建筑，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：没有阵营的虚拟建筑会被移除。</li>
+							<li><code>owner/self</code>：移除使用该超级武器的阵营的虚拟投放建筑。</li>
+							<li><code>allies/ally</code>：移除使用该超级武器的阵营的盟友的虚拟投放建筑。</li>
+							<li><code>team</code>：移除使用该超级武器的阵营和其盟友的虚拟投放建筑。</li>
+							<li><code>enemies/enemy</code>：移除使用该超级武器的阵营的敌人的虚拟投放建筑。</li>
+							<li><code>all</code>：移除所有阵营的虚拟投放建筑。</li>
+						</ul>
+						<p><code>LimboKill.IDs</code>定义该超级武器可以移除什么编号的建筑，参数为整数。</p>
+						<p><code>LimboDelivery.RollChance</code>定义每一个虚拟投放建筑被投放的概率，参数为百分比的列表。</p>
+						<p><code>LimboDelivery.RandomWeightsN</code>定义</p>
+					</div>
+					<h4 type="button" class="collapsible">超级武器连续释放<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">超级武器连续释放<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">弹头和武器释放<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">弹头和武器释放<span id="version">DEV</span></button>
-					<div class="col-content">
-						<p>敬请期待……</p>
-					</div>
-					<button type="button" class="collapsible">自定义超级武器栏目<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">自定义超级武器栏目<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>单位</h3>
-					<button type="button" class="collapsible">自定义子机扩展<span id="version">DEV</span></button>
+					<h4 type="button" class="collapsible">自定义子机扩展<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自动删除乘员</button>
+					<h4 type="button" class="collapsible">自动删除乘员</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">乘员随载具更改所属方</button>
+					<h4 type="button" class="collapsible">乘员随载具更改所属方</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自动开火武器</button>
+					<h4 type="button" class="collapsible">自动开火武器</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自定义乘员开火</button>
+					<h4 type="button" class="collapsible">自定义乘员开火</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">关闭副武器自动推算</button>
+					<h4 type="button" class="collapsible">关闭副武器自动推算</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">自定义Burst开火坐标</button>
+					<h4 type="button" class="collapsible">自定义Burst开火坐标</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">初始血量</button>
+					<h4 type="button" class="collapsible">初始血量</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">单位自动消失</button>
+					<h4 type="button" class="collapsible">单位自动消失</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">心灵控制扩展</button>
+					<h4 type="button" class="collapsible">心灵控制扩展</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">禁止手动移动</button>
+					<h4 type="button" class="collapsible">禁止手动移动</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<button type="button" class="collapsible">水下单位显形</button>
+					<h4 type="button" class="collapsible">水下单位显形</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
+					<h3>地形</h3>
+					<h4 type="button" class="collapsible">破坏动画和声音</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h3>弹头</h3>
+					<h4 type="button" class="collapsible">心控解除</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">暴击</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义水花动画</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">全局引爆</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">爆金币</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">超级武器引信</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">移除伪装</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">开图</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">黑幕</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">触发指定的非人死亡动画</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h3>武器</h3>
+					<h4 type="button" class="collapsible">自定义范围攻击目标</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">Burst开火延迟</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">反馈武器</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">辐射扩展</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义飞行器扫射</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">目标选择筛选</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h2 id="fixed-logic">修复或改善的逻辑</h2>
+					<h3>BUG修复和杂项</h3>
+					<h3>其他平台的问题修复</h3>
+					<h3>飞行器</h3>
+					<h3>动画</h3>
+					<h3>建筑</h3>
+					<h3>粒子系统</h3>
+					<h3>粒子</h3>
+					<h3>抛射体</h3>
+					<h3>单位</h3>
+					<h3>地形</h3>
+					<h3>矿石</h3>
+					<h3>载具</h3>
+					<h3>藤蔓与废料</h3>
+					<h3>VXL碎片</h3>
+					<h3>弹头</h3>
+					<h3>武器</h3>
+					<h3>杂项</h3>
+					<h2 id="ai-script">AI编写和地图编辑</h2>
+					<h3>BUG修复和杂项</h3>
+					<h3>单人任务地图</h3>
+					<h3>脚本动作</h3>
+					<h3>触发动作</h3>
+					<h3>触发事件</h3>
+					<h2 id="user-interface">用户界面</h2>
+					<h2 id="misc">杂项</h2>
 				</div>
 			</div>
 		</div>
