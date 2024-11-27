@@ -439,7 +439,15 @@
 					</div>
 					<h4 type="button" class="collapsible">动画附加粒子系统<span id="version">DEV</span></h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以将粒子系统附加到动画中。和VoxelAnims的标签类似，只支持带有<code>BehavesLike=Smoke</code>的粒子系统。</p>
+						<p>如果动画带有<code>Next</code>，则在下一个动画开始时该粒子系统会被删除。</p>
+						<p><code>AttachedSystem</code>定义该动画附加的粒子系统，参数为粒子系统的注册名。</p>
+						<p>代码示例（该代码来自万世之战中蒸汽机车头的开火动画）：</p>
+						<p>在<code>artmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[TRNSMK] ;Smoke for Steam Locomotive</p>
+							<p>AttachedSystem=TrainSmokeSys ;动画附带的粒子系统名</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义动画可视方<span id="version">DEV</span></h4>
 					<div class="col-content">
@@ -809,7 +817,7 @@
 						<p>单位可以在不需要扫描目标的情况下自动开火，这样的开火模式要么选择单位所在的地格作为目标，要么选择单位自己作为目标。</p>
 						<p><code>AutoFire</code>定义单位是否会自动开火，参数为布尔值，默认为对自己开火。</p>
 						<p><code>AutoFire.TargetSelf</code>定义单位是否自动对自己开火，参数为布尔值，如果为false，单位则会对所在的地格自动开火。</p>
-						<p>代码示例：</p>
+						<p>代码示例（改代码来自万世之战中的蒸汽机车头）：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
 							<p>[LOCOMOTIVE]</p>
@@ -1245,15 +1253,15 @@
 				<div class="footer-column">
 				<p>阵营</p>
 				<ul>
-					<li><a href="allied.html">盟军</a></li>
-					<li><a href="soviet.html">苏联</a></li>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
 				<p>文章</p>
 				<ul>
-					<li><a href="blog.html#concept">概念</a></li>
-					<li><a href="blog.html#tutorial">教程</a></li>
+					<li><a href="../blog.html#concept">概念</a></li>
+					<li><a href="../blog.html#tutorial">教程</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
