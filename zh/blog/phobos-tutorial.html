@@ -78,6 +78,7 @@
 			font-size: 14px;
 			font-weight: 100;
 			padding: 0.2em;
+			margin: 0.5em auto;
 		}
 
 		#alert {
@@ -86,6 +87,19 @@
 			font-weight: normal;
 			padding: 0.2em;
 			background-color: #933;
+			margin: 0.5em auto;
+		}
+
+		#highlight {
+			border: 1px solid #fff;
+			font-size: 14px;
+			font-weight: bold;
+			padding: 0.2em;
+			background-color: #c93;
+			margin: 0.5em auto;
+			border-radius: 2px;
+			text-align:center;
+			text-shadow: 0 1px 1px #000;
 		}
 
 		.blog-content h4{
@@ -93,14 +107,14 @@
 			margin: 2px auto;
 		}
 
-		h5{
+		.blog-content h5{
 			font-size: 20px;
 			font-weight: bold;
 			line-height: 1em;
 			margin: 1em auto;
 		}
 
-		h5:before {
+		.blog-content h5:before {
 			content:'\2605';
 			color: #f00;
 		}
@@ -175,7 +189,7 @@
 						<li>列表（List）：多个值的集合，用英文的逗号<code>,</code>隔开。</li>
 						<li>浮点值（Float）：指的是用小数表示任意实数的值，比如1为整数，其浮点值就要写为1.0或者1.00等待小数点的值。</li>
 					</ul>
-					<h3>红警内部属于目录表：</h3>
+					<h3>红警相关术语目录表：</h3>
 					<ul>
 						<li>对象（ObjectType）：所有游戏内可视物的总称，包括单位、动画、粒子、地形、覆盖物、污染等。</li>
 						<li>单位（TechnoType）：建筑、步兵、载具和飞行器的总称。</li>
@@ -752,10 +766,6 @@
 						<p>敬请期待……</p>
 					</div>
 					<h3>单位</h3>
-					<h4 type="button" class="collapsible">自定义子机扩展<span id="version">DEV</span></h4>
-					<div class="col-content">
-						<p>敬请期待……</p>
-					</div>
 					<h4 type="button" class="collapsible">自动删除乘员</h4>
 					<div class="col-content">
 						<p>可装载乘员的载具可以逐渐删除乘员，乘员越多耗时越长，并可以像部队回收站那样使用。可以搭配Ares的超时空监狱效果实现自动清除被困的敌人。</p>
@@ -805,100 +815,373 @@
 							<p>[LOCOMOTIVE]</p>
 							<p>AutoFire=true ;单位是否自动开火</p>
 							<p>AutoFire.TargetSelf=false ;单位是否对自身自动开火</p>
-							<p>Primary=TrainSmoke</p>
+							<p>Primary=TrainSmoke ;自动开火的武器</p>
 						</div>
 						<p id="comment">这个功能最大的问题在于单位开火时，可以看到一条红色的攻击示意线。然而，这个功能最大的优势是可以附带FLH坐标，因可以看做是一个可以定义FLH坐标的动画生成器。万世之战的蒸汽机车就是用这个功能模拟冒烟效果。</p>
-					</div>
-					<h4 type="button" class="collapsible">自定义乘员开火</h4>
+					</div>		
+					<h4 type="button" class="collapsible">数量限制组<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
+					<h4 type="button" class="collapsible">自定义乘员开火</h4>
+					<div class="col-content">
+						<p>现在你可以微观定义乘员开火载具的属性，以覆盖宏观定义。</p>
+						<p><code>OpenTopped.RangeBonus</code>定义乘员在载具内开火所获得额外的射程，参数为整数。</p>
+						<p><code>OpenTopped.DamageMultiplier</code>定义乘员在载具内开火所获得的火力加成，参数为浮点值，伤害将乘以这个值。</p>
+						<p><code>OpenTopped.WarpDistance</code>定义使用超时空武器的乘员在（从载具到目标）多少距离外武器停止攻击，参数为整数。</p>
+						<p><code>OpenTopped.IgnoreRangefinding</code>定义载具是否会根据最近射程的乘员来接近目标，参数为布尔值。</p>
+						<p><code>OpenTopped.AllowFiringIfDeactivated</code>定义载具在瘫痪（停电、EMP等）时乘员是否可以开火。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[BFRT] ;Battle Fortress</p>
+							<p>...</p>
+							<p>OpenTopped=yes</p>
+							<p>OpenTopped.RangeBonus=1 ;乘员获得额外的射程</p>
+							<p>OpenTopped.DamageMultiplier=1.1 ;乘员获得额外的火力</p>
+							<p>OpenTopped.WarpDistance=7 ;超时空的最大距离</p>
+							<p>OpenTopped.IgnoreRangefinding=true ;是否移动到所有乘员都能攻击到目标的距离</p>
+							<p>OpenTopped.AllowFiringIfDeactivated=true ;是否在瘫痪后乘员依然可以开火</p>
+						</div>
+					</div>
 					<h4 type="button" class="collapsible">关闭副武器自动推算</h4>
+					<div class="col-content">
+						<p>在原版中，如果主武器不能攻击的情况下，单位会选择副武器攻击目标，而现在可以通过以下代码来关闭副武器自动推算。</p>
+						<p><code>NoSecondaryWeaponFallback</code>定义是否关闭副武器自动推算，参数为布尔值。这个设置不能关闭手动设置的推算。</p>
+						<p>所谓手动设置的推算，情况如下：</p>
+						<ul>
+							<li><code>OpenTransportWeapon=1</code>的单位进入可对外开火的载具所使用的武器，例如原版的重装步兵进入战斗要塞。</li>
+							<li>带有Ares的<code>NoAmmoWeapon=1</code>的单位所使用的武器，例如万世之战中的战斗要塞。</li>
+							<li><code>DeployFireWeapon=1</code>的单位部署后所使用的武器，例如原版的武装直升机。</li>
+							<li>带有<code>DrainWeapon=true</code>的单位在吸建筑时的武器，例如原版的镭射飞碟。</li>
+							<li>主武器带有<code>IsLocomotor=true</code>的弹头在攻击建筑时的武器，例如原版的磁电坦克。</li>
+							<li>带有<code>ElectricAssault=true</code>的弹头在为线圈充能是的武器，例如原版的磁暴步兵。</li>
+							<li>带有<code>Overpowerable=true</code>的建筑在充能时攻击所使用的武器，例如原版的磁暴线圈。</li>
+							<li>使用多武器机制的单位所使用的武器，例如原版的盖特坦克或者多功能步兵车。</li>
+						</ul>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[APOC] ;Apocalypse Tank</p>
+							<p>Primary=120mmx</p>
+							<p>Secondary=MammothTusk</p>
+							<p>NoSecondaryWeaponFallback=true ;是否关闭副武器自动推算</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">间谍伪装逻辑扩展<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义Burst开火坐标</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，如果武器带有<code>Burst=2</code>，并且在art中，单位开火坐标的第二个值不等于0，那么该武器就可以实现左右开弓发射这个武器的Burst。</p>
+						<p>现在Phobos将这个功能做了更多拓展，可以定义每一个<code>Burst</code>的开火坐标。</p>
+						<p><code>(Elite)(Prone/Deployed)PrimaryFire|SecondaryFire|WeaponX|FLH.BurstN</code>定义某个级别在某个状态下用某种武器的第N个Burst的坐标，参数为FLH，代码的组合方式如下：</p>
+						<p id="highlight">A + B + C + .Burst + N</p>
+						<p>其中，A可以带入以下代码：</p>
+						<ul>
+							<li><code>Elite</code>：代表精英级别时所用武器</li>
+						</ul>
+						<p>B可以带入以下代码：</p>
+						<ul>
+							<li><code>Prone</code>：代表步兵匍匐时</li>
+							<li><code>Deployed</code>：代表步兵部署时</li>
+						</ul>
+						<p>C可以带入以下代码</p>
+						<ul>
+							<li><code>PrimaryFire</code>：代表主武器</li>
+							<li><code>SecondaryFire</code>：代表副武器</li>
+							<li><code>WeaponX</code>：代表多武器单位的第X个武器</li>
+						</ul>
+						<p>N代表第N个Burst，武器中有多少Burst就写多少个坐标。</p>
+						<p>代码示例：</p>
+						<p>在<code>artmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[FV]</p>
+							<p>EliteWeapon5.Burst1=170,50,90 ;多功能步兵车的第五个武器的第一个Burst的开火坐标</p>
+						</div>
 					</div>
-					<h4 type="button" class="collapsible">初始血量</h4>
+					<h4 type="button" class="collapsible">初始血量和克隆血量</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>单位现在可以自定义初始血量，即造出来后可以不是满血。当然，就算指定的初始血量高于单位的<code>Strength</code>，单位也不会初始拥有更多的血量。</p>
+						<p><code>InitialStrength</code>定义单位在出厂后的血量，参数为整数。</p>
+						<p><code>InitialStrength.Cloning</code>定义该带有<code>Cloning=yes</code>克隆建筑出厂的单位的初始血量，参数为小数、百分比或用英文逗号<code>,</code>隔开的范围值。如果是范围值，那么出厂单位将随机在范围内取值作为初始血量。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[INIT]</p>
+							<p>Strength=100</p>
+							<p>InitialStrength=91 ;初始血量</p>
+							<br>
+							<p>[NACLON]</p>
+							<p>Cloning=yes</p>
+							<p>InitialStrength.Cloning=50% ;克隆单位的初始血量</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">单位自动消失</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>单位可以在某些条件下自动消失，并且可以以不同的方式消失。</p>
+						<p><code>AutoDeath.OnAmmoDepletion</code>定义单位是否在弹药耗尽后消失，参数为布尔值。</p>
+						<p><code>AutoDeath.AfterDelay</code>定义单位是否在一定的时间后消失，参数为整数，单位为帧。</p>
+						<p><code>AutoDeath.Behavior</code>定义单位以什么方式消失，参数为预设值，解释如下：</p>
+						<ul>
+							<li><code>kill</code>：被摧毁，一切摧毁相关的效果都会生效，比如爆炸动画和碎片。</li>
+							<li><code>vanish</code>：直接删除，不会产生爆炸动画和碎片。</li>
+							<li><code>sell</code>：被变卖，可获得金钱，建筑将会播放建造动画，不会产生爆炸动画和碎片。</li>
+						</ul>
+						<p>该逻辑支持虚拟投放超级武器，因此如果你想删除被虚拟投放的建筑，也可以在建筑上直接添加自动消失相关代码。</p>
+						<p>代码示例（该代码来自万世之战的灰熊坦克残骸）：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[GTNKWK] ;Grizzly Tank Wreckage</p>
+							<p>...</p>
+							<p>AutoDeath.OnAmmoDepletion=false ;单位是否在弹药耗尽时消失</p>
+							<p>AutoDeath.AfterDelay=2000 ;单位在指定时间内消失</p>
+							<p>AutoDeath.Behavior=kill</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">心灵控制扩展</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>Phobos为心灵控制提供了新的标签，以实现以下功能：</p>
+						<ol>
+							<li>心灵控制现在可以规定有效距离。</li>
+							<li>如果单位有多个心灵控制槽，在控制了最大数目的单位时，再控制单位时可以释放第一个被控制的单位。</li>
+							<li>可微观定义心灵控制的动画。</li>
+						</ol>
+						<p><code>MindControlRangeLimit</code>定义心灵控制的有效距离，参数为浮点值，填入大于0的数生效。</p>
+						<p><code>MultiMindControl.ReleaseVictim</code>定义是否在心灵控制槽满了以后控制单位时，释放第一个被控制的单位。</p>
+						<p><code>MindControl.Anim</code>定义被该弹头心灵控制的单位的动画，参数为动画注册名，将覆盖全局的<code>ControlledAnimationType</code>。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[YURI] ;Yuri</p>
+							<p>...</p>
+							<p>MindControlRangeLimit=10 ;心灵控制有效范围</p>
+							<p>MultiMindControl.ReleaseVictim=true ;是否释放第一个心灵控制的单位</p>
+							<br>
+							<p>[Controller]	;Warhead</p>
+							<p>...</p>
+							<p>MindControl.Anim=MINDANIM ;心灵控制的动画</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">禁止手动移动</h4>
 					<div class="col-content">
+						<p>现在可以让一个单位完全无法手动移动。</p>
+						<p><code>NoManualMove</code>定义该单位是否不可以手动移动，参数为布尔值。</p>
+						<p>代码示例（该代码来自万世之战中灰熊坦克残骸）：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[GTNKWK] ;Grizzly Tank Wreckage</p>
+							<p>NoManualMove=true ;是否允许手动移动</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">强制特定武器对付特定目标</h4>
+					<div class="col-content">
+						<p>该功能将覆盖部分原版水下目标选取的逻辑。</p>
+						<p><code>ForceWeapon.Naval.Decloaked</code>定义海军单位使用什么武器对付已经显形的水下单位，参数为整数，-1为关闭该功能，0为主武器，1为副武器。</p>
+					</div>
+					<h4 type="button" class="collapsible">全方位武器强制面向目标<span id="version">DEV</span></h4>
+					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">水下单位显形</h4>
+					<h4 type="button" class="collapsible">子机升级</h4>
+					<div class="col-content">
+						<p>单位发射的子机现在可以设置为同步单位等级。</p>
+						<p><code>Promote.IncludeSpawns</code>定义该单位的子机是否会同步该单位的等级，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[CARRIER]</p>
+							<p>Trainable=yes</p>
+							<p>Promote.IncludeSpawns=true ;子机是否随着航母升级而升级</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">复仇武器<span id="version">DEV</span></h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">航母子机扩展</h4>
+					<div class="col-content">
+						<p>航母子机（飞行器类子机）现在可以增加最远航程、自定义子机补充速度以及子机起飞后直接执行攻击指令。</p>
+						<p><code>Spawner.LimitRange</code>定义子机的航程是否被限制，参数为布尔值，航程由该单位子机武器的<code>Range</code>所决定。限制了航程的子机在单位远离目标时会放弃攻击指令直接返航。</p>
+						<p><code>Spawner.ExtraLimitRange</code>定义子机可以在原有航程下增加多少格的航程，参数为整数，单位为单元格。</p>
+						<p><code>Spawner.DelayFrames</code>定义子机的补充速度，参数为整数，单位为帧。这将直接覆盖原版写死的子机补充速度，即导弹类子机为9帧，其他类型子机为20帧。</p>
+						<p><span id="version">DEV</span><code>Spawner.AttackImmediately</code>定义航母在释放子机后是否立刻进入攻击模式而不用等待其他子机释放，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[CARRIER]</p>
+							<p>Spawner.LimitRange=true ;航母子机是否限制航程</p>
+							<p>Spawner.ExtraLimitRange=2 ;额外增加两格航程</p>
+							<p>Spawner.DelayFrames=25 ;子机补充速度</p>
+							<p>Spawner.AttackImmediately=true ;子机是否直接执行攻击指令</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">超时空传送武器</h4>
+					<div class="col-content">
+						<p>现在可以让武器在单位传送后开火，会在传送动画（<code>WarpIn</code>和<code>WarpOut</code>）播放的同时开火。</p>
+						<p><code>WarpInWeapon</code>定义传送时开火的武器，参数值为武器注册名。</p>
+						<p><code>WarpInMinRangeWeapon</code>定义在传送距离小于<code>ChronoRangeMinimum</code>时代替<code>WarpInWeapon</code>。它会无视<code>ChronoTrigger</code>设置与否而触发。如果未设置，默认为<code>WarpInWeapon</code>。</p>
+						<p><code>WarpInWeapon.UseDistanceAsDamage</code>定义是否用超时空传送的单元格距离作为伤害，</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[CLEG]</p>
+							<p>WarpInWeapon=NeutronRifle ;超时空传送后发射的武器</p>
+							<p>WarpInMinRangeWeapon=NeutronRifle ;超时空传送到最小距离后发射的武器</p>
+							<p>WarpInWeapon.UseDistanceAsDamage=true ;是否用移动距离的单元格取代伤害</p>
+							<p>WarpOutWeapon=NeutronRifle ;超时空传送前在原地发射的武器</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">单位自定义染色<span id="version">DEV</span></h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义单位变卖声音</h4>
+					<div class="col-content">
+						<p>当单位被变卖后，将会播放一个变卖音效和相应的EVA语音，现在可以微观定义这些声音。</p>
+						<p><code>EVA.Sold</code>定义该单位被变卖的EVA语音，参数为EVA语音注册名，建筑默认是<code>EVA_StructureSold</code>，载具默认是<code>EVA_UnitSold</code>。</p>
+						<p><code>SellSound</code>定义该单位被变卖的音效，参数为音效注册名，默认值为<code>[AudioVisual]</code>中的<code>SellSound</code>所定义的音效。注意，在原版中，载具的变卖音效是全局音效，Phobos将其修复为局部音效。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[HTNK]</p>
+							<p>EVA.Sold=EVA_TankSold</p>
+							<p>SellSound=GrinderGrinding</p>
+						</div>
+					</div>
+					<h4 type="button" class="collapsible">单位出厂语音<span id="version">DEV</span></h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">单位升级动画<span id="version">DEV</span></h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">改变阵营时变形<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>地形</h3>
-					<h4 type="button" class="collapsible">破坏动画和声音</h4>
+					<h4 type="button" class="collapsible">摧毁动画和音效</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以设定地形对象的摧毁动画和音效。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[TREE01]</p>
+							<p>DestroyAnim=TREEFALL ;地形对象被摧毁时的动画</p>
+							<p>DestroySound=TreeFall ;地形对象被摧毁时的音效</p>
+						</div>
 					</div>
 					<h3>弹头</h3>
 					<h4 type="button" class="collapsible">心控解除</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>心控解除弹头可以解除单位的心灵控制，但对永久心灵控制无效。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[MindControlReliever]</p>
+							<p>...</p>
+							<p>RemoveMindControl=true ;是否可以解除心灵控制</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">暴击</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义水花动画</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">全局引爆</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">爆金币</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">超级武器引信</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">移除伪装</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">开图</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">黑幕</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">触发指定的非人死亡动画</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h3>武器</h3>
 					<h4 type="button" class="collapsible">自定义范围攻击目标</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">Burst开火延迟</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">反馈武器</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">辐射扩展</h4>
 					<div class="col-content">
@@ -982,7 +1265,7 @@
 			</div>
 		</div>
 		<div class="footer-portals">
-			<a href="https://space.bilibili.com/3546721533561614"><img src="../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
 		</div>
 	</footer>
 	<script>
