@@ -1192,7 +1192,7 @@ footer {
 }
 
 .specific-progress h4 {
-	font-family: Neon, monospace;
+	font-family: HarmonyOS Sans SC, monospace;
 	font-size: 18px;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
@@ -1301,7 +1301,7 @@ footer {
 }
 
 .guide-container p{
-	font-family: HarmonyOS Sans, sans-serif;
+	font-family: HarmonyOS Sans SC, sans-serif;
 	font-size: 18px;
 	color: #ffffff;
 	margin: auto 5vw;
