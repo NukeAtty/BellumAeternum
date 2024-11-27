@@ -707,7 +707,37 @@
 						</ul>
 						<p><code>LimboKill.IDs</code>定义该超级武器可以移除什么编号的建筑，参数为整数。</p>
 						<p><code>LimboDelivery.RollChance</code>定义每一个虚拟投放建筑被投放的概率，参数为百分比的列表。</p>
-						<p><code>LimboDelivery.RandomWeightsN</code>定义</p>
+						<p><code>LimboDelivery.RandomWeightsN</code>定义第N个建筑的每次的权重增加，N为从序列数，从0开始，代表在<code>LimboDelivery.Types</code>建筑列表中的第几个建筑，参数为正整数，等于0时则不增加权重。</p>
+						<p>虚拟投送的建筑并不支持所有的建筑功能，但以下功能是经过了测试的：</p>
+						<ul>
+							<li>工业工厂</li>
+							<li>矿石精炼器</li>
+							<li>间谍卫星</li>
+							<li>续存（Ares3.0功能）</li>
+							<li>建造前提</li>
+							<li>超级武器前提</li>
+						</ul>
+						<p>如果希望这个建筑可作用于<a href="ai-tutorial.html#ai-trigger" target="_blank">AI触发前提中的“己方拥有某建筑”和“敌方拥有某建筑”</a>，需要为该投放的建筑添加<code>LegalTarget=yes</code>标签。</p>
+						<p id="alert">记住，虚拟投放的建筑不存在于场上，也就是说这些建筑不应该拥有需要交互的逻辑（比如工厂、维修厂、克隆中心），也最好带上<code>KeepAlive=no</code>标签或者用<code>LimboKill.IDs</code>主动删除，不然游戏会永远无法正常结束。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[ForceShieldSpecial] ;力场护盾</p>
+							<p>...</p>
+							<p>LimboDelivery.Types=GASPYSAT,GAOREP,NAINDP ;释放后虚拟投放的建筑</p>
+							<p>LimboDelivery.IDs=1,2,3 ;三个建筑的ID</p>
+							<p>LimboDelivery.RollChance=33%,33%,33% ;三个建筑被投放的概率</p>
+							<p>LimboDelivery.RandomWeights0=10 ;间谍卫星的权重增量</p>
+							<p>LimboDelivery.RandomWeights2=10 ;矿石精炼器的权重增量</p>
+							<p>LimboDelivery.RandomWeights3=10 ;工业工厂的权重增量</p>
+							<br>
+							<p>[LimboKillSpecial] ;删除虚拟建筑超级武器</p>
+							<p>...</p>
+							<p>SW.AutoFire=yes ;自动发射</p>
+							<p>...</p>
+							<p>LimboKill.IDs=1,2,3 ;删除建筑的ID</p>
+							<p>LimboKill.Affects=self ;删除建筑的所属方</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">超级武器连续释放<span id="version">DEV</span></h4>
 					<div class="col-content">
