@@ -758,15 +758,56 @@
 					</div>
 					<h4 type="button" class="collapsible">自动删除乘员</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>可装载乘员的载具可以逐渐删除乘员，乘员越多耗时越长，并可以像部队回收站那样使用。可以搭配Ares的超时空监狱效果实现自动清除被困的敌人。</p>
+						<p><code>PassengerDeletion.Rate</code>定义多长时间删除一个乘员，参数为整数，单位为帧。</p>
+						<p><code>PassengerDeletion.Rate.SizeMultiply</code>定义占据大于1的格子的单位是否需要更多时间来删除，时长等于<code>PassengerDeletion.Rate</code>乘以单位的<code>Size</code>，参数为布尔值。</p>
+						<p><code>PassengerDeletion.Soylent</code>删除乘员是否返还金钱，参数为布尔值。</p>
+						<p><code>PassengerDeletion.SoylentFriendlies</code>删除自己或盟友的乘员是否返还金钱，参数为布尔值。</p>
+						<p><code>PassengerDeletion.ReportSound</code>删除乘员时播放的声音，参数为声音注册名。</p>
+						<p><code>PassengerDeletion.Anim</code>删除乘员时的动画。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[MGRD] ;Mobile Grinder</p>
+							<p>...</p>
+							<p>Passengers=3 ;乘员数量</p>
+							<p>PipScale=Passengers ;乘员格子</p>
+							<p>PassengerDeletion.Rate=1 ;删除一个乘员的间隔</p>
+							<p>PassengerDeletion.Rate.SizeMultiply=false ;删除多格子乘员是否用更多时间</p>
+							<p>PassengerDeletion.Soylent=true ;删除乘员是否返还金钱。</p>
+							<p>PassengerDeletion.SoylentFriendlies=true ;删除友军乘员是否返还金钱。</p>
+							<p>PassengerDeletion.ReportSound=GrinderGrinding ;删除乘员声音</p>
+							<p>PassengerDeletion.Anim=UCINIT ;删除乘员动画</p>
+						</div>
 					</div>
-					<h4 type="button" class="collapsible">乘员随载具更改所属方</h4>
+					<h4 type="button" class="collapsible">乘员同步载具的所属方</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>乘员的所属方会随着载具所属方的更改而更改。</p>
+						<p><code>Passengers.SyncOwner</code>定义该载具的乘员是否会同步所属方，参数为布尔值，如果是乘员可以开火的载具被心灵控制时，乘员将重新选择目标。注意，通过<code>Abductor=true</code>获取的乘员无法使用该逻辑。</p>
+						<p><code>Passengers.SyncOwner.RevertOnExit</code>定义该载具的乘员是否在卸载后将所属方变成上车前的所属方，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[FV]</p>
+							<p>Passengers.SyncOwner=true ;是否同步乘员所属</p>
+							<p>Passengers.SyncOwner.RevertOnExit=false ;乘员卸载后是否回归所属</p>
+						</div>
+						<p id="comment">笔者注：多功能步兵车在改变所属后乘员即便没有改变所属其炮塔和武器也不会改变，只有在卸载乘员之后乘员是原有所属方。另外，如果是通过脚本动作改变的所属方，即便会同步乘员，还是会有一个乘员不会改变所属。</p>
 					</div>
 					<h4 type="button" class="collapsible">自动开火武器</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>单位可以在不需要扫描目标的情况下自动开火，这样的开火模式要么选择单位所在的地格作为目标，要么选择单位自己作为目标。</p>
+						<p><code>AutoFire</code>定义单位是否会自动开火，参数为布尔值，默认为对自己开火。</p>
+						<p><code>AutoFire.TargetSelf</code>定义单位是否自动对自己开火，参数为布尔值，如果为false，单位则会对所在的地格自动开火。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[LOCOMOTIVE]</p>
+							<p>AutoFire=true ;单位是否自动开火</p>
+							<p>AutoFire.TargetSelf=false ;单位是否对自身自动开火</p>
+							<p>Primary=TrainSmoke</p>
+						</div>
+						<p id="comment">这个功能最大的问题在于单位开火时，可以看到一条红色的攻击示意线。然而，这个功能最大的优势是可以附带FLH坐标，因可以看做是一个可以定义FLH坐标的动画生成器。万世之战的蒸汽机车就是用这个功能模拟冒烟效果。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义乘员开火</h4>
 					<div class="col-content">
