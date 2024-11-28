@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../../style.css">
-	<meta name="description" content="红色警戒2：尤里的复仇建筑损坏火焰位置生成器，一个好用的红警MOD小工具。">
+	<meta name="description" content="红色警戒2：尤里的复仇的SHP建筑破损帧燃烧坐标生成器，一个好用的红警MOD小工具。">
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
 	<meta name="robots" content="noindex, nofollow">
 	<title>破损帧燃烧坐标生成器FOIDS | 万世之战：为红警2带来前所未有的体验</title>
@@ -23,6 +23,8 @@
 			cursor: crosshair;
 			max-width: 80%;
 			margin: auto;
+			background-image: url("../../src/pattern.svg");
+			background-blend-mode: lighten;
 		}
 		#coords {
 			margin-top: 10px;
@@ -123,8 +125,8 @@
 	<!--Main-->
 	<main>
 		<div class="blog">
-			<h1>缶椅子（F.O.I.D.S.）</h1>
-			<p style="text-align:center; margin: 1em auto">建筑破损帧燃烧位置生成器</p>
+			<h1>火移子（F.O.I.D.S.）</h1>
+			<p style="text-align:center; margin: 1em auto">建筑破损帧燃烧坐标生成器</p>
 			<div class="blog-info">
 				<div class="update-time">
 					<p>作者：Nuke Blastfield</p>
@@ -132,7 +134,8 @@
 			</div>			
 			<div class="blog-main">
 				<div class="blog-content">
-					<p>将你制作建筑的破损帧的PNG图片上传，点击画板里你想让其燃烧的位置（通常是破洞和撕裂的地方），即可生成坐标点代码。点击下方Copy to Clipboard按钮复制到剪贴板，然后到art(md).ini中找到建筑的代码，将代码粘贴。然后，在代码中把N替换成从0到7的数。不确定引擎是否支持更多的破损帧火焰，但最多8个绝对没有问题。</p>
+					<p>火移子，原名F.O.I.D.S.（Fire Offset Indicator for Damaged Structures），即建筑破损帧燃烧坐标生成器，旨在为红警2MOD的SHP建筑快速生成破损帧的燃烧坐标（DamageFireOffsetX）。</p>
+					<p>操作方法很简单：将你制作建筑的破损帧的PNG图片上传，点击画板里你想让其燃烧的位置（通常是破洞和撕裂的地方），即可生成坐标点代码。点击下方Copy to Clipboard按钮复制到剪贴板，然后到art(md).ini中找到建筑的代码，将代码粘贴。然后，在代码中把N替换成从0到7的数。不确定引擎是否支持更多的破损帧燃烧，但最多8个绝对没有问题。</p>
 					<br>
 					<div class="offset-generator">
 						<label style="text-align:center;color:#000;margin: 1em auto;">上传你的破损帧图片：</label>
@@ -157,8 +160,8 @@
 				<div class="lang-selector">
 					<p>语言切换</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com">EN</a>
-						<a href="https://ra2be.com/zh/">中</a>
+						<a href="https://ra2be.com/gadget/foids.html">EN</a>
+						<a href="https://ra2be.com/zh/gadget/foids.html">中</a>
 					</div>
 				</div>
 			</div>
