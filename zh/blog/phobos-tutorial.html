@@ -1096,18 +1096,63 @@
 					</div>
 					<h4 type="button" class="collapsible">暴击</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在弹头可以实现暴击机制，即在一定的概率下使用不同的伤害和弹头进行攻击。</p>
+						<p><code>Crit.Chance</code>定义该弹头的暴击概率，参数为0.0-1.0的浮点值。</p>
+						<p><code>Crit.ApplyChancePerTarget</code>定义暴击的概率是否随目标刷新，参数为布尔值。</p>
+						<p><code>Crit.ExtraDamage</code>定义该弹头在暴击时所打出的额外伤害，参数为整数。</p>
+						<p><code>Crit.Warhead</code>定义该弹头在暴击时所使用的弹头，参数为弹头的注册名。</p>
+						<p><code>Crit.Affects</code>定义该弹头对哪些对象可以暴击，参数为以下预设值：</p>
+						<ul>
+							<li><code>none</code>：无论如何都不会暴击。</li>
+							<li><code>land</code>：对地面单位攻击可以暴击。</li>
+							<li><code>water</code>：对水面单位攻击可以暴击。</li>
+							<li><code>empty</code>：对空地攻击可以暴击。</li>
+							<li><code>infantry</code>：对步兵攻击可以暴击。</li>
+							<li><code>units</code>：对载具攻击可以暴击。</li>
+							<li><code>buildings</code>：对建筑攻击可以暴击。</li>
+							<li><code>all</code>：对所有对象攻击都可以暴击。</li>
+						</ul>
+						<p><code>Crit.AffectsBelowPercent</code>定义该弹头对血量在该百分比以下的单位会暴击，参数为0.0-1.0的浮点值。</p>
+						<p><code>Crit.AnimList</code>定义该弹头在暴击时所使用的动画以取代<code>AnimList</code>，参数为动画注册名的列表。</p>
+						<p><code>Crit.AnimList.PickRandom=</code>定义该弹头是否从暴击动画列表中随机播放一个动画，参数为布尔值。</p>
+						<p><code>Crit.AnimOnAffectedTargets</code>定义该弹头暴击的动画是否在每一个造成暴击的单位上播放，参数为布尔值，</p>
+						<p><code>Crit.SuppressWhenIntercepted</code>定义弹头的抛射体被拦截时是否去掉暴击效果，参数为布尔值。</p>
+						<p><code>ImmuneToCrit</code>定义该单位是否免疫暴击效果，即是否不会受到暴击，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[120mm]</p>
+							<p>...</p>
+							<p>Crit.Chance=0.5</p>
+							<p>Crit.ApplyChancePerTarget=false</p>
+							<p>Crit.ExtraDamage=25</p>
+							<p>Crit.Warhead=RHINAPE</p>
+							<p>Crit.Affects=units</p>
+							<p>Crit.AffectBelowPercent=1.0</p>
+							<p>Crit.AnimList=VTEXPLOD</p>
+							<P>Crit.AnimList.PickRandom=false</P>
+							<p>Crit.AnimOnAffectedTargets=false</p>
+							<p>Crit.SuppressWhenIntercepted=false</p>
+							<br>
+							<p>[APOC] ;Apocalypse Tank</p>
+							<p>...</p>
+							<p>ImmuneToCrit=yes</p>
 						</div>
+						<p id="alert">如果你将某个弹头的<code>Crit.Warhead</code>设置为相同的弹头，那将可能会形成一个无限暴击循环，从而卡死游戏。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义水花动画</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，带有<code>Conventional</code>标签的弹头在打在水面上会溅起水花，水花的动画只能在全局代码<code>[CombatDamage]</code>中的<code>SplashList</code>中随机选中。Phobos现在提供了可以在每个弹头上微观定义水花的方式。</p>
+						<p><code>SplashList</code>定义该弹头打在水上的水花，参数为动画注册名的列表，默认为全局设置的动画。</p>
+						<p><code>SplashList.PickRandom</code>定义是否随机选取水花动画，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[120mmx]</p>
+							<p>...</p>
+							<p>Conventional=yes</p>
+							<p>SplashList=VTEXPLOD</p>
+							<p>SplashList.PickRandom=false</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">全局引爆</h4>
