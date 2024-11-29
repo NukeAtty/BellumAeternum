@@ -118,6 +118,22 @@
 			content:'\2605';
 			color: #f00;
 		}
+
+		.index-navigator {
+			width: 50%;
+			margin: 1em 0;
+			padding-right: 2vw;
+			background-color: #999;
+			border: 1px solid #fff;
+		}
+
+		.index-navigator a {
+			font-size: 18px;
+			font-weight: bold;
+			color: #fff;
+			text-decoration: none;
+			text-shadow: 1px 1px 1px #333;
+		}
 	</style>
 </head>
 <body>
@@ -197,7 +213,22 @@
 					</ul>
 					<!--New Logic-->
 					<h2 id="new-enhanced-logic">全新或增强的逻辑</h2>
-					<h3>新的机制</h3>
+					<p>全新或增强的逻辑章节包含了Phobos新增的机制以及一些有显著增强或扩展的旧机制，一共有分为以下类型：</p>
+					<div class="index-navigator">
+						<ul>
+							<li><a href="#new-logic-new-types">新的机制</a></li>
+							<li><a href="#new-logic-animations">动画</a></li>
+							<li><a href="#new-logic-buildings">建筑</a></li>
+							<li><a href="#new-logic-infantries">步兵</a></li>
+							<li><a href="#new-logic-projectiles">抛射体</a></li>
+							<li><a href="#new-logic-superweapons">超级武器</a></li>
+							<li><a href="#new-logic-technos">单位</a></li>
+							<li><a href="#new-logic-terrains">地形</a></li>
+							<li><a href="#new-logic-warheads">弹头</a></li>
+							<li><a href="#new-logic-weapons">武器</a></li>
+						</ul>
+					</div>
+					<h3 id="new-logic-new-types">新的机制</h3>
 					<h4 type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
@@ -403,7 +434,7 @@
 						<p><code>Shield.MinimumReplaceDelay</code>定义<code>Shield.ReplaceNonRespawning</code>在多长时间之后替换之前无法再生的护盾。</p>
 						<p><code>Shield.InheritStateOnReplace</code>定义用<code>Shield.ReplaceOnly</code>替换的护盾是否继承之前护盾的强度值，并重置再生计时器和强度恢复计时器。</p>
 					</div>
-					<h3>动画</h3>
+					<h3 id="new-logic-animations">动画</h3>
 					<h4 type="button" class="collapsible">动画生成单位</h4>
 					<div class="col-content">
 						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
@@ -505,7 +536,7 @@
 						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Infantries-->
-					<h3>步兵</h3>
+					<h3 id="new-logic-infantries">步兵</h3>
 					<h4 type="button" class="collapsible">匍匐/部署步兵开火坐标</h4>
 					<div class="col-content">
 						<p>现在步兵在匍匐开火或部署开火时可以使用新的开火坐标定位来覆盖<code>PrimaryFireFLH</code>和<code>SecondaryFireFLH</code>，同时也可以自定义Burst开火时每一发的开火坐标。</p>
@@ -582,7 +613,7 @@
 						<p>敬请期待……</p>
 					</div>
 					<!--Enhanced Projectile-->
-					<h3>抛射体</h3>
+					<h3 id="new-logic-projectiles">抛射体</h3>
 					<h4 type="button" class="collapsible">抛射体拦截</h4>
 					<div class="col-content">
 						<p>现在Phobos实现了类似《将军：绝命时刻》中美国复仇者防空车的抛射体拦截功能。拥有此功能的单位会自动扫描射程内可以拦截的抛射体，并使用相应的武器进行拦截。</p>
@@ -699,7 +730,7 @@
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h3>超级武器</h3>
+					<h3 id="new-logic-superweapons">超级武器</h3>
 					<h4 type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
@@ -773,7 +804,7 @@
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h3>单位</h3>
+					<h3 id="new-logic-technos">单位</h3>
 					<h4 type="button" class="collapsible">自动删除乘员</h4>
 					<div class="col-content">
 						<p>可装载乘员的载具可以逐渐删除乘员，乘员越多耗时越长，并可以像部队回收站那样使用。可以搭配Ares的超时空监狱效果实现自动清除被困的敌人。</p>
@@ -1070,7 +1101,7 @@
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h3>地形</h3>
+					<h3 id="new-logic-terrains">地形</h3>
 					<h4 type="button" class="collapsible">摧毁动画和音效</h4>
 					<div class="col-content">
 						<p>现在可以设定地形对象的摧毁动画和音效。</p>
@@ -1082,7 +1113,7 @@
 							<p>DestroySound=TreeFall ;地形对象被摧毁时的音效</p>
 						</div>
 					</div>
-					<h3>弹头</h3>
+					<h3 id="new-logic-warheads">弹头</h3>
 					<h4 type="button" class="collapsible">心控解除</h4>
 					<div class="col-content">
 						<p>心控解除弹头可以解除单位的心灵控制，但对永久心灵控制无效。</p>
@@ -1158,10 +1189,32 @@
 					<h4 type="button" class="collapsible">全局引爆</h4>
 					<div class="col-content">
 						<p>顾名思义，弹头可以在全局内对每一个目标引爆。</p>
-						<p><code>DetonateOnAllMapObjects</code>定义该弹头是否全局引爆，参数为布尔值。</p>
+						<p><code>DetonateOnAllMapObjects</code>定义该弹头是否全局引爆，参数为布尔值。这个功能只适用于抛射体搭载的弹头，如果是动画的弹头或者Ares中的弹头超级武器，则无法生效，而弹头附带的<code>Crit.Warhead</code>或者动画中的<code>Weapon</code>则会生效。同时，抛射体所携带的空爆武器或者溅射武器也会对全局目标生效，而Ares的<code>PreImpactAnim</code>动画也会在引爆前播放。</p>
+						<p><code>DetonateOnAllMapObjects.AffectTargets</code>用于过滤全局引爆适用于哪些目标，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：不过滤全局引爆范围</li>
+							<li><code>aircraft</code>：只对飞行器生效</li>
+							<li><code>buildings</code>：只对建筑生效</li>
+							<li><code>infantry</code>：只对步兵生效</li>
+							<li><code>units</code>：只对载具生效</li>
+							<li><code>all</code>：对所有对象一律生效</li>
+						</ul>
+						<p><code>DetonateOnAllMapObjects.AffectHouses</code>用于过滤全局引爆适用于哪些所属方，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：对任何所属方都不生效</li>
+							<li><code>owner/self</code>：只对自己生效</li>
+							<li><code>allies/ally</code>：只对盟友生效</li>
+							<li><code>team</code>：只对自己和盟友生效</li>
+							<li><code>enemies/enemy</code>：只对敌人生效</li>
+							<li><code>all</code>：对所有所属方一律生效</li>
+						</ul>
+						<p><code>DetonateOnAllMapObjects.AffectTypes</code>定义该全局弹头只对哪些特定的单位生效，参数为单位注册名列表。注意，上述的目标过滤和所属方过滤被设置后，将优先读取，因此这个功能将被覆盖。</p>
+						<p><code>DetonateOnAllMapObjects.IgnoreTypes</code>定义哪些单位无视该全局弹头，参数为单位注册名列表。</p>
+						<p><code>DetonateOnAllMapObjects.RequireVerses</code>定义该全局弹头是否只作用于<code>Verses</code>非0的单位，即如果该弹头对付某一装甲的<code>Verses</code>值为0，那么该装甲的单位不会受到该弹头的攻击。这个功能的优先级低于上述所有功能。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p></p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">爆金币</h4>
@@ -1212,7 +1265,7 @@
 						<div class="code-presentation">
 						</div>
 					</div>
-					<h3>武器</h3>
+					<h3 id="new-logic-weapons">武器</h3>
 					<h4 type="button" class="collapsible">自定义范围攻击目标</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
