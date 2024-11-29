@@ -122,11 +122,12 @@
 		}
 
 		#deleter {
-			text-align: right;
+			float:right;
 		}
 
 		#deleter:after{
 			content: '\274C';
+			text-align: right;
 		}
 
 		.coordinate-label {
@@ -134,7 +135,7 @@
 			flex-flow: row;
 		}
 
-		.coordinate-label label{
+		.coordinate-label-left {
 			width: 80%;
 		}
 	</style>
@@ -178,22 +179,12 @@
 				<div class="blog-content">
 					<p>Upload a PNG image of the damaged frame of your building, click the position where you want the damaged fire be (usually on a hole or torn area) on the canvas, and click the Copy to Clipboard button to copy the code. Then go to the art file of your mod, paste the generated code under the section of your new building, change the letter N to any number from 0 to 7. Not tested how many damaged fire can be added to a building, but I recommend a maximum 8.</p>
 					<br>
-					<!--
-					<div class="offset-generator">
-						<label style="text-align:center;color:#000;margin: 1em auto;">Upload your damaged frame:</label>
-						<input type="file" id="imageUploader" accept="image/png">
-						<canvas id="imageCanvas"></canvas>
-						<div id="output">Click on the image to generate the coordinate.</div>
-						<script src="../src/program/offset.js"></script>
-						<button id="copy" onclick="copyToClipboard('output')">Copy to Clipboard</button>
-					</div>
-					-->
 					<div class="offset-generator">
 					    <input type="file" id="imageUploader" accept="image/png">
 						<canvas id="canvas" width="500" height="500"></canvas>
 						<div id="output"></div>
-						<script src="../src/program/foids.js"></script>
 						<button id="copy">Copy to Clipboard</button>
+						<script src="../src/program/foids.js"></script>
 					</div>
 				</div>
 			</div>

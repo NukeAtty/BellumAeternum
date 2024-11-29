@@ -50,8 +50,8 @@
             // Generate label with coordinates
             const label = document.createElement('div');
             label.classList.add('coordinate-label');
-            label.innerHTML = `DamageFireOffset${dotIndex} = ${offsetX},${offsetY}
-                <span id="deleter" class="close-btn" onclick="removeDot(${dotIndex})">X</span>`;
+            label.innerHTML = `<div class="coordinate-label-left">DamageFireOffset${dotIndex} = ${offsetX},${offsetY}</div>
+                <span id="deleter" class="close-btn" onclick="removeDot(${dotIndex})"></span>`;
             coordinatesDiv.appendChild(label);
 
             // Store the dot and its coordinates
@@ -82,7 +82,7 @@
                 return `DamageFireOffset${dot.index} = ${dot.x},${dot.y}`;
             }).join('\n');
             navigator.clipboard.writeText(textContent).then(() => {
-                alert('Coordinates copied to clipboard!');
+                document.getElementById('copy').innerHTML = "Copied !"
             }).catch((err) => {
                 alert('Failed to copy: ' + err);
             });
