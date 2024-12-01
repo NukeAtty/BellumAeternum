@@ -45,7 +45,7 @@
 
             // Draw a red aim at the clicked position (3x3 dot)
             ctx.fillStyle = 'red';
-            ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
+            ctx.fillRect(x - 1, y - 1, 2, 2);
 
             // Generate label with coordinates
             const label = document.createElement('div');
