@@ -1255,33 +1255,57 @@
 					<h4 type="button" class="collapsible">超级武器引信</h4>
 					<div class="col-content">
 						<p>现在弹头可以作为超级武器的引信使用，即在弹头引爆的区域释放超级武器。</p>
+						<p><code>LaunchSW</code>定义该弹头在引爆时所发射的超级武器，参数为超级武器的注册名的列表。</p>
+						<p><code>LaunchSW.RealLaunch</code>定义该弹头引爆时发射的超级武器是否需要满足条件，同时需要有足够的资金（Ares的超级武器<code>Money.Amout</code>功能），参数为布尔值。</p>
+						<p><code>LaunchSW.IgnoreInhibitors</code>定义该弹头在引爆时发射的超级武器是否无视抑制器，参数为布尔值。</p>
+						<p><code>LaunchSW.IgnoreDesignators</code>定义该弹头在引爆时发射的超级武器是否无视指向器，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[ParticleCannonPointer]</p>
+							<p>...</p>
+							<p>LaunchSW=ParticleCannonSpecial ;引爆弹头时发射的超级武器</p>
+							<p>LaunchSW.RealLaunch=true ;该超级武器是否需要满足条件</p>
+							<p>LaunchSW.IgnoreInhibitors=false ;该超级武器是否无视抑制器</p>
+							<p>LaunchSW.IgnoreDesignators=true ;该超级武器是否无视指向器</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">移除伪装</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>被该弹头击中的单位会移除伪装效果，对付拥有<code>PermaDisguise</code>的单位时会相当有效。</p>
+						<p><code>RemoveDisguise</code>定义该弹头是否可以移除伪装效果，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[TakeOffYourClothes]</p>
+							<p>...</p>
+							<p>RemoveDisguise=true ;是否可以移除伪装</p>
 						</div>
+						<p id="comment">笔者注：逻辑上来讲，使用这个弹头的单位要么可以识破伪装，要么是范围伤害，否则很难发挥出效果。</p>
 					</div>
 					<h4 type="button" class="collapsible">开图</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>该弹头引爆时将会为弹头发射单位的所属方显示全地图。</p>
+						<p><code>SpySat</code>定义该弹头在引爆时是否会为发射单位的所属方显示全地图，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[OpenTheMap]</p>
+							<p>...</p>
+							<p>SpySat=true ;是否显示全地图</p>
 						</div>
+						<p id="comment">考虑到平衡性，这个功能实际上比较鸡肋，虽说可以用来模拟NP的开图超级武器，但还是比较鸡肋……</p>
 					</div>
 					<h4 type="button" class="collapsible">黑幕</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>该弹头引爆时会将发射单位的敌人的地图覆盖黑幕。</p>
+						<p><code>BigGap</code>定义该弹头引爆时是否将敌人的视野覆盖满黑幕，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[DeepDarkFantasy]</p>
+							<p>...</p>
+							<p>BigGap=true ;是否给敌人的视野覆盖黑幕</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">触发指定的非人死亡动画</h4>
