@@ -1310,19 +1310,34 @@
 					</div>
 					<h4 type="button" class="collapsible">触发指定的非人死亡动画</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>该弹头在杀死带有<code>NotHuman=yes</code>的步兵时可以指定该步兵的死亡动画。</p>
+						<p><code>NotHuman.DeathSequence</code>定义该弹头摧毁非人步兵时是否播放指定的死亡动画，参数为1-5的整数，代表<code>Die1</code>到<code>Die5</code>的动画序列。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[Melt]</p>
+							<p>...</p>
+							<p>NotHuman.DeathSequence=5 ;指定哪一个死亡动画序列</p>
 						</div>
 					</div>
 					<h3 id="new-logic-weapons">武器</h3>
 					<h4 type="button" class="collapsible">自定义范围攻击目标</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，带有<code>AreaFire</code>的武器在开火时会选择自己脚下的地面作为目标进行攻击，而在Phobos中，这种攻击模式可以自定义攻击目标。</p>
+						<p><code>AreaFire.Target</code>定义该单位范围攻击的目标，参数为下列预设值：</p>
+						<ul>
+							<li><code>base</code>：攻击单位下方的地面单元格</li>
+							<li><code>self</code>：攻击单位自身，遵从武器的目标筛选机制</li>
+							<li><code>random</code>：攻击range范围内随机单元格，无视武器的目标筛选机制</li>
+						</ul>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[PsiWave]</p>
+							<p>...</p>
+							<p>Range=3</p>
+							<p>AreaFire=yes ;是否为范围攻击</p>
+							<p>AreaFire.Target=random ;范围攻击的目标</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">Burst开火延迟</h4>
