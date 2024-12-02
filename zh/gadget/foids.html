@@ -162,6 +162,48 @@
 			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
 			box-shadow: 0 0 2px darkred inset;
 		}
+
+		@media only screen and (max-width: 1200px) {
+			.input-module {
+				width: 90%;
+			}
+
+			#imageUpload {
+				margin: auto 2vw;
+			}
+		}
+
+		@media only screen and (max-width: 720px) {
+			.input-module {
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				margin: 1vw auto;
+				width: 100%;
+			}
+
+			canvas {
+				margin: auto;
+			}
+
+			#imageUpload{
+				margin: 1vw auto;
+			}
+
+			#reload {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#copy {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#output {
+				width: 100%;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -208,6 +250,7 @@
 						<li>点击重新加载清除所有生成坐标。</li>
 						<li>点击已生成的坐标代码可以删除该坐标。</li>
 						<li>点击Copy To Clipboard可以复制到剪贴板，并可以一键粘贴到artmd.ini中。</li>
+						<li>手机竖屏使用时无法显示全画布，请横屏使用。</li>
 					</ul>
 					<br>
 					<div class="offset-generator">

@@ -1154,20 +1154,20 @@
 						<div class="code-presentation">
 							<p>[120mm]</p>
 							<p>...</p>
-							<p>Crit.Chance=0.5</p>
-							<p>Crit.ApplyChancePerTarget=false</p>
-							<p>Crit.ExtraDamage=25</p>
-							<p>Crit.Warhead=RHINAPE</p>
-							<p>Crit.Affects=units</p>
-							<p>Crit.AffectBelowPercent=1.0</p>
-							<p>Crit.AnimList=VTEXPLOD</p>
-							<P>Crit.AnimList.PickRandom=false</P>
-							<p>Crit.AnimOnAffectedTargets=false</p>
-							<p>Crit.SuppressWhenIntercepted=false</p>
+							<p>Crit.Chance=0.5 ;武器的暴击率</p>
+							<p>Crit.ApplyChancePerTarget=false ;暴击率是否随不同目标刷新</p>
+							<p>Crit.ExtraDamage=25 ;暴击伤害</p>
+							<p>Crit.Warhead=RHINAPE ;暴击时所使用的弹头</p>
+							<p>Crit.Affects=units ;攻击什么类型的目标会触发暴击</p>
+							<p>Crit.AffectBelowPercent=1.0 ;目标血量在多少以下会触发暴击</p>
+							<p>Crit.AnimList=VTEXPLOD ;暴击时的弹头动画列表</p>
+							<P>Crit.AnimList.PickRandom=false ;暴击时是否随机播放弹头动画</P>
+							<p>Crit.AnimOnAffectedTargets=false ;是否在每一个造成暴击的单位上播放弹头动画</p>
+							<p>Crit.SuppressWhenIntercepted=false ;暴击效果是否在被拦截时触发</p>
 							<br>
 							<p>[APOC] ;Apocalypse Tank</p>
 							<p>...</p>
-							<p>ImmuneToCrit=yes</p>
+							<p>ImmuneToCrit=yes ;是否免疫暴击</p>
 						</div>
 						<p id="alert">如果你将某个弹头的<code>Crit.Warhead</code>设置为相同的弹头，那将可能会形成一个无限暴击循环，从而卡死游戏。</p>
 					</div>
@@ -1181,9 +1181,9 @@
 						<div class="code-presentation">
 							<p>[120mmx]</p>
 							<p>...</p>
-							<p>Conventional=yes</p>
-							<p>SplashList=VTEXPLOD</p>
-							<p>SplashList.PickRandom=false</p>
+							<p>Conventional=yes ;弹头在水面爆炸是否用水花动画替代原有弹头动画</p>
+							<p>SplashList=VTEXPLOD ;水花动画列表</p>
+							<p>SplashList.PickRandom=false ;水花动画是否随机播放</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">全局引爆</h4>
@@ -1214,20 +1214,47 @@
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
-							<p></p>
+							<p>[NUKE]</p>
+							<p>...</p>
+							<p>DetonateOnAllMapObjects=true ;是否全局引爆弹头</p>
+							<p>DetonateOnAllMapObjects.AffectTargets=none ;全局引爆弹头可击中的目标类型</p>
+							<p>DetonateOnAllMapObjects.AffectHouses=none ;全局引爆弹头可击中的所属方</p>
+							<p>DetonateOnAllMapObjects.AffectTypes= ;全局引爆弹头可击中的特定目标</p>
+							<p>DetonateOnAllMapObjects.IgnoreTypes=  ;全局引爆弹头不可击中的特定目标</p>
+							<p>DetonateOnAllMapObjects.RequireVerses=false ;全局引爆弹头是否需要可用的Verses值</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">爆金币</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>该弹头可以在引爆后增加或减少所属方的资金。</p>
+						<p><code>TransactMoney</code>定义该弹头在引爆后会给弹头发射单位的所属方增加或减少多少资金，参数为整数，正数为增加，负数为减少。</p>
+						<p><code>TransactMoney.Display</code>定义该弹头在引爆后增加或减少所属方资金时是否显示资金的值，参数为布尔值。增加为绿色的数字，减少为红色的数字。</p>
+						<p><code>TransactMoney.Display.AtFirer</code>定义在显示资金增减值时，该值是否在弹头的发射单位上出现，填入布尔值。如果该弹头没有发射者信息，则会在弹头引爆的地方出现。</p>
+						<p><code>TransactMoney.Display.Houses</code>定义哪些所属方可以看到该弹头引爆时资金的增减值，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：所有所属方均无法看见该值</li>
+							<li><code>owner/self</code>：只有弹头发射单位的所属方可以看见该值</li>
+							<li><code>allies/ally</code>：只有弹头发射单位的盟友可以看见该值</li>
+							<li><code>team</code>：弹头发射单位的所属方和其盟友都可以看见该值</li>
+							<li><code>enemies/enemy</code>：只有弹头发射单位的敌人可以看见该值</li>
+							<li><code>all</code>：所有所属方均可以看见该值</li>
+						</ul>
+						<p><code>TransactMoney.Display.Offset</code>定义显示资金增减的值出现的位置调整，参数为用逗号隔开的X,Y值，单位为像素，起点为发射单位或引爆地格的中心点。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[GimmeSomeMoney]</p>
+							<p>...</p>
+							<p>TransactMoney=1000</p>
+							<p>TransactMoney.Display=true</p>
+							<p>TransactMoney.Display.AtFirer=true</p>
+							<p>TransactMoney.Display.Houses=self</p>
+							<p>TransactMoney.Display.Offset=0,0</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">超级武器引信</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在弹头可以作为超级武器的引信使用，即在弹头引爆的区域释放超级武器。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">

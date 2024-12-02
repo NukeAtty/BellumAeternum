@@ -162,6 +162,44 @@
 			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
 			box-shadow: 0 0 2px darkred inset;
 		}
+
+		@media only screen and (max-width: 1200px) {
+			.input-module {
+				width: 90%;
+			}
+
+			#imageUpload {
+				margin: auto 2vw;
+			}
+		}
+
+		@media only screen and (max-width: 720px) {
+			.input-module {
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				margin: 1vw auto;
+				width: 100%;
+			}
+
+			#imageUpload{
+				margin: 1vw auto;
+			}
+
+			#reload {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#copy {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#output {
+				width: 100%;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -208,6 +246,7 @@
 						<li>Click reload if you want to clear all coords.</li>
 						<li>Click on the generated code to remove the certain point.</li>
 						<li>Click Copy to Clipboard to paste it into your artmd.ini.</li>
+						<li>Due to technical limitation, do not use it on your smart phone unless you browse the page horizontally.</li>
 					</ul>
 					<br>
 					<div class="offset-generator">
