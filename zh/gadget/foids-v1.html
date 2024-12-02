@@ -15,38 +15,12 @@
 
 		gtag('config', 'G-LPEL1Y72V6');
 	</script>
-	<script type="application/ld+json">
-	  {
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [
-			{
-				"@type": "ListItem",
-				"position": 1,
-				"name": "万世之战",
-				"item": "https://ra2be.com/zh/"
-			},
-			{
-				"@type": "ListItem",
-				"position": 3,
-				"name": "火移子",
-				"item": "https://ra2be.com/zh/gadget/foids.html"
-			}
-		]
-	  }
-	</script>
 	<style>
-		.input-module {
-			display: flex;
-			flex-flow: row;
-			justify-content: center;
-			margin: 1vw auto;
-			width: 60%;
-		}
 		canvas {
 			display: block;
 			border: 1px solid black;
 			cursor: crosshair;
+			max-width: 80%;
 			margin: auto;
 			background-image: url("../../src/pattern.svg");
 			background-blend-mode: lighten;
@@ -59,7 +33,7 @@
 			display: block;
 			background-image: url("../../src/pattern.svg");
 			background-blend-mode: lighten;
-			margin: 1vw auto;
+			margin: 1vw;
 			padding: 1em;
 			border-radius: 10px;
 			border: 1px solid #fff;
@@ -69,9 +43,8 @@
 			color: #00ff00;
 			text-shadow: 0 0 3px #00cc00;
 			user-select: text;
-			width: 60%;
 			max-width: 100%;
-			text-align: left;
+			text-align: center;
 		}
 		.offset-generator {
 			display: flex;
@@ -84,8 +57,8 @@
 			border: 4px outset #ddd;
 			box-shadow: 0 0 24px #000;
 		}
-		#imageUpload {
-			margin: auto;
+		#imageUploader {
+			margin: auto auto 2vw auto;
 			background-image: url("../../src/pattern.svg");
 			background-blend-mode: lighten;
 			padding: 1vw;
@@ -94,19 +67,6 @@
 			border-radius: 6px;
 			max-width: 90%;
 		}
-
-		label {
-			display: block;
-			font-size: 18px;
-			text-align: left;
-		}
-
-		label:hover {
-			color: #000000;
-			background-color: #00ff00;
-			border-radius: 2px;
-		}
-
 		#copy {
 			display: block;
 			margin: 1vw auto;
@@ -128,34 +88,6 @@
 		}
 
 		#copy:hover {
-			color: lightgoldenrodyellow;
-			text-shadow: 0 0 5px gold;
-			background: rgb(255,174,0);
-			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
-			box-shadow: 0 0 2px darkred inset;
-		}
-
-		#reload {
-			display: block;
-			margin: auto;
-			align-items: center;
-			text-align: center;
-			font-size: 1.5vw;
-			font-family: Furore, HarmonyOS Sans, SF Pro, sans-serif;
-			font-weight: 800;
-			padding: 0.5em;
-			color: goldenrod;
-			border: 2px solid #000000;
-			border-style: ridge;
-			background: rgb(214,4,8);
-			background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
-			box-shadow: 0 0 5px #000000 inset;
-			text-decoration: none;
-			max-width: 50%;
-			width: 30%;
-		}
-
-		#reload:hover {
 			color: lightgoldenrodyellow;
 			text-shadow: 0 0 5px gold;
 			background: rgb(255,174,0);
@@ -201,26 +133,16 @@
 			</div>			
 			<div class="blog-main">
 				<div class="blog-content">
-					<h2>使用说明</h2>
-					<ul>
-						<li>上传一张建筑破损帧的PNG图片。</li>
-						<li>点击图片上你想要生成燃烧动画的点。</li>
-						<li>点击重新加载清除所有生成坐标。</li>
-						<li>点击已生成的坐标代码可以删除该坐标。</li>
-						<li>点击Copy To Clipboard可以复制到剪贴板，并可以一键粘贴到artmd.ini中。</li>
-					</ul>
+					<p>火移子，原名F.O.I.D.S.（Fire Offset Indicator for Damaged Structures），即建筑破损帧燃烧坐标生成器，旨在为红警2MOD的SHP建筑快速生成破损帧的燃烧坐标（DamageFireOffsetX），提升Mod建筑Art代码完成效率！同时，火移子还支持为中立建筑写开火坐标，只需要将代码中的DamageFireOffsetX换成Occupy</p>
+					<p>操作方法很简单：将你制作建筑的破损帧的PNG图片上传，点击画板里你想让其燃烧的位置（通常是破洞和撕裂的地方），即可生成坐标点代码。点击下方Copy to Clipboard按钮复制到剪贴板，然后到art(md).ini中找到建筑的代码，将代码粘贴。然后，在代码中把N替换成从0到7的数。不确定引擎是否支持更多的破损帧燃烧，但最多8个绝对没有问题。</p>
 					<br>
 					<div class="offset-generator">
-						<p style="font-size:16px;font-weight:bold;text-align:center;color:#000;">上传PNG图片：</p>
-						<div class="input-module">
-							<input type="file" id="imageUpload" accept="image/png">
-							<button id="reload">Reload</button>
-						</div>
-						<canvas id="canvas" width="500" height="500"></canvas>
-						<p style="font-size:16px;font-weight:bold;text-align:center;color:#000;">点击代码可以删除相应坐标代码：</p>
-						<div id="output"></div>
-						<button id="copy">Copy to Clipboard</button>
-						<script src="../../src/program/foids.js"></script>
+						<label style="text-align:center;color:#000;margin: 1em auto;">上传你的破损帧图片：</label>
+						<input type="file" id="imageUploader" accept="image/png">
+						<canvas id="imageCanvas"></canvas>
+						<div id="output">点击画布任意点生成坐标。</div>
+						<script src="../../src/program/offset.js"></script>
+						<button id="copy" onclick="copyToClipboard('output')">Copy to Clipboard</button>
 					</div>
 				</div>
 			</div>
@@ -251,10 +173,10 @@
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>资料</p>
+				<p>文章</p>
 				<ul>
 					<li><a href="../blog.html">博客</a></li>
-					<li><a href="../archives.html">档案库</a></li>
+					<li><a href="../archives.html">档案</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">

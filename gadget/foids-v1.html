@@ -28,15 +28,9 @@
 			},
 			{
 				"@type": "ListItem",
-				"position": 2,
-				"name": "Blogs",
-				"item": "https://ra2be.com/blog.html"
-			},
-			{
-				"@type": "ListItem",
 				"position": 3,
-				"name": "Mod Concept",
-				"item": "https://ra2be.com/blog/foids.html"
+				"name": "F.O.I.D.S. ver 1.0",
+				"item": "https://ra2be.com/gadget/foids-v1.html"
 			}
 		]
 	  }
@@ -70,7 +64,6 @@
 			text-shadow: 0 0 3px #00cc00;
 			user-select: text;
 			max-width: 100%;
-			text-align: left;
 		}
 		.offset-generator {
 			display: flex;
@@ -120,24 +113,6 @@
 			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
 			box-shadow: 0 0 2px darkred inset;
 		}
-
-		#deleter {
-			float:right;
-		}
-
-		#deleter:after{
-			content: '\274C';
-			text-align: right;
-		}
-
-		.coordinate-label {
-			display: flex;
-			flex-flow: row;
-		}
-
-		.coordinate-label-left {
-			width: 80%;
-		}
 	</style>
 </head>
 <body>
@@ -180,11 +155,12 @@
 					<p>Upload a PNG image of the damaged frame of your building, click the position where you want the damaged fire be (usually on a hole or torn area) on the canvas, and click the Copy to Clipboard button to copy the code. Then go to the art file of your mod, paste the generated code under the section of your new building, change the letter N to any number from 0 to 7. Not tested how many damaged fire can be added to a building, but I recommend a maximum 8.</p>
 					<br>
 					<div class="offset-generator">
-					    <input type="file" id="imageUploader" accept="image/png">
-						<canvas id="canvas" width="500" height="500"></canvas>
-						<div id="output"></div>
-						<button id="copy">Copy to Clipboard</button>
-						<script src="../src/program/foids.js"></script>
+						<label style="text-align:center;color:#000;margin: 1em auto;">Upload your damaged frame:</label>
+						<input type="file" id="imageUploader" accept="image/png">
+						<canvas id="imageCanvas"></canvas>
+						<div id="output">Click on the image to generate the coordinate.</div>
+						<script src="../src/program/offset.js"></script>
+						<button id="copy" onclick="copyToClipboard('output')">Copy to Clipboard</button>
 					</div>
 				</div>
 			</div>

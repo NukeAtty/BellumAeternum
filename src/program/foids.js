@@ -1,89 +1,123 @@
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const imageUpload = document.getElementById('imageUploader');
-        const coordinatesDiv = document.getElementById('output');
-        const copyBtn = document.getElementById('copy');
+    const imageUpload = document.getElementById('imageUpload');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const reloadButton = document.getElementById('reload');
+    const copyButton = document.getElementById('copy');
+    const outputDiv = document.getElementById('output');
 
-        let image = new Image();
-        let imageCenter = { x: 0, y: 0 };
-        let dotIndex = 0;
-        const dots = [];
+    let image = new Image();
+    let points = [];
 
-        // Load image onto canvas when user selects a file
-        imageUpload.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file && file.type === 'image/png') {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    image.src = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Once the image is loaded, set the canvas size and draw the image
-        image.onload = () => {
+    imageUpload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file && file.type === 'image/png') {
+        const reader = new FileReader();
+        reader.onload = () => {
+          image.src = reader.result;
+          image.onload = () => {
             canvas.width = image.width;
             canvas.height = image.height;
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous content
-            ctx.drawImage(image, 0, 0);
-            imageCenter = { x: canvas.width / 2, y: canvas.height / 2 };
-            ctx.drawImage(image, 0, 0);
+            drawImageWithPoints();
+          };
         };
+        reader.readAsDataURL(file);
+      }
+    });
 
-        // Disable clicking on canvas if no image is uploaded
-        canvas.addEventListener('click', (e) => {
-            if (!image.src) return;  // No image uploaded, do nothing
+    canvas.addEventListener('click', (event) => {
+      if (!image.src) return;
 
-            const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
 
-            // Calculate the distance from the center
-            const offsetX = Math.round(x - imageCenter.x);
-            const offsetY = Math.round(y - imageCenter.y);
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
 
-            // Draw a red aim at the clicked position (3x3 dot)
-            ctx.fillStyle = 'red';
-            ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
+      const offsetX = Math.round(x - centerX);
+      const offsetY = Math.round(y - centerY);
 
-            // Generate label with coordinates
-            const label = document.createElement('div');
-            label.classList.add('coordinate-label');
-            label.innerHTML = `<div class="coordinate-label-left">DamageFireOffset${dotIndex} = ${offsetX},${offsetY}</div>
-                <span id="deleter" class="close-btn" onclick="removeDot(${dotIndex})"></span>`;
-            coordinatesDiv.appendChild(label);
+      const point = { x, y, offsetX, offsetY };
+      points.push(point);
 
-            // Store the dot and its coordinates
-            dots.push({ index: dotIndex, x: offsetX, y: offsetY, label: label });
+      // Append to output
+      const label = document.createElement('label');
+      label.textContent = `DamageFireOffset${points.length - 1}=${offsetX},${offsetY}`;
+      label.dataset.index = points.length - 1;
+      label.addEventListener('click', () => deletePoint(label.dataset.index));
+      outputDiv.appendChild(label);
 
-            dotIndex++;
-        });
+      drawImageWithPoints();
+    });
 
-        // Remove dot and label
-        function removeDot(index) {
-            const dot = dots.find(dot => dot.index === index);
-            if (dot) {
-                // Remove dot from canvas (clear small 3x3 area)
-                ctx.clearRect(imageCenter.x + dot.x - 1.5, imageCenter.y + dot.y - 1.5, 3, 3);
-                // Remove label
-                coordinatesDiv.removeChild(dot.label);
-                // Remove from dots array
-                const dotIndex = dots.indexOf(dot);
-                if (dotIndex > -1) {
-                    dots.splice(dotIndex, 1);
-                }
-            }
-        }
+    reloadButton.addEventListener('click', () => {
+      if (image.src) {
+        points = [];
+        outputDiv.innerHTML = '';
+        drawImageWithPoints();
+      }
+    });
 
-        // Copy all labels content to clipboard
-        copyBtn.addEventListener('click', () => {
-            let textContent = dots.map(dot => {
-                return `DamageFireOffset${dot.index} = ${dot.x},${dot.y}`;
-            }).join('\n');
-            navigator.clipboard.writeText(textContent).then(() => {
-                document.getElementById('copy').innerHTML = "Copied !"
-            }).catch((err) => {
-                alert('Failed to copy: ' + err);
-            });
-        });
+    function resumeCopy(){
+      document.getElementById('copy').innerHTML = "Copy to Clipboard"
+    }
+
+    copyButton.addEventListener('click', () => {
+      const text = points
+        .map((point, index) => `DamageFireOffset${index}=${point.offsetX},${point.offsetY}`)
+        .join('\n');
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById('copy').innerHTML = "Copied!"
+        setTimeout(resumeCopy, 1000);
+      });
+    });
+
+    function deletePoint(index) {
+      points.splice(index, 1);
+      redrawLabels();
+      drawImageWithPoints();
+    }
+
+    function redrawLabels() {
+      outputDiv.innerHTML = '';
+      points.forEach((point, index) => {
+        const label = document.createElement('label');
+        label.textContent = `DamageFireOffset${index}=${point.offsetX},${point.offsetY}`;
+        label.dataset.index = index;
+        label.addEventListener('click', () => deletePoint(label.dataset.index));
+        outputDiv.appendChild(label);
+      });
+    }
+
+    function drawImageWithPoints() {
+      if (!image.src) return;
+
+      // Clear and redraw the image
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, 0, 0);
+
+      // Draw all points
+      points.forEach((point, index) => {
+        ctx.strokeStyle = '#ffff00';
+        ctx.beginPath();
+        ctx.moveTo(point.x - 5, point.y);
+        ctx.lineTo(point.x + 5, point.y);
+        ctx.moveTo(point.x, point.y - 5);
+        ctx.lineTo(point.x, point.y + 5);
+        ctx.stroke();
+        ctx.shadowColor = "#ff0000"
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+        ctx.shadowBlur = 2;
+
+
+        // Draw index with shadow
+        ctx.fillStyle = '#ffff00';
+        ctx.font = '14px HarmonyOS Sans';
+        ctx.shadowColor = '#ff0000';
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+        ctx.shadowBlur = 2;
+        ctx.fillText(index, point.x + 5, point.y - 5);
+      });
+    }
