@@ -1370,6 +1370,46 @@
 					</div>
 					<h2 id="fixed-logic">修复或改善的逻辑</h2>
 					<h3>BUG修复和杂项</h3>
+					<p>此页面列出了火卫一中所有修复或增强的不那么重要的逻辑。</p>
+					<h4 type="button" class="collapsible">点击展开</h4>
+					<div class="col-content">
+						<ul>
+							<li><p>Fixed the bug that GameModeOptions are not correctly saved. For example, <code>BuildOffAlly</code> is corrupted after load a save.</p></li>
+							<li><p>Fixed the bug that light tint created by buildings can never be removed (light tint persists even if the building is destroyed/sold) after loading a game</p></li>
+							<li><p>修复了读取地图时，将<code>Preview(Pack)</code>放置在<code>Map</code>后面会导致绘制不出预览的问题。</p></li>
+							<li><p>修复了重绘地图光照触发会使建筑光效失灵的问题。</p></li>
+							<li><p>心控对于可以部署的载具, 部署后不再会永久改变所属方。</p></li>
+							<li><p>Fixed the bug when capturing a mind-controlled building with an engineer fail to break the mind-control link.</p></li>
+							<li><p>Removed the EVA_BuildingCaptured event when capturing a building considered as a vehicle.</p></li>
+							<li><p>修复了当单位已经死亡却还在地图上时（例如沉没，坠毁，死亡动画等）还能再次死亡的问题。</p></li>
+							<li><p>修复了隐形的辐射工兵无法发射部署武器的问题。</p></li>
+							<li><p>修复了被超时空武器冻结的单位不能被正确抹消的问题，并不会再生成错误。</p></li>
+							<li><p>修复了<code>DebrisMaximums</code>（产生的碎片不再能超过指定的最大值）。出于稳定性考量，只有当<code>DebrisMaximums</span></code>设定的值多于1个的时候才会激活此修复。</p></li>
+							<li><p>修复了Q/W快捷键在失败摆放之后不会再把建造完成的建筑放到鼠标上的问题。</p></li>
+							<li><p>可反部署的建筑，在反部署时不再会触发<code>EVA_NewRallypointEstablished</code>语音。</p></li>
+							<li><p>修复了<code>Naval=yes</code>会无视<code>WaterBound=no</code>强制将建筑限制在水面上的问题。</p></li>
+							<li><p>修复了AI的飞机停机坪在Ares标签<code>[GlobalControls]</code>中<code>AllowParallelAIQueues=no</span></code>时有bug的问题。</p></li>
+							<li><p>修复了激光绘制的代码以允许所属方颜色绘制模式下更粗的激光。</p></li>
+							<li><p>修复了<code>DeathWeapon</code>引爆不正确的问题。</p>
+							<ul>
+							<li><p>但是仍有部分设置被忽略，如<code>PreImpactAnim</code><em>（Ares功能）</em>，未来可能会改。</p></li>
+							</ul>
+							</li>
+							<li><p>修复了驻军建筑的<code>MuzzleFlashX</code>在<code>X</code>超过10之后会画在建筑中心的问题。</p></li>
+							<li><p>修复了Jumpjet类单位在<code>Crashable=yes</code>时，如果被<code>Locomotor</code>弹头拉起，不会正常坠毁向地面的问题。</p></li>
+							<li><p>Fixed jumpjet units being unable to turn to the target when firing from a different direction.</p></li>
+							<li><p>Fixed jumpjet units being able to continue firing at enemy target when crashing.</p></li>
+							<li><p>Fixed turreted jumpjet units always facing bottom-right direction when motion stops.</p></li>
+							<li><p>Fixed jumpjet objects being unable to use <code>Sensors</span></code>.</p></li>
+							<li><p>修复了<code>UnitAbsorb</code>和<code>InfantryAbsorb</code>与<code>Grinding=yes</code>的建筑的交互问题。现在这两个标签会使建筑仅能接收对应类型的单位。</p></li>
+							<li><p>修复了缺少<code>NoEnter</span></code>鼠标动作导致载具无法进入<code>Grinding=yes</span></code>建筑的问题。</p></li>
+							<li><p>修复了工程师可以在不应进入（如满血）时进入<code>Grinding=yes</code>的建筑的问题。</p></li>
+							<li><p>Allowed usage of <code>AlternateFLH</code> of vehicles in <code>OpenTopped</code> transport.</p></li>
+							<li><p>Improved the statistic distribution of the spawned crates over the visible area of the map so that they will no longer have a higher chance to show up near the edges.</p></li>
+							<li><p>允许使用TileSet 255及以上,不再会使东北到西南方向的桥梁不可维修。</p></li>
+							<li><p>Added a “Load Game” button to the retry dialog on mission failure.</p></li>
+						</ul>
+					</div>
 					<h3>其他平台的问题修复</h3>
 					<h3>飞行器</h3>
 					<h3>动画</h3>
