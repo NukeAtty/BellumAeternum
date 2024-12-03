@@ -135,6 +135,11 @@ Mission 1: Fishy - Fisherman's Bay,Vik, Iceland
 Mission 2: 
 
 Mission 3: One Path Ends
+	Objective: Survive from the Soviet attacking.
+
+	Objective 2: Capture the Satellite Telecom.
+	<See a lot of Scud Missile Launcher>
+	Objective 3: Breakthrough.
 
 Mission 6: Victory or Death
 
