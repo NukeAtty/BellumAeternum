@@ -163,11 +163,11 @@ Mission 0: No Quarter - Brussel, Belgium
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Entanglement - Vladivostok, Soviet Russia
+Mission 1: Entanglement - 
 	Brief:
-		The Allied forces in Korea has pushed all the way to Vladivostok, we must stop them from capturing our far east.
+		
 
-	Objective: Evacuate all civilians.
+	Objective: 
 
 	Objective 1: Destroy all Allied force landed on Russky Island.
 	Objective 2: Retreat to the city and build defenses.
@@ -198,6 +198,7 @@ Mission 3: Honour of the Waves (荣誉电波) - Ferrère, France
 
 Mission 4: Obscured Labyrinthe - 
 	Brief: 
+
 
 	Objective: 
 
