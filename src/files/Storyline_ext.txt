@@ -169,8 +169,8 @@ Mission 1: Entanglement -
 
 	Objective: 
 
-	Objective 1: Destroy all Allied force landed on Russky Island.
-	Objective 2: Retreat to the city and build defenses.
+	Objective 1: 
+	Objective 2: 
 	Objective 3: 
 
 Mission 2: Crack the Ice - 
