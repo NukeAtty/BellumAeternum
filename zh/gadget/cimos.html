@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇的SHP建筑驻军开火坐标生成器，一个好用的红警MOD小工具。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<title>驻军开火坐标生成器CIMOS | 万世之战：为红警2带来前所未有的体验</title>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-LPEL1Y72V6');
+	</script>
+	<script type="application/ld+json">
+	  {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "万世之战",
+				"item": "https://ra2be.com/zh/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "希莫斯",
+				"item": "https://ra2be.com/zh/gadget/cimos.html"
+			}
+		]
+	  }
+	</script>
+	<style>
+		.input-module {
+			display: flex;
+			flex-flow: row;
+			justify-content: center;
+			margin: 1vw auto;
+			width: 60%;
+		}
+		canvas {
+			display: block;
+			border: 1px solid black;
+			cursor: crosshair;
+			margin: auto;
+			background-image: url("../../src/pattern.svg");
+			background-blend-mode: lighten;
+		}
+		#coords {
+			margin-top: 10px;
+			font-size: 1rem;
+		}
+		#output {
+			display: block;
+			background-image: url("../../src/pattern.svg");
+			background-blend-mode: lighten;
+			margin: auto;
+			padding: 1em;
+			border-radius: 10px;
+			border: 1px solid #fff;
+			font-family: Neon, monospace;
+			font-size: 14px;
+			font-weight: normal;
+			color: #00ff00;
+			text-shadow: 0 0 3px #00cc00;
+			user-select: text;
+			width: 60%;
+			max-width: 100%;
+			text-align: left;
+		}
+		.offset-generator {
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			width: auto;
+			margin: auto;
+			background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+			border-radius: 24px;
+			border: 4px outset #ddd;
+			box-shadow: 0 0 24px #000;
+		}
+		#imageUpload {
+			margin: auto;
+			background-image: url("../../src/pattern.svg");
+			background-blend-mode: lighten;
+			padding: 1vw;
+			font-size: 16px;
+			font-family: HarmonyOS Sans;
+			border-radius: 6px;
+			max-width: 90%;
+		}
+
+		label {
+			display: block;
+			font-size: 18px;
+			text-align: left;
+		}
+
+		label:hover {
+			color: #000000;
+			background-color: #00ff00;
+			border-radius: 2px;
+		}
+
+		#copy {
+			display: block;
+			margin: 1vw auto;
+			align-items: center;
+			text-align: center;
+			font-size: 1.5vw;
+			font-family: Furore, HarmonyOS Sans, SF Pro, sans-serif;
+			font-weight: 800;
+			padding: 0.25em;
+			color: goldenrod;
+			border: 2px solid #000000;
+			border-style: ridge;
+			background: rgb(214,4,8);
+			background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
+			box-shadow: 0 0 5px #000000 inset;
+			text-decoration: none;
+			max-width: 50%;
+			width: 30%;
+		}
+
+		#copy:hover {
+			color: lightgoldenrodyellow;
+			text-shadow: 0 0 5px gold;
+			background: rgb(255,174,0);
+			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
+			box-shadow: 0 0 2px darkred inset;
+		}
+
+		#reload {
+			display: block;
+			margin: auto;
+			align-items: center;
+			text-align: center;
+			font-size: 1.5vw;
+			font-family: Furore, HarmonyOS Sans, SF Pro, sans-serif;
+			font-weight: 800;
+			padding: 0.25em;
+			color: goldenrod;
+			border: 2px solid #000000;
+			border-style: ridge;
+			background: rgb(214,4,8);
+			background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
+			box-shadow: 0 0 5px #000000 inset;
+			text-decoration: none;
+			max-width: 50%;
+			width: 30%;
+		}
+
+		#reload:hover {
+			color: lightgoldenrodyellow;
+			text-shadow: 0 0 5px gold;
+			background: rgb(255,174,0);
+			background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
+			box-shadow: 0 0 2px darkred inset;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			.input-module {
+				width: 90%;
+			}
+
+			#imageUpload {
+				margin: auto 2vw;
+			}
+		}
+
+		@media only screen and (max-width: 720px) {
+			.input-module {
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				margin: 1vw auto;
+				width: 100%;
+			}
+
+			canvas {
+				margin: auto;
+			}
+
+			#imageUpload{
+				margin: 1vw auto;
+			}
+
+			#reload {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#copy {
+				font-size: 14px;
+				width: 60%;
+			}
+
+			#output {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+		<div class="responsive-navigation">
+			<a href="https://ra2be.com/zh"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="../archives.html">档案库</a>
+				<a href="../blog.html">博客</a>
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>希莫斯（C.I.M.O.S.）</h1>
+			<p style="text-align:center; margin: 1em auto">建筑驻军开火坐标生成器</p>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>作者：Nuke Blastfield</p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-content">
+					<h2>使用说明</h2>
+					<ul>
+						<li>上传一张建筑破损帧的PNG图片。</li>
+						<li>点击图片上你想要驻军开火动画播放的点。</li>
+						<li>点击重新加载清除所有生成坐标。</li>
+						<li>点击已生成的坐标代码可以删除该坐标。</li>
+						<li>点击Copy To Clipboard可以复制到剪贴板，并可以一键粘贴到artmd.ini中。</li>
+						<li>手机竖屏使用时无法显示全画布，请横屏使用。</li>
+					</ul>
+					<br>
+					<div class="offset-generator">
+						<p style="font-size:16px;font-weight:bold;text-align:center;color:#000;margin:auto;">上传PNG图片：</p>
+						<div class="input-module">
+							<input type="file" id="imageUpload" accept="image/png">
+							<button id="reload">重新加载</button>
+						</div>
+						<canvas id="canvas" width="500" height="500"></canvas>
+						<p style="font-size:16px;font-weight:bold;text-align:center;color:#000;margin:auto;">点击代码可以删除相应坐标代码：</p>
+						<div id="output"></div>
+						<button id="copy">Copy to Clipboard</button>
+						<script src="../../src/program/cimos.js"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com/gadget/cimos.html">EN</a>
+						<a href="https://ra2be.com/zh/gadget/cimos.html">中</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>资料</p>
+				<ul>
+					<li><a href="../blog.html">博客</a></li>
+					<li><a href="../archives.html">档案库</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#contact">联系作者</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
+		</div>
+	</footer>
+	<script>
+        function copyToClipboard(divId) {
+            // Get the content of the div
+            const content = document.getElementById(divId).textContent;
+
+            // Use the Clipboard API to write the content
+            navigator.clipboard.writeText(content)
+                .then(() => {
+					document.getElementById("copy").innerHTML = 'COPIED!'
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        }
+    </script>
+</body>

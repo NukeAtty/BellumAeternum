@@ -1340,25 +1340,32 @@
 							<p>AreaFire.Target=random ;范围攻击的目标</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">Burst开火延迟</h4>
+					<h4 type="button" class="collapsible">武器爆发开火延迟</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，如果武器拥有多个爆发开火（<code>Burst</code>），并设置了<code>BurstDelayX</code>（X为0-3的值），则可以定义武器的Burst开火延迟。然而，此方法只能定义前4个Burst的开火延迟，也就是说武器的<code>Burst</code>在4以上就不能定义开火延迟了。</p>
+						<p>在Phobos中，则可以用<code>Burst.Delays</code>来接管武器爆发开火延迟设置，参数为整数，代表武器爆发开火延迟的帧数，延迟会均匀分配。当设置为0时，则没有延迟。如果设置为-1，则会退回原版的爆发开火延迟逻辑。</p>
+						<p><code>Burst.FireWithinSequence</code>是用于步兵的爆发开火延迟逻辑。第一枪总是在步兵开火动画序列（<code>FireUp </code>等）中的射击帧控制确定的序列帧上发射。后续射击以<code>Burst.Delays</code>确定的间隔进行（最小延迟为1帧）或在未定义的情况下使用3到5 帧之间的随机延迟。请注意，如果下一枪将在超出射击序列长度的帧上发射，则爆发射击计数将重置，武器进入<code>ROF</code>的计时器。如果在至少一枪之后在序列中途停止射击，连发射击计数器不会立即重置，但每次连发射击的帧不会受此影响。换句话说，在未重新装弹武器的情况下恢复射击将重新启动射击序列，但在到达下一次连发射击应发射的帧之前不会进行射击。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[MIM21] ;IFV Missile</p>
+							<p>...</p>
+							<p>Burst=6 ;武器爆发开火发射次数</p>
+							<p>Burst.Delays=20 ;武器爆发开火的延迟</p>
+							<p>Burst.FireWithinSequence=false ;是否在步兵的开火序列后重置爆发开火计数器</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">反馈武器</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>反馈武器的定义是在发射某种武器时，对同时自己发射的武器。</p>
+						<p><code>FeedbackWeapon</code>定义该武器所附带的反馈武器，参数为武器注册名，需要在<code>[WeaponTypes]</code>中注册。如果反馈武器被设置为可从载具内开火（<code>FireInTransport</code>），那么在载具内开火时反馈武器则可以对载具自身发射，同时，反馈武器会无视载具内开火的伤害加成（<code>OpenToppedDamageMultiplier</code>）。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
+							<p>[MagnetDrainer] ;Drains armor</p>
+							<p>...</p>
+							<p>FeedbackWeapon=GainArmor</p>
 						</div>
-					</div>
-					<h4 type="button" class="collapsible">辐射扩展</h4>
-					<div class="col-content">
-						<p>敬请期待……</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义飞行器扫射</h4>
 					<div class="col-content">
