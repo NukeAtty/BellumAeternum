@@ -163,7 +163,7 @@ Mission 0: No Quarter - Brussel, Belgium
 
 Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
-Mission 1: Entanglement - Vladvostok
+Mission 1: Entanglement - Brest, France
 	Brief:
 		
 
@@ -188,6 +188,8 @@ Mission 2: Honour of the Waves (荣誉电波) - Ferrère, France
 	Objective 3: Find the Satellite Telecom.
 
 	<You can win by destroy all bases, but if you destroyed the true telecom at first attack, you will be able to receive 10000 additional credits in the next episode.>
+
+Mission 3: Crack the Ice -
 
 Mission 4: Obscured Labyrinthe - 
 	Brief: 
