@@ -165,7 +165,9 @@ Soviet Campaign Chapter 1: Red Dawn（赤色黎明）
 
 Mission 1: Entanglement - Brest, France
 	Brief:
-		
+		The Allied forces has retreat to the other end of the English Channel, and we have successfully taken Paris.
+		However, another group of Allieds are still occupying Brittany. Harbour of Brest is continuously receiving supplies from the United Kingdom.
+		Our mission is launch a sudden-strike, destroy the Harbour of Brest, and wipe out the Allied forces there.
 
 	Objective: Defense the Allied attacks.
 
@@ -189,9 +191,15 @@ Mission 2: Honour of the Waves (荣誉电波) - Ferrère, France
 
 	<You can win by destroy all bases, but if you destroyed the true telecom at first attack, you will be able to receive 10000 additional credits in the next episode.>
 
-Mission 3: Crack the Ice -
+Mission 3: Bitterfrost Frontier - Vladivostok, Soviet Russia
+	Brief:
 
-Mission 4: Obscured Labyrinthe - 
+	Objective 1:
+	Objective 2:
+	Objective 3:
+
+
+Mission 4: Crack the Ice - Anchorage, Alaska
 	Brief: 
 
 
@@ -237,6 +245,8 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 
 Soviet Campaign Season 4
 Mission 1: Out of the Shadows - 
+
+Mission 2: Obscured Labyrinthe -
 
 Mission 5: Tesla Shock（磁暴震荡） - Leipzig, Germany
 	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
