@@ -179,12 +179,11 @@ Mission 1: Entanglement - Brest, France
 
 Mission 2: Honour of the Waves (荣誉电波) - Ferrère, France
 	Brief: 
-		Our defense in France have experienced percision strike, and while we rebuild our base, our general want you to launch an investigation.
-		According to National Security Committee, one of our spy has infiltrated into an Allied communication base, but he has lost connection.
-		Lieutenant [] from National Security Committe will go with you, take back our spy, and destroy the Allied communication base.
+		It is rather suspicious that Allied has precisely bombed the Harbour of Brest.
+		According to National Security Committee, there are Allied movement in Encamp, Principality of Andora. Also, One of our spy has infiltrated Encamp, but lost connection.
+		Lieutenant [] from National Security Committe will go with you, take back our spy, and destroy the Allied secret base.
 		
-	Objective: Find the Allied Communication Base and destroy it.
-
+	Objective: Find the Allied secret base and destroy it.
 	Objective 1: Push into the village.
 	Objective 2: Set up a radar and receive the radio wave.
 	Objective 3: Find the Satellite Telecom.
@@ -193,6 +192,8 @@ Mission 2: Honour of the Waves (荣誉电波) - Ferrère, France
 
 Mission 3: Bitterfrost Frontier - Vladivostok, Soviet Russia
 	Brief:
+		According to report from Chinese Volunteer Army, the Allied are using biochemical weapon on the battlefield of Korea.
+		They have already pushed all the way to Vladivostok.
 
 	Objective 1:
 	Objective 2:
