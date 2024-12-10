@@ -198,6 +198,7 @@
 							<a id="h3" href="#ai-script">脚本·Script</a>
 							<a id="h3" href="#ai-team">小队·Team</a>
 							<a id="h3" href="#ai-trigger">触发·Trigger</a>
+							<a id="h2" href="#phobos">Phobos新增</a>
 						</div>
 					</div>
 				</div>
@@ -1078,6 +1079,131 @@
    					        <label id="hexOutput"></label>
 						</div>
 					</div>
+					<h2 id="phobos">Phobos新增AI逻辑</h2>
+					<h3>Bug修复</h3>
+					<p>部署脚本动作会在无法部署时寻找新的可部署位置。</p>
+					<h3>新的脚本动作</h3>
+					<h4>10000-10999游戏内动作</h4>
+					<table class="general-table">
+					<thead>
+						<tr class="row-odd"><th class="text-align:center head"><p>动作</p></th>
+						<th class="text-align:center head"><p>参数</p></th>
+						<th class="text-align:center head"><p>重复执行</p></th>
+						<th class="text-align:center head"><p>优先目标</p></th>
+						<th class="text-align:center head"><p>描述</p></th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr class="row-even"><td class="text-align:center"><p>10000</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>是</p></td>
+					<td class="text-align:center"><p>最近目标</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10001</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>否</p></td>
+					<td class="text-align:center"><p>最近目标</p></td>
+					<td class="text-align:center"><p>小队成员击杀一个目标即结束</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10002</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>是</p></td>
+					<td class="text-align:center"><p>最近目标</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10003</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>否</p></td>
+					<td class="text-align:center"><p>最近目标</p></td>
+					<td class="text-align:center"><p>小队成员击杀相应序列号的AITargetTypes中所有单位即结束</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10004</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>是</p></td>
+					<td class="text-align:center"><p>最近目标</p></td>
+					<td class="text-align:center"><p>小队成员从相应序号的AITargetTypes中随机选择一个击杀后即结束</p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10005</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>Farther</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10006</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>Farther</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10007</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>Farther</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10008</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>Farther</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10009</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>Farther</p></td>
+					<td class="text-align:center"><p>Picks 1 random target from the list</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10010</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>最近目标, higher threat</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10011</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>最近目标, higher threat</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10012</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>最近目标, higher threat</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10013</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>最近目标, higher threat</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10014</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>Farther, higher threat</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10015</p></td>
+					<td class="text-align:center"><p>目标类型序号</p></td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>Farther, higher threat</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					<tr class="row-even"><td class="text-align:center"><p>10016</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>Yes</p></td>
+					<td class="text-align:center"><p>Farther, higher threat</p></td>
+					<td class="text-align:center"><p></p></td>
+					</tr>
+					<tr class="row-odd"><td class="text-align:center"><p>10017</p></td>
+					<td class="text-align:center"><p>特定AI目标类型序号</td>
+					<td class="text-align:center"><p>No</p></td>
+					<td class="text-align:center"><p>Farther, higher threat</p></td>
+					<td class="text-align:center"><p>Ends when a team member kill the designated target</p></td>
+					</tr>
+					</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
