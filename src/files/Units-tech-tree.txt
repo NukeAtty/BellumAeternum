@@ -1,11 +1,18 @@
 Allied:
-	M26 Pershing -> T42 -> M54 -> M54A1 -> M54A2
-	T67 -> T67 GMC -> T67 PMC
+	Grizzly Tree: 
+		M26 Pershing -> T42 -> M54 -> M54A1 -> M54A2
+	Stealth Tank Tree:
+		T92 -> T92A2E8 -> M50
+	Prism Tank Tree:
+		T67 -> T67 GMC -> T67 PMC
 
 Soviet:
-	T-44 -> A-56 -> T-56A -> T-56B
-	T-44 -> T-50 -> TT-50
-	KV-5 -> KV-550
+	Rhino Tree:
+		T-44 -> A-56 -> T-56A -> T-56B
+	Tesla Tree:
+		T-44 -> T-50 -> TT-50
+	Apocalypse Tree:
+		KV-4 -> KV-5 -> KV-550
 
 PLA:
 	Type 59 -> Type 59 L
