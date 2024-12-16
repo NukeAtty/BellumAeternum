@@ -120,10 +120,12 @@
 		}
 
 		.index-navigator {
+			display: flex;
+			flex-flow: column;
 			width: 50%;
 			margin: 1em 0;
-			padding-right: 2vw;
-			background-color: #999;
+			padding: 1vw;
+			background-color: #666;
 			border: 1px solid #fff;
 		}
 
@@ -133,6 +135,10 @@
 			color: #fff;
 			text-decoration: none;
 			text-shadow: 1px 1px 1px #333;
+			text-align: left;
+			margin: 0.5em;
+			padding-left: 0.5em;
+			border-left: 4px solid #fff;
 		}
 	</style>
 </head>
@@ -215,18 +221,16 @@
 					<h2 id="new-enhanced-logic">全新或增强的逻辑</h2>
 					<p>全新或增强的逻辑章节包含了Phobos新增的机制以及一些有显著增强或扩展的旧机制，一共有分为以下类型：</p>
 					<div class="index-navigator">
-						<ul>
-							<li><a href="#new-logic-new-types">新的机制</a></li>
-							<li><a href="#new-logic-animations">动画</a></li>
-							<li><a href="#new-logic-buildings">建筑</a></li>
-							<li><a href="#new-logic-infantries">步兵</a></li>
-							<li><a href="#new-logic-projectiles">抛射体</a></li>
-							<li><a href="#new-logic-superweapons">超级武器</a></li>
-							<li><a href="#new-logic-technos">单位</a></li>
-							<li><a href="#new-logic-terrains">地形</a></li>
-							<li><a href="#new-logic-warheads">弹头</a></li>
-							<li><a href="#new-logic-weapons">武器</a></li>
-						</ul>
+						<a href="#new-logic-new-types">新的机制</a>
+						<a href="#new-logic-animations">动画</a>
+						<a href="#new-logic-buildings">建筑</a>
+						<a href="#new-logic-infantries">步兵</a>
+						<a href="#new-logic-projectiles">抛射体</a>
+						<a href="#new-logic-superweapons">超级武器</a>
+						<a href="#new-logic-technos">单位</a>
+						<a href="#new-logic-terrains">地形</a>
+						<a href="#new-logic-warheads">弹头</a>
+						<a href="#new-logic-weapons">武器</a>
 					</div>
 					<h3 id="new-logic-new-types">新的机制</h3>
 					<h4 type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></h4>
@@ -1404,19 +1408,19 @@
 					<h4 type="button" class="collapsible">点击展开</h4>
 					<div class="col-content">
 						<ul>
-							<li><p>修复了GameModeOptions无法被正确保存，比如<code>BuildOffAlly</code>在加载游戏后会被关闭。</p></li>
-							<li><p>修复了利用建筑生成的染色效果永远不会被移除。</p></li>
-							<li><p>修复了读取地图时，将<code>Preview(Pack)</code>放置在<code>Map</code>后面会导致绘制不出预览的问题。</p></li>
-							<li><p>修复了重绘地图光照触发会使建筑光效失灵的问题。</p></li>
-							<li><p>心控对于可以部署的载具, 部署后不再会永久改变所属方。</p></li>
-							<li><p>修复了用工程师占领被心灵控制的建筑后不会移除心灵控制的连接线。</p></li>
-							<li><p>移除了工程师占领被视为载具的建筑时的EVA语音。</p></li>
-							<li><p>修复了当单位已经死亡却还在地图上时（例如沉没，坠毁，死亡动画等）还能再次死亡的问题。</p></li>
-							<li><p>修复了隐形的辐射工兵无法发射部署武器的问题。</p></li>
-							<li><p>修复了被超时空武器冻结的单位不能被正确抹消的问题，并不会再生成错误。</p></li>
-							<li><p>修复了<code>DebrisMaximums</code>（产生的碎片不再能超过指定的最大值）。出于稳定性考量，只有当<code>DebrisMaximums</span></code>设定的值多于1个的时候才会激活此修复。</p></li>
-							<li><p>修复了Q/W快捷键在失败摆放之后不会再把建造完成的建筑放到鼠标上的问题。</p></li>
-							<li><p>可反部署的建筑，在反部署时不再会触发<code>EVA_NewRallypointEstablished</code>语音。</p></li>
+							<li>修复了GameModeOptions无法被正确保存，比如<code>BuildOffAlly</code>在加载游戏后会被关闭。</li>
+							<li>修复了利用建筑生成的染色效果永远不会被移除。</li>
+							<li>修复了读取地图时，将<code>Preview(Pack)</code>放置在<code>Map</code>后面会导致绘制不出预览的问题。</li>
+							<li>修复了重绘地图光照触发会使建筑光效失灵的问题。</li>
+							<li>心控对于可以部署的载具, 部署后不再会永久改变所属方。</li>
+							<li>修复了用工程师占领被心灵控制的建筑后不会移除心灵控制的连接线。</li>
+							<li>移除了工程师占领被视为载具的建筑时的EVA语音。</li>
+							<li>修复了当单位已经死亡却还在地图上时（例如沉没，坠毁，死亡动画等）还能再次死亡的问题。</li>
+							<li>修复了隐形的辐射工兵无法发射部署武器的问题。</li>
+							<li>修复了被超时空武器冻结的单位不能被正确抹消的问题，并不会再生成错误。</li>
+							<li>修复了<code>DebrisMaximums</code>（产生的碎片不再能超过指定的最大值）。出于稳定性考量，只有当<code>DebrisMaximums</code>设定的值多于1个的时候才会激活此修复。</li>
+							<li>修复了Q/W快捷键在失败摆放之后不会再把建造完成的建筑放到鼠标上的问题。</li>
+							<li>可反部署的建筑，在反部署时不再会触发<code>EVA_NewRallypointEstablished</code>语音。</li>
 							<li><p>修复了<code>Naval=yes</code>会无视<code>WaterBound=no</code>强制将建筑限制在水面上的问题。</p></li>
 							<li><p>修复了AI的飞机停机坪在Ares标签<code>[GlobalControls]</code>中<code>AllowParallelAIQueues=no</span></code>时有bug的问题。</p></li>
 							<li><p>修复了激光绘制的代码以允许所属方颜色绘制模式下更粗的激光。</p></li>
@@ -1641,18 +1645,28 @@
 	</footer>
 	<script>
 		var coll = document.getElementsByClassName("collapsible");
-		var i;
 
-		for (i = 0; i < coll.length; i++) {
-		  coll[i].addEventListener("click", function() {
-		    this.classList.toggle("active");
-		    var content = this.nextElementSibling;
-		    if (content.style.maxHeight){
-		      content.style.maxHeight = null;
-		    } else {
-		      content.style.maxHeight = content.scrollHeight + "px";
-		    } 
-		  });
+		for (var i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				for (var j = 0; j < coll.length; j++) {
+					if (coll[j] !== this) {
+						coll[j].classList.remove("active");
+						var otherContent = coll[j].nextElementSibling;
+						if (otherContent && otherContent.style.maxHeight) {
+							otherContent.style.maxHeight = null;
+						}
+					}
+				}
+
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight) {
+					content.style.maxHeight = null;
+				}
+				else {
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			});
 		}
 	</script>
 </body>

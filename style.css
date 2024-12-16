@@ -1577,11 +1577,38 @@ footer {
 	font-weight: black;
 }
 
+.blog-content ul{
+	list-style-position: inside;
+  list-style-type: disc;
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+.blog-content ol {
+    list-style-position: inside;
+    margin: 0.5em 0;
+    padding: 0;
+}
+
 .blog-content li{
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 1.5em;
+}
+
+.blog-content li > ul {
+    list-style-position: inside;
+    list-style-type: circle;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-content li > ol {
+    list-style-position: inside;
+    list-style-type: lower-alpha;
+    margin: 0;
+    padding: 0;   
 }
 
 .blog-content img{
