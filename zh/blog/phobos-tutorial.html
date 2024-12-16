@@ -1364,16 +1364,39 @@
 						<div class="code-presentation">
 							<p>[MagnetDrainer] ;Drains armor</p>
 							<p>...</p>
-							<p>FeedbackWeapon=GainArmor</p>
+							<p>FeedbackWeapon=GainArmor ;反馈武器</p>
 						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义飞行器扫射</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>飞机的开火逻辑和其他单位完全不同，在武器抛射体的<code>ROT</code>小于2时，其开火时会对目标进行5连发的扫射，而现在可以自定义一些扫射的参数。</p>
+						<p><code>Strafing.Shots</code>定义该武器在单次扫射时射击次数，参数为1到5的整数，任何定义域[1,5]之外的数字将会被视为1或者5，默认为5。单位的<code>Ammo</code>会在扫射结束后扣除。</p>
+						<p><code>Strafing.SimulateBurst</code>定义该武器扫射时是否模拟<code>Burst</code>效果以定义多个开火坐标，参数为布尔值，默认为false。只有在该武器的<code>Burst</code>为1或者未定义的情况下生效。</p>
 					</div>
 					<h4 type="button" class="collapsible">目标选择筛选</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以定义武器可以对何种目标进行攻击。</p>
+						<p><code>CanTarget</code>定义该武器可以攻击哪些种类的目标，参数为预设值的列表，预设值解释如下：</p>
+						<ul>
+							<li><code>none</code>：无，即不能攻击任何目标</li>
+							<li><code>land</code>：地面目标</li>
+							<li><code>water</code>：水中目标</li>
+							<li><code>empty</code>：空目标，即地板</li>
+							<li><code>infantry</code>：步兵目标</li>
+							<li><code>units</code>：载具目标和飞行器目标</li>
+							<li><code>buildings</code>：建筑目标</li>
+							<li><code>all</code>：所有目标</li>
+						</ul>
+						<p>特别提示，如果你设定了可攻击的类型，记得把<code>empty</code>也放进列表，否则单位无法攻击空地板。</p>
+						<p><code>CanTargetHouses</code>定义该武器可以将哪些阵营作为目标，参数为预设值的列表，预设值解释如下：</p>
+						<ul>
+							<li><code>none</code>：无，即不能攻击任何阵营。</li>
+							<li><code>owner</code>或者<code>self</code>：仅能攻击单位所在阵营</li>
+							<li><code>allies</code>或者<code>ally</code>：仅能攻击盟友</li>
+							<li><code>team</code>：可以攻击自己或者盟友</li>
+							<li><code>enemies</code>或者<code>enemy</code>：仅能攻击敌人</li>
+							<li><code>all</code>：所有阵营均可攻击</li>
+						</ul>
 					</div>
 					<h2 id="fixed-logic">修复或改善的逻辑</h2>
 					<h3>BUG修复和杂项</h3>
@@ -1381,13 +1404,13 @@
 					<h4 type="button" class="collapsible">点击展开</h4>
 					<div class="col-content">
 						<ul>
-							<li><p>Fixed the bug that GameModeOptions are not correctly saved. For example, <code>BuildOffAlly</code> is corrupted after load a save.</p></li>
-							<li><p>Fixed the bug that light tint created by buildings can never be removed (light tint persists even if the building is destroyed/sold) after loading a game</p></li>
+							<li><p>修复了GameModeOptions无法被正确保存，比如<code>BuildOffAlly</code>在加载游戏后会被关闭。</p></li>
+							<li><p>修复了利用建筑生成的染色效果永远不会被移除。</p></li>
 							<li><p>修复了读取地图时，将<code>Preview(Pack)</code>放置在<code>Map</code>后面会导致绘制不出预览的问题。</p></li>
 							<li><p>修复了重绘地图光照触发会使建筑光效失灵的问题。</p></li>
 							<li><p>心控对于可以部署的载具, 部署后不再会永久改变所属方。</p></li>
-							<li><p>Fixed the bug when capturing a mind-controlled building with an engineer fail to break the mind-control link.</p></li>
-							<li><p>Removed the EVA_BuildingCaptured event when capturing a building considered as a vehicle.</p></li>
+							<li><p>修复了用工程师占领被心灵控制的建筑后不会移除心灵控制的连接线。</p></li>
+							<li><p>移除了工程师占领被视为载具的建筑时的EVA语音。</p></li>
 							<li><p>修复了当单位已经死亡却还在地图上时（例如沉没，坠毁，死亡动画等）还能再次死亡的问题。</p></li>
 							<li><p>修复了隐形的辐射工兵无法发射部署武器的问题。</p></li>
 							<li><p>修复了被超时空武器冻结的单位不能被正确抹消的问题，并不会再生成错误。</p></li>
@@ -1420,19 +1443,147 @@
 					<h3>其他平台的问题修复</h3>
 					<h3>飞行器</h3>
 					<h3>动画</h3>
+					<h4 type="button" class="collapsible">动画武器和伤害设置</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">附加动画的位置设置</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">附加动画的层级设置</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">矿石动画隐藏设置</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>建筑</h3>
+					<h4 type="button" class="collapsible">自定义部队回收站</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>粒子系统</h3>
 					<h3>粒子</h3>
 					<h3>抛射体</h3>
+					<h4 type="button" class="collapsible">自定义抛射体重力</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>单位</h3>
+					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义采矿动画</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">可微观定义的超时空瞬移</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">在art中定义单位图像</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义矿石储存槽</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义单位爆炸是否杀死乘员</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义飞行单位层级</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">飞行单位面向目标开火</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">停电子机坠毁</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">重启全局飞行单位控制</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">禁止AI平行生产线</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>地形</h3>
+					<h4 type="button" class="collapsible">自定义矿钻</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义地形小地图颜色</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">地形可通过和建造建筑</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>					
 					<h3>矿石</h3>
+					<h4 type="button" class="collapsible">自定义矿石小地图颜色</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>载具</h3>
+					<h4 type="button" class="collapsible">摧毁动画</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">自定义部署动画方向</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">静态载具</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">变形保留铁幕效果</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>藤蔓与废料</h3>
 					<h3>VXL碎片</h3>
 					<h3>弹头</h3>
+					<h4 type="button" class="collapsible">允许弹头对发射者生效</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">弹头是否解除隐身</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">弹头局部振动效果</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>武器</h3>
+					<h4 type="button" class="collapsible">自定义飞碟激光</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">单色激光</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
+					<h4 type="button" class="collapsible">可关闭电流效果</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h3>杂项</h3>
+					<h4 type="button" class="collapsible">自定义范围圈可见阵营</h4>
+					<div class="col-content">
+						<p>敬请期待……</p>
+					</div>
 					<h2 id="ai-script">AI编写和地图编辑</h2>
 					<h3>BUG修复和杂项</h3>
 					<h3>单人任务地图</h3>
