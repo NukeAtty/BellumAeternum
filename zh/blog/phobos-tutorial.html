@@ -77,7 +77,7 @@
 			border: 1px dashed #fff;
 			font-size: 14px;
 			font-weight: 100;
-			padding: 0.2em;
+			padding: 0.5em 1em;
 			margin: 0.5em auto;
 		}
 
@@ -94,8 +94,8 @@
 			border: 1px solid #fff;
 			font-size: 14px;
 			font-weight: bold;
-			padding: 0.2em;
-			background-color: #c93;
+			padding: 1em;
+			background-color: #c63;
 			margin: 0.5em auto;
 			border-radius: 2px;
 			text-align:center;
@@ -1501,7 +1501,7 @@
 							<li><code>enemies/enemy</code>：只有该部队回收站的所属方的敌人可见</li>
 							<li><code>all</code>：所有所属方均可见</li>
 						</ul>
-						<p><code>Grinding.DisplayRefund.Offset</code>定义该部队回收站显示资金数字的坐标，参数为X,Y值，单位为像素，默认为0,0，即建筑的中心。</p>
+						<p><code>Grinding.DisplayRefund.Offset</code>定义该部队回收站显示资金数字的坐标，参数为两个整数代表X,Y值，单位为像素，默认为0,0，即建筑的中心。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
@@ -1530,15 +1530,71 @@
 					<h3>单位</h3>
 					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以为建筑提供的回血效果增加全局限制，并可以自定义其徽章和种类。</p>
+						<p>知识点补充：</p>
+						<p id="comment">在原版的市民医院和机械车间（机械商店）上，使用<code>InfantryGainSelfHeal=</code>和<code>UnitsGainSelfHeal=</code>来代表每<code>SelfHealInfantryFrames</code>或<code>SelfHealUnitFrames</code>帧恢复多少次<code>SelfHealInfantryAmount</code>或<code>SelfHealUnitAmount</code>的血量，原版为1，即一次。如果想要做一个恢复能力更高的建筑，便可以将这两句代码的参数改为大于1的值。</p>
+						<p>在<code>[General]</code>下用<code>InfantryGainSelfHealCap</code>定义最多可以恢复多少次<code>InfantryGainSelfHeal</code>的血量，参数为整数，必须大于1。</p>
+						<p>在<code>[General]</code>下用<code>UnitsGainSelfHealCap</code>定义最多可以恢复多少次<code>UnitsGainSelfHeal</code>的血量，参数为整数，必须大于1。</p>
+						<p>在<code>[AudioVisual]</code>下用<code>Pips.SelfHeal.Infantry</code>、<code>Pips.SelfHeal.Units</code>、<code>Pips.SelfHeal.Buildings</code>来分别定义步兵、单位和建筑在获得回血效果后的徽章，即pips.shp，参数为整数，即pips.shp中的第几帧。</p>
+						<p>在<code>[AudioVisual]</code>下用<code>Pips.SelfHeal.Infantry.Offset</code>、<code>Pips.SelfHeal.Units.Offset</code>、<code>Pips.SelfHeal.Buildings.Offset</code>来分别定义步兵、单位和建筑在获得回血效果后的徽章位置，参数为两个整数代表X,Y值，单位为像素。</p>
+						<p>在单位中使用<code>SelfHealGainType</code>来定义该单位可以接受哪种建筑提供的回血效果，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：该单位不会接受任何建筑提供的回血效果</li>
+							<li><code>infantry</code>：该单位会接受带<code>InfantryGainSelfHeal=</code>的建筑提供的回血效果，原版对应市民医院</li>
+							<li><code>units</code>：该单位会接受带<code>UnitsGainSelfHeal=</code>的建筑提供的回血效果，原版对应机械车间</li>
+						</ul>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[General]</p>
+							<p>InfantryGainSelfHealCap=5 ;</p>
+							<p>UnitsGainSelfHealCap=5 ;</p>
+							<br>
+							<p>[AudioVisual]</p>
+							<p>Pips.SelfHeal.Infantry=13,20</p>
+							<p>Pips.SelfHeal.Units=13,20</p>
+							<p>Pips.SelfHeal.Buildings=13,20</p>
+							<p>Pips.SelfHeal.Infantry.Offset=25,-35</p>
+							<p>Pips.SelfHeal.Units.Offset=33,-32</p>
+							<p>Pips.SelfHeal.Buildings.Offset=15,10</p>
+							<br>
+							<p>[DRON]</p>
+							<p>...</p>
+							<p>SelfHealGainType=infantry</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义采矿动画</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以为采矿车单位在采集不同类型的矿石时定义不同的采矿动画。</p>
+						<p><code>OreGathering.Anims</code>定义该采矿车所使用的采矿动画，参数为动画注册名的列表，代表采集不同矿石的时候所播放的动画。</p>
+						<p><code>OreGathering.FramesPerDir</code>定义该采矿车播放采矿动画时，每个方向的帧数，参数为整数的列表，和动画列表对应。</p>
+						<p><code>OreGathering.Tiberiums</code>定义该采矿车在采集哪种矿石的时候播放动画，参数为整数的列表，代表矿石的种类，对应<code>[Tiberiums]</code>注册表中的序号。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[HARV]</p>
+							<p>...</p>
+							<p>OreGathering.Anims=GREEN,GREEN,BLUE,BLUE ;采矿动画</p>
+							<p>OreGathering.FramesPerDir=15,15,15,15 ;每个方向的帧数</p>
+							<p>OreGathering.Tiberiums=0,1,2,3 ;采集哪种矿石播放上述动画</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">可微观定义的超时空瞬移</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在全局中的超时空瞬移的属性可以在每个单位中微观定义，默认均为对应的全局标签，仅对超时空运动模式有效。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[CLEGX] ;Chrono Legion X</p>
+							<p>WarpOut=WARPIN ;传送离开时播放的动画</p>
+							<p>WarpIn=WARPOUT ;传送到目的地是播放的动画</p>
+							<p>WarpAway=WARPAWAY ;用超时空传送时播放的动画</p>
+							<p>ChronoTrigger=true ;是否根据距离决定冷冻时间</p>
+							<p>ChronoDistanceFactor=48 ;传送距离和冷冻时间的因数</p>
+							<p>ChronoMinimumDelay=16 ;传送冷冻时间的最低值</p>
+							<p>ChronoRangeMinimum=8 ;多少距离才不会根据距离决定冷冻时间</p>
+							<p>ChronoDelay=60 ;用超时空传送的冷冻时间</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">在art中定义单位图像</h4>
 					<div class="col-content">
