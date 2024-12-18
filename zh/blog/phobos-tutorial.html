@@ -677,7 +677,7 @@
 							<p>Interceptor.KeepIntact=false ;拦截后抛射体是否继续移动</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">弹道类抛射体</h4>
+					<h4 id="projectile-trajectory" type="button" class="collapsible">弹道类抛射体</h4>
 					<div class="col-content">
 						<p>弹道类抛射体是一种全新的抛射体模式，其独立于四大抛射体（<code>Invisio</code>，<code>ROT</code>，<code>Arcing</code>，<code>Vertical</code>）之外，因此禁止和四大抛射体混用。目前弹道类抛射体只推出了两种弹道模式，即直线弹道和轰炸弹道。</p>
 						<p><code>Trajectory</code>定义使用哪种弹道的抛射体，参数为弹道模式的预设名称，<code>Straight</code>为直线弹道（平射），<code>Bombard</code>为轰击弹道（曲射）。</p>
@@ -1466,29 +1466,66 @@
 						</div>
 						<p id="alert">如果和Ares一起使用，那么Phobos的动画伤害和武器将覆盖Ares的相同功能。</p>
 					</div>
-					<h4 type="button" class="collapsible">附加动画的位置设置</h4>
+					<h4 type="button" class="collapsible">自定义附加动画位置</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>附加动画的位置现在可以指定在中心而不是在附加对象的角落。</p>
+						<p><code>UseCenterCoordsIfAttached</code>定义是否在对象的中心显示附加动画，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">附加动画的层级设置</h4>
+					<h4 type="button" class="collapsible">自定义附加动画的层级</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>附加动画的层级现在可以指定是否跟随附加对象。</p>
+						<p><code>Layer.UseObjectLayer</code>定义是否在对象的层级上显示附加动画，参数为布尔值，如果不设置，则动画的层级默认为Ground。</p>
 					</div>
 					<h4 type="button" class="collapsible">矿石动画隐藏设置</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以指定矿石隐藏闪光动画的阶段。该功能对于那些把矿石改成物资箱的Mod很有用。</p>
+						<p><code>HideIfNoOre.Threshold</code>定义矿石在什么阶段会隐藏该动画，矿石闪光动画在<code>[General]</code>中的<code>OreTwinkle</code>中指定。</p>
 					</div>
 					<h3>建筑</h3>
 					<h4 type="button" class="collapsible">自定义部队回收站</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>部队回收站现在可以定义更多的细节内容，如可回收的单位和回收音效。</p>
+						<p><code>Grinding.AllowAllies</code>定义该部队回收站是否能回收友军单位，参数为布尔值。</p>
+						<p><code>Grinding.AllowOwner</code>定义该部队回收站是否能回收己方单位，参数为布尔值。</p>
+						<p><code>Grinding.AllowTypes</code>定义该部队回收站只能回收的单位，参数为单位注册名列表。一旦设置，未在列表出现的单位均不可回收。</p>
+						<p><code>Grinding.DisallowTypes</code>定义该部队回收站不能回收的单位，参数为单位注册名列表。</p>
+						<p><code>Grinding.Sound</code>定义该部队回收站的回收音效，参数为音效注册名，默认为<code>[AudioVisual]</code>中的<code>EnterGrinderSound</code>所定义的音效。</p>
+						<p><code>Grinding.Weapon</code>定义该部队回收站回收单位时对本体开火的武器，参数为武器注册名，将会遵循ROF的设定。</p>
+						<p><code>Grinding.DisplayRefund</code>定义该部队回收站在回收单位时是否显示资金数字，参数为布尔值。</p>
+						<p><code>Grinding.DisplayRefund.Houses</code>定义该部队回收站显示资金数字时哪些所属方可以看见，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：所有所属方均不可看见</li>
+							<li><code>owner/self</code>：只有该部队回收站的所属方可见</li>
+							<li><code>allies/ally</code>：只有该部队回收站的所属方的盟友生效可见</li>
+							<li><code>team</code>：该部队回收站的所属方及其盟友可见</li>
+							<li><code>enemies/enemy</code>：只有该部队回收站的所属方的敌人可见</li>
+							<li><code>all</code>：所有所属方均可见</li>
+						</ul>
+						<p><code>Grinding.DisplayRefund.Offset</code>定义该部队回收站显示资金数字的坐标，参数为X,Y值，单位为像素，默认为0,0，即建筑的中心。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[YAGRND]</p>
+							<p>...</p>
+							<p>Grinding=yes ;该建筑是否是部队回收站</p>
+							<p>Grinding.AllowAllies=true ;是否可以回收友军单位</p>
+							<p>Grinding.AllowOwner=true ;是否可以回收己方单位</p>
+							<p>Grinding.AllowTypes= ;回收的单位限定</p>
+							<p>Grinding.DisallowTypes=BFRT ;不可回收的单位限定</p>
+							<p>Grinding.Sound= ;回收时的音效</p>
+							<p>Grinding.Weapon= ;回收时使用的武器</p>
+							<p>Grinding.DisplayRefund=true ;回收单位是否显示资金</p>
+							<p>Grinding.DisplayRefund.Houses=team ;显示资金可见所属方</p>
+							<p>Grinding.DisplayRefund.Offset=0,15 ;显示资金位置</p>
+						</div>
 					</div>
 					<h3>粒子系统</h3>
 					<h3>粒子</h3>
 					<h3>抛射体</h3>
 					<h4 type="button" class="collapsible">自定义抛射体重力</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>对于<code>Arcing</code>类型的抛射体来说，其弹道下坠现象由<code>[AudioVisual]</code>的<code>Gravity</code>参数进行全局控制，而在Phobos中，你可以为每一个抛射体微观定义Gravity值。</p>
+						<p><code>Gravity</code>定义抛射体所收到的重力，参数为浮点值，不建议设置为0，因为这将导致抛射体逆向飞行，并无法击中非同高度的目标。如果想要平射弹道，可以用Phobos的<a href="#projectile-trajectory">弹道类抛射体</a>。</p>
 					</div>
 					<h3>单位</h3>
 					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
