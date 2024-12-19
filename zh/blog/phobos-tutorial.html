@@ -1598,11 +1598,26 @@
 					</div>
 					<h4 type="button" class="collapsible">在art中定义单位图像</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p><code>Image</code>标签在artmd.ini中只对动画和建筑生效，而现在可以对所有单位（建筑、步兵、载具、飞行器）生效了。需要注意的是，该标签只需要填入素材名称即可，不需要文件格式后缀。为了适配原版，该功能默认是关闭的，因此需要通过在<code>[General]</code>中的<code>ArtImageSwap=true</code>来打开这个功能。</p>
+						<p>该功能支持SHP格式的步兵（InfantryTypes）、SHP和VXL格式的载具（VehicleTypes）以及VXL格式的飞行器（AircraftTypes）。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[General]</p>
+							<p>...</p>
+							<p>ArtImageSwap=true ;开启art中定义单位图像功能</p>
+						</div>
+						<p>在<code>artmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[SSPY] ;Soviet Spy</p>
+							<p>...</p>
+							<p>Image=SPY</p>
+						</div>						
 					</div>
 					<h4 type="button" class="collapsible">自定义矿石储存槽</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以自定义矿石储存槽可以储存哪种类型的矿石了。该功能需要配合Ares的矿石储存槽功能使用。</p>
+						<p>在<code>[General]</code>中<code>Storage.TiberiumIndex</code>定义哪些矿石可以被储存，参数为整数的列表，代表矿石注册表的序列号。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义单位爆炸是否杀死乘员</h4>
 					<div class="col-content">
