@@ -414,7 +414,6 @@
 					<h3 type="button" class="collapsible" id="vehicle-thief">偷车贼</h3>
 					<div class="col-content">
 						<p>Ares支持在尤里的复仇中实现和泰伯利亚之日的变异劫持者相同的单位，并且不用<code>Thief=yes</code>，<code>Infiltrate=yes</code>或者<code>Agent=yes</code>。并且这个逻辑支持更多的细节定义，详情见<a href="#hijacker">劫持者</a>部分。</p>
-						<h2 id="new-enhanced-logic">新增或改进的逻辑</h2>
 					</div>
 					<h2 id="new-enhanced-logic">新增或改进的逻辑</h2>
 					<h3 type="button" class="collapsible" id="additional-armor">新增护甲类型和弹头抗性</h3>
@@ -425,7 +424,7 @@
 							<p>iron=steel</p>
 							<p>plastic=100%</p>
 						</div>
-						<p>格式为X=Y，X是护甲的名称，Y可以是一个已存在的护甲名，也可以是一个百分比值。</p>
+						<p>格式为X=Y。X是护甲的名称，Y可以是一个已存在的护甲名，也可以是一个百分比值。</p>
 						<p>比如上述的新增护甲，iron的值为<code>steel</code>，在游戏中，所有弹头对iron的伤害百分比都会等于对<code>steel</code>护甲的值作为默认值。也就是说，如果一个弹头对<code>steel</code>的伤害为100%，那么对iron的伤害也为100%。</p>
 						<p>再比如，上述的第二个新增护甲plastic，其值为100%，这个值会作为所有弹头的伤害百分比默认值，也就是说，所有弹头打到plastic上都会是100%，除非在弹头中重新定义伤害百分比，定义的方法如下：</p>
 						<div class="code-presentation">
@@ -481,8 +480,11 @@
 							<p>[ORCA]</p>
 							<p>ReloadRate=.3 ;该飞行器的装填时间，单位为分钟。</p>
 						</div>
+						<p id="comment">笔者注：在原版中，机场为战机回血的速度是由ReloadRate控制，也就是说ReloadRate在变长之后，其回血的速度也会减缓。</p>
 					</div>
 					<h3 type="button" class="collapsible" id="">飞行器受损冒烟</h3>
+					<div class="col-content">
+					</div>
 					<h3 type="button" class="collapsible" id="">飞行动画播放速度</h3>
 					<h3 type="button" class="collapsible" id="">空袭语音</h3>
 					<h3 type="button" class="collapsible" id="">根据地形切换外观</h3>
@@ -579,8 +581,8 @@
 				<div class="footer-column">
 				<p>阵营</p>
 				<ul>
-					<li><a href="allied.html">盟军</a></li>
-					<li><a href="soviet.html">苏联</a></li>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
@@ -604,18 +606,27 @@
 	</footer>
 	<script>
 		var coll = document.getElementsByClassName("collapsible");
-		var i;
+		for (var i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function () {
+				for (var j = 0; j < coll.length; j++) {
+					if (coll[j] !== this) {
+						coll[j].classList.remove("active");
+						var otherContent = coll[j].nextElementSibling;
+						if (otherContent && otherContent.style.maxHeight) {
+							otherContent.style.maxHeight = null;
+						}
+					}
+				}
 
-		for (i = 0; i < coll.length; i++) {
-		  coll[i].addEventListener("click", function() {
-		    this.classList.toggle("active");
-		    var content = this.nextElementSibling;
-		    if (content.style.maxHeight){
-		      content.style.maxHeight = null;
-		    } else {
-		      content.style.maxHeight = content.scrollHeight + "px";
-		    } 
-		  });
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight) {
+					content.style.maxHeight = null;
+				}
+				else {
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			});
 		}
 	</script>
 </body>
