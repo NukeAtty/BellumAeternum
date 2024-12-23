@@ -1621,23 +1621,33 @@
 					</div>
 					<h4 type="button" class="collapsible">自定义单位爆炸是否杀死乘员</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，带有<code>Explodes=true</code>的单位都会在被摧毁时杀死乘员，这个硬编码设定可以被新标签<code>Explodes.KillPassengers=false</code>关闭。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义飞行单位层级</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>飞行单位（指飞艇或直升机类的飞行载具，非飞行器）在<code>air</code>或<code>top</code>层级的判定方式为：该单位当前所在的高度大于或小于<code>JumpjetHeight</code>设定或者在<code>[JumpjetControls]</code>中<code>CruiseHeight</code>所默认的高度。</p>
+						<p>未完待续……</p>
 					</div>
 					<h4 type="button" class="collapsible">飞行单位面向目标开火</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>飞行单位在原版中武器必须带<code>OmniFire=yes</code>才可以正常开火，然而这样的后果是哪怕飞行单位背对目标也可以开火。而现在可以通过在<code>[JumpjetControls]</code>增加<code>TurnToTarget=yes</code>标签来让所有飞行单位面向单位开火。同时，也可以通过在单位上设置<code>JumpjetTurnToTarget</code>来覆盖某个特定单位是否面向目标开火。</p>
+						<p>显然，带有<code>TurretSpins=yes</code>的飞行单位无法使用该逻辑。</p>
 					</div>
 					<h4 type="button" class="collapsible">停电子机坠毁</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p><code>Powered.KillSpawns</code>定义当使用子机的建筑单位停电时，建筑单位是否会停止瞄准敌军单位，同时子机坠毁，参数为布尔值。</p>
 					</div>
 					<h4 type="button" class="collapsible">重启全局飞行单位控制</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>Phobos重启了原版废弃的<code>[JumpjetControls]</code>模块，作为所有飞行单位的默认设定，但需要增加两个额外的标签，即<code>Crash</code>和<code>NoWobbles</code></p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[JumpjetControls]</p>
+							<p>...</p>
+							<p>Crash=5.0</p>
+							<p>NoWobbles=false</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">禁止AI平行生产线</h4>
 					<div class="col-content">
