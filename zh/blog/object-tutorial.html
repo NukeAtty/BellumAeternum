@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title>基础支持：对象 | 万世之战：为红警2带来前所未有的体验</title>
+	<style>
+		span{
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+		<div class="responsive-navigation">
+			<a href="https://ra2be.com/zh"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="../archives.html">档案库</a>
+				<a href="../blog.html">博客</a>
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1>尤里的复仇Mod基础知识介绍：对象</h1>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>最后更新时间：<time datetime="2024-07-05 18:00">2024/12/23</time></p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<h2>对象的种类</h2>
+					<p></p>
+					<ol>
+						<li><a href="#unit">单位</a></li>
+						<li><a href="#overlay">覆盖物</a></li>
+						<li><a href="#terrain">地形</a></li>
+						<li><a href="#smudge">污染</a></li>
+						<li><a href="#"></a></li>
+					</ol>
+					<h2>各对象的特性和表现形式</h2>
+					<h3>单位</h3>
+					<h3>覆盖物</h3>
+					<h3>地形</h3>
+					<p>注意，这里的地形指的是地形对象，即TerrainTypes，不是TMP地形图块。地形通常用于树木、指示牌、电线杆。</p>
+					<p>地形拥有以下特性：</p>
+					<ol>
+						<li>地形有注册表，需要在<code>rulesmd.ini</code>中的<code>[TerrainTypes]</code>模块下注册。</li>
+						<li>地形无法被直接选中为目标，必须使用强制攻击才可以选择。</li>
+						<li>地形可以设置血量，但无法在游戏中显示血条。如果不设置则默认为<code>TreeStrength</code>中所定义的血量。</li>
+						<li>地形可以设置护甲，如果不设置则默认为<code>wood</code></li>
+						<li>地形只能占一个单元格，但可以设置步兵可通过的区域。</li>
+					</ol>
+					<h3>污染</h3>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>文章</p>
+				<ul>
+					<li><a href="../archives.html">资料库</a></li>
+					<li><a href="../blog.html">博客</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="#contact">联系作者</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
+		</div>
+	</footer>
+</body>

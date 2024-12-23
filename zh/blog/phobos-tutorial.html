@@ -1651,17 +1651,29 @@
 					</div>
 					<h4 type="button" class="collapsible">禁止AI平行生产线</h4>
 					<div class="col-content">
-						<p>现在可以将某个特定种类的工厂建筑设置禁止AI的平行生产。如果设置了<code>AllowParallelAIQueues=no</code>，该功能无效。</p>
+						<p>在Ares中，可以在<code>[GlobalControls]</code>中设置<code>AllowParallelAIQueues=no</code>来避免AI在多工厂的环境下平行生产，即在生产某一单位时克隆出其他单位。现在可以将某个特定种类的工厂建筑设置禁止AI的平行生产。如果设置了<code>AllowParallelAIQueues=no</code>，该功能无效。</p>
 						<p><code>ForbidParallelAIQueues.Infantry</code>定义是否禁止步兵单位的AI平行生产，参数为布尔值。</p>
 						<p><code>ForbidParallelAIQueues.Vehicle</code>定义是否禁止载具单位的AI平行生产，参数为布尔值。</p>
 						<p><code>ForbidParallelAIQueues.Navy</code>定义是否禁止舰船单位的AI平行生产，参数为布尔值。</p>
 						<p><code>ForbidParallelAIQueues.Aircraft</code>定义是否禁止飞行器单位的AI平行生产，参数为布尔值。</p>
 						<p><code>ForbidParallelAIQueues.Building</code>定义是否禁止建筑单位的AI平行生产，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[GlobalControls]</p>
+							<p>...</p>
+							<p>AllowParallelAIQueues=yes ;必须开启，否则无效</p>
+							<p>ForbidParallelAIQueues.Infantry=no ;是否禁止步兵平行生产</p>
+							<p>ForbidParallelAIQueues.Vehicle=no ;是否禁止载具平行生产</p>
+							<p>ForbidParallelAIQueues.Navy=no ;是否禁止舰船平行生产</p>
+							<p>ForbidParallelAIQueues.Aircraft=no ;是否禁止飞行器平行生产</p>
+							<p>ForbidParallelAIQueues.Building=yes ;是否禁止建筑平行生产</p>
+						</div>
 					</div>
-					<h3>地形</h3>
+					<h3>地形对象</h3>
 					<h4 type="button" class="collapsible">自定义矿钻</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在你可以定义某个地形对象可以生成的矿石种类，同时可以自定义生成矿石的范围。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义地形小地图颜色</h4>
 					<div class="col-content">
