@@ -6,7 +6,7 @@
 	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
 	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
 	<meta name="robots" content="noindex, nofollow">
-	<title>基础支持：对象 | 万世之战：为红警2带来前所未有的体验</title>
+	<title>基础知识：对象 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
 		span{
 			font-size: 16px;
@@ -70,16 +70,59 @@
 					<h2>各对象的特性和表现形式</h2>
 					<h3>单位</h3>
 					<h3>覆盖物</h3>
-					<h3>地形</h3>
+					<p>覆盖物在地图中被广泛引用，典型的是桥梁、围墙、石块、矿石等。</p>
+					<p>覆盖物拥有以下特性：</p>
+					<ol>
+						<li>覆盖物有注册表，需要在<code>rulesmd.ini</code>中的<code>[OverlayTypes]</code>模块下注册，原注册表不能重写或修改，只能在原注册表后新增。</li>
+						<li>覆盖物分为六大类型：桥梁、围墙、石块和矿石。</li>
+					</ol>
+					<h3 id="terrain">地形</h3>
 					<p>注意，这里的地形指的是地形对象，即TerrainTypes，不是TMP地形图块。地形通常用于树木、指示牌、电线杆。</p>
 					<p>地形拥有以下特性：</p>
 					<ol>
 						<li>地形有注册表，需要在<code>rulesmd.ini</code>中的<code>[TerrainTypes]</code>模块下注册。</li>
 						<li>地形无法被直接选中为目标，必须使用强制攻击才可以选择。</li>
 						<li>地形可以设置血量，但无法在游戏中显示血条。如果不设置则默认为<code>TreeStrength</code>中所定义的血量。</li>
-						<li>地形可以设置护甲，如果不设置则默认为<code>wood</code></li>
-						<li>地形只能占一个单元格，但可以设置步兵可通过的区域。</li>
+						<li>地形可以设置护甲，如果不设置则默认为<code>wood</code>。</li>
+						<li>地形的图像需要在<code>artmd.ini</code>中定义。</li>
 					</ol>
+					<p>地形的图像拥有以下特性：</p>
+					<ol>
+						<li>图像为SHP格式，调色盘为iso***.pal。</li>
+						<li>地形支持不同气候（Theater），和建筑不同，不同气候不靠注册名的第二个字母区分，而是将SHP文件的后缀改为气候的三字母缩写。</li>
+						<li>地形支持动画，但需要相应的代码设置。</li>
+					</ol>
+					<p>地形的后缀名规则所对应的三字母缩写：</p>
+					<table class="general-table">
+						<tr>
+							<th>气候</th>
+							<th>后缀名</th>
+						</tr>
+						<tr>
+							<td>温和（Temperate）</td>
+							<td>tem</td>
+						</tr>
+						<tr>
+							<td>雪地（Snow）</td>
+							<td>sno</td>
+						</tr>
+						<tr>
+							<td>城市（Urban）</td>
+							<td>urb</td>
+						</tr>
+						<tr>
+							<td>新城市（New Urban）</td>
+							<td>ubn</td>
+						</tr>
+						<tr>
+							<td>沙漠（Desert）</td>
+							<td>des</td>
+						</tr>
+						<tr>
+							<td>月球（Lunar）</td>
+							<td>lun</td>
+						</tr>
+					</table>
 					<h3>污染</h3>
 				</div>
 			</div>
