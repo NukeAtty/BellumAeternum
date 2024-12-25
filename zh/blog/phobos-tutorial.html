@@ -439,7 +439,7 @@
 						<p><code>Shield.InheritStateOnReplace</code>定义用<code>Shield.ReplaceOnly</code>替换的护盾是否继承之前护盾的强度值，并重置再生计时器和强度恢复计时器。</p>
 					</div>
 					<h3 id="new-logic-animations">动画</h3>
-					<h4 type="button" class="collapsible">动画生成单位</h4>
+					<h4 type="button" class="collapsible" id="anim-create-unit">动画生成单位</h4>
 					<div class="col-content">
 						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
 						<p><code>CreateUnit</code>定义该动画生成的单位，只能填一个。</p>
@@ -1674,24 +1674,37 @@
 					<h4 type="button" class="collapsible">自定义矿钻</h4>
 					<div class="col-content">
 						<p>现在你可以定义某个地形对象可以生成的矿石种类，同时可以自定义生成矿石的范围。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[TIBTRE04]</p>
+							<p>SpawnsTiberium.Type=0 ;矿石生长的类型</p>
+							<p>SpawnsTiberium.Range=1 ;矿石生长的范围</p>
+							<p>SpawnsTiberium.GrowthStage=3 ;矿石生长的阶段</p>
+							<p>SpawnsTiberium.CellsPerAnim=1 ;矿钻播放动画一次矿石生长多少格</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义地形小地图颜色</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p><code>MinimapColor</code>定义地形对象在小地图的颜色，参数为R,G,B值。</p>
 					</div>
 					<h4 type="button" class="collapsible">地形可通过和建造建筑</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
-					</div>					
+						<p>现在可以自定义地形对象是否可以通过或建造建筑。</p>
+						<p><code>IsPassable</code>定义地形对象是否可以通过，参数为布尔值。设置为true时，鼠标指针会在地形对象上显示可移动到该位置。</p>
+						<p><code>CanBeBuiltOn</code>定义地形对象是否可以建造建筑，参数为布尔值。设置为true时，建造建筑将不会在该地形对象上显示不可建造，同时建筑建造时该地形对象自动移除。给树木添加这个标签可以实现建造建筑时自动移除树木。</p>
+					</div>
 					<h3>矿石</h3>
 					<h4 type="button" class="collapsible">自定义矿石小地图颜色</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p><code>MinimapColor</code>定义该矿石种类在小地图上显示的颜色，参数为R,G,B值。</p>
 					</div>
 					<h3>载具</h3>
-					<h4 type="button" class="collapsible">摧毁动画</h4>
+					<h4 type="button" class="collapsible">载具的摧毁动画</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以为载具单位定义摧毁时播放的动画，和原版的<code>Explosion</code>不同，这个动画会储存单位的所属信息、炮塔角度信息等，适合与<a href="#anim-create-unit">动画生成单位</a>一起用。</p>
+						<p><code>DestroyAnim</code>定义该载具在被摧毁时播放的动画，参数为动画的注册名所组成的列表，可以填入多个动画。</p>
+						<p><code>DestroyAnim.Random</code>定义该载具在被摧毁时的动画是否随机播放，参数为布尔值。</p>
 					</div>
 					<h4 type="button" class="collapsible">自定义部署动画方向</h4>
 					<div class="col-content">
