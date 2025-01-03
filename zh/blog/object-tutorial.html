@@ -206,6 +206,136 @@
 							<td>lun</td>
 						</tr>
 					</table>
+					<h4>地形对象的相关代码</h4>
+					<p><code>IsVeinhole</code>定义该地形对象是否为藤蔓洞穴，参数为布尔值。这个代码在红警2和尤里的复仇中无效，但可以用Phobos还原。</p>
+					<p><code>WaterBound</code>定义该地形对象是否可以漂浮在水面上，参数为布尔值。</p>
+					<p><code>IsFlammable</code>定义该地形对象是否可以被带有<code>Sparky=yes</code>标签的点燃，这个标签在原版中无效，需要Ares支持。</p>
+					<p><code>RadarColor</code>定义该地形对象在小地图上的颜色，但似乎是无效标签。</p>
+					<p><code>TemperateOccupationBits</code>定义温和气候下步兵在该地形对象所在的单元格可占据的位置，参数为0~7的整数。填入-1效果和填入7一样，填入-2效果和填入6一样。</p>
+					<p><code>SnowOccupationBits</code>定义雪地气候下步兵在该地形对象所在单元格可占据的位置，参数为0~7的整数。填入-1效果和填入7一样，填入-2效果和填入6一样。</p>
+					<table>
+						<tr>
+							<th>预设值</th>
+							<th>作用</th>
+							<th>图例</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>允许步兵占据单元格的西、南、东子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:green;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>允许步兵占据单元格的西、南子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:green;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>允许步兵占据单元格的东、南子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:green;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>允许步兵占据单元格的南子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:green;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>允许步兵占据单元格的东、西子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>允许步兵占据单元格的西子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>允许步兵占据单元格的东子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:forestgreen;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>不允许步兵占领任何子格。</td>
+							<td>
+								<svg width="60" height="30">
+									<polygon points="30,0 45,7.5 30,15 15,7.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="15,7.5 30,15 15,22.5 0,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="45,7.5 60,15 45,22.5 30,15" style="fill:red;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									<polygon points="30,15 45,22.5 30,30 15,22.5" style="fill:crimson;stroke:black;stroke-width:0;fill-rule:evenodd;"/>
+									不好意思，你的浏览器不支持该类型图片，请换个更先进的浏览器尝试。
+								</svg>
+							</td>
+						</tr>
+					</table>
+					<br>
+					<p><code>SpawnsTiberium</code>定义该地形对象是否为矿钻，参数为布尔值。该标签将会带来许多特殊效果，包括但不限于：</p>
+					<ul>
+						<li>当被摧毁时，该地形对象所在的单元格会触发100点伤害的爆炸，弹头使用<code>C4Warhead</code>所定义的弹头，并触发矿石的连锁反应（原版不可用）。</li>
+						<li>该地形对象不会被带有<code>Sparky=yes</code>的弹头点燃，当然，在原版里，森林火灾的逻辑无效。</li>
+						<li>该地形对象如果带有<code>IsAnimated</code>，将会在动画播放到一半时抛洒矿石，矿石的种类不可定义。</li>
+						<li>该地形对象默认使用UNITSNO.PAL，并且不会改变所属色。</li>
+					</ul>
+					<p><code>IsAnimated</code>定义该地形对象是否播放动画，参数为布尔值。这个标签需要与<code>SpawnsTiberium=yes</code>一起用才会生效。</p>
+					<p><code>AnimationRate</code>定义该地形对象的动画的播放速度，参数为整数。这个标签要求该地形对象有<code>IsAnimated=yes</code>标签。</p>
+					<p><code>AnimationProbability</code>定义该地形对象播放动画的几率，参数为0.0到1.0的浮点值，值越大动画播放的越频繁。这个标签要求该地形对象有<code>IsAnimated=yes</code>标签。</p>
+					<br>
 					<h3>污染</h3>
 				</div>
 			</div>
