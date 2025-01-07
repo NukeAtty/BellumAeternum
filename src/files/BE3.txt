@@ -1,0 +1,44 @@
+BE 3 Basic Structure
+
+1. Sides
+		GA: Biotech, Cybertech
+
+		NA: Heavy Industry, Missile Tech
+
+		YA: 
+
+		RA: 
+
+2. Units
+
+	GA:
+		Buildings:
+			Power Core
+
+			Refinery
+
+			Barracks
+
+			Factory
+
+			Frontline Command
+
+		Defense:
+
+
+		Units:
+
+			T1:
+				Harvester
+
+				Knight Tank
+					Main Armament: 75mm HV-5
+
+				Hound APC
+					Main Armament: 20mm Vulcan
+
+				
+
+
+		Aircrafts:
+			Vindicator
