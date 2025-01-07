@@ -37,7 +37,13 @@ BE 3 Basic Structure
 				Hound APC
 					Main Armament: 20mm Vulcan
 
-				
+			T2:
+				Serpent Hoverjet
+					Main Armament: 20mm Vulcan/AT Rocket
+
+			T3:
+				Valkyrie Tank
+					Main Armament: 120mm Railgun x2/20mm Vulcan x2
 
 
 		Aircrafts:
