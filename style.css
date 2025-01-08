@@ -1522,6 +1522,12 @@ footer {
 	padding: 0.5em;
 }
 
+.chaps ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .chaps a {
 	text-decoration: none;
 	font-family: HarmonyOS Sans, sans-serif;

@@ -146,8 +146,97 @@
 					<ol>
 						<li>覆盖物有注册表，需要在<code>rulesmd.ini</code>中的<code>[OverlayTypes]</code>模块下注册，原注册表不能重写或修改，只能在原注册表后新增。</li>
 						<li>覆盖物分为六大类型：桥梁、围墙、石块、矿石、残骸和铁轨。</li>
-						<li></li>
+						<li>覆盖物只支持占据一个地格。</li>
 					</ol>
+					<p>覆盖物的图像拥有以下特性：</p>
+					<ol>
+						<li>图像的格式只能是SHP。</li>
+						<li>图像的调色盘为ios***.pal。</li>
+					</ol>
+					<h3>覆盖物的相关代码：</h3>
+					<p><code>Land</code>定义该覆盖物使用哪种类型的地形结构的通过性，参数为下列预设值：</p>
+					<table class="general-table">
+						<tr>
+							<th>地形结构</th>
+							<th>描述</th>
+						</tr>
+						<tr>
+							<td>Clear</td>
+							<td>平坦地形，最通常的地形。</td>
+						</tr>
+						<tr>
+							<td>Rough</td>
+							<td>泥泞地形，通过性和草地与土路一致，原版中和Clear相同，可以通过设置来实现不同的速度。</td>
+						</tr>
+						<tr>
+							<td>Road</td>
+							<td>道路地形，通过性和高速公路以及小道一致。</td>
+						</tr>
+						<tr>
+							<td>Water</td>
+							<td>水面，只有船只能通过</td>
+						</tr>
+						<tr>
+							<td>Rock</td>
+							<td>石块，所有路面移动的单位均无法通过。</td>
+						</tr>
+						<tr>
+							<td>Wall</td>
+							<td>围墙，所有路面移动的单位均无法通过。</td>
+						</tr>
+						<tr>
+							<td>Tiberium</td>
+							<td>矿石，单位大幅度减速。</td>
+						</tr>
+						<tr>
+							<td>Beach</td>
+							<td>海滩，水面和地面的交界处。</td>
+						</tr>
+						<tr>
+							<td>Ice</td>
+							<td>冰面，原版中没有冰面逻辑，因此可以用来限制速度。</td>
+						</tr>
+						<tr>
+							<td>Tunnel</td>
+							<td>隧道，通过逻辑与隧道一致。</td>
+						</tr>
+						<tr>
+							<td>Railroad</td>
+							<td>铁路，火车可以通过。</td>
+						</tr>
+						<tr>
+							<td>Weeds</td>
+							<td>藤蔓，原版中无效，因此可以用来限制速度。</td>
+						</tr>
+						<tr>
+							<td>Cliff</td>
+							<td>悬崖，所有路面移动的单位均无法通过，同时会阻挡带有<code>SubjectToCliff=yes</code>的抛射体。</td>
+						</tr>
+					</table>
+					<p><code>Strength</code>定义该覆盖物的耐久度，参数为正整数。通常用于定义围墙等覆盖物的耐久度。</p>
+					<p><code>Wall</code>定义该覆盖物是否为围墙，参数为布尔值。这个标签主要用途是定义该覆盖物是否能被带有<code>Wall=yes</code>以及<code>WallAbsoluteDestroyer=yes</code>的弹头攻击，同时定义可发射这类弹头的单位是否被该覆盖物阻挡后主动攻击。</p>
+					<p><code>Tiberium</code>定义该覆盖物是否为矿石，参数为布尔值。这个标签主要用途是为该覆盖物赋予矿石的性质，比如生长、矿车采集和减速，同时还会为该覆盖物自动赋予<code>Armor=wood</code>，因此会被带有<code>wood=yes</code>的弹头打掉。</p>
+					<p><code>Crate</code>定义该覆盖物是否在单位进入时消失，并在其他随机位置刷出同样的地形对象，参数为布尔值，主要用于木箱。</p>
+					<p><code>CrateTrigger</code>定义该覆盖物是否会触发箱子的动画和效果，参数为布尔值。</p>
+					<p><code>Explodes</code>定义该覆盖物是否被击毁后爆炸，参数为布尔值。在设定为yes后，地形对象会获得以下效果：</p>
+					<ol>
+						<li>覆盖物摧毁后，单位会停止对该地格进行攻击。</li>
+						<li>在<code>[General]</code>中<code>BarrelExplode</code>所定义的动画会播放。</li>
+						<li>有85%的几率会生成<code>[General]</code>中<code>BarrelDebris</code>所定义的VXL碎片。</li>
+						<li>有25%的几率会生成<code>[General]</code>中<code>BarrelParticle</code>所定义的粒子。</li>
+						<li>爆炸产生的伤害由<code>[CombatDamage]</code>中<code>AmmoCrateDamage</code>所定义的伤害控制，弹头则在<code>CombatDamage</code>中<code>C4Warhead</code>定义。</li>
+						<li>爆炸将会摧毁带有<code>Wall=yes</code>的覆盖物，无论伤害的高低。</li>
+					</ol>
+					<p><code>Overrides</code>定义该覆盖物是否可以在其他覆盖物上方而不会清除其他覆盖物，参数为布尔值，主要用于桥梁。</p>
+					<p><code>CellAnim</code>定义该覆盖物所播放的动画，参数为动画的注册名，动画会在地格下方50像素处出现，可以使用<code>YDrawOffset</code>来移动动画的播放位置，但无法改变动画的实际位置，动画刷出的任何内容都还是会从原点出现。</p>
+					<p><code>DamageLevels</code>定义该覆盖物有几个破损阶段，参数为正整数，只对围墙有效。</p>
+					<p><code>RadarColor</code>定义该覆盖物在小地图中显示的颜色，参数为RGB值，在原版环境下几乎无效。</p>
+					<p><code>IsVeinholeMonster</code>定义该覆盖物是否为藤蔓巢穴，参数为布尔值，在原版环境下无效。</p>
+					<p><code>IsVeins</code>定义该覆盖物是否为藤蔓，参数为布尔值，有了这个标签藤蔓才会生长，在原版环境下无效。</p>
+					<p><code>ChainReaction</code>定义该覆盖物是否可以触发剧烈爆炸。</p>
+					<p><code>DrawFlat</code>定义该覆盖物是否为平面，参数为布尔值，默认为yes。一般比较立体的覆盖物会设定为no。</p>
+					<p><code>IsARock</code>定义该覆盖物是否为石块，参数为布尔值，设置为yes时，单位会绕过这个覆盖物而不会试图通过。</p>
+					<p><code>IsRubble</code>定义该覆盖物是否为建筑残骸，参数为布尔值。目前只有一个覆盖物使用这个标签，即<code>[RUBBLE_OVERLAY]</code>。所有能遗留残骸的建筑都会用这个覆盖物作为残骸的基础，该标签的用途可以理解成支持多地格的覆盖物。</p>
 					<h2 id="terrain">地形</h2>
 					<p>注意，这里的地形指的是地形对象，即TerrainTypes，不是TMP地形图块。地形通常用于树木、指示牌、电线杆。</p>
 					<p>地形拥有以下特性：</p>
@@ -328,9 +417,52 @@
 					<p><code>AnimationProbability</code>定义该地形对象播放动画的几率，参数为0.0到1.0的浮点值，值越大动画播放的越频繁。这个标签要求该地形对象有<code>IsAnimated=yes</code>标签。</p>
 					<br>
 					<h2>污染</h2>
+					<p>污染物使用的调色盘为iso***.pal</p>
 				</div>
 			</div>
 		</div>
+		<script>
+			    // Function to generate the table of contents
+		    function generateTableOfContents() {
+		        const tocContainer = document.querySelector('.chaps'); // Select the container for TOC
+		        const tocList = document.createElement('ul'); // Create a list for TOC
+		        tocList.classList.add('toc');
+
+		        // Find all h2 and h3 elements
+		        const headings = document.querySelectorAll('h2, h3');
+
+		        headings.forEach((heading, index) => {
+		            const listItem = document.createElement('li');
+		            const link = document.createElement('a');
+
+		            // Set the anchor link and text
+		            link.href = `#${heading.id || `heading${index}`}`;
+		            link.textContent = heading.textContent;
+
+		            // Set an id for the heading if it doesn't have one
+		            if (!heading.id) {
+		                heading.id = `heading${index}`;
+		            }
+
+		            // Append the link to the list item
+		            listItem.appendChild(link);
+
+		            // If it's an h3, indent it (you can modify this as needed)
+		            if (heading.tagName.toLowerCase() === 'h3') {
+		                listItem.style.marginLeft = '20px';
+		            }
+
+		            // Append the list item to the TOC list
+		            tocList.appendChild(listItem);
+		        });
+
+		        // Insert the TOC into the container
+		        tocContainer.appendChild(tocList);
+		    }
+
+		    // Call the function on page load
+		    window.onload = generateTableOfContents;
+		</script>
 	</main>
 	<!--Footer-->
 	<footer>
