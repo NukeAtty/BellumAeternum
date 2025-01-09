@@ -1625,16 +1625,17 @@ footer {
 
 
 .blog-content code {
-	font-family: monospace;
-	font-size: 12px;
+	font-family: Neon;
+	font-size: 14px;
 	font-weight: normal;
-	border: 1px dotted #fff;
+	border: 1px solid #999;
 	border-radius: 4px;
-	background-color: #000;
+	background-color: #080808;
 	padding: 0.2em 0.4em;
-	margin: 0 0.2em 0 0;
+	margin: auto 0.2em;
 	user-select: text;
 	text-align: center;
+	line-height: 1em;
 }
 
 
