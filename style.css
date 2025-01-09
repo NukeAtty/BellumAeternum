@@ -1719,13 +1719,30 @@ footer {
 }
 
 .general-table {
-	margin-bottom: 1em;
+	margin:1em 0;
 }
 
 .general-table table, th, tr, td {
 	border: 1px solid #fff;
   border-collapse: collapse;
   padding: 0.5em;
+  border-width: 0;
+}
+
+.general-table tr {
+    margin: 0.5em;
+}
+
+.general-table th {
+    background-color:#993333;
+    padding: 1em;
+    text-align: center;
+}
+
+.general-table td {
+    background-color:#08080850;
+    padding: 1em;
+    text-align: center;
 }
 
 .cta-btn {
