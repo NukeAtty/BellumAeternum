@@ -2,14 +2,14 @@ BE 3 Basic Structure
 
 1. Sides
 
-		Ironapolis: Armour
+		Ironapolis: Armour, Cannon
 
 		Vosstaniapolis: Armour, Missile
 
 		Speranzapolis:
 			Technology: Biotech, Electro-Magnetic
 
-		REGINA: Drone, 
+		REGINA: Drone, Airforce
 
 2. Units
 
@@ -33,6 +33,9 @@ BE 3 Basic Structure
 					Main Armament: 130mm S-90
 
 			T2:
+				Tornado
+					Main Armament: Heat Seeker Missile
+
 
 
 			T3:
@@ -50,10 +53,16 @@ BE 3 Basic Structure
 
 			Frontline Command
 
+			Battle Lab
+
 		Defense:
 			Field Wall
+				Prerequisite: Power Core
+
 			Gattling Turret
+
 			AA Turret
+
 			Railgun Turret
 
 		Units:
