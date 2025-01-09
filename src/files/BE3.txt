@@ -1,17 +1,44 @@
 BE 3 Basic Structure
 
 1. Sides
-		GA: Biotech, Cybertech
 
-		NA: Heavy Industry, Missile Tech
+		Ironapolis: Armour
 
-		YA: 
+		Vosstaniapolis: Armour, Missile
 
-		RA: 
+		Speranzapolis:
+			Technology: Biotech, Electro-Magnetic
+
+		REGINA: Drone, 
 
 2. Units
 
-	GA:
+	Ironapolis:
+			Vindicator
+
+	Vosstaniapolis:
+		Buildings:
+
+		Defense:
+
+
+		Infantry:
+
+
+		Units:
+			T1: 
+				War Harvester
+
+				Storm Tank
+					Main Armament: 130mm S-90
+
+			T2:
+
+
+			T3:
+
+
+	Sperapolis:
 		Buildings:
 			Power Core
 
@@ -24,7 +51,10 @@ BE 3 Basic Structure
 			Frontline Command
 
 		Defense:
-
+			Field Wall
+			Gattling Turret
+			AA Turret
+			Railgun Turret
 
 		Units:
 
@@ -38,8 +68,10 @@ BE 3 Basic Structure
 					Main Armament: 20mm Vulcan
 
 			T2:
-				Serpent Hoverjet
+				Serpent Hovercraft
 					Main Armament: 20mm Vulcan/AT Rocket
+
+
 
 			T3:
 				Valkyrie Tank
@@ -47,4 +79,28 @@ BE 3 Basic Structure
 
 
 		Aircrafts:
-			Vindicator
+
+	REGINA:
+		Buildings:
+			Power Beacon
+
+		Defense:
+			Laser Fence
+
+		Infantry:
+			Cosmos Marine
+
+			Planet Rocketeer
+
+		Units:
+			T1:
+				Harvester Drone
+
+				Planet Recon
+
+			T2:
+				Space Escort
+
+				Settler SV
+			T3:
+				Breacher

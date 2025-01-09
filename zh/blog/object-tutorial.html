@@ -58,13 +58,47 @@
 					</div>
 				</div>
 				<div class="blog-content">
+					<p>本教程的主要目的是让更多的新手了解红警的构成和各个对象的基本信息，在未来制作Mod的过程中少走弯路。游戏中一切可见的内容均为对象，对于想要深度修改游戏的Modder来说，修改各类对象的表现方式以及给各类对象更换素材更是常规操作。因此，本教程旨在为Modder提供一个对游戏构成的基础认知。如果你是新手，那么我强烈推荐你多次阅读本教程；如果你是有一定经验的Modder，也可以浏览一遍作为印象加深。</p>
+					<p>转载本教程请署名作者：Nuke，并附带本教程的URL链接。</p>
+					<p>本教程部分信息来自ModENC，并未进行过实机测试，因此如果有误可以通过本站的联系作者页面进行反馈。</p>
 					<h2>单位</h2>
+					<p>单位可以被翻译成Unit，但在教程中通常被称作[TechnoType]。无论如何称呼，单位是一个包含了建筑、防御建筑、步兵、载具、船只、飞行器的集合体。根据不同的注册表，游戏会将单位分为建筑、步兵、载具和飞行器。具体对应关系如下表所示。</p>
+					<table class="general-table">
+						<tr>
+							<th>类型</th>
+							<th>注册表</th>
+							<th>特性</th>
+						</tr>
+						<tr>
+							<td>建筑</td>
+							<td><code>[BuildingTypes]</code></td>
+							<td>建筑分为科技建筑和防御建筑，区别是建造栏不同。只有<code>BuildCat=Combat</code>的建筑会进入防御建筑栏。</td>
+						</tr>
+						<tr>
+							<td>步兵</td>
+							<td><code>[InfantryTypes]</code></td>
+							<td>步兵会直接进入步兵建造栏。</td>
+						</tr>
+						<tr>
+							<td>载具</td>
+							<td><code>[VehicleTypes]</code></td>
+							<td>载具包含陆地载具、飞行载具和船只，它们的最大区别是出场方式和移动方式。</td>
+						</tr>
+						<tr>
+							<td>飞行器</td>
+							<td><code>[AircraftTypes]</code></td>
+							<td>飞行器包含由机场生产的飞机和单位搭载的子机，飞行器拥有一些特殊的机制。</td>
+						</tr>
+					</table>
 					<h3>建筑</h3>
 					<p>建筑分为三大类建筑：军事建筑、科技建筑和可进驻建筑。建筑的图像素材只能是SHP格式，但炮塔可以用VXL格式，比如原版的巨炮和哨戒炮。</p>
-					<p>所有建筑共有的特性：</p>
+					<p>建筑的特性有以下内容：</p>
 					<ol>
-						<li>图像文件只能是SHP格式。</li>
+						<li>在<code>[BuildingTypes]</code>注册表中注册过的单位，才会被认定为建筑类型。</li>
+						<li></li>
+						<li>建筑图像文件只能是SHP格式，调色盘使用的是unit***.pal。</li>
 						<li>建筑支持在不同气候下使用不同素材，其区分方式是在<code>artmd.ini</code>中添加<code>NewTheater=yes</code>，然后在素材的命名上取第二个字母代表不同气候。具体命名方式见附表格。</li>
+						<li></li>
 					</ol>
 					<table class="general-table">
 						<tr>
