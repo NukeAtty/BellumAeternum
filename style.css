@@ -1822,7 +1822,11 @@ footer {
 }
 
 .col-content p{
-	margin: 0 1em;
+	margin-bottom: 1em;
+}
+
+.col-content ul,ol {
+	margin-left: 0.5em;
 }
 
 /*----------------------------------*/
