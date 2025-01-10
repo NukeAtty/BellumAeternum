@@ -48,7 +48,7 @@ BE 3 Basic Structure
 				Firestorm Attacker
 					Main Armament: M-500 Napalm
 
-				A
+				
 
 	Sperapolis:
 		Buildings:
