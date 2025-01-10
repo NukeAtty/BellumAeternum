@@ -33,13 +33,22 @@ BE 3 Basic Structure
 					Main Armament: 130mm S-90
 
 			T2:
-				Tornado
+				Thunderbolt SPAAG
 					Main Armament: Heat Seeker Missile
 
 
 
 			T3:
+				Avalanche Mech
+					Main Armament: 152mm BL-103
+					Secondary Armament: MLRS
 
+		Aircraft:
+			T2: 
+				Firestorm Attacker
+					Main Armament: M-500 Napalm
+
+				A
 
 	Sperapolis:
 		Buildings:

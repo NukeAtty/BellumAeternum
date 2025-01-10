@@ -1836,6 +1836,34 @@ footer {
 	margin: 3vw auto;
 }
 
+.about {
+	margin: 5vh auto;
+	background-color: #333;
+	width: 60%;
+}
+
+.about h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 48px;
+	font-weight: black;
+	line-height: 1em;
+	margin: 0.5em auto;
+	text-align: center;
+	color: #fff;
+}
+
+.about p {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 1em;
+	margin: auto;
+	text-align: left;
+	color: #fff;
+	width: 80%;
+	padding: 1em;
+}
+
 .contact h1 {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 60px;
@@ -1846,21 +1874,12 @@ footer {
 	color: #fff;
 }
 
-.contact p {
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 18px;
-	font-weight: normal;
-	line-height: 0.5em;
-	margin: auto;
-	text-align: center;
-	color: #fff;
-}
-
 .contact-zigzag {
 	display: flex;
 	flex-flow: row;
 	width: 60%;
-	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	background: linear-gradient(-45deg, #333333 0, #999999 50%, #333333 100%);
+	border: 5px outset #666;
 	border-radius: 20px;
 	margin: 1em auto;
 	padding: 1em;
@@ -1870,7 +1889,8 @@ footer {
 	display: flex;
 	flex-flow: row-reverse;
 	width: 60%;
-	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	background: linear-gradient(-45deg, #333333 0, #999999 50%, #333333 100%);
+	border: 5px outset #666;
 	border-radius: 20px;
 	margin: 1em auto;
 	padding: 1em;
@@ -1879,7 +1899,7 @@ footer {
 .zig {
 	display: flex;
 	flex-flow: column;
-	width: 50%;
+	width: 38%;
 	margin: auto;
 	justify-content: center;
 }
@@ -1887,37 +1907,40 @@ footer {
 .zag {
 	display: flex;
 	flex-flow: column;
-	width: 50%;
+	width: 62%;
 	margin: auto;
 	justify-content: center;
 }
 
 .zig img {
-	border-radius: 20px;
-}
-
-.zag img {
-	border-radius: 20px;
-}
-
-.zig h2 {
-	font-size: 32px;
+	border-radius: 10px;
+	margin: auto;
 }
 
 .zag h2 {
 	font-size: 32px;
-}
-
-.zig p {
-	font-size: 16px;
-	line-height: 1.25em;
-	text-align: left;
+	padding: 0em 1em;
 }
 
 .zag p {
 	font-size: 16px;
 	line-height: 1.25em;
 	text-align: left;
+	padding: 1em 2em;
+	margin: 1em auto;
+}
+
+.zag a {
+	text-decoration: none;
+	text-align: center;
+	font-size: 24px;
+	font-family: HarmonyOS Sans;
+	font-weight: bold;
+	color: #ff0;
+	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
+	box-shadow: 0 0 5px #000000 inset;
+	padding: 0.5em 1em;
+	margin: auto;
 }
 
 /*--------------------!!!-------------------!!!--------------------*/
@@ -2607,6 +2630,7 @@ footer {
 		justify-content: left;
 		width: 100%;
 		margin: 2vw 6vw;
+		filter: drop-shadow(0 0);
 	}
 
 	.responsive-navigation img{
@@ -2625,13 +2649,13 @@ footer {
 		text-decoration:none;
 		color: #ff0;
 		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 16px;
+		font-variant: small-caps;
+		font-size: 18px;
 		font-weight: bold;
 		line-height: 1em;
 		margin: auto 0.5em;
 		border: 2px ridge #333;
-		background: rgb(214,4,8);
-		background: radial-gradient(circle, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
+		background: linear-gradient(180deg, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
 		padding: 0.5em;
 	}
 
