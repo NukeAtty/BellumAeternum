@@ -1412,15 +1412,20 @@
 					<p>此页面列出了火卫一中所有修复或增强的不那么重要的逻辑。</p>
 					<div class="index-navigator">
 						<a href="#enhanced-logic-aircraft">飞行器</a>
-						<a href="#new-logic-animations">动画</a>
-						<a href="#new-logic-buildings">建筑</a>
-						<a href="#new-logic-infantries">步兵</a>
-						<a href="#new-logic-projectiles">抛射体</a>
-						<a href="#new-logic-superweapons">超级武器</a>
-						<a href="#new-logic-technos">单位</a>
-						<a href="#new-logic-terrains">地形</a>
-						<a href="#new-logic-warheads">弹头</a>
-						<a href="#new-logic-weapons">武器</a>
+						<a href="#enhanced-logic-animations">动画</a>
+						<a href="#enhanced-logic-buildings">建筑</a>
+						<a href="#enhanced-logic-particle-sys">粒子系统</a>
+						<a href="#enhanced-logic-particle">粒子</a>
+						<a href="#enhanced-logic-projectile">抛射体</a>
+						<a href="#enhanced-logic-technos">单位</a>
+						<a href="#enhanced-logic-terrains">地形对象</a>
+						<a href="#enhanced-logic-tiberium">矿石</a>
+						<a href="#enhanced-logic-vehicles">载具</a>
+						<a href="#enhanced-logic-vein">藤蔓和废料</a>
+						<a href="#enhanced-logic-debris">VXL碎片</a>
+						<a href="#enhanced-logic-warheads">弹头</a>
+						<a href="#enhanced-logic-weapons">武器</a>
+						<a href="#enhanced-logic-misc">杂项</a>
 					</div>
 					<h4 type="button" class="collapsible">点击展开</h4>
 					<div class="col-content">
@@ -1463,7 +1468,7 @@
 					</div>
 					<h3>其他平台的问题修复</h3>
 					<h3 id="enhanced-logic-aircraft">飞行器</h3>
-					<h3 id="enhanced-logic-animation">动画</h3>
+					<h3 id="enhanced-logic-animations">动画</h3>
 					<h4 type="button" class="collapsible">动画武器和伤害设置</h4>
 					<div class="col-content">
 						<p>现在可以为动画加入<code>Weapon</code>来给动画赋予武器，以免直接使用<code>Damage</code>和<code>Warhead</code>造成难以控制的伤害。</p>
@@ -1498,7 +1503,7 @@
 						<p>现在可以指定矿石隐藏闪光动画的阶段。该功能对于那些把矿石改成物资箱的Mod很有用。</p>
 						<p><code>HideIfNoOre.Threshold</code>定义矿石在什么阶段会隐藏该动画，矿石闪光动画在<code>[General]</code>中的<code>OreTwinkle</code>中指定。</p>
 					</div>
-					<h3>建筑</h3>
+					<h3 id="enhanced-logic-buildings">建筑</h3>
 					<h4 type="button" class="collapsible">自定义部队回收站</h4>
 					<div class="col-content">
 						<p>部队回收站现在可以定义更多的细节内容，如可回收的单位和回收音效。</p>
@@ -1536,15 +1541,15 @@
 							<p>Grinding.DisplayRefund.Offset=0,15 ;显示资金位置</p>
 						</div>
 					</div>
-					<h3 id="enhanced-logic-particle">粒子系统</h3>
-					<h3>粒子</h3>
-					<h3>抛射体</h3>
+					<h3 id="enhanced-logic-particle-sys">粒子系统</h3>
+					<h3 id="enhanced-logic-particle">粒子</h3>
+					<h3 id="enhanced-logic-projectile">抛射体</h3>
 					<h4 type="button" class="collapsible">自定义抛射体重力</h4>
 					<div class="col-content">
 						<p>对于<code>Arcing</code>类型的抛射体来说，其弹道下坠现象由<code>[AudioVisual]</code>的<code>Gravity</code>参数进行全局控制，而在Phobos中，你可以为每一个抛射体微观定义Gravity值。</p>
 						<p><code>Gravity</code>定义抛射体所收到的重力，参数为浮点值，不建议设置为0，因为这将导致抛射体逆向飞行，并无法击中非同高度的目标。如果想要平射弹道，可以用Phobos的<a href="#projectile-trajectory">弹道类抛射体</a>。</p>
 					</div>
-					<h3 id="enhanced-logic-unit">单位</h3>
+					<h3 id="enhanced-logic-technos">单位</h3>
 					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
 					<div class="col-content">
 						<p>现在可以为建筑提供的回血效果增加全局限制，并可以自定义其徽章和种类。</p>
@@ -1687,7 +1692,7 @@
 							<p>ForbidParallelAIQueues.Building=yes ;是否禁止建筑平行生产</p>
 						</div>
 					</div>
-					<h3 id="enhanced-logic-terrain">地形对象</h3>
+					<h3 id="enhanced-logic-terrains">地形对象</h3>
 					<h4 type="button" class="collapsible">自定义矿钻</h4>
 					<div class="col-content">
 						<p>现在你可以定义某个地形对象可以生成的矿石种类，同时可以自定义生成矿石的范围。</p>
@@ -1716,7 +1721,7 @@
 					<div class="col-content">
 						<p><code>MinimapColor</code>定义该矿石种类在小地图上显示的颜色，参数为R,G,B值。</p>
 					</div>
-					<h3>载具</h3>
+					<h3 id="enhanced-logic-vehicles">载具</h3>
 					<h4 type="button" class="collapsible">载具的摧毁动画</h4>
 					<div class="col-content">
 						<p>现在可以为载具单位定义摧毁时播放的动画，和原版的<code>Explosion</code>不同，这个动画会储存单位的所属信息、炮塔角度信息等，适合与<a href="#anim-create-unit">动画生成单位</a>一起用。</p>
@@ -1743,7 +1748,7 @@
 					</div>
 					<h3 id="enhanced-logic-vein">藤蔓与废料</h3>
 					<h3 id="enhanced-logic-debris">VXL碎片</h3>
-					<h3 id="enhanced-logic-warhead">弹头</h3>
+					<h3 id="enhanced-logic-warheads">弹头</h3>
 					<h4 type="button" class="collapsible">允许弹头对发射者生效</h4>
 					<div class="col-content">
 						<p>现在你可以让弹头对发射者自身造成伤害，并且产生各种衍生效果，如Ares的<code>KillDriver</code>、<code>DisableWeapons</code>、<code>Sonar</code>或<code>Flash.Duration</code>等，即便弹头上没有<code>DamageSelf=true</code>标签。</p>
@@ -1760,7 +1765,7 @@
 						<p>在原版中，你可以通过在弹头设置<code>ShakeXlo</code>、<code>ShakeXhi</code>、<code>ShakeYlo</code>、<code>ShakeYhi</code>四个标签来定义屏幕振动，但振动是全局振动。现在你可以定义该弹头的振动是否为局部振动，即弹头在视野内爆炸时才会振动。</p>
 						<p><code>ShakeIsLocal</code>定义该弹头的振动是否为局部振动，参数为布尔值。</p>
 					</div>
-					<h3>武器</h3>
+					<h3 id="enhanced-logic-weapons">武器</h3>
 					<h4 type="button" class="collapsible">自定义飞碟激光</h4>
 					<div class="col-content">
 						<p>现在你可以自定义飞碟激光前摇光轮的直径。</p>
