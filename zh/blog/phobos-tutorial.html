@@ -1410,6 +1410,18 @@
 					<h2 id="fixed-logic">修复或改善的逻辑</h2>
 					<h3>BUG修复和杂项</h3>
 					<p>此页面列出了火卫一中所有修复或增强的不那么重要的逻辑。</p>
+					<div class="index-navigator">
+						<a href="#enhanced-logic-aircraft">飞行器</a>
+						<a href="#new-logic-animations">动画</a>
+						<a href="#new-logic-buildings">建筑</a>
+						<a href="#new-logic-infantries">步兵</a>
+						<a href="#new-logic-projectiles">抛射体</a>
+						<a href="#new-logic-superweapons">超级武器</a>
+						<a href="#new-logic-technos">单位</a>
+						<a href="#new-logic-terrains">地形</a>
+						<a href="#new-logic-warheads">弹头</a>
+						<a href="#new-logic-weapons">武器</a>
+					</div>
 					<h4 type="button" class="collapsible">点击展开</h4>
 					<div class="col-content">
 						<ul>
@@ -1450,8 +1462,8 @@
 						</ul>
 					</div>
 					<h3>其他平台的问题修复</h3>
-					<h3>飞行器</h3>
-					<h3>动画</h3>
+					<h3 id="enhanced-logic-aircraft">飞行器</h3>
+					<h3 id="enhanced-logic-animation">动画</h3>
 					<h4 type="button" class="collapsible">动画武器和伤害设置</h4>
 					<div class="col-content">
 						<p>现在可以为动画加入<code>Weapon</code>来给动画赋予武器，以免直接使用<code>Damage</code>和<code>Warhead</code>造成难以控制的伤害。</p>
@@ -1524,7 +1536,7 @@
 							<p>Grinding.DisplayRefund.Offset=0,15 ;显示资金位置</p>
 						</div>
 					</div>
-					<h3>粒子系统</h3>
+					<h3 id="enhanced-logic-particle">粒子系统</h3>
 					<h3>粒子</h3>
 					<h3>抛射体</h3>
 					<h4 type="button" class="collapsible">自定义抛射体重力</h4>
@@ -1532,7 +1544,7 @@
 						<p>对于<code>Arcing</code>类型的抛射体来说，其弹道下坠现象由<code>[AudioVisual]</code>的<code>Gravity</code>参数进行全局控制，而在Phobos中，你可以为每一个抛射体微观定义Gravity值。</p>
 						<p><code>Gravity</code>定义抛射体所收到的重力，参数为浮点值，不建议设置为0，因为这将导致抛射体逆向飞行，并无法击中非同高度的目标。如果想要平射弹道，可以用Phobos的<a href="#projectile-trajectory">弹道类抛射体</a>。</p>
 					</div>
-					<h3>单位</h3>
+					<h3 id="enhanced-logic-unit">单位</h3>
 					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
 					<div class="col-content">
 						<p>现在可以为建筑提供的回血效果增加全局限制，并可以自定义其徽章和种类。</p>
@@ -1675,7 +1687,7 @@
 							<p>ForbidParallelAIQueues.Building=yes ;是否禁止建筑平行生产</p>
 						</div>
 					</div>
-					<h3>地形对象</h3>
+					<h3 id="enhanced-logic-terrain">地形对象</h3>
 					<h4 type="button" class="collapsible">自定义矿钻</h4>
 					<div class="col-content">
 						<p>现在你可以定义某个地形对象可以生成的矿石种类，同时可以自定义生成矿石的范围。</p>
@@ -1699,7 +1711,7 @@
 						<p><code>IsPassable</code>定义地形对象是否可以通过，参数为布尔值。设置为true时，鼠标指针会在地形对象上显示可移动到该位置。</p>
 						<p><code>CanBeBuiltOn</code>定义地形对象是否可以建造建筑，参数为布尔值。设置为true时，建造建筑将不会在该地形对象上显示不可建造，同时建筑建造时该地形对象自动移除。给树木添加这个标签可以实现建造建筑时自动移除树木。</p>
 					</div>
-					<h3>矿石</h3>
+					<h3 id="enhanced-logic-tiberium">矿石</h3>
 					<h4 type="button" class="collapsible">自定义矿石小地图颜色</h4>
 					<div class="col-content">
 						<p><code>MinimapColor</code>定义该矿石种类在小地图上显示的颜色，参数为R,G,B值。</p>
@@ -1711,50 +1723,70 @@
 						<p><code>DestroyAnim</code>定义该载具在被摧毁时播放的动画，参数为动画的注册名所组成的列表，可以填入多个动画。</p>
 						<p><code>DestroyAnim.Random</code>定义该载具在被摧毁时的动画是否随机播放，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义部署动画方向</h4>
+					<h4 type="button" class="collapsible">单位部署的动画和方向</h4>
 					<div class="col-content">
-						<p>在原版中，单位通过<code>IsSimpleDeployer</code>部署的方位是东南方，而现在则可以自定义部署动画的方向。</p>
+						<p>现在可以自定义<code>IsSimpleDeployer</code>单位的部署的动画属性以及方向。</p>
+						<p><code>DeployingAnim.AllowAnyDirection</code>定义该单位是否可以在任意朝向部署，参数为布尔值，如果设定成true，将会屏蔽其他定义方向的语句，并屏蔽<code>DeployingAnim</code>所定义的部署动画。同时，该标签只对地面单位有效。</p>
+						<p><code>DeployingAnim.KeepUnitVisible</code>定义该单位在部署动画播放时是否显示，参数为布尔值，如果设定成false，那么播放动画时单位会隐藏。</p>
+						<p><code>DeployingAnim.ReverseForUndeploy</code>定义该单位在收起部署时播放的部署动画是否为倒放，参数为布尔值。</p>
+						<p><code>DeployingAnim.UseUnitDrawer</code>定义该单位的部署动画是否使用单位调色盘（unit***.pal），参数为布尔值。</p>
 					</div>
 					<h4 type="button" class="collapsible">静态载具</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以通过将载具的<code>Speed</code>设置为0使其成为静态载具，效果类似拥有<code>IsSimpleDeployer</code>标签的载具部署后的形态（原版武装直升机）。</p>
+						<p id="alert">注意：不要把这个设置赋予可建造的载具，否则会卡在工厂里出不来。</p>
 					</div>
-					<h4 type="button" class="collapsible">变形保留铁幕效果</h4>
+					<h4 type="button" class="collapsible">单位部署保留铁幕效果</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在，你可以定义带有<code>DeploysInto</code>或<code>UndeploysInto</code>标签的载具是否在部署后保留铁幕效果，包括宏观定义和微观定义。变形之后<code>IronCurtain.Modifier</code>会重新生效。</p>
+						<p><code>IronCurtain.KeptOnDeploy</code>定义该单位是否在部署后仍然保留铁幕效果，参数为布尔值。这个标签可以写在[CombatDamage]中作为全局标签，也可以写在单位中作为微观标签。</p>
 					</div>
-					<h3>藤蔓与废料</h3>
-					<h3>VXL碎片</h3>
-					<h3>弹头</h3>
+					<h3 id="enhanced-logic-vein">藤蔓与废料</h3>
+					<h3 id="enhanced-logic-debris">VXL碎片</h3>
+					<h3 id="enhanced-logic-warhead">弹头</h3>
 					<h4 type="button" class="collapsible">允许弹头对发射者生效</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在你可以让弹头对发射者自身造成伤害，并且产生各种衍生效果，如Ares的<code>KillDriver</code>、<code>DisableWeapons</code>、<code>Sonar</code>或<code>Flash.Duration</code>等，即便弹头上没有<code>DamageSelf=true</code>标签。</p>
+						<p id="comment">需要注意的是，带有<code>Psychedelic=true</code>标签的弹头仍然无法对发射者产生效果，因其只会影响所属阵营外的单位。</p>
+						<p><code>AllowDamageOnSelf</code>定义该弹头是否可以对自身造成伤害和衍生效果，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">弹头是否解除隐身</h4>
+					<h4 type="button" class="collapsible">弹头是否解除隐形</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，隐形的单位被任何弹头打中将会解除隐形。现在，你可以设置弹头在击中隐形单位时是否让其解除隐形。</p>
+						<p><code>DecloakDamagedTargets</code>定义是否在给隐形单位造成伤害后解除其隐形效果，参数为布尔值。</p>
 					</div>
 					<h4 type="button" class="collapsible">弹头局部振动效果</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，你可以通过在弹头设置<code>ShakeXlo</code>、<code>ShakeXhi</code>、<code>ShakeYlo</code>、<code>ShakeYhi</code>四个标签来定义屏幕振动，但振动是全局振动。现在你可以定义该弹头的振动是否为局部振动，即弹头在视野内爆炸时才会振动。</p>
+						<p><code>ShakeIsLocal</code>定义该弹头的振动是否为局部振动，参数为布尔值。</p>
 					</div>
 					<h3>武器</h3>
 					<h4 type="button" class="collapsible">自定义飞碟激光</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在你可以自定义飞碟激光前摇光轮的直径。</p>
+						<p><code>DiskLaser.Radius</code>定义飞碟激光的前摇光轮的直径，参数为浮点值，38.2大约为原版飞碟激光前摇光轮的直径。</p>
 					</div>
 					<h4 type="button" class="collapsible">单色激光</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以将激光定义为单色，即只有<code>LaserInnerColor</code>所指定的颜色，效果类似<code>IsHouseColor</code>指定激光为所属色。</p>
+						<p><code>IsSingleColor</code>定义该武器是否为单色激光，参数为布尔值。</p>
 					</div>
 					<h4 type="button" class="collapsible">可关闭电流效果</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，电流效果通常是由三道电流组成。现在你可以定义关闭三道电流中的任何一个。</p>
+						<p><code>Bolt.Disable1</code>、<code>Bolt.Disable2</code>、<code>Bolt.Disable3</code>分别定义是否关闭某一道电流，参数为布尔值。</p>
 					</div>
-					<h3>杂项</h3>
+					<h3 id="enhanced-logic-misc">杂项</h3>
 					<h4 type="button" class="collapsible">自定义范围圈可见阵营</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>在原版中，范围圈默认为只有附带范围圈单位的所属方可见。现在，可以自定义范围圈的可见阵营。</p>
+						<p><code>RadialIndicatorVisibility</code>定义范围圈的可见阵营，参数为下列预设值：</p>
+						<ul>
+							<li><code>owner</code>或<code>self</code>：只有单位的所属方可见。</li>
+							<li><code>allies</code>或<code>ally</code>：单位的所属方及其盟友可见。</li>
+							<li><code>enemies</code>或<code>enemy</code>：单位的所属方及其敌人可见。</li>
+							<li><code>all</code>：所有阵营均可见。</li>
+						</ul>
 					</div>
 					<h2 id="ai-script">AI编写和地图编辑</h2>
 					<h3>BUG修复和杂项</h3>
