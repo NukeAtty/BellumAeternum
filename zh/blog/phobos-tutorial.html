@@ -1804,7 +1804,21 @@
 					<h3>单人任务地图</h3>
 					<h4 type="button" class="collapsible">基地节点维修</h4>
 					<div class="col-content">
-						敬请期待……
+						<p>基地节点（Base Node）是战役任务的一种机制，即在地面预设建筑，在战役开始后，如果AI被设置为自动建设，那么就会在预设点进行建造相应建筑。但是，基地节点有个致命的问题，就是无论AI的IQ设置为多少，都不会对通过基地节点建造的建筑进行维修。</p>
+						<p>同样的，通过Ares的建筑投放超级武器所生成的建筑，AI也是同样不会对其进行维修的。</p>
+						<p>现在，Phobos实现了基地节点和投放建筑的维修，并提供了宏观定义和微观定义的方式。</p>
+						<p><code>RepairBaseNodes</code>定义AI是否会维修基地节点和投放建筑，参数为布尔值。宏观定义时，需要在<code>rulesmd.ini</code>中建立一个<code>[Basic]</code>模块，并将<code>RepairBaseNodes</code>写在下方。微观定义是，则是在地图文件中，将<code>RepairBaseNodes</code>写进某个所属方（不是国家！）的下方。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[Basic]</p>
+							<p>RepairBaseNodes=true</p>
+						</div>
+						<p>在<code>***.map</code>中：</p>
+						<div class="code-presentation">
+							<p>[American House]</p>
+							<p>RepairBaseNodes=true</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">自定义任务载入描述</h4>
 					<div class="col-content">
@@ -1812,11 +1826,20 @@
 					</div>
 					<h4 type="button" class="collapsible">基地车重新部署</h4>
 					<div class="col-content">
-						敬请期待……
+						<p>在原版中战役中，基地车是无法部署后再收起的，现在可以在战役任务中重新部署基地车。</p>
+						<p><code>MCVRedeploys</code>定义基地车是否可以重新部署，参数为布尔值。该设置需要放入地图文件的<code>[Basic]</code>模块中，并且只会在战役任务中覆盖<code>[MultiplayerDialogSettings]</code>中<code>MCVRedeploy</code>的设置。</p>
 					</div>
 					<h4 type="button" class="collapsible">设定任务评分</h4>
 					<div class="col-content">
-						敬请期待……
+						<p>在原版中，任务的评分系统是在地图中的<code>[Ranking]</code>模块中设置时间，并定义CSF作为各个完成时间区间的简述。</p>
+						<p>现在可以在<code>missionmd.ini</code>中直接设置，并覆盖地图中的设置。如果未设置，则默认使用地图文件中的设置。</p>
+						<p><code>Ranking.ParTimeEasy</code>定义简单模式下的标准通关时间，参数为时间，格式为时:分:秒，如<code>00:15:00</code>。</p>
+						<p><code>Ranking.ParTimeMedium</code>定义普通模式下的标准通关时间，参数为时间，格式为时:分:秒，如<code>00:15:00</code>。</p>
+						<p><code>Ranking.ParTimeHard</code>定义困难模式下的标准通关时间，参数为时间，格式为时:分:秒，如<code>00:15:00</code>。</p>
+						<p><code>Ranking.UnderParTitle</code>定义在标准通关时间内完成任务后在结算界面显示的标题，格式为CSF字段。</p>
+						<p><code>Ranking.UnderParMessage</code>定义在标准通关时间内完成任务后在结算界面显示的简述，格式为CSF字段。</p>
+						<p><code>Ranking.OverParTitle</code>定义在超过标准通关时间完成任务后在结算界面显示的标题，格式为CSF字段。</p>
+						<p><code>Ranking.OverParMessage</code>定义在超过标准通关时间完成任务后在结算界面显示的简述，格式为CSF字段。</p>
 					</div>
 					<h4 type="button" class="collapsible">任务开始显示简述</h4>
 					<div class="col-content">
@@ -2006,8 +2029,8 @@
 				<div class="lang-selector">
 					<p>语言切换</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com">EN</a>
-						<a href="https://ra2be.com/zh/">中</a>
+						<a href="https://ra2be.com/blog/">EN</a>
+						<a href="https://ra2be.com/zh/blog/phobos-tutorial">中</a>
 					</div>
 				</div>
 			</div>
@@ -2035,7 +2058,7 @@
 			</div>
 		</div>
 		<div class="footer-portals">
-			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px">&ensp;B站主页</a>
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="auto"></a>
 		</div>
 	</footer>
 	<script>

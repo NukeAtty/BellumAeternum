@@ -427,19 +427,24 @@ footer {
 
 .footer-portals a{
 	text-decoration: none;
-	margin: 0.5vw 0;
-	color: #ff3333;
-	text-shadow: 0 0 5px #ff0000;
+	margin: auto 0;
+	color: #ff99cc;
+	font-size: 16px;
 	font-family: HarmonyOS Sans Black, sans-serif;
 	font-weight: 600;
 	padding: 0 1vw;
-	border-left: 2px solid #f00;
+	border-left: 2px solid #FFFFFF50;
+	line-height: 1em;
 }
 
-.footer-portals a:hover {
-	color: #ffffcc;
-	text-shadow: 0 0 5px #ffcc00;
-	filter: drop-shadow(0 0 2px #ff3300);
+.footer-portals img {
+	margin: auto;
+	width: 32px;
+	height: 32px;
+}
+
+.footer-portals img:hover {
+	filter: drop-shadow(0 0 4px #ff99cc) brightness(100);
 }
 
 /*------------------------------*/
