@@ -204,12 +204,12 @@
 					<h3>Phobos的版本和说明</h3>
 					<p>Phobos总共有三个类型：</p>
 					<ol>
-						<li>稳定版：通过大量测试，Bug最少的版本。时至教程编撰日期，Phobos的稳定版本号为v0.3.0.1。</li>
-						<li>开发版：通过测试，Bug比较少的版本。时至教程编撰日期，Phobos的开发版为b44。</li>
+						<li>稳定版：通过大量测试，Bug最少的版本。</li>
+						<li>开发版：通过测试，Bug比较少的版本。</li>
 						<li>测试版：集合了最新功能，但可能存在Bug。</li>
 					</ol>
 					<p>如果是新入门的Modder，比较推荐使用稳定版。如果是比较有经验的Modder，推荐使用功能更多的开发版。如果是深度精通代码的Modder可以使用测试版，但这类Modder通常能看懂原文，所以不做讨论。</p>
-					<p>本教程所有的内容都会以v0.3.0.1稳定版作为基础，开发版相关的内容会以<span id="version">DEV</span>的标签标记，意为开发版。如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span>的标签标记，意为暂时无法直接下载使用。</p>
+					<p>本教程所有的内容都会以最新的开发版为基础，如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span>的标签标记，意为暂时无法直接下载使用。</p>
 					<h3>代码术语目录表</h3>
 					<ul>
 						<li>布尔值（Boolean）：开关参数值，填入true或false，或者yes或no。</li>
@@ -238,7 +238,7 @@
 						<a href="#new-logic-weapons">武器</a>
 					</div>
 					<h3 id="new-logic-new-types">新的机制</h3>
-					<h4 type="button" class="collapsible">附加效果（AE）<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">附加效果（AE）</h4>
 					<div class="col-content">
 						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
 						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<span>DurationOverrides</span>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
@@ -267,7 +267,7 @@
 						<p>开启自定义辐射参数需要在全局代码<code>[Radiation]</code>中加入<code>UseGlobalRadApplicationDelay</code>，参数为布尔值。如果设定为True，那么新增加的辐射会使用全局的辐射参数，反之设定为False，那么则可以定义辐射的属性。</p>
 						<p><b>辐射定义：</b></p>
 						<p><code>RadApplicationDelay.Building</code>定义该辐射类型的对建筑的效果，参数为整数，填入大于0的值将伤害建筑。</p>
-						<p><code>RadBuildingDamageMaxCount</code><span id="version">DEV</span>限制辐射对建筑的最多伤害的次数，参数为整数。和<code>CellSpread</code>的机制类似，因为建筑通常占有多个地格，因此辐射也会对建筑造成每个地格叠加的伤害，所以需要用这段代码来控制伤害。填入负值代表不做限制。</p>
+						<p><code>RadBuildingDamageMaxCount</code>限制辐射对建筑的最多伤害的次数，参数为整数。和<code>CellSpread</code>的机制类似，因为建筑通常占有多个地格，因此辐射也会对建筑造成每个地格叠加的伤害，所以需要用这段代码来控制伤害。填入负值代表不做限制。</p>
 						<p><code>RadSiteWarhead.Detonate</code>定义是否让辐射的弹头附带其他弹头效果而不是单纯的伤害比例控制，参数为布尔值。原版中辐射场的弹头只用于伤害控制，因此单位走到辐射场中不会有受击的动画。</p>
 						<p id="comment">笔者注：若非特殊需求建议把这个功能关掉，非常消耗性能。</p>
 						<p><code>RadSiteWarhead.Detonate.Full</code>定义是否只保留弹头的范围伤害和Phobos专属的弹头效果，参数为布尔值。</p>
