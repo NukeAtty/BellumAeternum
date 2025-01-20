@@ -1606,12 +1606,14 @@ footer {
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 1.5em;
+	margin: 0.5em 0;
 }
 
 .blog-content li > ul {
     list-style-position: inside;
     list-style-type: circle;
     margin: 0;
+    margin-left: 1em;
     padding: 0;
 }
 
@@ -1619,6 +1621,7 @@ footer {
     list-style-position: inside;
     list-style-type: lower-alpha;
     margin: 0;
+    margin-left: 1em;
     padding: 0;   
 }
 
@@ -1652,6 +1655,7 @@ footer {
 	padding: 1em;
 	border-radius: 10px;
 	border: 1px solid #fff;
+	user-select: text;
 }
 
 .code-presentation p,del {
@@ -1725,14 +1729,16 @@ footer {
 }
 
 .general-table {
-	margin:1em 0;
+	margin:5vh 0;
+	max-width: 100%;
+	overflow-x: auto;
 }
 
 .general-table table, th, tr, td {
 	border: 1px solid #fff;
   border-collapse: collapse;
   padding: 0.5em;
-  border-width: 0;
+  border-width: 1px;
 }
 
 .general-table tr {

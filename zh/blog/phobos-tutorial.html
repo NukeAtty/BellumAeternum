@@ -199,7 +199,7 @@
 					<h1>Phobos中文教程</h1>
 					<h2>前言</h2>
 					<h3>关于教程</h3>
-					<p>本教程基于Phobos的英文版教程和中文版教程编撰，转载请署名nuke，并给出本页面的超链接。</p>
+					<p>本教程基于Phobos的英文版教程和中文版教程编撰，转载请署名作者nuke，并给出本页面的超链接。</p>
 					<p>因为Phobos版本比较多，前言中会做出相应的介绍，以免实操的时候出现“货不对板”的情况。</p>
 					<h3>Phobos的版本和说明</h3>
 					<p>Phobos总共有三个类型：</p>
@@ -208,8 +208,7 @@
 						<li>开发版：通过测试，Bug比较少的版本。</li>
 						<li>测试版：集合了最新功能，但可能存在Bug。</li>
 					</ol>
-					<p>如果是新入门的Modder，比较推荐使用稳定版。如果是比较有经验的Modder，推荐使用功能更多的开发版。如果是深度精通代码的Modder可以使用测试版，但这类Modder通常能看懂原文，所以不做讨论。</p>
-					<p>本教程所有的内容都会以最新的开发版为基础，如果是只有测试版才有的功能，在教程中会标注<span id="versionx">N/A</span>的标签标记，意为暂时无法直接下载使用。</p>
+					<p>本教程是以开发版的内容为基准撰写，直至教程编撰日期，Phobos的开发版为b45版本。如果你是稳定版用户，请移步Phobos的官方文档。</p>
 					<h3>代码术语目录表</h3>
 					<ul>
 						<li>布尔值（Boolean）：开关参数值，填入true或false，或者yes或no。</li>
@@ -218,8 +217,9 @@
 					</ul>
 					<h3>红警相关术语目录表：</h3>
 					<ul>
-						<li>对象（ObjectType）：所有游戏内可视物的总称，包括单位、动画、粒子、地形、覆盖物、污染等。</li>
-						<li>单位（TechnoType）：建筑、步兵、载具和飞行器的总称。</li>
+						<li>对象（ObjectType）：所有游戏内可视物的总称，包括科技类型、动画、粒子、地形、覆盖物、污染等。</li>
+						<li>科技类型（TechnoType）：包含建筑、步兵、载具和飞行器的总称。</li>
+						<li>单位类型（UnitType）：包含步兵、载具和飞行器的总称。</li>
 						<li>建筑插件（PowersUp）：指的是类似泰伯利亚之日中GDI发电厂涡轮、必须以其他建筑为基础才能放置的建筑。</li>
 					</ul>
 					<!--New Logic-->
@@ -241,7 +241,7 @@
 					<h4 type="button" class="collapsible">附加效果（AE）</h4>
 					<div class="col-content">
 						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
-						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<span>DurationOverrides</span>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
+						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<code>DurationOverrides</code>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
 						<p><code>Cumulative</code>定义该附加效果的时长是否可叠加，参数为布尔值。如果被设置为<code>True</code>，表示相同附加效果的存在时长可以叠加。</p>
 						<p><code>Cumulative.MaxCount</code>定义该附加效果的最大叠加层数。为正整数来定义相同附加效果可以叠加的层数，如果设为负数，相同附加效果则可以无限叠加。如果某单位的附加效果已经达到了可携带的最高层数但继续附加，则最新的附加效果会替换掉持续时长最短的效果。</p>
 						<p><code>Powered</code>定义拥有该附加效果的单位在<abbr title="遥控坦克断电或被电磁脉冲击中">瘫痪</abbr>中是否会改变附加效果的动画。</p>
@@ -278,7 +278,7 @@
 						<p><b>代码示例：</b></p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
-							<p>[Radiation]	;全局控制</p>
+							<p>[Radiation] ;全局控制</p>
 							<p>UseGlobalRadApplicationDelay=no ;开启自定义辐射参数</p>
 							<br>
 							<p>[RadiationTypes] ;新的注册表</p>
@@ -364,9 +364,9 @@
 								<ol>
 									<li>被超时空弹头攻击时</li>
 									<li>在被铁幕或者力场护盾保护时</li>
-									<li>单位拥有<code>Immune=true</code>时<span id="version">DEV</span></li>
-									<li>单位被自身所免疫的弹头攻击时<span id="version">DEV</span></li>
-									<li>单位被盟友攻击时<span id="version">DEV</span></li>
+									<li>单位拥有<code>Immune=true</code>时</li>
+									<li>单位被自身所免疫的弹头攻击时</li>
+									<li>单位被盟友攻击时</li>
 								</ol>
 							</li>
 							<li>护盾在未消失的情况下，负数伤害会修复护盾强度，届时所有的负数伤害会被护盾吸收。除非负数伤害的弹头带有<code>Shield.Penetrate=true</code>语句，否则无法在有护盾的情况下为单位增加血量。</li>
@@ -391,13 +391,13 @@
 						<p><code>IdleAnim.TemporalAction</code>定义单位在被超时空弹头击中后的护盾动画。</p>
 						<p><code>BreakAnim</code>定义破盾动画。</p>
 						<p><code>HitAnim</code>定义护盾的受击动画。</p>
-						<p><code>HitFlash</code>定义护盾的受击闪光。可以在弹头上使用<code>Shield.HitFlash=false</code>来关闭闪光。伤害越高闪光越亮，同时可以在护盾中定义<code>HitFlash.FixedSize</code>来控制亮度（取值范围以4为增量，从81到252，范围之外无效）。闪光颜色可以用<code>HitFlash.Red/Green/Blue</code>来控制RGB色，参数为布尔值，表示开启或关闭该颜色。如果把<code>HitFlash.Black</code>设置为True，则闪光会变成黑色，并无视一切颜色控制。<span id="version">DEV</span></p>
+						<p><code>HitFlash</code>定义护盾的受击闪光。可以在弹头上使用<code>Shield.HitFlash=false</code>来关闭闪光。伤害越高闪光越亮，同时可以在护盾中定义<code>HitFlash.FixedSize</code>来控制亮度（取值范围以4为增量，从81到252，范围之外无效）。闪光颜色可以用<code>HitFlash.Red/Green/Blue</code>来控制RGB色，参数为布尔值，表示开启或关闭该颜色。如果把<code>HitFlash.Black</code>设置为True，则闪光会变成黑色，并无视一切颜色控制。</p>
 						<p><code>BreakWeapon</code>定义破盾时释放的武器，武器会在单位的地格引爆。</p>
 						<p><code>AbsorbPercent</code>定义护盾能承受伤害的百分比，参数为浮点值，默认为1.0，即全部承受。如果小于1.0，那么伤害将会穿破护盾，扣除相应的单位血量。</p>
 						<p><code>PassPercent</code>定义护盾会被穿透的伤害的百分比，参数为浮点值，默认为0.0，即不会被穿透。</p>
 						<p><code>AllowTransfer</code>定义护盾是否在单位变形（原版武装直升机逻辑或者Ares的变形逻辑）后继承，默认为true，即可以继承。</p>
 						<p>带有<code>Psychedelic=yes</code>的弹头（神经毒气）默认无视护盾，如果没有<code>ImmuneToBerserk</code>，带护盾的单位一样会无差别攻击。同时，免疫神经毒气的单位也无法避免被该类型弹头作为目标，因此可以使用自定义护甲来避免这种情况发生。</p>
-						<h5>护盾的界面：</h5>
+						<h5>护盾的标识：</h5>
 						<p>有护盾的单位会显示血条和护盾条，如果护盾是可再生的，那么护盾强度即便归零也会呈现为一个空框。护盾的护盾条图像可以在在<code>[AudioVisual]</code>部分定义，下列代码是关于护盾条的定义：</p>
 						<ul>
 							<li>默认情况下，建筑的血条使用<span style="color:orange">pips.shp</span>的第6帧作为护盾条，其他单位则使用第17针作为护盾条。</li>
@@ -466,18 +466,18 @@
 						</ul>
 						<p><code>CreateUnit.RemapAnim</code>定义该动画是否用单位调色盘绘制并且自带所属色，参数为布尔值。</p>
 						<p><code>CreateUnit.Mission</code>定义该动画生成的单位出现后的任务。</p>
-						<p><code>CreateUnit.AIMission</code>定义该动画生成的单位所属方是AI控制时的任务。<span id="versionx">N/A</span></p>
+						<p><code>CreateUnit.AIMission</code>定义该动画生成的单位所属方是AI控制时的任务。</p>
 						<p><code>CreateUnit.Facing</code>定义该动画生成的单位朝向，参数为0-255的值，0为两点钟方向，224为12点钟方向。</p>
 						<p><code>CreateUnit.RandomFacing</code>定义该动画生成的单位朝向是否随机，参数为布尔值。</p>
 						<p><code>CreateUnit.InheritFacings</code>定义该动画生成的单位朝向是否继承生成该动画的单位，单位为布尔值。</p>
 						<p><code>CreateUnit.InheritTurretFacings</code>定义该动画生成的单位炮塔朝向是否继承生成该动画的单位，单位为布尔值，不支持Jumpjet类载具（如直升机等）。</p>
 						<p><code>CreateUnit.ConsiderPathfinding</code>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成，参数为布尔值。</p>
-						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。<span id="version">DEV</span></p>
+						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。</p>
 						<p><code>CreateUnit.SpawnParachutedInAir</code>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，参数为布尔值。在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</p>
 						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
 						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
 					</div>
-					<h4 type="button" class="collapsible">动画附加粒子系统<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">动画附加粒子系统</h4>
 					<div class="col-content">
 						<p>现在可以将粒子系统附加到动画中。和VoxelAnims的标签类似，只支持带有<code>BehavesLike=Smoke</code>的粒子系统。</p>
 						<p>如果动画带有<code>Next</code>，则在下一个动画开始时该粒子系统会被删除。</p>
@@ -523,7 +523,7 @@
 							<p>PowersUp.Buildings=NAPOWR,NANRCT ;可以放置的建筑</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">可摧毁障碍建筑<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">可摧毁障碍建筑</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
@@ -1816,24 +1816,24 @@
 							<p>60 = Operate var index,0</p>
 							</br>
 							<p>[EventsRA2]</p>
-							<p>500 = 局部变量大于该变量,48,6,0,0,[LONG DESC],0,1,500,1</p>
-							<p>501 = 局部变量小于该变量,48,6,0,0,[LONG DESC],0,1,501,1</p>
-							<p>502 = 局部变量等于该变量,48,6,0,0,[LONG DESC],0,1,502,1</p>
-							<p>503 = 局部变量大于等于该变量,48,6,0,0,[LONG DESC],0,1,503,1</p>
-							<p>504 = 局部变量小于等于该变量,48,6,0,0,[LONG DESC],0,1,504,1</p>
-							<p>505 = 局部变量和该变量同为是,48,6,0,0,[LONG DESC],0,1,505,1</p>
-							<p>506 = 全局变量大于该变量,48,6,0,0,[LONG DESC],0,1,506,1</p>
-							<p>507 = 全局变量小于该变量,48,6,0,0,[LONG DESC],0,1,507,1</p>
-							<p>508 = 全局变量等于该变量,48,6,0,0,[LONG DESC],0,1,508,1</p>
-							<p>509 = 全局变量大于等于该变量,48,6,0,0,[LONG DESC],0,1,509,1</p>
-							<p>510 = 全局变量小于等于该变量,48,6,0,0,[LONG DESC],0,1,510,1</p>
-							<p>511 = 全局变量和该变量同为是,48,6,0,0,[LONG DESC],0,1,511,1</p>
+							<p>500 = 局部变量大于该数值,48,6,0,0,[LONG DESC],0,1,500,1</p>
+							<p>501 = 局部变量小于该数值,48,6,0,0,[LONG DESC],0,1,501,1</p>
+							<p>502 = 局部变量等于该数值,48,6,0,0,[LONG DESC],0,1,502,1</p>
+							<p>503 = 局部变量大于等于该数值,48,6,0,0,[LONG DESC],0,1,503,1</p>
+							<p>504 = 局部变量小于等于该数值,48,6,0,0,[LONG DESC],0,1,504,1</p>
+							<p>505 = 局部变量和该变量同为true,48,6,0,0,[LONG DESC],0,1,505,1</p>
+							<p>506 = 全局变量大于该数值,48,6,0,0,[LONG DESC],0,1,506,1</p>
+							<p>507 = 全局变量小于该数值,48,6,0,0,[LONG DESC],0,1,507,1</p>
+							<p>508 = 全局变量等于该数值,48,6,0,0,[LONG DESC],0,1,508,1</p>
+							<p>509 = 全局变量大于等于该数值,48,6,0,0,[LONG DESC],0,1,509,1</p>
+							<p>510 = 全局变量小于等于该数值,48,6,0,0,[LONG DESC],0,1,510,1</p>
+							<p>511 = 全局变量和该数值同为true,48,6,0,0,[LONG DESC],0,1,511,1</p>
 							<p>512 = 局部变量大于该局部变量,48,3,0,0,[LONG DESC],0,1,500,1</p>
 							<p>513 = 局部变量小于该局部变量,48,3,0,0,[LONG DESC],0,1,501,1</p>
 							<p>514 = 局部变量等于该局部变量,48,3,0,0,[LONG DESC],0,1,502,1</p>
-							<p>515 = Local variable is greater than or equals to local variable,48,3,0,0,[LONG DESC],0,1,503,1</p>
-							<p>516 = Local variable is less than or equals local variable,48,3,0,0,[LONG DESC],0,1,504,1</p>
-							<p>517 = Local variable and local variable is true,48,3,0,0,[LONG DESC],0,1,505,1</p>
+							<p>515 = 局部变量大于等于该局部变量,48,3,0,0,[LONG DESC],0,1,503,1</p>
+							<p>516 = 局部变量小于等于该局部变量,48,3,0,0,[LONG DESC],0,1,504,1</p>
+							<p>517 = 局部变量和该局部变量同为true,48,3,0,0,[LONG DESC],0,1,505,1</p>
 							<p>518 = Global variable is greater than local variable,48,3,0,0,[LONG DESC],0,1,506,1</p>
 							<p>519 = Global variable is less than local variable,48,3,0,0,[LONG DESC],0,1,507,1</p>
 							<p>520 = Global variable equals to local variable,48,3,0,0,[LONG DESC],0,1,508,1</p>
@@ -1855,16 +1855,16 @@
 							<p>600 = Shield of the attached object is broken,0,0,0,0,[LONG DESC],0,1,600,1</p>
 							</br>
 							<p>[ActionsRA2]</p>
-							<p>125 = Build at...,-10,47,53,0,0,0,1,0,0,[LONG DESC],0,1,125</p>
-							<p>500 = Save game,-4,13,0,0,0,0,0,0,0,[LONG DESC],0,1,500,1</p>
-							<p>501 = Edit variable,0,56,55,6,54,0,0,0,0,[LONG DESC],0,1,501,1</p>
-							<p>502 = Generate random number,0,56,57,58,54,0,0,0,0,[LONG DESC],0,1,502,1</p>
-							<p>503 = Print variable value,0,56,54,0,0,0,0,0,0,[LONG DESC],0,1,503,0</p>
-							<p>504 = Binary operation,0,56,55,60,54,59,0,0,0,[LONG DESC],0,1,504,1</p>
-							<p>505 = Fire Super Weapon at specified location (Phobos),0,0,20,2,21,22,0,0,0,Launch a Super Weapon from [SuperWeaponTypes] list at a specified location. House=-1 means random target that isn't neutral. House=-2 means the first neutral house. House=-3 means random human target. Coordinate X=-1 means random. Coordinate Y=-1 means random,0,1,505</p>
-							<p>506 = Fire Super Weapon at specified waypoint (Phobos),0,0,20,2,30,0,0,0,0,Launch a Super Weapon from [SuperWeaponTypes] list at a specified waypoint. House=-1 means random target that isn't neutral. House=-2 means the first neutral house. House=-3 means random human target. Coordinate X=-1 means random. Coordinate Y=-1 means random,0,1,506</p>
+							<p>125 = 在……建造建筑,-10,47,53,0,0,0,1,0,0,[LONG DESC],0,1,125</p>
+							<p>500 = 保存游戏,-4,13,0,0,0,0,0,0,0,[LONG DESC],0,1,500,1</p>
+							<p>501 = 编辑变量,0,56,55,6,54,0,0,0,0,[LONG DESC],0,1,501,1</p>
+							<p>502 = 生成随机数,0,56,57,58,54,0,0,0,0,[LONG DESC],0,1,502,1</p>
+							<p>503 = 输出变量值,0,56,54,0,0,0,0,0,0,[LONG DESC],0,1,503,0</p>
+							<p>504 = 二元运算,0,56,55,60,54,59,0,0,0,[LONG DESC],0,1,504,1</p>
+							<p>505 = 在目标单元格释放超级武器(Phobos),0,0,20,2,21,22,0,0,0,在目标单元格中释放在[SuperWeaponTypes]列表里注册过的超级武器。House=-1 means random target that isn't neutral. House=-2 means the first neutral house. House=-3 means random human target. Coordinate X=-1 means random. Coordinate Y=-1 means random,0,1,505</p>
+							<p>506 = 在目标路径点释放超级武器(Phobos),0,0,20,2,30,0,0,0,0,Launch a Super Weapon from [SuperWeaponTypes] list at a specified waypoint. House=-1 means random target that isn't neutral. House=-2 means the first neutral house. House=-3 means random human target. Coordinate X=-1 means random. Coordinate Y=-1 means random,0,1,506</p>
 							</br>
-							<span>; FOLLOWING ENTRIES REQUIRE FA2SP.DLL (by secsome)</p>
+							<p>;下面的内容需要FA2SP.DLL的支持</p>
 							<p>[ScriptTypeLists]</p>
 							<p>1 = ScriptLocalVariable</p>
 							<p>2 = ScriptGlobalVariable</p>
@@ -1912,8 +1912,8 @@
 							<p>10103 = 装入载具,0,0,1,[LONG DESC]</p>
 							<p>10101 = 等待弹药装填完毕,0,0,1,[LONG DESC]</p>
 							<p>18000 = 设置局部变量,22,0,1,[LONG DESC]</p>
-							<p>18001 = Local variable add,22,0,1,[LONG DESC]</p>
-							<p>18002 = Local variable minus,22,0,1,[LONG DESC]</p>
+							<p>18001 = 局部变量加……,22,0,1,[LONG DESC]</p>
+							<p>18002 = 本地变量减……,22,0,1,[LONG DESC]</p>
 							<p>18003 = Local variable multiply,22,0,1,[LONG DESC]</p>
 							<p>18004 = Local variable divide,22,0,1,[LONG DESC]</p>
 							<p>18005 = Local variable mod,22,0,1,[LONG DESC]</p>
@@ -2040,7 +2040,38 @@
 					<h3>脚本动作</h3>
 					<h4 type="button" class="collapsible"><code>10000-10999</code>常规动作</h4>
 					<div class="col-content">
-						敬请期待……
+						<h5><code>10000-10049</code>：攻击动作</h5>
+						<h5><code>10050-10099</code>：移动单位到科技类型附近</h5>
+						<h5><code>10100-10999</code>：泛用型动作</h5>
+						<div class="general-table">
+							<table>
+								<tr>
+									<th>动作</th>
+									<th>参数</th>
+									<th>解释</th>
+								</tr>
+								<tr>
+									<td><code>10100</code>：限时区域警戒</td>
+									<td><code>x=10100,n</code></td>
+									<td style="text-align:left">单位会进入区域警戒模式，n为区域警戒的时间，单位是游戏内的秒。</td>
+								</tr>
+								<tr>
+									<td><code>10102</code>：临时集合小队</td>
+									<td><code>x=10102,n</code></td>
+									<td style="text-align:left">单位会临时集合在小队头目周围并区域警戒，n为区域警戒的时间，单位是游戏内的秒。</td>
+								</tr>
+								<tr>
+									<td><code>10103</code>：装入小队内载具</td>
+									<td><code>x=10103,0</code></td>
+									<td style="text-align:left">如果小队内有可使用载具将会把小队成员装入载具，在单人任务中需要在后面加一条“等待载具装满（<code>43,0</code>）”，否则该脚本不会持续。</td>
+								</tr>
+								<tr>
+									<td><code>10104</code>：超时空到敌方基地</td>
+									<td><code>x=10104,n</code></td>
+									<td style="text-align:left">AI会使用第一个可用的<code>Type=Chronosphere</code>类超级武器将小队传送到离敌人基地中心点<code>AISafeDistance</code>加额外距离所定义的范围之内，n为额外距离，单位为单元格。</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible"><code>12000-12999</code>辅助型动作</h4>
 					<div class="col-content">
@@ -2208,7 +2239,7 @@
 					<h3>INI文件规则</h3>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</main>
 	<!--Footer-->
 	<footer>
