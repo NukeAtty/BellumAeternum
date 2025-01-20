@@ -2041,6 +2041,46 @@
 					<h4 type="button" class="collapsible"><code>10000-10999</code>常规动作</h4>
 					<div class="col-content">
 						<h5><code>10000-10049</code>：攻击动作</h5>
+						<p>Phobos使用了比原版更高效的AI攻击方式，</p>
+						<div class="general-table">
+							<table>
+								<tr>
+									<th>动作</th>
+									<th>参数</th>
+									<th>自循环</th>
+									<th>目标权重</th>
+									<th>解释</th>
+								</tr>
+								<tr>
+									<td><code>10000</code>：限时区域警戒</td>
+									<td><code>x=10000,n</code></td>
+									<td>&#9989;</td>
+									<td>近目标优先</td>
+									<td style="text-align:left">n为目标类型预设值。</td>
+								</tr>
+								<tr>
+									<td><code>10001</code>：临时集合小队</td>
+									<td><code>x=10001,n</code></td>
+									<td>&#10060;</td>
+									<td>近目标优先</td>
+									<td style="text-align:left">n为目标类型预设值。</td>
+								</tr>
+								<tr>
+									<td><code>10002</code>：装入小队内载具</td>
+									<td><code>x=10002,0</code></td>
+									<td>&#9989;</td>
+									<td>近目标优先</td>
+									<td style="text-align:left">n为AI目标类型注册表序列号。</td>
+								</tr>
+								<tr>
+									<td><code>10003</code>：超时空到敌方基地</td>
+									<td><code>x=10003,n</code></td>
+									<td>&#10060;</td>
+									<td>近目标优先</td>
+									<td style="text-align:left">n为AI目标类型注册表序列号。</td>
+								</tr>
+							</table>
+						</div>
 						<h5><code>10050-10099</code>：移动单位到科技类型附近</h5>
 						<h5><code>10100-10999</code>：泛用型动作</h5>
 						<div class="general-table">
