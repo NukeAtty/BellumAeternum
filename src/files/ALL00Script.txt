@@ -48,7 +48,7 @@ ALL00 Script:
 	目标任务3：撤退到敦刻尔克海滩。
 
 	到达海滩。
-	「EVA」： 今天的撤退是为了日后更大步的前进，指挥官，您尽力了。
+	「EVA」： 指挥官，您尽力了。
 
 
 	EVA: Commander, the Soviets have taken control of Brussels, and the Allied headquarters has been destroyed.
@@ -72,3 +72,5 @@ ALL00 Script:
 	EVA: Commander, the landing crafts are now offshore, hold the line until they arrive.
 
 	EVA: Commander, the landing crafts are closing to the landing area, order all your forces to retreat.
+
+	EVA: You did it, Commander.Today, we retreat to advance, and we will come back soon.
