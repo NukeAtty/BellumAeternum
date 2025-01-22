@@ -3,28 +3,27 @@ ALL00 Script:
 	OP-Scene1
 	视野：4,6,92,88
 
-	<EVA>：指挥官，苏联已经占领了布鲁塞尔，盟军总部已经被他们摧毁。
-	<EVA>：根据情报显示，苏军正在从北部向敦刻尔克集结。
-	<EVA>：我们必须在苏联主力到达之前撤退到英国。
-	<EVA>：盟军在欧洲的主力已经基本撤出，但我们不能丢下坚守防线的部队。
-	<EVA>：英国方面也派遣了更多的运输艇来运送剩下的盟军士兵。
+	「EVA」： 指挥官，苏联已经占领了布鲁塞尔，盟军总部已经被他们摧毁。
+	「EVA」： 根据情报显示，苏军正在从北部向敦刻尔克集结。
+	「EVA」： 我们必须在苏联主力到达之前撤出欧洲大陆。
 
-	<EVA>：Warning, Enemy Airforce Armada DETECTED.
+	「EVA」： 盟军在欧洲的主力已经基本撤出，但我们不能丢下坚守防线的部队。
+	「EVA」： 伦敦临时总部也派遣了更多的运输艇来运送剩下的盟军士兵。
+	「EVA」： 诺索尔特（Northolt）空军基地也派遣了轰炸机编队阻截苏军的进攻。
 
-	<EVA>：指挥官，苏联侦察机已经发现了撤离点。
-	<EVA>：看来马上苏军就会有大动作了。
+	sbx-47 tropofortress passed by.
 
 	OP-Scene2
 	视野：4,6,92,88
 
-	<EVA>：指挥官，有更多的盟军士兵从法国南部撤往敦刻尔克。
-	<EVA>：作为欧陆唯一幸存的指挥官，请您务必在运输艇到达之前保卫敦刻尔克海滩。
+	「EVA」：指挥官，有更多的盟军士兵从法国南部撤往敦刻尔克。
+	「EVA」：作为欧陆唯一幸存的指挥官，请您务必在运输艇到达之前保卫敦刻尔克海滩。
 
 	OP-Scene3
 	视野：4,6,92,88
 
-	<EVA>： 指挥官，我们收到海滩北部沙丘堡垒的求救信号，他们已经接敌。
-	<EVA>： 苏军的小股部队似乎已经从北面到达敦刻尔克，请率领您的装甲力量支援沙丘堡垒。
+	「EVA」： 指挥官，我们收到海滩北部沙丘堡垒的求救信号，他们已经接敌。
+	「EVA」： 苏军的小股部队似乎已经从北面到达敦刻尔克，请率领您的装甲力量支援沙丘堡垒。
 
 	进入沙丘堡垒……
 	【皮埃尔少校】：指挥官，万幸您能赶到！从现在开始这里由您全权指挥！
@@ -32,7 +31,7 @@ ALL00 Script:
 
 	阵营切换，收回控制权……
 	镜头移动到法国国旗……
-	<EVA>：指挥官，伦敦临时总部派遣了新的一批运输艇，请您在运输艇到达前务必守住沙丘堡垒。
+	「EVA」：指挥官，运输艇已经到达近海，请您在运输艇到达前务必守住沙丘堡垒。
 
 	视野：40,6,92,56
 	倒计时开始。
@@ -40,13 +39,36 @@ ALL00 Script:
 	普通：5:00 -> 250s -> 1250igs
 	困难：6:00 -> 300s -> 1500igs
 	苏联进攻开始：
-		Infantry -> 200igs
-		Vehicles -> 500igs
+		Infantry -> 180igs
+		Vehicles -> 300igs
 
 	倒计时结束。
-	<EVA>：指挥官，运输艇已经到达近海，命令您的部队马上撤退。
+	「EVA」：指挥官，运输艇已经接近登陆点，命令您的部队马上撤退。
 
 	目标任务3：撤退到敦刻尔克海滩。
 
 	到达海滩。
-	<EVA>：
+	「EVA」： 今天的撤退是为了日后更大步的前进，指挥官，您尽力了。
+
+
+	EVA: Commander, the Soviets have taken control of Brussels, and the Allied headquarters has been destroyed.
+	EVA: According to the intel, the Soviet army are now regrouping in the North.
+	EVA: Therefore, we should get out of here before they come.
+
+	EVA: Most Allied Forces in Europe has been retreated to Great Britain, but we should leave no one behind.
+	EVA: The temporary Allied headquarters in London has sent more landing craft to Dunkirk.
+	EVA: Also, the Northolt air force base has sent bomber formation to stop the Soviets.
+
+
+	EVA: Commander, there are more troops retreat from the South France.
+	EVA: As the only surviving front line commander in Europe, you need to defend the Dunkirk before retreat.
+
+	EVA: Commander, we have received support request from Fort des Dunes, they are under attack.
+	EVA: It seems the Soviet recon has already reached from the North, so please support the Fort des Dunes with your armor platoons.
+
+	Major Piere: Bonjour Commander, nice to have you here! Fort des Dunes are now under your command!
+	Major Piere: Since it is the last stronghold of Dunkirk, we must hold the line!
+
+	EVA: Commander, the landing crafts are now offshore, hold the line until they arrive.
+
+	EVA: Commander, the landing crafts are closing to the landing area, order all your forces to retreat.
