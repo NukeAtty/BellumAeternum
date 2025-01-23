@@ -32,6 +32,7 @@
 
 		.ai-trigger {
 			max-width: 100%;
+			overflow-x: auto;
 		}
 
 		.ai-trigger table, th, tr, td {
@@ -183,7 +184,7 @@
 			<h1>尤里的复仇：AI教程</h1>
 			<div class="blog-info">
 				<div class="update-time">
-					<p>最后更新时间：<time datetime="2024-11-19 18:00">2024/11/19</time></p>
+					<p>最后更新时间：<time datetime="2025-01-23 18:00">2025/1/23</time></p>
 				</div>
 			</div>
 			<div class="blog-main">
@@ -202,13 +203,13 @@
 							<a id="h3" href="#ai-script">脚本·Script</a>
 							<a id="h3" href="#ai-team">小队·Team</a>
 							<a id="h3" href="#ai-trigger">触发·Trigger</a>
-							<a id="h2" href="#phobos">Phobos新增</a>
 						</div>
 					</div>
 				</div>
 				<div class="blog-content">
-					<p>本教程的内容主要是在制作尤里的复仇Mod：万世之战时总结的经验，其中参考了红警DIY论坛的AI教程，并用ModENC中所提供的词条更正准确度。</p>
+					<p>本教程的内容主要是在制作尤里的复仇Mod：万世之战时总结的经验，其中参考了红警DIY论坛的AI教程，并用ModEnc中所提供的词条更正准确度。</p>
 					<h2 id="intro">AI原理介绍</h2>
+					<p>在遭遇战中，AI默认使用全局AI设定，如果你想对每一张地图做AI适配，请在.map中直接编辑相应的微观AI。</p>
 					<p>AI主要分为两个大的部分，一个为Rules(md).ini部分的改动，另一个为Ai(md).ini。</p>
 					<p>AI大体上分为两个阶段，一个是发展阶段，另一个是出兵阶段。发展阶段指的是AI建造建筑，发展经济，提高科技等级，建立防御武器等等。而出兵阶段则是AI按照设定，训练和生产不同的兵种和载具，在战场上进行战斗或其他动作。</p>
 					<p>Rules(md).ini主要控制的是发展阶段，而AI(md).ini则控制的是出兵阶段。</p>
@@ -299,7 +300,7 @@
 							<p>AIBaseSpacing=1         ;AI生产建筑的最小间隔，单位为单元格(Cell)。</p>
 						</div>
 					<h3 id="rules-iq">[IQ]</h3>
-					<p>[IQ]的设置主要和地图相结合，比如在任务中有些敌人不会修理建筑，不会自动生产，这就是[IQ]的功劳。在遭遇战中，[IQ]全部是最大数值。</p>
+					<p>[IQ]的设置主要规定相应设定值下的AI所能做的事情，比如在任务中有些敌人不会修理建筑，不会自动生产，这就是[IQ]的功劳。</p>
 					<div class="code-presentation">
 						<p>[IQ]</p>
 						<p>MaxIQLevels=5           ; IQ的最大值</p>
@@ -321,112 +322,116 @@
 					<p>AI在出兵和建造建筑时会使用不同的逻辑来判断单位是否可被建造，分以下情况讨论：</p>
 					<h4>建筑：</h4>
 					<p>AI判定建筑是否可建造的检查项：</p>
-					<table>
-						<th>
-							<td>是否检查？</td>
-							<td>条件</td>
-						</th>
-						<tr>
-							<td>Prerequisite=</td>
-							<td>是</td>
-							<td>只有被设置的阵营允许建造。</td>
-						</tr>
-						<tr>
-							<td>PrerequisiteOverride=</td>
-							<td>否</td>
-							<td>无</td>
-						</tr>
-						<tr>
-							<td>TechLevel=</td>
-							<td>是</td>
-							<td>大于最大值不可建造。</td>
-						</tr>
-						<tr>
-							<td>AIBuildThis=</td>
-							<td>是</td>
-							<td>yes则会建造，no则不会建造。</td>
-						</tr>
-						<tr>
-							<td>AIBasePlanningSide=</td>
-							<td>是</td>
-							<td>0则盟军可生产，1则苏军可生产，2则尤里可生产。</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-							<td rowspan="3">否</td>
-							<td rowspan="3">无</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-						</tr>
-						<tr>
-							<td>Owner</td>
-							<td>是</td>
-							<td>在Owner列表中的国家才可以建造该建筑，原版直接将所有国家放入。</td>
-						</tr>
-						<tr>
-							<td>RequiredHouses</td>
-							<td rowspan="2">是</td>
-							<td>在列表中的国家可以建造。</td>
-						</tr>
-						<tr>
-							<td>ForbiddenHouses</td>
-							<td>在列表中的国家不能建造。</td>
-						</tr>
-					</table>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>是否检查？</th>
+								<th>条件</th>
+							</tr>
+							<tr>
+								<td>Prerequisite=</td>
+								<td>是</td>
+								<td>只有被设置的阵营允许建造。</td>
+							</tr>
+							<tr>
+								<td>PrerequisiteOverride=</td>
+								<td>否</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>TechLevel=</td>
+								<td>是</td>
+								<td>大于最大值不可建造。</td>
+							</tr>
+							<tr>
+								<td>AIBuildThis=</td>
+								<td>是</td>
+								<td>yes则会建造，no则不会建造。</td>
+							</tr>
+							<tr>
+								<td>AIBasePlanningSide=</td>
+								<td>是</td>
+								<td>0则盟军可生产，1则苏军可生产，2则尤里可生产。</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+								<td rowspan="3">否</td>
+								<td rowspan="3">无</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+							</tr>
+							<tr>
+								<td>Owner</td>
+								<td>是</td>
+								<td>在Owner列表中的国家才可以建造该建筑，原版直接将所有国家放入。</td>
+							</tr>
+							<tr>
+								<td>RequiredHouses</td>
+								<td rowspan="2">是</td>
+								<td>在列表中的国家可以建造。</td>
+							</tr>
+							<tr>
+								<td>ForbiddenHouses</td>
+								<td>在列表中的国家不能建造。</td>
+							</tr>
+						</table>
+					</div>
 					<h4>步兵和载具：</h4>
 					<p>AI在生产步兵和载具时的检查项：</p>
-					<table>
-						<th>
-							<td>是否检查？</td>
-							<td>条件</td>
-						</th>
-						<tr>
-							<td>Prerequisite=</td>
-							<td>否</td>
-							<td>无</td>
-						</tr>
-						<tr>
-							<td>PrerequisiteOverride=</td>
-							<td>否</td>
-							<td>无</td>
-						</tr>
-						<tr>
-							<td>TechLevel=</td>
-							<td>是</td>
-							<td>-1或大于最大值不可生产</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-							<td rowspan="3">是</td>
-							<td>在偷取盟军作战实验室后可生产。</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-							<td>在偷取苏联作战实验室后可生产。</td>
-						</tr>
-						<tr>
-							<td>RequiresStolenAlliedTech=</td>
-							<td>在偷取尤里作战实验室后可生产。</td>
-						</tr>
-						<tr>
-							<td>Owner</td>
-							<td>否</td>
-							<td>无</td>
-						</tr>
-						<tr>
-							<td>RequiredHouses</td>
-							<td rowspan="2">是</td>
-							<td>在列表中的国家可以生产。</td>
-						</tr>
-						<tr>
-							<td>ForbiddenHouses</td>
-							<td>在列表中的国家不能生产。</td>
-						</tr>
-					</table>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>是否检查？</th>
+								<th>条件</th>
+							</tr>
+							<tr>
+								<td>Prerequisite=</td>
+								<td>否</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>PrerequisiteOverride=</td>
+								<td>否</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>TechLevel=</td>
+								<td>是</td>
+								<td>-1或大于最大值不可生产</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+								<td rowspan="3">是</td>
+								<td>在偷取盟军作战实验室后可生产。</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+								<td>在偷取苏联作战实验室后可生产。</td>
+							</tr>
+							<tr>
+								<td>RequiresStolenAlliedTech=</td>
+								<td>在偷取尤里作战实验室后可生产。</td>
+							</tr>
+							<tr>
+								<td>Owner</td>
+								<td>否</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>RequiredHouses</td>
+								<td rowspan="2">是</td>
+								<td>在列表中的国家可以生产。</td>
+							</tr>
+							<tr>
+								<td>ForbiddenHouses</td>
+								<td>在列表中的国家不能生产。</td>
+							</tr>
+						</table>
+					</div>
 					<h2 id="ai">AI改动</h2>
 					<p>AI改动意为更改Ai(md).ini文件。AI(md).ini主要分为4大板块，即特遣部队、脚本、小队和触发。</p>
 					<p>以下说明各个部分的作用。</p>
