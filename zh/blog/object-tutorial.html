@@ -91,65 +91,67 @@
 						</tr>
 					</table>
 					<h3>建筑</h3>
-					<p>建筑分为三大类建筑：军事建筑、科技建筑和可进驻建筑。建筑的图像素材只能是SHP格式，但炮塔可以用VXL格式，比如原版的巨炮和哨戒炮。</p>
+					<p></p>
 					<p>建筑的特性有以下内容：</p>
 					<ol>
 						<li>在<code>[BuildingTypes]</code>注册表中注册过的单位，才会被认定为建筑类型。</li>
 						<li></li>
-						<li>建筑图像文件只能是SHP格式，调色盘使用的是unit***.pal。</li>
+						<li>建筑图像文件只能是SHP格式，调色盘使用的是unit***.pal，但可以为建筑设置VXL格式的炮塔。</li>
 						<li>建筑支持在不同气候下使用不同素材，其区分方式是在<code>artmd.ini</code>中添加<code>NewTheater=yes</code>，然后在素材的命名上取第二个字母代表不同气候。具体命名方式见附表格。</li>
 						<li></li>
 					</ol>
-					<table class="general-table">
-						<tr>
-							<th>气候</th>
-							<th>代表字母</th>
-							<th>全称</th>
-							<th>示例</th>
-						</tr>
-						<tr>
-							<td>默认（Generic）</td>
-							<td>G</td>
-							<td>Generic</td>
-							<td>GGPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>雪地（Snow）</td>
-							<td>A</td>
-							<td>Arctic</td>
-							<td>GAPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>温和（Temperate）</td>
-							<td>T</td>
-							<td>Temperate</td>
-							<td>GTPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>城市（Urban）</td>
-							<td>U</td>
-							<td>Urban</td>
-							<td>GUPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>新城市（New Urban）</td>
-							<td>N</td>
-							<td>New Urban</td>
-							<td>GNPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>沙漠（Desert）</td>
-							<td>D</td>
-							<td>Desert</td>
-							<td>GDPOWR.SHP</td>
-						</tr>
-						<tr>
-							<td>月球（Lunar）</td>
-							<td>L</td>
-							<td>Lunar</td>
-							<td>GLPOWR.SHP</td>
-						</tr>
-					</table>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>气候</th>
+								<th>代表字母</th>
+								<th>全称</th>
+								<th>示例</th>
+							</tr>
+							<tr>
+								<td>默认（Generic）</td>
+								<td>G</td>
+								<td>Generic</td>
+								<td>GGPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>雪地（Snow）</td>
+								<td>A</td>
+								<td>Arctic</td>
+								<td>GAPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>温和（Temperate）</td>
+								<td>T</td>
+								<td>Temperate</td>
+								<td>GTPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>城市（Urban）</td>
+								<td>U</td>
+								<td>Urban</td>
+								<td>GUPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>新城市（New Urban）</td>
+								<td>N</td>
+								<td>New Urban</td>
+								<td>GNPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>沙漠（Desert）</td>
+								<td>D</td>
+								<td>Desert</td>
+								<td>GDPOWR.SHP</td>
+							</tr>
+							<tr>
+								<td>月球（Lunar）</td>
+								<td>L</td>
+								<td>Lunar</td>
+								<td>GLPOWR.SHP</td>
+							</tr>
+						</table>
+					</div>
 					<p>军事建筑拥有以下特性：</p>
 					<ol>
 						<li>在游戏中可建造，并在建造时播放建造动画。</li>
@@ -185,70 +187,72 @@
 					<p>覆盖物的图像拥有以下特性：</p>
 					<ol>
 						<li>图像的格式只能是SHP。</li>
-						<li>图像的调色盘为iso***.pal，如果是矿石类覆盖物，调色盘则是lib***.pal。</li>
+						<li>图像的调色盘为iso***.pal，如果是矿石类覆盖物，调色盘则为lib***.pal。</li>
 						<li>图像的绘制方式和建筑相同。</li>
 					</ol>
 					<span type="button" class="collapsible" style="font-size:24px;margin:2vh auto;">覆盖物的相关代码</span>
 					<div class="col-content">
 						<p><code>Land</code>定义该覆盖物使用哪种类型的地形结构的通过性，参数为下列预设值：</p>
-						<table class="general-table">
-							<tr>
-								<th>地形结构</th>
-								<th>描述</th>
-							</tr>
-							<tr>
-								<td>Clear</td>
-								<td>平坦地形，最通常的地形。</td>
-							</tr>
-							<tr>
-								<td>Rough</td>
-								<td>泥泞地形，通过性和草地与土路一致，原版中和Clear相同，可以通过设置来实现不同的速度。</td>
-							</tr>
-							<tr>
-								<td>Road</td>
-								<td>道路地形，通过性和高速公路以及小道一致。</td>
-							</tr>
-							<tr>
-								<td>Water</td>
-								<td>水面，只有船只能通过</td>
-							</tr>
-							<tr>
-								<td>Rock</td>
-								<td>石块，所有路面移动的单位均无法通过。</td>
-							</tr>
-							<tr>
-								<td>Wall</td>
-								<td>围墙，所有路面移动的单位均无法通过。</td>
-							</tr>
-							<tr>
-								<td>Tiberium</td>
-								<td>矿石。事实上，游戏中的矿石的减速是硬编码，和地形通过性设置无关。</td>
-							</tr>
-							<tr>
-								<td>Beach</td>
-								<td>海滩，水面和地面的交界处。</td>
-							</tr>
-							<tr>
-								<td>Ice</td>
-								<td>冰面，原版中没有冰面逻辑，因此可以用来限制速度。</td>
-							</tr>
-							<tr>
-								<td>Tunnel</td>
-								<td>隧道，通过逻辑与隧道一致。</td>
-							</tr>
-							<tr>
-								<td>Railroad</td>
-								<td>铁路，火车可以通过。</td>
-							</tr>
-							<tr>
-								<td>Weeds</td>
-								<td>藤蔓，原版中无效，因此可以用来限制速度。</td>
-							</tr>
-							<tr>
-								<td>Cliff</td>
-								<td>悬崖，所有路面移动的单位均无法通过，同时会阻挡带有<code>SubjectToCliff=yes</code>的抛射体。</td>
-							</tr>
-						</table>
+						<div class="general-table">
+							<table>
+								<tr>
+									<th>地形结构</th>
+									<th>描述</th>
+								</tr>
+								<tr>
+									<td>Clear</td>
+									<td>平坦地形，最通常的地形。</td>
+								</tr>
+								<tr>
+									<td>Rough</td>
+									<td>泥泞地形，通过性和草地与土路一致，原版中和Clear相同，可以通过设置来实现不同的速度。</td>
+								</tr>
+								<tr>
+									<td>Road</td>
+									<td>道路地形，通过性和高速公路以及小道一致。</td>
+								</tr>
+								<tr>
+									<td>Water</td>
+									<td>水面，只有船只能通过</td>
+								</tr>
+								<tr>
+									<td>Rock</td>
+									<td>石块，所有路面移动的单位均无法通过。</td>
+								</tr>
+								<tr>
+									<td>Wall</td>
+									<td>围墙，所有路面移动的单位均无法通过。</td>
+								</tr>
+								<tr>
+									<td>Tiberium</td>
+									<td>矿石。事实上，游戏中的矿石的减速是硬编码，和地形通过性设置无关。</td>
+								</tr>
+								<tr>
+									<td>Beach</td>
+									<td>海滩，水面和地面的交界处。</td>
+								</tr>
+								<tr>
+									<td>Ice</td>
+									<td>冰面，原版中没有冰面逻辑，因此可以用来限制速度。</td>
+								</tr>
+								<tr>
+									<td>Tunnel</td>
+									<td>隧道，通过逻辑与隧道一致。</td>
+								</tr>
+								<tr>
+									<td>Railroad</td>
+									<td>铁路，火车可以通过。</td>
+								</tr>
+								<tr>
+									<td>Weeds</td>
+									<td>藤蔓，原版中无效，因此可以用来限制速度。</td>
+								</tr>
+								<tr>
+									<td>Cliff</td>
+									<td>悬崖，所有路面移动的单位均无法通过，同时会阻挡带有<code>SubjectToCliff=yes</code>的抛射体。</td>
+								</tr>
+							</table>
+						</div>
 						<p><code>Strength</code>定义该覆盖物的耐久度，参数为正整数。通常用于定义围墙等覆盖物的耐久度。</p>
 						<p><code>Wall</code>定义该覆盖物是否为围墙，参数为布尔值。这个标签主要用途是定义该覆盖物是否能被带有<code>Wall=yes</code>以及<code>WallAbsoluteDestroyer=yes</code>的弹头攻击，同时定义可发射这类弹头的单位是否被该覆盖物阻挡后主动攻击。</p>
 						<p><code>Tiberium</code>定义该覆盖物是否为矿石，参数为布尔值。这个标签主要用途是为该覆盖物赋予矿石的性质，比如生长、矿车采集和减速，同时还会为该覆盖物自动赋予<code>Armor=wood</code>，因此会被带有<code>wood=yes</code>的弹头打掉。</p>
@@ -276,6 +280,7 @@
 					</div>
 					<h2 id="terrain">地形</h2>
 					<p>注意，这里的地形指的是地形对象，即TerrainTypes，不是TMP地形图块。地形通常用于树木、指示牌、电线杆。</p>
+					<p>地形可大致分为两种类型：普通地形和矿钻。两种类型拥有不同的特性和图像规则。</p>
 					<p>地形拥有以下特性：</p>
 					<ol>
 						<li>地形有注册表，需要在<code>rulesmd.ini</code>中的<code>[TerrainTypes]</code>模块下注册。</li>
@@ -286,7 +291,7 @@
 					</ol>
 					<p>地形的图像拥有以下特性：</p>
 					<ol>
-						<li>图像为SHP格式，调色盘为iso***.pal。</li>
+						<li>图像为SHP格式，调色盘为iso***.pal。如果地形是矿钻，那么调色盘则强制使用unitsno.pal</li>
 						<li>地形支持不同气候（Theater），和建筑不同，不同气候不靠注册名的第二个字母区分，而是将SHP文件的后缀改为气候的三字母缩写。</li>
 						<li>地形支持动画，但需要相应的代码设置。</li>
 						<li>地形图像的描绘方式和建筑不同，其中心点是SHP图像的中心点，而不是单元格的中心点。</li>
@@ -448,7 +453,7 @@
 							<li>当被摧毁时，该地形对象所在的单元格会触发100点伤害的爆炸，弹头使用<code>C4Warhead</code>所定义的弹头，并触发矿石的连锁反应（原版不可用）。</li>
 							<li>该地形对象不会被带有<code>Sparky=yes</code>的弹头点燃，当然，在原版里，森林火灾的逻辑无效。</li>
 							<li>该地形对象如果带有<code>IsAnimated</code>，将会在动画播放到一半时抛洒矿石，矿石的种类不可定义。</li>
-							<li>该地形对象默认使用UNITSNO.PAL，并且不会改变所属色。</li>
+							<li>该地形对象的调色盘强制使用unitsno.pal，并且不会改变所属色。理论上来说，unitsno.pal是所有原版调色盘中颜色最多的一个，因此可以兼容其他地形的颜色。</li>
 						</ul>
 						<p><code>IsAnimated</code>定义该地形对象是否播放动画，参数为布尔值。这个标签需要与<code>SpawnsTiberium=yes</code>一起用才会生效。</p>
 						<p><code>AnimationRate</code>定义该地形对象的动画的播放速度，参数为整数。这个标签要求该地形对象有<code>IsAnimated=yes</code>标签。</p>
