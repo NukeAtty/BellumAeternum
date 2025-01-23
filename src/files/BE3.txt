@@ -33,7 +33,7 @@ BE 3 Basic Structure
 					Main Armament: 130mm S-90
 
 			T2:
-				Thunderbolt SPAAG
+				Thunderbolt SPAD (Self-propelled Air Defend)
 					Main Armament: Heat Seeker Missile
 
 
