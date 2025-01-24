@@ -444,7 +444,7 @@ footer {
 }
 
 .footer-portals img:hover {
-	filter: drop-shadow(0 0 4px #ff99cc) brightness(100);
+	filter: drop-shadow(0 0 4px #ff99cc) brightness(125%);
 }
 
 /*------------------------------*/
