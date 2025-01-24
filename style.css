@@ -1059,14 +1059,14 @@ footer {
 /*---------------------------------*/
 
 .download h1{
-	font-size: 60px;
+	font-size: 48px;
 	text-align: center;
 	font-family: HarmonyOS Sans, sans-serif;
 	margin: 48px auto 0 auto;
 }
 
 .download h2{
-	font-size: 48px;
+	font-size: 60px;
 	font-family: HarmonyOS Sans, sans-serif;
 	text-align: center;
 	margin: 0 auto 48px auto;
@@ -1103,16 +1103,21 @@ footer {
 }
 
 .download-section {
-	margin: auto 20vw;
+	margin: 10vh 20vw;
 	padding: 1vw;
-	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
+	background:linear-gradient(0deg, #484848 0%, #a1a1a1 15%, #999 65%, #787878 90%, #393939 100%);
 	border-radius: 12px;
-	border: 4px outset #ddd;
+	border: 4px outset #ccc;
 	box-shadow: 0 0 24px #000;
 }
 
 .download-section h2 {
-
+	font-size: 32px;
+	font-family: HarmonyOS Sans, sans-serif;
+	text-align: center;
+	color: #000;
+	margin: 0.5em auto;
 }
 
 .download-section a{
@@ -1311,6 +1316,17 @@ footer {
 	color: #ffffff;
 	margin: auto 5vw;
 	padding: 1vw;
+}
+
+.guide-container a{
+	font-family: HarmonyOS Sans SC, sans-serif;
+	font-size: 18px;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.guide-container a:hover {
+	color: #f00;
 }
 
 /*----------------------------*/
@@ -3224,14 +3240,16 @@ footer {
 	}
 
 	.download h2{
+		font-family: HarmonyOS Sans, sans-serif;
 		font-size: 24px;
-		margin: 1em auto;
+		margin: 0.5em auto;
 	}
 
 	.download-section {
 		margin: auto;
 		padding: 1vw;
-		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+		/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
+		background-color: #66666650;
 		border-radius: 12px;
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
