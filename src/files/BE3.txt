@@ -1,9 +1,6 @@
 BE 3 Basic Structure
 
 1. Sides
-
-		Ironapolis: Armour, Cannon
-
 		Vosstaniapolis: Armour, Missile
 
 		Speranzapolis:
@@ -14,7 +11,7 @@ BE 3 Basic Structure
 2. Units
 
 	Ironapolis:
-			Vindicator
+			
 
 	Vosstaniapolis:
 		Buildings:
@@ -35,8 +32,6 @@ BE 3 Basic Structure
 			T2:
 				Thunderbolt SPAD (Self-propelled Air Defend)
 					Main Armament: Heat Seeker Missile
-
-
 
 			T3:
 				Avalanche Mech
@@ -89,10 +84,12 @@ BE 3 Basic Structure
 				Serpent Hovercraft
 					Main Armament: 20mm Vulcan/AT Rocket
 
+				Vindicator
+
 
 
 			T3:
-				Valkyrie Tank
+				Centauri Tank
 					Main Armament: 120mm Railgun x2/20mm Vulcan x2
 
 
@@ -103,7 +100,13 @@ BE 3 Basic Structure
 			Power Beacon
 
 		Defense:
-			Laser Fence
+			Beam Fence
+
+			Mobile Bunker
+
+			B.A.D.S.
+
+			Beam Cannon
 
 		Infantry:
 			Cosmos Marine
