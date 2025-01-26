@@ -197,20 +197,23 @@ Mission 3: Bitterfrost Frontier - Vladivostok, Soviet Russia
 
 	Objective: Defend Vladivostok.
 
-	Objective 1: 
+	Objective 1: Defend Vladivostok.
 	Objective 2: 
-	Objective 3: 
+	Objective 3: Retreat from the bio-chemic chaos.
 
 
 Mission 4: Crack the Ice - Anchorage, Alaska [SNEAK]
 	Brief: 
-
+		Commander, good to see you alive after the biohazzard happened in Vladivostok.
+		We've just passed some information of the Allied bio-chemic research facility in Alaska.
+		Location, Anchorage. We are going to deploy our radar jammer there, and launch a sudden strike.
+		Control the city, and destroy their bio-chemic research facility.
 
 	Objective: 
 
 	Objective 1: Place all pulse jammer to the designated position.
 	Objective 2: Destroy the coast defense of the Allied forces.
-	Objective 3: Destroy the Allied battle command.
+	Objective 3: Search and destroy the Allied bio-chemical research facility.
 
 Mission 5: Dark 'N' Stormy（黑暗风暴） - Bermuda, Atlantic [ATTACK]
 	Brief:
@@ -246,6 +249,16 @@ Mission 6: Hold the Line（坚守阵地） - Normandy, France [DEFEND]
 		5. Lightning Storm coming.
 		6.
 
+Soviet Campaign Season 2
+
+Mission 6: Order from Shadow (暗影指令) - Soviet Russia
+
+	Commander, it is time to make your page of history.
+	We must not sign the treaty with the Allieds, we have to fight to liberate the whole world.
+	Now, our new leader, Brezhnev has just make his new order - Capture the on-vacation Khrushchev, and abolish his leadership.
+
+	Objective: Raid the Vila of Khrushchev
+
 Soviet Campaign Season 4
 Mission 1: Out of the Shadows - 
 
@@ -254,11 +267,5 @@ Mission 2: Obscured Labyrinthe -
 Mission 5: Tesla Shock（磁暴震荡） - Leipzig, Germany
 	Objective: Stop the Allied Force and Start the Tesla Engine. (Tesla Locomotive)
 
-Mission 6: Order from Shadow (暗影指令) - Soviet Russia
-	Objective: Raid the Vila of Khrushchev
-
 Soviet Campaign Season 5
 Mission 1: (Полноспектральное заградительное подавление)Full-spectrum Barrage Jamming - Moscow, Soviet Russia
-
-Mission 5: Unloyalty - Prague, Czechoslovakia
-	Objective: Control the airport

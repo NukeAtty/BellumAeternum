@@ -514,18 +514,42 @@
 							<p>AttachedSystem=TrainSmokeSys ;动画附带的粒子系统名</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义动画可视方<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">自定义动画可视方</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以为动画定义可见的所属方。</p>
+						<p><code>VisibleTo</code>定义哪些所属方可以看见该动画，参数为下列预设值：</p>
+						<ul>
+							<li><code>none</code>：所有所属方均不可见。</li>
+							<li><code>owner</code>或<code>self</code>：只有生成该动画的所属方可见。</li>
+							<li><code>allies</code>或<code>ally</code>：只有生成该动画的所属方的盟友可见。</li>
+							<li><code>team</code>：生成该动画的所属方和其盟友均可见。</li>
+							<li><code>enemies</code>或<code>enemy</code>：生成该动画的所属方的敌人均可见。</li>
+							<li><code>all</code>：所有所属方均可见。</li>
+						</ul>
+						<p><code>VisibleTo.ConsiderInvokerAsOwner</code>是否将生成该动画的单位的所属方视为该动画的所属方，参数为布尔值。</p>
+						<p><code>RestrictVisibilityIfCloaked</code>定义该动画在附加对象隐型时是否可视，参数为布尔值。</p>
+						<p><code>DetachOnCloak</code>定义该动画是否在附加对象隐型时是否取消附加。</p>
 					</div>
-					<h4 type="button" class="collapsible">独立的动画音效<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">独立的动画音效</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3>建筑</h3>
-					<h4 type="button" class="collapsible">自定义建筑延伸<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">自定义建筑延伸</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>现在可以自定义建筑延伸的属性，</p>
+						<p><code>Adjacent.Allowed</code>定义哪些建筑可以在该建筑周围<code>Adjacent</code>定义的距离内放置，参数为建筑类型注册名的列表。</p>
+						<p><code>Adjacent.Disallowed</code>定义哪些建筑不能在该建筑周围<code>Adjacent</code>定义的距离内放置，参数为建筑类型注册名的列表。</p>
+						<p><code>NoBuildAreaOnBuildup</code>定义在建筑播放建造动画时，其无法作为延伸建筑。</p>
+						<p>代码示例：</p>
+						<p>在<code>rulesmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[GAPOWR] ;Allied Power Plant</p>
+							<p>...</p>
+							<p>Adjacent.Allowed=GAPILE,GAREFN ;周围可放置的建筑类型。</p>
+							<p>Adjacent.Disallowed=NAHAND,NAREFN ;周围不可放置的建筑类型。</p>
+							<p>NoBuildAreaOnBuildup=false ;播放建造动画时是否可以作为延伸建筑。</p>
+						</div>
 					</div>
 					<h4 type="button" class="collapsible">建筑插件扩展</h4>
 					<div class="col-content">
@@ -565,9 +589,12 @@
 							<p>PowerPlantEnhancer.Factor=1.5 ;增幅电力的倍数</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">间谍效果<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">间谍效果</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>Phobos现在能实现更多的间谍效果。</p>
+						<p><code>SpyEffect.Custom</code>定义该建筑是否使用自定义间谍效果，参数为布尔值，只有为true时，下面的效果才会生效。</p>
+						<p><code>SpyEffect.VictimSuperWeapon</code>定义在间谍进入该建筑后立刻对该建筑释放的超级武器，参数为超级武器的注册名。</p>
+						<p><code>SpyEffect.InfiltratorSuperWeapon</code>和上面的标签功能相同，但对建筑释放的超级武器的所属是间谍的所属方。</p>
 					</div>
 					<!--Enhanced Infantries-->
 					<h3 id="new-logic-infantries">步兵</h3>
@@ -1938,10 +1965,10 @@
 							<p>10101 = 等待弹药装填完毕,0,0,1,[LONG DESC]</p>
 							<p>18000 = 设置局部变量,22,0,1,[LONG DESC]</p>
 							<p>18001 = 局部变量加……,22,0,1,[LONG DESC]</p>
-							<p>18002 = 本地变量减……,22,0,1,[LONG DESC]</p>
-							<p>18003 = Local variable multiply,22,0,1,[LONG DESC]</p>
-							<p>18004 = Local variable divide,22,0,1,[LONG DESC]</p>
-							<p>18005 = Local variable mod,22,0,1,[LONG DESC]</p>
+							<p>18002 = 局部变量减……,22,0,1,[LONG DESC]</p>
+							<p>18003 = 局部变量乘以,22,0,1,[LONG DESC]</p>
+							<p>18004 = 局部变量除以,22,0,1,[LONG DESC]</p>
+							<p>18005 = 局部变量改为,22,0,1,[LONG DESC]</p>
 							<p>18006 = Local variable leftshift,22,0,1,[LONG DESC]</p>
 							<p>18007 = Local variable rightshift,22,0,1,[LONG DESC]</p>
 							<p>18008 = Local variable reverse,22,0,1,[LONG DESC]</p>
