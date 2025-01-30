@@ -1901,6 +1901,10 @@ footer {
 	color: #fff;
 }
 
+.contact p {
+	text-align: center;
+}
+
 .contact-zigzag {
 	display: flex;
 	flex-flow: row;
@@ -1944,17 +1948,32 @@ footer {
 	margin: auto;
 }
 
+.zig h2 {
+	font-size: 32px;
+	padding: 0em 1em;
+	text-shadow: 0 1px 1px #000000;
+}
+
 .zag h2 {
 	font-size: 32px;
 	padding: 0em 1em;
+	text-shadow: 0 1px 1px #000000;
 }
 
-.zag p {
+.zag > p {
 	font-size: 16px;
 	line-height: 1.25em;
 	text-align: left;
 	padding: 1em 2em;
-	margin: 1em auto;
+	text-shadow: 0 1px 1px #000000;
+}
+
+.zig > p {
+	font-size: 16px;
+	line-height: 1.25em;
+	text-align: left;
+	padding: 1em 2em;
+	text-shadow: 0 1px 1px #000000;
 }
 
 .zag a {
@@ -1964,10 +1983,34 @@ footer {
 	font-family: HarmonyOS Sans;
 	font-weight: bold;
 	color: #ff0;
-	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
 	box-shadow: 0 0 5px #000000 inset;
 	padding: 0.5em 1em;
 	margin: auto;
+	background-color: #990000;
+}
+
+.zag a:hover {
+	background-color: #FF0000;
+}
+
+.zag > .social-media {
+	background-color: #333333;
+	border-radius: 10px;
+	border: 2px ridge #CCCCCC;
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.zag > .social-media a {
+	margin: auto;
+	background: none;
+	box-shadow: none;
+	padding: 1em;
+}
+
+.zag > .social-media a:hover {
+	filter: brightness(150%);
 }
 
 /*--------------------!!!-------------------!!!--------------------*/
@@ -2023,6 +2066,22 @@ footer {
 
 	.unit-container-mid h3{
 		font-size:20px;
+	}
+
+		/*========== Contact Page ===========*/
+	.contact-zigzag {
+		display: flex;
+		flex-flow: row;
+		width: 90%;
+		background: linear-gradient(-45deg, #333333 0, #999999 50%, #333333 100%);
+		border: 5px outset #666;
+		border-radius: 20px;
+		margin: 1em auto;
+		padding: 1em;
+	}
+
+	.contact-zagzig {
+		width: 90%;
 	}
 }
 
@@ -2637,8 +2696,7 @@ footer {
 
 	.blog-container:hover .dot {
 		background: radial-gradient(circle, #fc0 0%, #c00 75%, #c00 100%);
-	}	
-
+	}
 }
 
 /*----------================================----------*/
