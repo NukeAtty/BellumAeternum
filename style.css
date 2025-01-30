@@ -3425,6 +3425,7 @@ footer {
 	.blog-container {
 		width: 100%;
 		padding: 1vw;
+		margin: 1vh auto;
 	}
 
 	.blog-container h3 {

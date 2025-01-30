@@ -144,10 +144,6 @@ Mission 3: One Path Ends
 Mission 6: Victory or Death
 
 
-
-Mission N: 
-	Objective: Escort the Prismarine convoys to airport.
-
 Mission X: Homeland Defense - St.Combs, Aberdeenshire, UK
 	Objective: Take the experimental away from Aberdeenshire.
 
@@ -188,9 +184,9 @@ Mission 2: Honour of the Waves (荣誉电波) - Ferrère, France [PUZZLE]
 	Objective 2: Set up a radar and receive the radio wave.
 	Objective 3: Find the Satellite Telecom.
 
-	<You can win by destroy all bases, but if you destroyed the true telecom at first attack, you will be able to receive 10000 additional credits in the next episode.>
+	<You can win by destroy all bases, but if you destroyed the true telecom at first attack, you will be able to receive 10000 additional credits in the next episode.
 
-Mission 3: Bitterfrost Frontier - Vladivostok, Soviet Russia
+Mission 3: Bitterfrost Frontier（苦寒战线） - Vladivostok, Soviet Russia
 	Brief:
 		According to report from Chinese Volunteer Army, the Allied are using biochemical weapon on the battlefield of Korea.
 		They have already pushed all the way to Vladivostok, and we have to stop them.
@@ -202,7 +198,7 @@ Mission 3: Bitterfrost Frontier - Vladivostok, Soviet Russia
 	Objective 3: Retreat from the bio-chemic chaos.
 
 
-Mission 4: Crack the Ice - Anchorage, Alaska [SNEAK]
+Mission 4: Crack the Ice（破冰行动） - Anchorage, Alaska [SNEAK]
 	Brief: 
 		Commander, good to see you alive after the biohazzard happened in Vladivostok.
 		We've just passed some information of the Allied bio-chemic research facility in Alaska.
