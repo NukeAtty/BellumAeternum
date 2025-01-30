@@ -665,13 +665,21 @@
 							<p>Slaved.OwnerWhenMasterKilled=killer ;奴隶矿场被摧毁后的归属方</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义奴隶解救语音<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">自定义奴隶解救语音</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p>奴隶矿工的解救语音现在可以微观定义。</p>
+						<p><code>SlavesFreeSound</code>定义奴隶矿工的解救语音，参数为语音的注册名，这个标签在步兵代码中独立定义。</p>
 					</div>
-					<h4 type="button" class="collapsible">在水中使用陆地动作序列<span id="version">DEV</span></h4>
+					<h4 type="button" class="collapsible">在水中使用陆地动作序列</h4>
 					<div class="col-content">
-						<p>敬请期待……</p>
+						<p><code>OnlyUseLandSequences</code>定义步兵是否只播放在陆地上的动作序列，即便步兵在水中，参数为布尔值。</p>
+						<p>代码示例：</p>
+						<p>在<code>artmd.ini</code>中：</p>
+						<div class="code-presentation">
+							<p>[SEAL]</p>
+							<p>...</p>
+							<p>OnlyUseLandSequences=true ;是否只显示陆地的动作序列。</p>
+						</div>
 					</div>
 					<!--Enhanced Projectile-->
 					<h3 id="new-logic-projectiles">抛射体</h3>
@@ -1106,7 +1114,7 @@
 						<p><code>Spawner.LimitRange</code>定义子机的航程是否被限制，参数为布尔值，航程由该单位子机武器的<code>Range</code>所决定。限制了航程的子机在单位远离目标时会放弃攻击指令直接返航。</p>
 						<p><code>Spawner.ExtraLimitRange</code>定义子机可以在原有航程下增加多少格的航程，参数为整数，单位为单元格。</p>
 						<p><code>Spawner.DelayFrames</code>定义子机的补充速度，参数为整数，单位为帧。这将直接覆盖原版写死的子机补充速度，即导弹类子机为9帧，其他类型子机为20帧。</p>
-						<p><span id="version">DEV</span><code>Spawner.AttackImmediately</code>定义航母在释放子机后是否立刻进入攻击模式而不用等待其他子机释放，参数为布尔值。</p>
+						<p><code>Spawner.AttackImmediately</code>定义航母在释放子机后是否立刻进入攻击模式而不用等待其他子机释放，参数为布尔值。</p>
 						<p>代码示例：</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
 						<div class="code-presentation">
@@ -1495,17 +1503,17 @@
 							<li>修复了<code>DebrisMaximums</code>（产生的碎片不再能超过指定的最大值）。出于稳定性考量，只有当<code>DebrisMaximums</code>设定的值多于1个的时候才会激活此修复。</li>
 							<li>修复了Q/W快捷键在失败摆放之后不会再把建造完成的建筑放到鼠标上的问题。</li>
 							<li>可反部署的建筑，在反部署时不再会触发<code>EVA_NewRallypointEstablished</code>语音。</li>
-							<li><p>修复了<code>Naval=yes</code>会无视<code>WaterBound=no</code>强制将建筑限制在水面上的问题。</p></li>
-							<li><p>修复了AI的飞机停机坪在Ares标签<code>[GlobalControls]</code>中<code>AllowParallelAIQueues=no</span></code>时有bug的问题。</p></li>
-							<li><p>修复了激光绘制的代码以允许所属方颜色绘制模式下更粗的激光。</p></li>
-							<li><p>修复了<code>DeathWeapon</code>引爆不正确的问题。</p>
+							<li>修复了<code>Naval=yes</code>会无视<code>WaterBound=no</code>强制将建筑限制在水面上的问题。</li>
+							<li>修复了AI的飞机停机坪在Ares标签<code>[GlobalControls]</code>中<code>AllowParallelAIQueues=no</span></code>时有bug的问题。</li>
+							<li>修复了激光绘制的代码以允许所属方颜色绘制模式下更粗的激光。</li>
+							<li>修复了<code>DeathWeapon</code>引爆不正确的问题。
 							<ul>
-							<li><p>但是仍有部分设置被忽略，如<code>PreImpactAnim</code><em>（Ares功能）</em>，未来可能会改。</p></li>
+							<li>但是仍有部分设置被忽略，如<code>PreImpactAnim</code>（Ares功能），未来可能会改。</li>
 							</ul>
 							</li>
-							<li><p>修复了驻军建筑的<code>MuzzleFlashX</code>在<code>X</code>超过10之后会画在建筑中心的问题。</p></li>
-							<li><p>修复了Jumpjet类单位在<code>Crashable=yes</code>时，如果被<code>Locomotor</code>弹头拉起，不会正常坠毁向地面的问题。</p></li>
-							<li><p>修复了飞行载具类单位无法面朝目标开火的问题。</p></li>
+							<li>修复了驻军建筑的<code>MuzzleFlashX</code>在<code>X</code>超过10之后会画在建筑中心的问题。</li>
+							<li>修复了Jumpjet类单位在<code>Crashable=yes</code>时，如果被<code>Locomotor</code>弹头拉起，不会正常坠毁向地面的问题。</li>
+							<li>修复了飞行载具类单位无法面朝目标开火的问题。</li>
 							<li><p>Fixed jumpjet units being able to continue firing at enemy target when crashing.</p></li>
 							<li><p>Fixed turreted jumpjet units always facing bottom-right direction when motion stops.</p></li>
 							<li><p>Fixed jumpjet objects being unable to use <code>Sensors</span></code>.</p></li>
