@@ -1,22 +1,77 @@
 BE 3 Basic Structure
 
 1. Sides
-		Vosstaniapolis: Armour, Missile
 
-		Speranzapolis:
-			Technology: Biotech, Electro-Magnetic
+		Speranza:
+			Technology: Electro-Magnetic
+
+		Vosstania: 
+			Technology: Armour, Missile
 
 		REGINA: Drone, Airforce
 
-2. Units
+2. Units	
 
-	Ironapolis:
-			
+	Sperapolis:
+		Buildings:
+			Electricity Core
+
+			Refinery
+
+			Barracks
+
+			Factory
+
+			Frontline Command
+
+			Battle Lab
+
+		Defense:
+			Field Wall
+				Prerequisite: Power Core
+
+			Gattling Turret
+
+			AA Turret
+
+			Railgun Turret
+
+			EMP Cannon
+
+		Units:
+
+			T1:
+				Harvester
+
+				Knight Tank
+					Main Armament: 75mm HV-5
+
+				Hound APC
+					Main Armament: 20mm Vulcan
+
+			T2:
+				Serpent Hovercraft
+					Main Armament: 20mm Vulcan/AT Rocket
+
+				Vindicator
+
+
+
+			T3:
+				Centauri Tank
+					Main Armament: 120mm Railgun x2/20mm Vulcan x2
+
+
+		Aircrafts:
 
 	Vosstaniapolis:
 		Buildings:
 
 		Defense:
+			Armoured Wall
+
+			Sentry Cannon
+
 
 
 		Infantry:
@@ -45,55 +100,7 @@ BE 3 Basic Structure
 
 				
 
-	Sperapolis:
-		Buildings:
-			Power Core
 
-			Refinery
-
-			Barracks
-
-			Factory
-
-			Frontline Command
-
-			Battle Lab
-
-		Defense:
-			Field Wall
-				Prerequisite: Power Core
-
-			Gattling Turret
-
-			AA Turret
-
-			Railgun Turret
-
-		Units:
-
-			T1:
-				Harvester
-
-				Knight Tank
-					Main Armament: 75mm HV-5
-
-				Hound APC
-					Main Armament: 20mm Vulcan
-
-			T2:
-				Serpent Hovercraft
-					Main Armament: 20mm Vulcan/AT Rocket
-
-				Vindicator
-
-
-
-			T3:
-				Centauri Tank
-					Main Armament: 120mm Railgun x2/20mm Vulcan x2
-
-
-		Aircrafts:
 
 	REGINA:
 		Buildings:
@@ -104,7 +111,7 @@ BE 3 Basic Structure
 
 			Mobile Bunker
 
-			B.A.D.S.
+			Beam AA Gun
 
 			Beam Cannon
 
