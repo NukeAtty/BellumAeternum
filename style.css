@@ -1059,17 +1059,17 @@ footer {
 /*---------------------------------*/
 
 .download h1{
-	font-size: 48px;
+	font-size: 36px;
 	text-align: center;
 	font-family: HarmonyOS Sans, sans-serif;
-	margin: 48px auto 0 auto;
+	margin: 1em auto 0 auto;
 }
 
 .download h2{
-	font-size: 60px;
+	font-size: 48px;
 	font-family: HarmonyOS Sans, sans-serif;
 	text-align: center;
-	margin: 0 auto 48px auto;
+	margin: auto;
 }
 
 .download h3{
@@ -1106,7 +1106,7 @@ footer {
 	margin: 10vh 20vw;
 	padding: 1vw;
 	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
-	background:linear-gradient(0deg, #484848 0%, #a1a1a1 15%, #999 65%, #787878 90%, #393939 100%);
+	background:linear-gradient(0deg, #999 0%, #a1a1a1 15%, #999 65%, #c8c8c8 90%, #999 100%);
 	border-radius: 12px;
 	border: 4px outset #ccc;
 	box-shadow: 0 0 24px #000;
@@ -1124,6 +1124,34 @@ footer {
 	display: block;
 	margin: auto;
 	text-align: center;
+}
+
+.download-section-img {
+	display: flex;
+	flex-flow: column;
+}
+
+.download-section-img img {
+	margin: 1em auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.download-section > #download-button {
+	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 80%, #939393 100%);
+	border-radius: 20px;
+	border: 2px ridge #CCC;
+	margin: 1em auto;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #C00;
+	padding: 0.5em;
+}
+
+#download-button:hover {
+	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 25%, #c8c8c8 75%, #adadad 90%, #939393 100%);
+	color: #F00;
 }
 
 .progress {
@@ -1258,7 +1286,7 @@ footer {
 
 .engine-container-right h3{
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 48px;
+	font-size: 32px;
 	font-weight: black;
 	line-height: 1em;
 	color: #333;
