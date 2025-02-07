@@ -683,6 +683,32 @@ Balancing and Bug fixing.
 2024/10/23:
 DTA Client Mission Speed Adjustable.
 
+2025/1/7:
+Need test CAOUTP turret axis.
+
+2025/1/17:
+Change FLAKT/GGI projectile movement method.
+Change FLAKT/GGI warhead to tanks.
+
+2025/1/21:
+Need Improve:
+1. Add Ale Keg/WoodLogs.
+2. Add More Content waiting for Landing Craft.
+3. Cliff Terrain.
+4. Sov00 Add Content.
+5. DTA Client Private Message.
+
+
+Tesla Assaulter Plan:
+1. Static Barrier
+	
+
+Mission Procedure:
+Allied 01 need reorganize.
+Allied 05 need optimize AI attack.
+Soviet 00 working on buildings and terrain.
+Allied 02 need remake.
+
 V0.2 Change
 
 Rebalance:
@@ -841,6 +867,42 @@ BUG修复：
 Add New Map
 
 
-V0.3剩余内容：
-1. 直升机旋翼碎片去掉所属色
-2.
+V0.4改动内容
+平衡性：
+1.多功能步兵车弹头AOE范围降低。
+2.入侵者攻击机、短剑战机和米格战机的装填时间增加。
+3.将火箭筒步兵的武器弹道调整为平射，对坦克增加伤害。
+4.将重装兵的副武器弹道调整为平射，对坦克增加伤害。
+
+BUG修复：
+1.修复了间谍伪装后速度过快的问题。
+2.修复了建筑内开火动画不显示的问题。
+3.修复了苏联机场和盟军机场的维修速度过慢的问题。
+
+改进：
+1.重装兵进入载具后将显示为蓝色。
+2.更换了苏联的载入图。
+3.天启坦克图标优化。
+4.灰熊坦克、灰熊坦克极地型模型优化。
+
+新内容：
+1.增加任务单位：潘兴坦克、谢尔曼坦克、吉普车、军用卡车、军用油罐车
+2.增加任务中立建筑。
+
+
+
+
+
+
+
+
+;-------- MEMO --------;
+1. 苏联第一关最后的文字要写入任务，任务需要增加细节触发，如工程师。
+2. 盟军第一关需要优化地形和美化地图，时间也要改。
+3. 盟军第一关载入图需要完成。
+4. 遭遇战地图需要优化载入时的缩略图。
+5. 遭遇战最好新增一张地图。
+6. 自动更新功能需要完善。
+7. 英文CSF需要补全。
+8. DTA界面BGM需要替换。
+9. 
