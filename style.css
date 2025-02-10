@@ -484,16 +484,26 @@ footer {
 	text-align: center;
 }
 
-.overview a {
+/*
+.main-download a {
 	text-decoration: none;
-	color: #ff0;
-	text-decoration-line: underline;
+	color: #cc0000;
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	background: linear-gradient(180deg, #ffffff 0, #c9c9c9 20%, #a0a0a0 40%, #999999 60%, #666666 80%, #333333 100%);
+	padding: 0.5em 2em;
+	border: 1px inset #ccc;
+	border-radius: 20px;
 }
 
-.overview a:hover {
-	color: #f00;
-	text-decoration-line: none;
+.main-download a:hover {
+	color: #cc0000;
+	text-shadow: 0 0 2px #f00;
+	background: linear-gradient(180deg, #cccccc 0, #a9a9a9 20%, #969696 40%, #686868 60%, #383838 80%, #262626 100%);
 }
+*/
 
 .link-button{
 	display: flex;
@@ -3628,6 +3638,124 @@ footer {
 		border: 1px solid #fff;
 	  border-collapse: collapse;
 	  padding: 0.5em;
+	}
+
+	/*---------------------------*/
+	/*----------Contact----------*/
+	/*---------------------------*/
+
+	.contact h1{
+		margin: 1em auto;
+	}
+
+	.contact-zigzag {
+		display: flex;
+		flex-flow: column;
+		width: 90%;
+		background: linear-gradient(-45deg, #333333 0, #999999 50%, #333333 100%);
+		border: 5px outset #666;
+		border-radius: 20px;
+		margin: 1em auto;
+		padding: 1em;
+	}
+	
+	.contact-zagzig {
+		display: flex;
+		flex-flow: column;
+		width: 90%;
+		background: linear-gradient(-45deg, #333333 0, #999999 50%, #333333 100%);
+		border: 5px outset #666;
+		border-radius: 20px;
+		margin: 1em auto;
+		padding: 1em;
+	}
+	
+	.zig {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		margin: auto;
+		justify-content: center;
+	}
+	
+	.zag {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		margin: auto;
+		justify-content: center;
+	}
+	
+	.zig img {
+		border-radius: 10px;
+		margin: auto;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.zig h2 {
+		font-size: 32px;
+		padding: 0em 1em;
+		text-shadow: 0 1px 1px #000000;
+	}
+	
+	.zag h2 {
+		font-size: 32px;
+		padding: 0em 1em;
+		text-shadow: 0 1px 1px #000000;
+	}
+	
+	.zag > p {
+		font-size: 16px;
+		line-height: 1.25em;
+		text-align: left;
+		padding: 1em 2em;
+		text-shadow: 0 1px 1px #000000;
+	}
+	
+	.zig > p {
+		font-size: 16px;
+		line-height: 1.25em;
+		text-align: left;
+		padding: 1em 1em;
+		text-shadow: 0 1px 1px #000000;
+	}
+	
+	.zag a {
+		text-decoration: none;
+		text-align: center;
+		font-size: 24px;
+		font-family: HarmonyOS Sans;
+		font-weight: bold;
+		color: #ff0;
+		box-shadow: 0 0 5px #000000 inset;
+		padding: 0.5em 1em;
+		margin: 1em auto;
+		background-color: #990000;
+	}
+	
+	.zag a:hover {
+		background-color: #FF0000;
+	}
+	
+	.zag > .social-media {
+		background-color: #333333;
+		border-radius: 10px;
+		border: 2px ridge #CCCCCC;
+		margin: auto;
+		display: flex;
+		flex-flow: row wrap;
+	}
+	
+	.zag > .social-media a {
+		margin: auto;
+		background: none;
+		box-shadow: none;
+		padding: 1em;
+	}
+	
+	.zag > .social-media a:hover {
+		filter: brightness(150%);
 	}
 
 
