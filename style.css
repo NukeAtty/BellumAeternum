@@ -1829,7 +1829,7 @@ footer {
 	font-size: 24px;
 	font-family: Furore, sans-serif;
 	font-weight: 800;
-	color: darkred;
+	color: darkred !important;
 	box-shadow: 0 0 5px white inset;
 	padding: 0.5em;
 	background:
@@ -1841,12 +1841,15 @@ footer {
 }
 
 .cta-btn a:hover {
-	color: yellow;
+	color: yellow !important;
 	text-shadow: 0 0 5px gold;
 	box-shadow: 0 0 2px black inset;
 	animation: btn-anim 2s infinite;
 }
 
+.ctn-btn a:visited {
+	color: darkred !important;
+}
 
 
 .collapsible {
