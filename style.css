@@ -484,8 +484,16 @@ footer {
 	text-align: center;
 }
 
-.overview a:visited {
+#lang-portal{
+	color: #f90;
+}
+
+#lang-portal:hover {
 	color: #fc0;
+}
+
+#lang-portal:visited {
+	color: #f90;
 }
 
 /*
@@ -1845,10 +1853,6 @@ footer {
 	text-shadow: 0 0 5px gold;
 	box-shadow: 0 0 2px black inset;
 	animation: btn-anim 2s infinite;
-}
-
-.ctn-btn a:visited {
-	color: darkred !important;
 }
 
 
