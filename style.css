@@ -484,6 +484,10 @@ footer {
 	text-align: center;
 }
 
+.overview a:visited {
+	color: #fc0;
+}
+
 /*
 .main-download a {
 	text-decoration: none;
@@ -521,7 +525,7 @@ footer {
 .link-button img:hover {
 	box-shadow: 0 0 20px #f33;
 	animation-name: button-lift;
-  animation-duration: 0.2s;
+  	animation-duration: 0.2s;
 	animation-iteration-count:1;
 	animation-fill-mode: both;
 }
@@ -3332,17 +3336,20 @@ footer {
 	/*----------------------------------*/
 
 	.download h1{
-		font-size: 36px;
+		font-size: 24px;
+		width: 60%;
+		margin: 2em auto 0 auto;
 	}
 
 	.download h2{
 		font-family: HarmonyOS Sans, sans-serif;
-		font-size: 24px;
+		font-size: 36px;
 		margin: 0.5em auto;
 	}
 
 	.download-section {
 		margin: auto;
+		margin-bottom: 1em;
 		padding: 1vw;
 		/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
 		background-color: #66666650;
