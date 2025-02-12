@@ -14,45 +14,6 @@
 	font-weight: normal;
 }
 
-/*HarmonyOS Sans Settings*/
-/*
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf");
-	font-weight: 100;
-}
-
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf");
-	font-weight: 300;
-}
-
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf");
-	font-weight: normal;
-}
-
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf");
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf");
-	font-weight: bold;
-}
-
-@font-face {
-	font-family: "HarmonyOS Sans";
-	src: url("src/font/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf");
-	font-weight: black;
-}
-*/
-
 @font-face {
 	font-family: "HarmonyOS Sans";
 	src: url("src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf");
@@ -118,6 +79,10 @@ p {
 }
 
 a {
+	text-decoration: none;
+}
+
+a:hover {
 	text-decoration: none;
 }
 
@@ -496,27 +461,6 @@ footer {
 	color: #f90;
 }
 
-/*
-.main-download a {
-	text-decoration: none;
-	color: #cc0000;
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	background: linear-gradient(180deg, #ffffff 0, #c9c9c9 20%, #a0a0a0 40%, #999999 60%, #666666 80%, #333333 100%);
-	padding: 0.5em 2em;
-	border: 1px inset #ccc;
-	border-radius: 20px;
-}
-
-.main-download a:hover {
-	color: #cc0000;
-	text-shadow: 0 0 2px #f00;
-	background: linear-gradient(180deg, #cccccc 0, #a9a9a9 20%, #969696 40%, #686868 60%, #383838 80%, #262626 100%);
-}
-*/
-
 .link-button{
 	display: flex;
 	justify-content: center;
@@ -541,7 +485,7 @@ footer {
 /*----------News Module----------*/
 .news {
 	display: flex;
-	flex-row: row;
+	flex-flow: row;
 	padding: 1vw;
 	width: 75%;
 	margin: auto;
@@ -1159,7 +1103,7 @@ footer {
 	height: auto;
 }
 
-.download-section > #download-button {
+#download-page-button {
 	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 80%, #939393 100%);
 	border-radius: 20px;
 	border: 2px ridge #CCC;
@@ -1171,7 +1115,7 @@ footer {
 	padding: 0.5em;
 }
 
-#download-button:hover {
+#download-page-button:hover {
 	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 25%, #c8c8c8 75%, #adadad 90%, #939393 100%);
 	color: #F00;
 }
