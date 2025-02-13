@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../../style.css">
+	<meta name="description" content="红色警戒2：尤里的复仇原版AI案例分析，提供最全面的原版AI参考。">
+	<link rel="icon" type="image/svg" href="../../src/favicon.svg">
+	<meta name="robots" content="noindex, nofollow">
+	<title>万世之战β v1更新日志 | 万世之战：为红警2带来前所未有的体验</title>
+	<style>
+		span{
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+		<div class="responsive-navigation">
+			<a href="https://ra2be.com/zh"><img src="../../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="../archives.html">档案库</a>
+				<a href="../blog.html">博客</a>
+				<a href="../download.html">下载</a>
+			</div>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="blog">
+			<h1></h1>
+			<div class="blog-info">
+				<div class="update-time">
+					<p>最后更新时间：<time datetime="2025-02-13 18:00">2025/02/13</time></p>
+				</div>
+			</div>			
+			<div class="blog-main">
+				<div class="blog-left">
+					<div class="blog-info"></div>
+					<div class="chap-nav">
+						<p>快速导航</p>
+						<div class="chaps">
+						</div>
+					</div>
+				</div>
+				<div class="blog-content">
+					<h2>新增内容</h2>
+					<h3>全新的客户端</h3>
+					<h3>战役任务</h3>
+					<h2>改进的内容</h2>
+					<h2>平衡性调整</h2>
+					<h3>多功能步兵车</h3>
+					<p>多功能步兵车的防空导弹现在爆炸范围缩小。</p>
+					<h3>战机装填时间</h3>
+					<h3>磁暴突击炮</h3>
+					<p>磁暴突击炮引入了全新的机制。现在，磁暴突击炮的单发伤害降低，但获得了全新的充能效果。磁暴突击炮在出厂后，将会开始为电容充能，一旦电容充满，就可以将所有电力集中发射，此时磁暴突击炮的单发伤害会增加到三倍。因此，磁暴突击炮可以更好地扮演突击炮的角色，在防御战中给进攻的对手造成致命一击，亦或是在攻坚战中一招制敌，摧毁敌人的防御工事。</p>
+					<p>在游戏中，磁暴突击炮充能完毕后会有电容充满的提示音，同时车身的会附带一个电力的图标，这个图标对于敌人是不可见的。</p>
+					<img src="../../src/tesla-assaulter-mechanics.webp" alt="Tesla Assaulter Mechanics" width="600px" height="360px">
+					<h2>BUG修复</h2>
+					<h3></h3>
+				</div>
+			</div>
+		</div>
+		<script>
+			// Function to generate the table of contents
+		    function generateTableOfContents() {
+		        const tocContainer = document.querySelector('.chaps'); // Select the container for TOC
+		        const tocList = document.createElement('ul'); // Create a list for TOC
+		        tocList.classList.add('toc');
+
+		        // Find all h2 and h3 elements
+		        const headings = document.querySelectorAll('h2, h3');
+
+		        headings.forEach((heading, index) => {
+		            const listItem = document.createElement('li');
+		            const link = document.createElement('a');
+
+		            // Set the anchor link and text
+		            link.href = `#${heading.id || `heading${index}`}`;
+		            link.textContent = heading.textContent;
+
+		            // Set an id for the heading if it doesn't have one
+		            if (!heading.id) {
+		                heading.id = `heading${index}`;
+		            }
+
+		            // Append the link to the list item
+		            listItem.appendChild(link);
+
+		            // If it's an h3, indent it (you can modify this as needed)
+		            if (heading.tagName.toLowerCase() === 'h3') {
+		                listItem.style.marginLeft = '20px';
+		            }
+
+		            // Append the list item to the TOC list
+		            tocList.appendChild(listItem);
+		        });
+
+		        // Insert the TOC into the container
+		        tocContainer.appendChild(tocList);
+		    }
+
+		    // Call the function on page load
+		    window.onload = generateTableOfContents;
+		</script>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="../allied.html">盟军</a></li>
+					<li><a href="../soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>文章</p>
+				<ul>
+					<li><a href="../archives.html">资料库</a></li>
+					<li><a href="../blog.html">博客</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="../contact.html">联系作者</a></li>
+					<li><a href="../terms-of-use.html">使用条例</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px"></a>
+		</div>
+	</footer>
+</body>
