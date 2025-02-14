@@ -481,6 +481,40 @@ footer {
 	animation-iteration-count:1;
 	animation-fill-mode: both;
 }
+/*----------Features Module----------*/
+.features {
+	margin: 1em auto;
+	width: 75%;
+}
+
+.features h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 32px;
+	text-align: center;
+}
+
+.features-list {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	margin: 1em auto;
+}
+
+.features-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	width: 25%;
+	padding: 0.5em;
+	margin: 0.5em;
+	background-color: #FFFFFF50;
+}
+
+.features-container h3{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 24px;
+	text-align: left;
+}
 
 /*----------News Module----------*/
 .news {
