@@ -483,7 +483,7 @@ footer {
 }
 /*----------Features Module----------*/
 .features {
-	margin: 1em auto;
+	margin: 5vw auto;
 	width: 75%;
 }
 
@@ -493,26 +493,45 @@ footer {
 	text-align: center;
 }
 
-.features-list {
+.features-zigzag {
 	display: flex;
 	flex-flow: row;
-	justify-content: center;
+	width: 100%;
 	margin: 1em auto;
 }
 
-.features-container {
+.features-zagzig {
 	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	width: 25%;
-	padding: 0.5em;
-	margin: 0.5em;
-	background-color: #FFFFFF50;
+	flex-flow: row-reverse;
+	width: 100%;
+	margin: 1em auto;
 }
 
-.features-container h3{
+.features-zig {
+	display: flex;
+	flex-flow: row;
+	width: 50%;
+	justify-content: left;
+}
+
+.features-zagzig > .features-zig {
+	justify-content: right;
+}
+
+.features-zig img {
+	max-width: 100%;
+}
+
+.features-zag {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+	margin: auto;
+}
+
+.features-zag h3 {
 	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 24px;
+	font-size: 32px;
 	text-align: left;
 }
 
@@ -3026,6 +3045,41 @@ footer {
 		width: 100%;
 		height: auto;
 	}
+
+	/*----------Features Zigzag----------*/
+	.features {
+		width: 90%;
+	}
+
+	.features-zigzag {
+		flex-flow: column;
+	}
+
+	.features-zagzig {
+		flex-flow: column;
+	}
+
+	.features-zig {
+		width: 100%;
+	}
+
+	.features-zigzag > .features-zig {
+		justify-content: center;
+	}
+
+	.features-zagzig > .features-zig {
+		justify-content: center;
+	}
+
+	.features-zag {
+		width: 100%;
+	}
+
+	.features-zag h3 {
+		font-size: 24px;
+		text-align: center;
+	}
+
 	/*----------Archives----------*/
 	.archives {
 		margin: 15vw auto;
