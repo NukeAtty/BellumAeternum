@@ -73,6 +73,12 @@
 					</ol>
 					<h3>战役任务</h3>
 					<p>在公测版中，战役任务会放出盟军和苏联的序章。得益于新的客户端，现在任务可以自定义游戏速度（推荐5速）。</p>
+					<h3>新的模式</h3>
+					<p>公测版中，因为对战功能的加入，因此增加了更适合快速对战的娱乐模式。娱乐模式可以让玩家可以快速和其他玩家对战，拒绝大地图坐牢。</p>
+					<p>娱乐模式的第一张地图为8人地图————大乱斗：甲。</p>
+					<h3>官方地图重置</h3>
+					<p>官方的地图将得到重置，这种重置不仅仅是地形上的替换，还包括AI的适配。</p>
+					<p>第一张被重置的地图为[2]岛屿之战，这张地图是非常经典的官方图，地图中的建筑被替换为了欧洲风格的建筑，同时提升了AI的适配度。</p>
 					<h2 id="enhancements">改进的内容</h2>
 					<h3>机场维修速度</h3>
 					<p>机场可以自动维修战机，但其速度和其他修复功能绑定，因此在前一版本中，战机的耐久度恢复速度相当慢。现在，机场可以一个相对正常的速度恢复战机耐久度，并且和维修厂一样，在机场维修战机会扣除一定的资金。</p>
@@ -152,4 +158,20 @@
 			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px"></a>
 		</div>
 	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const blogContent = document.querySelector('.blog-content');
+			const h2Tags = blogContent.querySelectorAll('h2');
+			const chapsDiv = document.querySelector('.chaps');
+			
+			h2Tags.forEach(h2 => {
+				const id = h2.id;
+				const text = h2.textContent;
+				const anchor = document.createElement('a');
+				anchor.href = `#${id}`;
+				anchor.textContent = text;
+				chapsDiv.appendChild(anchor);
+			});
+		});
+	</script>
 </body>
