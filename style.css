@@ -1170,8 +1170,10 @@ footer {
 }
 
 #download-page-button {
+	display: flex;
+	flex-flow: row;
 	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 80%, #939393 100%);
-	border-radius: 20px;
+	border-radius: 10px;
 	border: 2px ridge #CCC;
 	margin: 1em auto;
 	font-family: HarmonyOS Sans, sans-serif;
@@ -1184,6 +1186,10 @@ footer {
 #download-page-button:hover {
 	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 25%, #c8c8c8 75%, #adadad 90%, #939393 100%);
 	color: #F00;
+}
+
+#download-page-button img {
+	margin: auto 1em auto 1em;
 }
 
 .progress {
@@ -3448,7 +3454,7 @@ footer {
 
 	.download h1{
 		font-size: 24px;
-		width: 60%;
+		width: 80%;
 		margin: 2em auto 0 auto;
 	}
 
@@ -3468,6 +3474,22 @@ footer {
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
 		width: 90%;
+	}
+
+	.download-section h2 {
+		font-size: 24px;
+	}
+
+	#download-page-button {
+		display: flex;
+		flex-flow: row;
+		font-size: 16px;
+		font-weight: 500;
+		margin: auto;
+	}
+
+	#download-page-button img {
+		margin: auto;
 	}
 
 	.progress {
@@ -3493,6 +3515,10 @@ footer {
 
 	.engine {
 		width: 100%;
+	}
+
+	.engine h2 {
+		font-size: 24px;
 	}
 
 	.engine-container {
