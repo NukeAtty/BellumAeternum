@@ -1192,6 +1192,17 @@ footer {
 	margin: auto 1em auto 1em;
 }
 
+.download-list-button {
+	display: flex;
+	flex-flow: row;
+	margin: auto;
+	width: 100%;
+}
+
+.download-list-button img {
+	max-width: 200px;
+}
+
 .progress {
 	margin: auto 20vw;
 	padding: 1vw;
@@ -1268,7 +1279,7 @@ footer {
 }
 
 .specific-progress h4 {
-	font-family: HarmonyOS Sans SC, monospace;
+	font-family: HarmonyOS Sans, monospace;
 	font-size: 18px;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
@@ -1285,6 +1296,12 @@ footer {
 	line-height: 1.5em;
 	margin:auto;
 	user-select: text;
+}
+
+.specific-progress ::selection {
+	color: #ffffff;
+	background: #009900;
+	text-shadow: 0 0 2px #00ff00;
 }
 
 .engine {
@@ -1385,7 +1402,7 @@ footer {
 }
 
 .guide-container a{
-	font-family: HarmonyOS Sans SC, sans-serif;
+	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 18px;
 	color: #ffffff;
 	text-decoration: underline;
@@ -1393,6 +1410,54 @@ footer {
 
 .guide-container a:hover {
 	color: #f00;
+}
+
+.credits {
+	display: flex;
+	flex-flow: column;
+	width: 60%;
+	margin: auto;
+}
+
+.credits h2 {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 48px;
+}
+
+.credits p {
+	font-size: 18px;
+	color: #FFF;
+}
+
+.credits-table {
+	margin:5vh 0;
+	overflow-x: auto;
+}
+
+.credits-table table, th, tr, td {
+	border: 1px solid #fff;
+	border-collapse: collapse;
+	padding: 0.5em;
+	border-width: 1px;
+}
+
+.credits-table tr {
+    margin: 0.5em;
+}
+
+.credits-table th {
+    background-color:#993333;
+    padding: 1em;
+    text-align: center;
+	width: 50%;
+}
+
+.credits-table td {
+    background-color:#08080850;
+    padding: 1em;
+    text-align: center;
+    line-height: 1.5em;
+	width: 50%;
 }
 
 /*----------------------------*/
