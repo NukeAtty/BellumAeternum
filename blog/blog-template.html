@@ -70,7 +70,7 @@
 			<h1>Title</h1>
 			<div class="blog-info">
 				<div class="update-time">
-					<p>Last Update: <time datetime="2024-07-23 18:00">07/23/2024</time></p>
+					<p>Last Update: <time datetime="2025-02-22 18:00">02/22/2025</time></p>
 				</div>
 			</div>			
 			<div class="blog-main">
@@ -79,7 +79,6 @@
 					<div class="chap-nav">
 						<p>Navigation</p>
 						<div class="chaps">
-							<a href="#id">Chapter1</a>
 						</div>
 					</div>
 				</div>
@@ -94,14 +93,14 @@
 		<div class="footer-container">
 			<div class="footer-left">
 				<div class="footer-logo">
-					<img src="../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<img src="src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
 					<p>Bellum<br>Æternum</p>
 				</div>
 				<div class="lang-selector">
 					<p>LANGUAGE</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com/blog.html">EN</a>
-						<a href="https://ra2be.com/zh/blog.html">中</a>
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
 					</div>
 				</div>
 			</div>
@@ -109,21 +108,22 @@
 				<div class="footer-column">
 				<p>Factions</p>
 				<ul>
-					<li><a href="../allied.html">Allied</a></li>
-					<li><a href="../soviet.html">Soviet</a></li>
+					<li><a href="allied.html">Allied</a></li>
+					<li><a href="soviet.html">Soviet</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>Blog</p>
+				<p>Resources</p>
 				<ul>
-					<li><a href="../archives.html">Archives</a></li>
-					<li><a href="../blog.html">Blog</a></li>
+					<li><a href="archives.html">Archives</a></li>
+					<li><a href="blog.html">Blog</a></li>
 				</ul>
 				</div>
 				<div class="footer-column">
-				<p>About</p>
+				<p>Misc</p>
 				<ul>
-					<li><a href="#Contact">Contact</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="terms-of-use.html">Terms of Use</a></li>
 				</ul>
 				</div>
 			</div>
@@ -132,4 +132,20 @@
 			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
 		</div>
 	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const blogContent = document.querySelector('.blog-content');
+			const h2Tags = blogContent.querySelectorAll('h2');
+			const chapsDiv = document.querySelector('.chaps');
+			
+			h2Tags.forEach(h2 => {
+				const id = h2.id;
+				const text = h2.textContent;
+				const anchor = document.createElement('a');
+				anchor.href = `#${id}`;
+				anchor.textContent = text;
+				chapsDiv.appendChild(anchor);
+			});
+		});
+	</script>
 </body>
