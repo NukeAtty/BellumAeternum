@@ -1112,11 +1112,6 @@ footer {
 	color: #000;
 }
 
-.download p{
-	color: #000;
-}
-
-
 .mod-download {
 	margin: 2em;
 }
@@ -1135,13 +1130,14 @@ footer {
 }
 
 .download-section {
-	margin: 10vh 20vw;
+	margin: 5vh auto;
 	padding: 1vw;
 	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
 	background:linear-gradient(0deg, #999 0%, #a1a1a1 15%, #999 65%, #c8c8c8 90%, #999 100%);
 	border-radius: 12px;
 	border: 4px outset #ccc;
 	box-shadow: 0 0 24px #000;
+	width: 60%;
 }
 
 .download-section h2 {
@@ -1152,10 +1148,8 @@ footer {
 	margin: 0.5em auto;
 }
 
-.download-section a{
-	display: block;
+.download-section a {
 	margin: auto;
-	text-align: center;
 }
 
 .download-section-img {
@@ -1169,47 +1163,66 @@ footer {
 	height: auto;
 }
 
-#download-page-button {
+.download-list {
 	display: flex;
 	flex-flow: row;
-	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 80%, #939393 100%);
-	border-radius: 10px;
-	border: 2px ridge #CCC;
-	margin: 1em auto;
-	font-family: HarmonyOS Sans, sans-serif;
-	font-size: 24px;
-	font-weight: bold;
-	color: #C00;
-	padding: 0.5em;
-}
-
-#download-page-button:hover {
-	background:linear-gradient(180deg, #c8c8c8 0%, #ffffff 25%, #c8c8c8 75%, #adadad 90%, #939393 100%);
-	color: #F00;
-}
-
-#download-page-button img {
-	margin: auto 1em auto 1em;
+	margin: auto;
+	justify-content: center;
+	border: 1px outset #ccc;
 }
 
 .download-list-button {
 	display: flex;
 	flex-flow: row;
+	margin: 0 2vw;
+	width: 50%;
+}
+
+.download-list-button-en {
+	margin: 2vh auto;
+}
+
+.download-list-button h3 {
+	font-size: 20px;
 	margin: auto;
-	width: 100%;
+}
+
+.download-list-button a {
+	margin: 2vh auto;
 }
 
 .download-list-button img {
 	max-width: 200px;
+	width: 160px;
+	height: 64px;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.download-list-button img:hover {
+	filter: brightness(1.5);
+}
+
+.other-download {
+	display: flex;
+	flex-flow: row;
+	margin: 0 2vw;
+	width: 50%;
+}
+
+.other-download h3 {
+	text-align: center;
+	margin: auto;
 }
 
 .progress {
-	margin: auto 20vw;
+	margin: auto;
 	padding: 1vw;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 12px;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
+	width: 60%;
 }
 
 .progress img{
@@ -1226,6 +1239,7 @@ footer {
 .dev-gauge label{
 	color: #000000;
 	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: bold;
 	font-size: 16px;
 	line-height: 1em;
 }
@@ -1293,6 +1307,18 @@ footer {
 	font-size: 14px;
 	color: #00ff00;
 	text-shadow: 0 0 3px #00cc00;
+	line-height: 2em;
+	margin:auto;
+	user-select: text;
+}
+
+.specific-progress a {
+	display: inline;
+	font-family: Neon, monospace;
+	font-size: 14px;
+	color: #00ff00;
+	text-shadow: 0 0 3px #00cc00;
+	text-decoration: underline;
 	line-height: 1.5em;
 	margin:auto;
 	user-select: text;
@@ -1305,14 +1331,22 @@ footer {
 }
 
 .engine {
-	width: 80%;
-	margin: 10vw auto;
+	width: 60%;
+	margin: 5vh auto;
+}
+
+.engine h2 {
+	font-size: 48px;
+	font-family: HarmonyOS Sans, sans-serif;
+	text-align: center;
+	color: #FFFFFF;
+	margin: 0.5em auto;
 }
 
 .engine-container {
 	display: flex;
 	flex-flow: row;
-	width: 75%;
+	width: 100%;
 	margin: 1em auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 	border-radius: 36px;
@@ -1422,6 +1456,8 @@ footer {
 .credits h2 {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-size: 48px;
+	text-align: center;
+	margin: 0.5em auto;
 }
 
 .credits p {
@@ -3557,6 +3593,54 @@ footer {
 		margin: auto;
 	}
 
+	.download-list {
+	display: flex;
+	flex-flow: column;
+	margin: auto;
+	justify-content: center;
+	border: 1px outset #ccc;
+}
+
+.download-list-button {
+	display: flex;
+	flex-flow: column;
+	margin: 0 2vw;
+	width: 100%;
+}
+
+.download-list-button h3 {
+	font-size: 20px;
+	margin: auto;
+}
+
+.download-list-button a {
+	margin: 2vh auto;
+}
+
+.download-list-button img {
+	max-width: 200px;
+	width: 160px;
+	height: 64px;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.download-list-button img:hover {
+	filter: brightness(1.5);
+}
+
+.other-download {
+	display: flex;
+	flex-flow: column;
+	margin: 0 2vw;
+	width: 100%;
+}
+
+.other-download h3 {
+	text-align: center;
+	margin: auto;
+}
+
 	.progress {
 		width: 90%;
 		margin: auto;
@@ -3634,6 +3718,14 @@ footer {
 		font-size: 16px;
 		line-height: 1.25em;
 		margin: 0.5em;
+	}
+
+	.credits {
+		width: 90%;
+	}
+
+	.credits h2 {
+		font-size: 24px;
 	}
 
 	/*----------------------------------*/
