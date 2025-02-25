@@ -148,4 +148,20 @@
 			<a href="https://space.bilibili.com/3546721533561614"><img src="../../src/bilibili.svg" width="auto" height="16px"></a>
 		</div>
 	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const blogContent = document.querySelector('.blog-content');
+			const h2Tags = blogContent.querySelectorAll('h2');
+			const chapsDiv = document.querySelector('.chaps');
+			
+			h2Tags.forEach(h2 => {
+				const id = h2.id;
+				const text = h2.textContent;
+				const anchor = document.createElement('a');
+				anchor.href = `#${id}`;
+				anchor.textContent = text;
+				chapsDiv.appendChild(anchor);
+			});
+		});
+	</script>
 </body>
