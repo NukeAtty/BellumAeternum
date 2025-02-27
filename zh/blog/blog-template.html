@@ -61,48 +61,6 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			// Function to generate the table of contents
-		    function generateTableOfContents() {
-		        const tocContainer = document.querySelector('.chaps'); // Select the container for TOC
-		        const tocList = document.createElement('ul'); // Create a list for TOC
-		        tocList.classList.add('toc');
-
-		        // Find all h2 and h3 elements
-		        const headings = document.querySelectorAll('h2, h3');
-
-		        headings.forEach((heading, index) => {
-		            const listItem = document.createElement('li');
-		            const link = document.createElement('a');
-
-		            // Set the anchor link and text
-		            link.href = `#${heading.id || `heading${index}`}`;
-		            link.textContent = heading.textContent;
-
-		            // Set an id for the heading if it doesn't have one
-		            if (!heading.id) {
-		                heading.id = `heading${index}`;
-		            }
-
-		            // Append the link to the list item
-		            listItem.appendChild(link);
-
-		            // If it's an h3, indent it (you can modify this as needed)
-		            if (heading.tagName.toLowerCase() === 'h3') {
-		                listItem.style.marginLeft = '20px';
-		            }
-
-		            // Append the list item to the TOC list
-		            tocList.appendChild(listItem);
-		        });
-
-		        // Insert the TOC into the container
-		        tocContainer.appendChild(tocList);
-		    }
-
-		    // Call the function on page load
-		    window.onload = generateTableOfContents;
-		</script>
 	</main>
 	<!--Footer-->
 	<footer>
