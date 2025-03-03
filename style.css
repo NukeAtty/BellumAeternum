@@ -1980,18 +1980,18 @@ footer {
 	font-family: HarmonyOS Sans, sans-serif;
 	font-weight: bold;
 	font-size: 18px;
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 0.5em;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
+	background-color: #555555;
+	color: white;
+	cursor: pointer;
+	padding: 0.5em;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
 }
 
 .active, .collapsible:hover {
-  background-color: #555;
+  background-color: #696969;
 }
 
 .collapsible:after {
@@ -2023,6 +2023,77 @@ footer {
 .col-content ul,ol {
 	margin-left: 0.5em;
 }
+
+/*-------------------------*/
+/*---------- FAQ ----------*/
+/*-------------------------*/
+.faq-main {
+	display: flex;
+	flex-flow: row;
+	padding: 0;
+	margin: auto;
+}
+
+.faq-content {
+	display: block;
+	margin: 1vw auto;
+	padding: 2vw;
+	width: 70%;
+	border-radius: 25px;
+	background-color: #dddddd10;
+	box-shadow: 0 0 12px #000;
+}
+
+.faq-content h2{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: black;
+	font-size: 36px;
+	text-align: left;
+	color:#fff;
+	margin-bottom: 0.25em;
+	background-color: #ffffff25;
+	border-left: 4px solid #c00;
+	padding: 0 0.5em;
+}
+.faq-content h3{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: left;
+	color:#fff;
+	text-shadow: 0 1px 1px #333;
+	line-height: 1.25em;
+	margin-bottom: 0.25em;
+	margin-top: 1em;
+}
+
+.faq-content p{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #fff;
+	line-height: 1.5em;
+	margin-top: 0.5em;
+}
+
+.faq-content b{
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 16px;
+	font-weight: black;
+}
+
+.faq-content a {
+	font-family: HarmonyOS Sans, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.faq-content a:hover {
+	color: #f00;
+}
+
 
 /*----------------------------------*/
 /*---------- Contact Page ----------*/
@@ -3943,6 +4014,46 @@ footer {
 	  padding: 0.5em;
 	}
 
+	/*------------------------*/
+	/*---------- FAQ ---------*/
+	/*------------------------*/
+	.faq-main {
+		display: flex;
+		flex-flow: column;
+		padding: 0;
+		margin: auto;
+		width: 100%;
+	}
+
+	.faq-content {
+		display: block;
+		margin: 1em auto;
+		padding: 1em;
+		width: 90%;
+		border-radius: 25px;
+		background-color: #dddddd10;
+		box-shadow: 0 0 12px #000;
+	}
+
+	.faq-content h2{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: 700;
+		font-size: 28px;
+		text-align: left;
+		color:#fff;
+	}
+	.faq-content h3{
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: normal;
+		font-size: 14px;
+		text-align: left;
+		color:#fff;
+	}
+
+	.faq-content a {
+		color: #fff;
+		text-decoration: underline;
+	}
 	/*---------------------------*/
 	/*----------Contact----------*/
 	/*---------------------------*/
