@@ -4014,6 +4014,37 @@ footer {
 	  padding: 0.5em;
 	}
 
+	.collapsible {
+		display: block;
+		font-family: HarmonyOS Sans, sans-serif;
+		font-weight: bold;
+		font-size: 18px;
+		background-color: #555555;
+		color: white;
+		cursor: pointer;
+		padding: 0.5em;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+	}
+	
+	.active, .collapsible:hover {
+	  background-color: #696969;
+	}
+	
+	.collapsible:after {
+		content: none;
+	  color: white;
+	  font-weight: bold;
+	  float: right;
+	  padding-left: 1em;
+	}
+	
+	.active:after {
+		content: none;
+	}
+
 	/*------------------------*/
 	/*---------- FAQ ---------*/
 	/*------------------------*/
