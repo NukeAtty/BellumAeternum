@@ -255,6 +255,9 @@ main {
 	display: block;
 	margin: auto;
 	padding: 5vw 0;
+	background-image:url('src/bg.webp');
+	background-repeat: no-repeat;
+	background-position-x: center;
 }
 
 /*-------------------------*/
@@ -437,14 +440,14 @@ footer {
 
 .overview h1 {
 	font-family: HarmonyOS Sans Black, SF Pro, sans-serif;
-	font-size: 60px;
+	font-size: 72px;
 	font-weight: 700;
 	font-variant: small-caps;
 	line-height: 0.5em;
-	margin: 0.5em auto;
+	margin: 1em auto;
 	text-align: center;
-	color: #f00;
-	text-shadow: 0 0 10px #c00;
+	color: #F00;
+	text-shadow: 0 0 10px #F00;
 }
 
 .overview h2 {
@@ -487,7 +490,7 @@ footer {
 
 .link-button img:hover {
 	box-shadow: 0 0 20px #f33;
-	animation-name: button-lift;
+	animation-name: button-slight-lift;
   	animation-duration: 0.2s;
 	animation-iteration-count:1;
 	animation-fill-mode: both;
@@ -495,7 +498,7 @@ footer {
 /*----------Features Module----------*/
 .features {
 	margin: 1vh auto;
-	width: 75%;
+	width: 100%;
 }
 
 .features h2{
@@ -508,6 +511,8 @@ footer {
 	display: flex;
 	flex-flow: row;
 	justify-content: center;
+	width: 75%;
+	margin: auto;
 }
 
 .features-container {
@@ -1094,14 +1099,18 @@ footer {
 	font-size: 36px;
 	text-align: center;
 	font-family: HarmonyOS Sans, sans-serif;
-	margin: 1em auto 0 auto;
+	margin: 2em auto 0 auto;
 }
 
 .download h2{
-	font-size: 48px;
+	font-size: 60px;
 	font-family: HarmonyOS Sans, sans-serif;
+	font-weight: bold;
+	font-variant: small-caps;
 	text-align: center;
 	margin: auto;
+	color: #FF0000;
+	text-shadow: 0 0 10px #F00;
 }
 
 .download h3{
@@ -1143,9 +1152,11 @@ footer {
 .download-section h2 {
 	font-size: 32px;
 	font-family: HarmonyOS Sans, sans-serif;
+	font-variant: normal;
 	text-align: center;
 	color: #000;
 	margin: 0.5em auto;
+	text-shadow: none;
 }
 
 .download-section a {
