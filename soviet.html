@@ -78,897 +78,956 @@
 	</header>
 	<main>
 		<div class="units">
-			<h1>Soviet</h1>
+			<h1>Bellum Æternum Faction: Soviet</h1>
 			<!------------Soviet Overview------------>
 			<div class="faction-overview" id="soviet-overview">
 				<h2>Overview</h2>
 				<p>Formed by the Soviet Russia, the Soviet force a.k.a. Red Army is the military group that combined military forces from Eastern European states and South American socialist states. The Soviet scientists are specialists in the field of electromagnetic and nuclear physics, and they developed tesla technology and nuclear technology to apply the military operations.</p>
 			</div>
-			<!------------Soviet Structures------------>
-			<div class="soviet-structure" id="soviet-structure">
-				<h2>Soviet Structures</h2>
-				<!-------[Soviet Construction Yard]------->
-				<div class="unit-container" id="soviet-construction-yard">
-					<div class="unit-container-left">
-						<img src="src/soviet-construction-yard.webp" alt="Soviet Construction Yard" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/xxicon.webp" alt="Soviet Construction Yard Icon" width="60" height="48"></img>
-						<h3>Soviet Construction Yard</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
-						<ul>
-							<li>Prerequisite: N/A</li>
-							<li>Power: 0</li>
-							<li>Cost: 2000 (Potential)</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Undeploy into <a href="#soviet-mcv">Soviet Mobile Construction Vehicle</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Tesla Reactor]------->
-				<div class="unit-container" id="soviet-tesla-reactor">
-					<div class="unit-container-left">
-						<img src="src/soviet-tesla-reactor.webp" alt="Tesla Reactor" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-tesla-reactor-icon-en.webp" alt="Tesla Reactor Icon" width="60" height="48"></img>
-						<h3>Tesla Reactor</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Due to the rapidly growing of the Soviet tesla technology, a tesla reactor has replaced the ramshackle classic power plant. It is a cheaper solution of battlefield power supply.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-							<li>Power: 150</li>
-							<li>Cost: 600</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Release EMP when destroyed</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Ore Refinery]------->
-				<div class="unit-container" id="soviet-ore-refinery">
-					<div class="unit-container-left">
-						<img src="src/soviet-ore-refinery.webp" alt="Soviet Ore Refinery" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-ore-refinery-icon-en.webp" alt="Soviet Ore Refinery Icon" width="60" height="48"></img>
-						<h3>Soviet Ore Refinery</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The ore refinery is one of the most important income of credits. The gathered ore will turn into raw materials transfer into credits to train soldiers and produce weapons.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
-								</ol>
-							</li>
-							<li>Power: -50</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Provides a free <a href="#war-miner">War Miner</a> upon buildup</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Barracks]------->
-				<div class="unit-container" id="soviet-barracks">
-					<div class="unit-container-left">
-						<img src="src/soviet-barracks.webp" alt="Soviet Barracks" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-barracks-icon-en.webp" alt="Soviet Barracks Icon" width="60" height="48"></img>
-						<h3>Soviet Barracks</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The barracks is the unique facility to train soldiers. It is a very important structure and one of the key prerequisite for other structures.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
-								</ol>
-							</li>
-							<li>Power: -10</li>
-							<li>Cost: 1000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Train infantries</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Weapon Factory]------->
-				<div class="unit-container" id="soviet-weapon-factory">
-					<div class="unit-container-left">
-						<img src="src/soviet-weapon-factory.webp" alt="Soviet Weapon Factory" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-weapon-factory-icon-en.webp" alt="Soviet Weapon Factory Icon" width="60" height="48"></img>
-						<h3>Soviet Weapon Factory</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The weapon factory is the basic vehicle manufacturer of the frontline. It is capable of producing vehicles, tanks, and even helicopters.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
-									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
-								</ol>
-							</li>
-							<li>Power: -100</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Produce Vehicles</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Radar]------->
-				<div class="unit-container" id="soviet-radar">
-					<div class="unit-container-left">
-						<img src="src/soviet-radar.webp" alt="Soviet Radar" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-radar-icon-en.webp" alt="Soviet Radar Icon" width="60" height="48"></img>
-						<h3>Soviet Radar</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Radar is one of the most important structure for battle command and war zone detection. Additionally, radar can navigate spy plane to expand the sight of strategy.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
-									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
-								</ol>
-							</li>
-							<li>Power: -50</li>
-							<li>Cost: 1000</li>
-							<li>Special Tactics: Spy Plane</li>
-							<li>Trait: Provides radar service</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Air Force Command HQ]------->
-				<div class="unit-container" id="soviet-airforce-command">
-					<div class="unit-container-left">
-						<img src="src/soviet-airforce-command.webp" alt="Soviet Air Force Command HQ" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-airforce-command-icon-en.webp" alt="Soviet Air Force Command HQ Icon" width="60" height="48"></img>
-						<h3>Soviet Air Force Command HQ</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The air force command headquarter is the facility to manage all operation of air forces. The air force command headquarter can produce and park aircrafts, also provides ammo supply and repairing services.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
-									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
-								</ol>
-							</li>
-							<li>Power: -50</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: <a href="#soviet-paratrooper">Paratrooper</a></li>
-							<li>Trait: Produce Aircraft</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Battle Lab]------->
-				<div class="unit-container" id="soviet-battle-lab">
-					<div class="unit-container-left">
-						<img src="src/soviet-battle-lab.webp" alt="Soviet Battle Lab" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-battle-lab-icon-en.webp" alt="Soviet Air Force Command HQ Icon" width="60" height="48"></img>
-						<h3>Soviet Battle Lab</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The Soviet battle lab is a direct subordinate of the Ministry of Defense Industry. It receives and unlocks the higher technology for buildings, defenses, infantries, vehicles and aircrafs.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Power: -10</li>
-							<li>Cost: 3000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Unlock higher tier technologies</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Soviet Nuclear Reactor]------->
-				<div class="unit-container" id="soviet-nuclear-reactor">
-					<div class="unit-container-left">
-						<img src="src/soviet-nuclear-reactor.webp" alt="Soviet Nuclear Reactor" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-nuclear-reactor-icon-en.webp" alt="Soviet Nuclear Reactor Icon" width="60" height="48"></img>
-						<h3>Soviet Nuclear Reactor</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The nuclear reactor is a traditional way to generate power. However, the Soviet union has successfully minimized the nuclear reactors, makes it easy to build and can almost power up a whole military base.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Power: 1000</li>
-							<li>Cost: 2000</li>
-							<li>Special Tactics: N/A</li>
-							<li>Trait: Generate power</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Industrial Plant]------->
-				<div class="unit-container" id="industrial-plant">
-					<div class="unit-container-left">
-						<img src="src/industrial-plant.webp" alt="Industrial Plant" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/industrial-plant-icon-en.webp" alt="Industrial Plant Icon" width="60" height="48"></img>
-						<h3>Industrial Plant</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The industrial plane is the direct subordinate of the Military-Industrial Commission of Soviet Union. With better organized manufacturing project and recycling plans, it can lower the price of weapons.</p>
-						<ul>
-							<li>Prerequisites: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Power: -200</li>
-							<li>Cost: 2500</li>
-							<li>Special Tactics: <a href="#planned-economy">Planned Economy</a></li>
-							<li>Trait: Discount for Vehicles and Aircrafts</li>
-						</ul>
-					</div>
-				</div>
+			<h2>Techtree</h2>
+			<div class="units-table">
+				<table>
+					<tr>
+						<th colspan="5">T1</th>
+						<th colspan="3">T2</th>
+						<th colspan="3">T3</th>
+					</tr>
+					<tr>
+						<th>Structures</th>
+						<td><img src="src/soviet-tesla-reactor-icon-en.webp" alt="Soviet tesla reactor" width="60px" height="48px"></td>
+						<td><img src="src/soviet-ore-refinery-icon-en.webp" alt="Soviet ore refinery" width="60px" height="48px"></td>
+						<td><img src="src/soviet-barracks-icon-en.webp" alt="Soviet barracks" width="60px" height="48px"></td>
+						<td><img src="src/soviet-weapon-factory-icon-en.webp" alt="Soviet weapon factory" width="60px" height="48px"></td>
+						<td><img src="src/soviet-radar-icon-en.webp" alt="Soviet radar" width="60px" height="48px"></td>
+						<td><img src="src/soviet-airforce-command-icon-en.webp" alt="Soviet air force command HQ" width="60px" height="48px"></td>
+						<td></td>
+						<td><img src="src/soviet-battle-lab-icon-en.webp" alt="Soviet battle lab" width="60px" height="48px"></td>
+						<td><img src="src/soviet-nuclear-reactor-icon-en.webp" alt="Soviet nuclear reactor" width="60px" height="48px"></td>
+						<td><img src="src/industrial-plant-icon-en.webp" alt="Industrial Plant" width="60px" height="48px"></td>
+					</tr>
+					<tr>
+						<th>Defense</th>
+						<td><img src="src/soviet-wall-icon-en.webp" alt="Soviet wall" width="60px" height="48px"></td>
+						<td><img src="src/sentry-gun-icon-en.webp" alt="Sentry gun" width="60px" height="48px"></td>
+						<td><img src="src/flak-cannon-icon-en.webp" alt="Flak cannon" width="60px" height="48px"></td>
+						<td></td>
+						<td><img src="src/tesla-coil-icon-en.webp" alt="Tesla coil" width="60px" height="48px"></td>
+						<td></td>
+						<td></td>
+						<td><img src="src/intelligence-agency-icon-en.webp" alt="Intelligence agency" width="60px" height="48px"></td>
+						<td><img src="src/nuke-silo-icon-en.webp" alt="Nuke Silo" width="60px" height="48px"></td>
+					</tr>
+					<tr>
+						<th>Infantry</th>
+						<td><img src="src/conscript-icon-en.webp" alt="Conscript" width="60px" height="48px"></td>
+						<td><img src="src/rpg-trooper-icon-en.webp" alt="RPG trooper" width="60px" height="48px"></td>
+						<td><img src="src/soviet-engineer-icon-en.webp" alt="Engineer" width="60px" height="48px"></td>
+						<td></td>
+						<td><img src="src/tesla-trooper-icon-en.webp" alt="Tesla trooper" width="60px" height="48px"></td>
+						<td><img src="src/desolator-icon-en.webp" alt="Desolator" width="60px" height="48px"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Vehicles</th>
+						<td><img src="src/war-miner-icon-en.webp" alt="War miner" width="60px" height="48px"></td>
+						<td><img src="src/rhino-tank-icon-en.webp" alt="Rhino tank" width="60px" height="48px"></td>
+						<td><img src="src/flak-track-icon-en.webp" alt="Flak track" width="60px" height="48px"></td>
+						<td></td>
+						<td><img src="src/mobile-radar-icon-en.webp" alt="Mobile radar" width="60px" height="48px"></td>
+						<td><img src="src/tesla-tank-icon-en.webp" alt="Tesla tank" width="60px" height="48px"></td>
+						<td><img src="src/katyusha-icon-en.webp" alt="Katyusha rocket artillery" width="60px" height="48px"></td>
+						<td><img src="src/apocalypse-tank-icon-en.webp" alt="Apocalypse tank" width="60px" height="48px"></td>
+						<td><img src="src/kirov-airship-icon-en.webp" alt="Kirov airship" width="60px" height="48px"></td>
+					</tr>
+				</table>
 			</div>
-			<!------------Soviet Defense------------>
-			<div class="soviet-defense" id="soviet-defense">
-				<h2>Soviet Defense</h2>
-				<!-------[Wall]------->
-				<div class="unit-container" id="soviet-wall">
-					<div class="unit-container-left">
-						<img src="src/soviet-wall.webp" alt="Soviet Wall" width="360" height="270" loading="lazy"></img>
+			<div class="unit-board">
+				<!------------Soviet Structures------------>
+				<div class="soviet-structure" id="soviet-structure">
+					<h2>Soviet Structures</h2>
+					<!-------[Soviet Construction Yard]------->
+					<div class="unit-container" id="soviet-construction-yard">
+						<div class="unit-container-left">
+							<img src="src/soviet-construction-yard.webp" alt="Soviet Construction Yard" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/xxicon.webp" alt="Soviet Construction Yard Icon" width="60" height="48"></img>
+							<h3>Soviet Construction Yard</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The construction yard is the very basic structure of a military base, it cannot be built, but only obtained by deploying a mobile construction vehicle.</p>
+							<ul>
+								<li>Prerequisite: N/A</li>
+								<li>Power: 0</li>
+								<li>Cost: 2000 (Potential)</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Undeploy into <a href="#soviet-mcv">Soviet Mobile Construction Vehicle</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-wall-icon-en.webp" alt="Soviet Wall Icon" width="60" height="48"></img>
-						<h3>Wall</h3>
+					<!-------[Tesla Reactor]------->
+					<div class="unit-container" id="soviet-tesla-reactor">
+						<div class="unit-container-left">
+							<img src="src/soviet-tesla-reactor.webp" alt="Tesla Reactor" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-tesla-reactor-icon-en.webp" alt="Tesla Reactor Icon" width="60" height="48"></img>
+							<h3>Tesla Reactor</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Due to the rapidly growing of the Soviet tesla technology, a tesla reactor has replaced the ramshackle classic power plant. It is a cheaper solution of battlefield power supply.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+								<li>Power: 150</li>
+								<li>Cost: 600</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Release EMP when destroyed</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>The Wall protects bases from enemy troopers and light vehicles assault, even the battle tank couldn't pass without destroying it.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-							<li>Power: 0</li>
-							<li>Cost: 100</li>
-							<li>Special Tactics: N/A</li>
-							<li>Traits: Infantries and light vehicles can't pass</li>
-						</ul>
+					<!-------[Soviet Ore Refinery]------->
+					<div class="unit-container" id="soviet-ore-refinery">
+						<div class="unit-container-left">
+							<img src="src/soviet-ore-refinery.webp" alt="Soviet Ore Refinery" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-ore-refinery-icon-en.webp" alt="Soviet Ore Refinery Icon" width="60" height="48"></img>
+							<h3>Soviet Ore Refinery</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The ore refinery is one of the most important income of credits. The gathered ore will turn into raw materials transfer into credits to train soldiers and produce weapons.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
+									</ol>
+								</li>
+								<li>Power: -50</li>
+								<li>Cost: 2000</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Provides a free <a href="#war-miner">War Miner</a> upon buildup</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<!-------[Sentry Gun]------->
-				<div class="unit-container" id="sentry-gun">
-					<div class="unit-container-left">
-						<img src="src/sentry-gun.webp" alt="Sentry Gun" width="360" height="270" loading="lazy"></img>
+					<!-------[Soviet Barracks]------->
+					<div class="unit-container" id="soviet-barracks">
+						<div class="unit-container-left">
+							<img src="src/soviet-barracks.webp" alt="Soviet Barracks" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-barracks-icon-en.webp" alt="Soviet Barracks Icon" width="60" height="48"></img>
+							<h3>Soviet Barracks</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The barracks is the unique facility to train soldiers. It is a very important structure and one of the key prerequisite for other structures.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
+									</ol>
+								</li>
+								<li>Power: -10</li>
+								<li>Cost: 1000</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Train infantries</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/sentry-gun-icon-en.webp" alt="Sentry Gun Icon" width="60" height="48"></img>
-						<h3>Sentry Gun</h3>
+					<!-------[Soviet Weapon Factory]------->
+					<div class="unit-container" id="soviet-weapon-factory">
+						<div class="unit-container-left">
+							<img src="src/soviet-weapon-factory.webp" alt="Soviet Weapon Factory" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-weapon-factory-icon-en.webp" alt="Soviet Weapon Factory Icon" width="60" height="48"></img>
+							<h3>Soviet Weapon Factory</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The weapon factory is the basic vehicle manufacturer of the frontline. It is capable of producing vehicles, tanks, and even helicopters.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
+										<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+									</ol>
+								</li>
+								<li>Power: -100</li>
+								<li>Cost: 2000</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Produce Vehicles</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>Sentry gun is a turret armed with 12.7mm machinegun, which can significantly expel and execute enemy infantries and light armored vehicles</p>
-						<ul>
-							<li>Prerequisite:
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-								</ol>
-							</li>
-							<li>Power: 0</li>
-							<li>Main Weapon: 12.7mm AK612</li>
-							<li>Ammunition: Bullet</li>
-							<li>Cost: 500</li>
-							<li>Traits: Counter infantries and light vehicles</li>
-						</ul>
+					<!-------[Soviet Radar]------->
+					<div class="unit-container" id="soviet-radar">
+						<div class="unit-container-left">
+							<img src="src/soviet-radar.webp" alt="Soviet Radar" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-radar-icon-en.webp" alt="Soviet Radar Icon" width="60" height="48"></img>
+							<h3>Soviet Radar</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Radar is one of the most important structure for battle command and war zone detection. Additionally, radar can navigate spy plane to expand the sight of strategy.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
+										<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+									</ol>
+								</li>
+								<li>Power: -50</li>
+								<li>Cost: 1000</li>
+								<li>Special Tactics: Spy Plane</li>
+								<li>Trait: Provides radar service</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<!-------[Flak Cannon]------->
-				<div class="unit-container" id="flak-cannon">
-					<div class="unit-container-left">
-						<img src="src/flak-cannon.webp" alt="Flak Cannon" width="360" height="270" loading="lazy"></img>
+					<!-------[Soviet Air Force Command HQ]------->
+					<div class="unit-container" id="soviet-airforce-command">
+						<div class="unit-container-left">
+							<img src="src/soviet-airforce-command.webp" alt="Soviet Air Force Command HQ" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-airforce-command-icon-en.webp" alt="Soviet Air Force Command HQ Icon" width="60" height="48"></img>
+							<h3>Soviet Air Force Command HQ</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The air force command headquarter is the facility to manage all operation of air forces. The air force command headquarter can produce and park aircrafts, also provides ammo supply and repairing services.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-tesla-reactor">Tesla Reactor</a></li>
+										<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+									</ol>
+								</li>
+								<li>Power: -50</li>
+								<li>Cost: 2000</li>
+								<li>Special Tactics: <a href="#soviet-paratrooper">Paratrooper</a></li>
+								<li>Trait: Produce Aircraft</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/flak-cannon-icon-en.webp" alt="Flak Cannon Icon" width="60" height="48"></img>
-						<h3>Flak Cannon</h3>
+					<!-------[Soviet Battle Lab]------->
+					<div class="unit-container" id="soviet-battle-lab">
+						<div class="unit-container-left">
+							<img src="src/soviet-battle-lab.webp" alt="Soviet Battle Lab" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-battle-lab-icon-en.webp" alt="Soviet Air Force Command HQ Icon" width="60" height="48"></img>
+							<h3>Soviet Battle Lab</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The Soviet battle lab is a direct subordinate of the Ministry of Defense Industry. It receives and unlocks the higher technology for buildings, defenses, infantries, vehicles and aircrafs.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Power: -10</li>
+								<li>Cost: 3000</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Unlock higher tier technologies</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>Flak Cannon is a traditional and effective way to counter enemy aircrafts. Armed with 85mm ZiS-S-53U with High Explosive rounds, the flak cannon is able to scattering and knock down enemy aircrafts.</p>
-						<ul>
-							<li>Prerequisite:
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-								</ol>
-							</li>
-							<li>Power: -50</li>
-							<li>Main Weapon: 85mm ZiS-S-53U</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Cost: 1000</li>
-							<li>Traits: Counter Aircrafts</li>
-						</ul>
+					<!-------[Soviet Nuclear Reactor]------->
+					<div class="unit-container" id="soviet-nuclear-reactor">
+						<div class="unit-container-left">
+							<img src="src/soviet-nuclear-reactor.webp" alt="Soviet Nuclear Reactor" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-nuclear-reactor-icon-en.webp" alt="Soviet Nuclear Reactor Icon" width="60" height="48"></img>
+							<h3>Soviet Nuclear Reactor</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The nuclear reactor is a traditional way to generate power. However, the Soviet union has successfully minimized the nuclear reactors, makes it easy to build and can almost power up a whole military base.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Power: 1000</li>
+								<li>Cost: 2000</li>
+								<li>Special Tactics: N/A</li>
+								<li>Trait: Generate power</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<!-------[Tesla Coil]------->
-				<div class="unit-container" id="tesla-coil">
-					<div class="unit-container-left">
-						<img src="src/tesla-coil.webp" alt="Tesla Coil" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/tesla-coil-icon-en.webp" alt="Tesla Coil Icon" width="60" height="48"></img>
-						<h3>Tesla Coil</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Tesla Coil is the auxiliary product from the Tesla Reactor. It can release 100K volts of electricity current and burn infantries immediately. Also, it can cripple enemy vehicles by destroy their electronic devices.</p>
-						<ul>
-							<li>Prerequisite:
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Power: -75</li>
-							<li>Main Weapon: Capacitor Coil</li>
-							<li>Ammunition: Electricity</li>
-							<li>Cost: 1500</li>
-							<li>Traits: Can be charge by <a href="#tesla-trooper">Tesla Trooper</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Intelligence Agency]------->
-				<div class="unit-container" id="intelligence-agency">
-					<div class="unit-container-left">
-						<img src="src/intelligence-agency.webp" alt="Intelligence Agency" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/intelligence-agency-icon-en.webp" alt="Intelligence Agency Icon" width="60" height="48"></img>
-						<h3>Intelligence Agency</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The Intelligence Agency is the frontline unit of State Security Committee (Komitet Gosudarstvennoy Bezopasnosti), stealing and analyzing enemy information. From time to time, the undercover agents make enemy units defect. </p>
-						<ul>
-							<li>Prerequisite: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Power: 0</li>
-							<li>Cost: 2000</li>
-							<li>Tactics: <a href="#defection">Defection</a></li>
-							<li>Traits: Analyzing enemy strategy</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Nuke Silo]------->
-				<div class="unit-container" id="nuke-silo">
-					<div class="unit-container-left">
-						<img src="src/nuke-silo.webp" alt="Nuke Silo" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/nuke-silo-icon-en.webp" alt="Nuke Silo Icon" width="60" height="48"></img>
-						<h3>Nuke Silo</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The Soviet Union has decent nuke arsenal, and the nuke silo is one of them. Nuke silo can launch a high-speed nuclear missile, to deal massive damage to enemy base.</p>
-						<ul>
-							<li>Prerequisite: 
-								<ol>
-									<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Power: -200</li>
-							<li>Cost: 4000</li>
-							<li>Tactics: <a href="#nuke-attack">Nuke Attack</a></li>
-							<li>Traits: Super Weapon</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!------------Soviet Tactic------------>
-			<div class="soviet-tactic" id="soviet-tactic">
-				<h2>Soviet Tactic</h2>
-				<!-------[Soviet Paratrooper]------->
-				<div class="unit-container" id="soviet-paratrooper">
-					<div class="unit-container-left">
-						<img src="src/soviet-paratrooper.webp" alt="Soviet Paratrooper" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-paratrooper-icon-en.webp" alt="Soviet Paratrooper Icon" width="60" height="48"></img>
-						<h3>Paratrooper</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Paratrooper is the basic reinforcement tactic on battlefield. Paradrop an infantry squad to anywhere on the battlefield and assault the enemy by surprise.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-air-force-command">Soviet Air Force Command HQ</a></li>
-							<li>Cost: 500</li>
-							<li>Cooldown: 120 Seconds</li>
-							<li>Trait: 5 <a href="#conscript">Conscripts</a>, 5 <a href="#rpg-trooper">RPG Troopers</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Defection]------->
-				<div class="unit-container" id="defection">
-					<div class="unit-container-left">
-						<img src="src/defection.webp" alt="Defection" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/defection-icon-en.webp" alt="Defection Icon" width="60" height="48"></img>
-						<h3>Defection</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The agent deep inside of the enemy force will incite defection of enemy units with Maxism and Leninism.</p>
-						<ul>
-							<li>Prerequisite: <a href="#intelligence-agency">Intelligence Agency</a></li>
-							<li>Cost: 2000</li>
-							<li>Cooldown: 120 Seconds</li>
-							<li>Trait: Control enemy units</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Planned Economy]------->
-				<div class="unit-container" id="planned-economy">
-					<div class="unit-container-left">
-						<img src="src/dummy-360x270.webp" alt="Planned Economy" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/planned-economy-icon-en.webp" alt="Planned Economy Icon" width="60" height="48"></img>
-						<h3>Planned Economy</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The central government of the U.S.S.R. will continuously provide fund for every commander on the battlefield.</p>
-						<ul>
-							<li>Prerequisite: <a href="#intelligence-agency">Industrial Plant</a></li>
-							<li>Cost: 0</li>
-							<li>Cooldown: 120 Seconds</li>
-							<li>Trait: Gain 10,000 credits</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Nuke Attack]------->
-				<div class="unit-container" id="nuke-attack">
-					<div class="unit-container-left">
-						<img src="src/nuke-attack.webp" alt="Nuke Attack" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/nuke-attack-icon-en.webp" alt="Nuke Attack Icon" width="60" height="48"></img>
-						<h3>Nuke Attack</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Nuke attack is a high efficient method of mass destruction. When nuclear missile reach the target, it will create a huge explosion and release radiation among the area.</p>
-						<ul>
-							<li>Prerequisite: <a href="#nuke-silo">Nuke Silo</a></li>
-							<li>Cost: 0</li>
-							<li>Cooldown: 120 Seconds</li>
-							<li>Trait: Super Weapon</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!------------Soviet Infantries------------>
-			<div class="soviet-infantry" id="soviet-infantry">
-				<h2>Soviet Infantries</h2>
-				<!-------[Conscript]------->
-				<div class="unit-container" id="conscript">
-					<div class="unit-container-left">
-						<img src="src/conscript.webp" alt="Conscript" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/conscript-icon-en.webp" alt="Conscript Icon" width="60" height="48"></img>
-						<h3>Conscript</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Soviet conscript are basic trooper of the Soviet army, they are armed with AK-47 which brings them higher fire power during urban combat.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-barracks">Soviet Barracks</a></li>
-							<li>Main Armament: AK-47 Automatic Rifle</li>
-							<li>Cost: 100</li>
-							<li>Traits:
-								<ol>
-									<li>Occupy Structures</li>
-									<li>Drive Neutral Vehicles</li>
-								</ol>
-							</li>
-						</ul>
+					<!-------[Industrial Plant]------->
+					<div class="unit-container" id="industrial-plant">
+						<div class="unit-container-left">
+							<img src="src/industrial-plant.webp" alt="Industrial Plant" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/industrial-plant-icon-en.webp" alt="Industrial Plant Icon" width="60" height="48"></img>
+							<h3>Industrial Plant</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The industrial plane is the direct subordinate of the Military-Industrial Commission of Soviet Union. With better organized manufacturing project and recycling plans, it can lower the price of weapons.</p>
+							<ul>
+								<li>Prerequisites: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-ore-refinery">Soviet Ore Refinery</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Power: -200</li>
+								<li>Cost: 2500</li>
+								<li>Special Tactics: <a href="#planned-economy">Planned Economy</a></li>
+								<li>Trait: Discount for Vehicles and Aircrafts</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<!-------[RPG Trooper]------->
-				<div class="unit-container" id="rpg-trooper">
-					<div class="unit-container-left">
-						<img src="src/rpg-trooper.webp" alt="RPG Trooper" width="360" height="270" loading="lazy"></img>
+				<!------------Soviet Defense------------>
+				<div class="soviet-defense" id="soviet-defense">
+					<h2>Soviet Defense</h2>
+					<!-------[Wall]------->
+					<div class="unit-container" id="soviet-wall">
+						<div class="unit-container-left">
+							<img src="src/soviet-wall.webp" alt="Soviet Wall" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-wall-icon-en.webp" alt="Soviet Wall Icon" width="60" height="48"></img>
+							<h3>Wall</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The Wall protects bases from enemy troopers and light vehicles assault, even the battle tank couldn't pass without destroying it.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+								<li>Power: 0</li>
+								<li>Cost: 100</li>
+								<li>Special Tactics: N/A</li>
+								<li>Traits: Infantries and light vehicles can't pass</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/rpg-trooper-icon-en.webp" alt="RPG Trooper Icon" width="60" height="48"></img>
-						<h3>RPG Trooper</h3>
+					<!-------[Sentry Gun]------->
+					<div class="unit-container" id="sentry-gun">
+						<div class="unit-container-left">
+							<img src="src/sentry-gun.webp" alt="Sentry Gun" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/sentry-gun-icon-en.webp" alt="Sentry Gun Icon" width="60" height="48"></img>
+							<h3>Sentry Gun</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Sentry gun is a turret armed with 12.7mm machinegun, which can significantly expel and execute enemy infantries and light armored vehicles</p>
+							<ul>
+								<li>Prerequisite:
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+									</ol>
+								</li>
+								<li>Power: 0</li>
+								<li>Main Weapon: 12.7mm AK612</li>
+								<li>Ammunition: Bullet</li>
+								<li>Cost: 500</li>
+								<li>Traits: Counter infantries and light vehicles</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>Armed with RPG-7 Launcher, the RPG troopers have the ability to counter vehicles. Even though the RPG-7 seemes to be a little out-dated for armors, it is still useful because RPG troopers can occupy structures and shoot enemy vehicles inside.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-barracks">Soviet Barracks</a></li>
-							<li>Main Armament: RPG-7 Launcher</li>
-							<li>Cost: 300</li>
-							<li>Traits: Occupy structures</li>
-						</ul>
+					<!-------[Flak Cannon]------->
+					<div class="unit-container" id="flak-cannon">
+						<div class="unit-container-left">
+							<img src="src/flak-cannon.webp" alt="Flak Cannon" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/flak-cannon-icon-en.webp" alt="Flak Cannon Icon" width="60" height="48"></img>
+							<h3>Flak Cannon</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Flak Cannon is a traditional and effective way to counter enemy aircrafts. Armed with 85mm ZiS-S-53U with High Explosive rounds, the flak cannon is able to scattering and knock down enemy aircrafts.</p>
+							<ul>
+								<li>Prerequisite:
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+									</ol>
+								</li>
+								<li>Power: -50</li>
+								<li>Main Weapon: 85mm ZiS-S-53U</li>
+								<li>Ammunition: High Explosive</li>
+								<li>Cost: 1000</li>
+								<li>Traits: Counter Aircrafts</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<!-------[Soviet Engineer]------->
-				<div class="unit-container" id="soviet-engineer">
-					<div class="unit-container-left">
-						<img src="src/soviet-engineer.webp" alt="Soviet Engineer" width="360" height="270" loading="lazy"></img>
+					<!-------[Tesla Coil]------->
+					<div class="unit-container" id="tesla-coil">
+						<div class="unit-container-left">
+							<img src="src/tesla-coil.webp" alt="Tesla Coil" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/tesla-coil-icon-en.webp" alt="Tesla Coil Icon" width="60" height="48"></img>
+							<h3>Tesla Coil</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Tesla Coil is the auxiliary product from the Tesla Reactor. It can release 100K volts of electricity current and burn infantries immediately. Also, it can cripple enemy vehicles by destroy their electronic devices.</p>
+							<ul>
+								<li>Prerequisite:
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Power: -75</li>
+								<li>Main Weapon: Capacitor Coil</li>
+								<li>Ammunition: Electricity</li>
+								<li>Cost: 1500</li>
+								<li>Traits: Can be charge by <a href="#tesla-trooper">Tesla Trooper</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-engineer-icon-en.webp" alt="Soviet Engineer Icons" width="60" height="48"></img>
-						<h3>Engineer</h3>
+					<!-------[Intelligence Agency]------->
+					<div class="unit-container" id="intelligence-agency">
+						<div class="unit-container-left">
+							<img src="src/intelligence-agency.webp" alt="Intelligence Agency" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/intelligence-agency-icon-en.webp" alt="Intelligence Agency Icon" width="60" height="48"></img>
+							<h3>Intelligence Agency</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The Intelligence Agency is the frontline unit of State Security Committee (Komitet Gosudarstvennoy Bezopasnosti), stealing and analyzing enemy information. From time to time, the undercover agents make enemy units defect. </p>
+							<ul>
+								<li>Prerequisite: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Power: 0</li>
+								<li>Cost: 2000</li>
+								<li>Tactics: <a href="#defection">Defection</a></li>
+								<li>Traits: Analyzing enemy strategy</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>Engineer is one of the most important role on the battlefield, either repair a building for allies, or capture a building from enemies. Of course, engineers works with knowledge, not force, so they need to be well protected.</p>
-						<ul>
-							<li>Prerequisites:<a href="#soviet-barracks">Soviet Barracks</a></li>
-							<li>Main Armament: Toolbox</li>
-							<li>Cost: 500</li>
-							<li>Trait:
-								<ol>
-									<li>Repair buildings and bridges</li>
-									<li>Capture structures</li>
-								</ol>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Tesla Trooper]------->
-				<div class="unit-container" id="tesla-trooper">
-					<div class="unit-container-left">
-						<img src="src/tesla-trooper.webp" alt="Tesla Trooper" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/tesla-trooper-icon-en.webp" alt="Tesla Trooper Icons" width="60" height="48"></img>
-						<h3>Tesla Trooper</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The Tesla Troopers are heavy armored infantry unit of the Soviet forces. Armed with 2000 volts tesla caster, the tesla troopers are harmful to both infantries and vehicles, and because of the heavy metal suit, the tesla troopers are bullet proof to snipers.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: N2T Tesla Caster</li>
-							<li>Cost: 600</li>
-							<li>Trait:
-								<ol>
-									<li>Uncrushable</li>
-									<li>Charge a <a href="#tesla-coil">Tesla Coil</a></li>
-								</ol>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Desolator]------->
-				<div class="unit-container" id="desolator">
-					<div class="unit-container-left">
-						<img src="src/desolator.webp" alt="Desolator" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/desolator-icon-en.webp" alt="Desolator Icons" width="60" height="48"></img>
-						<h3>Desolator</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Desolator is one of the special tactic team of the Soviet force. They're armed with full armor radiation proof suit, and equipped with a PRP radiation beam caster which can deal significant damage to enemy infantries, even they're hiding in buildings. </p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: PRP Radiation Beam Caster</li>
-							<li>Cost: 800</li>
-							<li>Trait:
-								<ol>
-									<li>Uncrushable</li>
-									<li>Deploy to spread radiation</li>
-								</ol>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Spy]------->
-				<div class="unit-container" id="soviet-spy">
-					<div class="unit-container-left">
-						<img src="src/spy.webp" alt="Spy" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-spy-icon-en.webp" alt="Soviet Spy Icon" width="60" height="48"></img>
-						<h3>Spy</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Spy leads a special warfare on the darkside of the battlefield. They can steal enemy technology, cripple enemy power facility, Jam radars, and bring enemy tactics to chaos.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-barracks">Soviet Barracks</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: Disguise Kit</li>
-							<li>Cost: 1000</li>
-							<li>Trait:
-								<ol>
-									<li>Steal technology</li>
-									<li>Cripple powerplant</li>
-									<li>Jam radar</li>
-									<li>Disrupt tactics</li>
-								</ol>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!------------Soviet Vehicles------------>
-			<div id="soviet-vehicle" class="soviet-vehicle">
-				<h2>Soviet Vehicles</h2>
-				<!-------[Soviet MCV]------->
-				<div class="unit-container" id="soviet-mcv">
-					<div class="unit-container-left">
-						<img src="src/soviet-mcv.webp" alt="Soviet MCV" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/soviet-mcv-icon-en.webp" alt="Soviet MCV Icon"></img>
-						<h3>Soviet MCV</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
-						<ul>
-							<li>Prerequisite: 
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: N/A</li>
-							<li>Ammunition: N/A</li>
-							<li>Cost: 2000</li>
-							<li>Trait: Deploy into <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
-						</ul>
+					<!-------[Nuke Silo]------->
+					<div class="unit-container" id="nuke-silo">
+						<div class="unit-container-left">
+							<img src="src/nuke-silo.webp" alt="Nuke Silo" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/nuke-silo-icon-en.webp" alt="Nuke Silo Icon" width="60" height="48"></img>
+							<h3>Nuke Silo</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The Soviet Union has decent nuke arsenal, and the nuke silo is one of them. Nuke silo can launch a high-speed nuclear missile, to deal massive damage to enemy base.</p>
+							<ul>
+								<li>Prerequisite: 
+									<ol>
+										<li><a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Power: -200</li>
+								<li>Cost: 4000</li>
+								<li>Tactics: <a href="#nuke-attack">Nuke Attack</a></li>
+								<li>Traits: Super Weapon</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<!-------[War Miner]------->
-				<div class="unit-container" id="war-miner">
-					<div class="unit-container-left">
-						<img src="src/war-miner.webp" alt="war miner" width="360" height="270" loading="lazy"></img>
+				<!------------Soviet Tactic------------>
+				<div class="soviet-tactic" id="soviet-tactic">
+					<h2>Soviet Tactic</h2>
+					<!-------[Soviet Paratrooper]------->
+					<div class="unit-container" id="soviet-paratrooper">
+						<div class="unit-container-left">
+							<img src="src/soviet-paratrooper.webp" alt="Soviet Paratrooper" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-paratrooper-icon-en.webp" alt="Soviet Paratrooper Icon" width="60" height="48"></img>
+							<h3>Paratrooper</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Paratrooper is the basic reinforcement tactic on battlefield. Paradrop an infantry squad to anywhere on the battlefield and assault the enemy by surprise.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-air-force-command">Soviet Air Force Command HQ</a></li>
+								<li>Cost: 500</li>
+								<li>Cooldown: 120 Seconds</li>
+								<li>Trait: 5 <a href="#conscript">Conscripts</a>, 5 <a href="#rpg-trooper">RPG Troopers</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/war-miner-icon-en.webp" alt="War Miner Icon"></img>
-						<h3>War Miner</h3>
+					<!-------[Defection]------->
+					<div class="unit-container" id="defection">
+						<div class="unit-container-left">
+							<img src="src/defection.webp" alt="Defection" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/defection-icon-en.webp" alt="Defection Icon" width="60" height="48"></img>
+							<h3>Defection</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The agent deep inside of the enemy force will incite defection of enemy units with Maxism and Leninism.</p>
+							<ul>
+								<li>Prerequisite: <a href="#intelligence-agency">Intelligence Agency</a></li>
+								<li>Cost: 2000</li>
+								<li>Cooldown: 120 Seconds</li>
+								<li>Trait: Control enemy units</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-							<li>Main Armament: 45mm 20-K</li>
-							<li>Ammunition: Armor Piercing High Explosive</li>
-							<li>Cost: 1400</li>
-							<li>Trait: Harvest Ore</li>
-						</ul>
+					<!-------[Planned Economy]------->
+					<div class="unit-container" id="planned-economy">
+						<div class="unit-container-left">
+							<img src="src/dummy-360x270.webp" alt="Planned Economy" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/planned-economy-icon-en.webp" alt="Planned Economy Icon" width="60" height="48"></img>
+							<h3>Planned Economy</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The central government of the U.S.S.R. will continuously provide fund for every commander on the battlefield.</p>
+							<ul>
+								<li>Prerequisite: <a href="#intelligence-agency">Industrial Plant</a></li>
+								<li>Cost: 0</li>
+								<li>Cooldown: 120 Seconds</li>
+								<li>Trait: Gain 10,000 credits</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<!-------[Rhino Tank]------->
-				<div class="unit-container" id="rhino-tank">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/rhino-tank.webp" alt="rhino tank" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/rhino-tank-icon-en.webp" alt="Rhino Tank Icon" width="60" height="48"></img>
-						<h3>Rhino Tank</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-							<li>Main Armament: 100mm D-56TS</li>
-							<li>Ammunition: Armor Piercing Compound Rigid</li>
-							<li>Cost: 1600</li>
-							<li>Trait: N/A</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Flak Track]------->
-				<div class="unit-container" id="flak-track">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/flak-track.webp" alt="Flak Track" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/flak-track-icon-en.webp" alt="Flak Track Icon" width="60" height="48"></img>
-						<h3>Flak Track</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
-						<ul>
-							<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-							<li>Main Armament: 23mm AZP-23P</li>
-							<li>Ammunition: Armor Piercing High Explosive</li>
-							<li>Cost: 1000</li>
-							<li>Trait: Loads 5 Passengers</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Tesla Tank]------->
-				<div class="unit-container" id="tesla-tank">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/tesla-tank.webp" alt="Tesla Tank" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/tesla-tank-icon-en.webp" alt="Tesla Tank icon" width="60" height="48"></img>
-						<h3>Tesla Tank</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The TT-50 Tesla Tank is one of the most succeed special purpose armored vehicle, with the support of tesla technology, it armed with a set of hyper-power tesla coil, can destroy the electronic system and weapon handling system of enemy vehicles while doing damage.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: N100T Tesla Coil</li>
-							<li>Ammunition: Electricity</li>
-							<li>Cost: 2200</li>
-							<li>Trait: Charge Tesla Coil</li>
-						</ul>
+					<!-------[Nuke Attack]------->
+					<div class="unit-container" id="nuke-attack">
+						<div class="unit-container-left">
+							<img src="src/nuke-attack.webp" alt="Nuke Attack" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/nuke-attack-icon-en.webp" alt="Nuke Attack Icon" width="60" height="48"></img>
+							<h3>Nuke Attack</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Nuke attack is a high efficient method of mass destruction. When nuclear missile reach the target, it will create a huge explosion and release radiation among the area.</p>
+							<ul>
+								<li>Prerequisite: <a href="#nuke-silo">Nuke Silo</a></li>
+								<li>Cost: 0</li>
+								<li>Cooldown: 120 Seconds</li>
+								<li>Trait: Super Weapon</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<!-------[Mobile Radar]------->
-				<div class="unit-container" id="mobile-radar">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/mobile-radar.webp" alt="Mobile Radar" width="360" height="270" loading="lazy"></img>
+				<!------------Soviet Infantries------------>
+				<div class="soviet-infantry" id="soviet-infantry">
+					<h2>Soviet Infantries</h2>
+					<!-------[Conscript]------->
+					<div class="unit-container" id="conscript">
+						<div class="unit-container-left">
+							<img src="src/conscript.webp" alt="Conscript" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/conscript-icon-en.webp" alt="Conscript Icon" width="60" height="48"></img>
+							<h3>Conscript</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Soviet conscript are basic trooper of the Soviet army, they are armed with AK-47 which brings them higher fire power during urban combat.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-barracks">Soviet Barracks</a></li>
+								<li>Main Armament: AK-47 Automatic Rifle</li>
+								<li>Cost: 100</li>
+								<li>Traits:
+									<ol>
+										<li>Occupy Structures</li>
+										<li>Drive Neutral Vehicles</li>
+									</ol>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/mobile-radar-icon-en.webp" alt="Mobile Radar Icon" width="60" height="48"></img>
-						<h3>Mobile Radar</h3>
+					<!-------[RPG Trooper]------->
+					<div class="unit-container" id="rpg-trooper">
+						<div class="unit-container-left">
+							<img src="src/rpg-trooper.webp" alt="RPG Trooper" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/rpg-trooper-icon-en.webp" alt="RPG Trooper Icon" width="60" height="48"></img>
+							<h3>RPG Trooper</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Armed with RPG-7 Launcher, the RPG troopers have the ability to counter vehicles. Even though the RPG-7 seemes to be a little out-dated for armors, it is still useful because RPG troopers can occupy structures and shoot enemy vehicles inside.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-barracks">Soviet Barracks</a></li>
+								<li>Main Armament: RPG-7 Launcher</li>
+								<li>Cost: 300</li>
+								<li>Traits: Occupy structures</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>Since the Allied Force in Western Europe uses stealth technology to counter the Soviet blitzkriegs, the Ministry of Defense Industry quickly projects new detection methods. Armed with P-34 high power radar, the mobile radar becomes the eagle's eyes for the Soviet army.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: P-34 HPR</li>
-							<li>Ammunition: N/A</li>
-							<li>Cost: 1600</li>
-							<li>Trait: Detect Stealth Units</li>
-						</ul>
+					<!-------[Soviet Engineer]------->
+					<div class="unit-container" id="soviet-engineer">
+						<div class="unit-container-left">
+							<img src="src/soviet-engineer.webp" alt="Soviet Engineer" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-engineer-icon-en.webp" alt="Soviet Engineer Icons" width="60" height="48"></img>
+							<h3>Engineer</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Engineer is one of the most important role on the battlefield, either repair a building for allies, or capture a building from enemies. Of course, engineers works with knowledge, not force, so they need to be well protected.</p>
+							<ul>
+								<li>Prerequisites:<a href="#soviet-barracks">Soviet Barracks</a></li>
+								<li>Main Armament: Toolbox</li>
+								<li>Cost: 500</li>
+								<li>Trait:
+									<ol>
+										<li>Repair buildings and bridges</li>
+										<li>Capture structures</li>
+									</ol>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Tesla Trooper]------->
+					<div class="unit-container" id="tesla-trooper">
+						<div class="unit-container-left">
+							<img src="src/tesla-trooper.webp" alt="Tesla Trooper" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/tesla-trooper-icon-en.webp" alt="Tesla Trooper Icons" width="60" height="48"></img>
+							<h3>Tesla Trooper</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The Tesla Troopers are heavy armored infantry unit of the Soviet forces. Armed with 2000 volts tesla caster, the tesla troopers are harmful to both infantries and vehicles, and because of the heavy metal suit, the tesla troopers are bullet proof to snipers.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: N2T Tesla Caster</li>
+								<li>Cost: 600</li>
+								<li>Trait:
+									<ol>
+										<li>Uncrushable</li>
+										<li>Charge a <a href="#tesla-coil">Tesla Coil</a></li>
+									</ol>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Desolator]------->
+					<div class="unit-container" id="desolator">
+						<div class="unit-container-left">
+							<img src="src/desolator.webp" alt="Desolator" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/desolator-icon-en.webp" alt="Desolator Icons" width="60" height="48"></img>
+							<h3>Desolator</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Desolator is one of the special tactic team of the Soviet force. They're armed with full armor radiation proof suit, and equipped with a PRP radiation beam caster which can deal significant damage to enemy infantries, even they're hiding in buildings. </p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: PRP Radiation Beam Caster</li>
+								<li>Cost: 800</li>
+								<li>Trait:
+									<ol>
+										<li>Uncrushable</li>
+										<li>Deploy to spread radiation</li>
+									</ol>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Spy]------->
+					<div class="unit-container" id="soviet-spy">
+						<div class="unit-container-left">
+							<img src="src/spy.webp" alt="Spy" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-spy-icon-en.webp" alt="Soviet Spy Icon" width="60" height="48"></img>
+							<h3>Spy</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Spy leads a special warfare on the darkside of the battlefield. They can steal enemy technology, cripple enemy power facility, Jam radars, and bring enemy tactics to chaos.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-barracks">Soviet Barracks</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: Disguise Kit</li>
+								<li>Cost: 1000</li>
+								<li>Trait:
+									<ol>
+										<li>Steal technology</li>
+										<li>Cripple powerplant</li>
+										<li>Jam radar</li>
+										<li>Disrupt tactics</li>
+									</ol>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<!-------[Katyusha Rocket Artillery]------->
-				<div class="unit-container" id="katyusha">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/katyusha-rocket-artillery.webp" alt="Katyusha Rocket Artillery" width="360" height="270" loading="lazy"></img>
+				<!------------Soviet Vehicles------------>
+				<div id="soviet-vehicle" class="soviet-vehicle">
+					<h2>Soviet Vehicles</h2>
+					<!-------[Soviet MCV]------->
+					<div class="unit-container" id="soviet-mcv">
+						<div class="unit-container-left">
+							<img src="src/soviet-mcv.webp" alt="Soviet MCV" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/soviet-mcv-icon-en.webp" alt="Soviet MCV Icon"></img>
+							<h3>Soviet MCV</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>CA-55 MCV is the latest version of Soviet Construction Vehicle. Inherit the technology from the failed Object 972, it armed with a four-track suspension system, which tremendously improves its off-road mobility. </p>
+							<ul>
+								<li>Prerequisite: 
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: N/A</li>
+								<li>Ammunition: N/A</li>
+								<li>Cost: 2000</li>
+								<li>Trait: Deploy into <a href="#soviet-construction-yard">Soviet Construction Yard</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/katyusha-icon-en.webp" alt="Katyusha Rocket Artillery Icon" width="60" height="48"></img>
-						<h3>Katyusha Rocket Artillery</h3>
+					<!-------[War Miner]------->
+					<div class="unit-container" id="war-miner">
+						<div class="unit-container-left">
+							<img src="src/war-miner.webp" alt="war miner" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/war-miner-icon-en.webp" alt="War Miner Icon"></img>
+							<h3>War Miner</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The BH-2 War Miner is a Soviet ore harvester that modified from medium tanks. Armed with 45mm low caliber gun, the war miner can defend itself from infrantry ambush or light vehicle assault.</p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+								<li>Main Armament: 45mm 20-K</li>
+								<li>Ammunition: Armor Piercing High Explosive</li>
+								<li>Cost: 1400</li>
+								<li>Trait: Harvest Ore</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-right">
-						<p>The BM-15 Katyusha Rocket Artillery has been modified from its predecessor. With six large high explosive rockets, the Katyusha can destroy enemy structure in distance. However, it is vulnerable in closed quarter combat.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: Katyusha Rocket Launcher</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Cost: 1400</li>
-							<li>Trait: Long Distance</li>
-						</ul>
+					<!-------[Rhino Tank]------->
+					<div class="unit-container" id="rhino-tank">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/rhino-tank.webp" alt="rhino tank" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/rhino-tank-icon-en.webp" alt="Rhino Tank Icon" width="60" height="48"></img>
+							<h3>Rhino Tank</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>T-56 "Rhino" is the successor of the famous T-44 medium tank, it comes with lower profile and great upper plate angle. Also, its mobility is rather nice, that makes it a universal purpose tank. </p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+								<li>Main Armament: 100mm D-56TS</li>
+								<li>Ammunition: Armor Piercing Compound Rigid</li>
+								<li>Cost: 1600</li>
+								<li>Trait: N/A</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Flak Track]------->
+					<div class="unit-container" id="flak-track">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/flak-track.webp" alt="Flak Track" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/flak-track-icon-en.webp" alt="Flak Track Icon" width="60" height="48"></img>
+							<h3>Flak Track</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>BTR-152Z flak track is an anti-air derivative from the BTR-152 APC. Its suspension system has been modified into half-track system, and increased its off-road mobility and heavy load ability. Armed with twin 23mm flak gun, its fire power is absolutely stunning. </p>
+							<ul>
+								<li>Prerequisite: <a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+								<li>Main Armament: 23mm AZP-23P</li>
+								<li>Ammunition: Armor Piercing High Explosive</li>
+								<li>Cost: 1000</li>
+								<li>Trait: Loads 5 Passengers</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Tesla Tank]------->
+					<div class="unit-container" id="tesla-tank">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/tesla-tank.webp" alt="Tesla Tank" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/tesla-tank-icon-en.webp" alt="Tesla Tank icon" width="60" height="48"></img>
+							<h3>Tesla Tank</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The TT-50 Tesla Tank is one of the most succeed special purpose armored vehicle, with the support of tesla technology, it armed with a set of hyper-power tesla coil, can destroy the electronic system and weapon handling system of enemy vehicles while doing damage.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: N100T Tesla Coil</li>
+								<li>Ammunition: Electricity</li>
+								<li>Cost: 2200</li>
+								<li>Trait: Charge Tesla Coil</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Mobile Radar]------->
+					<div class="unit-container" id="mobile-radar">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/mobile-radar.webp" alt="Mobile Radar" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/mobile-radar-icon-en.webp" alt="Mobile Radar Icon" width="60" height="48"></img>
+							<h3>Mobile Radar</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Since the Allied Force in Western Europe uses stealth technology to counter the Soviet blitzkriegs, the Ministry of Defense Industry quickly projects new detection methods. Armed with P-34 high power radar, the mobile radar becomes the eagle's eyes for the Soviet army.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: P-34 HPR</li>
+								<li>Ammunition: N/A</li>
+								<li>Cost: 1600</li>
+								<li>Trait: Detect Stealth Units</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Katyusha Rocket Artillery]------->
+					<div class="unit-container" id="katyusha">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/katyusha-rocket-artillery.webp" alt="Katyusha Rocket Artillery" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/katyusha-icon-en.webp" alt="Katyusha Rocket Artillery Icon" width="60" height="48"></img>
+							<h3>Katyusha Rocket Artillery</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The BM-15 Katyusha Rocket Artillery has been modified from its predecessor. With six large high explosive rockets, the Katyusha can destroy enemy structure in distance. However, it is vulnerable in closed quarter combat.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: Katyusha Rocket Launcher</li>
+								<li>Ammunition: High Explosive</li>
+								<li>Cost: 1400</li>
+								<li>Trait: Long Distance</li>
+							</ul>
+						</div>
+					</div>
+					<!-------[Apocalypse Tank]------->
+					<div class="unit-container" id="apocalypse-tank">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/apocalypse-tank.webp" alt="Apocalypse Tank" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/apocalypse-tank-icon-en.webp" alt="Apocalypse Tank icon" width="60" height="48"></img>
+							<h3>Apocalypse Tank</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>The KV-550 "Apocalypse" is the ultimate successor of the Kliment Voroshilov Series, one of the most famous Soviet heavy tank production line. The heavy armored Apocalypse armed with twin barrel high velocity cannon and rocket launcher, playing the role of the superior devastator. </p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: 122mm BL-9U</li>
+								<li>Ammunition: Armor Piercing</li>
+								<li>Cost: 3000</li>
+								<li>Trait: Can crush light vehicles</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<!-------[Apocalypse Tank]------->
-				<div class="unit-container" id="apocalypse-tank">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/apocalypse-tank.webp" alt="Apocalypse Tank" width="360" height="270" loading="lazy"></img>
+				<!------------Soviet Aircraft------------>
+				<div id="soviet-aircraft" class="soviet-aircraft">
+					<!-------[MiG Fighter]------->
+					<div class="unit-container" id="mig">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/mig.webp" alt="MiG" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/mig-icon-en.webp" alt="MiG icon" width="60" height="48"></img>
+							<h3>MiG</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>MiG is one of the most famous Soviet jet fighter in the world. It carries 4 air to ground missile that can destroy almost any target at once. </p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-airforce-command">Soviet Air Force Command HQ</a></li>
+										<li><a href="#soviet-radar">Soviet Radar</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: KS1 Missile</li>
+								<li>Ammunition: High Explosive</li>
+								<li>Cost: 2000</li>
+								<li>Trait: N/A</li>
+							</ul>
+						</div>
 					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/apocalypse-tank-icon-en.webp" alt="Apocalypse Tank icon" width="60" height="48"></img>
-						<h3>Apocalypse Tank</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>The KV-550 "Apocalypse" is the ultimate successor of the Kliment Voroshilov Series, one of the most famous Soviet heavy tank production line. The heavy armored Apocalypse armed with twin barrel high velocity cannon and rocket launcher, playing the role of the superior devastator. </p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: 122mm BL-9U</li>
-							<li>Ammunition: Armor Piercing</li>
-							<li>Cost: 3000</li>
-							<li>Trait: Can crush light vehicles</li>
-						</ul>
-					</div>
+					<!-------[Kirov Airship]------->
+					<div class="unit-container" id="kirov-airship">
+						<div class="unit-container-left">
+							<img class="unit-image" src="src/kirov-airship.webp" alt="Kirov Airship" width="360" height="270" loading="lazy"></img>
+						</div>
+						<div class="unit-container-mid">
+							<img class="unit-icon" src="src/kirov-airship-icon-en.webp" alt="Kirov Airship Icon" width="60" height="48"></img>
+							<h3>Kirov Airship</h3>
+						</div>
+						<div class="unit-container-right">
+							<p>Kirov airship is a fantastic invention of the Soviet engineers. Although Kirov airship is slow, but it has decent armor and daunting firepower.</p>
+							<ul>
+								<li>Prerequisites:
+									<ol>
+										<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
+										<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
+									</ol>
+								</li>
+								<li>Main Armament: Bomb</li>
+								<li>Ammunition: High Explosive</li>
+								<li>Cost: 2000</li>
+								<li>Trait: N/A</li>
+							</ul>
+						</div>
+					</div>				
 				</div>
-			</div>
-			<!------------Soviet Aircraft------------>
-			<div id="soviet-aircraft" class="soviet-aircraft">
-				<!-------[MiG Fighter]------->
-				<div class="unit-container" id="mig">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/mig.webp" alt="MiG" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/mig-icon-en.webp" alt="MiG icon" width="60" height="48"></img>
-						<h3>MiG</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>MiG is one of the most famous Soviet jet fighter in the world. It carries 4 air to ground missile that can destroy almost any target at once. </p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-airforce-command">Soviet Air Force Command HQ</a></li>
-									<li><a href="#soviet-radar">Soviet Radar</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: KS1 Missile</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Cost: 2000</li>
-							<li>Trait: N/A</li>
-						</ul>
-					</div>
-				</div>
-				<!-------[Kirov Airship]------->
-				<div class="unit-container" id="kirov-airship">
-					<div class="unit-container-left">
-						<img class="unit-image" src="src/kirov-airship.webp" alt="Kirov Airship" width="360" height="270" loading="lazy"></img>
-					</div>
-					<div class="unit-container-mid">
-						<img class="unit-icon" src="src/kirov-airship-icon-en.webp" alt="Kirov Airship Icon" width="60" height="48"></img>
-						<h3>Kirov Airship</h3>
-					</div>
-					<div class="unit-container-right">
-						<p>Kirov airship is a fantastic invention of the Soviet engineers. Although Kirov airship is slow, but it has decent armor and daunting firepower.</p>
-						<ul>
-							<li>Prerequisites:
-								<ol>
-									<li><a href="#soviet-weapon-factory">Soviet Weapon Factory</a></li>
-									<li><a href="#soviet-battle-lab">Soviet Battle Lab</a></li>
-								</ol>
-							</li>
-							<li>Main Armament: Bomb</li>
-							<li>Ammunition: High Explosive</li>
-							<li>Cost: 2000</li>
-							<li>Trait: N/A</li>
-						</ul>
-					</div>
-				</div>				
 			</div>
 		</div>
 	</main>

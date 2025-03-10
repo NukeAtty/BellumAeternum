@@ -862,8 +862,7 @@ footer {
 /*------------------------------*/
 
 .units {
-	width: 80%;
-	padding: 2vw;
+	width: 100%;
 	margin: auto;
 }
 
@@ -871,8 +870,7 @@ footer {
 	font-family: HarmonyOS Sans Black, sans-serif;
 	font-size: 72px;
 	font-weight: 900;
-	font-variant: small-caps;
-	line-height: 0.5em;
+	line-height: 1em;
 	margin: auto;
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -894,6 +892,46 @@ footer {
 	text-align: center;
 	margin: auto;
 	width: 60%;
+}
+
+.units-table {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	max-width: 100%;
+	margin:	1vh auto;
+	overflow-x: auto;
+}
+
+.units-table table, th, tr, td {
+	border: 1px solid #fff;
+ 	border-collapse: collapse;
+  	border-width: 1px;
+	padding: 0;
+}
+
+.units-table th {
+    background-color:#993333;
+    text-align: center;
+	font-size: 12px;
+	padding: 1em;
+}
+
+.units-table td {
+    background-color:#08080850;
+    text-align: center;
+	padding: 0;
+}
+
+.units-table img {
+	margin: auto;
+	width: 60px;
+	height: 48px;
+}
+
+.unit-board {
+	width: 80%;
+	margin: auto;
 }
 
 .unit-container {
@@ -1940,9 +1978,9 @@ footer {
 
 .general-table table, th, tr, td {
 	border: 1px solid #fff;
-  border-collapse: collapse;
-  padding: 0.5em;
-  border-width: 1px;
+  	border-collapse: collapse;
+  	padding: 0.5em;
+  	border-width: 1px;
 }
 
 .general-table tr {
@@ -2298,18 +2336,6 @@ footer {
 	.overview {
 	}
 	
-	/*----------Factions----------*/
-	.factions {
-		width: 75%;
-	}
-
-
-	/*----------Maps--------------*/
-	.maps {
-		width: 80%;
-		margin: auto;
-	}
-	
 	/*-------------------------*/
 	/*----------Units----------*/
 	/*-------------------------*/
@@ -2327,7 +2353,7 @@ footer {
 		font-size:20px;
 	}
 
-		/*========== Contact Page ===========*/
+	/*========== Contact Page ===========*/
 	.contact-zigzag {
 		display: flex;
 		flex-flow: row;
@@ -2830,6 +2856,11 @@ footer {
 	/*-------------------------*/
 	.units {
 		width: 100%;
+		margin: 10vh auto;
+	}
+
+	.units h1 {
+		font-size: 32px;
 	}
 
 	.unit-container {
