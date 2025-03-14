@@ -238,19 +238,13 @@
 							<div class="unit-container-desc">
 								<p>矿石精炼厂可以将战场上宝贵的矿石精炼为资源，用于生产建筑和武器，以及换取经济资源。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#allied-construction-yard">盟军建造场</a></li>
-											<li><a href="#allied-power-plant">盟军发电厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-50</p>
-									<p>费用：2000</p>
-									<li>战术：无</p>
 									<li>特性：建造时提供一辆<a href="#stealth-miner">隐形采矿车</a></li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 发电厂</p>
+								<p>能耗：-50</p>
+								<p>费用：2000</p>
 							</div>
 						</div>
 					</div>
@@ -265,19 +259,13 @@
 							<div class="unit-container-desc">
 								<p>兵营是前线的基础训练设施，可以训练步兵。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#allied-construction-yard">盟军建造场</a></li>
-											<li><a href="#allied-power-plant">盟军发电厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-10</p>
-									<p>费用：1000</p>
-									<li>战术：无</p>
 									<li>特性：训练步兵</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 发电厂</p>
+								<p>能耗：-10</p>
+								<p>费用：1000</p>
 							</div>
 						</div>
 					</div>
@@ -292,14 +280,13 @@
 							<div class="unit-container-desc">
 								<p>武器工厂是前线的基础生产设施，可以制造装甲车辆以及直升机。</p>
 								<ul>
-									<p>建造前提：盟军建造场 + 矿石精炼厂 + 兵营</p>
-									<p>能耗：-50</p>
-									<p>费用：2000</p>
-									<li>战术：无</p>
 									<li>特性：生产载具。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
+								<p>建造前提：盟军建造场 + 矿石精炼厂 + 兵营</p>
+								<p>能耗：-50</p>
+								<p>费用：2000</p>
 							</div>
 						</div>
 					</div>
@@ -314,62 +301,55 @@
 							<div class="unit-container-desc">
 								<p>作战控制中心是前线的必要指挥设施，其搭载了一整套通讯设备和雷达装置，可以提供雷达并且呼叫来自本土的侦察机。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#allied-construction-yard">盟军建造场</a></li>
-											<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-50</p>
-									<p>费用：1000</p>
 									<li>战术：侦察机</li>
 									<li>特性：提供雷达</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 矿石精炼厂</p>
+								<p>能耗：-50</p>
+								<p>费用：1000</p>
 							</div>
 						</div>
 					</div>
 					<!-------[Allied Airforce Command HQ]------->
 					<div class="unit-container" id="allied-airforce-command">
-						<div class="unit-container-info">
-							<img src="../src/allied-airforce-command.webp" alt="Allied Airforce Command HQ" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/allied-airforce-command-icon-ch.webp" alt="Allied Airforce Command HQ Icon" width="60" height="48"></img>
 							<h3>盟军空指部</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>盟军空指部可以生产以及维护战斗机，同时为战斗机的行动提供导航。</p>
-							<ul>
-								<p>建造前提：
-									<ol>
-										<li><a href="#allied-construction-yard">盟军建造场</a></li>
-										<li><a href="#allied-ore-refinery">盟军矿石精炼厂</a></li>
-										<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
-									</ol>
-								</li>
+						<div class="unit-container-info">
+							<img src="../src/allied-airforce-command.webp" alt="Allied Airforce Command HQ" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>盟军空指部可以生产以及维护战斗机，同时为战斗机的行动提供导航。</p>
+								<ul>
+									<li>战术：<a href="#allied-paratrooper"></a>空降步兵</li>
+									<li>特性：生产战机</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 矿石精炼厂 + 作战控制中心</p>
 								<p>能耗：-50</p>
 								<p>费用：1000</p>
-								<li>战术：<a href="#allied-paratrooper"></a>空降步兵</li>
-								<li>特性：生产战机</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Allied Battle Lab]------->
 					<div class="unit-container" id="allied-battle-lab">
-						<div class="unit-container-info">
-							<img src="../src/allied-battle-lab.webp" alt="Allied Battle Lab" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/allied-battle-lab-icon-ch.webp" alt="Allied Battle Lab Icon" width="60" height="48"></img>
 							<h3>盟军作战实验室</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>盟军作战实验室可以为战场前线提供更高的科技，解锁新的建筑、防御和武器。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/allied-battle-lab.webp" alt="Allied Battle Lab" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>盟军作战实验室可以为战场前线提供更高的科技，解锁新的建筑、防御和武器。</p>
+								<ul>
+									<li>战术：无</p>
+									<li>特性：解锁高等级科技</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -379,25 +359,24 @@
 								</li>
 								<p>能耗：-100</p>
 								<p>费用：3000</p>
-								<li>战术：无</p>
-								<li>特性：解锁高等级科技</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Allied Ore Purifier]------->
 					<div class="unit-container" id="ore-purifier">
-						<div class="unit-container-info">
-							<img src="../src/ore-purifier.webp" alt="Ore Purifier" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/ore-purifier-icon-ch.webp" alt="Ore Purifier Icon" width="60" height="48"></img>
 							<h3>矿石提纯器</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>矿石提纯器可以在采集到的矿石中提纯出更多高价值的原料，让每一车矿石换取更多的资源。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/ore-purifier.webp" alt="Ore Purifier" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>矿石提纯器可以在采集到的矿石中提纯出更多高价值的原料，让每一车矿石换取更多的资源。</p>
+								<ul>
+									<li>特性：增加25%收入</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -407,11 +386,7 @@
 								</li>
 								<p>能耗：-100</p>
 								<p>费用：2500</p>
-								<li>战术：无</p>
-								<li>特性：增加25%收入</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -420,39 +395,41 @@
 					<h2>盟军防御</h2>
 					<!-------[Allied Wall]------->
 					<div class="unit-container" id="allied-wall">
-						<div class="unit-container-info">
-							<img src="../src/allied-wall.webp" alt="Allied Wall" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/allied-wall-icon-ch.webp" alt="Allied Wall Icon" width="60" height="48"></img>
 							<h3>围墙</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>围墙可以有效阻挡敌军的步兵和轻型载具突袭。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/allied-wall.webp" alt="Allied Wall" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>围墙可以有效阻挡敌军的步兵和轻型载具突袭。</p>
+								<ul>
+									<li>特性：阻挡步兵和地面载具</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：<a href="#allied-construction-yard">盟军建造场</a></li>
 								<p>能耗：0</p>
 								<p>主武器：无</p>
 								<p>费用：50</p>
-								<li>战术：无</p>
-								<li>特性：阻挡步兵和地面载具</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Pillbox]------->
 					<div class="unit-container" id="pillbox">
-						<div class="unit-container-info">
-							<img src="../src/pillbox.webp" alt="Pillbox" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/pillbox-icon-ch.webp" alt="Pillbox Icon" width="60" height="48"></img>
 							<h3>机枪碉堡</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>机枪碉堡是盟军的基础防御工事，可以有效消灭冲锋的敌军士兵和轻型载具。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/pillbox.webp" alt="Pillbox" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>机枪碉堡是盟军的基础防御工事，可以有效消灭冲锋的敌军士兵和轻型载具。</p>
+								<ul>
+									<li>特性：反步兵</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -463,25 +440,24 @@
 								<p>主武器：M2重机枪</li>
 								<p>弹种：穿甲弹</p>
 								<p>费用：500</p>
-								<li>战术：无</p>
-								<li>特性：反步兵</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[SAM]------->
 					<div class="unit-container" id="sam">
-						<div class="unit-container-info">
-							<img src="../src/sam.webp" alt="SAM" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/sam-icon-ch.webp" alt="SAM Icon" width="60" height="48"></img>
 							<h3>防空导弹</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>盟军在掌握了热跟踪导弹技术后，很快将其落地到了实战。一次性可以发射8枚热跟踪导弹，防空导弹对任何空军的威胁都是致命的。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/sam.webp" alt="SAM" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>盟军在掌握了热跟踪导弹技术后，很快将其落地到了实战。一次性可以发射8枚热跟踪导弹，防空导弹对任何空军的威胁都是致命的。</p>
+								<ul>
+									<li>特性：防空</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -492,24 +468,24 @@
 								<p>主武器：FIM-43</li>
 								<p>弹种：高爆弹</p>
 								<p>费用：1000</p>
-								<li>特性：防空</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Prism Tower]------->
 					<div class="unit-container" id="prism-tower">
-						<div class="unit-container-info">
-							<img src="../src/prism-tower.webp" alt="Prism Tower" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/prism-tower-icon-ch.webp" alt="Prism Tower Icon" width="60" height="48"></img>
 							<h3>光棱塔</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>光棱塔是盟军的终极防御武器，其拥有一个非常强大的特性——光子增幅。每一座光棱塔可以利用棱镜组将光束聚焦到一座塔上，高能光束的汇集可以形成一股超高能光束，对来犯的敌人进行毁灭性打击。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/prism-tower.webp" alt="Prism Tower" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>光棱塔是盟军的终极防御武器，其拥有一个非常强大的特性——光子增幅。每一座光棱塔可以利用棱镜组将光束聚焦到一座塔上，高能光束的汇集可以形成一股超高能光束，对来犯的敌人进行毁灭性打击。</p>
+								<ul>
+									<li>特性：光子增幅</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -521,24 +497,24 @@
 								<p>主武器：光学棱镜组</li>
 								<p>弹种：光子射流</li>
 								<p>费用：1500</p>
-								<li>特性：光子增幅</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Stealth Generator]------->
 					<div class="unit-container" id="stealth-generator">
-						<div class="unit-container-info">
-							<img src="../src/stealth-generator.webp" alt="Stealth Generator" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/stealth-generator-icon-ch.webp" alt="Stealth Generator Icon" width="60" height="48"></img>
 							<h3>隐形装置</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>隐形装置是盟军的高级防御工事，当通电时，隐形装置可以在周围生成一道光学屏障，让一切附近的单位获得隐形。但是，隐形装置无法让自身隐形。</p>
-							<ul>
+						<div class="unit-container-info">
+							<img src="../src/stealth-generator.webp" alt="Stealth Generator" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>隐形装置是盟军的高级防御工事，当通电时，隐形装置可以在周围生成一道光学屏障，让一切附近的单位获得隐形。但是，隐形装置无法让自身隐形。</p>
+								<ul>
+									<li>特性：提供范围隐形</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
 								<p>建造前提：
 									<ol>
 										<li><a href="#allied-construction-yard">盟军建造场</a></li>
@@ -548,66 +524,51 @@
 								</li>
 								<p>能耗：-100</p>
 								<p>费用：2000</p>
-								<li>特性：提供范围隐形</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Satellite Telecom]------->
 					<div class="unit-container" id="satellite-telecom">
-						<div class="unit-container-info">
-							<img src="../src/satellite-telecom.webp" alt="Satellite Telecom" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/satellite-telecom-icon-ch.webp" alt="Satellite Telecom Icon" width="60" height="48"></img>
 							<h3>卫星通讯器</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>卫星通讯器可以利用卫星连接与本土的空军指挥部进行通讯，并为战术轰炸机提供导航，提高命中精度。</p>
-							<ul>
-								<p>建造前提：
-									<ol>
-										<li><a href="#allied-construction-yard">盟军建造场</a></li>
-										<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
-										<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
-									</ol>
-								</li>
+						<div class="unit-container-info">
+							<img src="../src/satellite-telecom.webp" alt="Satellite Telecom" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>卫星通讯器可以利用卫星连接与本土的空军指挥部进行通讯，并为战术轰炸机提供导航，提高命中精度。</p>
+								<ul>
+									<li>战术：<a href="#fortress-bombing">堡垒轰炸</a></li>
+									<li>特性：提供雷达</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 作战控制中心 + 作战实验室</p>
 								<p>能耗：-100</p>
 								<p>费用：2000</p>
-								<li>战术：<a href="#fortress-bombing">堡垒轰炸</a></li>
-								<li>特性：提供雷达</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Weather Machine]------->
 					<div class="unit-container" id="weather-machine">
-						<div class="unit-container-info">
-							<img src="../src/weather-machine.webp" alt="天气控制仪" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/weather-machine-icon-ch.webp" alt="天气控制仪图标" width="60" height="48"></img>
 							<h3>天气控制仪</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>天气控制仪是盟军的终极大规模杀伤性武器。天气控制仪通过聚焦光束发射到对流层，改变对流层分子运动趋势，并在指定坐标形成闪电风暴。</p>
-							<ul>
-								<p>建造前提：
-									<ol>
-										<li><a href="#allied-construction-yard">盟军建造场</a></li>
-										<li><a href="#allied-battle-command">盟军作战控制中心</a></li>
-										<li><a href="#allied-battle-lab">盟军作战实验室</a></li>
-									</ol>
-								</li>
+						<div class="unit-container-info">
+							<img src="../src/weather-machine.webp" alt="天气控制仪" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>天气控制仪是盟军的终极大规模杀伤性武器。天气控制仪通过聚焦光束发射到对流层，改变对流层分子运动趋势，并在指定坐标形成闪电风暴。</p>
+								<ul>
+									<li>战术：闪电风暴</li>
+									<li>特性：超级武器</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>建造前提：建造场 + 作战控制中心 + 作战实验室</p>
 								<p>能耗：-200</p>
 								<p>费用：4000</p>
-								<li>战术：闪电风暴</li>
-								<li>特性：超级武器</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -616,65 +577,65 @@
 					<h2>盟军战术</h2>
 					<!-------[Allied Paratrooper]------->
 					<div class="unit-container" id="allied-paratrooper">
-						<div class="unit-container-info">
-							<img src="../src/allied-paratrooper.webp" alt="Allied Paratrooper" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/allied-paratrooper-icon-ch.webp" alt="Allied Paratrooper Icon" width="60" height="48"></img>
 							<h3>空降步兵</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>空降步兵是基础的战术之一，通过空投一个步兵班到战场的任意地方，在不经意间袭扰敌军。</p>
-							<ul>
-								<li>使用前提：<a href="#allied-air-force-commmand-hq">盟军空指部</a></li>
+						<div class="unit-container-info">
+							<img src="../src/allied-paratrooper.webp" alt="Allied Paratrooper" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>空降步兵是基础的战术之一，通过空投一个步兵班到战场的任意地方，在不经意间袭扰敌军。</p>
+								<ul>
+									<li>特性：4名<a href="#assaulter">突击兵</a>, 4名<a href="#guardian">重装兵</a></li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>使用前提：空指部</p>
 								<p>费用：500</p>
-								<li>加载时间：120秒</li>
-								<li>特性：4名<a href="#assaulter">突击兵</a>, 4名<a href="#guardian">重装兵</a></li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+								<p>加载时间：120秒</p>
+							</div>
 						</div>
 					</div>
 					<!-------[Fortress Bombing]------->
 					<div class="unit-container" id="fortress-bombing">
-						<div class="unit-container-info">
-							<img src="../src/tropofortress.webp" alt="对流层堡垒轰炸机" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/fortress-bombing-icon-ch.webp" alt="Fortress Bombing Icon" width="60" height="48"></img>
 							<h3>堡垒轰炸</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>SBX-47对流层堡垒轰炸机是盟军的超音速低空轰炸机，速度极快，普通的防空武器很难对付。对流层堡垒轰炸机每次轰炸任务会携带5枚高爆炸弹，投向目标区域。记住，在轰炸任务开始后一定要让友军撤离目标区域，炸弹的杀伤力不容小觑。</p>
-							<ul>
-								<li>使用前提：<a href="#satellite-telecom">卫星通讯器</a></li>
+						<div class="unit-container-info">
+							<img src="../src/tropofortress.webp" alt="对流层堡垒轰炸机" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>SBX-47对流层堡垒轰炸机是盟军的超音速低空轰炸机，速度极快，普通的防空武器很难对付。对流层堡垒轰炸机每次轰炸任务会携带5枚高爆炸弹，投向目标区域。记住，在轰炸任务开始后一定要让友军撤离目标区域，炸弹的杀伤力不容小觑。</p>
+								<ul>
+									<li>特性：投放5枚CBU-32高爆炸弹</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>使用前提：卫星通讯器</p>
 								<p>费用：2000</p>
-								<li>冷却时间：120秒</li>
-								<li>特性：投放5枚CBU-32高爆炸弹</p>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+								<li>冷却时间：120秒</p>
+							</div>
 						</div>
 					</div>
 					<!-------[Lightning Storm]------->
 					<div class="unit-container" id="lightning-storm">
-						<div class="unit-container-info">
-							<img src="../src/lightning-storm.webp" alt="闪电风暴" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/lightning-storm-icon-ch.webp" alt="闪电风暴图标" width="60" height="48"></img>
 							<h3>闪电风暴</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>闪电风暴形成后，将对地面的一切物体造成毁灭性打击。</p>
-							<ul>
-								<li>使用前提：<a href="#weather-machine">天气控制仪</a></li>
+						<div class="unit-container-info">
+							<img src="../src/lightning-storm.webp" alt="闪电风暴" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>闪电风暴形成后，将对地面的一切物体造成毁灭性打击。</p>
+								<ul>
+									<li>特性：超级武器</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>使用前提：天气控制仪</p>
 								<p>费用：0</p>
-								<li>冷却时间：120秒</li>
-								<li>特性：超级武器</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+								<p>冷却时间：120秒</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -683,80 +644,70 @@
 					<h2>盟军步兵</h2>
 					<!-------[Assaulter]------->
 					<div class="unit-container" id="assaulter">
-						<div class="unit-container-info">
-							<img src="../src/assaulter.webp" alt="突击兵" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/assaulter-icon-ch.webp" alt="突击兵图标" width="60" height="48"></img>
 							<h3>突击兵</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>突击兵是盟军的基础步兵。突击兵装备了M16自动步枪，并且在部署后可以使用M1919重机枪以提供更强大的火力。同时，突击兵具备巷战能力，可以进驻建筑以作为掩体。</p>
-							<ul>
-								<li>训练前提：<a href="#allied-barracks">盟军兵营</a></li>
-								<p>主武器：M16自动步枪</li>
+						<div class="unit-container-info">
+							<img src="../src/assaulter.webp" alt="突击兵" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>突击兵是盟军的基础步兵。突击兵装备了M16自动步枪，并且在部署后可以使用M1919重机枪以提供更强大的火力。同时，突击兵具备巷战能力，可以进驻建筑以作为掩体。</p>
+								<ul>
+									<li>进驻建筑</li>
+									<li>驾驶载具</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>训练前提：兵营</p>
+								<p>主武器：M16自动步枪</p>
 								<p>费用：150</p>
-								<li>特性：
-									<ol>
-										<li>进驻建筑</li>
-										<li>驾驶载具</li>
-									</ol>
-								</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Guardian]------->
 					<div class="unit-container" id="guardian">
-						<div class="unit-container-info">
-							<img src="../src/guardian.webp" alt="重装兵" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
 							<img class="unit-icon" src="../src/guardian-icon-ch.webp" alt="重装兵图标" width="60" height="48"></img>
 							<h3>重装兵</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>重装兵是盟军的重火力支援步兵。重装兵装备了M60轻机枪，并且在部署后可以使用反坦克火箭筒以打击敌方载具。和突击兵一样，重装兵也可以进驻建筑以作为掩体。</p>
-							<ul>
-								<li>训练前提：<a href="#allied-barracks">盟军兵营</a></li>
-								<p>主武器：M60轻机枪</li>
+						<div class="unit-container-info">
+							<img src="../src/guardian.webp" alt="重装兵" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>重装兵是盟军的重火力支援步兵。重装兵装备了M60轻机枪，并且在部署后可以使用反坦克火箭筒以打击敌方载具。和突击兵一样，重装兵也可以进驻建筑以作为掩体。</p>
+								<ul>
+									<li>进驻建筑</li>
+									<li>部署后无法碾压</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>训练前提：兵营</p>
+								<p>主武器：M60轻机枪</p>
 								<p>费用：300</p>
-								<li>特性：
-									<ol>
-										<li>进驻建筑</li>
-										<li>部署后无法碾压</li>
-									</ol>
-								</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Engineer]------->
 					<div class="unit-container" id="allied-chgineer">
-						<div class="unit-container-info">
-							<img src="../src/allied-chgineer.webp" alt="盟军工程师" width="360" height="270" loading="lazy"></img>
-						</div>
 						<div class="unit-container-name">
-							<img class="unit-icon" src="../src/allied-chgineer-icon-ch.webp" alt="盟军工程师图标" width="60" height="48"></img>
+							<img class="unit-icon" src="../src/allied-engineer-icon-ch.webp" alt="盟军工程师图标" width="60" height="48"></img>
 							<h3>工程师</h3>
 						</div>
-						<div class="unit-container-desc">
-							<p>工程师是战场上最重要的角色之一，其不仅可以修复建筑，还可以占领敌方建筑和中立建筑。工程师最强大的武器不是枪而是知识，因此在战场上需要被重点保护。</p>
-							<ul>
-								<li>训练前提：<a href="#allied-barracks">盟军兵营</a></li>
+						<div class="unit-container-info">
+							<img src="../src/allied-engineer.webp" alt="盟军工程师" width="360" height="270" loading="lazy"></img>
+							<div class="unit-container-desc">
+								<p>工程师是战场上最重要的角色之一，其不仅可以修复建筑，还可以占领敌方建筑和中立建筑。工程师最强大的武器不是枪而是知识，因此在战场上需要被重点保护。</p>
+								<ul>
+									<li>可以维修己方建筑。</li>
+									<li>可以维修桥梁。</li>
+									<li>可以占领敌方和中立建筑。</li>
+									<li>可以拆除C4炸弹。</li>
+								</ul>
+							</div>
+							<div class="unit-container-stats">
+								<p>训练前提：兵营</p>
 								<p>主武器：工具箱</li>
 								<p>费用：500</p>
-								<li>特性：
-									<ol>
-										<li>维修己方建筑和桥梁</li>
-										<li>占领建筑</li>
-									</ol>
-								</li>
-							</ul>
-						</div>
-						<div class="unit-container-stats">
+							</div>
 						</div>
 					</div>
 					<!-------[Sniper]------->
