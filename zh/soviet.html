@@ -191,7 +191,7 @@
 							<div class="unit-container-desc">
 								<p>建造场是所有前线建设的基础。建造场不可以直接被建造，而是由机动基地车直接展开部署而得。</p>
 								<ul>
-									<li>特性：收起部署为<a href="#soviet-mcv">苏联机动基地车</a></li>
+									<li>收起部署为<a href="#soviet-mcv">苏联机动基地车</a>。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -212,7 +212,8 @@
 							<div class="unit-container-desc">
 								<p>随着苏联科学家对电磁领域的深入，磁能反应器最终取代了传统的火力发电厂：比传统发电厂更廉价，并且更为安全。然而，磁能反应器在被摧毁时会释放强烈的电磁脉冲，这将对附近的电子系统造成影响。</p>
 								<ul>
-									<li>特性：被摧毁时释放电磁脉冲</li>
+									<li>被摧毁时释放电磁脉冲</li>
+									<li>被渗透后停电。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -233,8 +234,8 @@
 							<div class="unit-container-desc">
 								<p>矿石精炼厂是前线的基础经济设施，采矿车收集到的矿石会在这里被精炼成原材料，用于生产建筑和武器。</p>
 								<ul>
-									<li>战术：无</li>
-									<li>特性：建造时提供一辆<a href="#war-miner">武装采矿车</a></li>
+									<li>建造完成时提供一辆<a href="#war-miner">武装采矿车</a>，采矿车无法停放时返还资金。</li>
+									<li>被渗透后敌方获得资金。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -255,20 +256,13 @@
 							<div class="unit-container-desc">
 								<p>兵营是前线用于训练步兵的设施，建造一座兵营，将会解锁基础的防御武器。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-tesla-reactor">磁能反应器</a></li>
-										</ol>
-									</li>
-									<p>能耗：-10</li>
-									<p>费用：1000</p>
-									<li>战术：无</li>
-									<li>特性：训练步兵</li>
+									<li>被渗透后敌方步兵获得初始升级。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 磁能反应器</p>
+								<p>能耗：-10</p>
+								<p>费用：1000</p>
 							</div>
 						</div>
 					</div>
@@ -283,21 +277,13 @@
 							<div class="unit-container-desc">
 								<p>武器工厂是前线最重要的载具生产设施。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-tesla-reactor">磁能反应器</a></li>
-											<li><a href="#soviet-ore-refinery">苏联矿石精炼厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-100</p>
-									<p>费用：2000</p>
-									<li>战术：无</li>
-									<li>特性：生产载具</li>
+									<li>被渗透后敌方载具获得初始升级。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 磁能反应器 + 矿石精炼厂</p>
+								<p>能耗：-100</p>
+								<p>费用：2000</p>
 							</div>
 						</div>
 					</div>
@@ -312,21 +298,15 @@
 							<div class="unit-container-desc">
 								<p>雷达是前线战场控制的联络设施，不仅能提供战场信息，还可以呼叫侦察机以拓展战略视野。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-tesla-reactor">磁能反应器</a></li>
-											<li><a href="#soviet-ore-refinery">苏联矿石精炼厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-50</li>
-									<p>费用：1000</p>
-									<li>战术：侦察机</li>
-									<li>特性：提供雷达</li>
+									<li>提供侦察机战术。</li>
+									<li>提供雷达。</li>
+									<li>被渗透后重置战争迷雾。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 磁能反应器 + 矿石精炼厂</p>
+								<p>能耗：-50</p>
+								<p>费用：1000</p>
 							</div>
 						</div>
 					</div>
@@ -341,21 +321,13 @@
 							<div class="unit-container-desc">
 								<p>空军指挥部是前线用于协调空中单位制造和行动的设施。空指部不仅可以生产战机，还可以为战机提供弹药补给和维护服务。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-tesla-reactor">磁能反应炉</a></li>
-											<li><a href="#soviet-ore-refinery">苏联矿石精炼厂</a></li>
-										</ol>
-									</li>
-									<p>能耗：-50</li>
-									<p>费用：2000</p>
-									<li>战术：<a href="#soviet-paratrooper">空降部队</a></li>
-									<li>特性：停放战斗机</li>
+									<li>提供<a href="#soviet-paratrooper">空降部队</a>战术。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 磁能反应炉 + 矿石精炼厂</p>
+								<p>能耗：-50</li>
+								<p>费用：2000</p>
 							</div>
 						</div>
 					</div>
@@ -370,21 +342,13 @@
 							<div class="unit-container-desc">
 								<p>苏联作战实验室是前线的重要科技研发设施。只属于苏联国防工业部，作战实验室将会解锁更高的科技树，包括建筑、防御设施、步兵武器、载具和战斗机。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-ore-refinery">苏联矿石精炼厂</a></li>
-											<li><a href="#soviet-radar">苏联雷达</a></li>
-										</ol>
-									</li>
-									<p>能耗：-10</li>
-									<p>费用：3000</p>
-									<li>战术：无</li>
-									<li>特性：解锁高级科技</li>
+									<li>被渗透后敌方获得<a href="secret-units.html">隐藏单位</a>。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 矿石精炼厂 + 雷达</p>
+								<p>能耗：-10</p>
+								<p>费用：3000</p>
 							</div>
 						</div>
 					</div>
@@ -399,20 +363,14 @@
 							<div class="unit-container-desc">
 								<p>核能反应炉虽然是传统的发电方式，但苏联成功将其小型化并带到了前线。核能反应炉的超大电量输出几乎可以为整个基地的建筑供电。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-battle-lab">苏联作战实验室</a></li>
-										</ol>
-									</li>
-									<p>能耗：+1000</p>
-									<p>费用：2000</p>
-									<li>战术：无</li>
-									<li>特性：发电</li>
+									<li>提供辐射轰炸战术。</li>
+									<li>被渗透后停电。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场作战实验室</p>
+								<p>能耗：1000</p>
+								<p>费用：2000</p>
 							</div>
 						</div>
 					</div>
@@ -427,21 +385,14 @@
 							<div class="unit-container-desc">
 								<p>工业工厂是苏联军事工业委员会直属的工业单位，其用途是更好地统筹协调资源回收和利用，降低前线生产的成本。</p>
 								<ul>
-									<p>建造前提： 
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-ore-refinery">苏联矿石精炼厂</a></li>
-											<li><a href="#soviet-battle-lab">苏联作战实验室</a></li>
-										</ol>
-									</li>
-									<p>能耗：-100</p>
-									<p>费用：2500</p>
 									<li>战术：<a href="#planned-economy">计划经济</a></li>
-									<li>特性：载具打75折</li>
+									<li>所有载具的价格打75折。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 矿石精炼厂 + 作战实验室</p>
+								<p>能耗：-100</p>
+								<p>费用：2500</p>
 							</div>
 						</div>
 					</div>
@@ -460,14 +411,13 @@
 							<div class="unit-container-desc">
 								<p>围墙可以有效预防步兵和轻型载具的进攻。</p>
 								<ul>
-									<p>建造前提： <a href="#soviet-construction-yard">苏联建造场</a></li>
-									<p>能耗： 0</li>
-									<p>费用：100</p>
 									<li>特性：阻挡步兵和地面载具</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场</p>
+								<p>能耗： 0</p>
+								<p>费用：100</p>
 							</div>
 						</div>
 					</div>
@@ -482,21 +432,15 @@
 							<div class="unit-container-desc">
 								<p>哨戒炮是苏联所研发的一款高射速转轮机枪，其使用12.7毫米的子弹以高初速射击敌人，可以轻易抵御步兵和轻型载具的进攻。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#soviet-construction-yard">苏联建造场</a></li>
-											<li><a href="#soviet-barracks">苏联兵营</a></li>
-										</ol>
-									</li>
-									<p>能耗：0</li>
-									<p>主武器：12.7毫米AK612</li>
-									<p>弹种：穿甲弹</p>
-									<p>费用：500</p>
 									<li>特性：反步兵和轻型载具</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：建造场 + 兵营</p>
+								<p>能耗：0</p>
+								<p>主武器：12.7毫米AK612机炮</p>
+								<p>弹种：穿甲弹</p>
+								<p>费用：500</p>
 							</div>
 						</div>
 					</div>
@@ -557,8 +501,9 @@
 							<div class="unit-container-desc">
 								<p>情报中心是建立在战争前线的情报单位，其直接隶属于国家安全委员会（又名克格勃）。情报中心的特工们潜伏在敌后阵线，窃取敌军的进攻计划，并时不时策反敌人。</p>
 								<ul>
-									<li>战术：<a href="#defection">策反</a></li>
-									<li>特性：分析敌军进攻战术</li>
+									<li>提供<a href="#defection">策反</a>战术。</li>
+									<li>获取敌军进攻路径。</li>
+									<li>被渗透后重置战术倒计时。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -579,8 +524,9 @@
 							<div class="unit-container-desc">
 								<p>苏联对大规模杀伤性武器的理解比较直接————核武器。为了不引发全面的核战争，苏联决定利用研发一种小型化的核导弹，并将发射井进行了小型化设计，以便在战场上快速建造。</p>
 								<ul>
-									<li>战术：<a href="#nuke-attack">核弹攻击</a></li>
-									<li>特性：超级武器</li>
+									<li>提供<a href="#nuke-attack">核弹攻击</a>战术。</li>
+									<li>被渗透后重置战术倒计时。</li>
+									<li>可以在客户端通过【超级武器】关闭。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -605,7 +551,7 @@
 							<div class="unit-container-desc">
 								<p>空降步兵是基础的战术之一，通过空投一个步兵班到战场的任意地方，在不经意间袭扰敌军。</p>
 								<ul>
-									<li>特性：5名<a href="#conscript">动员兵</a>，5名<a href="#rpg-trooper">火箭筒步兵</a></li>
+									<li>每次提供5名<a href="#conscript">动员兵</a>，5名<a href="#rpg-trooper">火箭筒步兵</a>。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -626,14 +572,13 @@
 							<div class="unit-container-desc">
 								<p>用马克思主义和列宁主义策反敌人。</p>
 								<ul>
-									<li>使用前提： <a href="#intelligence-agency">情报中心</a></li>
-									<p>费用：2000</p>
-									<p>加载时间：150秒</p>
-									<li>特性：策反敌军单位</li>
+									<li>只能对步兵或者载具使用。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>使用前提：情报中心</p>
+								<p>费用：2000</p>
+								<p>加载时间：150秒</p>
 							</div>
 						</div>
 					</div>
@@ -648,14 +593,13 @@
 							<div class="unit-container-desc">
 								<p>为了体现计划经济的优越性，苏联的中央政府会给在战场上的所有指挥官进行持续性拨款。</p>
 								<ul>
-									<li>使用前提：<a href="#intelligence-agency">工业工厂</a></li>
-									<p>费用：0</li>
-									<p>加载时间：120秒</p>
-									<li>特性：获得1,0000点资金</li>
+									<li>每次可获得1,0000点资金</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>使用前提：工业工厂</p>
+								<p>费用：0</li>
+								<p>加载时间：120秒</p>
 							</div>
 						</div>
 					</div>
@@ -670,14 +614,13 @@
 							<div class="unit-container-desc">
 								<p>核弹是苏联的大规模杀伤性武器，其使用起来简单粗暴。在核弹命中目标后，会产生巨大的冲击波，并释放出巨量的辐射，对目标的任何物体造成毁灭性打击。</p>
 								<ul>
-									<li>使用前提：<a href="#nuke-silo">核弹发射井</a></li>
-									<p>费用：0</li>
-									<p>加载时间：120秒</p>
-									<li>特性：超级武器</li>
+									<li>爆炸后形成电磁脉冲。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>使用前提：核弹发射井</p>
+								<p>费用：0</p>
+								<p>加载时间：120秒</p>
 							</div>
 						</div>
 					</div>
@@ -696,8 +639,8 @@
 							<div class="unit-container-desc">
 								<p>苏联动员兵是苏军的基础兵种。手持AK-47自动步枪，不但可以穿透轻型载具的装甲，同时可以进驻建筑进行巷战。</p>
 								<ul>
-									<li>进驻建筑</li>
-									<li>驾驶载具</li>
+									<li>可以进驻建筑。</li>
+									<li>可以驾驶中立载具。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -718,7 +661,7 @@
 							<div class="unit-container-desc">
 								<p>火箭筒步兵装备了RPG-7火箭筒，这种武器虽然有些过时，但便宜好用，是反坦克的必备良品。同时，火箭筒步兵可以进驻建筑，在建筑内将妄想通过的载具炸成废铁。</p>
 								<ul>
-									<li>特性：进驻建筑</li>
+									<li>可以进驻建筑。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -739,8 +682,10 @@
 							<div class="unit-container-desc">
 								<p>工程师是战场上最重要的角色之一，其不仅可以修复建筑，还可以占领敌方建筑和中立建筑。工程师最强大的武器不是枪而是知识，因此在战场上需要被重点保护。</p>
 								<ul>
-									<li>维修己方建筑和桥梁</li>
-									<li>占领敌方建筑</li>
+									<li>可以维修己方建筑。</li>
+									<li>可以维修桥梁。</li>
+									<li>可以占领敌方或中立建筑。</li>
+									<li>可以拆除C4炸弹。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -761,8 +706,8 @@
 							<div class="unit-container-desc">
 								<p>磁暴步兵是苏军的重型兵种，装备有两千伏特的磁暴枪。磁暴步兵不仅仅对步兵很致命，对载具也可以造成不小的伤害。同时，因为高强度的金属装甲，磁爆步兵很难被普通子弹伤害。</p>
 								<ul>
-									<li>无法被碾压</li>
-									<li>给<a href="#tesla-coil">磁暴线圈</a>充能</li>
+									<li>无法被碾压。</li>
+									<li>可以给<a href="#tesla-coil">磁暴线圈</a>充能。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -830,7 +775,7 @@
 							<div class="unit-container-desc">
 								<p>CA-55是苏联最新型的机动基地车，其采用了高压缩展开技术，并将已经停止开发的972工程作为底盘————这个四履带底盘可以让CA-55在复杂地形下也能畅通无阻，并大幅度提升了其越野性能</p>
 								<ul>
-									<li>特性：部署展开为<a href="#soviet-construction-yard">苏联建造场</a></li>
+									<li>部署后展开为<a href="#soviet-construction-yard">苏联建造场</a>。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -852,15 +797,14 @@
 							<div class="unit-container-desc">
 								<p>BH-2武装采矿车是从翻新后的T-34中型坦克改装而来的特殊用途车辆。因为装备有45毫米高射速炮，BH-2武装采矿车可以抵抗住敌军轻步兵和轻型载具的袭扰。</p>
 								<ul>
-									<p>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-									<p>主武器：45毫米20-K坦克炮</p>
-									<p>弹种：高爆穿甲弹</p>
-									<p>费用：1400</p>
-									<li>特性：采矿</li>
+									<li>可以采矿。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂</p>
+								<p>主武器：45毫米20-K坦克炮</p>
+								<p>弹种：高爆穿甲弹</p>
+								<p>费用：1400</p>
 							</div>
 						</div>
 					</div>
@@ -875,15 +819,14 @@
 							<div class="unit-container-desc">
 								<p>T-56犀牛坦克是T-44坦克的继承者，其拥有低矮的造型以降低被弹面积，同时拥有大角度的首上，可以创造高强度的等效装甲。同时，因为本身自重较轻，犀牛坦克拥有不错的机动性和通过性，是苏军最坚实可靠的装甲力量。</p>
 								<ul>
-									<p>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-									<p>主武器：100毫米D-56TS坦克炮</p>
-									<p>弹种：硬芯穿甲弹</p>
-									<p>费用：1600</p>
-									<li>特性：初始载具</li>
+									<li>可以在移动中开火。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂</p>
+								<p>主武器：100毫米D-56TS坦克炮</p>
+								<p>弹种：硬芯穿甲弹</p>
+								<p>费用：1600</p>
 							</div>
 						</div>
 					</div>
@@ -898,15 +841,14 @@
 							<div class="unit-container-desc">
 								<p>BTR-152Z防空履带车是由BTR-152装甲运兵车改进而来的防空单位，其悬挂系统被改进为半履带，可以有效承受23毫米防空炮带来的后坐力，并提高越野性能。23毫米高射炮不仅在可以用于防空，更可以将高炮放平，用于对步兵集群的大规模杀伤。</p>
 								<ul>
-									<p>建造前提： <a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-									<p>主武器：23毫米AZP-23P防空炮</p>
-									<p>弹种：高爆穿甲弹</p>
-									<p>费用：1000</p>
-									<li>特性：搭载5名乘员</li>
+									<li>可以搭载5名乘员。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂</p>
+								<p>主武器：23毫米AZP-23P防空炮</p>
+								<p>弹种：高爆穿甲弹</p>
+								<p>费用：1000</p>
 							</div>
 						</div>
 					</div>
@@ -921,20 +863,14 @@
 							<div class="unit-container-desc">
 								<p>TT-50磁暴坦克是苏联最成功的特种车辆之一。在电磁科技的加持下，磁暴坦克装备了一门2连装高能磁暴线圈，可以对敌方地面单位造成毁灭性打击，同时对车辆的电子系统造成电磁脉冲破坏，使其短暂瘫痪。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-											<li><a href="#soviet-radar">苏联雷达</a></li>
-										</ol>
-									</li>
-									<p>主武器：N100T磁暴线圈</li>
-									<p>弹种：电流</li>
-									<p>费用：2200</p>
-									<li>特性：给<a href="#tesla-coil">磁暴线圈</a>充能</li>
+									<li>可以给<a href="#tesla-coil">磁暴线圈</a>充能。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂 + 雷达</p>
+								<p>主武器：N20T磁暴线圈</p>
+								<p>弹种：电流</p>
+								<p>费用：2200</p>
 							</div>
 						</div>
 					</div>
@@ -949,20 +885,14 @@
 							<div class="unit-container-desc">
 								<p>在西欧的盟军开始部署隐形科技时，苏联国防部很快提出了新的对抗方案——P-34雷达。这种雷达不仅仅可以探测隐形单位，还可以释放出电磁波，干扰隐形发生器所生成的光谱，使敌人的隐形失去的效果。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-											<li><a href="#soviet-radar">苏联雷达</a></li>
-										</ol>
-									</li>
-									<p>主武器：P-34高功率雷达</li>
-									<p>弹种：电磁波</li>
-									<p>费用：1600</p>
-									<li>特性：探测隐形单位</li>
+									<li>可以探测隐形单位。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂 + 雷达</p>
+								<p>主武器：P-34高功率雷达</p>
+								<p>弹种：电磁波</p>
+								<p>费用：1600</p>
 							</div>
 						</div>
 					</div>
@@ -977,20 +907,14 @@
 							<div class="unit-container-desc">
 								<p>BM-15喀秋莎火箭炮是其前身的升级版。喀秋莎火箭炮装填了6枚高爆火箭弹，可以有效对建筑进行攻击。但是，因为其底盘为普通的卡车底盘，所以不适合近距离战斗。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-											<li><a href="#soviet-radar">苏联雷达</a></li>
-										</ol>
-									</li>
-									<p>主武器：BM-15火箭发射器</li>
-									<p>弹种：高爆弹</p>
-									<p>费用：1400</p>
-									<li>特性：攻城</li>
+									<li>无法精准射击目标。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂 + 雷达</p>
+								<p>主武器：BM-15火箭发射器</p>
+								<p>弹种：高爆弹</p>
+								<p>费用：1400</p>
 							</div>
 						</div>
 					</div>
@@ -1005,20 +929,14 @@
 							<div class="unit-container-desc">
 								<p>KV-550天启坦克是苏联著名的KV系列坦克中的王者。天启坦克拥有强大的装甲以及两门122毫米BL-9U线膛炮，同时在炮塔的两侧还挂载了火箭弹发射器，在战场上扮演着全能型火力平台的角色。</p>
 								<ul>
-									<p>建造前提：
-										<ol>
-											<li><a href="#soviet-weapon-factory">苏联武器工厂</a></li>
-											<li><a href="#soviet-battle-lab">苏联作战实验室</a></li>
-										</ol>
-									</li>
-									<p>主武器：122毫米BL-9U线膛炮</p>
-									<p>弹种：穿甲弹</p>
-									<p>费用：3000</p>
-									<li>特性：可碾压载具</li>
+									<li>可以碾压载具。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
-								
+								<p>建造前提：武器工厂 + 作战实验室</p>
+								<p>主武器：122毫米BL-9U线膛炮</p>
+								<p>弹种：穿甲弹</p>
+								<p>费用：3000</p>
 							</div>
 						</div>
 					</div>
@@ -1036,7 +954,7 @@
 							<div class="unit-container-desc">
 								<p>米格是享誉世界的苏联飞机制造商。米格战机可以携带2枚空地导弹或者2枚空空导弹，可以将几乎任何目标在一瞬间摧毁。</p>
 								<ul>
-									<li>特性：无</li>
+									<li>可以进行空战。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
@@ -1058,7 +976,7 @@
 							<div class="unit-container-desc">
 								<p>基洛夫空艇是苏联工程师的杰作之一，其完美解决了轰炸机载弹量较低的问题。同时，因为飞行速度较慢，基洛夫空艇安装了轻型装甲，可以有效抵挡住机炮的射击或爆炸产生的伤害。</p>
 								<ul>
-									<li>特性：无</li>
+									<li>不受电磁脉冲影响。</li>
 								</ul>
 							</div>
 							<div class="unit-container-stats">
