@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue导航栏示例</title>
+  <style>
+    .navigation-buttons, .responsive-navigation-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .navigation-button, .responsive-navigation-buttons a {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    .responsive-navigation {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .navigation-buttons {
+        display: none;
+      }
+      .responsive-navigation {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="navigation-buttons">
+        <div class="navigation-button" v-for="item in navItems" :key="item.text">
+          <a :href="item.link">{{ item.text }}</a>
+        </div>
+      </div>
+      <div class="responsive-navigation">
+        <a href="https://ra2be.com/zh/">
+          <img src="../src/favicon.svg" alt="logo" width="36px" height="36px">
+        </a>
+        <div class="responsive-navigation-buttons">
+          <a v-for="item in navItems" :key="item.text" :href="item.link">{{ item.text }}</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        navItems: [
+          { text: '首页', link: 'https://ra2be.com/zh/' },
+          { text: '档案库', link: 'archives.html' },
+          { text: '博客', link: 'blog.html' },
+          { text: '下载', link: 'download.html' }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
