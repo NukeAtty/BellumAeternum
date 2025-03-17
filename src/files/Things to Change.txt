@@ -18,5 +18,3 @@ Units.RepairRate=		;Default URepairRate
 Units.RepairStep=		;Default RepairStep
 Units.RepairPercent=  ; floating point value, percents or absolute
 Units.UseRepairCost=  ; boolean
-
-版规(Section Rules)

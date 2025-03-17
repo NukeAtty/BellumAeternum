@@ -1,28 +1,17 @@
-Mission 1: Night Raid - Ambleteuse, France
-	Objective: Raid the Soviet Base in Ambleteuse and Establish a Frontline Base.
+Mission 1: Hold the Line - Dover, UK
+	Objective: Defend Port of Dover.
+
+	Objective 1: Wipe out the Soviet units.
+	Objective 2: Fix the Satellite telecom.
+	Objective 3: Protect the satellite telecom until fortress bomber arrive.
+
+Mission 2: Blackout - Ambleteuse, France
+	Objective: Raid the Soviet power plants.
 
 	Objective 1: Destroy the flak base on the Ambleteuse seaside.
 	Objective 2: Capture the Soviet radar to blind enemy.
 	Objective 3: Destroy the Soviet base in Ambleteuse.
 
-	1. Tanya Swin to the beach.
-	2. Arrow point to the flak gun on the beach.
-	3. After Tanya bomb the flak gun, dawnhawk transport load 3 engis and 2 snipers come to the beach.
-	4. Helicopter go away.
-
-Mission 2: Snowblind - Stantsiya Svyazi, Soviet Russia
-	Brief:
-		The night raid in Ambleteuse is strong and powerful, but not enough.
-		The Soviet will fight back soon, so we need to let them know what a real pain is.
-		The intel has discovered a nuke launcher will be sent to Germany, so we will land a group of tactical force to Stantsiya Svyazi, Soviet Russia.
-
-	Objective: Raid the Soviet nuclear base and destroy the nuke launcher.
-
-	Objective 1: Destroy the Soviet camp at the foothill.
-	Objective 2: Destroy the Soviet base at the foothill.
-	Objective 3: Search and destroy the nuke launcher before it escape.
-
-	Failure: All units destroyed.
 
 Mission 3: Vesper - Rotterdam, Netherland
 	Brief:

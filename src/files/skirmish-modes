@@ -38,22 +38,22 @@ Map:
 		- Lowland Sound
 
 	2. Each area has two special facilities:
-		- Plateau Forest: 
+		- Alpine Forest: 
 			= Grand Cannon: Provides Ranged Shot (5 Shots, Reload: 3600)
 			= Radar Scanner: Provides Beacon Tactic (3:00).
 		- Tarnished Plains:
 			= Hospital: Provides Self Heal.
 			= Control Tower: Provides Paratrooper Tactic (3:00).
 		- Lowland Sound:
-			= Airport: Provides airstrike (5:00).
-			= Machineshop: Provides Minelayer Tactic (3:00).
+			= Radar Tower: Provides airstrike (5:00).
+			= Workshop: Provides Minelayer Tactic (3:00).
 
 	Units:
 		1. Can use provided infantries:
 			- Assaulter
 			- Guardian
 			- Engineer
-			- Conscripe
+			- Conscript
 			- RPG Trooper
 
 		2. Vehicles are new:
