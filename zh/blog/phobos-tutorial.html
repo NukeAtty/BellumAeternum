@@ -541,8 +541,9 @@
 					</div>
 					<h4 type="button" class="collapsible">自定义附加动画的层级</h4>
 					<div class="col-content">
-						<p>附加动画的层级现在可以指定是否跟随附加对象。</p>
+						<p>附加动画的层级（Layer）现在可以指定是否跟随附加对象。</p>
 						<p><code>Layer.UseObjectLayer</code>定义是否在对象的层级上显示附加动画，参数为布尔值，如果不设置，则动画的层级默认为Ground。</p>
+						<p>这个功能主要用于解决附加动画的覆盖问题，假如你想把附加动画做成BUFF放置到单位选框的右下角，而单位和其他单位重叠后会挡住动画。此时，就可以用这个功能来将动画放置到最高图层，即在动画上加<code>Layer.UseObjectLayer=false</code>以及<code>Layer=Top</code>。</p>
 					</div>
 					<h4 type="button" class="collapsible">矿石动画隐藏设置</h4>
 					<div class="col-content">
