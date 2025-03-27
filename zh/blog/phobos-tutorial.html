@@ -9,6 +9,23 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>Phobos中文教程 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
+		.blog-content ul {
+			list-style-position: inside;
+			background-color: #66666650;
+			padding: 1em;
+		}
+
+		.blog-content ol {
+			list-style-position: inside;
+			background-color: #66666650;
+			padding: 1em;
+		}
+
+		.blog-content li {
+			margin: 0;
+			line-height: 1.25em;
+		}
+
 		#version {
 			vertical-align: middle;
 			font-size: 12px;
@@ -108,19 +125,19 @@
 			text-shadow: 0 1px 1px #000;
 		}
 
-		.blog-content h4{
+		.blog-content h3{
 			font-size: 18px;
 			margin: 2px auto;
 		}
 
-		.blog-content h5{
+		.blog-content h4{
 			font-size: 20px;
 			font-weight: bold;
 			line-height: 1em;
 			margin: 1em auto;
 		}
 
-		.blog-content h5:before {
+		.blog-content h4:before {
 			content:'\2605';
 			color: #f00;
 		}
@@ -145,6 +162,45 @@
 			margin: 0.5em;
 			padding-left: 0.5em;
 			border-left: 4px solid #fff;
+		}
+
+		.phobos-table {
+			margin:5vh 0;
+			overflow-x: auto;
+		}
+
+		.phobos-table table, th, tr, td {
+			border: 1px solid #fff;
+			border-collapse: collapse;
+			padding: 0.5em;
+			border-width: 1px;
+		}
+
+		.phobos-table tr {
+			margin: 0.5em;
+		}
+
+		.phobos-table th {
+			background-color:#993333;
+			padding: 0.25em;
+			text-align: center;
+		}
+
+		.phobos-table td {
+			background-color:#08080850;
+			padding: 0.5em 0.25em;
+			text-align: left;
+			line-height: 1.25em;
+			min-width: 6em;
+		}
+
+		.phobos-table ul {
+			background-color: #66666600;
+		}
+
+		.phobos-table li {
+			margin: 0;
+			line-height: 1.5em;
 		}
 	</style>
 </head>
@@ -188,11 +244,6 @@
 					<div class="chap-nav">
 						<p>快速导航</p>
 						<div class="chaps">
-							<a id="h2" href="#new-enhanced-logic">全新或增强的逻辑</a>
-							<a id="h2" href="#fixed-logic">修复或改善的逻辑</a>
-							<a id="h2" href="#ai-script">AI编写和地图编辑</a>
-							<a id="h2" href="#user-interface">用户图形界面</a>
-							<a id="h2" href="#misc">杂项</a>
 						</div>
 					</div>
 				</div>
@@ -218,15 +269,14 @@
 					<!--New Logic-->
 					<h2 id="new-objects">新的类型</h2>
 					<p>新的类型指的是需要新起一个注册表的逻辑，众所周知，红警里大部分类型都需要先注册再定义。</p>
-					<h3 id="new-logics">新的机制</h3>
-					<h4 type="button" class="collapsible">附加效果（AE）</h4>
+					<h3 type="button" class="collapsible">附加效果（AE）</h3>
 					<div class="col-content">
 						<p>附加效果，言简意骇，就是在红警中做到类似buff的功能。因为原版教程的内容较复杂，在这里先用简单的文字描述其特性。</p>
-						<p>附加效果可以分为三个大的部分，也就是“如何生成？”、“能干啥”以及“如何消失？”</p>
+						<p>官方教程里的附加效果代码较多，写的比较乱，这里我会将其分为三大类：“附加效果如何生成？”、“附加效果能干啥”以及“附加效果如何消失？”</p>
 						<p>首先是如何生成，目前支持的方法如下：</p>
 						<ol>
 							<li>直接在科技类型上挂载。</li>
-							<li>由弹头效果赋予。</li>
+							<li>由弹头引爆赋予。</li>
 						</ol>
 						<p>其次是能干啥，目前支持的功能如下：</p>
 						<ol>
@@ -246,27 +296,100 @@
 							<li>单位处于特定状态：进入、移动、静止、吸取、射程内、射程外、开火。</li>
 							<li>停电。</li>
 						</ol>
-						<p>和Ares的附加效果逻辑类似，但Phobos的附加效果逻辑可以明确地定义类型。</p>
-						<p><code>Duration</code>定义该附加效果可以持续多长时间，可以被单位和弹头上的<code>DurationOverrides</code>覆盖。数据类型为整数，单位为帧，可以填入负数代表不定时长。</p>
-						<p><code>Cumulative</code>定义该附加效果的时长是否可叠加，参数为布尔值。如果被设置为<code>True</code>，表示相同附加效果的存在时长可以叠加。</p>
-						<p><code>Cumulative.MaxCount</code>定义该附加效果的最大叠加层数。为正整数来定义相同附加效果可以叠加的层数，如果设为负数，相同附加效果则可以无限叠加。如果某单位的附加效果已经达到了可携带的最高层数但继续附加，则最新的附加效果会替换掉持续时长最短的效果。</p>
-						<p><code>Powered</code>定义拥有该附加效果的单位在<abbr title="遥控坦克断电或被电磁脉冲击中">瘫痪</abbr>中是否会改变附加效果的动画。</p>
-						<p><code>DiscardOn</code>定义该附加效果会在什么条件下会消失，默认为<code>none</code>，可以填入多个参数，参数详解如下：</p>
-						<ul>
-							<li><code>entry</code>：单位离开地图时，如进入建筑或进入载具。</li>
-							<li><code>move</code>：单位移动时，如果是建筑则无视这个效果。</li>
-							<li><code>stationary</code>：单位静止时，如果是建筑则无视这个效果。</li>
-							<li><code>drain</code>：单位被带有<code>DrainWeapon=true</code>的吸取武器攻击时。</li>
-							<li><code>inrange</code>：单位在附加效果来源的攻击范围之内时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
-							<li><code>outofrange</code>：单位在附加效果来源的攻击范围之外时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
-							<li><code>firing</code>：单位开火时，子机武器或吸取武器等特殊武器同样受影响。</li>
-						</ul>
-						<p><code>PenetratesIronCurtain</code>定义该附加效果是否对带有铁幕的单位有效，参数为布尔值。</p>
-						<p><code>PenetratesForceShield</code>定义该附加效果是否对带有力场护盾的单位有效，参数为布尔值，默认为<code>PenetratesIronCurtain</code>的值。</p>
-						<br>
-						<p><code>Animation</code>定义该附加效果的动画，该动画会自动循环播放，无视Art.ini中的LoopCount。</p>
+						<p>和Ares的附加效果逻辑不同，Phobos将附加效果直接做成了一种对象，因此你定义的附加效果需要在新建的注册表中注册。</p>
+						<h4>附加动画基本定义标签：</h4>
+						<div class="phobos-table">
+							<table>
+								<tr>
+									<th>标签</th>
+									<th>参数类型</th>
+									<th>参数单位</th>
+									<th>默认值</th>
+									<th>功能</th>
+								</tr>
+								<tr>
+									<td><code>Duration</code></td>
+									<td>整数</td>
+									<td>帧</td>
+									<td>0</td>
+									<td>定义该附加效果可以持续多长时间，可以被单位和弹头上的<code>DurationOverrides</code>覆盖，可以填入负数代表不定时长。</td>
+								</tr>
+								<tr>
+									<td><code>Cumulative</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该附加效果的时长是否可叠加。</td>
+								</tr>
+								<tr>
+									<td><code>Cumulative.MaxCount</code></td>
+									<td>整数</td>
+									<td>无</td>
+									<td>0</td>
+									<td>定义该附加效果的最大叠加层数。为正整数来定义相同附加效果可以叠加的层数，如果设为负数，相同附加效果则可以无限叠加。如果某单位的附加效果已经达到了可携带的最高层数但继续附加，则最新的附加效果会替换掉持续时长最短的效果。</td>
+								</tr>
+								<tr>
+									<td><code>Powered</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义拥有该附加效果的单位在<abbr title="遥控坦克断电或被电磁脉冲击中">瘫痪</abbr>中是否会改变附加效果的动画。</td>
+								</tr>
+								<tr>
+									<td><code>DiscardOn</code></td>
+									<td>预设值</td>
+									<td>无</td>
+									<td>none</td>
+									<td>定义该附加效果会在什么条件下会消失，默认为<code>none</code>，可以填入多个参数，参数详解如下：</p>
+										<ul>
+											<li><code>entry</code>：单位离开地图时，如进入建筑或进入载具。</li>
+											<li><code>move</code>：单位移动时，如果是建筑则无视这个效果。</li>
+											<li><code>stationary</code>：单位静止时，如果是建筑则无视这个效果。</li>
+											<li><code>drain</code>：单位被带有<code>DrainWeapon=true</code>的吸取武器攻击时。</li>
+											<li><code>inrange</code>：单位在附加效果来源的攻击范围之内时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
+											<li><code>outofrange</code>：单位在附加效果来源的攻击范围之外时，可通过<code>DiscardOn.RangeOverride</code>来覆盖距离。</li>
+											<li><code>firing</code>：单位开火时，子机武器或吸取武器等特殊武器同样受影响。</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td><code>PenetratesIronCurtain</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该附加效果是否对带有铁幕的单位有效。</td>
+								</tr>
+								<tr>
+									<td><code>PenetratesForceShield</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td><code>PenetratesIronCurtain</code>的值。</td>
+									<td>定义该附加效果是否对带有力场护盾的单位有效。</td>
+								</tr>
+							</table>
+						</div>
+						<h4>定义附加动画表现形式的标签：</h4>
+						<div class="phobos-table">
+							<table>
+								<tr>
+									<th>标签</th>
+									<th>参数类型</th>
+									<th>参数单位</th>
+									<th>默认值</th>
+									<th>功能</th>
+								</tr>
+								<tr>
+									<td><code>Animation</code></td>
+									<td>动画注册名</td>
+									<td>无</td>
+									<td>none</td>
+									<td>定义该附加效果的动画，该动画会自动循环播放，无视<code>Artmd.ini</code>中的<code>LoopCount</code>。</td>
+								</tr>
+							</table>
+						</div>
+						<p></p>
 					</div>
-					<h4 type="button" class="collapsible">自定义辐射类型</h4>
+					<h3 type="button" class="collapsible">自定义辐射类型</h3>
 					<div class="col-content">
 						<p>现在任何武器都可以拥有自定义的辐射类型。使用自定义辐射需要创建一个新的注册表<code>[RadiationTypes]</code>，并注册新的辐射名称。</p>
 						<p><b>全局定义：</b></p>
@@ -313,7 +436,7 @@
 							<p>RadHasInvoker=true ;辐射击杀是否给辐射源单位经验</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">激光拖尾</h4>
+					<h3 type="button" class="collapsible">激光拖尾</h4>
 					<div class="col-content">
 						<p>激光拖尾是一种全新的拖尾方式，其可定义透明度、宽度和颜色。</p>
 						<p>激光拖尾可以使用在单位、抛射体和VXL碎片上。</p>
@@ -354,7 +477,7 @@
 						</div>
 						<p id="alert">注意：激光拖尾非常消耗性能，因为游戏不存在GPU渲染，过多的激光拖尾会让游戏变得非常卡，不论你的电脑多高端。一、建议不要为单位或抛射体过多的挂激光拖尾；二、建议将<code>SegmentLength</code>尽量调高。三、建议将<code>FadeDuration</code>尽量调低。</p>
 					</div>
-					<h4 type="button" class="collapsible">护盾</h4>
+					<h3 type="button" class="collapsible">护盾</h4>
 					<div class="col-content">
 						<h5>护盾的注册：</h5>
 						<p>护盾作为一种新的对象，是需要新建一个注册表的。</p>
@@ -449,8 +572,8 @@
 						<p><code>Shield.MinimumReplaceDelay</code>定义<code>Shield.ReplaceNonRespawning</code>在多长时间之后替换之前无法再生的护盾。</p>
 						<p><code>Shield.InheritStateOnReplace</code>定义用<code>Shield.ReplaceOnly</code>替换的护盾是否继承之前护盾的强度值，并重置再生计时器和强度恢复计时器。</p>
 					</div>
-					<h3 id="animations">动画相关</h3>
-					<h4 type="button" class="collapsible" id="anim-create-unit">动画生成单位</h4>
+					<h2 id="animations">动画相关</h2>
+					<h3 type="button" class="collapsible" id="anim-create-unit">动画生成单位</h4>
 					<div class="col-content">
 						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
 						<p><code>CreateUnit</code>定义该动画生成的单位，只能填一个。</p>
@@ -483,7 +606,7 @@
 						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
 						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
 					</div>
-					<h4 type="button" class="collapsible">动画附加粒子系统</h4>
+					<h3 type="button" class="collapsible">动画附加粒子系统</h4>
 					<div class="col-content">
 						<p>现在可以将粒子系统附加到动画中。和VoxelAnims的标签类似，只支持带有<code>BehavesLike=Smoke</code>的粒子系统。</p>
 						<p>如果动画带有<code>Next</code>，则在下一个动画开始时该粒子系统会被删除。</p>
@@ -495,7 +618,7 @@
 							<p>AttachedSystem=TrainSmokeSys ;动画附带的粒子系统名</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义动画可视方</h4>
+					<h3 type="button" class="collapsible">自定义动画可视方</h4>
 					<div class="col-content">
 						<p>现在可以为动画定义可见的所属方。</p>
 						<p><code>VisibleTo</code>定义哪些所属方可以看见该动画，参数为下列预设值：</p>
@@ -511,11 +634,11 @@
 						<p><code>RestrictVisibilityIfCloaked</code>定义该动画在附加对象隐型时是否可视，参数为布尔值。</p>
 						<p><code>DetachOnCloak</code>定义该动画是否在附加对象隐型时是否取消附加。</p>
 					</div>
-					<h4 type="button" class="collapsible">独立的动画音效</h4>
+					<h3 type="button" class="collapsible">独立的动画音效</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">动画武器和伤害设置</h4>
+					<h3 type="button" class="collapsible">动画武器和伤害设置</h4>
 					<div class="col-content">
 						<p>现在可以为动画加入<code>Weapon</code>来给动画赋予武器，以免直接使用<code>Damage</code>和<code>Warhead</code>造成难以控制的伤害。</p>
 						<p><code>Weapon</code>定义动画所使用的武器，参数为武器注册名，武器需要在<code>[WeaponTypes]</code>下注册，需要Ares来提供这个功能。</p>
@@ -534,24 +657,24 @@
 						</div>
 						<p id="alert">如果和Ares一起使用，那么Phobos的动画伤害和武器将覆盖Ares的相同功能。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义附加动画位置</h4>
+					<h3 type="button" class="collapsible">自定义附加动画位置</h4>
 					<div class="col-content">
 						<p>附加动画的位置现在可以指定在中心而不是在附加对象的角落。</p>
 						<p><code>UseCenterCoordsIfAttached</code>定义是否在对象的中心显示附加动画，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义附加动画的层级</h4>
+					<h3 type="button" class="collapsible">自定义附加动画的层级</h4>
 					<div class="col-content">
 						<p>附加动画的层级（Layer）现在可以指定是否跟随附加对象。</p>
 						<p><code>Layer.UseObjectLayer</code>定义是否在对象的层级上显示附加动画，参数为布尔值，如果不设置，则动画的层级默认为Ground。</p>
 						<p>这个功能主要用于解决附加动画的覆盖问题，假如你想把附加动画做成BUFF放置到单位选框的右下角，而单位和其他单位重叠后会挡住动画。此时，就可以用这个功能来将动画放置到最高图层，即在动画上加<code>Layer.UseObjectLayer=false</code>以及<code>Layer=Top</code>。</p>
 					</div>
-					<h4 type="button" class="collapsible">矿石动画隐藏设置</h4>
+					<h3 type="button" class="collapsible">矿石动画隐藏设置</h4>
 					<div class="col-content">
 						<p>现在可以指定矿石隐藏闪光动画的阶段。该功能对于那些把矿石改成物资箱的Mod很有用。</p>
 						<p><code>HideIfNoOre.Threshold</code>定义矿石在什么阶段会隐藏该动画，矿石闪光动画在<code>[General]</code>中的<code>OreTwinkle</code>中指定。</p>
 					</div>
-					<h3>建筑相关</h3>
-					<h4 type="button" class="collapsible">自定义建筑延伸</h4>
+					<h2>建筑相关</h2>
+					<h3 type="button" class="collapsible">自定义建筑延伸</h4>
 					<div class="col-content">
 						<p>现在可以自定义建筑延伸的属性，</p>
 						<p><code>Adjacent.Allowed</code>定义哪些建筑可以在该建筑周围<code>Adjacent</code>定义的距离内放置，参数为建筑类型注册名的列表。</p>
@@ -567,7 +690,7 @@
 							<p>NoBuildAreaOnBuildup=false ;播放建造动画时是否可以作为延伸建筑。</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">建筑插件扩展</h4>
+					<h3 type="button" class="collapsible">建筑插件扩展</h4>
 					<div class="col-content">
 						<p><code>PowersUp.Owner</code>定义该建筑插件现在可以定义放置的建筑的所属方，需要注意的是当插件放入建筑后，插件的所属方自动变更为该建筑所属方。参数为预设值，可填入下列值：</p>
 						<ul>
@@ -588,11 +711,11 @@
 							<p>PowersUp.Buildings=NAPOWR,NANRCT ;可以放置的建筑</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">可摧毁障碍建筑</h4>
+					<h3 type="button" class="collapsible">可摧毁障碍建筑</h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">电厂增幅器</h4>
+					<h3 type="button" class="collapsible">电厂增幅器</h4>
 					<div class="col-content">
 						<p>当电厂增幅器存在于地图上时，会改变该所属方的电厂电量，如果电厂增幅器被摧毁，电量则会回归原本数值。</p>
 						<p>电厂增幅器和电厂最大的区别就在于，电厂是直接增减总电量，而电厂增幅器需要在有电厂的情况下才会改变总电量。</p>
@@ -605,7 +728,7 @@
 							<p>PowerPlantEnhancer.Factor=1.5 ;增幅电力的倍数</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">间谍效果</h4>
+					<h3 type="button" class="collapsible">间谍效果</h4>
 					<div class="col-content">
 						<p>Phobos现在能实现更多的间谍效果。</p>
 						<p><code>SpyEffect.Custom</code>定义该建筑是否使用自定义间谍效果，参数为布尔值，只有为true时，下面的效果才会生效。</p>
@@ -613,8 +736,8 @@
 						<p><code>SpyEffect.InfiltratorSuperWeapon</code>和上面的标签功能相同，但对建筑释放的超级武器的所属是间谍的所属方。</p>
 					</div>
 					<!--Enhanced Infantries-->
-					<h3 id="new-logic-infantries">步兵</h3>
-					<h4 type="button" class="collapsible">匍匐/部署步兵开火坐标</h4>
+					<h2 id="new-logic-infantries">步兵</h2>
+					<h3 type="button" class="collapsible">匍匐/部署步兵开火坐标</h4>
 					<div class="col-content">
 						<p>现在步兵在匍匐开火或部署开火时可以使用新的开火坐标定位来覆盖<code>PrimaryFireFLH</code>和<code>SecondaryFireFLH</code>，同时也可以自定义Burst开火时每一发的开火坐标。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -626,7 +749,7 @@
 							<p>DeployedSecondaryFireFLH=0,0,0 ;副武器部署开火时的坐标</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">默认间谍伪装</h4>
+					<h3 type="button" class="collapsible">默认间谍伪装</h4>
 					<div class="col-content">
 						<p>步兵现在可以使用<code>DefaultDisguise</code>微观定义默认的间谍伪装，读取阵营高于Ares中阵营的<code>DefaultDisguise</code>。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -635,7 +758,7 @@
 							<p>DefaultDisguise=E2 ;默认伪装的步兵</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">非人类步兵死亡动画</h4>
+					<h3 type="button" class="collapsible">非人类步兵死亡动画</h4>
 					<div class="col-content">
 						<p>拥有<code>NotHuman=yes</code>标签的步兵现在在死亡时可以随机从动画序列中挑选<code>Die1</code>到<code>Die5</code>播放。注意，确保你的步兵是有这些动画序列的，如果没有，在死亡时将不会播放任何动画。</p>
 						<p>在<code>rulesmd.ini</code>中：</p>
@@ -644,7 +767,7 @@
 							<p>NotHuman.RandomDeathSequence=yes ;是否播放随机死亡动画</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">分享弹药</h4>
+					<h3 type="button" class="collapsible">分享弹药</h4>
 					<div class="col-content">
 						<p>如果一个带有<code>OpenTopped=yes</code>的载具使用了弹药机制（<code>Ammo</code>），同时乘员也使用了弹药机制，就可以让载具为乘员补充弹药，并可以定义哪些乘员才可以补充弹药。注意，载具必须可以自动补充弹药。</p>
 						<p><code>Ammo.Shared</code>定义乘员和载具是否分享弹药，参数为布尔值。</p>
@@ -664,7 +787,7 @@
 							<p>Ammo.Shared.Group=1 ;弹药分组</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">奴隶阵营自定义</h4>
+					<h3 type="button" class="collapsible">奴隶阵营自定义</h4>
 					<div class="col-content">
 						<p>现在可以自定义奴隶矿场被摧毁后奴隶的归属。</p>
 						<p><code>Slaved.OwnerWhenMasterKilled</code>定义奴隶矿场被摧毁后奴隶的归属，参数为以下预设值：</p>
@@ -681,12 +804,12 @@
 							<p>Slaved.OwnerWhenMasterKilled=killer ;奴隶矿场被摧毁后的归属方</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义奴隶解救语音</h4>
+					<h3 type="button" class="collapsible">自定义奴隶解救语音</h4>
 					<div class="col-content">
 						<p>奴隶矿工的解救语音现在可以微观定义。</p>
 						<p><code>SlavesFreeSound</code>定义奴隶矿工的解救语音，参数为语音的注册名，这个标签在步兵代码中独立定义。</p>
 					</div>
-					<h4 type="button" class="collapsible">在水中使用陆地动作序列</h4>
+					<h3 type="button" class="collapsible">在水中使用陆地动作序列</h4>
 					<div class="col-content">
 						<p><code>OnlyUseLandSequences</code>定义步兵是否只播放在陆地上的动作序列，即便步兵在水中，参数为布尔值。</p>
 						<p>代码示例：</p>
@@ -698,8 +821,8 @@
 						</div>
 					</div>
 					<!--Enhanced Projectile-->
-					<h3 id="new-logic-projectiles">抛射体</h3>
-					<h4 type="button" class="collapsible">抛射体拦截</h4>
+					<h2 id="new-logic-projectiles">抛射体相关</h3>
+					<h3 type="button" class="collapsible">抛射体拦截</h4>
 					<div class="col-content">
 						<p>现在Phobos实现了类似《将军：绝命时刻》中美国复仇者防空车的抛射体拦截功能。拥有此功能的单位会自动扫描射程内可以拦截的抛射体，并使用相应的武器进行拦截。</p>
 						<h5>抛射体的定义：</h5>
@@ -758,7 +881,7 @@
 							<p>Interceptor.KeepIntact=false ;拦截后抛射体是否继续移动</p>
 						</div>
 					</div>
-					<h4 id="projectile-trajectory" type="button" class="collapsible">弹道类抛射体</h4>
+					<h3 id="projectile-trajectory" type="button" class="collapsible">弹道类抛射体</h3>
 					<div class="col-content">
 						<p>弹道类抛射体是一种全新的抛射体模式，其独立于四大抛射体（<code>Invisio</code>，<code>ROT</code>，<code>Arcing</code>，<code>Vertical</code>）之外，因此禁止和四大抛射体混用。目前弹道类抛射体只推出了两种弹道模式，即直线弹道和轰炸弹道。</p>
 						<p><code>Trajectory</code>定义使用哪种弹道的抛射体，参数为弹道模式的预设名称，<code>Straight</code>为直线弹道（平射），<code>Bombard</code>为轰击弹道（曲射）。</p>
@@ -792,7 +915,7 @@
 							<p>Trajectory.Bombard.Height=5.0 ;轰炸弹道的曲线高度</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">溅射逻辑扩展</h4>
+					<h3 type="button" class="collapsible">溅射逻辑扩展</h4>
 					<div class="col-content">
 						<p>溅射逻辑现在可以在地面或者建筑上触发。</p>
 						<p><code>Shrapnel.AffectsGround</code>定义该抛射体在地面引爆时是否会触发溅射，参数为布尔值。</p>
@@ -807,28 +930,28 @@
 							<p>Shrapnel.AffectsBuildings=true ;打到建筑是否溅射</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">抛射体阻挡逻辑扩展<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">抛射体阻挡逻辑扩展<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">末端反射武器<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">末端反射武器<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h3 id="new-logic-superweapons">超级武器</h3>
-					<h4 type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></h4>
+					<h2 id="new-logic-superweapons">超级武器相关</h2>
+					<h3 type="button" class="collapsible">AI使用超级武器延时<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">单位变形<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">单位变形<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">电磁脉冲设定<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">电磁脉冲设定<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">虚拟投送</h4>
+					<h3 type="button" class="collapsible">虚拟投送</h4>
 					<div class="col-content">
 						<p>虚拟投送的定义是在地图之外投送一个建筑物，这个建筑物是无法在游戏中看到的，也无法被攻击。虚拟投送的目的是，在视觉上不建造建筑的情况下可以实现一些建筑的效果。</p>
 						<p>和Ares的超级武器定义比较不同，它不受超级武器<code>Type</code>和释放坐标的限制。可以理解为超级武器的一个衍生功能。</p>
@@ -878,7 +1001,7 @@
 						</div>
 					</div>
 					<h3 id="new-logic-technos">单位</h3>
-					<h4 type="button" class="collapsible">自动删除乘员</h4>
+					<h3 type="button" class="collapsible">自动删除乘员</h4>
 					<div class="col-content">
 						<p>可装载乘员的载具可以逐渐删除乘员，乘员越多耗时越长，并可以像部队回收站那样使用。可以搭配Ares的超时空监狱效果实现自动清除被困的敌人。</p>
 						<p><code>PassengerDeletion.Rate</code>定义多长时间删除一个乘员，参数为整数，单位为帧。</p>
@@ -902,7 +1025,7 @@
 							<p>PassengerDeletion.Anim=UCINIT ;删除乘员动画</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">乘员同步载具的所属方</h4>
+					<h3 type="button" class="collapsible">乘员同步载具的所属方</h4>
 					<div class="col-content">
 						<p>乘员的所属方会随着载具所属方的更改而更改。</p>
 						<p><code>Passengers.SyncOwner</code>定义该载具的乘员是否会同步所属方，参数为布尔值，如果是乘员可以开火的载具被心灵控制时，乘员将重新选择目标。注意，通过<code>Abductor=true</code>获取的乘员无法使用该逻辑。</p>
@@ -916,7 +1039,7 @@
 						</div>
 						<p id="comment">笔者注：多功能步兵车在改变所属后乘员即便没有改变所属其炮塔和武器也不会改变，只有在卸载乘员之后乘员是原有所属方。另外，如果是通过脚本动作改变的所属方，即便会同步乘员，还是会有一个乘员不会改变所属。</p>
 					</div>
-					<h4 type="button" class="collapsible">自动开火武器</h4>
+					<h3 type="button" class="collapsible">自动开火武器</h4>
 					<div class="col-content">
 						<p>单位可以在不需要扫描目标的情况下自动开火，这样的开火模式要么选择单位所在的地格作为目标，要么选择单位自己作为目标。</p>
 						<p><code>AutoFire</code>定义单位是否会自动开火，参数为布尔值，默认为对自己开火。</p>
@@ -931,11 +1054,11 @@
 						</div>
 						<p id="comment">这个功能最大的问题在于单位开火时，可以看到一条红色的攻击示意线。然而，这个功能最大的优势是可以附带FLH坐标，因可以看做是一个可以定义FLH坐标的动画生成器。万世之战的蒸汽机车就是用这个功能模拟冒烟效果。</p>
 					</div>		
-					<h4 type="button" class="collapsible">建造上限组<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">建造上限组<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义乘员开火</h4>
+					<h3 type="button" class="collapsible">自定义乘员开火</h4>
 					<div class="col-content">
 						<p>现在你可以微观定义乘员开火载具的属性，以覆盖宏观定义。</p>
 						<p><code>OpenTopped.RangeBonus</code>定义乘员在载具内开火所获得额外的射程，参数为整数。</p>
@@ -956,7 +1079,7 @@
 							<p>OpenTopped.AllowFiringIfDeactivated=true ;是否在瘫痪后乘员依然可以开火</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">关闭副武器自动推算</h4>
+					<h3 type="button" class="collapsible">关闭副武器自动推算</h4>
 					<div class="col-content">
 						<p>在原版中，如果主武器不能攻击的情况下，单位会选择副武器攻击目标，而现在可以通过以下代码来关闭副武器自动推算。</p>
 						<p><code>NoSecondaryWeaponFallback</code>定义是否关闭副武器自动推算，参数为布尔值。这个设置不能关闭手动设置的推算。</p>
@@ -980,11 +1103,11 @@
 							<p>NoSecondaryWeaponFallback=true ;是否关闭副武器自动推算</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">间谍伪装逻辑扩展<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">间谍伪装逻辑扩展<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义Burst开火坐标</h4>
+					<h3 type="button" class="collapsible">自定义Burst开火坐标</h4>
 					<div class="col-content">
 						<p>在原版中，如果武器带有<code>Burst=2</code>，并且在art中，单位开火坐标的第二个值不等于0，那么该武器就可以实现左右开弓发射这个武器的Burst。</p>
 						<p>现在Phobos将这个功能做了更多拓展，可以定义每一个<code>Burst</code>的开火坐标。</p>
@@ -1013,7 +1136,7 @@
 							<p>EliteWeapon5.Burst1=170,50,90 ;多功能步兵车的第五个武器的第一个Burst的开火坐标</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">初始血量和克隆血量</h4>
+					<h3 type="button" class="collapsible">初始血量和克隆血量</h4>
 					<div class="col-content">
 						<p>单位现在可以自定义初始血量，即造出来后可以不是满血。当然，就算指定的初始血量高于单位的<code>Strength</code>，单位也不会初始拥有更多的血量。</p>
 						<p><code>InitialStrength</code>定义单位在出厂后的血量，参数为整数。</p>
@@ -1030,7 +1153,7 @@
 							<p>InitialStrength.Cloning=50% ;克隆单位的初始血量</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">单位自动消失</h4>
+					<h3 type="button" class="collapsible">单位自动消失</h4>
 					<div class="col-content">
 						<p>单位可以在某些条件下自动消失，并且可以以不同的方式消失。</p>
 						<p><code>AutoDeath.OnAmmoDepletion</code>定义单位是否在弹药耗尽后消失，参数为布尔值。</p>
@@ -1052,7 +1175,7 @@
 							<p>AutoDeath.Behavior=kill</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">心灵控制扩展</h4>
+					<h3 type="button" class="collapsible">心灵控制扩展</h4>
 					<div class="col-content">
 						<p>Phobos为心灵控制提供了新的标签，以实现以下功能：</p>
 						<ol>
@@ -1076,7 +1199,7 @@
 							<p>MindControl.Anim=MINDANIM ;心灵控制的动画</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">禁止手动移动</h4>
+					<h3 type="button" class="collapsible">禁止手动移动</h4>
 					<div class="col-content">
 						<p>现在可以让一个单位完全无法手动移动。</p>
 						<p><code>NoManualMove</code>定义该单位是否不可以手动移动，参数为布尔值。</p>
@@ -1087,16 +1210,16 @@
 							<p>NoManualMove=true ;是否允许手动移动</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">强制特定武器对付特定目标</h4>
+					<h3 type="button" class="collapsible">强制特定武器对付特定目标</h4>
 					<div class="col-content">
 						<p>该功能将覆盖部分原版水下目标选取的逻辑。</p>
 						<p><code>ForceWeapon.Naval.Decloaked</code>定义海军单位使用什么武器对付已经显形的水下单位，参数为整数，-1为关闭该功能，0为主武器，1为副武器。</p>
 					</div>
-					<h4 type="button" class="collapsible">全方位武器强制面向目标<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">全方位武器强制面向目标<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">子机升级</h4>
+					<h3 type="button" class="collapsible">子机升级</h4>
 					<div class="col-content">
 						<p>单位发射的子机现在可以设置为同步单位等级。</p>
 						<p><code>Promote.IncludeSpawns</code>定义该单位的子机是否会同步该单位的等级，参数为布尔值。</p>
@@ -1108,11 +1231,11 @@
 							<p>Promote.IncludeSpawns=true ;子机是否随着航母升级而升级</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">复仇武器<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">复仇武器<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">航母子机扩展</h4>
+					<h3 type="button" class="collapsible">航母子机扩展</h4>
 					<div class="col-content">
 						<p>航母子机（飞行器类子机）现在可以增加最远航程、自定义子机补充速度以及子机起飞后直接执行攻击指令。</p>
 						<p><code>Spawner.LimitRange</code>定义子机的航程是否被限制，参数为布尔值，航程由该单位子机武器的<code>Range</code>所决定。限制了航程的子机在单位远离目标时会放弃攻击指令直接返航。</p>
@@ -1129,7 +1252,7 @@
 							<p>Spawner.AttackImmediately=true ;子机是否直接执行攻击指令</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">超时空传送武器</h4>
+					<h3 type="button" class="collapsible">超时空传送武器</h4>
 					<div class="col-content">
 						<p>现在可以让武器在单位传送后开火，会在传送动画（<code>WarpIn</code>和<code>WarpOut</code>）播放的同时开火。</p>
 						<p><code>WarpInWeapon</code>定义传送时开火的武器，参数值为武器注册名。</p>
@@ -1145,11 +1268,11 @@
 							<p>WarpOutWeapon=NeutronRifle ;超时空传送前在原地发射的武器</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">单位自定义染色<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">单位自定义染色<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义单位变卖声音</h4>
+					<h3 type="button" class="collapsible">自定义单位变卖声音</h4>
 					<div class="col-content">
 						<p>当单位被变卖后，将会播放一个变卖音效和相应的EVA语音，现在可以微观定义这些声音。</p>
 						<p><code>EVA.Sold</code>定义该单位被变卖的EVA语音，参数为EVA语音注册名，建筑默认是<code>EVA_StructureSold</code>，载具默认是<code>EVA_UnitSold</code>。</p>
@@ -1162,20 +1285,20 @@
 							<p>SellSound=GrinderGrinding</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">单位出厂语音<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">单位出厂语音<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">单位升级动画<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">单位升级动画<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
-					<h4 type="button" class="collapsible">改变阵营时变形<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">改变阵营时变形<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>敬请期待……</p>
 					</div>
 					<h3 id="new-logic-terrains">地形</h3>
-					<h4 type="button" class="collapsible">摧毁动画和音效</h4>
+					<h3 type="button" class="collapsible">摧毁动画和音效</h4>
 					<div class="col-content">
 						<p>现在可以设定地形对象的摧毁动画和音效。</p>
 						<p>代码示例：</p>
@@ -1187,7 +1310,7 @@
 						</div>
 					</div>
 					<h3 id="new-logic-warheads">弹头</h3>
-					<h4 type="button" class="collapsible">心控解除</h4>
+					<h3 type="button" class="collapsible">心控解除</h4>
 					<div class="col-content">
 						<p>心控解除弹头可以解除单位的心灵控制，但对永久心灵控制无效。</p>
 						<p>代码示例：</p>
@@ -1198,7 +1321,7 @@
 							<p>RemoveMindControl=true ;是否可以解除心灵控制</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">暴击</h4>
+					<h3 type="button" class="collapsible">暴击</h4>
 					<div class="col-content">
 						<p>现在弹头可以实现暴击机制，即在一定的概率下使用不同的伤害和弹头进行攻击。</p>
 						<p><code>Crit.Chance</code>定义该弹头的暴击概率，参数为0.0-1.0的浮点值。</p>
@@ -1244,7 +1367,7 @@
 						</div>
 						<p id="alert">如果你将某个弹头的<code>Crit.Warhead</code>设置为相同的弹头，那将可能会形成一个无限暴击循环，从而卡死游戏。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义水花动画</h4>
+					<h3 type="button" class="collapsible">自定义水花动画</h4>
 					<div class="col-content">
 						<p>在原版中，带有<code>Conventional</code>标签的弹头在打在水面上会溅起水花，水花的动画只能在全局代码<code>[CombatDamage]</code>中的<code>SplashList</code>中随机选中。Phobos现在提供了可以在每个弹头上微观定义水花的方式。</p>
 						<p><code>SplashList</code>定义该弹头打在水上的水花，参数为动画注册名的列表，默认为全局设置的动画。</p>
@@ -1259,7 +1382,7 @@
 							<p>SplashList.PickRandom=false ;水花动画是否随机播放</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">全局引爆</h4>
+					<h3 type="button" class="collapsible">全局引爆</h4>
 					<div class="col-content">
 						<p>顾名思义，弹头可以在全局内对每一个目标引爆。</p>
 						<p><code>DetonateOnAllMapObjects</code>定义该弹头是否全局引爆，参数为布尔值。这个功能只适用于抛射体搭载的弹头，如果是动画的弹头或者Ares中的弹头超级武器，则无法生效，而弹头附带的<code>Crit.Warhead</code>或者动画中的<code>Weapon</code>则会生效。同时，抛射体所携带的空爆武器或者溅射武器也会对全局目标生效，而Ares的<code>PreImpactAnim</code>动画也会在引爆前播放。</p>
@@ -1297,7 +1420,7 @@
 							<p>DetonateOnAllMapObjects.RequireVerses=false ;全局引爆弹头是否需要可用的Verses值</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">爆金币</h4>
+					<h3 type="button" class="collapsible">爆金币</h4>
 					<div class="col-content">
 						<p>该弹头可以在引爆后增加或减少所属方的资金。</p>
 						<p><code>TransactMoney</code>定义该弹头在引爆后会给弹头发射单位的所属方增加或减少多少资金，参数为整数，正数为增加，负数为减少。</p>
@@ -1325,7 +1448,7 @@
 							<p>TransactMoney.Display.Offset=0,0</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">超级武器引信</h4>
+					<h3 type="button" class="collapsible">超级武器引信</h4>
 					<div class="col-content">
 						<p>现在弹头可以作为超级武器的引信使用，即在弹头引爆的区域释放超级武器。</p>
 						<p><code>LaunchSW</code>定义该弹头在引爆时所发射的超级武器，参数为超级武器的注册名的列表。</p>
@@ -1343,7 +1466,7 @@
 							<p>LaunchSW.IgnoreDesignators=true ;该超级武器是否无视指向器</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">移除伪装</h4>
+					<h3 type="button" class="collapsible">移除伪装</h4>
 					<div class="col-content">
 						<p>被该弹头击中的单位会移除伪装效果，对付拥有<code>PermaDisguise</code>的单位时会相当有效。</p>
 						<p><code>RemoveDisguise</code>定义该弹头是否可以移除伪装效果，参数为布尔值。</p>
@@ -1356,7 +1479,7 @@
 						</div>
 						<p id="comment">笔者注：逻辑上来讲，使用这个弹头的单位要么可以识破伪装，要么是范围伤害，否则很难发挥出效果。</p>
 					</div>
-					<h4 type="button" class="collapsible">开图</h4>
+					<h3 type="button" class="collapsible">开图</h4>
 					<div class="col-content">
 						<p>该弹头引爆时将会为弹头发射单位的所属方显示全地图。</p>
 						<p><code>SpySat</code>定义该弹头在引爆时是否会为发射单位的所属方显示全地图，参数为布尔值。</p>
@@ -1369,7 +1492,7 @@
 						</div>
 						<p id="comment">考虑到平衡性，这个功能实际上比较鸡肋，虽说可以用来模拟NP的开图超级武器，但还是比较鸡肋……</p>
 					</div>
-					<h4 type="button" class="collapsible">黑幕</h4>
+					<h3 type="button" class="collapsible">黑幕</h4>
 					<div class="col-content">
 						<p>该弹头引爆时会将发射单位的敌人的地图覆盖黑幕。</p>
 						<p><code>BigGap</code>定义该弹头引爆时是否将敌人的视野覆盖满黑幕，参数为布尔值。</p>
@@ -1381,7 +1504,7 @@
 							<p>BigGap=true ;是否给敌人的视野覆盖黑幕</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">触发指定的非人死亡动画</h4>
+					<h3 type="button" class="collapsible">触发指定的非人死亡动画</h4>
 					<div class="col-content">
 						<p>该弹头在杀死带有<code>NotHuman=yes</code>的步兵时可以指定该步兵的死亡动画。</p>
 						<p><code>NotHuman.DeathSequence</code>定义该弹头摧毁非人步兵时是否播放指定的死亡动画，参数为1-5的整数，代表<code>Die1</code>到<code>Die5</code>的动画序列。</p>
@@ -1394,7 +1517,7 @@
 						</div>
 					</div>
 					<h3 id="new-logic-weapons">武器</h3>
-					<h4 type="button" class="collapsible">自定义范围攻击目标</h4>
+					<h3 type="button" class="collapsible">自定义范围攻击目标</h4>
 					<div class="col-content">
 						<p>在原版中，带有<code>AreaFire</code>的武器在开火时会选择自己脚下的地面作为目标进行攻击，而在Phobos中，这种攻击模式可以自定义攻击目标。</p>
 						<p><code>AreaFire.Target</code>定义该单位范围攻击的目标，参数为下列预设值：</p>
@@ -1413,7 +1536,7 @@
 							<p>AreaFire.Target=random ;范围攻击的目标</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">武器爆发开火延迟</h4>
+					<h3 type="button" class="collapsible">武器爆发开火延迟</h4>
 					<div class="col-content">
 						<p>在原版中，如果武器拥有多个爆发开火（<code>Burst</code>），并设置了<code>BurstDelayX</code>（X为0-3的值），则可以定义武器的Burst开火延迟。然而，此方法只能定义前4个Burst的开火延迟，也就是说武器的<code>Burst</code>在4以上就不能定义开火延迟了。</p>
 						<p>在Phobos中，则可以用<code>Burst.Delays</code>来接管武器爆发开火延迟设置，参数为整数，代表武器爆发开火延迟的帧数，延迟会均匀分配。当设置为0时，则没有延迟。如果设置为-1，则会退回原版的爆发开火延迟逻辑。</p>
@@ -1428,7 +1551,7 @@
 							<p>Burst.FireWithinSequence=false ;是否在步兵的开火序列后重置爆发开火计数器</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">反馈武器</h4>
+					<h3 type="button" class="collapsible">反馈武器</h4>
 					<div class="col-content">
 						<p>反馈武器的定义是在发射某种武器时，对同时自己发射的武器。</p>
 						<p><code>FeedbackWeapon</code>定义该武器所附带的反馈武器，参数为武器注册名，需要在<code>[WeaponTypes]</code>中注册。如果反馈武器被设置为可从载具内开火（<code>FireInTransport</code>），那么在载具内开火时反馈武器则可以对载具自身发射，同时，反馈武器会无视载具内开火的伤害加成（<code>OpenToppedDamageMultiplier</code>）。</p>
@@ -1440,13 +1563,13 @@
 							<p>FeedbackWeapon=GainArmor ;反馈武器</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义飞行器扫射</h4>
+					<h3 type="button" class="collapsible">自定义飞行器扫射</h4>
 					<div class="col-content">
 						<p>飞机的开火逻辑和其他单位完全不同，在武器抛射体的<code>ROT</code>小于2时，其开火时会对目标进行5连发的扫射，而现在可以自定义一些扫射的参数。</p>
 						<p><code>Strafing.Shots</code>定义该武器在单次扫射时射击次数，参数为1到5的整数，任何定义域[1,5]之外的数字将会被视为1或者5，默认为5。单位的<code>Ammo</code>会在扫射结束后扣除。</p>
 						<p><code>Strafing.SimulateBurst</code>定义该武器扫射时是否模拟<code>Burst</code>效果以定义多个开火坐标，参数为布尔值，默认为false。只有在该武器的<code>Burst</code>为1或者未定义的情况下生效。</p>
 					</div>
-					<h4 type="button" class="collapsible">目标选择筛选</h4>
+					<h3 type="button" class="collapsible">目标选择筛选</h4>
 					<div class="col-content">
 						<p>现在可以定义武器可以对何种目标进行攻击。</p>
 						<p><code>CanTarget</code>定义该武器可以攻击哪些种类的目标，参数为预设值的列表，预设值解释如下：</p>
@@ -1491,7 +1614,7 @@
 						<a href="#enhanced-logic-weapons">武器</a>
 						<a href="#enhanced-logic-misc">杂项</a>
 					</div>
-					<h4 type="button" class="collapsible">点击展开</h4>
+					<h3 type="button" class="collapsible">点击展开</h4>
 					<div class="col-content">
 						<ul>
 							<li>修复了GameModeOptions无法被正确保存，比如<code>BuildOffAlly</code>在加载游戏后会被关闭。</li>
@@ -1534,7 +1657,7 @@
 					<h3 id="enhanced-logic-aircraft">飞行器</h3>
 					<h3 id="enhanced-logic-animations">动画</h3>
 					<h3 id="enhanced-logic-buildings">建筑</h3>
-					<h4 type="button" class="collapsible">自定义部队回收站</h4>
+					<h3 type="button" class="collapsible">自定义部队回收站</h4>
 					<div class="col-content">
 						<p>部队回收站现在可以定义更多的细节内容，如可回收的单位和回收音效。</p>
 						<p><code>Grinding.AllowAllies</code>定义该部队回收站是否能回收友军单位，参数为布尔值。</p>
@@ -1574,13 +1697,13 @@
 					<h3 id="enhanced-logic-particle-sys">粒子系统</h3>
 					<h3 id="enhanced-logic-particle">粒子</h3>
 					<h3 id="enhanced-logic-projectile">抛射体</h3>
-					<h4 type="button" class="collapsible">自定义抛射体重力</h4>
+					<h3 type="button" class="collapsible">自定义抛射体重力</h4>
 					<div class="col-content">
 						<p>对于<code>Arcing</code>类型的抛射体来说，其弹道下坠现象由<code>[AudioVisual]</code>的<code>Gravity</code>参数进行全局控制，而在Phobos中，你可以为每一个抛射体微观定义Gravity值。</p>
 						<p><code>Gravity</code>定义抛射体所收到的重力，参数为浮点值，不建议设置为0，因为这将导致抛射体逆向飞行，并无法击中非同高度的目标。如果想要平射弹道，可以用Phobos的<a href="#projectile-trajectory">弹道类抛射体</a>。</p>
 					</div>
 					<h3 id="enhanced-logic-technos">单位</h3>
-					<h4 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
+					<h3 type="button" class="collapsible">自定义建筑提供的回血效果</h4>
 					<div class="col-content">
 						<p>现在可以为建筑提供的回血效果增加全局限制，并可以自定义其徽章和种类。</p>
 						<p>知识点补充：</p>
@@ -1615,7 +1738,7 @@
 							<p>SelfHealGainType=infantry</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义采矿动画</h4>
+					<h3 type="button" class="collapsible">自定义采矿动画</h4>
 					<div class="col-content">
 						<p>现在可以为采矿车单位在采集不同类型的矿石时定义不同的采矿动画。</p>
 						<p><code>OreGathering.Anims</code>定义该采矿车所使用的采矿动画，参数为动画注册名的列表，代表采集不同矿石的时候所播放的动画。</p>
@@ -1631,7 +1754,7 @@
 							<p>OreGathering.Tiberiums=0,1,2,3 ;采集哪种矿石播放上述动画</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">可微观定义的超时空瞬移</h4>
+					<h3 type="button" class="collapsible">可微观定义的超时空瞬移</h4>
 					<div class="col-content">
 						<p>现在全局中的超时空瞬移的属性可以在每个单位中微观定义，默认均为对应的全局标签，仅对超时空运动模式有效。</p>
 						<p>代码示例：</p>
@@ -1648,7 +1771,7 @@
 							<p>ChronoDelay=60 ;用超时空传送的冷冻时间</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">在art中定义单位图像</h4>
+					<h3 type="button" class="collapsible">在art中定义单位图像</h4>
 					<div class="col-content">
 						<p><code>Image</code>标签在artmd.ini中只对动画和建筑生效，而现在可以对所有单位（建筑、步兵、载具、飞行器）生效了。需要注意的是，该标签只需要填入素材名称即可，不需要文件格式后缀。为了适配原版，该功能默认是关闭的，因此需要通过在<code>[General]</code>中的<code>ArtImageSwap=true</code>来打开这个功能。</p>
 						<p>该功能支持SHP格式的步兵（InfantryTypes）、SHP和VXL格式的载具（VehicleTypes）以及VXL格式的飞行器（AircraftTypes）。</p>
@@ -1666,30 +1789,30 @@
 							<p>Image=SPY</p>
 						</div>						
 					</div>
-					<h4 type="button" class="collapsible">自定义矿石储存槽</h4>
+					<h3 type="button" class="collapsible">自定义矿石储存槽</h4>
 					<div class="col-content">
 						<p>现在可以自定义矿石储存槽可以储存哪种类型的矿石了。该功能需要配合Ares的矿石储存槽功能使用。</p>
 						<p>在<code>[General]</code>中<code>Storage.TiberiumIndex</code>定义哪些矿石可以被储存，参数为整数的列表，代表矿石注册表的序列号。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义单位爆炸是否杀死乘员</h4>
+					<h3 type="button" class="collapsible">自定义单位爆炸是否杀死乘员</h4>
 					<div class="col-content">
 						<p>在原版中，带有<code>Explodes=true</code>的单位都会在被摧毁时杀死乘员，这个硬编码设定可以被新标签<code>Explodes.KillPassengers=false</code>关闭。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义飞行单位层级</h4>
+					<h3 type="button" class="collapsible">自定义飞行单位层级</h4>
 					<div class="col-content">
 						<p>飞行单位（指飞艇或直升机类的飞行载具，非飞行器）在<code>air</code>或<code>top</code>层级的判定方式为：该单位当前所在的高度大于或小于<code>JumpjetHeight</code>设定或者在<code>[JumpjetControls]</code>中<code>CruiseHeight</code>所默认的高度。</p>
 						<p>未完待续……</p>
 					</div>
-					<h4 type="button" class="collapsible">飞行单位面向目标开火</h4>
+					<h3 type="button" class="collapsible">飞行单位面向目标开火</h4>
 					<div class="col-content">
 						<p>飞行单位在原版中武器必须带<code>OmniFire=yes</code>才可以正常开火，然而这样的后果是哪怕飞行单位背对目标也可以开火。而现在可以通过在<code>[JumpjetControls]</code>增加<code>TurnToTarget=yes</code>标签来让所有飞行单位面向单位开火。同时，也可以通过在单位上设置<code>JumpjetTurnToTarget</code>来覆盖某个特定单位是否面向目标开火。</p>
 						<p>显然，带有<code>TurretSpins=yes</code>的飞行单位无法使用该逻辑。</p>
 					</div>
-					<h4 type="button" class="collapsible">停电子机坠毁</h4>
+					<h3 type="button" class="collapsible">停电子机坠毁</h4>
 					<div class="col-content">
 						<p><code>Powered.KillSpawns</code>定义当使用子机的建筑单位停电时，建筑单位是否会停止瞄准敌军单位，同时子机坠毁，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">重启全局飞行单位控制</h4>
+					<h3 type="button" class="collapsible">重启全局飞行单位控制</h4>
 					<div class="col-content">
 						<p>Phobos重启了原版废弃的<code>[JumpjetControls]</code>模块，作为所有飞行单位的默认设定，但需要增加两个额外的标签，即<code>Crash</code>和<code>NoWobbles</code></p>
 						<p>代码示例：</p>
@@ -1701,7 +1824,7 @@
 							<p>NoWobbles=false</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">禁止AI平行生产线</h4>
+					<h3 type="button" class="collapsible">禁止AI平行生产线</h4>
 					<div class="col-content">
 						<p>在Ares中，可以在<code>[GlobalControls]</code>中设置<code>AllowParallelAIQueues=no</code>来避免AI在多工厂的环境下平行生产，即在生产某一单位时克隆出其他单位。现在可以将某个特定种类的工厂建筑设置禁止AI的平行生产。如果设置了<code>AllowParallelAIQueues=no</code>，该功能无效。</p>
 						<p><code>ForbidParallelAIQueues.Infantry</code>定义是否禁止步兵单位的AI平行生产，参数为布尔值。</p>
@@ -1723,7 +1846,7 @@
 						</div>
 					</div>
 					<h3 id="enhanced-logic-terrains">地形对象</h3>
-					<h4 type="button" class="collapsible">自定义矿钻</h4>
+					<h3 type="button" class="collapsible">自定义矿钻</h4>
 					<div class="col-content">
 						<p>现在你可以定义某个地形对象可以生成的矿石种类，同时可以自定义生成矿石的范围。</p>
 						<p>代码示例：</p>
@@ -1736,29 +1859,29 @@
 							<p>SpawnsTiberium.CellsPerAnim=1 ;矿钻播放动画一次矿石生长多少格</p>
 						</div>
 					</div>
-					<h4 type="button" class="collapsible">自定义地形小地图颜色</h4>
+					<h3 type="button" class="collapsible">自定义地形小地图颜色</h4>
 					<div class="col-content">
 						<p><code>MinimapColor</code>定义地形对象在小地图的颜色，参数为R,G,B值。</p>
 					</div>
-					<h4 type="button" class="collapsible">地形可通过和建造建筑</h4>
+					<h3 type="button" class="collapsible">地形可通过和建造建筑</h4>
 					<div class="col-content">
 						<p>现在可以自定义地形对象是否可以通过或建造建筑。</p>
 						<p><code>IsPassable</code>定义地形对象是否可以通过，参数为布尔值。设置为true时，鼠标指针会在地形对象上显示可移动到该位置。</p>
 						<p><code>CanBeBuiltOn</code>定义地形对象是否可以建造建筑，参数为布尔值。设置为true时，建造建筑将不会在该地形对象上显示不可建造，同时建筑建造时该地形对象自动移除。给树木添加这个标签可以实现建造建筑时自动移除树木。</p>
 					</div>
 					<h3 id="enhanced-logic-tiberium">矿石</h3>
-					<h4 type="button" class="collapsible">自定义矿石小地图颜色</h4>
+					<h3 type="button" class="collapsible">自定义矿石小地图颜色</h4>
 					<div class="col-content">
 						<p><code>MinimapColor</code>定义该矿石种类在小地图上显示的颜色，参数为R,G,B值。</p>
 					</div>
 					<h3 id="enhanced-logic-vehicles">载具</h3>
-					<h4 type="button" class="collapsible">载具的摧毁动画</h4>
+					<h3 type="button" class="collapsible">载具的摧毁动画</h4>
 					<div class="col-content">
 						<p>现在可以为载具单位定义摧毁时播放的动画，和原版的<code>Explosion</code>不同，这个动画会储存单位的所属信息、炮塔角度信息等，适合与<a href="#anim-create-unit">动画生成单位</a>一起用。</p>
 						<p><code>DestroyAnim</code>定义该载具在被摧毁时播放的动画，参数为动画的注册名所组成的列表，可以填入多个动画。</p>
 						<p><code>DestroyAnim.Random</code>定义该载具在被摧毁时的动画是否随机播放，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">单位部署的动画和方向</h4>
+					<h3 type="button" class="collapsible">单位部署的动画和方向</h4>
 					<div class="col-content">
 						<p>现在可以自定义<code>IsSimpleDeployer</code>单位的部署的动画属性以及方向。</p>
 						<p><code>DeployingAnim.AllowAnyDirection</code>定义该单位是否可以在任意朝向部署，参数为布尔值，如果设定成true，将会屏蔽其他定义方向的语句，并屏蔽<code>DeployingAnim</code>所定义的部署动画。同时，该标签只对地面单位有效。</p>
@@ -1766,12 +1889,12 @@
 						<p><code>DeployingAnim.ReverseForUndeploy</code>定义该单位在收起部署时播放的部署动画是否为倒放，参数为布尔值。</p>
 						<p><code>DeployingAnim.UseUnitDrawer</code>定义该单位的部署动画是否使用单位调色盘（unit***.pal），参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">静态载具</h4>
+					<h3 type="button" class="collapsible">静态载具</h4>
 					<div class="col-content">
 						<p>现在可以通过将载具的<code>Speed</code>设置为0使其成为静态载具，效果类似拥有<code>IsSimpleDeployer</code>标签的载具部署后的形态（原版武装直升机）。</p>
 						<p id="alert">注意：不要把这个设置赋予可建造的载具，否则会卡在工厂里出不来。</p>
 					</div>
-					<h4 type="button" class="collapsible">单位部署保留铁幕效果</h4>
+					<h3 type="button" class="collapsible">单位部署保留铁幕效果</h4>
 					<div class="col-content">
 						<p>现在，你可以定义带有<code>DeploysInto</code>或<code>UndeploysInto</code>标签的载具是否在部署后保留铁幕效果，包括宏观定义和微观定义。变形之后<code>IronCurtain.Modifier</code>会重新生效。</p>
 						<p><code>IronCurtain.KeptOnDeploy</code>定义该单位是否在部署后仍然保留铁幕效果，参数为布尔值。这个标签可以写在[CombatDamage]中作为全局标签，也可以写在单位中作为微观标签。</p>
@@ -1779,46 +1902,46 @@
 					<h3 id="enhanced-logic-vein">藤蔓与废料</h3>
 					<h3 id="enhanced-logic-debris">VXL碎片</h3>
 					<h3 id="enhanced-logic-warheads">弹头</h3>
-					<h4 type="button" class="collapsible">允许弹头对发射者生效</h4>
+					<h3 type="button" class="collapsible">允许弹头对发射者生效</h4>
 					<div class="col-content">
 						<p>现在你可以让弹头对发射者自身造成伤害，并且产生各种衍生效果，如Ares的<code>KillDriver</code>、<code>DisableWeapons</code>、<code>Sonar</code>或<code>Flash.Duration</code>等，即便弹头上没有<code>DamageSelf=true</code>标签。</p>
 						<p id="comment">需要注意的是，带有<code>Psychedelic=true</code>标签的弹头仍然无法对发射者产生效果，因其只会影响所属阵营外的单位。</p>
 						<p><code>AllowDamageOnSelf</code>定义该弹头是否可以对自身造成伤害和衍生效果，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">弹头是否解除隐形</h4>
+					<h3 type="button" class="collapsible">弹头是否解除隐形</h4>
 					<div class="col-content">
 						<p>在原版中，隐形的单位被任何弹头打中将会解除隐形。现在，你可以设置弹头在击中隐形单位时是否让其解除隐形。</p>
 						<p><code>DecloakDamagedTargets</code>定义是否在给隐形单位造成伤害后解除其隐形效果，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">弹头局部振动效果</h4>
+					<h3 type="button" class="collapsible">弹头局部振动效果</h4>
 					<div class="col-content">
 						<p>在原版中，你可以通过在弹头设置<code>ShakeXlo</code>、<code>ShakeXhi</code>、<code>ShakeYlo</code>、<code>ShakeYhi</code>四个标签来定义屏幕振动，但振动是全局振动。现在你可以定义该弹头的振动是否为局部振动，即弹头在视野内爆炸时才会振动。</p>
 						<p><code>ShakeIsLocal</code>定义该弹头的振动是否为局部振动，参数为布尔值。</p>
 					</div>
 					<h3 id="enhanced-logic-weapons">武器</h3>
-					<h4 type="button" class="collapsible">自定义飞碟激光</h4>
+					<h3 type="button" class="collapsible">自定义飞碟激光</h4>
 					<div class="col-content">
 						<p>现在你可以自定义飞碟激光前摇光轮的直径。</p>
 						<p><code>DiskLaser.Radius</code>定义飞碟激光的前摇光轮的直径，参数为浮点值，38.2大约为原版飞碟激光前摇光轮的直径。</p>
 					</div>
-					<h4 type="button" class="collapsible">单色激光</h4>
+					<h3 type="button" class="collapsible">单色激光</h4>
 					<div class="col-content">
 						<p>现在可以将激光定义为单色，即只有<code>LaserInnerColor</code>所指定的颜色，效果类似<code>IsHouseColor</code>指定激光为所属色。</p>
 						<p><code>IsSingleColor</code>定义该武器是否为单色激光，参数为布尔值。</p>
 						<p id="alert">注意：此功能不支持光棱塔援射逻辑。</p>
 					</div>
-					<h4 type="button" class="collapsible">可关闭电流效果</h4>
+					<h3 type="button" class="collapsible">可关闭电流效果</h4>
 					<div class="col-content">
 						<p>在原版中，电流效果通常是由三道电弧组成。现在你可以定义关闭三道电弧中的任何一个。</p>
 						<p><code>Bolt.Disable1</code>、<code>Bolt.Disable2</code>、<code>Bolt.Disable3</code>分别定义是否关闭某一道电流，参数为布尔值。</p>
 					</div>
-					<h4 type="button" class="collapsible">自定义电弧<span id="version">DEV</span></h4>
+					<h3 type="button" class="collapsible">自定义电弧<span id="version">DEV</span></h4>
 					<div class="col-content">
 						<p>在原版中武器，<code>IsElectricBolt=yes</code>的电弧通常是由8段弧线组成，而现在你可以自定义弧线的段数。</p>
 						<p><code>Bolt.Arcs</code>定义该电流武器的弧线有多少段，参数为整数，如果为0则绘制一条直线。</p>
 					</div>
 					<h3 id="enhanced-logic-misc">杂项</h3>
-					<h4 type="button" class="collapsible">自定义范围圈可见阵营</h4>
+					<h3 type="button" class="collapsible">自定义范围圈可见阵营</h4>
 					<div class="col-content">
 						<p>在原版中，范围圈默认为只有附带范围圈单位的所属方可见。现在，可以自定义范围圈的可见阵营。</p>
 						<p><code>RadialIndicatorVisibility</code>定义范围圈的可见阵营，参数为下列预设值：</p>
@@ -1901,5 +2024,21 @@
 				}
 			});
 		}
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const blogContent = document.querySelector('.blog-content');
+			const h2Tags = blogContent.querySelectorAll('h2');
+			const chapsDiv = document.querySelector('.chaps');
+			
+			h2Tags.forEach(h2 => {
+				const id = h2.id;
+				const text = h2.textContent;
+				const anchor = document.createElement('a');
+				anchor.href = `#${id}`;
+				anchor.textContent = text;
+				chapsDiv.appendChild(anchor);
+			});
+		});
 	</script>
 </body>
