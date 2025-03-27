@@ -10,20 +10,20 @@
 	<title>Phobos中文教程 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
 		.blog-content ul {
-			list-style-position: inside;
+			list-style-position: outside;
 			background-color: #66666650;
 			padding: 1em;
 		}
 
 		.blog-content ol {
-			list-style-position: inside;
+			list-style-position: outside;
 			background-color: #66666650;
 			padding: 1em;
 		}
 
 		.blog-content li {
-			margin: 0;
-			line-height: 1.25em;
+			margin: 0.25em;
+			line-height: 1.5em;
 		}
 
 		#version {
@@ -167,6 +167,7 @@
 		.phobos-table {
 			margin:5vh 0;
 			overflow-x: auto;
+			font-size: 14px;
 		}
 
 		.phobos-table table, th, tr, td {
@@ -201,6 +202,11 @@
 		.phobos-table li {
 			margin: 0;
 			line-height: 1.5em;
+			font-size: 14px;
+		}
+
+		.phobos-table code {
+			font-size: 14px;
 		}
 	</style>
 </head>
@@ -575,36 +581,134 @@
 					<h2 id="animations">动画相关</h2>
 					<h3 type="button" class="collapsible" id="anim-create-unit">动画生成单位</h4>
 					<div class="col-content">
-						<p>动画可以在播放完毕后在单元格内生成一个载具单位。开发版可支持生成载具、飞行器或步兵。</p>
-						<p><code>CreateUnit</code>定义该动画生成的单位，只能填一个。</p>
-						<p><code>CreateUnit.Owner</code>定义该动画生成的单位所属，只有在动画附带所属信息时才会生效。参数为下列预设值：</p>
-						<ul>
-							<li><code>Invoker</code>：调用动画的对象的所属方</li>
-							<li><code>Killer</code>：摧毁该单位的所属方。</li>
-							<li><code>Victim</code>：被摧毁单位的所属方。</li>
-							<li><code>Civilian</code>：平民方。</li>
-							<li><code>Special</code>：特殊方。</li>
-							<li><code>Neutral</code>：中立方。</li>
-							<li><code>Random</code>：随机。</li>
-						</ul>
-						<p>动画带有所属信息的方法如下：</p>
-						<ul>
-							<li>Phobos的<code>DestroyAnim</code></li>
-							<li>弹头的<code>AnimList</code>和Phobos的弹头<code>SplashList</code></li>
-							<li>41号地图触发动作</li>
-						</ul>
-						<p><code>CreateUnit.RemapAnim</code>定义该动画是否用单位调色盘绘制并且自带所属色，参数为布尔值。</p>
-						<p><code>CreateUnit.Mission</code>定义该动画生成的单位出现后的任务。</p>
-						<p><code>CreateUnit.AIMission</code>定义该动画生成的单位所属方是AI控制时的任务。</p>
-						<p><code>CreateUnit.Facing</code>定义该动画生成的单位朝向，参数为0-255的值，0为两点钟方向，224为12点钟方向。</p>
-						<p><code>CreateUnit.RandomFacing</code>定义该动画生成的单位朝向是否随机，参数为布尔值。</p>
-						<p><code>CreateUnit.InheritFacings</code>定义该动画生成的单位朝向是否继承生成该动画的单位，单位为布尔值。</p>
-						<p><code>CreateUnit.InheritTurretFacings</code>定义该动画生成的单位炮塔朝向是否继承生成该动画的单位，单位为布尔值，不支持Jumpjet类载具（如直升机等）。</p>
-						<p><code>CreateUnit.ConsiderPathfinding</code>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成，参数为布尔值。</p>
-						<p><code>CreateUnit.AlwaysSpawnOnGround</code>定义该动画生成的单位是否在地面生成，即便动画在空中，参数为布尔值。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。</p>
-						<p><code>CreateUnit.SpawnParachutedInAir</code>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，参数为布尔值。在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</p>
-						<p><code>CreateUnit.SpawnAnim</code>定义该动画生成单位之后所播放的动画，参数为动画注册名。</p>
-						<p><code>CreateUnit.SpawnHeight</code>定义该动画生成的单位初始高度，参数为高度，</p>
+						<p>动画可以在播放完毕后在单元格内生成一个任何类型的单位（载具、飞行器或步兵）。</p>
+						<div class="phobos-table">
+							<table>
+								<tr>
+									<th>标签</th>
+									<th width="30%">参数类型</th>
+									<th>参数单位</th>
+									<th>默认值</th>
+									<th>功能</th>
+								</tr>
+								<tr>
+									<td><code>CreateUnit</code></td>
+									<td>单位注册名</td>
+									<td>无</td>
+									<td>none</td>
+									<td>定义该动画生成的单位，只能填一个。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.Owner</code></td>
+									<td>
+										下列预设值：
+										<ul>
+											<li><code>Invoker</code>：调用动画的对象的所属方。</li>
+											<li><code>Killer</code>：摧毁该单位的所属方。</li>
+											<li><code>Victim</code>：被摧毁单位的所属方。</li>
+											<li><code>Civilian</code>：平民方。</li>
+											<li><code>Special</code>：特殊方。</li>
+											<li><code>Neutral</code>：中立方。</li>
+											<li><code>Random</code>：随机。</li>
+										</ul>
+									</td>
+									<td>无</td>
+									<td>Victim</td>
+									<td>
+										<p>定义该动画生成的单位所属，只有在动画附带所属信息时才会生效，动画带有所属信息的方法如下：</p>
+										<ul>
+											<li>Phobos的<code>DestroyAnim</code></li>
+											<li>弹头的<code>AnimList</code>和Phobos的弹头<code>SplashList</code></li>
+											<li>41号地图触发动作</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.RemapAnim</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画是否用单位调色盘绘制并且自带所属色。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.Mission</code></td>
+									<td>任务类型</td>
+									<td>无</td>
+									<td>Guard</td>
+									<td>定义该动画生成的单位出现后的任务。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.AIMission</code></td>
+									<td>任务类型</td>
+									<td>无</td>
+									<td>Guard</td>
+									<td>定义该动画生成的单位所属方是AI控制时的任务。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.Facing</code></td>
+									<td>整数[0-255]</td>
+									<td>无</td>
+									<td>0</td>
+									<td>定义该动画生成的单位朝向，0为两点钟方向，224为12点钟方向。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.RandomFacing</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成的单位朝向是否随机。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.InheritFacings</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成的单位朝向是否继承生成该动画的单位。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.InheritTurretFacings</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成的单位炮塔朝向是否继承生成该动画的单位，不支持Jumpjet类载具（如直升机等）。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.ConsiderPathfinding</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成时如果该单元格有其他单位是否会在周边找一个合适的单元格生成</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.AlwaysSpawnOnGround</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成的单位是否在地面生成，即便动画在空中播放。如果填入false，那么在地面爆炸的Jumpjet类载具会自动起飞。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.SpawnParachutedInAir</code></td>
+									<td>布尔值</td>
+									<td>无</td>
+									<td>false</td>
+									<td>定义该动画生成的单位如果是在空中生成，是否会用降落伞降落到地面，在<code>CreateUnit.AlwaysSpawnOnGround=true</code>存在时无效。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.SpawnAnim</code></td>
+									<td>动画注册名</td>
+									<td>无</td>
+									<td>none</td>
+									<td>定义该动画生成单位之后所播放的动画。</td>
+								</tr>
+								<tr>
+									<td><code>CreateUnit.SpawnHeight</code></td>
+									<td>整数</td>
+									<td>Lepton</td>
+									<td>-1</td>
+									<td>定义该动画生成的单位初始高度，设置为正整数时将覆盖动画的高度。在<code>CreatUnit.AlwaysSpawnOnGround</code>设置成true时无效。</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 					<h3 type="button" class="collapsible">动画附加粒子系统</h4>
 					<div class="col-content">
