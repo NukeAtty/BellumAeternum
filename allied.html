@@ -227,8 +227,8 @@
 						<div class="unit-container-desc">
 							<p>The Allied Power Plant is the power supply on the battlefield. Since it is using the traditional method to generate power, the generator is filled with hydrogen gas, and it will cause explosion when destroyed.</p>
 							<ul>
-								<li>Special Tactics: N/A</p>
-								<li>Trait: Explodes when destroyed</li>
+								<li>Trigger hydrogen explosion when destroyed.</li>
+								<li>Lost power if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -249,8 +249,9 @@
 						<div class="unit-container-desc">
 							<p>The Allied Ore Refinery is for refining valuable resources from the ore, and transfer them into credits in order to train more soldiers and produce more weapons.</p>
 							<ul>
-								<li>Special Tactics: N/A</p>
-								<li>Trait: Provides a free <a href="#stealth-miner">Stealth Miner</a> upon buildup</li>
+								<li>Provides a free <a href="#stealth-miner">Stealth Miner</a> upon buildup</li>
+								<li>Refund the miner if it fails to be placed.</li>
+								<li>Lost credits if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -271,8 +272,8 @@
 						<div class="unit-container-desc">
 							<p>The Allied Barracks is the unique facility to train soldiers and crews.</p>
 							<ul>
-								<li>Special Tactics: N/A</p>
-								<li>Trait: Train soldiers</li>
+								<li>Can set rally point.</li>
+								<li>Provides initial promotion on infantries if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -293,8 +294,8 @@
 						<div class="unit-container-desc">
 							<p>The Allied Weapon Factory is the facility to produce vehicles and helicopters.</p>
 							<ul>
-								<li>Special Tactics: N/A</p>
-								<li>Trait: Produce vehicles and helicopters</li>
+								<li>Can set rally point.</li>
+								<li>Provides initial promotion on vehicles if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -315,8 +316,9 @@
 						<div class="unit-container-desc">
 							<p>The Allied Battle Command is the core facility to build advanced battle control, provides radar service and spy plane communications.</p>
 							<ul>
-								<li>Special Tactics: Spy Plane</li>
-								<li>Trait: Provides Radar service</li>
+								<li>Provides radar service.</li>
+								<li>Provides <a href="#aerial-recon">Aerial Recon</a> tactic.</li>
+								<li>Fog of war reset if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -338,7 +340,7 @@
 							<p>The Allied airforce command headquarter provides ability to build aircrafts and helipad to repair and maintain aircrafts. Also, with aviation radar, it can navigates airborne transport to the battlefield and paradrop reinforcement.</p>
 							<ul>
 								<li>Special Tactics: <a href="#allied-paratrooper">Paratrooper</a></li>
-								<li>Trait: Produce aircrafts</li>
+								<li>Provides initial promotion on aircrafts if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -359,8 +361,7 @@
 						<div class="unit-container-desc">
 							<p>The Allied Battle Lab is the advanced technology provider of the Allied Force, which unlocks various structures, defenses, soldier equipment and battle vehicles.</p>
 							<ul>
-								<li>Special Tactics: N/A</p>
-								<li>Trait: Unlock higher tier technologies</li>
+								<li>Provides permission to build <a href="secret-units.html">scret units</a> if infiltrated.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -381,8 +382,8 @@
 						<div class="unit-container-desc">
 							<p>Ore purifier will increase efficiency of valuable material refining, which brings more credits when every batch of ore refines.</p>
 							<ul>
-								<li>Special Tactics: <a href="#financial-interest">Financial Interest</a></li>
-								<li>Trait: Increase income by 25%</li>
+								<li>Provides <a href="#financial-interest">Financial Interest</a> tactic.</li>
+								<li>Increase refinery income by 25%.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -452,7 +453,7 @@
 						<div class="unit-container-desc">
 							<p>S.A.M. stands for Surface to Air Missile, which is the specialized anti-air weapon for Allied force. </p>
 							<ul>
-								<li>Trait: Anti-Air</li>
+								<li>Anti-Air</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -475,7 +476,7 @@
 						<div class="unit-container-desc">
 							<p>Prism tower is the ultimate defense method of the Allied Forece, which possesses a superior mechanism, the Prism Forwarding. Multiple prism towers can weave a supporting network, and cast a hyper photum flux.</p>
 							<ul>
-								<li>Trait: Prism forwarding</li>
+								<li>Prism forwarding</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -498,7 +499,8 @@
 						<div class="unit-container-desc">
 							<p>The stealth generator is one of the highest technology of the Allied Force. When power up, the stealth generator giveth stealth coating to units and structures within a range, and hide them from enemy attack.</p>
 							<ul>
-								<li>Trait: Generate stealth</li>
+								<li>Generate stealth field.</li>
+								<li>Uncloakable.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -520,13 +522,9 @@
 						<div class="unit-container-desc">
 							<p>Satellite Telecom provides direct link to military satellite and navigate fortress bombers from homeland to launch air-strike. It is profoundly useful for battle with complex electromagnetic environment.</p>
 							<ul>
-								<li>Special Tactics: Fortress Bombing</li>
-								<li>Trait:
-									<ol>
-										<li>Provides radar service</li>
-										<li>Can only build one</li>
-									</ol>
-								</li>
+								<li>Provides <a href="#fortress-bombing">Fortress Bombing</a> tactic.</li>
+								<li>Provides radar service.</li>
+								<li>Can only build one.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -548,8 +546,9 @@
 						<div class="unit-container-desc">
 							<p>In order to win the war, the Allied has started to do research on weather control technology, and the weather control device has come out as result. The weather control device launch hyper beam into the troposphere, and change the molecular movement to generate lightning storm at the target location.</p>
 							<ul>
-								<li>Special Tactics: <a href="#lightning-storm">Lightning Storm</a></li>
-								<li>Trait: Super Weapon</li>
+								<li>Provides <a href="#lightning-storm">Lightning Storm</a> tactic.</li>
+								<li>Reset timer if infiltrated.</li>
+								<li>Cannot be built without Super Weapon switch on.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -638,7 +637,7 @@
 						<div class="unit-container-desc">
 							<p>The lightning storm is generated by the Allied's weather control device, which carries thunderbolt that can damage anything on the groud.</p>
 							<ul>
-								<li>Trait: Super Weapon</li>
+								<li>Jams radars when launched.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -772,10 +771,7 @@
 						<div class="unit-container-desc">
 							<p>Spy leads a special warfare on the darkside of the battlefield. They can steal enemy technology, cripple enemy power facility, Jam radars, and bring enemy tactics to chaos.</p>
 							<ul>
-								<li>Steal technology</li>
-								<li>Cripple powerplant</li>
-								<li>Jam radar</li>
-								<li>Disrupt tactics</li>
+								<li>Can infiltrates buildings.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -801,6 +797,7 @@
 							<p>As the result of the Allied SCP (Standardised Construction Protocol), the M57 Mobile Construction Vehicle is modified from the Piterbuilt heavy load liner, and is capable of off-road ride. When deploy, it can quickly set up a construction yard and build a frontline base.</p>
 							<ul>
 								<li>Trait: Deploy into <a href="#allied-construction-yard">Allied Construction Yard</a></li>
+								<li>Uncrushable.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -844,7 +841,7 @@
 						<div class="unit-container-desc">
 							<p>M54 Grizzly tank is the successor of the Allied new generation battle tank. Armed with 90mm M5 cannon, the M54 Grizzly has decent armor and fair rate of fire. Overall, Grizzly is tough and sturdy and with good fire power. </p>
 							<ul>
-								<li>Trait: N/A</li>
+								<li>Can fire during moving.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -866,7 +863,7 @@
 						<div class="unit-container-desc">
 							<p>The M21 IFV is one of the best multi-purpose armored vehicle in the Allied Force, armed with 6-barrel Surface to Air Missile Launcher, the M21 IFV is the nightmare of aircrafts. Additionally, M21 IFV can easily swap its weapon depends on operators, and this makes it a truely universal support on the battlefields. </p>
 							<ul>
-								<li>Trait: Crew changes weapon</li>
+								<li>Changes turret and weapons depending on crew.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -888,7 +885,7 @@
 						<div class="unit-container-desc">
 							<p>M51 Stealth Tank is the tactical unit of the Allied Force. Armed with quad recoilless rifle, the Stealth Tank has great alpha damage that can destroy most of target in one cycle of shots.</p>
 							<ul>
-								<li>Trait: Stealth</li>
+								<li>Uncloak when firing.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -933,7 +930,7 @@
 						<div class="unit-container-desc">
 							<p>T67 PMC is the experimental siege weapon of the Allied Force. Armed with Prism System, it can easily destroy enemy buildings and defenses. </p>
 							<ul>
-								<li>Trait: Photum diffusion</li>
+								<li>Photum diffusion</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -955,7 +952,7 @@
 						<div class="unit-container-desc">
 							<p>The T111 Battle Fortress is the ultimate weapon of the Allied Force, it armed with destructive 155mm cannon and can destroy most enemy in one shot. Because of its decent armor, it is tough enough to push all the way to enemy base, and this make T111 the best assault tank. </p>
 							<ul>
-								<li>Trait: Crush light vehicles</li>
+								<li>Can Crush vehicles.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -977,7 +974,7 @@
 						<div class="unit-container-desc">
 							<p>The YF-102D Dagger is one of the fastest fighter in the Allied air forces. Armed with two AA missile, Dagger is a beast for enemy aircraft. It has also armed with an air-to-ground missile in case of enemy tanks ambushing.</p>
 							<ul>
-								<li>Trait: Air Combat</li>
+								<li>Can attack aircraft.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
@@ -999,7 +996,7 @@
 						<div class="unit-container-desc">
 							<p>The XA-6 Intruder is a subsonic attacker of the Allied air force. It can carry two Mk-77 gliding napalm and once fired, the target area will be burned. </p>
 							<ul>
-								<li>Trait: Create burning field</li>
+								<li>Create burning field.</li>
 							</ul>
 						</div>
 						<div class="unit-container-stats">
