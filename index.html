@@ -182,22 +182,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
 		</div>
 	</footer>
-	<!--External Javascript-->
-	<script>
-		var myIndex = 0;
-		carousel();
-
-		function carousel() {
-		var i;
-		var x = document.getElementsByClassName("BESlides");
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";  
-		}
-		myIndex++;
-		if (myIndex > x.length) {myIndex = 1}    
-		x[myIndex-1].style.display = "block";  
-		setTimeout(carousel, 4000);    
-		}
-	</script>
 </body>
 </html>
