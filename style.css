@@ -409,7 +409,7 @@ footer {
 }
 
 .overview h1 {
-	font-family: Arial, Helvetica Black, SF Pro, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 72px;
 	font-weight: 700;
 	font-variant: small-caps;
@@ -622,7 +622,7 @@ footer {
 .archives h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 60px;
-	font-weight: black;
+	font-weight: bold;
 	line-height: 0.5em;
 	margin: 0.5em auto;
 	text-align: center;
