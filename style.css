@@ -375,25 +375,27 @@ footer {
 }
 
 .footer-portals a{
+	display: flex;
+	flex-flow: row;
 	text-decoration: none;
 	margin: auto 0;
-	color: #ff99cc;
+	color: #ffffff;
 	font-size: 16px;
 	font-family: Arial, Helvetica Black, sans-serif;
 	font-weight: 600;
 	padding: 0 1vw;
 	border-left: 2px solid #FFFFFF50;
-	line-height: 1em;
+	line-height: 2em;
 }
 
 .footer-portals img {
-	margin: auto;
-	width: 32px;
-	height: 32px;
+	margin: auto 4px;
+	width: 24px;
+	height: 24px;
 }
 
-.footer-portals img:hover {
-	filter: drop-shadow(0 0 4px #ff99cc) brightness(125%);
+.footer-portals a:hover {
+	filter: drop-shadow(0 0 4px #ff99cc) brightness(110%);
 }
 
 /*------------------------------*/
