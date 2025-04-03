@@ -3320,6 +3320,14 @@ footer {
 	/*==============================*/
 	/*========== Lobby Page ==========*/
 	/*==============================*/
+
+	.cta-btn {
+		display: flex;
+		margin: auto;
+		width: 100%;
+		padding: 32px;
+	}
+
 	/*----------Overview Module----------*/
 	.overview {
 		margin: auto;
@@ -3348,7 +3356,7 @@ footer {
 
 	.overview p {
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 1.5em;
 		text-align: center;
 		width: 100%;
