@@ -112,7 +112,7 @@ function drawImageWithPoints() {
 
     // Draw index with shadow
     ctx.fillStyle = '#ff0000';
-    ctx.font = '14px HarmonyOS Sans';
+    ctx.font = '14px Neon';
     ctx.shadowColor = '#ffff00';
     ctx.shadowOffsetX = 1;
     ctx.shadowOffsetY = 1;

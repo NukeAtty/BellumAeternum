@@ -4,23 +4,32 @@ const ctx = canvas.getContext('2d');
 const reloadButton = document.getElementById('reload');
 const copyButton = document.getElementById('copy');
 const outputDiv = document.getElementById('output');
+const maxWidth = 800;  // 最大允许宽度
+const maxHeight = 600; // 最大允许高度
 
 let image = new Image();
 let points = [];
 
 imageUpload.addEventListener('change', (event) => {
   const file = event.target.files[0];
+
   if (file && file.type === 'image/png') {
-const reader = new FileReader();
-reader.onload = () => {
-  image.src = reader.result;
-  image.onload = () => {
-canvas.width = image.width;
-canvas.height = image.height;
-drawImageWithPoints();
-  };
-};
-reader.readAsDataURL(file);
+    const reader = new FileReader();
+    reader.onload = () => {
+      image.src = reader.result;
+      image.onload = () => {
+        if (image.width > maxWidth || image.height > maxHeight) {
+          alert("Image should not over 800*600.");
+          imageUpload.value = '';  // 清空文件选择
+          return;  // 终止后续执行
+        }
+        
+        canvas.width = image.width;
+        canvas.height = image.height;
+        drawImageWithPoints();
+      };
+    };
+    reader.readAsDataURL(file);
   }
 });
 
@@ -112,7 +121,7 @@ function drawImageWithPoints() {
 
     // Draw index with shadow
     ctx.fillStyle = '#ffff00';
-    ctx.font = '14px HarmonyOS Sans';
+    ctx.font = '14px Neon';
     ctx.shadowColor = '#ff0000';
     ctx.shadowOffsetX = 1;
     ctx.shadowOffsetY = 1;

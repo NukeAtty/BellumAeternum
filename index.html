@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="preload" href="../src/font/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf" as="font" />
 <link rel="preload" href="../src/font/furore.otf" as="font" />
+<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
 <link rel="preload" href="src/background-pattern.webp" as="image">
 <meta name="description" content="Bellum Aeternum is a Red Alert 2 Yuri's Revenge mod that improves graphics and reality. With ascended level of details, it maximize your joy of gameplay.">
 <link rel="icon" type="image/svg" href="/src/favicon.svg">
@@ -68,8 +68,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h2>A More Realistic Red Alert 2</h2>
 			<p>Bellum Æternum is a <i><b>Red Alert 2: Yuri's Revenge</b></i> mod with much improvement of graphics and reality.</p>
 			<p>With ascended level of details, you will experience the Red Alert 2 in an epic immersion.</p>
-			<div class="link-button">
-				<a id="download-button" href="https://www.moddb.com/mods/bellum-aeternum/downloads/bellum-aeternum-beta-test-v1" title="Download Bellum Aeternum Beta Test V1 - ModDB" target="_blank"><img src="https://button.moddb.com/download/medium/280312.png" alt="Bellum Aeternum: 2nd Alpha Test" /></a>
+			<div class="cta-btn">
+				<a id="download-button" href="https://www.moddb.com/mods/bellum-aeternum/downloads/bellum-aeternum-beta-test-v1" title="Download Bellum Aeternum Beta Test V1 - ModDB" target="_blank">Download</a>
 			</div>
 			<p>Bellum Æternum is also available in: <a id="lang-portal" href="https://ra2be.com/zh/">中文</a></p>
 		</div>
@@ -79,21 +79,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<!--Feature 1-->
 				<div class="features-container">
 					<div class="features-image">
-						<img src="src/enhanced-effects.webp" alt="Red Alert 2 enhanced effects" width="320px" height="320px">
+						<img src="src/enhanced-effects.webp" alt="Red Alert 2 enhanced effects" width="320px" height="320px" loading="lazy">
 					</div>
 					<h3>Enhanced Effects</h3>
 				</div>
 				<!--Feature 2-->
 				<div class="features-container">
 					<div class="features-image">
-						<img src="src/realistic-unit-design.webp" alt="Red Alert 2 unit design" width="320px" height="320px">
+						<img src="src/realistic-unit-design.webp" alt="Red Alert 2 unit design" width="320px" height="320px" loading="lazy">
 					</div>
 					<h3>Realistic Unit Design</h3>
 				</div>
 				<!--Feature 3-->
 				<div class="features-container">
 					<div class="features-image">
-						<img src="src/proper-dimension.webp" alt="Red Alert 2 proper dimension" width="320px" height="320px">
+						<img src="src/proper-dimension.webp" alt="Red Alert 2 proper dimension" width="320px" height="320px" loading="lazy">
 					</div>
 					<h3>Proper Dimension</h3>
 				</div>
@@ -182,22 +182,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
 		</div>
 	</footer>
-	<!--External Javascript-->
-	<script>
-		var myIndex = 0;
-		carousel();
-
-		function carousel() {
-		var i;
-		var x = document.getElementsByClassName("BESlides");
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";  
-		}
-		myIndex++;
-		if (myIndex > x.length) {myIndex = 1}    
-		x[myIndex-1].style.display = "block";  
-		setTimeout(carousel, 4000);    
-		}
-	</script>
 </body>
 </html>
