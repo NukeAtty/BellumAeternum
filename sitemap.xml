@@ -51,6 +51,10 @@
       <changefreq>always</changefreq>
    </url>
    <url>
+      <loc>https://ra2be.com/blog/beta-v1-1.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
       <loc>https://ra2be.com/gadget/foids.html</loc>
       <changefreq>always</changefreq>
    </url>
@@ -104,6 +108,10 @@
    </url>
    <url>
       <loc>https://ra2be.com/zh/blog/beta-v1.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
+      <loc>https://ra2be.com/zh/blog/beta-v1-1.html</loc>
       <changefreq>always</changefreq>
    </url>
 </urlset>
