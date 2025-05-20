@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../org-style.css">
+	<link rel="preload" href="../src/font/furore.otf" as="font" />
+	<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
+	<link rel="preload" href="../src/background-pattern.webp" as="image">
+	<meta name="description" content="红色警戒2：尤里的复仇Mod《万世之战》遭遇战地图介绍。">
+	<link rel="icon" type="image/x-icon" href="../src/favicon.svg">
+	<link rel="alternate" hreflang="x-default" href="https://ra2be.com/skirmish-maps.html"/>
+	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/skirmish-maps.html" />
+	<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
+	<meta http-equiv="ontent-security-policy" content="script-src https:; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"/>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-LPEL1Y72V6');
+	</script>
+	<title>遭遇战地图 | 万世之战：为红警2带来前所未有的体验</title>
+    <style>
+        .maps-section {
+            display: flex;
+            flex-flow: column;
+            width: 60%;
+            margin: auto;
+        }
+
+        .map-type {
+            display: none; /* Hidden by default */
+        }
+
+        /* The "show" class is added to the filtered elements */
+        .show-maps {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .map {
+            display: flex;
+            flex-flow: column;
+            width: 30%;
+            background-color: #333333;
+            margin: 10px;
+        }
+
+        /* Style the buttons */
+        .map-selector {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+        }
+
+        .map-selector-button {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            background-color: #333333;
+            border: none;
+            padding: 0.5em;
+            font-size: 16px;
+            color: #FFFFFF;
+            margin: 0.5em;
+            width: 12vw;
+            text-align: center;
+        }
+
+        /* Add a light grey background on mouse-over */
+        .map-selector-button:hover {
+            background-color: #c00;
+        }
+
+        /* Add a dark background to the active button */
+        .map-selector-button .selected-button {
+            background-color: #666;
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+	<header>
+		<div class="navigation-buttons">
+			<div class="navigation-button">
+				<a href="https://ra2be.com/zh/">主页</a>
+			</div>
+			<div class="navigation-button">
+				<a href="archives.html">档案库</a>
+			</div>
+			<div class="navigation-button">
+				<a href="blog.html">博客</a>
+			</div>
+			<div class="navigation-button">
+				<a href="download.html">下载</a>
+			</div>
+		</div>
+		<div class="responsive-navigation">
+			<a href="https://ra2be.com/zh/"><img src="../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
+			<div class="responsive-navigation-buttons">
+				<a href="archives.html">档案库</a>
+				<a href="blog.html">博客</a>
+				<a href="download.html">下载</a>
+			</div>
+		</div>
+	</header>
+	<!--Main-->
+	<main>
+		<div class="overview">
+			<h1>万世之战遭遇战地图</h1>
+		</div>
+        <div class="maps-section">
+            <div class="map-selector" id="map-selector">
+                <button class="map-selector-button selected-button" onclick="mapFilterSelection('all')">所有地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('1v1')">1V1</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('2v2')">2V2</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('3v3')">3V3</button>
+            </div>
+            <div class="map-list">
+                <div class="map-type 1v1">
+                    <div class="map">
+                        <img src="../src/maps/skirmish-verdant-hills.webp">
+                        <h3>Verdant Hills</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+                <div class="map-type 2v2">
+                    <div class="map">
+                        <img src="../src/maps/skirmish-leavenworth.webp">
+                        <h3>Leavenworth</h3>
+                        <p>Description</p>
+                    </div>
+                    <div class="map">
+                        <img src="../src/maps/skirmish-frost-reach.webp">
+                        <h3>Frost Reach</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+                <div class="map-type 3v3">
+                    <div class="map">
+                        <img src="../src/maps/skirmish-mt-thunderhead.webp">
+                        <h3>Mt. Thunderhead</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Map Filter-->
+        <script>
+            mapFilterSelection("all")
+            function mapFilterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("map-type");
+                if (c == "all") c = "";
+                // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show-maps");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show-maps");
+                }
+                }
+
+                // Show filtered elements
+                function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                    }
+                }
+                }
+
+                // Hide elements that are not selected
+                function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+                }
+
+                // Add active class to the current control button (highlight it)
+                var btnContainer = document.getElementById("map-selector");
+                var btns = btnContainer.getElementsByClassName("map-selector-button");
+                for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("selected-button");
+                    current[0].className = current[0].className.replace(" selected-button", "");
+                    this.className += " selected-button";
+                });
+            }
+        </script>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言切换</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-column">
+				<p>阵营</p>
+				<ul>
+					<li><a href="allied.html">盟军</a></li>
+					<li><a href="soviet.html">苏联</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>资料</p>
+				<ul>
+					<li><a href="archives.html">档案库</a></li>
+					<li><a href="blog.html">博客</a></li>
+				</ul>
+				</div>
+				<div class="footer-column">
+				<p>关于</p>
+				<ul>
+					<li><a href="faq.html">常见问题</a></li>
+					<li><a href="contact.html">联系作者</a></li>
+					<li><a href="terms-of-use.html">使用条例</a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://qm.qq.com/q/30o7dOtm0w" target="_blank"><img src="../src/icons/qq.svg" width="24px" height="24px">万世之战QQ群</a>
+			<a href="https://space.bilibili.com/3546721533561614" target="_blank"><img src="../src/icons/bilibili.svg" width="24px" height="24px">关注Bilibili：NUKE_核大人</a>
+		</div>
+	</footer>
+</body>
+</html>
