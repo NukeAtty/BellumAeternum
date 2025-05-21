@@ -22,12 +22,13 @@
 
 	gtag('config', 'G-LPEL1Y72V6');
 	</script>
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
 	<title>遭遇战地图 | 万世之战：为红警2带来前所未有的体验</title>
 </head>
 
 <body>
 	<!-- HTMX header -->
-	<div hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
 		<div class="overview">
@@ -37,35 +38,132 @@
         <div class="maps-section">
             <div class="map-selector" id="map-selector">
                 <button class="map-selector-button selected-button" onclick="mapFilterSelection('all')">所有地图</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('1v1')">1V1</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('2v2')">2V2</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('3v3')">3V3</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('1v1')">2人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('2v2')">4人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('3v3')">6人地图</button>
             </div>
             <div class="map-list">
                 <div class="map-type 1v1">
                     <div class="map">
-                        <img src="../src/maps/skirmish-verdant-hills.webp">
-                        <h3>Verdant Hills</h3>
-                        <p>Description</p>
+                        <img src="../src/maps/skirmish-verdant-hills.webp" alt="苍翠丘陵" width="1280px" height="1108px">
+                        <div class="map-description">
+                            <h3>苍翠丘陵</h3>
+                            <p>因被茂密的森林包裹而得名的山丘。从中世纪开始，住在山丘上的领主就世世代代地统治着这里。尔后，地下蕴藏的石油将战火引致此处，古老而宁静的村庄也成为了兵家必争之地。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>模式</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="map-type 2v2">
                     <div class="map">
-                        <img src="../src/maps/skirmish-leavenworth.webp">
-                        <h3>Leavenworth</h3>
-                        <p>Description</p>
+                        <img src="../src/maps/skirmish-leavenworth.webp" alt="利文沃斯" width="1280px" height="637px">
+                        <div class="map-description">
+                            <h3>利文沃斯</h3>
+                            <p>地处阿尔卑斯山脚，曾是一个被世人遗忘的山间小镇。二战期间，这里层一度被德军所用作后勤补给点，并修筑了铁路和高速公路。战后，小镇恢复了往日的平静，然而新的战争使得这个被遗忘的小镇再次成为战略要地。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>模式</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                                <li>市民医院</li>
+                                                <li>机械车间</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="map">
-                        <img src="../src/maps/skirmish-frost-reach.webp">
-                        <h3>Frost Reach</h3>
-                        <p>Description</p>
+                        <img src="../src/maps/skirmish-frost-reach.webp" alt="寒霜流域" width="1280px" height="643px">
+                        <div class="map-description">
+                            <h3>寒霜流域</h3>
+                            <p>一条流向北冰洋的河流穿过这座名不见经传的北欧小镇，要不是因为发现了石油，战火也无法烧到这里。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>模式</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="map-type 3v3">
                     <div class="map">
-                        <img src="../src/maps/skirmish-mt-thunderhead.webp">
-                        <h3>Mt. Thunderhead</h3>
-                        <p>Description</p>
+                        <img src="../src/maps/skirmish-mt-thunderhead.webp" alt="雷云山脉" width="1280px" height="374px">
+                        <div class="map-description">
+                            <h3>雷云山脉</h3>
+                            <p>连接着阿尔卑斯山脉，本是一个无人问津的村庄。战争爆发后，这里的山顶常常出现奇怪的雷暴现象——即便在山脚，也能清楚地看见闪电。许多当地人表示，这种现象是盟军在进入了这片区域后才开始的，但这种声音很快就被官方否定了。如今，这里已经成为一个理想的露营地，周边城镇居民也纷纷驾车前来欣赏奇观。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>模式</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,6 +220,6 @@
         </script>
 	</main>
 	<!-- HTMX footer -->
-	<div hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	<footer hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
 </body>
 </html>

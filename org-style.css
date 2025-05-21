@@ -1264,10 +1264,62 @@ footer {
 
 .map {
 	display: flex;
-	flex-flow: column;
-	width: 30%;
+	flex-flow: row;
+	width: 100%;
 	background-color: #333333;
 	margin: 10px;
+	padding: 12px;
+}
+
+.map img {
+	margin: auto;
+	max-width: 30vw;
+	height: auto;
+}
+
+.map-description {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+	margin: 10px;
+}
+
+.map-description h3 {
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 1vw;
+}
+
+.map-description p {
+	font-size: 16px;
+	margin: 1em 1vw;
+}
+
+.map-info-table {
+	margin: auto;
+}
+
+.map-info-table table {
+	border: 1px solid #fff;
+  	border-collapse: collapse;
+  	border-width: 1px;
+}
+
+.map-info-table tr {
+    margin: auto;
+}
+
+.map-info-table th {
+    background-color:#993333;
+    text-align: center;
+	padding: 0 1em;
+}
+
+.map-info-table td {
+    background-color:#08080850;
+    text-align: left;
+    line-height: 1.5em;
+	padding: 0 1em;
 }
 
 /* Style the buttons */
@@ -1289,6 +1341,8 @@ footer {
 	margin: 0.5em;
 	width: 12vw;
 	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
 }
 
 /* Add a light grey background on mouse-over */
@@ -1297,9 +1351,9 @@ footer {
 }
 
 /* Add a dark background to the active button */
-.map-selector-button .selected-button {
-	background-color: #666;
-	color: #f00;
+.selected-button {
+	background-color: #F00;
+	color: #FFF;
 }
 
 /*---------------------------------*/
@@ -1792,13 +1846,13 @@ footer {
 	border-radius: 20px;
 	border: 5px outset #333;
 	padding: 0.5vw;
-	margin: 0 0.5vw;
+	margin: 0.5vw;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
 }
 
 .blog-container:hover {
 	animation-name: button-slight-lift;
-  animation-duration: 0.2s;
+	animation-duration: 0.2s;
 	animation-iteration-count:1;
 	animation-fill-mode: both;
 	box-shadow: 0 0 10px #f00;
@@ -4191,6 +4245,122 @@ footer {
 
 	.credits h2 {
 		font-size: 24px;
+	}
+
+	/*-----------------------------*/
+	/*----------Maps Page----------*/
+	/*-----------------------------*/
+
+	.maps-section {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		margin: auto;
+	}
+
+	.map-type {
+		display: none; /* Hidden by default */
+	}
+
+	/* The "show" class is added to the filtered elements */
+	.show-maps {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.map {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		background-color: #333333;
+		margin: 10px;
+		padding: 12px;
+	}
+
+	.map img {
+		margin: auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.map-description {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		margin: 10px;
+	}
+
+	.map-description h3 {
+		font-size: 24px;
+		font-weight: bold;
+		margin: 0 1vw;
+		text-align: center;
+	}
+
+	.map-description p {
+		font-size: 16px;
+		margin: 1em 1vw;
+	}
+
+	.map-info-table {
+		margin: auto;
+	}
+
+	.map-info-table table {
+		border: 1px solid #fff;
+		border-collapse: collapse;
+		border-width: 1px;
+	}
+
+	.map-info-table tr {
+		margin: auto;
+	}
+
+	.map-info-table th {
+		background-color:#993333;
+		text-align: center;
+		padding: 0 1em;
+	}
+
+	.map-info-table td {
+		background-color:#08080850;
+		text-align: left;
+		line-height: 1.5em;
+		padding: 0 1em;
+	}
+
+	/* Style the buttons */
+	.map-selector {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+
+	.map-selector-button {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		background-color: #333333;
+		border: none;
+		padding: 0.5em;
+		font-size: 16px;
+		color: #FFFFFF;
+		margin: 0.5em auto;
+		width: 80%;
+		text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+	}
+
+	/* Add a light grey background on mouse-over */
+	.map-selector-button:hover {
+		background-color: #c00;
+	}
+
+	/* Add a dark background to the active button */
+	.selected-button {
+		background-color: #F00;
+		color: #FFF;
 	}
 
 	/*----------------------------------*/
