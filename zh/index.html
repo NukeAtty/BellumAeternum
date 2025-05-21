@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../org-style.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
 	<link rel="preload" href="../src/font/furore.otf" as="font" />
 	<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
 	<link rel="preload" href="../src/background-pattern.webp" as="image">
@@ -29,7 +29,7 @@
 
 <body>
 	<!-- HTMX header -->
-	<div hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
 		<div class="overview">
@@ -140,6 +140,6 @@
 		</div>
 	</main>
 	<!-- HTMX footer -->
-	<div hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	<footer hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
 </body>
 </html>

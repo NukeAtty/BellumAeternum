@@ -1241,6 +1241,66 @@ footer {
 	text-decoration: underline;
 }
 
+/*-----------------------------*/
+/*----------Maps Page----------*/
+/*-----------------------------*/
+
+.maps-section {
+	display: flex;
+	flex-flow: column;
+	width: 60%;
+	margin: auto;
+}
+
+.map-type {
+	display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show-maps {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.map {
+	display: flex;
+	flex-flow: column;
+	width: 30%;
+	background-color: #333333;
+	margin: 10px;
+}
+
+/* Style the buttons */
+.map-selector {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+}
+
+.map-selector-button {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	background-color: #333333;
+	border: none;
+	padding: 0.5em;
+	font-size: 16px;
+	color: #FFFFFF;
+	margin: 0.5em;
+	width: 12vw;
+	text-align: center;
+}
+
+/* Add a light grey background on mouse-over */
+.map-selector-button:hover {
+	background-color: #c00;
+}
+
+/* Add a dark background to the active button */
+.map-selector-button .selected-button {
+	background-color: #666;
+	color: #f00;
+}
 
 /*---------------------------------*/
 /*----------Download Page----------*/
