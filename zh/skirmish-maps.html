@@ -219,7 +219,24 @@
             }
         </script>
 	</main>
-	<!-- HTMX footer -->
-	<footer hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com.html">EN</a>
+						<a href="https://ra2be.com/zh/skirmish-maps.html">中</a>
+					</div>
+				</div>
+			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
+		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	</footer>
 </body>
 </html>
