@@ -1,0 +1,1014 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3.武器系统代码词典" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81%E8%AF%8D%E5%85%B82024.html" />
+<meta property="og:site_name" content="RA2DIY" />
+<meta property="og:description" content="最后修订日期20241106by九千天华" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_武器系统代码词典2024_8f17191e.png" />
+<meta property="og:image:alt" content="最后修订日期20241106by九千天华" />
+<meta name="description" content="最后修订日期20241106by九千天华" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="next" title="4.art词典" href="art%E8%AF%8D%E5%85%B82024.html" /><link rel="prev" title="2.单位属性rules词典" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>3.武器系统代码词典 - RA2DIY 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c6a23ec1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>内容</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>菜单</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>扩展</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>自动深浅色 - 浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>自动深浅色 - 深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">隐藏导航栏</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">隐藏目录栏</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">跳转至内容</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">开关页面侧边导航</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RA2DIY  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">开关侧边栏目录</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">RA2DIY  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="【搜索|没搬完前基本没法用】" name="q" aria-label="【搜索|没搬完前基本没法用】">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">写在前面的话</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%AF%87.html">入门指南：学习篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%80%90%E6%B5%AAmod%E5%9C%88.html">逐浪 ＭＯＤ 圈</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非词典类资料</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E5%85%A8%E8%A7%A3.html">武器系统全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2022%E5%B9%B41%E6%9C%88%E7%89%88AI%E6%95%99%E7%A8%8B.html">AI的艺♂术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AI%E5%85%A8%E8%A7%A3.html">AI全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EIP%E6%9F%A5%E9%94%99%E6%8C%87%E5%8D%97.html">EIP查错指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">原版单位工具条对照表</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">词典</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A8%E5%B1%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A2024.html">1.全局代码解释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">2.单位属性rules词典</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">3.武器系统代码词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art%E8%AF%8D%E5%85%B82024.html">4.art词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%B6%85%E7%BA%A7%E6%AD%A6%E5%99%A8%E8%AF%8D%E5%85%B8.html">5.超级武器词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9C%B0%E5%BD%A2%E5%AF%B9%E8%B1%A1%E8%AF%8D%E5%85%B8.html">6.地形对象词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%A6%86%E7%9B%96%E7%89%A9%E8%AF%8D%E5%85%B8.html">7.覆盖物词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html">8.污染物和Voxel碎片及杂项词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AF%B4%E6%98%8E%E4%B9%A620171213.html">粒子系统说明书</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>回到顶部</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/武器系统代码词典2024.md.txt" title="查看页面源码">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">查看页面源码</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">开关侧边栏目录</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>3.武器系统代码词典<a class="headerlink" href="#id1" title="链接到此标题">¶</a></h1>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>前言，武器抛体弹头代码一堆，不建议在本文中摘取代码从零开始写，请复制原版已有的武器系统进行修改</p>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[WeaponType]</span>
+<span class="c1">; ******* Weapon Statistics *******</span>
+<span class="na">武器代码</span>
+<span class="na">Projectile</span><span class="w"> </span><span class="o">=</span>
+<span class="na">【该武器使用何种抛射体】</span>
+<span class="na">Warhead</span><span class="w"> </span><span class="o">=</span>
+<span class="na">【该武器使用何种弹头】</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>一个武器必须拥有一个 <code class="docutils literal notranslate"><span class="pre">Projectile</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Warhead</span></code>，因为它们是每个武器的基础属性，哪怕这个 <code class="docutils literal notranslate"><span class="pre">Projectile</span></code> 与 <code class="docutils literal notranslate"><span class="pre">Warhead</span></code> 并不存在或未注册程序也会自动创建并使用默认效果，但你必须指定这两个条目</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>也正是同样的原因 Ares 有时对武器名写错或武器不存在／未注册之类的弱智错误抛出有意义弹框时会告知 XXX 武器的 Projectile 名为 YYY 不存在或 Warhead 名为 ZZZ 不存在，这时实际是武器没能找到</p>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">Damage</span><span class="w"> </span><span class="o">=</span>
+<span class="na">每发攻击的伤害，YR中弹头为心灵控制时决定控制上限，弹头为混乱时决定持续时间</span>
+<span class="na">对于IsLocomotor</span><span class="o">=</span><span class="s">yes的弹头将读取此值，如果目标物的Size &gt; Damage则无法拉起，但仍然可以瞄准（和原版辐射工兵激情互射大半天但是挂不下来一点皮一样的蛋疼玩意）</span>
+<span class="na">目标受伤总是会被解除隐形，Phobos已允许弹头上设置是否解除</span>
+<span class="na">Damage为负数的武器如果弹头上有AnimList会导致IE，Ares已修复</span>
+<span class="na">Damage为负数的医疗类武器只能同类型互相使用，即载具只能修载具军医只能修步兵，无法添加机械师类型的步兵用于维修载具，Ares已解除该限制</span>
+<span class="na">Damage为负数的武器无法正常使用弹头的Versus与PercentAtMax计算，Phobos已允许设定</span>
+<span class="na">Damage为负数的武器强制清除目标身上的寄生单位，Phobos已允许定义是否清除</span>
+<span class="na">Damage为负数的医疗类武器作为主武，那么GI式部署后的副武器仍会使用主武器的寻敌方式</span>
+<span class="na">Damage为负数的医疗类武器在原版下硬编码寻敌范围为512Leptons（2格），Kratos已改为从武器Range获取</span>
+<span class="na">Damage为负数的医疗类武器如果使用者为载具那么拥有原版维修车的一套硬编码例如强制AG</span><span class="o">=</span><span class="s">no</span>
+<span class="na">Burst</span><span class="w"> </span><span class="o">=</span>
+<span class="na">一次攻击动作发射几次，两次 burst 之间有 3 到 5 的随机延迟。偶数发的攻击会自动在武器开火坐标的-L处打出，默认 1</span>
+<span class="na">同时也指定有Passenger的Aircraft每次攻击行为踹乘客的数量，如果有1名乘客而Burst</span><span class="o">=</span><span class="s">2那么可以踹出1名乘客的同时射出1发武器</span>
+<span class="na">对于子机发射器(Spawner</span><span class="o">=</span><span class="s">yes)类虚拟武器使用Burst=2可以开启MissileSpawn的发射位置根据FLH和F-LH来计算</span>
+<span class="na">对于步兵、IsAnimDelayedFire</span><span class="o">=</span><span class="s">yes的建筑、(FS中)有开火前置动作的SHP载具每一发Burst都要单独播放一遍开火动作，Phobos已允许步兵解除该限制</span>
+<span class="na">原版Burst&gt;2的单位可以卡射速bug，这个问题在Ares3.0版本已经得到修复</span>
+<span class="na">ROF</span><span class="w"> </span><span class="o">=</span>
+<span class="na">每两个攻击动作的间隔，以帧为单位，实际上是开火后（最后一发Burst后）把单位禁言这么长时间</span>
+<span class="na">并且这段时间内不会调整朝向，因此也可以用于实现TurretKeepFacing那样的效果https</span><span class="o">:</span><span class="s">//www.bilibili.com/opus/739436241482678313</span>
+<span class="na">原版下ROF实际上存在一个[0-2]帧的随机延迟，Phobos可进行设定</span>
+<span class="na">Range</span><span class="w"> </span><span class="o">=</span>
+<span class="na">射程，以格为单位</span>
+<span class="na">根据单位是否在空中决定圆柱形计算还是球形计算</span>
+<span class="na">特殊值-2代表无限射程，但由于单位索敌范围也自该语句读取，因此使用-2时需要手动在单位上指定GuardRange一句来设定索敌范围，否则不会主动攻击</span>
+<span class="na">目标为建筑时：</span>
+<span class="na">对于Arcing</span><span class="o">=</span><span class="s">true的抛射体，需要计算到目标中心，也就是说如果遇到一个面积巨大的不可通行建筑，那么地面单位可能永远无法达到Range来进行开火</span>
+<span class="na">对于其他类型抛射体，只需要计算到目标边界，但即便如此单位如果需要移动靠近目标来达到Range的话也会在达到Range后继续向前多走一格</span>
+<span class="na">MinimumRange</span><span class="w"> </span><span class="o">=</span>
+<span class="na">最小射程，单位距离目标低于此距离将会跑开</span>
+<span class="na">注意你不能用射程圈的方式让单位选择武器，在两个武器都能攻击的情况下单位永远会用主武器。即使主武器的最小射程由副武器填充，单位也只会跑开到主武器能攻击的地方攻击</span>
+<span class="na">当Range</span><span class="o">=</span><span class="s">-2时会MinimumRange的效果会被强行无视掉</span>
+<span class="na">一些需要禁止武器实际开火的地方也可以简单的用一个比武器Range更大的MinimumRange来实现，也可通过替换为这个武器让一个单位临时将Attack指令转Move指令</span>
+<span class="na">Anim</span><span class="w"> </span><span class="o">=</span>
+<span class="na">开火动画，如果写8个那么会对应八个开火方向</span>
+<span class="na">从正北(↗)开始顺时针旋转，见原版哨戒炮Vulcan，Ares已拓展至16向和32向，根据列表中的动画数量自动分配</span>
+<span class="na">对于寄生类武器强制八向，如果不写满八个方向那么除非方向正确那么不会播放</span>
+<span class="na">OccupantAnim</span><span class="w"> </span><span class="o">=</span>
+<span class="na">步兵驻扎在建筑内使用该武器开火的动画，不支持列表</span>
+<span class="na">OpenToppedAnim</span><span class="w"> </span><span class="o">=</span>
+<span class="na">单位在战斗要塞内使用该武器开火的动画，不支持列表</span>
+<span class="na">Report</span><span class="w"> </span><span class="o">=</span>
+<span class="na">开火声音。注意盖特系统会将多级武器的音效叠加播放，如果有需要请于开火动画art处设置音效</span>
+<span class="na">Speed</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体速度，只对导弹类有效。[Projectile] -&gt; Arcing</span><span class="o">=</span><span class="s">yes的抛射体根据全局[AudioVisual] -&gt; Gravity=设定的重力计算，不使用该句</span>
+<span class="na">RadLevel</span><span class="w"> </span><span class="o">=</span>
+<span class="na">辐射量，须配合弹头范围和弹头衰减。原版不得小于全局衰减量(100)</span>
+<span class="na">AreaFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否强制攻击自身所在单元格，如尤里波（空中单位使用此武器会攻击自己在地面上的竖直投影），步兵无法直接使用AreaFire</span><span class="o">=</span><span class="s">yes的武器，只能通过部署释放</span>
+<span class="na">AreaFire与[DESO]效果的一些表现可以参见https</span><span class="o">:</span><span class="s">//t.bilibili.com/811527585196408853</span>
+<span class="na">OmniFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">攻击目标是否无需转向，Locmotor</span><span class="o">=</span><span class="s">Jumpjet的单位由于无法自主转向故应设置以确保能正常开火，Phobos与Kratos均已独立解决该问题</span>
+<span class="na">FireOnce</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否攻击一次立刻停止攻击，如尤里波。用于机场飞机类的武器会导致崩溃（Ares已修复）</span>
+<span class="na">用于步兵时会强制清除后续序列，Phobos可禁用此效果</span>
+<span class="na">Bright</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否在弹头爆炸处会产生闪光效果，可在弹头代码处调节颜色。覆盖弹头Bright设置</span>
+<span class="na">在Phobos修复前若非Ares为超武设定[SuperWeaponType] -&gt; Nuke.SiloLaunch</span><span class="o">=</span><span class="s">false的情况下核弹超武的[NukeCarrier]与[NukePayload]两个武器都无视Bright设定</span>
+<span class="na">Lobber</span><span class="w"> </span><span class="o">=</span>
+<span class="na">如果抛射体为炮弹类(Arcing)将使用超高抛物线，也不一定高多少，实际上游戏计算Arcing的开火角度时会根据开火点和目标点距离结合全局重力模拟弹道计算出两个解，如果Lobber</span><span class="o">=</span><span class="s">yes则选择较大的那个，否则选较小的那个。由于原版WW没有考虑高差问题，加入Lobber可以一定程度上让高差导致的落点漂移小一些，但并不能根治，请使用现代拓展引擎</span>
+<span class="na">TurboBoost</span><span class="w"> </span><span class="o">=</span>
+<span class="na">攻击飞行物时导弹速度获得加成，全局代码控制加成数值，但是实际没用</span>
+<span class="na">AmbientDamage</span><span class="w"> </span><span class="o">=</span>
+<span class="na">穿透型武器造成的穿透伤害，如海豚声波和轨道炮，使用这些逻辑的时候自动开启，命中处将同时结算正常伤害和穿透伤害</span>
+<span class="na">无法为0，若设0会强写成1，但是可以负数，也可以靠Damage*Versus&lt;1向下取整来变为0</span>
+<span class="na">由于穿透伤害是武器的参数因此自然是存在开火者和拥有所属的，所以可以正常使用AffectsAllies</span><span class="o">=</span><span class="s">no来避免波及友军</span>
+<span class="na">穿透伤害的弹头使用武器的弹头，并且由于对整条路径造成伤害故也会连带目标对象，Phobos允许进行设定，详见说明书</span>
+<span class="na">IsSonic</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为海豚波，会从0到目标点增大路径上的伤害范围，并禁用武器自身伤害效果</span>
+<span class="na">也就是哪怕声波视觉效果已经滑过的格子也会持续受到伤害，直到声波消失（命中）</span>
+<span class="na">这代表声波的目标点越远（从开火到消失的时间越长）、距离声波开火位置越近，所受到的总伤害越大</span>
+<span class="na">副作用是武器强制为Damage</span><span class="o">=</span><span class="s">0的效果并不播放弹头动画，Ares已允许设定，并允许定义声波颜色</span>
+<span class="na">音波武器始终使用Primary的AmbientDamage和Warhead</span>
+<span class="na">音波武器有效射程为8.5，若Range大于此值则目标在8.5格外将会保持瞄准但射不出</span>
+<span class="na">音波武器无视弹头上的Wall</span><span class="o">=</span><span class="s">，强制yes</span>
+<span class="na">（以上3条Ares均已修复，详见说明书。如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的）</span>
+<span class="na">Spawner</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为子机发射器，将触发航母子机或子机导弹发射，启用时武器本身伤害无意义.</span>
+<span class="na">LimboLaunch</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否在攻击时将自身消失（并非死亡），如恐怖机器人和狗开火后使用本体图像的抛射体但本体已经不存在于地图上</span>
+<span class="na">原版下只能通过寄生逻辑([Warhead] -&gt; Parasite</span><span class="o">=</span><span class="s">yes)在消失后刷回来，所以基本都是搭配寄生逻辑使用</span>
+<span class="na">如果不刷回来那么实际上会依旧保留在内存中，例如航母子机使用这句哪怕刷不回来航母也不会重新开始Respawn</span>
+<span class="na">并且这样的单位越多积累下来游戏会越来越卡。如果用了寄生逻辑一定要写这句，否则各种诡异和FEIERE问题自行解决</span>
+<span class="na">DecloakToFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器是否在攻击时揭露自身隐形，如果填写no则开火不显形（如潜艇鱼雷），默认yes</span>
+<span class="na">RevealOnFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器是否在攻击时揭露自身黑幕，如果填写no则在黑幕中开火时不会被发现，默认yes</span>
+<span class="na">CellRangefinding</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否以单元格为单位计算射程，多用于超短射程武器以防止命中bug</span>
+<span class="na">FireInTransport</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器能否在战斗要塞类单位内开火，如恐怖机器人武器就不能，默认yes</span>
+<span class="na">NeverUse</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器是否不被实际使用，只用于扩展搜寻目标的距离。</span>
+<span class="na">这个武器的Range用于移动和获取目标，Range的大小决定了主动寻找目标的范围</span>
+<span class="na">因而不会发射，并且如果Range太大每次扫描的物体太多会导致游戏很卡</span>
+<span class="na">但是用IsSimpleDeployer或DeployFireWeapon等逻辑仍能使该武器运作，这种情况下就和常规武器一样使用了</span>
+<span class="na">在原版游戏中这用于狗的副武器以确保它可以在移动攻击（Ctrl+Shift）时主动寻找目标</span>
+<span class="na">TerrainFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否能直接攻击树木路灯等地形对象（显示Attack光标）而无需按下Ctrl强制攻击</span>
+<span class="na">SabotageCursor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用C4炸弹鼠标动画，仅在步兵使用下有效</span>
+<span class="na">MigAttackCursor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用鲍里斯召唤米格空袭的鼠标动画，仅攻击建筑时显示</span>
+<span class="na">DisguiseFakeBlinkTime</span><span class="w"> </span><span class="o">=</span>
+<span class="na">发射该武器时会有这么多帧数对单位所有者显示非伪装外观（幻影坦克）</span>
+<span class="na">DisguiseFireOnly</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器是否只能在自身伪装的状态下使用。（幻影坦克的废弃设定，但功能没废弃）</span>
+<span class="na">InfiniteMindControl</span><span class="w"> </span><span class="o">=</span>
+<span class="na">用于心灵控制武器，是否可以超过控制数上限但自身会受到持续伤害，即精神控制车</span>
+<span class="na">超过数量后生成[CombatDamage] -&gt; DefaultSparkSystem</span><span class="o">=</span><span class="s">的粒子</span>
+<span class="na">一个Bug是原版中[WeaponType] -&gt; Damage</span><span class="o">=</span><span class="s">1的情况下该语句会无效，Phobos已修复</span>
+<span class="na">DrainWeapon</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为飞碟吸建筑武器，只对Drainable</span><span class="o">=</span><span class="s">yes的目标有效，只能静止在建筑正上方使用</span>
+<span class="na">如果目标为电厂则该所属方整个基地的电力全部停掉，Ares允许定义是否只取消单个电厂的发电效果及具体额度，详见说明书</span>
+<span class="na">FireWhileMoving</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该武器是否可以在移动时开火，飞碟吸建筑武器里填写no保证飞碟静止。仅用于BalloonHover</span><span class="o">=</span><span class="s">yes的单位，默认yes</span>
+<span class="na">Suicide</span><span class="w"> </span><span class="o">=</span>
+<span class="na">使用该武器时立刻自杀并触发死亡爆炸，附带效果哪怕单位Explodes</span><span class="o">=</span><span class="s">no死亡时也会强制触发其DeathWeapon</span>
+<span class="na">单位有Explodes</span><span class="o">=</span><span class="s">yes的情况任何击杀方式死亡都可以正常引发DeathWeapon，此时任意武器的Suicide均可使用</span>
+<span class="na">单位无Explodes</span><span class="o">=</span><span class="s">yes的情况下只根据单位Primary/IFV当前所使用武器上的Suicide语句来判定是否拥有该效果</span>
+<span class="na">也就是一个Explodes</span><span class="o">=</span><span class="s">no的单位使用Suicide=yes的副武自杀会因为主武没有Suicide=yes而不触发DeathWeapon</span>
+<span class="na">机场飞机类发射此武器会导致游戏崩溃。Ares3.0已修复</span>
+<span class="na">DiskLaser</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用飞碟激光逻辑，同时引入一整套设定：</span>
+<span class="na">强制瞬间命中、</span>
+<span class="na">播放聚能音效、</span>
+<span class="na">不显示弹头动画开火动画等，Ares已允许播放动画和弹头闪光，Phobos已允许自定义激光圆环半径</span>
+<span class="na">原版引擎下DiskLaser的武器对S键Stop指令的响应不太灵光</span>
+<span class="na">一个不算特性但真有人转不过来会问的效果是：如果武器拥有DiskLaser</span><span class="o">=</span><span class="s">yes，那么Parasite还是LimboLaunch=yes自然都是无效的</span>
+<span class="na">IsLaser</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用激光效果，需要配合激光颜色及激光持续时间</span>
+<span class="na">建筑主武器的激光参数会覆盖副武器的，Phobos已修复</span>
+<span class="na">LaserDuration</span><span class="w"> </span><span class="o">=</span>
+<span class="na">激光效果持续帧数，默认 10</span>
+<span class="na">IsHouseColor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">激光是否使用玩家颜色，yes时下面两句直接指定的激光颜色设定无效</span>
+<span class="na">LaserInnerColor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">激光中部颜色格式为[R,G,B]</span>
+<span class="na">LaserOuterColor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">激光外部颜色格式为[R,G,B]</span>
+<span class="na">LaserOuterSpread</span><span class="w"> </span><span class="o">=</span>
+<span class="na">激光外部颜色格式为[R,G,B]</span>
+<span class="na">设定随机渐变的范围，颜色会以填写值正负为范围变动，例如你写个255,255,255可以得到五彩斑斓的白（大嘘，不过确实效果还不错）</span>
+<span class="na">IsElectricBolt</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用磁暴闪电特效，颜色硬编码读取palette.pal其中2条使用0A另1条使用0F，Ares可微观定义三条电流颜色的RGB值，Phobos可关闭特定条数电流绘制，详见说明书</span>
+<span class="na">需要注意的是原版下建筑选择框和框选所使用的矩形条也同样使用0F设定的白色，由于palette被多处使用，推荐新手使用Ares直接定义RGB而不是乱动palette.pal色号</span>
+<span class="na">同时EBolt的绘制也具有一些稳定性问题，经常有人问OpenTopped的载具使用载具载员由于载员武器使用EBolt特效在OpenTopped载具被摧毁时程序莫名丢失指针而崩溃的问题</span>
+<span class="na">程序硬编码该特效绘制的弯折电弧线段为8条，持续时间17帧，Phobos允许对此进行定义</span>
+<span class="na">会在目标点生成[CombatDamage] -&gt; DefaultSparkSystem</span><span class="o">=</span><span class="s">的粒子，Ares允许对此进行定义</span>
+<span class="na">当载具类型使用该类武器时EBolt特效起始点每帧都会随着单位移动与转动同步单位FLH的坐标，Phobos已允许在武器上设定是否跟随</span>
+<span class="na">此外，下句需要本句开启否则无效</span>
+<span class="na">IsAlternateColor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">磁暴闪电是否为过载态，颜色硬编码读取palette.pal其中2条使用05另1条使用0F，Ares可微观定义三条电流颜色的RGB值，Phobos可关闭特定条数电流绘制，详见说明书，如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的</span>
+<span class="na">IsRadBeam</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用辐射波特效（辐射工兵主武器），颜色使用全局[Radiation] -&gt; RadColor</span><span class="o">=</span><span class="s">定义，持续时间15帧，Ares已允许定义持续时间、振幅及颜色，详见说明书</span>
+<span class="na">如果弹头有Temporal</span><span class="o">=</span><span class="s">yes将使用全局[AudioVisual] -&gt; ChronoBeamColor=定义，原版为蓝色（超时空军团兵）</span>
+<span class="na">武器FLH强制使用Primary的FLH，Ares已修复</span>
+<span class="na">IsRadEruption</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否绘制扩散辐射线条，原定用于辐射工兵展开武器，并未使用，颜色始终为全局[Radiation] -&gt; RadColor</span><span class="o">=</span><span class="s">的颜色</span>
+<span class="na">效果为开火时从开火位置向正下方地面以弹头CellSpread设定的范围为半径绘制几条弧线，持续时间为5~20帧随机，Ares已允许定义持续时间</span>
+<span class="na">IsMagBeam</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用磁电坦克磁力波特效，对载具时从单位处向目标载具逐渐绘制</span>
+<span class="na">只要抛射体判定依然可以追过去打就会在一次绘制成功后保持绘制，然后绘制过长导致崩溃</span>
+<span class="na">除非用围墙围上或者对方的位置让武器的拥有者没法追过去打才会放弃绘制</span>
+<span class="na">虽然波的绘制和武器抛射体限制的发射是分离的，但是穿透伤害却是跟波的</span>
+<span class="na">武器FLH强制使用Primary的FLH</span>
+<span class="na">Ares已修复上述过长崩溃问题，并允许武器自定义波的颜色</span>
+<span class="na">IsLine</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否绘制鲍里斯对建筑召唤空袭的光线，无效，实际由召唤空袭的弹头代码和鲍里斯自身召唤空袭的代码共同决定</span>
+<span class="na">Supress</span><span class="w"> </span><span class="o">=</span>
+<span class="na">用于能自动攻击己方的武器，自动攻击时友方单位的威胁值减半，优先攻击敌方。奇怪的功能，原版并无单位使用</span>
+<span class="na">LH_Mouse发现如下规律</span>
+<span class="na">每个单位都有威胁值。当一个单位选择目标时</span>
+<span class="na">它将【搜索|没搬完前基本没法用】附近的目标并选择具有最高威胁值的目标进行攻击</span>
+<span class="na">如果一个单位的武器具有Supress</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">则引擎将扫描目标附近的友方单位，并且对于发现的每个单位，将该目标的威胁值减半</span>
+<span class="na">如果威胁值降低到1以下（在这种情况下，当转换为__int64时它将变为0）</span>
+<span class="na">则不会自动获取该目标</span>
+<span class="na">附：正常单位通常具有大约100,000的威胁值</span>
+<span class="na">DownReport</span><span class="w"> </span><span class="o">=</span>
+<span class="na">盖特武器掉档时播放的声音，废弃功能，原版盖特并未使用</span>
+<span class="na">AssaultAnim</span><span class="w"> </span><span class="o">=</span>
+<span class="na">指定Assaulter单位清理建筑内驻军使用的武器动画</span>
+<span class="na">Camera</span><span class="w"> </span><span class="o">=</span>
+<span class="na">打开黑雾，原定侦查鸡用，实际废弃</span>
+<span class="na">Charges</span><span class="w"> </span><span class="o">=</span>
+<span class="na">攻击前充能，TS残留废弃功能，已被ART中的[BuildingImage] -&gt; IsAnimDelayedFire</span><span class="o">=</span><span class="s">yes代替了</span>
+<span class="na">IsBigLaser</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为粗激光，废弃功能，Ares已实现，Phobos已扩展，详见说明书</span>
+<span class="na">DistributedWeaponFire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否攻击范围内的所有目标，废弃功能</span>
+<span class="na">IonSensitive</span><span class="w"> </span><span class="o">=</span>
+<span class="na">离子风暴期间禁用此武器，TS残留，红警中无效</span>
+<span class="na">DrawBoltAsLaser</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否绘制ElectricBolt直线闪电，废弃功能</span>
+<span class="na">AntiNaval</span><span class="w"> </span><span class="o">=</span>
+<span class="na">AntiOrganic</span><span class="w"> </span><span class="o">=</span>
+<span class="na">AntiUnderwater</span><span class="w"> </span><span class="o">=</span>
+<span class="na">遗留自RA2开发版本的废弃语句，用于设定该武器能否对海/对生物/对水下目标，请使用[TechnoType] -&gt; NavalTargeting</span><span class="o">=</span><span class="s">和[TechnoType] -&gt; LandTargeting=来控制反潜对海行为</span>
+<span class="na">IsRailgun</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用轨道炮粒子系统，同时开启AmbientDamage，但也导致其会因高差而被切断，Phobos已修复</span>
+<span class="na">虽然使用武器ROF控制武器射击间隔，但粒子武器如果上一次粒子因为MaxEC决定的生命周期没有结束则仍然不可开火，Ares已使用新逻辑解除了该限制，详见说明书</span>
+<span class="na">UseFireParticles</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用喷火粒子系统，会使得武器伤害不可用，弹头动画不播放，弹头绑定的粒子不生成，但是弹头碎片反而是正常的</span>
+<span class="na">副作用是武器强制为Damage</span><span class="o">=</span><span class="s">0的效果并不播放弹头动画，Ares已允许设定</span>
+<span class="na">此外以上两种遇到地形高差时粒子效果会被切断，Phobos已修复</span>
+<span class="na">UseSparkParticles</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用火花粒子系统</span>
+<span class="na">AttachedParticleSystem</span><span class="w"> </span><span class="o">=</span>
+<span class="na">指定粒子系统名，需要有前三句任意一句开启，</span>
+<span class="na">前三句并不影响粒子系统的表现方式，表现方式仍由粒子系统自身定义</span>
+<span class="na">请参阅粒子系统说明http</span><span class="o">:</span><span class="s">//bbs.ra2diy.com/forum.php?mod=viewthread&amp;tid=12917在此不多讲解</span>
+
+
+
+
+
+
+<span class="k">[WarheadType]</span>
+<span class="na">名为[NUKE]的弹头强制30帧核爆闪光，引爆之前先播放一遍名为[NUKEBALL]的动画，Ares允许为所有常规武器弹头定义这两项行为及具体参数</span>
+<span class="c1">; ******* Warhead Characteristics *******</span>
+<span class="na">【弹头代码】</span>
+
+<span class="na">Verses</span><span class="w"> </span><span class="o">=</span>
+<span class="na">伤害比率，见护甲系统说明，11个值用逗号隔开，顺序如下</span>
+<span class="na">None,Flak,Plate,Light,Medium,Heavy,Wood,Steel,Concrete,Special_1,Special_2</span>
+<span class="na">0% 不能强制攻击，不能还击，不能攻击</span>
+<span class="na">1% 不能还击，不主动攻击</span>
+<span class="na">2% 不主动攻击（由于WW的疏忽，这个无效）</span>
+<span class="na">wood和medium同时也决定了单位能否主动攻击这两个原版所对应的大类的物体，属于WW内定规则，可以直接全面换用Ares的新护甲体系干翻它</span>
+<span class="na">并且Verses实际上是Westwood错误拼写，正确的单词应当为Versus</span>
+<span class="na">注意：武器是否主动攻击不影响使用哪个武器，只是使用这个武器变成需要手动指定目标了而已</span>
+<span class="na">也就是Versus</span><span class="o">=</span><span class="s">1%还是Ares的Versus.&lt;armor&gt;.PassiveAcquire=no不会影响武器选用规则</span>
+<span class="na">原版的C4和空袭等使用的是单独的选用逻辑，而非单纯Versus参数决定，详见相关逻辑</span>
+
+<span class="na">Spread</span><span class="w"> </span><span class="o">=</span>
+<span class="na">WideDamage</span><span class="w"> </span><span class="o">=</span>
+<span class="na">先代引擎与开发版本的语句，均已替换为下面这条</span>
+<span class="na">CellSpread</span><span class="w"> </span><span class="o">=</span>
+<span class="na">伤害半径，以格为单位，原版最大不能超过11，0是只伤害直接攻击的目标</span>
+<span class="na">当爆点在空中时使用球形计算，平时使用圆形计算地面平面范围</span>
+<span class="na">对于占多个地面格子的建筑也会根据所占格子数决定伤害多次，导致原版V3打大建筑比打小建筑还快，Ares允许限制弹头伤害次数，详见说明书</span>
+<span class="na">PercentAtMax</span><span class="w"> </span><span class="o">=</span>
+<span class="na">范围最边界受到的伤害比例，根据此比例运算出递增或者递减，1就是伤害值恒定</span>
+<span class="na">AnimList</span><span class="w"> </span><span class="o">=</span>
+<span class="na">弹头动画，当爆点处于地下时会重新计算生成到地面</span>
+<span class="na">可以写一堆，武器伤害越高使用越靠后的动画（例如吃肌肉箱子）(伤害值每25前进列表动画一档)</span>
+<span class="na">第 N 个动画播放的 Damage 值域为 [25*(N-1),25*N-1]，例如第一个动画的值域是[0,24]，第二个动画的值域是[25,49]</span>
+<span class="na">其中 Damage</span><span class="o">=</span><span class="s">0 的情况原版下无法正常播放动画，Phobos已允许在弹头上设定是否允许，详见说明书</span>
+<span class="na">YR下拥有DiskLaser</span><span class="o">=</span><span class="s">yes的武器强制无法播放AnimList，Ares已允许解除这个硬编码限制，详见说明书</span>
+<span class="na">如果弹头带有EMEffect</span><span class="o">=</span><span class="s">yes将随机使用其中的动画，但有许多负效果，Phobos提供了一个专门用于控制弹头动画随机的新语句，详见说明书</span>
+<span class="na">EMEffect</span><span class="w"> </span><span class="o">=</span>
+<span class="na">本用于瘫痪目标，TS残留，瘫痪功能现已无效，但可使弹头随机播放AnimList的动画，Ares已复原该功能但使用新的语句，详见说明书</span>
+<span class="na">同时存在有弹道抛射体提前爆炸等隐性问题，Phobos已新增AnimList.PickRandom作为替代</span>
+<span class="na">Conventional</span><span class="w"> </span><span class="o">=</span>
+<span class="na">攻击水面时使用水花替换弹头动画，见全局[CombatDamage] -&gt; SplashList</span><span class="o">=</span><span class="s">一句</span>
+<span class="na">注意：如果命中水上舰艇，那么会视为在陆地引爆而不会使用水花动画。Phobos已允许在弹头上定义这一行为，详见说明书</span>
+<span class="na">InfDeath</span><span class="w"> </span><span class="o">=</span>
+<span class="na">士兵死亡图像 填序号</span>
+<span class="na">0直接消失 1死亡序列1 2死亡序列2 3爆炸死 4烧死 5电死 6尤里波爆炸 7核融化 8病毒死 9变身狂受人 10被狂受人打死</span>
+<span class="na">通过这个语句创建的动画会使用击杀者的所属方，Ares允许动画上定义所属方的继承来源，详见Ares说明书</span>
+<span class="na">当击杀没有[InfantryType] -&gt; DeathAnim</span><span class="o">=</span><span class="s">设定的步兵（原版所有步兵皆是如此）时具体规则对应如下</span>
+<span class="na">0</span><span class="o">=</span><span class="s">&lt;none&gt;</span>
+<span class="c1">;[Hardcode]=&lt;none&gt;</span>
+<span class="na">1</span><span class="o">=</span><span class="s">[Sequence] -&gt; Die1=&lt;int&gt;,&lt;int&gt;,&lt;int&gt;</span>
+<span class="c1">;步兵Die1序列，并非Animation类对象</span>
+<span class="na">2</span><span class="o">=</span><span class="s">[Sequence] -&gt; Die2=&lt;int&gt;,&lt;int&gt;,&lt;int&gt;</span>
+<span class="c1">;步兵Die2序列，并非Animation类对象</span>
+<span class="na">3</span><span class="o">=</span><span class="s">[General] -&gt; InfantryExplode=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=S_BANG34</span>
+<span class="na">4</span><span class="o">=</span><span class="s">[General] -&gt; FlamingInfantry=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=FLAMEGUY</span>
+<span class="na">5</span><span class="o">=</span><span class="s">[Animations] -&gt; 2=&lt;animation&gt;/Ares新增的[AudioVisual] -&gt; InfantryElectrocuted=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=ELECTRO</span>
+<span class="na">6</span><span class="o">=</span><span class="s">[General] -&gt; InfantryHeadPop=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=YURIDIE</span>
+<span class="na">7</span><span class="o">=</span><span class="s">[General] -&gt; InfantryNuked=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=NUKEDIE</span>
+<span class="na">8</span><span class="o">=</span><span class="s">[General] -&gt; InfantryVirus=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=VIRUSD</span>
+<span class="na">9</span><span class="o">=</span><span class="s">[General] -&gt; InfantryMutate=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=GENDEATH</span>
+<span class="na">10</span><span class="o">=</span><span class="s">[General] -&gt; InfantryBrute=&lt;animation&gt;</span>
+<span class="c1">;OriginValue=BRUTDIE</span>
+<span class="na">原版下InfDeath8/9的动画都拥有开火者所属，但只有9会正常重映射所属色</span>
+<span class="na">InfDeath</span><span class="o">=</span><span class="s">8的情况下，如果对象拥有NotHuman=yes，则绕过动画直接生成动画定义的粒子</span>
+<span class="na">InfDeath</span><span class="o">=</span><span class="s">9的情况下，如果在水上击杀，由于WW原设狂兽人不能水上移动，所以转为播放水上死亡序列</span>
+<span class="na">InfDeath</span><span class="o">=</span><span class="s">9的情况下对空中目标会强制0伤害，Phobos已解除</span>
+<span class="na">InfDeath</span><span class="o">=</span><span class="s">11及以上的内容见[InfantryType] -&gt; DeathAnims=词条</span>
+<span class="na">也可以使用Ares提供的语句[Warhead] -&gt; InfDeathAnim</span><span class="o">=</span><span class="s">直接在弹头上指定动画名</span>
+<span class="na">原版语句[InfantryType] -&gt; DeathAnims</span><span class="o">=</span><span class="s">与Ares提供的[Warhead] -&gt; InfDeathAnim=并不冲突</span>
+<span class="na">最后使用如下规则：</span>
+<span class="na">弹头InfDeathAnim</span><span class="o">=</span><span class="s">仅在击杀无DeathAnims的Infantry时播放，并屏蔽原弹头上InfDeath=调用全局设定动画的效果</span>
+<span class="na">对于有DeathAnims</span><span class="o">=</span><span class="s">的Infantry转为使用弹头InfDeath=的数值，若没有设置InfDeath即为按使用了默认值0来执行</span>
+<span class="w">	</span><span class="na">弹头InfDeath</span><span class="o">=</span><span class="s">0-14		对应到DeathAnims列表的对应动画，也就是InfDeath=0播放DeathAnims第1个，而InfDeath=14播放DeathAnims第15个</span>
+<span class="w">	</span><span class="na">弹头InfDeath</span><span class="o">=</span><span class="s">15			无任何效果的击杀，就像不存在DeathAnims时弹头上InfDeath=0的效果那样</span>
+<span class="w">	</span><span class="na">弹头InfDeath&gt;</span><span class="o">=</span><span class="s">16		始终播放DeathAnims第一项</span>
+<span class="na">*如果InfDeath在DeathAnims</span><span class="o">=</span><span class="s">中没有对应项（包括InfDeath=15但DeathAnims=列表不足16个动画的情况）那么同InfDeath&gt;=16处理</span>
+<span class="na">Wall</span><span class="w"> </span><span class="o">=</span>
+<span class="na">可以伤墙</span>
+<span class="na">WallAbsoluteDestroyer</span><span class="w"> </span><span class="o">=</span>
+<span class="na">秒杀墙</span>
+<span class="na">Wood</span><span class="w"> </span><span class="o">=</span>
+<span class="na">可以伤树</span>
+<span class="na">当Overlay同时有Wall和Armor</span><span class="o">=</span><span class="s">wood时无视弹头上的Wall=no和Versus</span>
+<span class="na">如果此句为no那么任何Terrain均无法杀伤，与护甲无关</span>
+<span class="na">Radiation</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否是辐射，决定免疫判定</span>
+<span class="na">Poison</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否是毒，决定免疫判定</span>
+<span class="na">PsychicDamage</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为“精神攻击”，决定免疫判定，用于非心灵控制武器调用免疫</span>
+<span class="na">Tiberium</span><span class="w"> </span><span class="o">=</span>
+<span class="na">能否摧毁矿石，特指对于拥有[OverlayType] -&gt; ChainReaction</span><span class="o">=</span><span class="s">yes的矿石类覆盖物，很多时候还不如弹头动画带个[Animation] -&gt; Crater=yes好用</span>
+<span class="na">Rocker</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否产生气浪使坦克倾斜，和ROF，Damage有关，和实际伤害无关，弹头比例0照样产生气浪，范围强制5x5，但是不写一个非0的CellSpread那么Rocker会没用</span>
+<span class="na">ProneDamage</span><span class="w"> </span><span class="o">=</span>
+<span class="na">对匍匐步兵的伤害比例，同时也是对部署步兵的伤害比例，Ares可分离定义，详见说明书</span>
+<span class="na">AffectsAllies</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否影响友军，包括所有者，Ares允许分离控制是否影响盟友与所有者</span>
+
+<span class="na">Bright</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否产生闪光，优先级低于武器里的，也就碎片之类越过武器调用弹头的地方会用</span>
+<span class="na">CombatLightSize</span><span class="w"> </span><span class="o">=</span>
+<span class="na">无视Damage直接指定闪光大小相对最大值的百分比，否则按 [WeaponType] -&gt; Damage/256 获取该值</span>
+<span class="na">CLDisableRed</span><span class="w"> </span><span class="o">=</span>
+<span class="na">CLDisableGreen</span><span class="w"> </span><span class="o">=</span>
+<span class="na">CLDisableBlue</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否在闪光中消除红、绿、蓝色，用于改变闪光颜色，全写yes闪光将消失。碎片等其他地方直接使用弹头造成的闪光效果不受这3条影响</span>
+<span class="na">Bullets</span><span class="w"> </span><span class="o">=</span>
+<span class="na">RA2里如果IFV的载员自身的武器使用这样的弹头，则IFV会使用Tip</span><span class="o">:</span><span class="s">MachineGun作为显示名称用的CSF条目，YR中连这个效果也没了，相当于没用</span>
+<span class="na">PenetratesBunker</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否能直接伤害坦克碉堡内的坦克，实际上是更换了杀伤计算顺序</span>
+<span class="na">但是这也带来一个新的问题：</span>
+<span class="na">比如，一发核弹可以直接伤害碉堡内的坦克，但是碉堡内的坦克血量实在太厚了</span>
+<span class="na">于是计算的时候先算碉堡内的坦克所受的伤害导致如果坦克没死碉堡也不会炸……不会炸…………</span>
+<span class="na">Sonic</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为音波弹头，可以驱逐出目标内的寄生物，如海豚逐出寄生在船上的乌贼</span>
+<span class="na">MindControl</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为心灵控制武器，控制数量由[WeaponType] -&gt; Damage</span><span class="o">=</span><span class="s">定义，注：不可通过升级为Elite武器改变控制数量。YR下与寄生弹头连用会在进入单位处与单位间绘制心灵控制线，Ares已修复</span>
+<span class="na">IvanBomb</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为伊文炸弹</span>
+<span class="na">不支持CellSpread批量挂，不支持空爆子武器挂，不支持非步兵挂</span>
+<span class="na">以上三条除了空爆子武器依然挂不了外Ares已全部支持</span>
+<span class="na">原版引擎下可使用溅射子武器挂，Ares早期版本拓展IvanBomb时破坏了这一逻辑，已于Ares0.5中重新支持</span>
+<span class="na">注意：如果溅射子武器母弹的弹头使用了IvanBomb那么会导致无法爆出子武器</span>
+<span class="na">如果没有这句而有AttackCursorOnFriendlies会导致Attack优先级高于Enter</span>
+<span class="na">BombDisarm</span><span class="w"> </span><span class="o">=</span>
+<span class="na">能否拆除伊文炸弹，工程师用，只能攻击身上拥有IvanBomb的目标，但是哪怕对方身上没有IvanBomb也不会换另一个武器！</span>
+<span class="na">ElectricAssault</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否可为磁暴线圈充电，原版仅步兵使用有实际充电效果</span>
+<span class="na">注意：原版引擎下如果战斗要塞中的单位为建筑充能，那么哪怕战斗要塞拉走了充能效果也会继续保留</span>
+<span class="na">Temporal</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为超时空军团兵抹消效果，需要保持攻击状态才有效，抹消目标所需帧数</span><span class="o">=</span><span class="s">10*目标最大生命值/Damage，与弹头比率无关，Ares可弹头定义已损失生命值所占的权重</span>
+<span class="na">原版对高于地面的空中单位无效，哪怕只是一个FlightLevel</span><span class="o">=</span><span class="s">1的FlyLocomotor对象，只要它起飞后超时空弹头就无法对其生效，Ares已进行支持</span>
+<span class="na">用作死亡武器、光棱溅射武器、YR下用作驻扎武器、弹头范围非0、与Culling</span><span class="o">=</span><span class="s">yes共用、非GI部署模式且主武非同类武器时用作副武器……将无法正常运作甚至崩溃</span>
+<span class="na">会禁用[Warhead] -&gt; Particle</span><span class="o">=</span><span class="s">的粒子系统生成</span>
+
+<span class="na">IsLocomotor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为磁电坦克吸人逻辑：强制改变目标运动方式并强制命令目标向自身移动</span>
+<span class="na">Locomotor</span><span class="w"> </span><span class="o">=</span>
+<span class="na">磁电逻辑使用的运动方式，注：除原版磁电弹头使用的方式外，大多数都不能正常使用</span>
+<span class="na">{92612C46-F71F-11d1-AC9F-006008055BB5}将目标拖到空中，落自己附近，如果目标上有jumpjet相关参数将被调用，否则使用默认值</span>
+<span class="na">空白 将目标超时空到自己附近，并报废</span>
+<span class="na">{4A582743-9839-11d1-B709-00A024DDAFD1}让目标无法移动</span>
+<span class="na">{4A582747-9839-11d1-B709-00A024DDAFD1}将目标超时空到自己附近，并报废</span>
+<span class="na">{4A582742-9839-11d1-B709-00A024DDAFD1}让目标无法移动，可上水</span>
+<span class="na">{4A582741-9839-11d1-B709-00A024DDAFD1}将目标拉到自己附近，并报废</span>
+<span class="na">{4A582745-9839-11d1-B709-00A024DDAFD1}崩溃</span>
+<span class="na">{4A582746-9839-11d1-B709-00A024DDAFD1}让目标无法移动</span>
+<span class="na">{2BEA74E1-7CCA-11d3-BE14-00104B62A16C}将目标拉到自己附近，并报废</span>
+<span class="na">{4A582744-9839-11d1-B709-00A024DDAFD1}将目标拉到自己附近，并报废</span>
+<span class="na">报废是指永远不能再做任何动作</span>
+
+<span class="na">Airstrike</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否召唤空袭（鲍里斯），需和发射者身上召唤空袭的代码配合，同时会绘制红色激光指引线</span>
+<span class="na">同时如果用于副武器那么在攻击建筑时会无论主武Versus决定是否可以锁定目标建筑都会优先使用副武器</span>
+<span class="na">不能攻击同时拥有ResourceGatherer</span><span class="o">=</span><span class="s">yes和ResourceDestination=yes的目标，不能攻击CanC4=no的目标（WW偷的懒，Phobos已允许分离控制）会切回主武</span>
+<span class="na">如果这种情况下主武也不能攻击，则会只有可攻击光标实际上无法执行攻击</span>
+<span class="na">对于驻军和IFV武器这种实际上相当于全是主武的情况则没有武器选用上的这套规则</span>
+<span class="na">由于盖特武器只是同阶段奇偶数对应不同情况的规则并不走正常的主副武器选用，自然也无法算是“副武器”，同样不走上述规则</span>
+<span class="na">如果步兵处于OpenTransportWeapon</span><span class="o">=</span><span class="s">1的运输载具中那么哪怕目标同时拥有ResourceGatherer=yes和ResourceDestination=yes也会强制使用副武器，即便那并不会产生任何效果</span>
+
+<span class="na">Psychedelic</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否混乱目标，持续时间由Damage和弹头百分比决定</span>
+
+<span class="na">Parasite</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为寄生武器，狗、恐怖机器人等使用，秒杀步兵，正常使用武器的ROF和Anim参数。YR下被寄生的载具无法执行DeploysInto</span>
+<span class="na">若为巨型乌贼式寄生则不秒杀步兵但开启另一种秒杀逻辑，见[Warhead] -&gt; Culling</span><span class="o">=</span><span class="s">标签的注解</span>
+<span class="na">若为巨型乌贼式寄生则不使用武器的ROF和Anim参数，见[TechnoType] -&gt; Organic</span><span class="o">=</span><span class="s">标签的注解</span>
+<span class="na">应配合[WeaponType] -&gt; LimboLaunch</span><span class="o">=</span><span class="s">yes使用，否则容易出现单位该死不死半生不死既生又死的诡异量子叠加态，并且附带被打爆容易崩溃、移动可能崩溃、明明存在但攻击找不到发射者等各种诡异灵异问题</span>
+<span class="na">弹头除了第一次命中外不会实际引爆，因此抛射体上的子武器还是弹头上的其他很多设置都会无效</span>
+<span class="na">若开火者没有[TechnoType] -&gt; Naval</span><span class="o">=</span><span class="s">yes那么攻击水上目标击杀后无法重新刷回来，因此原版恐怖机器人和狗都有使用[TechnoType] -&gt; NavalTargeting=6来禁止对水域和水中目标开火</span>
+
+<span class="na">Paralyzes</span><span class="w"> </span><span class="o">=</span>
+<span class="na">寄生武器瘫痪目标时间，用于乌贼，在寄生解除时会自动移除，一般填写巨大的数值</span>
+<span class="na">仅对玩家手动指令或载具生效，也就是如果你攻击AI的步兵那么AI的步兵是完全不受影响的，事实上AI的载具也需要移动到下个格子才能被瘫痪</span>
+
+<span class="na">Culling</span><span class="w"> </span><span class="o">=</span>
+<span class="na">斩杀，乌贼是否在红血或黄血时立刻杀死目标，这个逻辑原版下基本就是转为乌贼制作的</span>
+<span class="na">触发条件：</span>
+<span class="na">发射该弹头的单位无星或老兵，目标的血量小于或等于[AudioVisual] -&gt; ConditionRed</span><span class="o">=</span><span class="s">的比率</span>
+<span class="na">发射该弹头的单位是精英，目标的血量小于或等于[AudioVisual] -&gt; ConditionYellow</span><span class="o">=</span><span class="s">的比率</span>
+<span class="na">只有当弹头也设置了Parasite</span><span class="o">=</span><span class="s">yes并且单位同时设置了Naval=yes和Organic=yes时，才会实际触发秒杀。Ares3.0已扩展相关逻辑不再必须满足以上条件，详见说明书</span>
+<span class="na">若为巨型乌贼式寄生那么Culling</span><span class="o">=</span><span class="s">yes会导致无法击杀步兵，计算理应完成击杀的那次攻击后就弹出寄生者但不生效，同时被寄生的步兵也再也无法执行除了呆在那以外的任何其他行为(包括被攻击和死亡，用铁幕等方式编码杀都会留下最后一滴血)，哪怕它依然可以被下达指令</span>
+
+<span class="na">MakesDisguise</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填yes或者no，是否为伪装效果使用的弹头，用于间谍和幻影坦克废弃设定</span>
+
+<span class="na">Particle</span><span class="w"> </span><span class="o">=</span>
+<span class="na">此弹头作用时触发的粒子系统，比如你可以做个远程维修车，在维修目标处产生火花粒子</span>
+<span class="na">原版引擎下若所填粒子系统为Gas类则强制刷注册名为[GasCloudSys]的粒子系统.</span>
+<span class="na">解法是使用其他类型的粒子系统刷Gas粒子，例如Smoke粒子系统刷Gas粒子</span>
+<span class="na">原版引擎下动画弹头刷粒子系统强制注册名为[GasCloudSys]的粒子系统</span>
+<span class="na">属于弹头的基本属性，绝大多数使用弹头的地方都可以生成粒子</span>
+<span class="na">甚至是DiskLaser</span><span class="o">=</span><span class="s">yes的武器禁用了弹道和爆炸动画</span>
+<span class="na">（VS_INI中就使用该逻辑生成了一个粒子来替代AnimList作为命中的视觉效果）</span>
+
+<span class="na">MaxDebris</span><span class="w"> </span><span class="o">=</span>
+<span class="na">MinDebris</span><span class="w"> </span><span class="o">=</span>
+<span class="na">弹头最多最少产生的shp碎片数量，如狂兽人拆坦克，shp碎片的类型在全局中的[General] -&gt; MetallicDebris</span><span class="o">=</span><span class="s">列表中选取</span>
+<span class="na">和DebrisTypes连用则决定生成指定VXL碎片的数量</span>
+<span class="na">最大值实际上使用MaxDebris-1而非MaxDebris，Phobos已修复</span>
+
+<span class="na">DebrisTypes</span><span class="w"> </span><span class="o">=</span>
+<span class="na">指定弹头生成哪些VXL碎片，当不设定时生成SHP碎片</span>
+<span class="na">但由于YR中WW把这四句扩展到弹头上的时候竟然漏了DebrisAnims一句</span>
+<span class="na">原版下只能生成全局[General] -&gt; MetallicDebris</span><span class="o">=</span><span class="s">列表中的碎片</span>
+<span class="na">Phobos已允许使用[Warhead] -&gt; DebrisAnims</span><span class="o">=</span><span class="s">指定，详见说明书</span>
+
+<span class="na">DebrisMaximums</span><span class="w"> </span><span class="o">=</span>
+<span class="na">生成VXL碎片用，不影响数量，随便写个正数，否则崩溃</span>
+<span class="na">以上四句YR开始允许定义在弹头上，此前只能写在单位体上</span>
+
+<span class="na">ShakeXlo</span><span class="w"> </span><span class="o">=</span>
+<span class="na">ShakeXhi</span><span class="w"> </span><span class="o">=</span>
+<span class="na">ShakeYlo</span><span class="w"> </span><span class="o">=</span>
+<span class="na">ShakeYhi</span><span class="w"> </span><span class="o">=</span>
+<span class="na">分别代表弹头引起屏幕抖动的XY方向大小值，填写10-50效果较好</span>
+<span class="na">这里的lo就是Low，这里的hi就是High，相当于Min和Max，如果Max&lt;Min则被Min覆盖</span>
+<span class="na">原版下强制全场都能感受到震撼，Phobos允许设置为仅镜头内引发的震动效果才表现</span>
+<span class="na">这个效果会遗留到原版退出地图后的主菜单页面，除非使用XNA CNCNet Client</span>
+
+<span class="na">NukeMaker</span><span class="w"> </span><span class="o">=</span>
+<span class="na">核弹升空武器弹头专用，其他情况无用，硬编码禁用本武器伤害并在目标位置本武器[Projectile] -&gt; DetonationAltitude</span><span class="o">=</span><span class="s">所指定高度处落下注册名为[NukePayload]的武器，该弹头不可用于空爆子武器等否则崩溃</span>
+
+<span class="na">CellInset</span><span class="w"> </span><span class="o">=</span>
+<span class="na">用于自动展开 距离多远触发自动展开</span>
+<span class="na">会被PreventAutoDeploy</span><span class="o">=</span><span class="s">yes禁用</span>
+<span class="na">在目标进入CellSpread再向内这个范围后执行部署</span>
+<span class="na">然而！这个标签没做完！它实际上是残废的！啧！</span>
+
+<span class="na">DirectRocker</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否直接掀翻载具不产生伤害</span>
+<span class="na">掀翻力比Rocker大，在全局中定义，见[AudioVisual] -&gt; DirectRockingCoefficient</span><span class="o">=</span><span class="s">与[AudioVisual] -&gt; FallBackCoefficient=两句注解</span>
+<span class="na">另外被此类武器击中的坦克</span>
+<span class="na">在攻击者死亡之前都不能活动</span>
+<span class="na">此外攻击者在发射此武器后也无法活动</span>
+<span class="na">除非单位里有[TechnoType] -&gt; Pushy</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">本来用于狂兽人的逻辑但是后来WW官方放弃了这个设定</span>
+<span class="na">可以掀翻Jumpjet的空中单位，但是不会有图像效果，顶多等一段时间然后它突然炸了。Phobos下也有了图像效果</span>
+
+<span class="na">CausesDelayKill</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否延迟爆炸，只对[BuildingType] -&gt; EligibleForDelayKill</span><span class="o">=</span><span class="s">yes的对象（原版油桶与弹药箱）生效</span>
+<span class="na">DelayKillFrames</span><span class="w"> </span><span class="o">=</span>
+<span class="na">延时爆炸帧数，默认5</span>
+<span class="na">DelayKillAtMax</span><span class="w"> </span><span class="o">=</span>
+<span class="na">延时爆炸时间随距离爆炸中心变化比率</span>
+<span class="na">该值×DelayKillFrames定义最后一次爆炸的时间</span>
+<span class="na">另外它会随着时间沿[Warhead] -&gt; CellSpread进行爆炸（效果见VS_INI中https</span><span class="o">:</span><span class="s">//www.bilibili.com/video/BV1J64y1T7pe）</span>
+
+<span class="na">Sparky</span><span class="w"> </span><span class="o">=</span>
+<span class="na">TS残留森林火灾逻辑的一部分，RA2下仍有残留效果可在建筑被该弹头打到红血时播放全局[AudioVisual] -&gt; OnFire</span><span class="o">=</span><span class="s">列表中的三个动画，若不存在或不够则崩溃</span>
+<span class="na">总有人乱动原版那堆Sparky或者从别的mod复制来Sparky</span><span class="o">=</span><span class="s">yes的弹头然后打建筑崩溃了又到处问EIP，看到这类人就好心给他们分享一下词典吧！无论新旧版本都有讲述</span>
+<span class="na">森林火灾逻辑下还需要拥有[Warhead] -&gt; Wood</span><span class="o">=</span><span class="s">yes一句才能点燃树木，Ares已复原森林火灾相关逻辑，其他相关内容详见Ares说明书</span>
+<span class="na">Fire</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否着火，TS残留，对于 TS 的冰逻辑，仅有Wall</span><span class="o">=</span><span class="s">yes的弹头只能击破已经裂开的冰，带上Fire=yes后则没有这一限制。</span>
+<span class="na">Deform</span><span class="w"> </span><span class="o">=</span>
+<span class="na">改变地形，TS残留无效</span>
+<span class="na">DeformThreshhold</span><span class="w"> </span><span class="o">=</span>
+<span class="na">超过此伤害才可以改变地形，TS残留无效</span>
+<span class="na">Veinhole</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否为泰伯利亚废矿伤害，用于免疫规则对应[TechnoType] -&gt; ImmuneToVeins</span><span class="o">=</span><span class="s">yes，TS残留无效，Phobos已复原详见说明书</span>
+
+
+
+<span class="k">[ProjectileType]</span>
+<span class="c1">; ******* Projectile Characteristics *******</span>
+<span class="na">【抛射体代码】</span>
+
+
+<span class="na">Arcing</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填写yes或no，炮弹类的标志，弹道为抛物线（使用Arcing攻击建筑会导致计算距离时按照建筑中心点开始，攻击地基越大建筑射程越短）。若战机用会开启五连发模式</span>
+<span class="na">有Arcing</span><span class="o">=</span><span class="s">yes的抛射体不能跨桥攻击，在建筑斜方向（屏幕正上下左右方向）飞来会撞在建筑的角上而不是建筑中心</span>
+<span class="na">有Arcing</span><span class="o">=</span><span class="s">yes的抛射体可以像ROT=1那样当Aircraft使用时使用特殊的五连发规则</span>
+<span class="na">由于WW代码的疏漏，原版Arcing在与目标有高度差的情况下落点会存在偏移，需要使用现代引擎（Kratos或Build37及以上的Phobos）来修复，详见[Lobber]一节</span>
+<span class="na">ROT</span><span class="w"> </span><span class="o">=</span>
+<span class="na">导弹类的标志，填写数值，导弹转向的角速度，推荐1-100。大于等于1就是追踪导弹，</span>
+<span class="na">如果发射者为Aircraft类，1代表定点五连发攻击，大于1必须飞机上有Fighter</span><span class="o">=</span><span class="s">yes才能顺利发射，否则会一直调整位置直到目标与自身距离刚好为武器的Range，此外若主武为五连发则无论副武抛射体类型也会使用五连发，也就是可以利用主武五连发但不可瞄准来让副武无论类型执行五连发，或主武不五连发而让副武单发Arcing或ROT=1的抛射体。当然你也可以使用原版主副武均为粒子武器会强制只能射一发立即打断来掐断五连发效果。Ares3.0已允许直接使用FireOnce掐，原版会崩，Phobos已允许自定义连发数量</span>
+<span class="na">如果战机的武器抛射体有ROT</span><span class="o">=</span><span class="s">1和AA=yes，同时它起飞并选定了目标，那么它会悬停不做任何事情就那么傻愣着，导致五连发并不能对空中目标正常使用，Phobos已加入修复计划</span>
+
+<span class="na">ROT</span><span class="o">=</span><span class="s">0并不是任何抛射体类型，这只是没有类型的抛射体的默认行为，也就是一种类似Arcing的抛物线，但是算法存在问题，若目标过远则实际落点在大约到目标2/3的位置</span>
+
+<span class="na">当Aircraft处于五连发状态时射出最后一发后剩余的平飞时间通过([WeaponType] -&gt; Range</span><span class="o">=</span><span class="w"> </span><span class="s">* 256 + 1024) / [AircraftType] -&gt; Speed=公式计算出帧数值，这么多帧后才能发起第二轮扫射或返航</span>
+
+<span class="na">是否五连发仅取决于主武器的抛射体，也就是说只要主武符合条件就可以让非ROT</span><span class="o">=</span><span class="s">1或Arcing=yes的副武器同样使用五连发模式，哪怕副武器是Inviso类</span>
+<span class="na">至于如何让副武优先对地，无论是使用Versus限制还是直接使用LandTargeting等就随读者自行选择了</span>
+
+<span class="na">原版引擎下五连发只有第一发的Burst有效，Phobos已修复</span>
+<span class="na">值得一提的是五连发还有个强制目标单元格对象规避炮火轰炸的效果，甚至哪怕没达到[IQ] -&gt; Scatter</span><span class="o">=</span><span class="s">等要求也就是原本没有规避能力的单位都会强制执行规避行为……</span>
+
+<span class="na">Level</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填写yes或no，鱼雷的标志，抛体保持在水面上运动，一般和ROT连用</span>
+<span class="na">直接检查当前所处格子类型无视高度，只要底下是陆地哪怕在飞也给你炸了</span>
+<span class="na">可以对空，但是有高差且高差大于水平距离会变成垂直的</span>
+<span class="na">Inviso</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填写yes或no，瞬间命中抛射体的标志 如机枪激光</span>
+<span class="na">硬编码AnimList播放的中心点实际上每次会有32Leptons 的偏移，因此如果动画的弹头没有写CellSpread的话直接挂伤害显然是没法作用到目标身上的</span>
+<span class="na">Vertical</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填写yes或no，垂直攻击的标志 如飞艇炸弹</span>
+<span class="na">YR开始[TechnoType] -&gt; BalloonHover</span><span class="o">=</span><span class="s">yes需要与这句连用才会像原先在RA2那样让单位飞到目标头上投弹</span>
+<span class="na">该类型抛射体出膛后就会水平朝向目标而非朝向开火者当前方向</span>
+<span class="na">若抛射体图像使用Voxel类型的资源文件那么这个Voxel的下方向会作为发射后水平朝向目标的方向</span>
+<span class="na">除不检测地面格子类型外与Level拥有许多相似之处，例如水平距离更大会变成水平发射……</span>
+<span class="na">平射和垂射的界限也会受到地形影响，例如爬坡时哪怕加速度为1也可能转为平射。可以通过调节抛射体Acceleration进行精控</span>
+<span class="na">当Aircraft类使用时由于抛射体会继承开火者的速度向量因此无法垂直落到地面</span>
+<span class="na">这也曾用于制作直线弹道，不过会飞跃目标点直到飞行路径上出现第一个非友军对象时引爆，如果开火者消失抛射体失去所属自然也可对友军，但对于建筑需要使用Ares的实体建筑逻辑才能引爆，详见Ares说明书</span>
+<span class="na">如果使用Shape图像，那么在有高差的情况下可以直接开启直线弹道，但如果无高差可能按上面的情况直接变平飞飞出地图</span>
+<span class="na">如果使用Voxel图像，那么在有高差的情况下始终垂直下落，如果无高差见上</span>
+<span class="na">无论Shape图像还是Voxel图像，Vertical直接与Ranged连用同样可开启直线弹道并且不会飞越目标点，详见Ranged词条下的链接</span>
+<span class="na">当然，基于Vertical的直线弹道无法使用Speed设定速度，只能使用Acceleration来控制</span>
+<span class="na">此类抛射体无视目标上的TargetCoordOffset</span>
+<span class="na">DetonationAltitude</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体高于此高度立刻爆炸，一般仅用于Vertical类，默认0，特殊用法见[Warhead] -&gt; NukeMaker</span><span class="o">=</span><span class="s">一句的注解</span>
+<span class="na">Image</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体图像，Inviso类立即命中基本无所谓。</span>
+<span class="na">对于ROT类抛射体使用Voxel图像还是Shape图像会影响弹道的一些行为，例如使用Voxel类图像那么开火初始方向会考虑目标所在位置的相对方向，所以空中单位发射Voxel图像的ROT抛射体时会自带一个初始向下的角度，而地面单位攻击比自己更低位置的目标可能开火即撞地引爆</span>
+<span class="na">对于Arcing类抛射体无论Voxel还是Shape图像都只是单纯的按照弹道类型所规定的抛物线弹道飞行</span>
+<span class="na">AA</span><span class="w"> </span><span class="o">=</span>
+<span class="na">可否对空，原版引擎下Aircraft类强制无法对空中目标发起攻击指令，需要Ares</span>
+<span class="na">*原版夜莺直升机和Aircraft的区分见全局[VehicleTypes]注册表旁的注释</span>
+<span class="na">空地判定阈值是目标是否高于208高度，低于208高度的空中目标仍视为地面目标处理</span>
+<span class="na">AG</span><span class="w"> </span><span class="o">=</span>
+<span class="na">RA2/YR中决定可否攻击地板，对于建筑同时决定能否攻击地面物体，大致是TS的逻辑在RA2开发中统一更改时漏掉了建筑类，默认yes</span>
+<span class="na">在RA2中想要禁用一个非建筑类科技类型对地请使用[TechnoType] -&gt; NavalTargeting</span><span class="o">=</span><span class="s">和[TechnoType] -&gt; LandTargeting=，参考原版防空防御塔</span>
+<span class="na">此外，Phobos更改了该逻辑在建筑上的运作方式使得建筑即便[Projectile] -&gt; AG</span><span class="o">=</span><span class="s">no也可以在选中后显示对地面物体的攻击光标，但仍然不会主动攻击地面目标</span>
+<span class="na">同样的如果要爱国者可以攻击已经在下落中的伞兵那么需要同时拥有AA和AG</span>
+<span class="na">AN</span><span class="w"> </span><span class="o">=</span>
+<span class="na">AS</span><span class="w"> </span><span class="o">=</span>
+<span class="na">ASW</span><span class="w"> </span><span class="o">=</span>
+<span class="na">遗留自RA2开发版本的废弃语句，用于设定抛射体对海反潜等，这三句在RA2/YR正式版本毫无卵用，请使用[TechnoType] -&gt; NavalTargeting</span><span class="o">=</span><span class="s">和[TechnoType] -&gt; LandTargeting=来控制反潜对海行为</span>
+
+<span class="na">Acceleration</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体加速度，Acceleration</span><span class="o">=</span><span class="s">0会导致子武器还没落地就提前引爆在地面之类的迷惑效果，默认 3</span>
+<span class="na">负加速度的抛射体搭配[WeaponType] -&gt; Speed</span><span class="o">=</span><span class="s">为负数有一些有趣的效果，可以自行实践</span>
+<span class="na">SubjectToCliffs</span><span class="w"> </span><span class="o">=</span>
+<span class="na">会撞山吗，然而即便yes也不是彻底移动到一个不被挡住的地方才开始开火</span>
+<span class="na">SubjectToElevation</span><span class="w"> </span><span class="o">=</span>
+<span class="na">高处攻击有射程加成吗，见全局[ElevationModel]算法解析</span>
+<span class="na">SubjectToWalls</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否不能穿墙，如果弹头有Wall</span><span class="o">=</span><span class="s">yes则不能穿的话先把墙打穿再打目标而不是直接开始绕行</span>
+<span class="na">原版引擎下若Inviso类抛射体弹头有Wall</span><span class="o">=</span><span class="s">yes则无视SubjectToWalls=yes，Ares已修复</span>
+<span class="na">以上三句默认否</span>
+<span class="na">Cluster</span><span class="w"> </span><span class="o">=</span>
+<span class="na">爆炸数量，写正整数，会产生多个散乱爆炸，原版空爆弹中锁定为9，Ares已更改算法，详见Ares说明书</span>
+<span class="na">对于常规武器则控制爆几次，每一发会与原爆点存在位置1-2格偏移，Phobos已允许自定义偏移范围</span>
+
+<span class="na">Splits</span><span class="w"> </span><span class="o">=</span>
+<span class="na">FS遗留分裂逻辑，RA2中无效</span>
+<span class="na">在FS中强制子武器（如果是可以定义Speed的类型）Speed</span><span class="o">=</span><span class="s">19、Damage*10、Bright=no、AA=no，Ares已复原并拓展，详见说明书</span>
+<span class="na">Airburst</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否使用空爆弹萝鸡，对于ROT类还会变成命中在目标正上方，同时弹道使用与[Projectile] -&gt; VeryHigh</span><span class="o">=</span><span class="s">yes时相同的平飞高度，此外只要设定就会强制Cluster</span>
+<span class="na">AirburstWeapon</span><span class="w"> </span><span class="o">=</span>
+<span class="na">空爆子武器名，非Ares下必须使用上一句否则无效，非Ares每次空爆强制原爆点下面3x3区域的9个格子，Ares允许自定义范围</span>
+<span class="na">需要注意的是子武器实际是在距离地面大约4高度处而非地面引爆的，因此杀伤范围会使用球形计算而非圆形，也就是会杀伤空中单位，想要限制则见Ares说明书立体爆炸弹头一节</span>
+<span class="na">子武器必须有某个单位作为武器使用来进行挂载，否则创建时会崩溃，Ares引擎下可新增[WeaponTypes]注册列表来替代这一操作，详见说明书</span>
+<span class="na">ShrapnelWeapon</span><span class="w"> </span><span class="o">=</span>
+<span class="na">光棱溅射子武器名，也称弹片武器，母弹爆点正下方地面单元格内（战机正下方，桥上单位正下方）存在非建筑科技类型或地形对象即可产生溅射，Phobos允许攻击空地与建筑同样产生溅射子武器</span>
+<span class="na">可作为目标的对象包括四大类科技类型（即建筑会被作为目标）以及地形对象，由于WW的判定问题从桥上坠落的单位和伞兵也会被记录进来</span>
+<span class="na">如果[WeaponType] -&gt; Range</span><span class="o">=</span><span class="s">内没有数量足够的有效目标，那么没有匹配到有效目标的子武器会在爆点周围5x5范围内随机选取单元格作为目标，此时不会特别避开有友军的单元格</span>
+<span class="na">不看Versus，只看是否存在实体对象，也不看目标是否拥有[ObjectType] -&gt; Immune</span><span class="o">=</span><span class="s">yes设定</span>
+<span class="na">也就是说原版在两个相邻矿柱的其中一个上爆一发子武器与父武器自身的武器那么接下来这两个框柱会构成一个循环。Phobos已添加相关目标筛选拓展，详见说明书</span>
+<span class="na">溅射子武器的Range应&lt;</span><span class="o">=</span><span class="s">11，否则Inviso类极易崩溃，其他类型也只是概率稍低，实际用于上面找目标时按与原版[Warhead] -&gt; CellSpread=查找表相同的方式由近及远寻找</span>
+<span class="na">可以填自己，属于一种特殊玩法，但下面这个语句如果非1的话会导致子武器数目指数增长乃至崩溃</span>
+<span class="na">此外母弹弹头若有[Warhead] -&gt; MindControl/IvanBomb/BombDisarm/ElectricAssult/Parasite/Temporal/IsLocomotor/Airstrike/MakesDisguise/NukeMaker之一为真将无法触发溅射</span>
+<span class="na">除此以外当目标为载具时如果拥有[Warhead] -&gt; DirectRocker</span><span class="o">=</span><span class="s">yes同样会阻止子武器生成</span>
+<span class="na">ShrapnelCount</span><span class="w"> </span><span class="o">=</span>
+<span class="na">光棱溅射子武器数目，特殊值0会根据子武器[WeaponType] -&gt; Range</span><span class="o">=</span><span class="s">范围（若Range&gt;=1.0）内非友军所属的有效目标个数自动分配，默认0</span>
+<span class="na">如果是负数则实际数量为该数绝对值-开火者与爆点的距离，也就是越近数量越多，若命中时开火者已经死亡或消失则固定为3个</span>
+
+<span class="na">关于子武器的注：</span>
+<span class="na">按WW原本的实现方式子武器原本是不支持绘制EBolt和Laser、Beam、Wave这类特效以及粒子系统和创建辐射的，但大概是RA2开发阶段考虑磁能和光棱的子武器效果，于是在程序中为[Projectile] -&gt; ShrapnelWeapon</span><span class="o">=</span><span class="s">专门支持了EBolt和Laser这两类特效。Phobos对此进行了拓展，Build45开始[Projectile] -&gt; AirburstWeapon=的武器可以创建辐射，Build46开始[Projectile] -&gt; AirburstWeapon=的武器允许使用EBolt（不支持Ares的自定义颜色，支持Phobos的关闭特定电流和电弧数量定义）、Laser（支持Ares[或者说是Phobos刻了一遍并拓展]的LaserThickness）、IsRadBeam（支持Ares的Beam.Color、Beam.Duration、Beam.Amplitude、Beam.IsHouseColor）以及使用[WeaponType] -&gt; AttachedParticleSystem=定义粒子系统</span>
+
+<span class="na">FirersPalette</span><span class="w"> </span><span class="o">=</span>
+<span class="na">填写yes或no，该武器的抛射体使用发射者的色盘，并继承所属色，如恐怖机器人和狗</span>
+<span class="na">无论抛射体ART代码中的设置如何，都将以单位色盘绘制。这也使得抛射体可以有所属色</span>
+<span class="na">注意：基于Voxel的抛射体所属色总是重新映射到[Colors]第一个颜色，而不是正确的所属颜色，Phobos已修复</span>
+
+<span class="na">CourseLockDuration</span><span class="w"> </span><span class="o">=</span>
+<span class="na">锁定延迟，即导弹类出膛后径直飞行经过这么多帧后才锁定目标，然而说是径直也有一个奇怪的带弯的弹道……</span>
+<span class="na">Dropping</span><span class="w"> </span><span class="o">=</span>
+<span class="na">炮弹炸膛……用于Arcing和ROT类抛射体，同时会把FLH强行写回0,0,0，不想要这个效果就用Vertical类抛射体设置[Projectile] -&gt; DetonationAltitude</span><span class="o">=</span><span class="s">0限定引爆高度或者ROT类在Ares复原了Ranged追击距离后设置[WeaponType] -&gt; ProjectileRange=0限定引爆距离来实现开火即炸</span>
+<span class="na">虽然会更改FLH但也只更改抛射体的开火点和爆点，而Laser等特殊效果仍会遵照FLH绘制，现代拓展引擎中正在接力修复</span>
+<span class="na">Inaccurate</span><span class="w"> </span><span class="o">=</span>
+<span class="na">不直击 如煤球炮，通常仅用于Arcing类抛射体，且用于此类抛射体时无视下句，散布范围由全局[CombatDamage] -&gt; BallisticScatter</span><span class="o">=</span><span class="s">控制，Ares已允许微观定义</span>
+<span class="na">此外会导致Arcing与Inviso类抛射体无视目标上的[BuildingType] -&gt; TargetCoordOffset</span><span class="o">=</span><span class="s">设定</span>
+<span class="na">还会屏蔽Arcing类抛射体原先引爆后爆点瞬间转移到目标身上的效果</span>
+<span class="na">FlakScatter</span><span class="w"> </span><span class="o">=</span>
+<span class="na">散射，如煤球炮，可用于任何类型抛射体，不影响弹道，只影响弹头实际爆点，子武器用会崩</span>
+<span class="na">若与[Projectile] -&gt; Inviso</span><span class="o">=</span><span class="s">yes合用，则随着目标点与开火点间距离的扩大而使爆点偏移范围从0至2*全局[CombatDamage] -&gt; BallisticScatter=的范围，Phobos已允许微观定义</span>
+<span class="na">Proximity</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否到达目标所在单元格立刻爆炸，RA2下强制yes，但可用[Projectile] -&gt; Arm</span><span class="o">=</span><span class="s">进一步限制</span>
+<span class="na">Ranged</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否让该抛射体在移动超过一定的距离后原地爆炸，原版编码390格，Ares可使用[WeaponType] -&gt; ProjectileRange</span><span class="o">=</span><span class="s">微观定义，详见说明书</span>
+<span class="na">此外该语句可以令爆点跟随到目标单位当前的位置，除非目标单位具有一个非常大的Speed可以在下一帧就逃出CellSpread的范围否则必命中</span>
+<span class="na">若为no则爆点实际可能在偏移到原先正下方的地面，用于Vertical类抛射体有特殊效果https</span><span class="o">:</span><span class="s">//t.bilibili.com/811175586848309287</span>
+<span class="na">出于缺失该句的情况存在各种莫名奇怪的蛋疼问题，建议各家正在开发的MOD直接把抛射体非特殊情况下必须添加Range</span><span class="o">=</span><span class="s">yes写入项目章程</span>
+<span class="na">Color</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体所属色，写[Colors]里的配色方案名称</span>
+<span class="na">Scalable</span><span class="w"> </span><span class="o">=</span>
+<span class="na">定义是否因地图上抛体数量过多而提高尾烟产生间隔以保持游戏流畅运行</span>
+<span class="na">Shadow</span><span class="w"> </span><span class="o">=</span>
+<span class="na">抛射体是否有影子，默认yes</span>
+<span class="na">High</span><span class="w"> </span><span class="o">=</span>
+<span class="na">飞得高 无视围墙，TS残留废弃，毫无卵用，RA2里已经被[Projectile] -&gt; SubjectToWalls</span><span class="o">=</span><span class="s">取代了</span>
+<span class="na">VeryHigh</span><span class="w"> </span><span class="o">=</span>
+<span class="na">飞得超高，用于ROT会飞的和[Projectile] -&gt; Airburst</span><span class="o">=</span><span class="s">yes时一样高（大致是平时的两倍）但是可能有一些视觉上怪异的东西</span>
+<span class="na">比如这玩意如果与[Projectile] -&gt; SubjectToWall</span><span class="o">=</span><span class="s">yes合用那么被拦住的时候也是凌空爆炸，也就是飞的特别高的导弹因为正下方的地面有一格围墙于是半空中直接爆开了</span>
+<span class="na">Floater</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该抛射体的重力是否减半，用于Arcing抛射体会由于重力参数微观调整导致其最终计算出的速度减半</span>
+<span class="na">但是并不能通过[AudioVisual] -&gt; Gravity</span><span class="o">=</span><span class="s">1给特定抛射体微观设定[Projectile] -&gt; Floater=yes来使其微观重力达到零（也就是并不能用这个方法实现直线弹道）</span>
+<span class="na">此外TS与Ares中的[SuperWeaponType] -&gt; Type</span><span class="o">=</span><span class="s">EMPulse类超武调起建筑开火时会无视建筑武器上的[Projectile] -&gt; Floater=yes设定，Phobos已强制修复</span>
+<span class="na">IgnoresFirestorm</span><span class="w"> </span><span class="o">=</span>
+<span class="na">该抛射体是否能穿透火风暴墙，原版无效，因为整个火风暴逻辑都是TS残留废弃，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">Arm</span><span class="w"> </span><span class="o">=</span>
+<span class="na">指定导弹引信启动延迟，默认0</span>
+<span class="na">即抛射体到达目标单位所在单元格多久后才会爆炸</span>
+<span class="na">若抛射体与目标单位所在坐标重合则依旧立即引爆</span>
+<span class="na">基于这一特性，设置一个较大的值可以会显著提高对除战机类目标外所有移动单位的追踪效率，因为不会刚到同一单元格就炸而是需要真正命中目标</span>
+<span class="na">Degenerates</span><span class="w"> </span><span class="o">=</span>
+<span class="na">导弹是否在飞行过程中渐渐降低速度和伤害，最低降到5，需要与[Projectile] -&gt; Ranged</span><span class="o">=</span><span class="s">yes连用，但会导致Ranged效果不工作而单纯用于开启本句</span>
+<span class="na">Bouncy</span><span class="w"> </span><span class="o">=</span>
+<span class="na">是否弹跳 无效，TS残留，红警2中无效</span>
+<span class="na">Elasticity</span><span class="w"> </span><span class="o">=</span>
+<span class="na">弹跳能力，1-0，默认0.75，TS残留，红警2中无效</span>
+<span class="na">Parachuted</span><span class="w"> </span><span class="o">=</span>
+<span class="na">可以让子武器上绘制[General] -&gt; BombParachute</span><span class="o">=</span><span class="s">指定的降落伞，原版会和Voxel抛射体一样使用[Colors]列表第一个，Phobos已允许抛射体微观定义降落伞图像</span>
+</pre></div>
+</div>
+<p>最后修订日期20241106by九千天华</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="art%E8%AF%8D%E5%85%B82024.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>下一页</span>
+                </div>
+                <div class="title">4.art词典</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>上一页</span>
+                </div>
+                
+                <div class="title">2.单位属性rules词典</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; 版权所有 2025, RA2DIY 教编组
+            </div>
+            使用 <a href="https://www.sphinx-doc.org/">Sphinx</a>及 <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a> 的
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a> 主题制作
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=7d86a446"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

@@ -1,0 +1,555 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="EIP查错指南" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="EIP%E6%9F%A5%E9%94%99%E6%8C%87%E5%8D%97.html" />
+<meta property="og:site_name" content="RA2DIY" />
+<meta property="og:description" content="在你开始借助工具检查IE原因之前，请先阅读查错指南 不要以为什么IE都是平台限制，也别自己以为IE原因是什么什么，你看不懂except就别瞎猜。如果说什么最能让人不爽，那就是写不对代码怪平台。这么做的人还是滚蛋比较好。 最最有效的解决问题办法绝对绝对是重写，花5分钟复制一段正常代码覆盖掉故障代码再修改回自己需要的某些属性比死盯代码试图查错效率高100倍。 如果复制后正常，修改后异常，则应该一..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_EIP查错指南_6b5529f5.png" />
+<meta property="og:image:alt" content="在你开始借助工具检查IE原因之前，请先阅读查错指南 不要以为什么IE都是平台限制，也别自己以为IE原因是什么什么，你看不懂except就别瞎猜。如果说什么最能让人不爽，那就是写不对代码怪平台。这么做的人还是滚蛋比较好。 最最有效的解决问题办法绝对绝对是重写，花5分钟复制一段正常代码覆盖掉故障代码再修改回自己需要的..." />
+<meta name="description" content="在你开始借助工具检查IE原因之前，请先阅读查错指南 不要以为什么IE都是平台限制，也别自己以为IE原因是什么什么，你看不懂except就别瞎猜。如果说什么最能让人不爽，那就是写不对代码怪平台。这么做的人还是滚蛋比较好。 最最有效的解决问题办法绝对绝对是重写，花5分钟复制一段正常代码覆盖掉故障代码再修改回自己需要的某些属性比死盯代码试图查错效率高100倍。 如果复制后正常，修改后异常，则应该一..." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="next" title="原版单位工具条对照表" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html" /><link rel="prev" title="AI全解" href="AI%E5%85%A8%E8%A7%A3.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>EIP查错指南 - RA2DIY 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c6a23ec1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>内容</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>菜单</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>扩展</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>自动深浅色 - 浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>自动深浅色 - 深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">隐藏导航栏</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">隐藏目录栏</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">跳转至内容</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">开关页面侧边导航</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RA2DIY  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">开关侧边栏目录</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">RA2DIY  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="【搜索|没搬完前基本没法用】" name="q" aria-label="【搜索|没搬完前基本没法用】">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">写在前面的话</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%AF%87.html">入门指南：学习篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%80%90%E6%B5%AAmod%E5%9C%88.html">逐浪 ＭＯＤ 圈</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非词典类资料</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E5%85%A8%E8%A7%A3.html">武器系统全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2022%E5%B9%B41%E6%9C%88%E7%89%88AI%E6%95%99%E7%A8%8B.html">AI的艺♂术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AI%E5%85%A8%E8%A7%A3.html">AI全解</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">EIP查错指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">原版单位工具条对照表</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">词典</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A8%E5%B1%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A2024.html">1.全局代码解释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">2.单位属性rules词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81%E8%AF%8D%E5%85%B82024.html">3.武器系统代码词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art%E8%AF%8D%E5%85%B82024.html">4.art词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%B6%85%E7%BA%A7%E6%AD%A6%E5%99%A8%E8%AF%8D%E5%85%B8.html">5.超级武器词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9C%B0%E5%BD%A2%E5%AF%B9%E8%B1%A1%E8%AF%8D%E5%85%B8.html">6.地形对象词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%A6%86%E7%9B%96%E7%89%A9%E8%AF%8D%E5%85%B8.html">7.覆盖物词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html">8.污染物和Voxel碎片及杂项词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AF%B4%E6%98%8E%E4%B9%A620171213.html">粒子系统说明书</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>回到顶部</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/EIP查错指南.md.txt" title="查看页面源码">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">查看页面源码</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">开关侧边栏目录</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="eip">
+<h1>EIP查错指南<a class="headerlink" href="#eip" title="链接到此标题">¶</a></h1>
+<p>在你开始借助工具检查IE原因之前，请先阅读查错指南</p>
+<p>不要以为什么IE都是平台限制，也别自己以为IE原因是什么什么，你看不懂except就别瞎猜。如果说什么最能让人不爽，那就是写不对代码怪平台。这么做的人还是滚蛋比较好。</p>
+<p>最最有效的解决问题办法绝对绝对是重写，花5分钟复制一段正常代码覆盖掉故障代码再修改回自己需要的某些属性比死盯代码试图查错效率高100倍。
+如果复制后正常，修改后异常，则应该一句一句的修改测试。在此之前，先确认规范性，你的弹头，粒子，动画等等注册了没有？应该照抄原版注册的东西你抄了没有？菜鸟喜欢偷懒，容易犯各种低级错误。</p>
+<p>一般单位正常的重做流程是：完全复制犀牛或动员兵→换个注册名，要和你刚才出问题的单位名字不同→加上Image→修改武器为之前武器代码→修改生命护甲速度等等
+真正的查错只能从image步骤开始。盯着自己漏洞百出的代码试图找出错误就是浪费时间。
+一般的IE生成的EIP都能在表里查到。如果查不到，除非以下方法完全无法揪出原因，请勿张贴相关信息</p>
+<p>请勿胡乱猜测IE原因。新手总是高估自己的水平，把自己写错代码导致的IE当成平台限制。事实上，平台限制的表现模式通常只是代码无效，如果IE，肯定是你水平不够规范性太差之类。</p>
+<p>乱猜IE原因会对查错造成误导，抱着完全未知的心态最好。如果是武器，伤害，物体类的代码错误，效果将是立竿见影的。武器开火，单位创建，掉出碎片等，都是立刻IE，目前来说查不到，可能导致不稳定IE的大多是AI问题。如在AI无法建立某必须建筑之类，只有在AI试图建造此建筑时才会IE。选择特区爆洞，将所有能建造的单位都造一遍打打地面，如果没有IE表示很可能是AI问题。检查aimd以及rules中宏观AI的部分。
+排查IE的最好办法就是人为引发,你认为IE是因为AI的超武坏了,那就让ai的超武就绪,让ai的超武就绪并丢出来,不IE就不是这个问题。你觉得是什么原因，就去创造这个条件，人工改错就这方法。因此，建立一张自己专用的测试地图是非常有必要的，它可以再现一切需要再现的状况。all01umd.map，画好一切，所有单位敌我方都放一个，然后记事本打开地图，剪切粘贴进写字板再放回去，然后把所有playercontrol=no改成yes，就是一张专用的测试图。你觉得XX打XX引发IE,就在测试图里打打看，不IE就不是这回事。很多时候你的附会根本就没抓住重点，所以，不要附会IE原因，踏踏实实查错。或者就是下述，控制变量法。</p>
+<p>绝大多数单位IE（或者攻击代码失效）都是武器造成的。首先更换使用的武器名。直接的更改就是把武器改为M60，如果不IE，可见是新武器的问题。如果换武器仍然IE，请你重写单位代码（随意复制一个存在的单位，改注册名重新注册，即可）
+然后在你的出错武器基础上更改抛射体为InvisibleAll，如果不IE，可证明是抛射体问题。弹头验证就用RailShot。
+首先以此法验证出出问题的是武器系统的到底哪个组件，然后将现行的出错部件和正常部件逐条比对，直到找出特定的一句代码差异。填写数字的语句通常不会导致IE，但是如果实在没有办法，也得逐条验证。验证方法就是填写一些肯定不会导致IE的数字或者关联，一条条验证无误后改回原来的内容，直到找出IE原因。
+说白了，让你觉得不可思议的IE可控，随时可以重现，即可。然后改错方式自选，可以重写（高度推荐，反正复制改名花不了几分钟），或者修改出错语句。</p>
+<p>代码语句大小写不规范也会导致代码失效甚至IE，强烈建议新手遭遇IE时检查拼写。</p>
+<p>EIP表只提供常见故障的鉴别。即使你贴出自己的except.txt也不会有人帮你排查，请自助差错。</p>
+<p>YR1.001及其衍生版本NP在IE后会在YR根目录生成except.txt，打开，在此表中查询EIP即可探知IE原因。注意，此表的所有EIP都只适合YR1.001及在此基础上衍生出的NP系列！此外，EIP表只可探知IE的出错性质，无法探明具体是ini的哪个位置有问题，详细内容请使用LH_Mouse的ini检查脚本。而有一些IE如空降舱IE是平台本身缺陷导致的，ini书写再规范也会随机出现，这类IE的唯一避免办法是不使用这些导致随机IE的平台功能。
+mod辅助工具脚本.rar (6.3 KB, 下载次数: )</p>
+<p>注意，不要过分依赖EIP表，出现IE后如果EIP表检查不出，脚本也查不出问题，则应该努力试图再现IE，即在特定地图，特定操作，特定单位时必定发生此IE。如果是电脑进行某操作导致的IE，把自己和电脑的阵营对调，试图揪出IE元凶。找到后自然好办。并不是所有IE的情况都能收录的。有些IE属于灵异现象，不要试图知道为什么IE，只要找出让此IE触发失效的办法就行了。曾有一次只要辐射兵展开即IE,EIP显示是radlevel过小，但是注销了radlevel照样IE，最后把raderuptionweapon复制改名居然不IE了。对于这种情况，只要能不IE就行了。手工查错是基础。</p>
+<p>如果你的INI出错或者失效，在你不知廉耻地伸手求人帮你检查ini之前：详细描述出错时的现象，何时发生，发生的时候你在做什么，有什么东西进行了什么动作，以及你到底做了什么尝试来试图解决这个IE，甚至有时候还得张贴代码，总之别说一句弹框就坐等。</p>
+<p>以下是YR1.001以及基于1.001的NP的EIP表
+YR1.000和RA2不适用</p>
+<p>004145BD  Art  An AircraftType has a corrupted HVA. Shows the file type as &quot;unknown&quot; in the XCC Mixer. Also an AircraftType has image tag missing or no artmd section. This could also be caused from an aircraft with no name under AircraftTypes or the name is in the wrong section.</p>
+<p>某飞机的素材没HVA或损坏，忘记写image或者没ART，或者注册错地方</p>
+<p>00417D05  Weapon  An AircraftType has fired a weapon which has Suicide=yes set.<br />
+某飞机发射了suicide武器</p>
+<p>004242DB  Animation  Using a TrailerAnim on an Animation but not setting a TrailerSeperation (or setting TrailerSeperation=0). This is because the default TrailerSeperation is zero, and that number is used as a divisor.<br />
+有TrailerAnim 没TrailerSeperation，或TrailerSeperation=0</p>
+<p>00424A14  Animation  An Animation with MakeInfantry=X set was played, where X was greater than the number of list entries in AnimToInfantry or less than 0.<br />
+基因突变的动画找不到对应的步兵序号或小于0
+0006D486
+基因突变的动画写的MakeInfantry大于AnimToInfantry实际允许的最大数目</p>
+<p>0042E7AF  AI  A Construction Yard does not have AIBuildThis=yes set and the owning side's AI was present in the game.<br />
+基地没AIBuildThis=yes，给了AI</p>
+<p>00441C28  Misc  You have set [General]→ShakeScreen= to zero.<br />
+不解释，一般人不会出这种错的</p>
+<p>004593BB  Misc  See Tank Bunker / Sell Unit IEs<br />
+超武的鼠标动作设定了SellUnit，然后卖了一个坦克碉堡里的坦克</p>
+<p>0045EC90  Misc  Multiple reasons, depending on the stack dump in the except:
+If 00506115 appears near the top of the stack dump - some country (present in the game at the moment, controlled by AI) cannot build anything from [General]→Shipyard=.
+AI的某国没有船坞</p>
+<p>0045ED69  Misc  The [General]→PadAircraft= list is empty.<br />
+PadAircraft表空的</p>
+<p>0045ED71  Misc  The first AircraftType in the [General]→PadAircraft= list doesn't have at least one BuildingType listed as its Dock.<br />
+PadAircraft的第一个灰机必须有一个机场</p>
+<p>0046650D  Weapon  A unit's shrapnel weapon does not exist (see broken-reference causes, below).<br />
+溅射子武器不存在相关内容</p>
+<p>00471CA4  Weapon  A unit's initial primary (Primary or Weapon1) weapon's Warhead does not have MindControl=yes set, but a weapon in some other weapon slot does. Triggered by one of the following events:
+Unit was selected by the user and the user moused-over a potential target.
+Unit was considering potential targets on its own (e.g. the unit was about to fire automatically at a nearby enemy unit).
+An IFV or urban combat building gains a mind-control weapon via passenger entry or garrison.
+主武器或盖特武器1没心灵控制弹头，别的却有。</p>
+<p>004895C7  Warhead  You have a warhead with a CellSpread greater than 11.
+某弹头的CellSpread大于11</p>
+<p>004D5108  Weapon  A unit's secondary weapon does not exist (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank. Examples:
+The offending weapon is the unit's Secondary weapon, and the unit just finished constructing.
+The offending weapon is the unit's EliteSecondary weapon, and the unit just got promoted to Elite status.
+某武器的副武器写了但是不存在相关内容，或者没写弹头</p>
+<p>004F8CCD  AI  [AI]→BuildConst= lists less than 3 BuildingTypes and your last [listed] Construction Yard was destroyed or sold while you were on low power, or you went into low power without owning any Construction Yards.<br />
+AI的基地表里列举的少于三个，你只有AI列表里的基地的最后一个，进入无电状态或者没电时候没基地（我怎么没见过）</p>
+<p>004F65BF  Misc  Some House cannot build anything from [General]→BaseUnit= .<br />
+某国不能造任何BaseUnit</p>
+<p>00505E41  Misc  An AI-controlled House which, due to rules(md).ini configuration, is unable to construct a base, received a Construction Yard thus triggering the AI base planning routine. Triggered by the following events:
+野生阵营拥有基地车并展开，于是触发建造基地的AI，但是不应该可以造基地
+If a player's MCV was mind-controlled by an enemy, that player is killed, and the MCV is then released from mind-control to the neutral side. The only workaround is to make MCVs immune to mind-control (this is done in the UMP).
+基地车被控制，控制者所属方死亡，基地车成为野生的</p>
+<p>A neutral Engineer (there's an official multiplayer map that has neutral Psychic Sensors which, on rare occasions, can leave an Engineer as a survivor) captures a Construction Yard.
+野生的工程师占了基地</p>
+<p>More detail: The AI base planning logic kicks in at the moment a player receives a Construction Yard and generates a plan of what buildings to build, in what order. However, the game makes an assumption that any country that can actually start base construction will be able to build at least 3 different BuildingTypes. When that assumption fails (a Construction Yard is received by the civilian house, who cannot build anything), everything goes haywire. For more info on how base planning logic works, refer to the AI Base Planning System article.
+没有什么建筑是野生阵营可以造的，因为Owner的问题，而AI应该至少能造3个建筑</p>
+<p>Interestingly, the civilian house acquiring a Construction Yard via relinquished mind-control (in the same way as for an MCV) does not cause an IE. Clearly this effect was not taken into consideration when mind-control was added to the engine and the AI base planning routine is only called when a Construction Yard is captured or is first created.</p>
+<p>0050CD20
+0050CD44
+0050CD79
+0050CDA2
+0050CDCC
+0050CDF0
+0050CE14
+0050CE38
+0050CE5C
+0050CEA2
+0050CECC
+0050CF15
+0050CF2A  AI  The AI is trying to pick a target for the Nuclear Missile or Weather Storm superweapon but is lacking target weighting values for a certain object that exists on the map. You need to uncomment/restore one of the [General]→AIIonCannonXValue= lines.
+0050CD20 - An InfantryType with Engineer=yes exists on the map. AIIonCannonEngineerValue needs restoring.
+0050CD44 - An InfantryType with VehicleThief=yes exists on the map. AIIonCannonThiefValue needs restoring.
+0050CD79 - A BuildingType with Factory=BuildingType exists on the map. AIIonCannonConYardValue needs restoring.
+0050CDA2 - A BuildingType with Factory=UnitType and Naval=no exists on the map. AIIonCannonWarFactoryValue needs restoring.
+0050CDCC - A BuildingType with a positive Power value exists on the map. AIIonCannonPowerValue needs restoring.
+0050CDF0 - A BuildingType with IsBaseDefense=yes exists on the map. AIIonCannonBaseDefenseValue needs restoring.
+0050CE14 - A BuildingType with IsPlug=yes exists on the map. AIIonCannonPlugValue needs restoring.
+0050CE38 - A BuildingType with IsTemple=yes exists on the map. AIIonCannonTempleValue needs restoring.
+0050CE5C - A BuildingType with HoverPad=yes exists on the map. AIIonCannonHelipadValue needs restoring.
+0050CEA2 - A BuildingType listed in [AI] → BuildTech exists on the map. AIIonCannonTechCenterValue needs restoring.
+0050CECC - A VehicleType with Harvester=yes exists on the map. AIIonCannonHarvesterValue needs restoring.
+0050CF15 - A VehicleType with a positive Passengers value exists on the map. AIIonCannonAPCValue needs restoring.
+0050CF2A - A VehicleType which DeploysInto a BuildingType listed in [AI] → BuildConst exists on the map. AIIonCannonMCVValue needs restoring.
+【谁会动AIIonCannonXXXX这些值？自己看吧，懒得翻译了】</p>
+<p>00518369  Warhead  An InfantryType is taking damage from a non-existant warhead.<br />
+一个步兵被一个不存在的弹头打了</p>
+<p>00567B43  Object  An Object has a negative sight.<br />
+某单位的视野写了负数</p>
+<p>005D7387  Misc  Not having at least one valid InfantryType with AllowedToStartInMultiplayer=yes (default) for each house.<br />
+某国家没初始步兵</p>
+<p>005DA453  Network  A crash occurred with the network code around an object called FirewallHelper.
+联网IE</p>
+<p>005F4F88  Animation  An Animation has TiberiumSpawnType=SOME_OVERLAY and SOME_OVERLAY is one of the three last entries in [OverlayTypes].
+Link to original report<br />
+TiberiumSpawnType=SOME_OVERLAY 和 SOME_OVERLAY 被放在 OverlayTypes的最后三个里</p>
+<p>005F5155  Misc  You tried to construct a BuildingType with HasSpotlight=yes. Yuri's Revenge 1.001 doesn't support this, only patched versions do.
+你竟然建造了一个HasSpotlight=yes的建筑，这功能YR没有</p>
+<p>0062B662  Animation  Having an animation with SpawnsParticle which does not point to a valid ParticleSystem (see broken-reference causes, below).<br />
+某动画产生的粒子不存在</p>
+<p>0062DCD2  Misc  An overlay type with Explodes=yes set has been destroyed, random dice roll determined that the particle specified in BarrelParticle should be displayed, but that flag is blank.<br />
+BarrelParticle是空的，爆炸性覆盖物炸了</p>
+<p>0064003C  Misc  If you have a buildable Construction Yard, start its construction, and then cancel it, an IE will occur. Construction Yards should not be buildable - they should only be deployed from vehicles.<br />
+建造厂建造一半取消的时候发生。不许设定建造厂为可以直接造！</p>
+<p>0065B73F  Weapon  You have a Weapon whose RadLevel is less than [Radiation]→RadLightDelay=.(Cause: Integer division is performed on those two values, which yields zero in this case, and then another value is divided by the result - division by zero.)<br />
+某武器RadLevel小于全局设定的RadLightDelay=.</p>
+<p>0069ACC6  Map  A PKT file's [MultiMaps] section declares a map which doesn't have its own section to define the parameters, or lacks the CD entry in the section.<br />
+PKT里指定了一个没有分类的地图</p>
+<p>006AEBB8  Misc  Your ra2md.ini file lists a combination of game mode/map which the game cannot satisfy. This can happen if the range of valid combinations changes between one game session and the next (i.e. because you changed what maps were valid for which game modes in your mod, or you activated a different mod to the one that was active previously).
+LaunchBase works around this by saving and restoring the game's configuration on a per-mod basis.
+RA2MD里某游戏模式在别的mod里没有</p>
+<p>006B7D30  Object  An object has a weapon with Spawner=yes, but it doesn't have Spawns=yes. The latter part is what tells the game to initialize the Spawn Manager for this unit when it's instantiated, the former part tells the game to try and access the Spawn Manager (and it doesn't check if it's been initialized properly).<br />
+有子机发射器，但是没指定子机类型</p>
+<p>006EA6AE  AI/Map  You coerced the game into creating an instance of a TeamType that is not defined, either through Map Triggers or through AI Script Actions.<br />
+你让游戏创造了一个不存在的小队</p>
+<p>006F1FC6  AI programming  A TeamType has been defined without assigning it a TaskForce, or a TeamType is being referenced without being defined at all.<br />
+一个小队没有一个特遣，或者一个触发里写的小队不存在</p>
+<p>006F352E  Weapon  A unit has an ElitePrimary weapon specified which does not exist (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank, and that unit just got promoted to Elite status.<br />
+精英主武器不存在，或弹头不存在</p>
+<p>006F72EF  Weapon  A unit has an ElitePrimary weapon specified which does not exist (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank, and that unit just got promoted to Elite status.<br />
+精英主武器不存在，或弹头不存在</p>
+<p>006F40A2  Weapon  Started construction of a unit whose Primary weapon does not exist (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank. )
+建造了一个主武器不存在或不存在弹头的单位</p>
+<p>0070031E  Weapon  A unit has a weapon specified which does not exist in the INI (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank. (Common reason - that unit just got promoted to Elite status and one of the Elite weapons is misdefined.)
+一个单位的武器在ini里不存在或没弹头</p>
+<p>00702330  Anim  A building has missing or non-existing DebrisTypes. Like DebrisTypes=CRYSTAL1.<br />
+一个建筑的碎片不存在或丢失</p>
+<p>007120F7  Misc  You have a BuildingType (which is click-repairable) with Strength=0 or Strength below [General]→RepairStep=.<br />
+可扳手修的建筑的血量是0或小于扳手一次维修的血量</p>
+<p>0071AF4D  Warhead  Detonating a Temporal=yes warhead under one of the following conditions:
+Firing weapon was a shrapnel weapon. 超时空武器不可作为溅射武器
+Firing weapon was an urban combat weapon (fired from an occupied building).超时空武器不可从民房发射
+Warhead has a non-zero CellSpread set. CellSpread不是0</p>
+<p>0072652D  Map  There is a trigger in the map that wants to change a house's non-existant object to another house.<br />
+有一个触发试图把一个不存在的单位转给另一阵营</p>
+<p>0073B0C9  Misc  The concept known as &quot;Infantry Linking&quot; can result in an IE, occuring when the linked infantry was modified in a subsequent game mode override file or a map and a human player scrolls their battlefield view to a place on the map where an AI-owned War Factory is located. Don't do Infantry Linking.<br />
+步兵链接在某些地图和模式中会导致IE，地图白无压力飘过</p>
+<p>0073C762  Art  The artmd.ini entry specified by a Voxel-using VehicleType's Image tag is missing - the game defaults to Voxel=no in this case and attempts to load and draw a non-existant SHP.<br />
+某VXL车辆的IMAGE=后面的东西在ART里没有，系统试图绘制一个不存在的SHP</p>
+<p>00756B2D  Art  The specified ShadowIndex on a voxel VehicleType adresses a section that does not exist.<br />
+ShadowIndex里的玩意不存在，这是用于决定直升机类影子用机体还是螺旋桨的语句</p>
+<p>00772A98  Weapon  A unit has an ElitePrimary weapon specified which does not exist (see broken-reference causes, below), or the weapon's Warhead tag is missing or set to blank, and that unit just got promoted to Elite status.
+精英主武器不存在或者没弹头
+Also reported to be due to &quot;firing a weapon that has no projectile&quot;. This needs testing - missing projectile may be an alternative reason to all 'missing weapon' IEs.
+一个武器没抛射体</p>
+<p>007C9B92  Malformed input  Multiple reasons, depending on the stack dump in the except:
+If 006DD5D2 or 006DD009 appear near the top of the stack dump - Map contains a malformed Map Action, while parsing it, a number was expected, something else or end-of-line was found instead. Map Actions expect well-formed input.
+地图白无压力飘过</p>
+<p>If 00843EEC appears in the stack - RefinerySmokeOffsetThree is not set to a valid value.
+矿场的冒烟位置3无效</p>
+<p>007CAF66  Malformed input  Multiple reasons, depending on the stack dump in the except:
+If 0075DE19 appears near the top of the stack dump - A Warhead whose Verses could not be processed. EBP value says how many values remained to be parsed when an error occurred - (11 - EBP) is the 0-based index of the problematic value.
+某弹头的弹头比率不是11个造成无法解析</p>
+<p>007CFD30  Misc - memory management  If line 20 of the stack dump includes 61108B, and line 23 includes 610CA0, you are likely trying to use RockPatch's &quot;Place Urban Areas&quot; feature without applying the necessary snowmd.ini fix. Please check the RockPatch Help for more info.<br />
+RP功能，不知是啥</p>
+<p>Varies, stack dump starts with 0051BB7D  Warhead  A unit was being erased by a chrono weapon but the object that started the erase process no longer exists. When a unit is being erased, an instance of the TemporalClass is linked to it. This class references the object that is doing the erasing. If the object breaks the link under 'normal' circumstances (e.g. the firer is destroyed or moved) then the attack order is cancelled and the TemporalClass is removed. In some rare cases the link to the firer's TemporalClass is not removed and therefore points to garbage memory.
+Examples of how the IE may occur:
+有时候超时空武器的发射者在目标死亡之前消失就停止攻击</p>
+<p>Ore harvester with a chrono weapon started an attack but then transformed whilst unloading ore at a refinery before the target was destroyed. Don't give ore harvesters chrono weapons.
+比如一个超时空矿车开火，目标还没消失自己先回家了。所以不要给矿车这种武器
+A vehicle was being erased but then got picked up by a carryall. This is very difficult to replicate - it has only been reported once.
+The IE occurs when the unit would have been erased.
+超时空武器坦克开火，然后被吊运走了-仅有一次错误记录</p>
+<p>90900004  Misc  Generic exception, for example, raised when you are missing the snowmd.ini median fix.<br />
+snowmd.ini的啥啥啥丢了，毫无压力</p>
+<p>00442832 在未修改全局ini时一个带有Sparky=yes的弹头击中目标。
+修补方法是在[Animations]注册表中加入FIRE3，并在[AudioVisual] 大条目中添加TreeFire= 和OnFire=，填写有效的动画名。</p>
+<p>BA7168A3 溅射武器，空爆武器的子武器没有挂载。至于什么是挂载，请仔细观察原版[XCOMET]单位的武器设定
+此外，子机飞出地图无法返回也是导致此IE的原因。超长的鸡光，电流，电磁波也会导致此IE。总之，此IE和子武器有关，请仔细检查所有子武器，包括承载单位。CSF的问题也可能导致此IE</p>
+<p>0043E027 建筑使用VXL炮塔时HVA出了问题</p>
+<p>005BDE3A NP自定义鼠标动画出现问题</p>
+<p>004225DA某个触发的碎片的速度设置出现了问题。XY速度最小1,但是XYZ速度都是5的时候同样发生IE，据分析是因为Z速度太小，但是0是可以的。总之，要想碎片原地不动就XY=1，Z=0就行了</p>
+<p>00491405 空降舱超武导致的IE，总之空降舱是一个不稳定因素，不提倡过多使用。相关IE的唯一避免手段是不使用此类超武。NP CRASHES FOR NO REASON!</p>
+<p>01BA00AC 这个IE的原因比较搞笑，CSF写得太长了……</p>
+<p>004F6794  检查[AI]\BuildBarracks</p>
+<p>004952C6  使用的某SHP素材损坏
+00494BCD  似乎也是SHP素材损坏的问题</p>
+<p>004F671D  你使用的AI因为owner问题无法建造任何一个本阵营防御武器</p>
+<p>0053A16B 和NP闪电风暴的云电素材的帧数有关</p>
+<p>007564B4 和VXL抛射体有关
+以下为TS(TiberianSun)平台出现的IE：
+00415698  You used a TrailerAnim on an animation but forgot to set a TrailerSeperation.<br />
+有traileranim，忘记写trailerseperation</p>
+<p>004C6428  AI does not have any buildings available for it to build. Check BuildConst=, BuildPower= etc.<br />
+AI不能造任何建筑 检查BuildConst=, BuildPower=之类</p>
+<p>006703D4  WaveClass Sonic exception, normally triggered by a unit with a weapon that has IsSonic=yes set, firing to the south of the screen and the user scrolling up. No certain fix for this as we know, it is a possible error with the games code. (a possible fix can be found on ppm)<br />
+游戏引擎缺陷导致的声波武器向南开火同时滚动屏幕出现的IE，无挽救办法</p>
+<p>0067159B  WaveClass Sonic exception. Not sure if this is code related, could be end user.<br />
+Tiberian Sun 引擎缺陷</p>
+<p>006717CB  WaveClass laser exception. No certain fix for this as we know, it is a possible error with the games code. (a possible fix can be found on ppm)<br />
+Tiberian Sun 引擎缺陷</p>
+<p>0067159B  You have set [AudioVisual]→ShakeScreen= to zero.<br />
+怪事，PPM上同一个EIP给了两个解释，无视吧</p>
+<p>006B6AE6  Multiple reasons, depending on the stack dump in the except:
+不明，视堆栈决定
+If 0066F44F appears near the top of the stack dump - A Warhead whose Verses could not be processed. EBP value says how many values remained to be parsed when an error occurred - (5 - EBP) is the 0-based index of the problematic value.
+一个弹头的比例无法处理 基本就是比例不是5个的意思</p>
+<p>90900004  Generic exception.<br />
+不明</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>下一页</span>
+                </div>
+                <div class="title">原版单位工具条对照表</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="AI%E5%85%A8%E8%A7%A3.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>上一页</span>
+                </div>
+                
+                <div class="title">AI全解</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; 版权所有 2025, RA2DIY 教编组
+            </div>
+            使用 <a href="https://www.sphinx-doc.org/">Sphinx</a>及 <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a> 的
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a> 主题制作
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=7d86a446"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

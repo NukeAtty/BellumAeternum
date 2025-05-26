@@ -1,0 +1,2651 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="1.全局代码解释" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="%E5%85%A8%E5%B1%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A2024.html" />
+<meta property="og:site_name" content="RA2DIY" />
+<meta property="og:description" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数 所以 1 分钟换算为 900 帧，但这里说的..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_全局代码解释2024_2dac0f22.png" />
+<meta property="og:image:alt" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游..." />
+<meta name="description" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数 所以 1 分钟换算为 900 帧，但这里说的..." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="next" title="2.单位属性rules词典" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html" /><link rel="prev" title="原版单位工具条对照表" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>1.全局代码解释 - RA2DIY 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c6a23ec1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>内容</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>菜单</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>扩展</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>自动深浅色 - 浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>自动深浅色 - 深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">隐藏导航栏</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">隐藏目录栏</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">跳转至内容</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">开关页面侧边导航</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RA2DIY  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">开关侧边栏目录</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">RA2DIY  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="【搜索|没搬完前基本没法用】" name="q" aria-label="【搜索|没搬完前基本没法用】">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">写在前面的话</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%AF%87.html">入门指南：学习篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%80%90%E6%B5%AAmod%E5%9C%88.html">逐浪 ＭＯＤ 圈</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非词典类资料</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E5%85%A8%E8%A7%A3.html">武器系统全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2022%E5%B9%B41%E6%9C%88%E7%89%88AI%E6%95%99%E7%A8%8B.html">AI的艺♂术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AI%E5%85%A8%E8%A7%A3.html">AI全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EIP%E6%9F%A5%E9%94%99%E6%8C%87%E5%8D%97.html">EIP查错指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">原版单位工具条对照表</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">词典</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">1.全局代码解释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">2.单位属性rules词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81%E8%AF%8D%E5%85%B82024.html">3.武器系统代码词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art%E8%AF%8D%E5%85%B82024.html">4.art词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%B6%85%E7%BA%A7%E6%AD%A6%E5%99%A8%E8%AF%8D%E5%85%B8.html">5.超级武器词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9C%B0%E5%BD%A2%E5%AF%B9%E8%B1%A1%E8%AF%8D%E5%85%B8.html">6.地形对象词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%A6%86%E7%9B%96%E7%89%A9%E8%AF%8D%E5%85%B8.html">7.覆盖物词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html">8.污染物和Voxel碎片及杂项词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AF%B4%E6%98%8E%E4%B9%A620171213.html">粒子系统说明书</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>回到顶部</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/全局代码解释2024.md.txt" title="查看页面源码">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">查看页面源码</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">开关侧边栏目录</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1.全局代码解释<a class="headerlink" href="#id1" title="链接到此标题">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>对于 AI 控制的全局语句 WW 在难度顺序上很多都是错误的，词典已加以纠正</p>
+</div>
+<section id="id2">
+<h2>常用概念与换算<a class="headerlink" href="#id2" title="链接到此标题">¶</a></h2>
+<p>1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见<a class="reference external" href="https://bbs.ra2diy.com/forum.php?mod=redirect&amp;amp;goto=findpost&amp;amp;ptid=24951&amp;amp;pid=140218">https://bbs.ra2diy.com/forum.php?mod=redirect&amp;goto=findpost&amp;ptid=24951&amp;pid=140218</a></p>
+<p>1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数<br />
+所以 1 分钟换算为 900 帧，但这里说的<strong>游戏</strong>时间而<strong>非现实</strong>时间，也就是你的硬件环境足够好可以 FPS（帧速率）高达几万帧/秒那么游戏时间的 1 分钟对你来说依然是一眨眼</p>
+<p>水下：RA2 中出现了潜艇类单位，实际上所谓的水下就是隐形效果，用 <code class="docutils literal notranslate"><span class="pre">Naval</span></code> 一句相关的判定限制武器攻击筛选，属于 WW 自身对于 TS 原有逻辑的特殊运用。但对应的许多隐形探测相关的内容就也对所谓的“潜水”单位同样有效了。</p>
+</section>
+<section id="id3">
+<h2>标准速度对照表<a class="headerlink" href="#id3" title="链接到此标题">¶</a></h2>
+<p>游戏速度分为0-6共7个级别，下面给出不同速度的FPS最大值对照表</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>对应游戏速度</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>单人游戏标准</p></td>
+<td><p>10</p></td>
+<td><p>12</p></td>
+<td><p>15</p></td>
+<td><p>20</p></td>
+<td><p>30</p></td>
+<td><p>60</p></td>
+<td><p>无上限（取决于硬件）</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>多人游戏标准</p></td>
+<td><p>10</p></td>
+<td><p>12</p></td>
+<td><p>15</p></td>
+<td><p>20</p></td>
+<td><p>30</p></td>
+<td><p>45</p></td>
+<td><p>60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ini">
+<h2>最基本的INI格式<a class="headerlink" href="#ini" title="链接到此标题">¶</a></h2>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[Section]</span>
+<span class="na">Key</span><span class="o">=</span><span class="s">Value</span>
+<span class="c1">;Comment</span>
+</pre></div>
+</div>
+<p>总之除非从引擎读写机制或外部工具上做额外支持否则绝对不会是什么</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{TRER01}
+SuperWeapon=[
+   NukeSpecial,             ;苏维埃之怒
+   LightningStormSpecial,   ;擅癫疯爆
+   PsychicDominatorSpecial  ；性灵只因酉己
+]
+</pre></div>
+</div>
+<p>这种样式的大聪明写法</p>
+</section>
+<section id="id4">
+<h2>读取规则<a class="headerlink" href="#id4" title="链接到此标题">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>注册名<strong>不应超过</strong> 24 个字符，否则超出部分不会被读入，进而造成读取对应错误<br />
+Ares3.0RC2开始特意为此添加了一个提示框，<strong>此前没有不代表此前没有这个问题！</strong><br />
+<strong>语句大小写必须规范</strong>，大多类型如果大小写不正确则根本不会正常工作</p>
+</div>
+<p>RA2中任何一个[Section]下面必须拥有一个赋值的语句以生效，这是Westwood在读取方式上的优化，没有任何语句的[Section]会被简单的忽略掉
+非Ares使用include逻辑拆分的子INI中，也就是总的rulesmd.ini、artmd.ini中不应该出现同名[Section]否则内容无效乃至被关联内容引发崩溃</p>
+<p>原版下一个标签所在行所可以正常读取的长度为128个字符，Ares下拓展到了512个字符，超出部分会被自动切掉，地图编辑器一个触发器带太多结果也是同理</p>
+<p>原版下大多Shape格式的素材只能读取打包好的mix中的*.shp而不能读取根目录下的，FA2、FA2SP也是如此，在Ares引擎或FA2SPHE的情况下则可以正常读取根目录下的文件</p>
+<p>由于微软系统底层判定对于填“真/伪”的布尔值实际上只检查第一个字符，若为1、y、t则视为“真”，若为0、n、f则视为“伪”，也就是说114514=TP=yse=yes=ture=true=真</p>
+<p>大多可以填百分比<percent>类值的地方同样可以填小数<float>类数值</p>
+<p>一些值的类型看不明白可以见[2025教程\2025工具附件包\引擎相关\ARES3.0说明书20241122.chm\关于Ares的一切\特殊用语]一页</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>Westwood 原始 INI 中残留的错误很多，可以前往 <a class="reference external" href="https://gitee.com/PB_LAB/yrstandard-ini">https://gitee.com/PB_LAB/yrstandard-ini</a> 获取修复后的 INI 文件作为 YRMOD 开发基底，2025教程光速部署包中已附赠</p>
+</div>
+<p>旧有词典各个语句的赋值类型相关信息残缺过多，于是本版词典中对旧有词典校补过程中添加的语句也选择抹掉值类型以统一格式，在下一版词典中可能会大规模整改<br>同时将旧有词典中作为标签的行中末尾的=前添加了一个空格，来和其他语句注释中提及这个语句的情况区分，以方便小白们用哪怕使用最基础的文本浏览工具也可以针对标签名进行搜索
+在2025版教程中新增的几部来自九千天华个人资料库中的词典中则保留了原文的格式
+即 <code class="docutils literal notranslate"><span class="pre">[BuildingType]</span> <span class="pre">-&gt;</span> <span class="pre">Buildup=&lt;filename,</span> <span class="pre">excluding</span> <span class="pre">the</span> <span class="pre">.shp</span> <span class="pre">extension&gt;</span></code> 的这种形式（倒也不至于全是这种（
+以便于用户使用，并且因为=后面有一个&lt;已经满足搜索便捷要求，故不添加空格</p>
+</section>
+<section id="id5">
+<h2>常用注册列表<a class="headerlink" href="#id5" title="链接到此标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>完整的注册表解释见本文档 <code class="docutils literal notranslate"><span class="pre">[WallModel]</span> <span class="pre">-&gt;</span> <span class="pre">WallPenetratorThreshold=</span></code> 标签注解下面的部分</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[InfantryTypes]</span></code><br />
+注册步兵
+<code class="docutils literal notranslate"><span class="pre">[VehicleTypes]</span></code><br />
+注册载具（车辆直升机飞艇飞碟海军）</p>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>原版的夜莺直升机、基洛夫空艇、雌鹿直升机等实际上属于“使用飞行运动模式的载具”也就是Vehicle，而非Aircraft</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[AircraftTypes]</span></code><br />
+注册空军（机场飞机，伞兵机）</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>红血时每帧有 10% 概率生成名为 <code class="docutils literal notranslate"><span class="pre">[SGRYSMK1]</span></code> 的动画，被坠毁时每帧有 80% 概率，Ares下允许微观定义动画类型和生成概率</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[BuildingTypes]</span></code><br />
+注册建筑
+<code class="docutils literal notranslate"><span class="pre">[SuperWeaponTypes]</span></code><br />
+注册超武，原版无法正常新增超武，需要Ares
+<code class="docutils literal notranslate"><span class="pre">[Animations]</span></code><br />
+注册动画</p>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>Ares必须每条动画都注册（包括原版存在但是未注册的动画），否则无法显示。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>注册表中的序号在地图触发中会被重新计算映射为内部序号使用，因此哪怕你觉得WW写的序号依托构式又是跳号又是重号的，在你真正明白注册表序号的算法之前请不要乱动，把新增的内容都放到最后，否则原版战役和地图可能出现各种问题。当然，如果你就是打算直接一脚踹掉原版的内容单纯基于红色警戒2的引擎来构建自己的世界、书写自己的故事，那也就随意发挥了。只不过Ares已经提供了更好的方法，详见教程配套的Ares说明书</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[WeaponTypes]</span></code><br />
+注册武器</p>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>并非原版注册表，而是Ares新引入的。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>原版光棱、精英磁能攻击到单位和树木等地形对象时会溅射出几条新的激光/电弧，实际上是从爆点生成了原武器的子武器。而子武器必须得到注册才能使用，而武器的注册则是只要有一个有效单位使用了这个武器即算注册，因此才有了 <code class="docutils literal notranslate"><span class="pre">[XCOMET]</span></code>（位置定标器）、<code class="docutils literal notranslate"><span class="pre">[WEEDGUY]</span></code>（化学兵）、<code class="docutils literal notranslate"><span class="pre">[DeathDummy]</span></code> 这类单位。虽然这个有效单位可以除了武器代码以外一行都没有，但是每次挂载都需要找新的武器空位和考虑注册挂载单位都是一件烦事，并且难以整理。在 Ares 下你就可以把这套东西全都写进这个新的注册表而无需用单位挂载了，地图触发等地方计算武器序号也变得更加方便。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">[Warheads]</span></code><br />
+注册弹头</p>
+</section>
+<section id="id6">
+<h2>全局修改<a class="headerlink" href="#id6" title="链接到此标题">¶</a></h2>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[General]</span>
+<span class="c1">;升级系数</span>
+<span class="na">VeteranRatio</span><span class="o">=</span><span class="s">3.0</span>
+<span class="na">升级一次所必须破坏的价值为自身价值（特指Cost）的3倍</span>
+<span class="na">VeteranCombat</span><span class="o">=</span><span class="s">1.1</span>
+<span class="na">升级后的攻击力为原来的1.1倍</span>
+<span class="na">VeteranSpeed</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">升级后的速度为原1.2倍</span>
+<span class="na">VeteranSight</span><span class="o">=</span><span class="s">0.0</span>
+<span class="na">升级后的视野如果乘完超过最大值(11)会被写回最大值</span>
+<span class="na">VeteranArmor</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">升级后装甲为原1.5倍 ，实际上只是所受杀伤除此处倍率</span>
+<span class="na">VeteranROF</span><span class="o">=</span><span class="s">0.6</span>
+<span class="na">升级后的攻击间隔（例如原来10帧一次现在6帧一次）</span>
+<span class="na">VeteranCap</span><span class="o">=</span><span class="s">2</span>
+<span class="na">最大可升2级(建议不要修改)改了也没什么用，军衔还是武器还是升级效果等各种相关系统都没做支持</span>
+<span class="na">InitialVeteran</span><span class="o">=</span><span class="s">no</span>
+<span class="na">要写进地图[SpecialFlags]里，Rules里没用</span>
+
+<span class="c1">;维修和装填</span>
+<span class="na">RefundPercent</span><span class="o">=</span><span class="s">50%</span>
+<span class="na">出售价格为建造的50%，可用Soylent直接指定数值覆盖</span>
+<span class="na">ReloadRate</span><span class="o">=</span><span class="s">.3</span>
+<span class="na">战机每格弹药重装时间间隔：0.3分钟，也是停在UnitReload</span><span class="o">=</span><span class="s">yes的建筑上时的维修间隔( 类[ 维修厂 ] )Ares允许Aircraft上微观定义，Phobos允许建筑上微观定义维修间隔</span>
+<span class="na">RepairPercent</span><span class="o">=</span><span class="s">15%</span>
+<span class="na">把一个东西由0修到满血耗费的钱为建造钱的15%</span>
+<span class="na">RepairRate</span><span class="o">=</span><span class="s">.016</span>
+<span class="na">每2次【扳手】闪动的时间间隔为0.016分钟，同时影响 { SelfHealing } 的单位</span>
+<span class="na">RepairStep</span><span class="o">=</span><span class="s">8</span>
+<span class="na">每次恢复8点血(控制【扳手】和 [ 维修厂 ] )</span>
+<span class="na">URepairRate</span><span class="o">=</span><span class="s">.016</span>
+<span class="na">每2次维修的时间间隔为0.016分钟( [ 维修厂 ] )用于UnitRepair</span><span class="o">=</span><span class="s">yes的建筑，Phobos允许微观控制维修间隔</span>
+<span class="na">IRepairRate</span><span class="o">=</span><span class="s">.001</span>
+<span class="na">每2次恢复的时间间隔为0.001分钟(医院治疗)</span>
+<span class="na">IRepairStep</span><span class="o">=</span><span class="s">20</span>
+<span class="na">每次恢复的血为20点(医院治疗)</span>
+<span class="na">TiberiumHeal</span><span class="o">=</span><span class="s">.010</span>
+<span class="na">在泰伯利亚之石中每2次恢复的间隔为0.01分钟，TS残留无效，Ares已复原，详见说明书</span>
+<span class="na">SelfHealInfantryFrames</span><span class="o">=</span><span class="s">50</span>
+<span class="na">步兵每2次自我恢复的时间间隔为50帧（医院自动回血）</span>
+<span class="na">SelfHealInfantryAmount</span><span class="o">=</span><span class="s">20</span>
+<span class="na">步兵每次自我恢复能恢复20生命（医院自动回血）</span>
+<span class="na">SelfHealUnitFrames</span><span class="o">=</span><span class="s">75</span>
+<span class="na">自疗单位每2次自我恢复的时间间隔为75桢（科技商店自动回血）</span>
+<span class="na">SelfHealUnitAmount</span><span class="o">=</span><span class="s">5</span>
+<span class="na">自疗单位每次自我恢复能恢复5生命（科技商店自动回血）</span>
+
+<span class="c1">;收入和生产</span>
+<span class="c1">;BailCount=28矿车携带资金的数量，RA1残留已无效，TS开始使用矿车自身属性，见Storage词条</span>
+<span class="na">BuildSpeed</span><span class="o">=</span><span class="s">.7</span>
+<span class="na">生产建筑时每用1000元要花费的时间为0.7分钟，Ares允许建筑微观定义</span>
+<span class="na">BuildupTime</span><span class="o">=</span><span class="s">.06</span>
+<span class="na">一个建筑放置展开时要花费拔起时间0.06分钟，同时也是建筑出售收起所需的时间</span>
+<span class="na">*根据全局置顶中所述的1分钟</span><span class="o">=</span><span class="s">900帧，可得原版0.06分钟即54帧</span>
+<span class="na">Ares允许建筑微观定义以及出售与拔起分离定义，对于Buildup动画过长的建筑来说是非常有必要的</span>
+<span class="na">如果Buildup时间不够Buildup动画逐帧播放一遍那么可能在功能运作时会表现为瞬间完成等非正常方式，见art词典Buildup</span><span class="o">=</span><span class="s">一条下方描述</span>
+<span class="na">GrowthRate</span><span class="o">=</span><span class="s">5</span>
+<span class="na">泰伯利亚矿石每5分钟生长一次</span>
+<span class="na">TiberiumGrows</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">泰伯利亚矿石可以生长</span>
+<span class="na">TiberiumSpreads</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">泰伯利亚矿石可以延伸到本来没有的地方</span>
+<span class="c1">;以上两个标签会被地图[SpecialFlags]中的同名标签覆盖</span>
+<span class="na">SeparateAircraft</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否第一架战机必须拥有一个机场后进行生产，如果被设置为no则所有带HoverPad</span><span class="o">=</span><span class="s">yes的建筑会自动生成PadAircraft=的第一个单位</span>
+<span class="na">SurvivorRate</span><span class="o">=</span><span class="s">0.4</span>
+<span class="na">一个建筑出售掉原本制造的钱*0.4换算为残兵出现，算法为Num(Infantry)</span><span class="o">=</span><span class="s">Cost*SurvivorRate/SurvivorDivisor</span>
+<span class="c1">;SurvivorDivisor=100</span>
+<span class="c1">;计算残兵数量的除数，TS残留无效，RA2已换成下面三句分离定义</span>
+<span class="na">AlliedSurvivorDivisor</span><span class="o">=</span><span class="s">500</span>
+<span class="na">盟军制造的建筑出售计算残兵数量的除数</span>
+<span class="na">SovietSurvivorDivisor</span><span class="o">=</span><span class="s">250</span>
+<span class="na">苏军制造的建筑出出售计算残兵数量的除数</span>
+<span class="na">ThirdSurvivorDivisor</span><span class="o">=</span><span class="s">750</span>
+<span class="na">尤里制造的建筑出售计算残兵数量的除数</span>
+<span class="na">PlacementDelay</span><span class="o">=</span><span class="s">.05</span>
+<span class="na">等待0.05分钟后再次尝试摆放建筑（900*0.05</span><span class="o">=</span><span class="s">45Frames），见MaximumBuildingPlacementFailures一条</span>
+<span class="na">WeedCapacity</span><span class="o">=</span><span class="s">56</span>
+<span class="na">只有Weeder矿车收集的泰伯利亚废矿达到该量后化学飞弹才可以开始加载（TS残留，废弃，相关逻辑Phobos已复原，详见说明书）</span>
+<span class="c1">;下面几句是原版INI中有效但并没有列出的语句</span>
+<span class="na">RevealByHeight</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否根据高差限制可探开的视野范围，若改no则在悬崖下方也可探开悬崖上方的视野</span>
+<span class="na">HarvesterDumpRate</span><span class="o">=</span><span class="s">0.06</span>
+<span class="na">矿车在矿场倒矿用时，越小越快，单位为分钟</span>
+<span class="na">HarvesterLoadRate</span><span class="o">=</span><span class="s">2</span>
+<span class="na">矿车采集每单位矿物用时，越小越快，若小于1则会永远装不满</span>
+<span class="na">EngineerCaptureLevel</span><span class="o">=</span>
+<span class="na">多工程师模式语句，RA2下残留部分效果，但依然残废，Ares已复原，详见说明书</span>
+<span class="na">TalkBubbleTime</span><span class="o">=</span>
+<span class="na">指定地图操作或脚本触发时气泡图像在单位上方显示的时长，强制类Normalized的效果，也就是哪怕6速下FPS高达1秒3万帧也不会闪一下瞬间没了。硬编码使用talkbubl.shp和palette.pal，前者可以自行去TS提取或自己制作，RA2中并不存在，或前往20400prosperous.ys168.com获取一份提取好的</span>
+<span class="na">ZoomInFactor</span><span class="o">=</span><span class="s">2.0</span>
+<span class="na">地图触发49号结果缩放行为的倍数定义，只能放大不能缩小，放大后应使用50号结果复原，如果直接使用47号结果解除49号结果的禁止玩家操作效果会导致错误的底边栏绘制效果且光标并不会显示</span>
+<span class="na">ConditionYellowSparkingProbability</span><span class="o">=</span><span class="s">0.02</span>
+<span class="na">当Cyborg</span><span class="o">=</span><span class="s">yes的Infantry进入黄血时生成[TechnoType] -&gt; DamageParticleSystems=&lt;ParticleSystems&gt;中Spark类粒子系统的概率</span>
+<span class="na">ConditionRedSparkingProbability</span><span class="o">=</span><span class="s">0.01</span>
+<span class="na">当Cyborg</span><span class="o">=</span><span class="s">yes的Infantry进入红血时生成[TechnoType] -&gt; DamageParticleSystems=&lt;ParticleSystems&gt;中Spark类粒子系统的概率</span>
+
+<span class="c1">;电脑与活动控制</span>
+<span class="na">CurleyShuffle</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">战机是否可以在发射2发炮弹间移动位置，用于悬停式战机，no的话可以固定在一个位置持续射击，效果见上古MOD共和国之辉中的的CN入侵者，但是悬停地点下方有垫材会影响开火</span>
+<span class="na">BaseBias</span><span class="o">=</span><span class="s">2</span>
+<span class="na">当敌人靠近AI基地时，AI对敌人威胁的判定倍数，会影响AI对单位威胁值的敏锐度。可以调高。</span>
+<span class="na">BaseDefenseDelay</span><span class="o">=</span><span class="s">.25</span>
+<span class="na">AI派出防御部队处理基地威胁的延迟时间。(单位</span><span class="o">:</span><span class="s">分钟)</span>
+<span class="na">CloseEnough</span><span class="o">=</span><span class="s">2.25</span>
+<span class="na">AI执行&quot;移动到&quot;指令时，距离目的地多近就视为完成接近。</span>
+<span class="na">DamageDelay</span><span class="o">=</span><span class="s">1</span>
+<span class="na">建筑微损伤语句，TS残留无效，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">GameSpeedBias</span><span class="o">=</span><span class="s">1.6</span>
+<span class="na">单人游戏中物体速度1.6倍于原来速度，TS残留，RA2中已无效</span>
+<span class="na">Stray</span><span class="o">=</span><span class="s">2.0</span>
+<span class="na">一个小队在执行任务时，偏离这个距离之内时不会导致小队重组。会影响路经点判定，可以适当增加，但最好不超过2.9。</span>
+<span class="na">RelaxedStray</span><span class="o">=</span><span class="s">3.0</span>
+<span class="na">执行&quot;集结&quot;指令(应该是指53,54号指令)时，以这个数值替代Stray。可以适当增加以便AI可以使用大部队。</span>
+<span class="na">CloakDelay</span><span class="o">=</span><span class="s">.02</span>
+<span class="na">进入隐形之前的显形时间，同时也是RA2种水下单位露出睡眠后重新下潜所需的时间，因为本质上就是隐形加了Naval依靠NavalTargeting限制能否攻击</span>
+<span class="na">SuspendDelay</span><span class="o">=</span><span class="s">2</span>
+<span class="na">中止的AI队伍将会保持中止的时间为2分钟</span>
+<span class="na">SuspendPriority</span><span class="o">=</span><span class="s">1</span>
+<span class="na">当基本防御展开时低优先权(&lt;1)任务将被中止</span>
+<span class="na">FlightLevel</span><span class="o">=</span><span class="s">1500</span>
+<span class="na">飞机默认飞行的高度，可以在单位上微观控制</span>
+<span class="na">ParachuteMaxFallRate</span><span class="o">=</span><span class="s">-3</span>
+<span class="na">有降落伞最大下降速度，用于常规伞兵，Ares允许单位微观定义</span>
+<span class="na">NoParachuteMaxFallRate</span><span class="o">=</span><span class="s">-100</span>
+<span class="na">无降落伞最大下降速度，例如降落伞动画播放结束后不再拥有降落伞或是从被毁的桥上掉下，Ares允许单位微观定义</span>
+<span class="na">GuardModeStray</span><span class="o">=</span><span class="s">2.0</span>
+<span class="na">保护其他单位的警戒距离</span>
+
+
+<span class="na">MissileSpeedVar</span><span class="o">=</span><span class="s">.25</span>
+<span class="na">导弹速度衰减速率（Degenerates</span><span class="o">=</span><span class="s">yes）</span>
+<span class="na">MissileROTVar</span><span class="o">=</span><span class="s">.25</span>
+<span class="na">导弹转弯衰减速率（Degenerates</span><span class="o">=</span><span class="s">yes）</span>
+<span class="na">MissileSafetyAltitude</span><span class="o">=</span><span class="s">750</span>
+<span class="na">导弹安全高度，对空导弹在目标被摧毁后升到这个高度再爆开</span>
+
+<span class="c1">;-RTO</span>
+<span class="na">TeamDelays</span><span class="o">=</span><span class="s">2000,2500,3500</span>
+<span class="na">(困难、中等、简单)的AI创造部队时间间隔。(单位</span><span class="o">:</span><span class="s">帧)</span>
+
+<span class="na">AIHateDelays</span><span class="o">=</span><span class="s">30,50,70AI</span>
+<span class="na">(困难、中等、简单)的AI选择敌人的时间间隔。(单位</span><span class="o">:</span><span class="s">帧)</span>
+<span class="na">AIAlternateProductionCreditCutoff</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">只有AI资金高于这个数值才会消费</span>
+<span class="na">NodAIBuildsWalls</span><span class="o">=</span><span class="s">no</span>
+<span class="na">当电脑作为NOD时候是否制造墙壁(无效)</span>
+<span class="na">AIBuildsWalls</span><span class="o">=</span><span class="s">no</span>
+<span class="na">电脑是否建造墙壁(无效)</span>
+
+<span class="c1">;-RTO*</span>
+<span class="na">MultiplayerAICM</span><span class="o">=</span><span class="s">400,0,0</span>
+<span class="na">(困难、中等、简单)的AI开局时的金钱【百分比】。公式为：AI开局金钱</span><span class="o">=</span><span class="s">玩家开局金钱*(X+100)/100。AIVirtualPurifiers=4,2,0(困难、中等、简单)遭遇战AI矿石采集换算系数，冷酷ai一车矿1000块它就有实际收入1000*4=4000块</span>
+<span class="na">AISlaveMinerNumber</span><span class="o">=</span><span class="s">4,3,2</span>
+<span class="na">(困难、中等、简单)的AI奴隶矿车数</span>
+<span class="na">HarvestersPerRefinery</span><span class="o">=</span><span class="s">2,2,1</span>
+<span class="na">(困难、中等、简单)的AI每矿最多矿车数</span>
+<span class="na">AIExtraRefineries</span><span class="o">=</span><span class="s">2,1,0</span>
+<span class="na">(困难、中等、简单)额外矿场数(Ares里的建议不给矿场加AIBuildCounts，如果需要增加矿场数量的话用AIExtraCounts)</span>
+<span class="na">HealScanRadius</span><span class="o">=</span><span class="s">10</span>
+<span class="na">医疗兵种能自动医疗的范围</span>
+<span class="na">FillEarliestTeamProbability</span><span class="o">=</span><span class="s">100,100,100</span>
+<span class="na">(困难、中等、简单)的AI制造第一个部队的时间。(单位</span><span class="o">:</span><span class="s">帧)</span>
+
+<span class="c1">;-RTO</span>
+<span class="na">MinimumAIDefensiveTeams</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">(困难、中等、简单)的AI最少守家部队(IsBaseDefense</span><span class="o">=</span><span class="s">yes)数量。</span>
+<span class="na">MaximumAIDefensiveTeams</span><span class="o">=</span><span class="s">2,2,2</span>
+<span class="na">(困难、中等、简单)的AI最多守家部队数量。</span>
+<span class="na">注：(Min和Max即使都写0,0,0也会至少造1队守家部队)</span>
+
+<span class="na">TotalAITeamCap</span><span class="o">=</span><span class="s">30,30,30</span>
+<span class="na">(困难、中等、简单)的AI可以同时使用的部队总数。</span>
+<span class="na">UseMinDefenseRule</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">电脑AI在没有任何部队时（一般是遭遇战开局）只会从有IsBaseDefense</span><span class="o">=</span><span class="s">yes标签的小队里挑选生产，直到这些小队达到MinimumAIDefensiveTeams指定的数量。无论UseMinDefenseRule=写啥AI都会至少先造1个守家部队，但是写no的话AI不会因为没有可造的守家部队而傻掉。所以如果UseMinDefenseRule=yes，要保证每个阵营【至少有一个】(不是只有一个!)可用的IsBaseDefense=yes的小队，否则AI不会出兵。</span>
+<span class="na">DissolveUnfilledTeamDelay</span><span class="o">=</span><span class="s">5000</span>
+<span class="na">AI在多久后会解散一个不完整的部队。</span>
+<span class="na">理论上不应降低，否则AI制造成员较多的部队时会在制造完毕之前就解散该队伍。(单位</span><span class="o">:</span><span class="s">帧)</span>
+<span class="na">LargeVisceroid</span><span class="o">=</span><span class="s">VISC_LRG</span>
+<span class="na">全局定义（两个小器官兽合并成的）大型器官兽，填载具，TS残留逻辑已废弃，Ares已复原，详见说明书</span>
+<span class="na">SmallVisceroid</span><span class="o">=</span><span class="s">VISC_SML</span>
+<span class="na">全局定义步兵在泰矿上死亡变成的小型器官兽单位，填载具，TS残留逻辑已废弃，Ares已复原，详见说明书</span>
+
+
+<span class="na">TS的离子炮超武索敌计算方式，RA2用于核弹、闪电风暴，分别对应困难、中等、简单难度的AI优先级参数，其中困难AI还会等待最优目标生产完成</span>
+<span class="na">AIIonCannonConYardValue</span><span class="o">=</span><span class="s">100,100,100</span>
+<span class="na">用于	ConstructionYard</span><span class="o">=</span><span class="s">yes	的对象</span>
+<span class="na">AIIonCannonWarFactoryValue</span><span class="o">=</span><span class="s">100,100,100</span>
+<span class="na">用于	WeaponsFactory</span><span class="o">=</span><span class="s">yes		的对象</span>
+<span class="na">AIIonCannonPowerValue</span><span class="o">=</span><span class="s">60,100,100</span>
+<span class="na">用于	Power &gt; 0				的对象</span>
+<span class="na">AIIonCannonTechCenterValue</span><span class="o">=</span><span class="s">100,100,100</span>
+<span class="na">用于	[AI]BuildTech</span><span class="o">=</span><span class="s">中		的对象</span>
+<span class="na">AIIonCannonEngineerValue</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">用于	Engineer</span><span class="o">=</span><span class="s">yes			的对象</span>
+<span class="na">AIIonCannonThiefValue</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">用于	Thief</span><span class="o">=</span><span class="s">yes				的对象</span>
+<span class="na">AIIonCannonHarvesterValue</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">用于	Harvester</span><span class="o">=</span><span class="s">yes			的对象</span>
+<span class="na">AIIonCannonMCVValue</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">用于	[General]BaseUnit</span><span class="o">=</span><span class="s">中	的对象</span>
+<span class="na">AIIonCannonAPCValue</span><span class="o">=</span><span class="s">1,1,1</span>
+<span class="na">用于	Category</span><span class="o">=</span><span class="s">Transport		的对象</span>
+<span class="na">AIIonCannonBaseDefenseValue</span><span class="o">=</span><span class="s">35,35,35</span>
+<span class="na">用于	IsBaseDefense</span><span class="o">=</span><span class="s">yes		的对象</span>
+<span class="c1">;AIIonCannonPlugValue=40,40,40</span>
+<span class="na">用于	IsPlug</span><span class="o">=</span><span class="s">yes				的对象</span>
+<span class="c1">;AIIonCannonHelipadValue=20,20,20</span>
+<span class="na">用于	HoverPad</span><span class="o">=</span><span class="s">yes			的对象</span>
+<span class="c1">;AIIonCannonTempleValue=40,40,40</span>
+<span class="na">用于	IsTemple</span><span class="o">=</span><span class="s">yes			的对象</span>
+<span class="na">最后三句在RA2中未被使用，如果使用也会由于优先级相对其他标签更低而表现得不够明显。例如发电厂同时拥有IsTemple的话Power&gt;0实际上会让它使用AIIonCannonPowerValue而非AIIonCannonTempleValue</span>
+
+<span class="na">离子风暴（闪电风暴）规则，因为这套东西是从TS中的离子风暴演变来的</span>
+<span class="na">LightningDeferment</span><span class="o">=</span><span class="s">250</span>
+<span class="na">闪电风暴从警告到降临的间隔桢数</span>
+<span class="na">LightningDamage</span><span class="o">=</span><span class="s">250</span>
+<span class="na">闪电风暴打击的伤害</span>
+<span class="na">LightningStormDuration</span><span class="o">=</span><span class="s">180</span>
+<span class="na">闪电风暴的持续时间</span>
+<span class="na">LightningWarhead</span><span class="o">=</span><span class="s">IonWH</span>
+<span class="na">闪电风暴用的弹头</span>
+<span class="na">LightningHitDelay</span><span class="o">=</span><span class="s">10</span>
+<span class="na">每多少时间进行一次仅限中心单位格的打击</span>
+<span class="na">LightningScatterDelay</span><span class="o">=</span><span class="s">5</span>
+<span class="na">每2次随机闪电打击间隔的帧数以及每次生成的雷云数量</span>
+<span class="na">LightningCellSpread</span><span class="o">=</span><span class="s">10</span>
+<span class="na">闪电风暴的范围大小</span>
+<span class="na">LightningSeparation</span><span class="o">=</span><span class="s">3</span>
+<span class="na">每两个云／闪电间的距离为3</span>
+<span class="na">IonStorms</span><span class="o">=</span><span class="s">no</span>
+<span class="na">地图中是否随机产生风暴，TS残留无效，即便在TS中也需要写入地图[SpecialFlags]中而不是使用Rules.ini控制</span>
+<span class="na">LightningPrintText</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">控制闪电风暴接近是否有文本提示（原版ini中没有写但是有效）</span>
+
+<span class="c1">;***力场护盾控制***</span>
+<span class="na">ForceShieldRadius</span><span class="o">=</span><span class="s">4</span>
+<span class="na">力场护盾的有效范围，单位格</span>
+<span class="na">ForceShieldDuration</span><span class="o">=</span><span class="s">500</span>
+<span class="na">力场护盾的持续作用帧数</span>
+<span class="na">ForceShieldBlackoutDuration</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">使用力场护盾后的停电时间</span>
+<span class="na">ForceShieldPlayFadeSoundTime</span><span class="o">=</span><span class="s">75</span>
+<span class="na">力场护盾在作用时间结束前75帧开始播放超武SpecialSound指定的音效</span>
+<span class="na">MutateExplosion</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">控制Type</span><span class="o">=</span><span class="s">GeneticMutator也就是原版基因突变超武是否引爆</span>
+<span class="na">设置为yes则使用MutateExplosionWarhead的弹头并造成10000伤害</span>
+<span class="na">设置为no则默认只对3x3范围内步兵使用MutateWarhead的弹头并秒杀</span>
+
+<span class="c1">;光棱塔控制</span>
+<span class="na">PrismType</span><span class="o">=</span><span class="s">ATESLA</span>
+<span class="na">使用该逻辑的建筑名称</span>
+<span class="na">PrismSupportModifier</span><span class="o">=</span><span class="s">150%</span>
+<span class="na">每增加一个反射光塔就增加150%的威力</span>
+<span class="na">由于WW代码写的有问题，原版地图模式ini和地图内置ini如果写了[General]而未重新指定该语句的值则在读取时前面两者有一个乘一百，Ares已修复</span>
+<span class="na">PrismSupportMax</span><span class="o">=</span><span class="s">8</span>
+<span class="na">最多能同时反射8个</span>
+<span class="na">PrismSupportDelay</span><span class="o">=</span><span class="s">45</span>
+<span class="na">反射光延迟45桢</span>
+<span class="na">PrismSupportDuration</span><span class="o">=</span><span class="s">15</span>
+<span class="na">发射出的光的消失时间15桢(像残留)</span>
+<span class="na">PrismSupportHeight</span><span class="o">=</span><span class="s">420</span>
+<span class="na">该光传到光塔高420的地方（无效）</span>
+<span class="na">Ares已允许自定义光棱塔，并附赠了一份xlsx以便计算，详见说明书</span>
+
+<span class="c1">;V3火箭控制</span>
+<span class="na">V3RocketPauseFrames</span><span class="o">=</span><span class="s">0</span>
+<span class="na">倾斜开始前滞留0桢</span>
+<span class="na">V3RocketTiltFrames</span><span class="o">=</span><span class="s">60</span>
+<span class="na">倾斜到发射位置(角度)需要60帧</span>
+<span class="na">V3RocketPitchInitial</span><span class="o">=</span><span class="s">0.21</span>
+<span class="na">导弹初始倾斜为0.21*90度</span>
+<span class="na">V3RocketPitchFinal</span><span class="o">=</span><span class="s">0.5</span>
+<span class="na">导弹点火倾斜为0.5*90度</span>
+<span class="na">V3RocketTurnRate</span><span class="o">=</span><span class="s">0.05</span>
+<span class="na">导弹拐弯速率</span>
+<span class="na">V3RocketRaiseRate</span><span class="o">=</span><span class="s">1</span>
+<span class="na">巡航导弹每次升高多少</span>
+<span class="na">V3RocketAcceleration</span><span class="o">=</span><span class="s">0.4</span>
+<span class="na">发射加速度0.4</span>
+<span class="na">V3RocketAltitude</span><span class="o">=</span><span class="s">768</span>
+<span class="na">巡航导弹达到这么高后水平移动</span>
+<span class="na">V3RocketDamage</span><span class="o">=</span><span class="s">200</span>
+<span class="na">伤害200</span>
+<span class="na">V3RocketEliteDamage</span><span class="o">=</span><span class="s">400</span>
+<span class="na">精英伤害400</span>
+<span class="na">V3RocketBodyLength</span><span class="o">=</span><span class="s">256</span>
+<span class="na">导弹长256Leptons，用于导弹碰撞判定点计算实际撞击位置，也会影响导弹轨迹计算</span>
+<span class="na">V3RocketLazyCurve</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否是抛物线弹道，也就是不使用巡航导弹使用的RaiseRate和Altitude两个参数。并且如果PitchFinal设定成了垂直于地面的90°，那么即便是初中生也知道这会导致导弹再也飞不回来</span>
+
+<span class="na">注：新增导弹需要Ares，总有新手对着原版的DMISL和CMISL自创一个EMISL之类的写在这里，然而程序读取的键值里根本就没有这个名为EMislPauseFrames的东西又怎么会生效呢，要写在导弹自身的代码里！！！</span>
+
+<span class="c1">;伞兵控制</span>
+<span class="na">ParadropRadius</span><span class="o">=</span><span class="s">1024</span>
+<span class="na">降落半径1024leptons</span>
+<span class="na">FogOfWar</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否拥有战争迷雾，TS残留无效</span>
+<span class="na">Visceroids</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否随机生成器官兽，TS残留无效，Ares已复原，详见说明书</span>
+<span class="na">Meteorites</span><span class="o">=</span><span class="s">no</span>
+<span class="na">随机被流星砸，TS残留无效，即便在TS中也需要写入地图[SpecialFlags]中而不是使用Rules.ini控制</span>
+<span class="na">CrewEscape</span><span class="o">=</span><span class="s">50%</span>
+<span class="na">乘车人员有50%机会从被毁车中逃生</span>
+<span class="na">CameraRange</span><span class="o">=</span><span class="s">9</span>
+<span class="na">间谍飞机每次探开地图范围9个单元格</span>
+<span class="na">FineDiffControl</span><span class="o">=</span><span class="s">no</span>
+<span class="na">有5个难度级别实际上显示3个</span>
+<span class="na">Pilot</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">飞机上跳伞的兵种是E1，RA1残留无效</span>
+<span class="c1">;Crew =</span>
+<span class="c1">;被摧毁或售卖的建筑给予什么步兵，TS残留，RA2开始已经换成下面三句分离定义，Ares新阵营的定义详见Ares说明书</span>
+<span class="na">AlliedCrew</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">盟军被毁建筑中出来的是E1</span>
+<span class="na">SovietCrew</span><span class="o">=</span><span class="s">E2</span>
+<span class="na">苏方被毁建筑中出来的是E2</span>
+<span class="na">ThirdCrew</span><span class="o">=</span><span class="s">INIT</span>
+<span class="na">尤里被毁建筑中出来的是INIT</span>
+<span class="na">Technician</span><span class="o">=</span><span class="s">CTECH</span>
+<span class="na">中立建筑被毁出来的是CTECH</span>
+<span class="na">Engineer</span><span class="o">=</span><span class="s">ENGINEER</span>
+<span class="na">建造厂类建筑被毁额外给予ENGINEER</span>
+<span class="na">以上生还者特殊效果在Ares允许单位微观为所有阵营设置</span>
+<span class="na">PParatrooper</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">步兵部队将和伞兵E1一样，RA1残留无效</span>
+<span class="na">并且语句都是WW写错的，程序中只有Paratrooper没有PParatrooper</span>
+
+<span class="na">ChronoDelay</span><span class="o">=</span><span class="s">60</span>
+<span class="na">传送达到后僵直60帧时间才恢复正常</span>
+<span class="na">这是单位超时空移动的相关定义</span>
+<span class="na">超时空传送超武硬编码从起点离开0真抵达终点后60帧</span>
+<span class="na">ChronoReinfDelay</span><span class="o">=</span><span class="s">180</span>
+<span class="na">传送到达后僵直180帧，这是任务触发第107条：超时空传送援军的相关定义</span>
+<span class="na">ChronoDistanceFactor</span><span class="o">=</span><span class="s">48</span>
+<span class="na">超时空行动方式传送倒目标点的“速度”(恢复所需的额外时间)不得为0，算法Num(Frames)</span><span class="o">=</span><span class="s">256/ChronoDistanceFactor</span>
+<span class="na">ChronoTrigger</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否让僵直时间和距离相关，是的话，距离越长僵直越久，每格多僵直的时间由ChronoDistanceFactor控制，否则将始终是个恒量</span>
+<span class="na">ChronoMinimumDelay</span><span class="o">=</span><span class="s">16</span>
+<span class="na">超时空移动最小冷冻时间16</span>
+<span class="na">ChronoRangeMinimum</span><span class="o">=</span><span class="s">0</span>
+<span class="na">在这个范围内的超时空移动，均被视为硬直时间为ChronoMinimumDelay</span><span class="o">=</span><span class="s">定义的时间</span>
+<span class="na">以上Chrono相关内容Phobos已允许单位微观定义，并开启了原版未用上的WarpIn动画解除了超武硬编码Delay，以及WarpIn、WarpOut都可以自定义了</span>
+
+<span class="c1">;AmerParaDropInf=E1,GHOST,ENGINEER</span>
+<span class="na">空降部队的种类（每个都需要一个飞机）</span>
+<span class="c1">;AmerParaDropNum=6,6,6</span>
+<span class="na">空降部队对应数目</span>
+<span class="na">在YR里部队的种类数同时也会影响苏军的侦察机数量</span>
+
+<span class="na">Amer美国</span>
+<span class="na">AmerParaDropInf</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">AmerParaDropNum</span><span class="o">=</span><span class="s">8</span>
+
+<span class="na">Ally盟军</span>
+<span class="na">AllyParaDropInf</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">AllyParaDropNum</span><span class="o">=</span><span class="s">6</span>
+
+<span class="na">Sov苏联</span>
+<span class="na">SovParaDropInf</span><span class="o">=</span><span class="s">E2</span>
+<span class="na">SovParaDropNum</span><span class="o">=</span><span class="s">9</span>
+
+<span class="na">Yuri尤里</span>
+<span class="na">YuriParaDropInf</span><span class="o">=</span><span class="s">INIT</span>
+<span class="na">YuriParaDropNum</span><span class="o">=</span><span class="s">6</span>
+
+<span class="na">AnimToInfantry</span><span class="o">=</span><span class="s">BRUTE</span>
+<span class="na">动画可以生成那些步兵单位，可写多个，由art中[Animation] -&gt; MakeInfantry</span><span class="o">=</span><span class="s">调用该列表中的对应对象</span>
+
+<span class="c1">;GEF</span>
+<span class="c1">;************秘密科技实验室小节************</span>
+<span class="na">占领秘密科技实验室后可生产的兵种(遭遇战列表)</span>
+<span class="na">SecretInfantry</span><span class="o">=</span><span class="s">SNIPE,TERROR,DESO,YURI</span>
+<span class="na">SecretUnits</span><span class="o">=</span><span class="s">TNKD,TTNK,DTRUCK</span>
+<span class="na">SecretBuildings</span><span class="o">=</span><span class="s">GTGCAN</span>
+<span class="na">特殊兵种登记，事实就是确实没有支持Aircraft类对象，Ares已重做这套逻辑使用新方式支持，详见说明书</span>
+<span class="na">实际上算法存在问题概率并不均等，建议用Ares语句在建筑上重新微观定义</span>
+
+<span class="c1">;***间谍相关的物品***</span>
+<span class="na">以下三句指定了间谍默认出厂时候的样子</span>
+<span class="na">AlliedDisguise</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">对盟军假装为E1</span>
+<span class="na">SovietDisguise</span><span class="o">=</span><span class="s">E2</span>
+<span class="na">对苏方假装为E2</span>
+<span class="na">ThirdDisguise</span><span class="o">=</span><span class="s">INIT</span>
+<span class="na">对尤里假装为INIT</span>
+
+<span class="na">SpyPowerBlackout</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">进入电场让其停电1000帧</span>
+<span class="na">SpyMoneyStealPercent</span><span class="o">=</span><span class="s">.5</span>
+<span class="na">进入矿场可偷其现金的0.5倍(对方也减少这么多)</span>
+<span class="na">AttackCursorOnDisguise</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">对可进行假装的人/物光标可以变为攻击样式</span>
+<span class="na">DefaultMirageDisguises</span><span class="o">=</span><span class="s">TREE01,TREE02,TREE03,TREE04</span>
+<span class="na">幻影坦克默认伪装类型，填Terrain（地形对象）例如石头、矿井、电线杆等</span>
+<span class="na">InfantryBlinkDisguiseTime</span><span class="o">=</span><span class="s">20</span>
+<span class="na">间谍20帧闪烁一次</span>
+
+<span class="na">MaximumCheerRate</span><span class="o">=</span><span class="s">300</span>
+<span class="na">玩家通过键盘（默认C）或面板下达欢呼指令的间隔</span>
+<span class="na">第一次欢呼也要达到游戏开始经过这里指定的帧数之后</span>
+<span class="c1">;***新AI控制***</span>
+<span class="na">AISafeDistance</span><span class="o">=</span><span class="s">20</span>
+<span class="na">AI集结(53、54号指令)部队距离敌方基地多远，同时适用于自己基地和敌方基地。Ares下集结在友军基地（54号指令）可使用AIFriendlyDistance独立定义，详见说明书</span>
+
+<span class="na">AIMinorSuperReadyPercent</span><span class="o">=</span><span class="s">.7</span>
+<span class="na">当一个铁幕或超时空传送加载达到这个进度后AI才会考虑使用这个超武关联的小队并等待超武就绪</span>
+
+<span class="na">HarvesterTooFarDistance</span><span class="o">=</span><span class="s">5</span>
+<span class="na">ChronoHarvTooFarDistance</span><span class="o">=</span><span class="s">50</span>
+<span class="na">全局控制普通矿车（奴矿用另外的东西）寻矿的有三句，分别是</span>
+<span class="na">TiberiumLongScan（奴矿用SlaveMinerLongScan）</span>
+<span class="na">TiberiumShortScan（奴矿用SlaveMinerShortScan）（奴隶用SlaveMinerSlaveScan）</span>
+<span class="na">HarvesterTooFarDistance（Teleporter用ChronoHarvTooFarDistance ）</span>
+<span class="na">当一个矿车刚采完一格矿时，使用Short的范围来找接下来要采的矿</span>
+<span class="na">当一个矿车倒矿完，他会使用Long的范围来找接下来要采的矿，用TooFar的范围来决定哪个范围外的矿不去考虑</span>
+<span class="na">Long和TooFar没有必然的大小关系</span>
+<span class="na">SlaveMinerScanCorrection是控制奴矿建筑和矿的距离的</span>
+<span class="na">SlaveMinerKickFrameDelay是奴隶在TooFar时呆住多久的</span>
+<span class="na">Ares3.0开始已允许在单位上微观定义</span>
+
+<span class="na">AlliedBaseDefenseCounts</span><span class="o">=</span><span class="s">25,20,6</span>
+<span class="na">SovietBaseDefenseCounts</span><span class="o">=</span><span class="s">25,22,6</span>
+<span class="na">ThirdBaseDefenseCounts</span><span class="o">=</span><span class="s">25,22,6</span>
+<span class="na">三个阵营在(困难、中等、简单)时的防御建筑数量系数。计算公式</span><span class="o">:</span><span class="s">((已有建筑的价格-2000)/1500 * GDIBaseDefenseCoefficient) + 3*(该系数-1)</span>
+<span class="na">AIPickWallDefensePercent</span><span class="o">=</span><span class="s">50,25,10</span>
+<span class="na">(困难、中等、简单)的AI选择围墙来替代防御建筑的概率。仍有需要补围墙的建筑才会生产防御建筑时考虑替换</span>
+<span class="na">AIRestrictReplaceTime</span><span class="o">=</span><span class="s">400</span>
+<span class="na">AI建筑被摧毁后，用电厂/防御建筑/围墙替代被摧毁建筑的时间。(单位</span><span class="o">:</span><span class="s">帧)</span>
+<span class="na">ThreatPerOccupant</span><span class="o">=</span><span class="s">10</span>
+<span class="na">每在可驻军建筑中加入一个兵增加威胁度10</span>
+<span class="na">ApproachTargetResetMultiplier</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">与目标距离超过1.5倍射程则停止追击</span>
+<span class="na">CampaignMoneyDeltaEasy</span><span class="o">=</span><span class="s">0</span>
+<span class="na">选简单级难度将这么多金额添加到所有PlayerControl的所属方正常难度资金总额中，仅地图内置生效</span>
+<span class="na">CampaignMoneyDeltaHard</span><span class="o">=</span><span class="s">0</span>
+<span class="na">选困难级将这么多金额添加到所有PlayerControl的所属方正常难度资金总额中，仅地图内置生效</span>
+<span class="na">GuardAreaTargetingDelay</span><span class="o">=</span><span class="s">36</span>
+<span class="na">区域警戒模式下AI在范围内搜寻目标的延迟为36，最好比下一句大，因为它的范围比下句大了两倍，单位帧</span>
+<span class="na">NormalTargetingDelay</span><span class="o">=</span><span class="s">27</span>
+<span class="na">闲置状态下AI搜索目标的延迟，单位帧。这两句调起来比较尴尬，调小游戏会导致游戏变慢，调大单位会变得比较愣</span>
+<span class="na">AINavalYardAdjacency</span><span class="o">=</span><span class="s">20</span>
+<span class="na">船厂距离AI的建造厂最大不超过20格</span>
+<span class="na">DisabledDisguiseDetectionPercent</span><span class="o">=</span><span class="s">15,5,2</span>
+<span class="na">(困难、中等、简单)的AI发现幻影的几率，这用于每个附近的单位，也就是如果周围一大群单位那么即便这里的数值很低也会被几乎瞬间觉察</span>
+<span class="na">AIAutoDeployFrameDelay</span><span class="o">=</span><span class="s">15,25,100</span>
+<span class="na">(困难、中等、简单)的AI部署/反部署同一个步兵这么多帧后才会再次下令，大概本来WW是用这个避免AI一直部署/反部署大兵导致大兵上蹿下跳的没完的，但是事实证明这最多是缓解而没有解决</span>
+<span class="na">MaximumBuildingPlacementFailures</span><span class="o">=</span><span class="s">3</span>
+<span class="na">电脑摆放3次建筑失败则过PlacementDelay指定的时间再摆放</span>
+<span class="na">失败原因可能是没有空地或临时有单位通过</span>
+<span class="na">仅对Wall</span><span class="o">=</span><span class="s">yes的建筑有效，其他建筑放一次失败就不会继续尝试放置这个建筑</span>
+<span class="na">同时会正常检测目标单元格是否存在与建筑ToOverlay</span><span class="o">=</span><span class="s">的对象相同的覆盖物，以此可以让AI正常的在破损的围墙上建造围墙</span>
+<span class="na">然而由于破损墙体这个逻辑自身的限制，这个“正常检测”反而会出问题，具体见单位词典Wall词条注解</span>
+<span class="na">注：该逻辑仅限遭遇战有效，战役里建筑节点会一直试个不停</span>
+
+<span class="na">TiberiumShortScan</span><span class="o">=</span><span class="s">6</span>
+<span class="na">TiberiumLongScan</span><span class="o">=</span><span class="s">48</span>
+<span class="na">此2句均为矿车找矿设置，TS残留，RA2已使用新的方式替代</span>
+<span class="na">SlaveMinerShortScan</span><span class="o">=</span><span class="s">8</span>
+<span class="na">奴隶矿车本体范围8以内没有矿时则会尝试移动</span>
+<span class="na">SlaveMinerSlaveScan</span><span class="o">=</span><span class="s">14</span>
+<span class="na">每个奴隶的矿区搜索范围</span>
+
+<span class="na">SlaveMinerLongScan</span><span class="o">=</span><span class="s">48</span>
+<span class="na">奴隶矿车侦测矿区距离，若地图中的矿区超过48距离则视为太远，不会尝试移动。</span>
+<span class="na">SlaveMinerScanCorrection</span><span class="o">=</span><span class="s">3</span>
+<span class="na">一个展开的奴隶矿车离最近的矿超过3则需要前进以靠近矿区</span>
+<span class="na">SlaveMinerKickFrameDelay</span><span class="o">=</span><span class="s">150</span>
+<span class="na">当没矿可采时（进入Guard状态）150桢后自动寻找SlaveMinerLongScan范围内有矿的地方</span>
+
+<span class="na">相关具体算法见上面HarvesterTooFarDistance下的讲述，且已写入2025教程附件配套的新版Ares中文chm说明书此逻辑的微观定义页面</span>
+<span class="na">如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的</span>
+
+<span class="na">AISuperDefenseProbability</span><span class="o">=</span><span class="s">90,50,10</span>
+<span class="na">当一个超武瞄准AISDDistance限制区域外发射时AI使用力场护盾的几率（困难，中等，简单）。</span>
+<span class="na">AISuperDefenseFrames</span><span class="o">=</span><span class="s">50</span>
+<span class="na">进入自卫警报的持续时间，持续时间内AI触发使用力场护盾时即使没有就绪也会在这50帧内依旧重复尝试使用立场护盾。</span>
+<span class="na">AISuperDefenseDistance</span><span class="o">=</span><span class="s">12</span>
+<span class="na">对AI的基地中心半径12以内使用超级武器才会触发AI使用力场护盾防御自己。</span>
+
+<span class="na">AI在默认情况下对被心灵控制的敌方部队的使用，会被AI触发小队中的设置覆盖</span>
+<span class="na">AICaptureNormal</span><span class="o">=</span><span class="s">75,5,5,15</span>
+<span class="na">当无任务状态时</span>
+<span class="na">AICaptureWounded</span><span class="o">=</span><span class="s">15,40,40,5</span>
+<span class="na">当单位伤残时</span>
+<span class="na">AICaptureLowPower</span><span class="o">=</span><span class="s">15,5,75,5</span>
+<span class="na">当电力不足时</span>
+<span class="na">AICaptureLowMoney</span><span class="o">=</span><span class="s">15,75,5,5</span>
+<span class="na">当资金不足时</span>
+<span class="na">四个数值分别代表</span><span class="o">:</span><span class="s">加入AI的军队，将其放入回收站，将其放入生化反应炉，进入狩猎模式，如果某个行为执行失败例如选择塞进回收站但实际上不存在回收站那么单位会进入狩猎模式</span>
+<span class="na">AICaptureLowMoneyMark</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">低于2000钱才被上面的标签视为金钱短缺</span>
+<span class="na">AICaptureWoundedMark</span><span class="o">=</span><span class="s">.25</span>
+<span class="na">损达0.25生命才被上面的标签视为伤残状态</span>
+
+<span class="na">PurifierBonus</span><span class="o">=</span><span class="s">.25</span>
+<span class="na">矿石精炼器增加矿石价值的百分比，增值25%</span>
+
+<span class="na">RA2中部分特殊武器的修改在此进行</span>
+<span class="na">DropPodWeapon</span><span class="o">=</span><span class="s">Vulcan2</span>
+<span class="na">空降仓使用的武器是Vulcan2</span>
+<span class="na">释放DropPod时每个单位将要落到的地点都会持续发射该武器</span>
+<span class="na">Ares下已强制内置为[WeaponTypes]中的0</span><span class="o">=</span><span class="s">的对象，因此无需手动注册或挂载</span>
+<span class="na">DropPodHeight</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">空降仓出现的高度是2000</span>
+<span class="na">DropPodSpeed</span><span class="o">=</span><span class="s">75</span>
+<span class="na">空降仓下降的速度是75</span>
+<span class="na">DropPodAngle</span><span class="o">=</span><span class="s">0.79</span>
+<span class="na">空降仓下降角度是0.79</span>
+<span class="na">WW注释中给出两个参考值：0.40为扁平1.18为陡峭</span>
+<span class="na">Phobos已允许在【步兵】上微观设置相关参数，详见说明书</span>
+
+<span class="c1">;悬浮载具特性</span>
+<span class="na">HoverHeight</span><span class="o">=</span><span class="s">120</span>
+<span class="na">地面悬浮单位的高度120lepton</span>
+<span class="na">HoverDampen</span><span class="o">=</span><span class="s">40%</span>
+<span class="na">悬浮载具振动的阻尼效果幅度</span>
+<span class="na">HoverBob</span><span class="o">=</span><span class="s">.04</span>
+<span class="na">垂直晃动间隔时间0.04分钟</span>
+<span class="na">HoverBoost</span><span class="o">=</span><span class="s">150%</span>
+<span class="na">直线移动时的速度为150%原速</span>
+<span class="na">HoverAcceleration</span><span class="o">=</span><span class="s">.02</span>
+<span class="na">开始移动多少分钟后加到满速</span>
+<span class="na">HoverBrake</span><span class="o">=</span><span class="s">.03</span>
+<span class="na">抵达目标多少分钟后完全停止</span>
+<span class="na">BalloonHoverHeight</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">空中悬浮单位高度1000</span>
+<span class="na">BalloonHoverDampen</span><span class="o">=</span><span class="s">20%</span>
+<span class="na">空中悬浮载具振动的阻尼效果幅度</span>
+<span class="na">BalloonHoverBob</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">垂直晃动间隔时间1.2分钟</span>
+<span class="na">BalloonHoverBoost</span><span class="o">=</span><span class="s">150%</span>
+<span class="na">此状态下的速度为150%原速</span>
+<span class="na">BalloonHoverAcceleration</span><span class="o">=</span><span class="s">.04</span>
+<span class="na">开始移动多少分钟后加到满速</span>
+<span class="na">BalloonHoverBrake</span><span class="o">=</span><span class="s">.03</span>
+<span class="na">抵达目标多少分钟后完全停止</span>
+
+<span class="c1">;潜地运动载具特性</span>
+<span class="na">TunnelSpeed</span><span class="o">=</span><span class="s">1</span>
+<span class="na">钻地速度，指钻地运动方式载具向下钻和钻取时转身的速度倍率，使用单位 Speed*此值 求得下潜速度</span>
+<span class="na">地下水平移动速度硬编码7.5，地下水平移动深度硬编码-256</span>
+<span class="na">Phobos已允许微观定义地下移动的水平速度和高度（TunnelSpeed：这对吗？）</span>
+
+
+<span class="c1">;生产 &amp; 电力 效果</span>
+<span class="na">MultipleFactory</span><span class="o">=</span><span class="s">0.8</span>
+<span class="na">每个工厂制造加速原0.8倍时间，在TS中使用ProduceSpeed</span><span class="o">=</span><span class="s">MultipleFactory*(n-1)而在RA2中为直接折扣倍率，也就是0.8下所得倍率为 1, .8, .64, .512 而不是 1, 1, 1.25，Ares允许建筑微观定义</span>
+<span class="na">MinLowPowerProductionSpeed</span><span class="o">=</span><span class="s">.5</span>
+<span class="na">电力不足时能达到的最低生产速度，Ares允许建筑微观定义</span>
+<span class="na">MaxLowPowerProductionSpeed</span><span class="o">=</span><span class="s">.8</span>
+<span class="na">电力不足时能达到的最高生产速度，防止你只少10单位电就掉到很低，Ares允许建筑微观定义</span>
+<span class="na">LowPowerPenaltyModifier</span><span class="o">=</span><span class="s">1</span>
+<span class="na">电力惩罚倍数，此处倍率*缺少的电量得出生产所用时间的实际电力惩罚倍率，Ares允许建筑微观定义</span>
+<span class="na">GDIGateOne</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">盟军闸门</span>
+<span class="na">GDIGateTwo</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">盟军闸门</span>
+<span class="na">原版下闸门只会自动与GAWALL和NAWALL链接，Ares解除了这个限制</span>
+<span class="na">WallTower</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">TS里GDI的防御塔，可以直接建造在覆盖物围墙上（实际检查覆盖物注册表第3个对象）</span>
+<span class="na">Shipyard</span><span class="o">=</span><span class="s">GAYARD,NAYARD,YAYARD</span>
+<span class="na">定义船厂</span>
+<span class="na">NodGateOne</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">苏军闸门</span>
+<span class="na">NodGateTwo</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">苏军闸门</span>
+<span class="na">NodRegularPower</span><span class="o">=</span><span class="s">NAPOWR</span>
+<span class="na">苏军基础电力设施</span>
+<span class="na">NodAdvancedPower</span><span class="o">=</span><span class="s">NANRCT</span>
+<span class="na">苏军拓展电力设施</span>
+<span class="na">GDIPowerPlant</span><span class="o">=</span><span class="s">GAPOWR</span>
+<span class="na">盟军基础电力设施</span>
+<span class="na">GDIPowerTurbine</span><span class="o">=</span><span class="s">GAPOWRUP</span>
+<span class="na">盟军拓展电力设施，TS中为GDI动力涡轮（加载物）</span>
+<span class="na">AIUseTurbineUpgradeProbability</span><span class="w"> </span><span class="o">=</span>
+<span class="na">盟军阵营AI选择为电厂建造GDIPowerTurbine</span><span class="o">=</span><span class="s">指定的加载物升级而不是建造新的GDIPowerPlant=指定的电厂的概率，且该逻辑与NodAdvancedPower不同的是它附带自动搜索己方已有电厂效果。仅对[GDI]也就是原版盟军阵营有效</span>
+<span class="na">GDIHunterSeeker</span><span class="o">=</span><span class="s">GHUNTER</span>
+<span class="na">盟军阵营放出的HunterSeeker，TS残留逻辑，Ares已复原，并可直接在阵营内设定，详见说明书</span>
+<span class="na">NodHunterSeeker</span><span class="o">=</span><span class="s">NHUNTER</span>
+<span class="na">苏军阵营放出的HunterSeeker，TS残留逻辑，Ares已复原，并可直接在阵营内设定，详见说明书</span>
+<span class="na">GDIFirestormGenerator</span><span class="o">=</span><span class="s">GAFIRE</span>
+<span class="na">FS中有一个[SuperWeaponType] -&gt; Type</span><span class="o">=</span><span class="s">Firestorm &amp; UseChargeDrain=yes的超武叫做FireStorm</span>
+<span class="na">这个建筑则是维持FireStorm超武存在</span>
+<span class="na">当此建筑被破坏（或停电）时会检查所属方拥有的其他建筑物以确认是否依然存在FireStorm</span>
+<span class="na">如果所有此建筑均被破坏（或停电）则自动关闭FireStorm系统</span>
+<span class="na">TS残留逻辑，Ares已复原，详见说明书</span>
+<span class="na">ThirdPowerPlant</span><span class="o">=</span><span class="s">YAPOWR</span>
+<span class="na">尤里基础电力设施</span>
+<span class="na">RepairBay</span><span class="o">=</span><span class="s">GADEPT,NADEPT,CAOUTP</span>
+<span class="na">定义修理厂</span>
+<span class="na">BaseUnit</span><span class="o">=</span><span class="s">AMCV,SMCV,PCV</span>
+<span class="na">定义基地车，RA21.0允许多个，RA21.006只能2个YR只能3个，这也是为什么共和国之辉里CN的CMCV不会开局暴毙的原因。Ares重新解除了限制</span>
+<span class="na">HarvesterUnit</span><span class="o">=</span><span class="s">HARV,CMIN</span>
+<span class="na">定义矿车，新阵营的矿车没注册会导致AI无限起矿场</span>
+<span class="na">PadAircraft</span><span class="o">=</span><span class="s">ORCA,BEAG</span>
+<span class="na">定义需要在机场降落的飞机，如果不在这里声明那么会机场没有空位了也仍然可以点击图标而不会灰掉，但是RA2中点击以后会卡在一半的生产进度而不继续</span>
+
+<span class="c1">;Bret的编码部分</span>
+<span class="na">TreeStrength</span><span class="o">=</span><span class="s">200</span>
+<span class="na">地形对象的默认血量，实际上是作为概率计算的除数</span>
+<span class="na">WindDirection</span><span class="o">=</span><span class="s">1</span>
+<span class="na">风向，0-7，0为正北（游戏画面右上）</span>
+<span class="na">TrackedUphill</span><span class="o">=</span><span class="s">1.0</span>
+<span class="na">规定SpeedType</span><span class="o">=</span><span class="s">Track的物体上山速度倍率</span>
+<span class="na">TrackedDownhill</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">规定SpeedType</span><span class="o">=</span><span class="s">Track的物体下山速度倍率</span>
+<span class="na">WheeledUphill</span><span class="o">=</span><span class="s">1.0</span>
+<span class="na">规定SpeedType</span><span class="o">=</span><span class="s">Wheel的物体上山速度倍率</span>
+<span class="na">WheeledDownhill</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">规定SpeedType</span><span class="o">=</span><span class="s">Wheel的物体下山速度倍率</span>
+<span class="na">LeptonsPerSightIncrease</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">高度2000+的物体获得额外视野</span>
+<span class="na">LeptonsPerFireIncrease</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">高度2000+的物体获得额外 射程（取地图高度的绝对值而非开火单位和目标相对高度）</span>
+<span class="na">AttackingAircraftSightRange</span><span class="o">=</span><span class="s">2</span>
+<span class="na">机场起飞的飞机的视野，废弃，请用单位上的Sight定义</span>
+<span class="na">BlendedFog</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">在RA2中无效，决定DirectX绘制FogOfWar时方式为blended还是dithered</span>
+<span class="na">CliffBackImpassability</span><span class="o">=</span><span class="s">2</span>
+<span class="na">在悬崖下多少格内不能造建筑和通行单位</span>
+<span class="na">IceCrackingWeight</span><span class="o">=</span><span class="s">50.0</span>
+<span class="na">这个重量的物体将压裂冰层，TS残留无效</span>
+<span class="na">IceBreakingWeight</span><span class="o">=</span><span class="s">50.0</span>
+<span class="na">这个重量的物体将压碎冰层，TS残留无效</span>
+
+<span class="na">ShipSinkingWeight</span><span class="o">=</span><span class="s">3.0</span>
+<span class="na">海面上的船只Weight高于这个重量的被毁将下沉而非爆炸，沉没速度为硬编码每帧下沉5Leptons直到高度达到-400Leptons结束喂鱼，沉没声音使用载具自身的语句来指定，《2.单位属性rules词典2024.ini》中自寻，如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的</span>
+<span class="na">CloakingStages</span><span class="o">=</span><span class="s">9</span>
+<span class="na">要经过多少层才能进入隐形状态（水下单位下潜本质是隐形）越小越快，每一层对应不同的透明度</span>
+<span class="na">结合单位自身CloakingSpeed规定的每阶段保持多久来计算实际进入隐形的总时长，Ares已允许单位微观定义</span>
+<span class="na">TiberiumTransmogrify</span><span class="o">=</span><span class="s">40</span>
+<span class="na">被泰矿击杀的步兵转化为SmallVisceroid指定的小型器官兽的概率，TS残留，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">TreeFlammability</span><span class="o">=</span><span class="s">0.0</span>
+<span class="na">树木着火几率，TS残留森林大火逻辑无效，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">CraterLevel</span><span class="o">=</span><span class="s">1</span>
+<span class="na">陨石坑深度控制首次出现Craters弹坑时的大小取值0-4</span>
+<span class="c1">;StatisticTimeInterval=30</span>
+<span class="c1">;控制计分板计算数据需要多少秒，TS残留，TS的计分板会有一个计算效果而不是RA2那样直接把数据列出来</span>
+<span class="na">BridgeVoxelMax</span><span class="o">=</span><span class="s">3</span>
+<span class="na">每一段桥被摧毁后最大碎片数目</span>
+<span class="na">WallBuildSpeedCoefficient</span><span class="o">=</span><span class="s">3.0</span>
+<span class="na">墙的建造速度为普通物体制造速度的多少倍</span>
+<span class="na">AllowShroudedSubteranneanMoves</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">钻地单位能否进入黑幕区域，实际无效，仅使用[TechnoType] -&gt; MoveToShroud</span><span class="o">=</span><span class="s">来控制</span>
+<span class="na">AircraftFogReveal</span><span class="o">=</span><span class="s">6</span>
+<span class="na">雷达/机场视野，废弃，请用Sight定义</span>
+<span class="na">MaximumQueuedObjects</span><span class="o">=</span><span class="s">29</span>
+<span class="na">制造栏可以额外预订的生产序列数量为29 ，也就是除了正在生产的单位外可以有29个排在序列中，因此原版中一次可以订购1+29</span><span class="o">=</span><span class="s">30个单位（有一个正在生产）</span>
+<span class="na">MaxWaypointPathLength</span><span class="o">=</span><span class="s">15</span>
+<span class="na">最大路径点15个</span>
+
+<span class="c1">;火风暴防御系统控制，无效，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">ChargeToDrainRatio</span><span class="o">=</span><span class="s">.333</span>
+<span class="na">火风暴语句，UseChargeDrain</span><span class="o">=</span><span class="s">yes的超武激活时间占准备时间的比例</span>
+<span class="na">DamageToFirestormDamageCoefficient</span><span class="o">=</span><span class="s">.1</span>
+<span class="na">火风暴语句，摧毁物体所消耗持续时间的乘数</span>
+
+<span class="c1">;泰伯利亚藤蔓洞参数，TS残留无效（PhobosB39复原了相关逻辑，详见说明书）</span>
+<span class="c1">;VeinholeMonsterStrength=1000</span>
+<span class="c1">;废弃语句，请用VeinholeTypeClass对象的Strength定义而不是全局定义</span>
+<span class="na">VeinholeGrowthRate</span><span class="o">=</span><span class="s">300</span>
+<span class="na">泰伯利亚废矿的生长速度</span>
+<span class="na">VeinholeShrinkRate</span><span class="o">=</span><span class="s">100</span>
+<span class="na">泰伯利亚废矿的收缩速度（矿洞被消灭）</span>
+<span class="na">MaxVeinholeGrowth</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">泰伯利亚废矿最大生长值</span>
+<span class="na">VeinDamage</span><span class="o">=</span><span class="s">0</span>
+<span class="na">泰伯利亚废矿对其上没有ImmuneToVeins的对象的伤害</span>
+<span class="na">VeinholeTypeClass</span><span class="o">=</span><span class="s">VEINTREE</span>
+<span class="na">泰伯利亚藤蔓洞使用的TerrainType</span>
+
+<span class="c1">;-RTO</span>
+<span class="c1">;AI触发加权参数</span>
+<span class="na">AITriggerSuccessWeightDelta</span><span class="o">=</span><span class="s">20</span>
+<span class="na">如果这个触发成功的话触发权重+20(可以写负值)</span>
+<span class="na">AITriggerFailureWeightDelta</span><span class="o">=</span><span class="s">-50</span>
+<span class="na">如果这个触发失败的话触发权重-50(通常是负值)</span>
+<span class="na">AITriggerTrackRecordCoefficient</span><span class="o">=</span><span class="s">1</span>
+<span class="na">触发权重变化系数(建议写1)</span>
+<span class="na">负责[AITriggerTypes]中权重变化的三个数值。计算方法是每当AI的部队执行一次49号指令，就会在该AITrigger中增加AITriggerSuccessWeightDelta的权重。如果被消灭之前没能执行49号指令，则减少AITriggerFailureWeightDelta*AITriggerTrackRecordCoefficient的权重。</span>
+
+<span class="na">----------↓威胁值相关</span><span class="o">:</span><span class="s">（By马王神）↓----------</span>
+<span class="c1">; default threat evaluation controls</span>
+<span class="na">MyEffectivenessCoefficientDefault</span><span class="o">=</span><span class="s">num		</span><span class="c1">;当AI的单位与威胁等级高于自身的目标交战时，会在计算威胁时乘以这个系数。帮助AI恃强凌弱。</span>
+<span class="na">TargetEffectivenessCoefficientDefault</span><span class="o">=</span><span class="s">num	</span><span class="c1">;当AI的单位与威胁等级高于自身的目标交战时，会在计算威胁时乘以这个系数。防止AI以卵击石。</span>
+<span class="na">TargetSpecialThreatCoefficientDefault</span><span class="o">=</span><span class="s">num	</span><span class="c1">;当AI目标具有SpecialThreatValue时，会在计算威胁时考虑这个系数。</span>
+<span class="na">TargetStrengthCoefficientDefault</span><span class="o">=</span><span class="s">num		</span><span class="c1">;当AI的单位将目标指向生命比自己高的单位时，会根据敌方生命百分比考虑这个系数。</span>
+<span class="na">TargetDistanceCoefficientDefault</span><span class="o">=</span><span class="s">num		</span><span class="c1">;当AI的单位选择目标时，会根据距离考虑这个系数。</span>
+<span class="c1">; defaults for dumb threat evaluation		;与default threat evaluation controls基本相同，但是适用于HasStupidGuardMode=yes的单位。</span>
+<span class="na">DumbMyEffectivenessCoefficient</span><span class="o">=</span><span class="s">num</span>
+<span class="na">DumbTargetEffectivenessCoefficient</span><span class="o">=</span><span class="s">num</span>
+<span class="na">DumbTargetSpecialThreatCoefficient</span><span class="o">=</span><span class="s">num</span>
+<span class="na">DumbTargetStrengthCoefficient</span><span class="o">=</span><span class="s">num</span>
+<span class="na">DumbTargetDistanceCoefficient</span><span class="o">=</span><span class="s">num</span>
+<span class="na">EnemyHouseThreatBonus</span><span class="o">=</span><span class="s">num					</span><span class="c1">;敌方目标威胁系数</span>
+<span class="na">以上数值都不是百分数，而官方给的数值却是按百分数填的。都除以100可能会获得较为明显的效果。</span>
+
+<span class="na">附</span><span class="o">:</span><span class="s">威胁值计算公式</span>
+<span class="na">float Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Attacker&#39;s best weapon&#39;s Verses against Defender * Target Effectiveness</span><span class="c1">;</span>
+
+<span class="na">if(Attacker is currently targeting Defender) { Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat * (-1)}</span>
+
+<span class="na">float tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Special Threat Value * Special Threat Coefficient</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">if(Defender is currently considering Attacker owner house as the Enemy House) {Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + [General]→EnemyHouseThreatBonus=}</span>
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Defender&#39;s best weapon&#39;s Verses against Attacker * Self Effectiveness</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Target Strength * Attacker current health percentage</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Target Distance * Distance between Defender and Attacker</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + 100000.0</span><span class="c1">;</span>
+
+<span class="na">粗(JI)翻：</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">攻击单位武器对目标的Versus * TargetEffectiveness</span><span class="c1">;</span>
+<span class="na">如果进攻者已经在攻击目标，Threat</span><span class="o">=</span><span class="s">Threat * (-1)</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">单位的SpecialThreatValue * TargetSpecialThreatCoefficient</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">如果AI作为防御方把进攻者视为敌对方，Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + EnemyHouseThreatBonus</span><span class="c1">;</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">防御方武器对进攻者的Versus * MyEffectiveness</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">TargetStrengthCoefficient * 攻击者当前的生命百分比</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">tempValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">TargetDistanceCoefficient * 防御者和攻击者之间的距离</span><span class="c1">;</span>
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + tempValue</span><span class="c1">;</span>
+
+<span class="na">Threat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Threat + 100000.0</span><span class="c1">;</span>
+<span class="na">----------↑威胁值相关</span><span class="o">:</span><span class="s">（By马王神）↑----------</span>
+
+<span class="c1">;一些探照灯控制</span>
+<span class="na">SpotlightSpeed</span><span class="o">=</span><span class="s">.015</span>
+<span class="na">探照灯旋转速度，以弧度为单位</span>
+<span class="na">SpotlightMovementRadius</span><span class="o">=</span><span class="s">2000</span>
+<span class="na">探照灯范围参数，写0就是正圆</span>
+<span class="na">SpotlightLocationRadius</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">探照灯旋转相对建筑的距离</span>
+<span class="na">SpotlightAcceleration</span><span class="o">=</span><span class="s">.0025</span>
+<span class="na">探照灯旋转的加速度，以弧度为单位</span>
+<span class="na">SpotlightAngle</span><span class="o">=</span><span class="s">.5</span>
+<span class="na">探照灯旋转角度（弧度）6.3为完整圆圈</span>
+
+<span class="c1">;雷达事件控制器</span>
+<span class="c1">;事件种类</span>
+<span class="c1">;(1)GenericCombatEvent</span>
+<span class="na">战斗事件</span>
+<span class="c1">;(2)GenericNoncombatEvent</span>
+<span class="na">非战斗事件</span>
+<span class="c1">;(3)DropzoneEvent</span>
+<span class="na">TS空投区域标注</span>
+<span class="c1">;(4)BaseUnderAttackEvent</span>
+<span class="na">建筑被攻击事件</span>
+<span class="c1">;(5)HarvesterUnderAttackEvent</span>
+<span class="na">矿车被攻击事件</span>
+<span class="c1">;(6)EnemyObjectSensedEvent</span>
+<span class="na">探测到敌方物体事件</span>
+<span class="na">此外还有如下事件，序号对应下面三个语句每个逗号分开的值</span>
+<span class="na">(7)UnitProducedEvent</span>
+<span class="na">单位生产事件</span>
+<span class="na">(8)UnitLostEvent</span>
+<span class="na">单位被消灭事件</span>
+<span class="na">(9)UnitRepairedEvent</span>
+<span class="na">单位被修复事件</span>
+<span class="na">(10)BuildingInfiltratedEvent</span>
+<span class="na">建筑被渗透事件</span>
+<span class="na">(11)BuildingCapturedEvent</span>
+<span class="na">建筑被占领事件</span>
+<span class="na">(12)BeaconPlacedEvent</span>
+<span class="na">信标放出，用于联机</span>
+<span class="na">(13)SuperWeaponDetectedEvent</span>
+<span class="na">发现超武事件</span>
+<span class="na">(14)SuperWeaponActivatedEvent</span>
+<span class="na">激活超武事件</span>
+<span class="na">(15)BridgeRepairedEvent</span>
+<span class="na">桥被修好事件</span>
+<span class="na">(16)GarrisonedAbandonedEvent</span>
+<span class="na">要塞被迫放弃(红血)事件</span>
+<span class="na">(17)AllyBaseAttackedEvent</span>
+<span class="na">盟国被攻击事件</span>
+<span class="na">RadarEventSuppressionDistances</span><span class="o">=</span><span class="s">8,8,8,8,8,6</span>
+<span class="na">雷达过这么长时间再汇报</span>
+<span class="na">RadarEventVisibilityDurations</span><span class="o">=</span><span class="s">200,200,200,200,200,200</span>
+<span class="na">雷达事件可见保持时间</span>
+<span class="na">RadarEventDurations</span><span class="o">=</span><span class="s">400,400,400,400,400,400</span>
+<span class="na">雷达事件的保留时间</span>
+<span class="na">FlashFrameTime</span><span class="o">=</span><span class="s">7</span>
+<span class="na">闪烁一次的时间</span>
+<span class="na">RadarCombatFlashTime</span><span class="o">=</span><span class="s">49</span>
+<span class="na">总闪烁时间(为闪烁时间奇数倍)</span>
+<span class="na">RadarEventMinRadius</span><span class="o">=</span><span class="s">8</span>
+<span class="na">由被捕捉的目标到雷达上所产生捕捉目标之间的距离</span>
+<span class="na">RadarEventSpeed</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">雷达所捕捉的目标在雷达操作者屏幕上的运行速度</span>
+<span class="na">RadarEventRotationSpeed</span><span class="o">=</span><span class="s">.05</span>
+<span class="na">雷达所捕捉的目标在雷达操作者屏幕上的旋转速度</span>
+<span class="na">RadarEventColorSpeed</span><span class="o">=</span><span class="s">.1</span>
+<span class="na">雷达所捕捉的目标颜色改変的速率</span>
+<span class="na">RevealTriggerRadius</span><span class="o">=</span><span class="s">9</span>
+<span class="na">显示路径点周围区域触发所揭示的视野范围，最大为11，单位格</span>
+<span class="c1">;粒子系统与Voxel碎片的ID支托</span>
+<span class="na">ExplosiveVoxelDebris</span><span class="o">=</span><span class="s">GASTANK,PIECE</span>
+<span class="na">爆炸产生的Voxel碎片【列表】</span>
+<span class="na">TireVoxelDebris</span><span class="o">=</span><span class="s">TIRE</span>
+<span class="na">爆出的VXL轮胎【名称】</span>
+<span class="na">ScrapVoxelDebris</span><span class="o">=</span><span class="s">PIECE</span>
+<span class="na">爆出的VXL金属碎片【名称】</span>
+<span class="na">OKBuildingSmokeSystem</span><span class="o">=</span><span class="s">SmokeStackSys</span>
+<span class="na">建筑的烟雾粒子名称</span>
+<span class="na">DamagedBuildingSmokeSystem</span><span class="o">=</span><span class="s">SmallSmokeSys</span>
+<span class="na">被伤害的建筑烟雾粒子名称</span>
+<span class="na">DamagedUnitSmokeSystem</span><span class="o">=</span><span class="s">VSSmokeSys</span>
+<span class="na">被伤害的载具烟雾粒子名称</span>
+<span class="na">DebrisSmokeSystem</span><span class="o">=</span><span class="s">VSSmokeSys</span>
+<span class="na">建筑倒塌的VXL烟雾名称</span>
+
+<span class="c1">;此处指定了先决条件组</span>
+<span class="na">PrerequisitePower</span><span class="o">=</span><span class="s">GAPOWR,NAPOWR,NANRCT,YAPOWR</span>
+<span class="na">注册电场</span>
+<span class="na">PrerequisiteFactory</span><span class="o">=</span><span class="s">GAWEAP,NAWEAP,YAWEAP</span>
+<span class="na">注册战车工厂</span>
+<span class="na">PrerequisiteBarracks</span><span class="o">=</span><span class="s">NAHAND,GAPILE,YABRCK</span>
+<span class="na">注册兵营</span>
+<span class="na">PrerequisiteRadar</span><span class="o">=</span><span class="s">GAAIRC,NARADR,AMRADR,NAPSIS</span>
+<span class="na">注册雷达</span>
+<span class="na">PrerequisiteTech</span><span class="o">=</span><span class="s">GATECH,NATECH,YATECH</span>
+<span class="na">注册高科</span>
+<span class="na">PrerequisiteProc</span><span class="o">=</span><span class="s">GAREFN,NAREFN,YAREFN</span>
+<span class="na">注册矿场</span>
+<span class="na">PrerequisiteProcAlternate</span><span class="o">=</span><span class="s">SMIN</span>
+<span class="na">注册被视为矿场的载具，仅限一个，添加更多需要使用Ares的GenericPrerequisites逻辑</span>
+
+<span class="c1">;TS狩猎者逻辑，Ares已复原，见Ares说明书</span>
+<span class="na">HunterSeekerDetonateProximity</span><span class="o">=</span><span class="s">150</span>
+<span class="na">能够引爆目标所需的Lepton</span>
+<span class="na">HunterSeekerDescendProximity</span><span class="o">=</span><span class="s">700</span>
+<span class="na">距离目标开始下降的Lepton</span>
+<span class="na">HunterSeekerAscentSpeed</span><span class="o">=</span><span class="s">40</span>
+<span class="na">爬升时的飞行速度</span>
+<span class="na">HunterSeekerDescentSpeed</span><span class="o">=</span><span class="s">50</span>
+<span class="na">降低高度时的速度</span>
+<span class="na">HunterSeekerEmergeSpeed</span><span class="o">=</span><span class="s">6</span>
+<span class="na">从建筑中发射出去时的初始速度</span>
+
+<span class="c1">;优化的威胁评级体系，适当设置可以防止AI按生成ID顺序寻敌而不是距离</span>
+<span class="c1">; 默认威胁评估控制</span>
+<span class="na">MyEffectivenessCoefficientDefault</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">TargetEffectivenessCoefficientDefault</span><span class="o">=</span><span class="s">-2.00</span>
+<span class="na">TargetSpecialThreatCoefficientDefault</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">TargetStrengthCoefficientDefault</span><span class="o">=</span><span class="s">-2.00</span>
+<span class="na">TargetDistanceCoefficientDefault</span><span class="o">=</span><span class="s">-0.10</span>
+
+<span class="c1">; 默认愚蠢威胁评估控制</span>
+<span class="na">DumbMyEffectivenessCoefficient</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">DumbTargetEffectivenessCoefficient</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">DumbTargetSpecialThreatCoefficient</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">DumbTargetStrengthCoefficient</span><span class="o">=</span><span class="s">2.00</span>
+<span class="na">DumbTargetDistanceCoefficient</span><span class="o">=</span><span class="s">-0.1</span>
+
+<span class="na">EnemyHouseThreatBonus</span><span class="o">=</span><span class="s">4.00</span>
+
+<span class="na">相关说明及计算公式见AITriggerTrackRecordCoefficient条目下方引述</span>
+<span class="na">除EnemyHouseThreatBonus外，上面两组数据根据单位HasStupidGuardMode的不同决定使用那一组，也可以在单位上定义</span>
+
+<span class="c1">;在此列出单位上与上面两组值对应的标签名</span>
+<span class="na">MyEffectivenessCoefficient</span><span class="o">=</span>
+<span class="na">TargetEffectivenessCoefficient</span><span class="o">=</span>
+<span class="na">TargetSpecialThreatCoefficient</span><span class="o">=</span>
+<span class="na">TargetStrengthCoefficient</span><span class="o">=</span>
+<span class="na">TargetDistanceCoefficient</span><span class="o">=</span>
+
+<span class="c1">;***动画标签***</span>
+<span class="na">DamageFireTypes</span><span class="o">=</span><span class="s">FIRE01,FIRE02,FIRE03</span>
+<span class="na">残血的建筑着火的火焰样式，建筑被损伤到[AudioVisual] -&gt; ConditionYellow</span><span class="o">=</span><span class="s">的比率时开始播放，若修复则立即移除动画</span>
+<span class="na">TreeFire</span><span class="o">=</span><span class="s">FIRE2,FIRE1</span>
+<span class="na">TS残留森林火灾逻辑无效，拥有[Warhead] -&gt; Sparky</span><span class="o">=</span><span class="s">yes的弹头点燃树木时的动画，Ares已复原，与TS同样仅使用前两个动画，详见说明书</span>
+<span class="na">OnFire</span><span class="o">=</span><span class="s">FIRE3,FIRE2,FIRE1</span>
+<span class="na">建筑被Sparky</span><span class="o">=</span><span class="s">yes的弹头损伤到[AudioVisual] -&gt; ConditionRed=的比率时的动画，原版不存在定义因而导致拥有[Warhead] -&gt; Sparky=yes的弹头攻击建筑到红血会崩溃</span>
+<span class="na">这并不是单纯是红血版本的[General] -&gt; DamageFireTypes</span><span class="o">=</span><span class="s">列表，这是Sparky逻辑的一部分，对应的这里的动画如果播放时间足够长那么并不会因为建筑维修回血而消失</span>
+<span class="na">对于[General] -&gt; OnFire</span><span class="o">=</span><span class="s">列表中三个动画的选用遵循下述规则：</span>
+<span class="na">为每个建筑从 [0,长+宽+5] 的域内抽取一个数值</span>
+<span class="w">      </span><span class="na">[1,5] 选择第一个动画</span>
+<span class="w">      </span><span class="na">[6,8] 选择第二个动画</span>
+<span class="na">{9}         选择第三个动画</span>
+<span class="na">{0}∪(9,+∞) 无动画</span>
+<span class="na">这代表[BuildingImage] -&gt; Foundation</span><span class="o">=</span><span class="s">过小的建筑可能只能在第一个动画和无动画间随机</span>
+<span class="na">SmallFire</span><span class="o">=</span><span class="s">FIRE3</span>
+<span class="na">TS纵火武器逻辑，Ares已复原，详见说明书</span>
+<span class="na">LargeFire</span><span class="o">=</span><span class="s">FIRE2</span>
+<span class="na">TS纵火武器逻辑，Ares已复原，详见说明书</span>
+<span class="na">OreTwinkle</span><span class="o">=</span><span class="s">TWNK1</span>
+<span class="na">矿石的闪光动画，在RA2中这个标签在[AudioVisual]下，YR中才移到[General]中</span>
+<span class="na">BarrelExplode</span><span class="o">=</span><span class="s">EXPLOLRG</span>
+<span class="na">矿物爆炸动画</span>
+<span class="na">BarrelDebris</span><span class="o">=</span><span class="s">GASTANK,PIECE</span>
+<span class="na">爆炸产生的Voxel碎片</span>
+<span class="na">BarrelParticle</span><span class="o">=</span><span class="s">SmallGreySSys</span>
+<span class="na">爆炸产生的粒子系统</span>
+<span class="na">NukeTakeOff</span><span class="o">=</span><span class="s">NUKETO</span>
+<span class="na">核弹起飞气浪动画，原版下该动画硬编码ZAdjust</span><span class="o">=</span><span class="s">-100，Ares已允许正常设定</span>
+<span class="na">Wake</span><span class="o">=</span><span class="s">WAKE1</span>
+<span class="na">单位在水中移动留下的波纹的图象，碎片飞行过程中也会绘制在其正下方的水面上，以及被乌贼拍打、沉江喂鱼时也使用，Phobos已允许微观指定和分离定义</span>
+<span class="na">DropPod</span><span class="o">=</span><span class="s">DROPPOD,DROPPOD2</span>
+<span class="na">空降仓落地图象，TS残留无效，Ares已复原相关逻辑，详见说明书</span>
+<span class="na">DeadBodies</span><span class="o">=</span><span class="s">DEATH_A,DEATH_B,DEATH_C,DEATH_D,DEATH_E,DEATH_F</span>
+<span class="na">步兵常规死亡地面留下的尸骨动画，可在单位上微观定义覆盖全局</span>
+<span class="na">MetallicDebris</span><span class="o">=</span><span class="s">DBRIS1LG,DBRIS2LG,DBRIS3LG,DBRIS4LG,DBRIS5LG,DBRIS6LG,DBRIS7LG,DBRIS8LG,DBRIS9LG,DBRS10LG,DBRIS1SM,DBRIS2SM,DBRIS3SM,DBRIS4SM,DBRIS5SM,DBRIS6SM,DBRIS7SM,DBRIS8SM,DBRIS9SM,DBRS10SM</span>
+<span class="na">爆炸产生的金属碎片名</span>
+<span class="na">BridgeExplosions</span><span class="o">=</span><span class="s">TWLT026,TWLT036,TWLT050,TWLT070</span>
+<span class="na">桥梁破坏动画</span>
+<span class="na">IonBlast</span><span class="o">=</span><span class="s">RING1</span>
+<span class="na">离子炮气波动画，YR下也作为基因突变超武动画</span>
+<span class="na">IonBeam</span><span class="o">=</span><span class="s">IONBEAM</span>
+<span class="na">离子炮光束，与上句均用于TS离子炮超武，RA2下仅能使用地编94号Action触发</span>
+<span class="na">WeatherConClouds</span><span class="o">=</span><span class="s">WCCLOUD1,WCCLOUD2,WCCLOUD3</span>
+<span class="na">闪电风暴云的动画</span>
+<span class="na">WeatherConBolts</span><span class="o">=</span><span class="s">WCLBOLT1,WCLBOLT2,WCLBOLT3</span>
+<span class="na">闪电风暴闪电的动画，WCLBOLT2在原版中未被注册，Ares下所有rules中调用的动画都需要严格注册，可换用顶端链接标准INI</span>
+<span class="na">WeatherConBoltExplosion</span><span class="o">=</span><span class="s">EXPLOLB</span>
+<span class="na">闪电风暴弹头的动画，同时非Ares下也会覆盖LightningWarhead所指定弹头的AnimList设置</span>
+
+<span class="c1">;心灵支配控制</span>
+<span class="na">DominatorWarhead</span><span class="o">=</span><span class="s">DominatorWH</span>
+<span class="na">心灵支配杀伤弹头</span>
+<span class="na">DominatorDamage</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">心灵控制器杀伤效果伤害值</span>
+<span class="na">DominatorCaptureRange</span><span class="o">=</span><span class="s">1</span>
+<span class="na">心灵控制器对单位控制的范围</span>
+<span class="na">DominatorFirstAnim</span><span class="o">=</span><span class="s">PDFXCLD</span>
+<span class="na">心灵控制器动画1，开始时播放，尤里大头</span>
+<span class="na">DominatorSecondAnim</span><span class="o">=</span><span class="s">PDFXLOC</span>
+<span class="na">心灵控制器动画2，生效时播放，心灵波</span>
+<span class="na">DominatorFireAtPercentage</span><span class="o">=</span><span class="s">20</span>
+<span class="na">到总桢数的20%的时候才实际生效</span>
+<span class="na">ChronoPlacement</span><span class="o">=</span><span class="s">CHRONOAR</span>
+<span class="na">选择好转换前的地点用这个动画</span>
+<span class="na">ChronoBeam</span><span class="o">=</span><span class="s">CHRONOBM</span>
+<span class="na">转换时的动画，开发阶段废弃语句，无效</span>
+<span class="na">ChronoBlast</span><span class="o">=</span><span class="s">CHRONOFD</span>
+<span class="na">单位被转换前的地点的动画</span>
+<span class="na">ChronoBlastDest</span><span class="o">=</span><span class="s">CHRONOTG</span>
+<span class="na">转换后的地点用这个动画</span>
+<span class="na">WarpIn</span><span class="o">=</span><span class="s">WARPIN</span>
+<span class="na">超时空运动方式【单位】移动【来】的动画，原版无效，用下一句，Phobos已支持，并允许在单位上微观定义WarpIn</span>
+<span class="na">WarpOut</span><span class="o">=</span><span class="s">WARPOUT</span>
+<span class="na">超时空运动方式【单位】移动【走】的动画，包括超时空【超武】移动【来和走】单位的动画，Phobos允许在单位上使用WarpOut与WarpAway分别对应【单位】移动【走】和【超武】移动【走】的情况</span>
+<span class="na">WarpAway</span><span class="o">=</span><span class="s">WARPAWAY</span>
+<span class="na">超时空【弹头】抹除物体的动画，Ares允许弹头微观定义，全局WarpAway并不影响超时空【超武】移动单位的动画，需要全局WarpOut或Phobos在单位上微观定义的WarpAway标签</span>
+<span class="na">IronCurtainInvokeAnim</span><span class="o">=</span><span class="s">IRONBLST</span>
+<span class="na">铁幕效果动画</span>
+<span class="na">ForceShieldInvokeAnim</span><span class="o">=</span><span class="s">FORCSHLD</span>
+<span class="na">力场护盾效果动画</span>
+<span class="na">WeaponNullifyAnim</span><span class="o">=</span><span class="s">IRONFX</span>
+<span class="na">铁幕加身后被攻击动画，仅非AOE连带杀伤的直接目标触发</span>
+<span class="na">ChronoSparkle1</span><span class="o">=</span><span class="s">CHRONOSK</span>
+<span class="na">超时空移动解除僵直前的动画</span>
+<span class="na">拥有Temporal</span><span class="o">=</span><span class="s">yes的弹头冻结目标时会有24帧的延迟</span>
+<span class="na">拥有Temporal</span><span class="o">=</span><span class="s">yes的弹头冻结建筑时如果建筑可驻军则在每个MuzzleFlash处播放</span>
+<span class="na">Phobos已允许【全局】定义后两条</span>
+
+<span class="na">以下7*2行对应InfDeath</span><span class="o">=</span><span class="s">的3-10</span>
+<span class="na">InfantryExplode</span><span class="o">=</span><span class="s">S_BANG34</span>
+<span class="na">单位爆炸动画，也是Cyborg残血和步兵在空中被击杀的动画</span>
+<span class="na">FlamingInfantry</span><span class="o">=</span><span class="s">FLAMEGUY</span>
+<span class="na">步兵着火死动画</span>
+<span class="na">———InfantryElectrocuted</span><span class="o">=</span><span class="s">ELECTRO</span>
+<span class="na">———Ares新增InfDeath</span><span class="o">=</span><span class="s">5死亡动画定义，原版强制使用[Animations]的第二个</span>
+<span class="na">InfantryHeadPop</span><span class="o">=</span><span class="s">YURIDIE</span>
+<span class="na">尤里造成的大脑爆炸死动画</span>
+<span class="na">InfantryNuked</span><span class="o">=</span><span class="s">NUKEDIE</span>
+<span class="na">步兵被辐射死动画</span>
+<span class="na">InfantryVirus</span><span class="o">=</span><span class="s">VIRUSD</span>
+<span class="na">步兵被病毒侵袭导致爆炸的动画</span>
+<span class="na">InfantryMutate</span><span class="o">=</span><span class="s">GENDEATH</span>
+<span class="na">基因变异为狂兽人的动画</span>
+<span class="na">InfantryBrute</span><span class="o">=</span><span class="s">BRUTDIE</span>
+<span class="na">被狂兽人砸死动画</span>
+
+<span class="na">Behind</span><span class="o">=</span><span class="s">BEHIND</span>
+<span class="na">物体被挡在其他物体后的标注动画，可在ESC开关</span>
+<span class="na">MoveFlash</span><span class="o">=</span><span class="s">RING</span>
+<span class="na">光标选择物体命令他移动的光标动画，在移动的目标单元格播放</span>
+<span class="na">Parachute</span><span class="o">=</span><span class="s">PARACH</span>
+<span class="na">降落伞图象动画，空降伞兵会用，Ares允许单位微观定义</span>
+<span class="na">BombParachute</span><span class="o">=</span><span class="s">PARABOMB</span>
+<span class="na">空中落下的炸弹与Parachuted抛射体的降落伞动画</span>
+<span class="na">DropZoneAnim</span><span class="o">=</span><span class="s">BEACON</span>
+<span class="na">触发结果中DropZone的光标动画，TS残留，地编可触发但没什么用</span>
+<span class="na">EMPulseSparkles</span><span class="o">=</span><span class="s">EMP_FX01</span>
+<span class="na">被EMP单位身上附加的动画，TS残留，Ares已复原并允许微观定义，详见说明书</span>
+
+<span class="c1">;*******Jumpjet 飞行规则*******</span>
+<span class="c1">;JUMPJET的运动模式参数的全局默认值</span>
+<span class="k">[JumpjetControls]</span>
+<span class="na">TurnRate</span><span class="o">=</span><span class="s">4</span>
+<span class="na">转弯速度4</span>
+<span class="na">Speed</span><span class="o">=</span><span class="s">14</span>
+<span class="na">直行速度14</span>
+<span class="na">Climb</span><span class="o">=</span><span class="s">5</span>
+<span class="na">爬升速度5</span>
+<span class="na">CruiseHeight</span><span class="o">=</span><span class="s">500</span>
+<span class="na">巡航高度500JumpjetHeight的默认值Acceleration</span><span class="o">=</span><span class="s">2加速度2</span>
+<span class="na">WobblesPerSecond</span><span class="o">=</span><span class="s">.15</span>
+<span class="na">每秒浮动0.15次</span>
+<span class="na">WobbleDeviation</span><span class="o">=</span><span class="s">40</span>
+<span class="na">浮动幅度40</span>
+<span class="na">CloakDetectionRadius</span><span class="w"> </span><span class="o">=</span>
+<span class="na">Jumpjet单位反隐形的半径，这个语句仅在TS的资料片FS中存在，在RA2及RA2的资料片YR中是根本不存在的，所以写了也没用，请按无效语句对待</span>
+
+<span class="c1">;*******超武控制*******</span>
+<span class="k">[SpecialWeapons]</span>
+<span class="na">NukeWarhead</span><span class="o">=</span><span class="s">Nuke</span>
+<span class="na">RA1残留语句，无效，RA2核弹定义见名为[NukePayload]的武器</span>
+<span class="na">NukeDown</span><span class="o">=</span><span class="s">NukeDown</span>
+<span class="na">RA1残留语句，无效</span>
+<span class="na">NukeProjectile</span><span class="o">=</span><span class="s">NukeUp</span>
+<span class="na">RA1残留语句，无效</span>
+<span class="na">EMPulseWarhead</span><span class="o">=</span><span class="s">EMPuls</span>
+<span class="na">TS残留语句，无效</span>
+<span class="na">EMPulseProjectile</span><span class="o">=</span><span class="s">PulsPr</span>
+<span class="na">TS残留语句，无效</span>
+<span class="na">MutateWarhead</span><span class="o">=</span><span class="s">Mutate</span>
+<span class="na">基因突变的弹头</span>
+<span class="na">MutateExplosionWarhead</span><span class="o">=</span><span class="s">MutateExplosion</span>
+<span class="na">基因突变(爆炸)的弹头</span>
+<span class="na">基因突变的两个标签如何使用见MutateExplosion</span><span class="o">=</span><span class="s">一句的规则</span>
+
+<span class="c1">;*******音频 / 视频 规则*******</span>
+<span class="k">[AudioVisual]</span>
+<span class="na">DetailMinFrameRateNormal</span><span class="o">=</span><span class="s">15</span>
+<span class="na">如果帧速率(FPS)低于15那么各种高级视觉效果将被关闭，例如中速以下会禁用动画透明和粒子显示等</span>
+<span class="na">DetailMinFrameRateMovie</span><span class="o">=</span><span class="s">20</span>
+<span class="na">同上，但用于小电影</span>
+<span class="na">DetailBufferZoneWidth</span><span class="o">=</span><span class="s">5</span>
+<span class="na">要恢复效果，FPS必须等于或超过 MinFrameRate 加上此值</span>
+
+<span class="na">LineTrailColorOverride</span><span class="o">=</span><span class="s">0,0,0</span>
+<span class="na">小导弹的线性尾烟颜色</span>
+<span class="na">WW注：仅用于地图，Rules中不应修改</span>
+<span class="na">ChronoBeamColor</span><span class="o">=</span><span class="s">128,200,255</span>
+<span class="na">超时空兵光线的颜色，也就是[Warhead] -&gt; Temporal</span><span class="o">=</span><span class="s">yes时[WeaponType] -&gt; IsRadBeam=yes(辐射波)开启所绘制的颜色</span>
+<span class="na">MagnaBeamColor</span><span class="o">=</span><span class="s">255,200,255</span>
+<span class="na">磁电坦克光波的颜色，然而疑似WW在YR开发阶段留下的，实际上为硬编码颜色，Ares已允许微观定义包括但不限于[WeaponType] -&gt; IsMagBeam</span><span class="o">=</span><span class="s">yes所绘制波的颜色</span>
+<span class="na">OreTwinkleChance</span><span class="o">=</span><span class="s">30</span>
+<span class="na">矿石闪光的几率，进入地图时，每个有矿石的单元格有1/30的几率获得[General] -&gt; OreTwinkle</span><span class="o">=</span><span class="s">指定的闪烁动画</span>
+<span class="na">CreateInfantrySound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">制造新步兵时的声音</span>
+<span class="na">CreateUnitSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">制造新单位时的声音，可于各类生产建筑上微观定义，哪怕实际生产的不是载具类，也都用这个标签，属于WW设计上的一种简化</span>
+<span class="na">CreateAircraftSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">制造新战机(停于机场)时的声音</span>
+<span class="na">IFVTransformSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">IFV转换炮塔时播放的声音，原版中实际使用单位上的EnterTransportSound</span>
+<span class="na">SpySatActivationSound</span><span class="o">=</span><span class="s">SpyUplinkOn</span>
+<span class="na">连接上间谍卫星时的声音</span>
+<span class="na">SpySatDeactivationSound</span><span class="o">=</span><span class="s">SpyUplinkOff</span>
+<span class="na">间谍卫星被切断连接时的声音</span>
+<span class="na">PsychicSensorDetectSound</span><span class="o">=</span><span class="s">PsychicSensorDetects</span>
+<span class="na">心灵探测器被攻击的声音，全局被注释的PsychicSensorDetectAttach是Westwood的错误拼写且即便恢复使用也并不读取</span>
+<span class="na">UpgradeVeteranSound</span><span class="o">=</span><span class="s">UpgradeVeteran</span>
+<span class="na">升级为老兵时的声音</span>
+<span class="na">UpgradeEliteSound</span><span class="o">=</span><span class="s">UpgradeElite</span>
+<span class="na">升级为精英时的声音</span>
+<span class="na">BaseUnderAttackSound</span><span class="o">=</span><span class="s">BaseUnderAttackSiren</span>
+<span class="na">建筑被攻击的声音</span>
+<span class="na">BuildingGarrisonedSound</span><span class="o">=</span><span class="s">BuildingGarrisoned</span>
+<span class="na">建筑中驻军时的声音</span>
+<span class="na">BuildingRepairedSound</span><span class="o">=</span><span class="s">BuildingRepaired</span>
+<span class="na">建筑被修复时的声音</span>
+<span class="na">CheerSound</span><span class="o">=</span><span class="s">Cheer</span>
+<span class="na">欢呼的声音</span>
+<span class="na">PlaceBeaconSound</span><span class="o">=</span><span class="s">BeaconPlaced</span>
+<span class="na">心灵信标建立时的声音</span>
+<span class="na">BuildingAbandonedSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">指定CanBeOccupied</span><span class="o">=</span><span class="s">yes建筑被放弃时的声音</span>
+<span class="na">DirectRockingCoefficient</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">被DirectRocker弹头的武器冲击后单位掀起的速度是普通Rocker的1.5倍</span>
+<span class="na">FallBackCoefficient</span><span class="o">=</span><span class="s">0.1</span>
+<span class="na">被DirectRocker弹头的武器冲击后单位回落的速度是普通Rocker的0.1倍</span>
+
+<span class="na">LaserTargetColor</span><span class="o">=</span><span class="s">4</span>
+<span class="na">召唤米格飞机的时给建筑染上的颜色，以下四句对应[ColorAdd]中的序号</span>
+<span class="na">IronCurtainColor</span><span class="o">=</span><span class="s">0</span>
+<span class="na">铁幕的颜色</span>
+<span class="na">BerserkColor</span><span class="o">=</span><span class="s">4</span>
+<span class="na">混乱烟雾的颜色(就是YURI的神经突击车的攻击方式)</span>
+<span class="na">ForceShieldColor</span><span class="o">=</span><span class="s">6</span>
+<span class="na">力场护盾的颜色</span>
+
+<span class="na">StartPlanningModeSound</span><span class="o">=</span><span class="s">PlanningModeStart</span>
+<span class="na">进入路径点模式时的声音</span>
+<span class="na">EndPlanningModeSound</span><span class="o">=</span><span class="s">PlanningModeEnd</span>
+<span class="na">退出路径点模式时的声音</span>
+<span class="na">AddPlanningModeCommandSound</span><span class="o">=</span><span class="s">PlanningModeAdd</span>
+<span class="na">增加路径点时的声音</span>
+<span class="na">ExecutePlanSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">执行路径点的声音</span>
+
+<span class="na">**************箱子里面获取东西播放的声音*****************</span>
+<span class="na">CratePromoteSound</span><span class="o">=</span><span class="s">CratePromoted</span>
+<span class="na">经验提升</span>
+<span class="na">CrateMoneySound</span><span class="o">=</span><span class="s">CrateMoney</span>
+<span class="na">金钱</span>
+<span class="na">CrateRevealSound</span><span class="o">=</span><span class="s">CrateReveal</span>
+<span class="na">全部地图</span>
+<span class="na">CrateFireSound</span><span class="o">=</span><span class="s">CrateFirePower</span>
+<span class="na">加强火力</span>
+<span class="na">CrateArmourSound</span><span class="o">=</span><span class="s">CrateArmor</span>
+<span class="na">加强护甲</span>
+<span class="na">CrateSpeedSound</span><span class="o">=</span><span class="s">CrateSpeed</span>
+<span class="na">加强速度</span>
+<span class="na">CrateUnitSound</span><span class="o">=</span><span class="s">CrateFreeUnit</span>
+<span class="na">免费单位</span>
+
+<span class="na">SinkingSound</span><span class="o">=</span><span class="s">GenLargeWaterDie</span>
+<span class="na">载具落水声音</span>
+<span class="na">ImpactWaterSound</span><span class="o">=</span><span class="s">ExplosionWaterLarge</span>
+<span class="na">坠毁进入水里喂鱼的声音</span>
+<span class="na">ImpactLandSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">坠毁以头抢地吃土的声音</span>
+<span class="na">BombTickingSound</span><span class="o">=</span><span class="s">CrazyIvanBombTick</span>
+<span class="na">定时炸弹倒计时声音</span>
+<span class="na">ChronoInSound</span><span class="o">=</span><span class="s">ChronoMinerTeleport</span>
+<span class="na">超时空转换开始声音</span>
+<span class="na">ChronoOutSound</span><span class="o">=</span><span class="s">ChronoMinerTeleport</span>
+<span class="na">超时空转换结束声音</span>
+<span class="na">BombAttachSound</span><span class="o">=</span><span class="s">CrazyIvanAttack</span>
+<span class="na">定时炸弹附着上去的声音</span>
+<span class="na">YuriMindControlSound</span><span class="o">=</span><span class="s">YuriMindControl</span>
+<span class="na">心灵控制的声音</span>
+
+<span class="c1">;UnloadingHarvester=HORV</span>
+<span class="na">TS里的全局定义矿车倒矿图像，RA2已废弃，使用单位上的UnloadingClass控制，见同目录下的《2.单位属性rules词典2024.ini》，如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的</span>
+<span class="na">PoseDir</span><span class="o">=</span><span class="s">2</span>
+<span class="na">战机降落朝向，对降落在机场外和机场算法不同但共用此句，相当混乱，不建议动</span>
+<span class="na">原版下降落到机场总是使用机场建筑的朝向（手动建造与地图预置不同），Phobos改为了默认本句</span>
+<span class="na">DeployDir</span><span class="o">=</span><span class="s">2</span>
+<span class="na">单位展开朝向(同上)，Ares已允许单位微观设置</span>
+<span class="na">WaypointAnimationSpeed</span><span class="o">=</span><span class="s">10</span>
+<span class="na">路径点动画速度</span>
+<span class="na">DigSound</span><span class="o">=</span><span class="s">NukeSiren</span>
+<span class="na">钻地声，同时也是核弹超武发射音效，因为WW觉得RA2里用不着钻地运动的逻辑了干脆就直接沿用同一个标签，就是这么蛋疼。Ares已允许在超武上通过SW.ActivationSound定义，详见说明书</span>
+<span class="na">Dig</span><span class="w"> </span><span class="o">=</span>
+<span class="na">钻地运动方式钻地动画，Ares已允许微观定义</span>
+<span class="na">DropPodPuff</span><span class="w"> </span><span class="o">=</span>
+<span class="na">空降仓撞击地面时的动画</span>
+<span class="na">AtmosphereEntry</span><span class="w"> </span><span class="o">=</span>
+<span class="na">空降仓进入大气图像</span>
+<span class="na">GateUp</span><span class="o">=</span><span class="s">Dummy</span>
+<span class="na">闸门打开的声音，Ares允许微观定义</span>
+<span class="na">GateDown</span><span class="o">=</span><span class="s">Dummy</span>
+<span class="na">闸门关闭的声音，Ares允许微观定义</span>
+<span class="na">ShroudGrow</span><span class="o">=</span><span class="s">no</span>
+<span class="na">黑幕是否扩展(探开的地方逐渐变为未探开状态)RA1残留逻辑，如果全图的黑幕都探开了就会停止，需要Shourd</span><span class="o">=</span><span class="s">no并且和间谍卫星逻辑配合不好，对于空中的BalloonHover=yes的Jumpjet类单位会视为不存在直接扩张覆盖</span>
+<span class="na">ScrollMultiplier</span><span class="o">=</span><span class="s">.07</span>
+<span class="na">默认鼠标速度的倍率</span>
+<span class="na">ShakeScreen</span><span class="o">=</span><span class="s">400</span>
+<span class="na">大于此生命的单位被摧毁时屏幕震荡，无效，并且原版下设置为0会导致崩溃（Ares已修复）</span>
+<span class="na">CloakSound</span><span class="o">=</span><span class="s">NavalUnitEmerge</span>
+<span class="na">隐形和解除隐形的音效，也用于水下单位，Ares允许分离控制解除隐形的音效，并且进入隐形与解除隐形的音效均可在单位上微观定义，详见说明书</span>
+<span class="na">SellSound</span><span class="o">=</span><span class="s">SellBuilding</span>
+<span class="na">出售物体的声音，维修厂出售载具也用</span>
+<span class="na">GameClosed</span><span class="o">=</span><span class="s">GameClosed</span>
+<span class="na">游戏关闭的声音</span>
+<span class="na">IncomingMessage</span><span class="o">=</span><span class="s">MessageText</span>
+<span class="na">传入消息的声音</span>
+<span class="na">MessageCharTyped</span><span class="o">=</span><span class="s">TextBleep</span>
+<span class="na">开始输入的声音</span>
+<span class="na">SystemError</span><span class="o">=</span><span class="s">GenericBeep</span>
+<span class="na">系统错误声的声音</span>
+<span class="na">OptionsChanged</span><span class="o">=</span><span class="s">OptionsChanged</span>
+<span class="na">选项改变的声音</span>
+<span class="na">GameForming</span><span class="o">=</span><span class="s">NewGame</span>
+<span class="na">游戏创建的声音</span>
+<span class="na">PlayerLeft</span><span class="o">=</span><span class="s">PlayerLeft</span>
+<span class="na">玩家离开的声音</span>
+<span class="na">PlayerJoined</span><span class="o">=</span><span class="s">PlayerJoined</span>
+<span class="na">玩家加入的声音</span>
+<span class="na">Construction</span><span class="o">=</span><span class="s">Dummy</span>
+<span class="na">造东西的声音</span>
+<span class="na">CreditTicks</span><span class="o">=</span><span class="s">CreditUp,CreditDown</span>
+<span class="na">资金变动的声音</span>
+<span class="na">BuildingDieSound</span><span class="o">=</span><span class="s">BuildingGenericDie</span>
+<span class="na">建筑倒塌的声音</span>
+<span class="na">BuildingSlam</span><span class="o">=</span><span class="s">PlaceBuilding</span>
+<span class="na">建筑展开时的声音</span>
+<span class="na">RadarOn</span><span class="o">=</span><span class="s">RadarOn</span>
+<span class="na">打开雷达的声音</span>
+<span class="na">RadarOff</span><span class="o">=</span><span class="s">RadarOff</span>
+<span class="na">雷达关闭的声音</span>
+<span class="na">MovieOn</span><span class="o">=</span><span class="s">MovieOn</span>
+<span class="na">电影打开的声音</span>
+<span class="na">MovieOff</span><span class="o">=</span><span class="s">MovieOff</span>
+<span class="na">电影关闭的声音</span>
+<span class="na">ScoldSound</span><span class="o">=</span><span class="s">MenuScold</span>
+<span class="na">通用辱骂音效</span>
+<span class="na">TeslaCharge</span><span class="o">=</span><span class="s">TeslaCoilPowerUp</span>
+<span class="na">磁暴线圈放电前的声音</span>
+<span class="na">TeslaZap</span><span class="w"> </span><span class="o">=</span>
+<span class="na">磁暴线圈放电时的声音</span>
+<span class="na">BuildingDamageSound</span><span class="o">=</span><span class="s">BuildingDamaged</span>
+<span class="na">建筑黄血的声音</span>
+<span class="na">ChuteSound</span><span class="o">=</span><span class="s">ParachuteDrop</span>
+<span class="na">降落伞收起的声音</span>
+<span class="na">GenericClick</span><span class="o">=</span><span class="s">MenuClick</span>
+<span class="na">通用点击音效</span>
+<span class="na">GenericBeep</span><span class="o">=</span><span class="s">GenericBeep</span>
+<span class="na">通用蜂鸣音效</span>
+<span class="na">BuildingDrop</span><span class="o">=</span><span class="s">PlaceBuilding</span>
+<span class="na">载具/兵展开为建筑时的声音</span>
+<span class="na">StopSound</span><span class="o">=</span><span class="s">CommandBar</span>
+<span class="na">让单位停下来的声音</span>
+<span class="na">GuardSound</span><span class="o">=</span><span class="s">CommandBar</span>
+<span class="na">让单位防御的声音</span>
+<span class="na">ScatterSound</span><span class="o">=</span><span class="s">CommandBar</span>
+<span class="na">让单位散开的声音</span>
+<span class="na">DeploySound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">让单位部署的声音（无效，并不从INI中读取）</span>
+<span class="na">StormSound</span><span class="o">=</span><span class="s">WeatherIntro</span>
+<span class="na">闪电风暴来临时的声音</span>
+<span class="na">LightningSounds</span><span class="o">=</span><span class="s">WeatherStrike</span>
+<span class="na">闪电风暴放电的声音</span>
+<span class="na">ShellButtonSlideSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">菜单按钮滑动到位的音效</span>
+
+<span class="c1">;任务磁盘的新音效挂钩-TR</span>
+<span class="na">VoiceIFVRepair</span><span class="o">=</span><span class="s">IFVMove</span>
+<span class="na">IFV维修命令响应音效</span>
+<span class="na">SlavesFreeSound</span><span class="o">=</span><span class="s">SlaveWorkerLiberated</span>
+<span class="na">奴隶被解放的声音</span>
+<span class="na">SlaveMinerDeploySound</span><span class="o">=</span><span class="s">SlaveMinerDeploy</span>
+<span class="na">奴隶矿车展开的声音</span>
+<span class="na">SlaveMinerUndeploySound</span><span class="o">=</span><span class="s">SlaveMinerDeploy</span>
+<span class="na">奴隶矿车收起的声音</span>
+<span class="na">BunkerWallsUpSound</span><span class="o">=</span><span class="s">TankBunkerUp</span>
+<span class="na">坦克进入坦克碉堡类建筑的声音</span>
+<span class="na">BunkerWallsDownSound</span><span class="o">=</span><span class="s">TankBunkerDown</span>
+<span class="na">坦克离开坦克碉堡类建筑的声音</span>
+<span class="na">RepairBridgeSound</span><span class="o">=</span><span class="s">BridgeRepaired</span>
+<span class="na">桥被修复的声音</span>
+<span class="na">PsychicDominatorActivateSound</span><span class="o">=</span><span class="s">PsychicDominatorActivate</span>
+<span class="na">心灵控制器的声音</span>
+<span class="na">GeneticMutatorActivateSound</span><span class="o">=</span><span class="s">GeneticMutatorActivate</span>
+<span class="na">基因突变器的声音</span>
+<span class="na">PsychicRevealActivateSound</span><span class="o">=</span><span class="s">PsychicRevealActivate</span>
+<span class="na">心灵信标的声音</span>
+<span class="na">MasterMindOverloadDeathSound</span><span class="o">=</span><span class="s">MasterMindOverloadVoice</span>
+<span class="na">精神控制车过载挂掉的声音</span>
+<span class="na">MindClearedSound</span><span class="o">=</span><span class="s">MindCleared</span>
+<span class="na">精神控制车控制的单位脱离控制的声音</span>
+<span class="na">EnterGrinderSound</span><span class="o">=</span><span class="s">GrinderGrinding</span>
+<span class="na">部队回收厂回收的声音</span>
+<span class="na">LeaveGrinderSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">脱离部队回收厂回收的声音</span>
+<span class="na">EnterBioReactorSound</span><span class="o">=</span><span class="s">BioReactorEnter</span>
+<span class="na">复制中心回收的声音</span>
+<span class="na">LeaveBioReactorSound</span><span class="o">=</span><span class="s">BioReactorEnter</span>
+<span class="na">脱离复制中心回收的声音</span>
+<span class="na">ActivateSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">单位激活的声音</span>
+<span class="na">DeactivateSound</span><span class="w"> </span><span class="o">=</span>
+<span class="na">单位被EMP或没电而禁用的声音</span>
+<span class="na">AirstrikeAbortSound</span><span class="o">=</span><span class="s">MIGMissionAborted</span>
+<span class="na">空袭单位进入地图的声音，Ares已允许单位微观设定</span>
+<span class="na">AirstrikeAttackVoice</span><span class="o">=</span><span class="s">MIGMove</span>
+<span class="na">空袭目标被提前摧毁(丢失目标)的声音，Ares已允许单位微观设定</span>
+<span class="na">SpyPlaneCamera</span><span class="o">=</span><span class="s">SpyPlaneSnapshot</span>
+<span class="na">间谍飞机拍照的声音</span>
+<span class="na">SpyPlaneCameraFrames</span><span class="o">=</span><span class="s">16</span>
+<span class="na">间谍飞机拍照声音16帧响1下，如果太大会一直等待影响间谍飞机完成指令而表现为绕圈</span>
+<span class="na">DiskLaserChargeUp</span><span class="o">=</span><span class="s">FloatingDiscChargeUp</span>
+<span class="na">飞碟激光开始充能的声音，武器上的Report实际上在激光形成环状后播放</span>
+<span class="na">LetsDoTheTimeWarpOutAgain</span><span class="o">=</span><span class="s">ChronoScreenSound</span>
+<span class="na">时间旅行启程的声音(YURI第一关就有)</span>
+<span class="na">LetsDoTheTimeWarpInAgain</span><span class="o">=</span><span class="s">ChronoScreenSoundAgain</span>
+<span class="na">时间旅行抵达的声音(YURI第一关就有)</span>
+<span class="na">Smoke</span><span class="o">=</span><span class="s">xxxx</span>
+<span class="na">遗留自TS开发版本的废弃语句，用于控制建筑物爆炸后从地面升起的烟雾，但实际上硬编码使用SMOKE_M</span>
+<span class="c1">;FirestormActiveAnim=GAFSDF_A</span>
+<span class="c1">;FirestormIdleAnim=FSIDLE</span>
+<span class="c1">;FirestormGroundAnim=FSGRND</span>
+<span class="c1">;FirestormAirAnim=FSAIR</span>
+<span class="c1">;TS残留火风暴设定语句，Ares已复原相关逻辑，详见说明书</span>
+
+<span class="na">EliteFlashTimer</span><span class="o">=</span><span class="s">150</span>
+<span class="na">精英闪烁的时间，定义老兵级别闪烁时间需要Ares</span>
+<span class="na">AllyReveal</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">盟友是否共享雷达图</span>
+<span class="na">ConditionRed</span><span class="o">=</span><span class="s">25%</span>
+<span class="na">剩余血低于25%时血条红色</span>
+<span class="na">处于区域警戒模式下的工程师会自动修复附近达到红血的建筑</span>
+<span class="na">ConditionYellow</span><span class="o">=</span><span class="s">50%</span>
+<span class="na">剩余血低于50%时血条黄色</span>
+<span class="na">DropZoneRadius</span><span class="o">=</span><span class="s">4</span>
+<span class="na">揭露特定区域DROPZONE周边的范围</span>
+<span class="na">EnemyHealth</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否显示选定敌人血条</span>
+<span class="na">Gravity</span><span class="o">=</span><span class="s">6</span>
+<span class="na">(影响炮弹抛射体的弹道)重力为6，0为直线，Phobos已允许微观定义</span>
+<span class="na">IdleActionFrequency</span><span class="o">=</span><span class="s">.15</span>
+<span class="na">步兵闲置动作(例如擦枪，坐下)每0.15分钟一次</span>
+<span class="na">MessageDelay</span><span class="o">=</span><span class="s">.6</span>
+<span class="na">左上角信息显示0.6分钟后自然消失</span>
+<span class="na">MovieTime</span><span class="o">=</span><span class="s">.06</span>
+<span class="na">录像时长，仅用于WW的Debug版本</span>
+<span class="na">NamedCivilians</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否显示平民建筑真实名称</span>
+<span class="na">SavourDelay</span><span class="o">=</span><span class="s">.1</span>
+<span class="na">关卡结束/胜利到显示胜利的时间0.1分钟</span>
+<span class="na">ShroudRate</span><span class="o">=</span><span class="s">4</span>
+<span class="na">黑幕扩展的时间，单位分钟</span>
+<span class="na">FogRate</span><span class="o">=</span><span class="s">.01</span>
+<span class="na">战争迷雾扩展的时间，单位分钟</span>
+<span class="na">IceGrowthRate</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">冰生长速度，TS残留冰生长逻辑，RA2已废弃</span>
+<span class="na">IceSolidifyFrameTime</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">破裂的冰层这么多帧后重新固结，TS残留冰生长逻辑，RA2已废弃</span>
+<span class="na">IceCrackSounds</span><span class="w"> </span><span class="o">=</span>
+<span class="na">把冰层压碎的声音，TS残留冰生长逻辑，RA2已废弃</span>
+
+<span class="na">下面两句用于地图73号Action的默认值</span>
+<span class="na">AmbientChangeRate</span><span class="o">=</span><span class="s">.2</span>
+<span class="na">地图光照改变的变化率，会被地图72号Action覆盖</span>
+<span class="na">AmbientChangeStep</span><span class="o">=</span><span class="s">.2</span>
+<span class="na">地图光照改变时的步幅，会被地图71 号Action覆盖</span>
+
+<span class="na">SpeakDelay</span><span class="o">=</span><span class="s">2</span>
+<span class="na">每2分钟后才能再重复一次任务信息和电力不足等提示</span>
+<span class="na">但是不控制探测到潜地和隐形单位的警报，每次检测到都会提示一次，想要控制需要Ares提供的新语句，详见说明书</span>
+<span class="na">TimerWarning</span><span class="o">=</span><span class="s">2</span>
+<span class="na">任务时间低于2分钟则倒计时变红字</span>
+<span class="na">ExtraUnitLight</span><span class="o">=</span><span class="s">.2</span>
+<span class="na">载具额外发光0.2</span>
+<span class="na">ExtraInfantryLight</span><span class="o">=</span><span class="s">.2</span>
+<span class="na">步兵额外发光0.2</span>
+<span class="na">ExtraAircraftLight</span><span class="o">=</span><span class="s">.2</span>
+<span class="na">战机额外发光0.2</span>
+<span class="na">以上三句内置INI时存在类似光棱塔掉%的不重新声明即丢失问题</span>
+<span class="na">LocalRadarColor</span><span class="o">=</span><span class="s">0,255,0</span>
+<span class="na">你自己家在雷达中的颜色（无效）</span>
+
+<span class="c1">;*******箱子规则*******</span>
+<span class="k">[CrateRules]</span>
+<span class="na">CrateMaximum</span><span class="o">=</span><span class="s">255</span>
+<span class="na">箱子数值不超过255</span>
+<span class="na">CrateMinimum</span><span class="o">=</span><span class="s">1</span>
+<span class="na">箱子数值不低于1</span>
+<span class="na">CrateRadius</span><span class="o">=</span><span class="s">3.0</span>
+<span class="na">箱子里的属性提升可以给3单位长内的人</span>
+<span class="na">CrateRegen</span><span class="o">=</span><span class="s">3</span>
+<span class="na">每3分钟随机产生箱子</span>
+<span class="na">SilverCrate</span><span class="o">=</span><span class="s">HealBase</span>
+<span class="na">单人游戏中可以产生的箱子类型</span>
+<span class="na">SoloCrateMoney</span><span class="o">=</span><span class="s">5000</span>
+<span class="na">单人游戏中钱箱的钱数，会有一个900的上下浮动值，Ares允许手动设定</span>
+<span class="na">UnitCrateType</span><span class="o">=</span><span class="s">none</span>
+<span class="na">单位的箱子可以产生任何CreatGoddie</span><span class="o">=</span><span class="s">yes的单位，否则固定此处对象，CreatGoddie单位的权重在Phobos下可以设置，详见说明书</span>
+<span class="na">WoodCrate</span><span class="o">=</span><span class="s">Money</span>
+<span class="na">木箱中的东西，用于决定单人游戏中通过CarriesCrate等产生的未指定类型的箱子中将使用哪种类型，遭遇战则使用[Powerups]中的权重系统决定</span>
+<span class="na">WaterCrate</span><span class="o">=</span><span class="s">Money</span>
+<span class="na">水箱中的东西</span>
+<span class="na">HealCrateSound</span><span class="o">=</span><span class="s">HealCrate</span>
+<span class="na">获取生命(+血)箱子的声音</span>
+<span class="na">WoodCrateImg</span><span class="o">=</span><span class="s">CRATE</span>
+<span class="na">木箱的形态</span>
+<span class="na">CrateImg</span><span class="o">=</span><span class="s">CRATE</span>
+<span class="na">箱子的形态</span>
+<span class="na">WaterCrateImg</span><span class="o">=</span><span class="s">WCRATE</span>
+<span class="na">水中箱子的形态</span>
+<span class="na">FreeMCV</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">能随机产生基地车</span>
+<span class="c1">;***箱子权重和特殊设定***</span>
+<span class="k">[Powerups]</span>
+<span class="na">控制箱子内容的相关参数分别控制权重，动画，是否在水上出现，相关数值（比如钱数、属性提升倍数）</span>
+<span class="na">权重总和不得小于100！！！否则EIP：0048337E</span>
+<span class="na">是否在水上出现仅影响开箱时特定箱子被开出来的可行与否，不影响覆盖物刷在水上，如果希望禁止箱子生成在水上请使用Phobos新增逻辑【全局】设置，详见说明书</span>
+<span class="na">Armor</span><span class="o">=</span><span class="s">10,ARMOR,yes,1.5</span><span class="c1">;血量提升，实际作为受伤除数</span>
+<span class="na">Firepower</span><span class="o">=</span><span class="s">10,FIREPOWR,yes,2.0</span><span class="c1">;攻击力加强</span>
+<span class="na">HealBase</span><span class="o">=</span><span class="s">10,HEALALL,yes</span><span class="c1">;维修所有单位</span>
+<span class="na">Money</span><span class="o">=</span><span class="s">20,MONEY,yes,2000</span><span class="c1">;金钱</span>
+<span class="na">Reveal</span><span class="o">=</span><span class="s">10,REVEAL,yes</span><span class="c1">;开全图</span>
+<span class="na">Speed</span><span class="o">=</span><span class="s">10,SPEED,yes,1.2</span><span class="c1">;加速</span>
+<span class="na">Veteran</span><span class="o">=</span><span class="s">20,VETERAN,yes,1</span><span class="c1">;升级</span>
+<span class="na">Unit</span><span class="o">=</span><span class="s">20,&lt;none&gt;,no</span><span class="c1">;送单位（动画无效）</span>
+<span class="na">场上存在超过50个单位后会变成钱箱，最大载具数量在Phobos可自行设定，详见说明书</span>
+<span class="na">所属方没有建造厂时根据资金是否&gt;</span><span class="o">=</span><span class="s">1500给予BaseUnit=列表的对象，资金值在Phobos可自行设定，详见说明书</span>
+<span class="na">所属方没有矿车但有矿场的情况下在前一条之后判定是否给予矿车</span>
+<span class="na">Invulnerability</span><span class="o">=</span><span class="s">0,ARMOR,yes,1.0</span><span class="c1">;无敌，仅动画有效</span>
+<span class="na">IonStorm</span><span class="o">=</span><span class="s">0,&lt;none&gt;,yes</span><span class="c1">;离子风暴（貌似无效）</span>
+<span class="na">Gas</span><span class="o">=</span><span class="s">0,&lt;none&gt;,yes,100</span><span class="c1">;泰矿气体（产生大量gas粒子）</span>
+<span class="na">Tiberium</span><span class="o">=</span><span class="s">0,&lt;none&gt;,no</span><span class="c1">;产生一片矿</span>
+<span class="na">Pod</span><span class="o">=</span><span class="s">0,&lt;none&gt;,no</span><span class="c1">;空降仓</span>
+<span class="na">Cloak</span><span class="o">=</span><span class="s">0,CLOAK,yes</span><span class="c1">;隐身</span>
+<span class="na">Darkness</span><span class="o">=</span><span class="s">0,SHROUDX,yes</span><span class="c1">;覆盖地图</span>
+<span class="na">Explosion</span><span class="o">=</span><span class="s">0,&lt;none&gt;,yes,500</span><span class="c1">;爆炸</span>
+<span class="na">ICBM</span><span class="o">=</span><span class="s">0,CHEMISLE,yes</span><span class="c1">;获得核弹（核弹超武）实际上是Action=Nuke的任何超武，并且如果是核弹的话这个核弹将会在没井的情况下硬编码生成自地表以上20000高度处生成[NukePayload]而有井的情况下瞬间充能完毕</span>
+<span class="na">Napalm</span><span class="o">=</span><span class="s">0,&lt;none&gt;,no,600</span><span class="c1">;爆炸（步兵燃烧死亡）</span>
+<span class="na">Squad</span><span class="o">=</span><span class="s">0,&lt;none&gt;,no</span><span class="c1">;写着随机步兵（实际上还是送钱）</span>
+<span class="na">由于txt显示不便，可前往在线版本查看表格，在线版本的地址请仔细阅读教程大包其他文件寻找，如果你获得本文档的同时没有配套其他文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的</span>
+<span class="na">也可参见RA2DIY论坛帖子https</span><span class="o">:</span><span class="s">//bbs.ra2diy.com/forum.php?mod=viewthread&amp;tid=24904</span>
+<span class="na">如果一个Powerups设定为不应当出现在水上的箱子被强制生成，那么打开时会强制转为钱箱</span>
+<span class="na">并不是所有箱子类型都能使用，有些只能播放动画，有些连动画都不播放。但打开箱子的动画仍然是标准的Animation对象，你仍可借动画跳板实现你想要的其他效果</span>
+<span class="c1">;*******战斗和伤害规则*******</span>
+<span class="k">[CombatDamage]</span>
+<span class="na">RailgunDamageRadius</span><span class="o">=</span><span class="s">2147483647</span>
+<span class="na">轨道炮武器穿透伤害距离，从目标点向开火方向延伸，例如0就只杀伤目标，32就稳定地额外影响距离开火来源更近的一个单元格</span>
+<span class="na">AmmoCrateDamage</span><span class="o">=</span><span class="s">200</span>
+<span class="na">一个Explodes</span><span class="o">=</span><span class="s">yes的覆盖物的死亡杀伤</span>
+<span class="na">IonCannonDamage</span><span class="o">=</span><span class="s">751</span>
+<span class="na">离子炮伤害，由TS离子炮超武或地图触发94号Action使用</span>
+<span class="na">HarvesterImmune</span><span class="o">=</span><span class="s">no</span>
+<span class="na">矿车是否对普通伤害免疫，要写进地图[SpecialFlags]里，Rules里没用</span>
+<span class="na">DestroyableBridges</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">桥是否能被破坏，要写进地图[SpecialFlags]里，Rules里没用</span>
+<span class="na">TiberiumExplosive</span><span class="o">=</span><span class="s">no</span>
+<span class="na">泰伯利亚之日语句，无效，Ares已复原相关逻辑，见说明书</span>
+<span class="na">Scorches</span><span class="o">=</span><span class="s">BURN01,BURN02,BURN03,BURN04</span>
+<span class="na">污染类型(小弹坑)</span>
+<span class="na">Scorches1</span><span class="o">=</span><span class="s">BURN05,BURN06,BURN07</span>
+<span class="na">污染类型</span>
+<span class="na">Scorches2</span><span class="o">=</span><span class="s">BURN08,BURN09,BURN10</span>
+<span class="na">污染类型</span>
+<span class="na">Scorches3</span><span class="o">=</span><span class="s">BURN11,BURN12,BURN13</span>
+<span class="na">污染类型</span>
+<span class="na">Scorches4</span><span class="o">=</span><span class="s">BURN14,BURN15,BURN16</span>
+<span class="na">污染类型</span>
+<span class="na">此处原版值存在问题，导致有时候不能稳定生成，见YRStandard-INI项目中的修复</span>
+<span class="na">TiberiumExplosionDamage</span><span class="o">=</span><span class="s">0</span>
+<span class="na">泰伯利亚之日语句，无效，Ares已复原相关逻辑，见说明书</span>
+<span class="na">TiberiumStrength</span><span class="o">=</span><span class="s">-1</span>
+<span class="na">泰伯利亚之日语句，从TS到YR一直无效</span>
+<span class="na">Craters</span><span class="o">=</span><span class="s">CR1,CR2,CR3,CR4,CR5,CR6</span>
+<span class="na">弹坑类型</span>
+<span class="na">此处原版值存在问题，导致有时候不能稳定生成，见YRStandard-INI项目中的修复</span>
+<span class="na">按说实际上从TS开始就是只要有Crater</span><span class="o">=</span><span class="s">yes的SmudgeType就会生成而并不依赖全局列表才对，而Craters本就是TS开发过程中残留下来正式版本中无用的标签</span>
+<span class="na">AtomDamage</span><span class="o">=</span><span class="s">1000</span>
+<span class="na">核弹伤害1000，RA1残留无效</span>
+<span class="na">BallisticScatter</span><span class="o">=</span><span class="s">1.0</span>
+<span class="na">误差攻击最大距离目标1长度，用于Inaccurate</span><span class="o">=</span><span class="s">yes的Arcing抛射体与FlakScatter=yes的Inviso抛射体，Ares允许微观定义前者的BallisticScatter并设定最大值与最小值，Phobos允许使用相同语句微观定义后者</span>
+<span class="na">BridgeStrength</span><span class="o">=</span><span class="s">1500</span>
+<span class="na">桥的生命为1500，实际算法为Damage/Strength</span><span class="o">=</span><span class="s">被摧毁到的概率</span>
+<span class="na">C4Delay</span><span class="o">=</span><span class="s">.03</span>
+<span class="na">放置C4后多少时间C4爆炸（分钟）</span>
+<span class="na">C4Warhead</span><span class="o">=</span><span class="s">Super</span>
+<span class="na">C4的弹头</span>
+<span class="na">泰矿连锁反应弹头</span>
+<span class="na">矿井（地形对象）被摧毁的弹头</span>
+<span class="na">战机坠毁使用该弹头AnimList的最后一个</span>
+<span class="na">铁幕用于生物体上的弹头，对应的可以使用AffectsAllies</span><span class="o">=</span><span class="s">no等来使特定方步兵加铁幕，但需要使用Ares铁幕弹头赋予的铁幕而不能使用原版铁幕超武，此效果Phobos下有专门逻辑支持</span>
+<span class="na">火车摧毁路障的弹头</span>
+<span class="na">大型爆炸箱子的弹头</span>
+<span class="na">建筑微损伤弹头</span>
+<span class="na">脑车受伤弹头</span>
+<span class="na">……（各种特殊伤害基本都是这个）</span>
+<span class="na">名为[INVISO]的动画的默认弹头，Ares下允许在动画上自由定义</span>
+<span class="na">V3Warhead</span><span class="o">=</span><span class="s">V3WH</span>
+<span class="na">V3火箭的弹头</span>
+<span class="na">DMislWarhead</span><span class="o">=</span><span class="s">DMISLWH</span>
+<span class="na">无畏火箭的弹头</span>
+<span class="na">V3EliteWarhead</span><span class="o">=</span><span class="s">V3EWH</span>
+<span class="na">精英V3火箭的弹头</span>
+<span class="na">DMislEliteWarhead</span><span class="o">=</span><span class="s">DMISLEWH</span>
+<span class="na">精英无畏火箭的弹头</span>
+<span class="na">CMislWarhead</span><span class="o">=</span><span class="s">CMISLWH</span>
+<span class="na">雷鸣导弹的弹头</span>
+<span class="na">CMislEliteWarhead</span><span class="o">=</span><span class="s">CMISLEWH</span>
+<span class="na">精英雷鸣导弹的弹头</span>
+<span class="na">CrushWarhead</span><span class="o">=</span><span class="s">Crush</span>
+<span class="na">载具碾压所使用的虚拟弹头</span>
+
+<span class="c1">;***疯狂伊文相关***</span>
+<span class="na">IvanWarhead</span><span class="o">=</span><span class="s">IvanWH</span>
+<span class="na">疯狂伊文炸弹弹头</span>
+<span class="na">IvanDamage</span><span class="o">=</span><span class="s">450</span>
+<span class="na">疯狂伊文炸弹伤害</span>
+<span class="na">IvanTimedDelay</span><span class="o">=</span><span class="s">450</span>
+<span class="na">疯狂伊文炸弹延迟时间</span>
+<span class="na">CanDetonateTimeBomb</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否能手动引爆炸弹</span>
+<span class="na">CanDetonateDeathBomb</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否能手动引爆装于自己部队上的炸弹，没做完的功能，Ares已完成，详见说明书</span>
+<span class="na">IvanIconFlickerRate</span><span class="o">=</span><span class="s">8</span>
+<span class="na">炸弹跳动率，每这么多帧后图标在6个2帧动画组中交替播放，Ares说明书有更详细的解释，详见说明书</span>
+<span class="na">Ares对IvanBomb整套逻辑进行了拓展，详见说明书</span>
+
+<span class="c1">;***城市作战 (UC) 2.0版本***</span>
+<span class="na">OccupyDamageMultiplier</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">占领建筑物后向外攻击，威力加强为原来的1.2倍</span>
+<span class="na">OccupyROFMultiplier</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">占领建筑物后向外攻击，射速加强为原来的1.2倍</span>
+<span class="na">OccupyWeaponRange</span><span class="o">=</span><span class="s">5</span>
+<span class="na">占领建筑物后向外攻击，驻军武器统一射程为5，在大型建筑中因占地面积大会获得更大的实际射程</span>
+
+<span class="c1">;***坦克碉堡***</span>
+<span class="na">BunkerDamageMultiplier</span><span class="o">=</span><span class="s">1.3</span>
+<span class="na">坦克碉堡中坦克伤害加强为原来的1.3倍</span>
+<span class="na">BunkerROFMultiplier</span><span class="o">=</span><span class="s">1.3</span>
+<span class="na">坦克碉堡中坦克射速加强为原来的1.3倍</span>
+<span class="na">BunkerWeaponRangeBonus</span><span class="o">=</span><span class="s">2</span>
+<span class="na">坦克碉堡中坦克射程比原来的多2</span>
+
+<span class="c1">;***精神控制车过载***</span>
+<span class="na">OverloadCount</span><span class="o">=</span><span class="s">3,6,10,50</span>
+<span class="na">超过这个数量时过载的&quot;等级&quot;</span>
+<span class="na">OverloadDamage</span><span class="o">=</span><span class="s">0,50,100,500</span>
+<span class="na">对应&quot;等级&quot;受到的伤害</span>
+<span class="na">OverloadFrames</span><span class="o">=</span><span class="s">30,60,60,60</span>
+<span class="na">每多少时间受到上述的伤害</span>
+<span class="na">ControlledAnimationType</span><span class="o">=</span><span class="s">MINDANIM</span>
+<span class="na">被控制的物体的附加图象</span>
+<span class="na">PermaControlledAnimationType</span><span class="o">=</span><span class="s">MINDANIMR</span>
+<span class="na">被永久控制的物体的附加图象</span>
+<span class="na">MindControlAttackLineFrames</span><span class="o">=</span><span class="s">20</span>
+<span class="na">精神控制线的闪动多少时间一次</span>
+
+
+<span class="c1">;***镭射幽浮吸取***</span>
+<span class="na">DrainMoneyFrameDelay</span><span class="o">=</span><span class="s">30</span>
+<span class="na">镭射幽浮吸取钱多少时间一次</span>
+<span class="na">DrainMoneyAmount</span><span class="o">=</span><span class="s">30</span>
+<span class="na">一次吸取多少钱</span>
+<span class="na">DrainAnimationType</span><span class="o">=</span><span class="s">DISKRAY</span>
+<span class="na">吸取的图象，应当为一个LoopEnd</span><span class="o">=</span><span class="s">-1的动画</span>
+
+<span class="c1">;***磁电***</span>
+<span class="na">FallingDamageMultiplier</span><span class="o">=</span><span class="s">1.0</span>
+<span class="na">掉落伤害乘以1倍</span>
+<span class="na">CurrentStrengthDamage</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">扣血按照当前血百分比NO代表按照最大值的百分比</span>
+
+<span class="c1">;***战斗要塞***</span>
+<span class="na">OpenToppedRangeBonus</span><span class="o">=</span><span class="s">2</span>
+<span class="na">部队在可对外射击的运输工具中射程增加2</span>
+<span class="na">OpenToppedDamageMultiplier</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">部队在可对外射击的运输工具中伤害加强到原来的1.2倍</span>
+<span class="na">OpenToppedWarpDistance</span><span class="o">=</span><span class="s">7</span>
+<span class="na">超时空军团这么远后放弃目标（否则保持锁定和计时状态，这是对超时空弹头冻结效果的专门处理）</span>
+
+<span class="na">DeathWeapon</span><span class="o">=</span><span class="s">DefaultDeathWeapon</span>
+<span class="na">单位Explodes</span><span class="o">=</span><span class="s">yes而主武器与死亡武器都没设定时的默认死亡武器，杀伤使用单位生命值/2</span>
+<span class="na">IronCurtainDuration</span><span class="o">=</span><span class="s">750</span>
+<span class="na">铁幕持续时间750帧，有个YR新增的硬编码效果是AI和主动寻敌会忽略带铁幕的对象</span>
+<span class="na">FirestormWarhead</span><span class="o">=</span><span class="s">FirestormWH</span>
+<span class="na">火风暴语句，无效，Ares已复原相关逻辑，见说明书</span>
+<span class="na">IonCannonWarhead</span><span class="o">=</span><span class="s">IonCannonWH</span>
+<span class="na">离子炮弹头，强制一发击毁桥梁</span>
+<span class="na">VeinholeWarhead</span><span class="o">=</span><span class="s">VeinholeWH</span>
+<span class="na">泰伯利亚废矿伤害弹头，TS残留无效，Phobos已复原相关逻辑，见说明书</span>
+<span class="na">PsychicRevealRadius</span><span class="o">=</span><span class="s">15</span>
+<span class="na">心灵探测探开范围的半径</span>
+
+<span class="c1">;粒子系统默认值</span>
+<span class="na">DefaultFirestormExplosionSystem</span><span class="o">=</span><span class="s">FirestormSparkSys</span>
+<span class="na">火风暴语句，无效</span>
+<span class="na">DefaultLargeGreySmokeSystem</span><span class="o">=</span><span class="s">BigGreySmokeSys</span>
+<span class="na">大灰色烟雾粒子系统</span>
+<span class="na">DefaultSmallGreySmokeSystem</span><span class="o">=</span><span class="s">SmallGreySSys</span>
+<span class="na">小灰色烟雾粒子系统</span>
+<span class="na">DefaultSparkSystem</span><span class="o">=</span><span class="s">SparkSys</span>
+<span class="na">火花粒子系统</span>
+<span class="na">DefaultLargeRedSmokeSystem</span><span class="o">=</span><span class="s">BigGreySmokeSys</span>
+<span class="na">大烟雾粒子系统</span>
+<span class="na">DefaultSmallRedSmokeSystem</span><span class="o">=</span><span class="s">SmallGreySSys</span>
+<span class="na">小烟雾粒子系统</span>
+<span class="na">DefaultDebrisSmokeSystem</span><span class="o">=</span><span class="s">SmallGreySSys</span>
+<span class="na">碎片粒子系统</span>
+<span class="na">DefaultFireStreamSystem</span><span class="o">=</span><span class="s">FireStreamSys</span>
+<span class="na">喷火粒子系统</span>
+<span class="na">DefaultTestParticleSystem</span><span class="o">=</span><span class="s">TestSmokeSys</span>
+<span class="na">测试粒子系统的粒子系统，残留物</span>
+<span class="na">DefaultRepairParticleSystem</span><span class="o">=</span><span class="s">WeldingSys</span>
+<span class="na">一单位修复另一单位的粒子系统</span>
+
+<span class="na">Crush</span><span class="o">=</span><span class="s">1.8</span>
+<span class="na">距离这么近时AI会尝试用碾压代替开火。写高点的话AI的载具更容易直接碾压玩家步兵。</span>
+<span class="na">ExpSpread</span><span class="o">=</span><span class="s">.7</span>
+<span class="na">对于爆炸的物体每100点伤害扩散这么多单元格</span>
+<span class="na">FireSupress</span><span class="o">=</span><span class="s">1</span>
+<span class="na">设置了Supress</span><span class="o">=</span><span class="s">yes的武器在目标这个距离内有我方单位时避免开火</span>
+<span class="na">FlameDamage</span><span class="o">=</span><span class="s">Fire</span>
+<span class="na">泰伯利亚之日残留，无效，Ares已复原相关逻辑，见说明书</span>
+<span class="na">FlameDamage2</span><span class="o">=</span><span class="s">Fire2</span>
+<span class="na">泰伯利亚之日残留，无效，Ares已复原相关逻辑，见说明书</span>
+<span class="na">同时也指定了非[INVISO]动画挂伤害默认使用的弹头</span>
+<span class="na">HomingScatter</span><span class="o">=</span><span class="s">2.0</span>
+<span class="na">不准确的导向投射体最大误差范围(格)，TS/RA2并不使用该值</span>
+<span class="na">MaxDamage</span><span class="o">=</span><span class="s">10000</span>
+<span class="na">单次常规类型的最大伤害不超过10000</span>
+<span class="na">MinDamage</span><span class="o">=</span><span class="s">1</span>
+<span class="na">最小伤害不低于1（无效）</span>
+<span class="na">PlayerAutoCrush</span><span class="o">=</span><span class="s">no</span>
+<span class="na">人类玩家操纵的单位是否自动尝试碾压敌人单位，AI使用[IQ] -&gt; AutoCrush</span><span class="o">=</span><span class="s">的设置</span>
+<span class="na">PlayerReturnFire</span><span class="o">=</span><span class="s">no</span>
+<span class="na">人类玩家操纵的单位是否侵略性还击敌人单位，略难用，哪怕在交战中如果被A到都会掉头去打伤害来源方，可单位上微观定义</span>
+<span class="na">PlayerScatter</span><span class="o">=</span><span class="s">no</span>
+<span class="na">人类玩家操纵的单位是否能够自动规避来袭炮火，AI使用[IQ] -&gt; Scatter</span><span class="o">=</span><span class="s">的设置</span>
+<span class="na">SplashList</span><span class="o">=</span><span class="s">H2O_EXP3,H2O_EXP2,H2O_EXP1</span>
+<span class="na">水中爆炸的水花</span>
+<span class="na">根据武器Damage/35向下取整选择其一</span>
+<span class="na">IsMeteor</span><span class="o">=</span><span class="s">yes的shp碎片始终使用该列表最后一个</span>
+<span class="na">常规碎片始终使用该列表第一个</span>
+<span class="na">Phobos允许弹头和碎片微观定义，详见说明书，在Build33-Build43版本间部分规则被Phobos干废了，Build44才修复回来</span>
+<span class="na">TreeTargeting</span><span class="o">=</span><span class="s">no</span>
+<span class="na">鼠标在树上时是否自动出现准星</span>
+<span class="na">yes的结果就是对战时对方的坦克在你的幻影坦克上没有自动变换为攻击准星而暴露幻影</span>
+<span class="na">武器上的TerrainFire逻辑独立工作</span>
+<span class="na">TurboBoost</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">对于TurboBoost</span><span class="o">=</span><span class="s">yes的导弹类武器其对空中物体为原速度的1.5倍</span>
+<span class="na">（然而实际上这个语句已经没用了）</span>
+<span class="na">Incoming</span><span class="o">=</span><span class="s">10</span>
+<span class="na">当投射物射向目标的速度小于或等于此值，目标处单位将试图逃离目标区</span>
+<span class="na">CollapseChance</span><span class="o">=</span><span class="s">100</span>
+<span class="na">被击中时可坍塌悬崖的坍塌百分比，具体参考“滑坡的悬崖”变成大斜坡</span>
+<span class="na">Ares修改了相关的逻辑，Ares下任意类型的伤害均可造成悬崖坍塌</span>
+<span class="na">BerzerkAllowed</span><span class="o">=</span><span class="s">no</span>
+<span class="na">泰伯利亚之日残留Cyborg黄血时是否会发狂，RA2无效</span>
+
+<span class="c1">;全局辐射定义</span>
+
+<span class="k">[Radiation]</span>
+<span class="na">RadDurationMultiple</span><span class="o">=</span><span class="s">1</span>
+<span class="na">辐射系数(RedLevel*RadDurationMultiple为辐射持续的桢数)</span>
+<span class="na">RadApplicationDelay</span><span class="o">=</span><span class="s">16</span>
+<span class="na">每16桢造成一次伤害</span>
+<span class="na">RadLevelMax</span><span class="o">=</span><span class="s">500</span>
+<span class="na">每个单元格RedLevel最大不超过500，原版最小不得低于100</span>
+<span class="na">RadLevelDelay</span><span class="o">=</span><span class="s">90</span>
+<span class="na">辐射级别的衰减程度</span>
+<span class="na">RadLightDelay</span><span class="o">=</span><span class="s">90</span>
+<span class="na">辐射的光效果衰减程度</span>
+<span class="na">RadLevelFactor</span><span class="o">=</span><span class="s">0.2</span>
+<span class="na">每个RedLevel造成0.2伤害</span>
+<span class="na">RadLightFactor</span><span class="o">=</span><span class="s">0.1</span>
+<span class="na">辐射光强系数</span>
+<span class="na">RadTintFactor</span><span class="o">=</span><span class="s">1.0</span>
+<span class="na">辐射色调系数</span>
+
+<span class="na">RadColor</span><span class="o">=</span><span class="s">0,255,0</span>
+<span class="na">辐射的颜色、[WeaponType] -&gt; IsRadBeam</span><span class="o">=</span><span class="s">yes(辐射波)也使用此句，Ares下可武器微观定义、[WeaponType] -&gt; IsRadEruption=yes也使用此句</span>
+<span class="na">RadSiteWarhead</span><span class="o">=</span><span class="s">RadSite</span>
+<span class="na">辐射的弹头</span>
+
+<span class="c1">;允许定义高程对开火的影响</span>
+<span class="k">[ElevationModel]</span>
+<span class="na">ElevationIncrement</span><span class="o">=</span><span class="s">4</span>
+<span class="na">高差的单位高度</span>
+<span class="na">ElevationIncrementBonus</span><span class="o">=</span><span class="s">2</span>
+<span class="na">增幅系数的倍率（在BonusCap之后计算）</span>
+<span class="na">ElevationBonusCap</span><span class="o">=</span><span class="s">2</span>
+<span class="na">增幅系数的上限</span>
+
+<span class="na">仅在[ProjectileType] -&gt; SubjectToElevation</span><span class="o">=</span><span class="s">yes时工作</span>
+<span class="na">增幅系数</span><span class="o">=</span><span class="s">(开火者高度-目标高度)/ElevationIncrement</span>
+<span class="na">ElevationBonusCap规定了最大增幅系数，超过会写回ElevationBonusCap</span>
+<span class="na">射程增量</span><span class="o">=</span><span class="s">增幅系数*ElevationIncrementBonus</span>
+
+
+<span class="k">[WallModel]</span>
+<span class="na">AlliedWallTransparency</span><span class="o">=</span><span class="s">no</span>
+<span class="na">友军是否可以穿墙射击（RA3高科墙）</span>
+<span class="na">部分地图可能会导致莫名奇怪的IE，慎用</span>
+<span class="na">WallPenetratorThreshold</span><span class="o">=</span><span class="s">50%</span>
+<span class="na">在打墙内人的时候有50%是打墙了(其他的消失了)</span>
+<span class="na">Ares为建筑添加了这样的效果，详见Ares说明书实体建筑相关内容</span>
+
+
+<span class="c1">;***国家列表***</span>
+<span class="k">[Countries]</span>
+<span class="na">0</span><span class="o">=</span><span class="s">Americans</span>
+<span class="na">写上国家名就算完事</span>
+<span class="c1">;*******阵营列表*******</span>
+<span class="k">[Sides]</span>
+<span class="na">GDI</span><span class="o">=</span><span class="s">British,French,Germans,Americans,Alliance</span>
+<span class="na">GDI阵营国家注册</span>
+<span class="na">Nod</span><span class="o">=</span><span class="s">Russians,Africans,Confederation,Arabs</span>
+<span class="na">NOD阵营国家注册</span>
+<span class="na">ThirdSide</span><span class="o">=</span><span class="s">YuriCountry</span>
+<span class="na">YURI阵营国家注册</span>
+<span class="c1">;*******步兵列表*******</span>
+<span class="k">[InfantryTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">E1</span>
+<span class="na">步兵注册</span>
+<span class="c1">;*******载具列表*******</span>
+<span class="k">[VehicleTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">AMCV</span>
+<span class="na">载具注册</span>
+<span class="c1">;*******战机列表*******</span>
+<span class="k">[AircraftTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">APACHE</span>
+<span class="na">战机注册</span>
+<span class="c1">;*******建筑列表*******</span>
+<span class="k">[BuildingTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">GAPOWR</span>
+<span class="na">建筑注册</span>
+<span class="c1">;***污染物列表***</span>
+<span class="k">[SmudgeTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">CR1</span>
+<span class="na">战争残留污染（小弹坑、灼痕）注册</span>
+<span class="c1">;***地形对象列表***</span>
+<span class="k">[TerrainTypes]</span>
+<span class="na">0</span><span class="o">=</span><span class="s">BOXES01</span>
+<span class="na">游戏内地形装饰类实体，注意地形对象（TerrainType）与地形（Tileset）完全是两回事，前者是路灯矿柱树木，后者是地板水面悬崖</span>
+<span class="c1">;***覆盖物列表***</span>
+<span class="k">[OverlayTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">GASAND</span>
+<span class="na">覆盖物注册，序号关联程序内部表决定的不同对象的行为，除非你真的知道自己在做什么，不要乱动覆盖物注册表的顺序</span>
+<span class="c1">;***动画列表***</span>
+<span class="k">[Animations]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">TWLT100</span>
+<span class="na">动画注册</span>
+<span class="c1">;***Voxel动画列表***</span>
+<span class="k">[VoxelAnims]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">PIECE</span>
+<span class="na">VXL动画（VXL碎片）注册</span>
+<span class="c1">;***粒子列表***</span>
+<span class="k">[Particles]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">GasCloud1</span>
+<span class="na">粒子注册</span>
+<span class="c1">;***粒子系统列表**</span>
+<span class="k">[ParticleSystems]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">GasCloudSys</span>
+<span class="na">粒子系统注册</span>
+<span class="c1">;***超武列表**</span>
+<span class="k">[SuperWeaponTypes]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">NukeSpecial</span>
+<span class="na">超武注册</span>
+<span class="c1">;***弹头列表**</span>
+<span class="k">[Warheads]</span>
+<span class="na">1</span><span class="o">=</span><span class="s">EMPuls</span>
+<span class="na">弹头注册</span>
+
+
+
+
+
+<span class="c1">;*******单人游戏设置*******</span>
+<span class="k">[MultiplayerDialogSettings]</span>
+<span class="na">MinMoney</span><span class="o">=</span><span class="s">5000</span>
+<span class="na">可选钱数最小值</span>
+<span class="na">Money</span><span class="o">=</span><span class="s">10000</span>
+<span class="na">可选钱数默认值</span>
+<span class="na">MaxMoney</span><span class="o">=</span><span class="s">10000</span>
+<span class="na">可选钱数最大值</span>
+<span class="na">MoneyIncrement</span><span class="o">=</span><span class="s">100</span>
+<span class="na">钱最小单位100</span>
+<span class="na">MinUnitCount</span><span class="o">=</span><span class="s">0</span>
+<span class="na">最小可带兵数</span>
+<span class="na">UnitCount</span><span class="o">=</span><span class="s">10</span>
+<span class="na">默认可带兵数</span>
+<span class="na">MaxUnitCount</span><span class="o">=</span><span class="s">10</span>
+<span class="na">最大可带兵数</span>
+<span class="na">TechLevel</span><span class="o">=</span><span class="s">10</span>
+<span class="na">最大科技等级（当物体所需等级比它大时则无法建造）</span>
+<span class="na">GameSpeed</span><span class="o">=</span><span class="s">1</span>
+<span class="na">起始游戏速度（现在使用RA2MD.ini）中的设置</span>
+<span class="na">AIDifficulty</span><span class="o">=</span><span class="s">0</span>
+<span class="na">AI难度设置0简单2困难，TS残留废弃，RA2下已经允许每个独立设置</span>
+<span class="na">AIPlayers</span><span class="o">=</span><span class="s">0</span>
+<span class="na">AI玩家数量设置，TS残留废弃，RA2下已经允许手动设置</span>
+<span class="na">BridgeDestruction</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">桥可破坏否</span>
+<span class="na">ShadowGrow</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否黑幕区扩张</span>
+<span class="na">Shroud</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否需要自己探测地图（NO的话地图全开）</span>
+<span class="na">然而这个功能并没有它字面上说的那么好使</span>
+<span class="na">事实上你可以理解为它把自然黑幕的黑幕区与明区倒置了过来</span>
+<span class="na">也正因此，虽然确实初始地图全开，还能直接观测黑幕蔓延</span>
+<span class="na">但也有一个很大的问题</span>
+<span class="na">例如原版敌方单位在黑幕区内开火那么它周围一片区域会变为明区（武器RevealOnFire</span><span class="o">=</span><span class="s">no）</span>
+<span class="na">当这个选项为no时会反过来——敌方单位在明区开火会在其周围绘制黑幕……倒是也曾拿来做过移动版黑幕产生器</span>
+<span class="na">Bases</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">开始时是否有基地车</span>
+<span class="na">TiberiumGrows</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">矿石是否自动增长</span>
+<span class="na">Crates</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">箱子是否出现，若为no则载具箱子也无法出现</span>
+<span class="na">CaptureTheFlag</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否为抢旗模式</span>
+<span class="na">HarvesterTruce</span><span class="o">=</span><span class="s">no</span>
+<span class="na">矿车是否无敌，实际使用地图内的[SpecialFlags]</span>
+<span class="na">MultiEngineer</span><span class="o">=</span><span class="s">no</span>
+<span class="na">RA1一样多工程师，废弃，Ares已复原，详见说明书</span>
+<span class="na">AlliesAllowed</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否可以结盟</span>
+<span class="na">ShortGame</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否为快速游戏</span>
+<span class="na">FogOfWar</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否拥有战争迷雾，TS残留无效</span>
+<span class="na">MCVRedeploys</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否基地可以收起，（现在使用RA2MD.ini）中的设置</span>
+<span class="na">AllyChangeAllowed</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否可以中途解盟</span>
+
+<span class="c1">;*******对象堆最值*******</span>
+
+<span class="k">[Maximums]</span>
+<span class="na">Players</span><span class="o">=</span><span class="s">8</span>
+<span class="na">最大8人游戏</span>
+<span class="na">ipx 层面将此最大限制为 8，无法更多</span>
+
+<span class="c1">;*******AI控制*******</span>
+
+<span class="k">[AI]</span>
+<span class="na">建筑注册是新阵营必须的</span>
+<span class="na">BuildConst</span><span class="o">=</span><span class="s">GACNST,NACNST,YACNST</span>
+<span class="na">基地注册(可以不是基地)</span>
+<span class="na">在Ares里，决定StartInMultiplayer.WithConst</span><span class="o">=</span><span class="s">yes时开局给的【建筑】</span>
+<span class="na">BuildPower</span><span class="o">=</span><span class="s">NAPOWR,GAPOWR,YAPOWR</span>
+<span class="na">电场注册，开局必然会先造一个，因此如果有给某个阵营使用昂贵电力加载物作为电力供给的情况，请把兵营或其他开局就能造的建筑注册到电力列表里。</span>
+
+<span class="na">BuildRefinery</span><span class="o">=</span><span class="s">NAREFN,GAREFN,YAREFN</span>
+<span class="na">矿场注册</span>
+<span class="na">BuildBarracks</span><span class="o">=</span><span class="s">NAHAND,GAPILE,YABRCK</span>
+<span class="na">兵营注册</span>
+<span class="na">BuildTech</span><span class="o">=</span><span class="s">NATECH,GATECH,YATECH</span>
+<span class="na">高科注册</span>
+<span class="na">前三项分别对应RequiresStolenAlliedTech/RequiresStolenSovietTech/RequiresStolenThirdTech三条语句的关联建筑</span>
+<span class="na">同时这个列表中的建筑不受所挂超武DisableableFromShell</span><span class="o">=</span><span class="s">yes的影响，如果关闭超武而禁用了其所挂载的超武也不会禁止建筑建造，仅表现为建造后不提供对应超武（YR力场护盾）</span>
+<span class="na">BuildWeapons</span><span class="o">=</span><span class="s">GAWEAP,NAWEAP,YAWEAP</span>
+<span class="na">战车工厂注册</span>
+<span class="c1">;BuildDefense=</span>
+<span class="c1">;基础防御建筑</span>
+<span class="c1">;BuildPDefense=</span>
+<span class="c1">;高级防御建筑</span>
+<span class="c1">;BuildAA=</span>
+<span class="c1">;防空建筑</span>
+<span class="c1">;BuildHelipad=</span>
+<span class="c1">;机场建筑</span>
+<span class="c1">;以上4句在YR之前使用，不区分阵营</span>
+<span class="c1">;YR的机场和雷达完全使用BuildRadar=的列表</span>
+<span class="c1">;YR的防御注册使用[AlliedBaseDefenses|SovietBaseDefenses|ThirdBaseDefenses]三个列表对应三个阵营，Ares允许阵营设置中定义，详见说明书</span>
+<span class="na">BuildRadar</span><span class="o">=</span><span class="s">GAAIRC,NARADR,AMRADR,NAPSIS</span>
+<span class="na">雷达注册</span>
+<span class="na">不弹框的最低要求是有基地(废话)、电厂，并且兵营和工厂没同时被禁(当然，这并不意味着AI真的能造，只要让AI以为自己能造就可以)。</span>
+<span class="na">ConcreteWalls</span><span class="o">=</span><span class="s">GAWALL,NAWALL,GAFWLL</span>
+<span class="na">墙注册</span>
+<span class="na">NSGates</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">南北向门注册，可以造在墙上与墙自动连接，Ares进行了完善</span>
+<span class="na">EWGates</span><span class="o">=</span><span class="s">GADUMY</span>
+<span class="na">东西向门注册，可以造在墙上与墙自动连接，Ares进行了完善</span>
+<span class="na">BuildNavalYard</span><span class="o">=</span><span class="s">NAYARD,GAYARD,YAYARD</span>
+<span class="na">船厂注册</span>
+<span class="na">BuildDummy</span><span class="o">=</span><span class="s">GAPILL,NALASR,YAGGUN</span>
+<span class="na">基本防御注册</span>
+<span class="na">NeutralTechBuildings</span><span class="o">=</span><span class="s">CAAIRP,CATHOSP,CAOILD,CAOUTP,CAMACH,CAPOWR</span>
+<span class="na">中立科技建筑注册，Ares允许被占领的中立科技建筑在所属方被消灭时回归中立所属而非一同被毁，详见说明书</span>
+<span class="na">AlliedBaseDefenses</span><span class="o">=</span><span class="s">GAPILL,ATESLA,NASAM</span>
+<span class="na">盟军防御建筑注册</span>
+<span class="na">SovietBaseDefenses</span><span class="o">=</span><span class="s">NALASR,NABNKR,TESLA,NAFLAK</span>
+<span class="na">苏军防御建筑注册</span>
+<span class="na">ThirdBaseDefenses</span><span class="o">=</span><span class="s">YAGGUN,YAPSYT,NATBNK</span>
+<span class="na">尤里防御建筑注册</span>
+<span class="na">应当注意的是防御建筑使用单独的计算方式而不遵循AIBuildThis设置</span>
+<span class="na">AIForcePredictionFudge</span><span class="o">=</span><span class="s">5,25,80</span>
+<span class="na">(困难、中等、简单)的AI根据敌方拥有单位的造价总和，按照此处数值的百分比选择防空，反装甲或反步兵的防御建筑。(数值越小越敏感)，AI会根据Anti[Air|Armor|Infantry]Value所设定的各建筑对各类目标评级来选择建造哪个防御建筑</span>
+<span class="na">GDIWallDefense</span><span class="o">=</span><span class="s">6</span>
+<span class="na">墙最长可以延伸到6长(一个墙就一个点，另一个墙可以在6格外，中间自动连接，没连的AI还会逐个格子补完)</span>
+<span class="na">GDIWallDefenseCoefficient</span><span class="o">=</span><span class="s">3</span>
+<span class="na">AI将WallTower放在墙上的数量所比己方陆地单位ThreatPosed</span><span class="o">=</span><span class="s">之和的倍率</span>
+<span class="na">NodBaseDefenseCoefficient</span><span class="o">=</span><span class="s">1.2</span>
+<span class="na">泰伯利亚之日语句，无效，使用SovietBaseDefenseCounts</span>
+<span class="na">GDIBaseDefenseCoefficient</span><span class="o">=</span><span class="s">1.5</span>
+<span class="na">泰伯利亚之日语句，无效，使用AlliedBaseDefenseCounts</span>
+<span class="na">MaximumBaseDefensevalue</span><span class="o">=</span><span class="s">60</span>
+<span class="na">最大防御值60，无效，使用AIForcePredictionFudge</span>
+<span class="na">ComputerBaseDefenseResponse</span><span class="o">=</span><span class="s">3</span>
+<span class="na">电脑防御反应速度</span>
+
+<span class="na">AttackInterval</span><span class="o">=</span><span class="s">0.5</span>
+<span class="na">平均电脑进攻间隔(分钟)，废弃，使用TeamDelays</span>
+<span class="na">AttackDelay</span><span class="o">=</span><span class="s">0.5</span>
+<span class="na">第一波进攻在开局0.5分钟时</span>
+<span class="na">PatrolScan</span><span class="o">=</span><span class="s">.016</span>
+<span class="na">AI执行巡逻任务时搜索敌人的时间。(单位</span><span class="o">:</span><span class="s">分钟)</span>
+<span class="na">CreditReserve</span><span class="o">=</span><span class="s">100</span>
+<span class="na">电脑现金低于100时将不会维修和建造</span>
+<span class="na">PathDelay</span><span class="o">=</span><span class="s">.01</span>
+<span class="na">道路被堵塞时电脑每0.01分钟试一次</span>
+<span class="na">BlockagePathDelay</span><span class="o">=</span><span class="s">60</span>
+<span class="na">如果60桢后还没通则绕道</span>
+<span class="na">AutocreateTime</span><span class="o">=</span><span class="s">1</span>
+<span class="na">平均1分钟制造一队具有 Autocreate</span><span class="o">=</span><span class="s">yes 标签的小队</span>
+<span class="na">InfantryReserve</span><span class="o">=</span><span class="s">50000</span>
+<span class="na">钱多于50000始终制造步兵</span>
+<span class="na">InfantryBaseMult</span><span class="o">=</span><span class="s">1</span>
+<span class="na">假如制造建筑总数量乘以1比步兵量多则一直制造步兵</span>
+<span class="na">PowerSurplus</span><span class="o">=</span><span class="s">50</span>
+<span class="na">电力富余低于50则制造电场，适当调大防止AI炸一个电厂就断电</span>
+<span class="na">事实上这个语句在原版是废弃的，Phobos下可以通过在本小节（例如该语句下一行）添加一句EnablePowerSurplus</span><span class="o">=</span><span class="s">true来开启</span>
+<span class="na">BaseSizeAdd</span><span class="o">=</span><span class="s">3</span>
+<span class="na">AI的基地规模不会大于人类玩家基地规模的这个倍数</span>
+<span class="na">RefineryRatio</span><span class="o">=</span><span class="s">.16</span>
+<span class="na">矿场制造几率</span>
+<span class="na">RefineryLimit</span><span class="o">=</span><span class="s">4</span>
+<span class="na">最多制造多少个矿场</span>
+<span class="na">BarracksRatio</span><span class="o">=</span><span class="s">.16</span>
+<span class="na">兵营制造几率</span>
+<span class="na">BarracksLimit</span><span class="o">=</span><span class="s">2</span>
+<span class="na">最多制造多少个兵营</span>
+<span class="na">WarRatio</span><span class="o">=</span><span class="s">.1</span>
+<span class="na">战车工厂制造几率</span>
+<span class="na">WarLimit</span><span class="o">=</span><span class="s">2</span>
+<span class="na">最多制造多少个战车工厂</span>
+<span class="na">DefenseRatio</span><span class="o">=</span><span class="s">.4</span>
+<span class="na">防御制造几率</span>
+<span class="na">DefenseLimit</span><span class="o">=</span><span class="s">40</span>
+<span class="na">最多制造多少个防御</span>
+<span class="na">AARatio</span><span class="o">=</span><span class="s">.14</span>
+<span class="na">对空防御制造几率，当 AI 拥有雷达且发现敌方拥有空军单位时使用，RA1残留无效</span>
+<span class="na">AALimit</span><span class="o">=</span><span class="s">10</span>
+<span class="na">最多制造多少个对空防御，当 AI 拥有雷达且发现敌方拥有空军单位时使用，RA1残留无效</span>
+<span class="na">TeslaRatio</span><span class="o">=</span><span class="s">.16</span>
+<span class="na">高级防御制造几率</span>
+<span class="na">TeslaLimit</span><span class="o">=</span><span class="s">10</span>
+<span class="na">最多制造多少个高级防御</span>
+<span class="na">HelipadRatio</span><span class="o">=</span><span class="s">.1</span>
+<span class="na">机场制造几率</span>
+<span class="na">HelipadLimit</span><span class="o">=</span><span class="s">2</span>
+<span class="na">最多制造多少个机场</span>
+<span class="na">AirstripRatio</span><span class="o">=</span><span class="s">.12</span>
+<span class="na">飞机跑道制造几率，RA1残留无效</span>
+<span class="na">AirstripLimit</span><span class="o">=</span><span class="s">0</span>
+<span class="na">最多制造多少个飞机跑道，达到限制后仅在建筑被毁后会补充而不再会继续扩建，RA1残留无效</span>
+<span class="na">CompEasyBonus</span><span class="o">=</span><span class="s">no</span>
+<span class="na">当超过一个人类玩家在此游戏中则电脑变为简单模式</span>
+<span class="na">Paranoid</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">电脑是否在形势不好时结盟AI私下进行PY交易共同对抗玩家（RA21.004以后已无效）</span>
+<span class="na">PowerEmergency</span><span class="o">=</span><span class="s">75%</span>
+<span class="na">假如电力供应低于需求的75%则出售建筑以保持电力</span>
+<span class="na">AIBaseSpacing</span><span class="o">=</span><span class="s">1</span>
+<span class="na">电脑建筑间隔大于1，写0会无法正常摆建筑，稍微增大可以缓解AI堵车</span>
+
+<span class="k">[IQ]</span>
+<span class="na">MaxIQLevels</span><span class="o">=</span><span class="s">5</span>
+<span class="na">最大可达到的IQ等级5</span>
+<span class="na">SuperWeapons</span><span class="o">=</span><span class="s">4</span>
+<span class="na">使用超武所需IQ等级4，不支持人类玩家所属方使用该项</span>
+<span class="na">Production</span><span class="o">=</span><span class="s">5</span>
+<span class="na">自动生产所需IQ等级5，YR下不支持人类玩家所属方使用该项</span>
+<span class="na">同时也会让AI倾向于主动立即部署自己所拥有的MCV从而影响一些预设的小队脚本行为</span>
+<span class="na">GuardArea</span><span class="o">=</span><span class="s">2</span>
+<span class="na">单位自动进入区域警戒模式所需IQ等级2</span>
+<span class="na">RepairSell</span><span class="o">=</span><span class="s">1</span>
+<span class="na">维修或变卖(变卖还需看SellBack进行双层判定)受损建筑所需IQ等级1</span>
+<span class="na">属于最经典的小玩意，玩家自动维修的一种经典做法就是把这条改为0</span>
+<span class="na">AutoCrush</span><span class="o">=</span><span class="s">2</span>
+<span class="na">自动碾压所需IQ等级2</span>
+<span class="na">人类玩家使用[CombatDamage] -&gt; PlayerAutoCrush</span><span class="o">=</span><span class="s">设置</span>
+<span class="na">Scatter</span><span class="o">=</span><span class="s">2</span>
+<span class="na">自动规避有弹道的抛射体所需IQ等级2</span>
+<span class="na">人类玩家使用[CombatDamage] -&gt; PlayerScatter</span><span class="o">=</span><span class="s">设置</span>
+<span class="na">ContentScan</span><span class="o">=</span><span class="s">3</span>
+<span class="na">使[Easy]、[Normal]、[Difficult]项下的ContentScan生效所需IQ等级3</span>
+<span class="na">Aircraft</span><span class="o">=</span><span class="s">3</span>
+<span class="na">自动补充战机所需IQ等级3</span>
+<span class="na">Harvester</span><span class="o">=</span><span class="s">2</span>
+<span class="na">自动补充矿车所需IQ等级2</span>
+<span class="na">SellBack</span><span class="o">=</span><span class="s">2</span>
+<span class="na">出售建筑所需IQ等级2，疑似人类玩家仅在战役中可用该项</span>
+<span class="na">额外判定资金是否低于[AI] -&gt; CreditReserve</span><span class="o">=</span><span class="s">设定的值</span>
+
+<span class="na">玩家所属方的AI（这里的AI不是AIPlayer而是自动执行行为的系统）正常状态下相当于IQ</span><span class="o">=</span><span class="s">0，所以将RepairSell改为0即可达到玩家建筑自动维修的效果</span>
+<span class="na">但并不是所有行为都可以简单的凭借将所需IQ改0来让玩家得以使用，例如玩家所属方的系统替代手动操作执行自动生产这一行为除了Dune2000外都并不支持</span>
+<span class="na">自动使用超武也同样并不支持人类玩家所属方，不过在Ares中有一个-AI-Control功能可以让AI接过玩家指挥权的功能，详见Ares说明书</span>
+
+<span class="c1">;*******国家统计*******</span>
+<span class="c1">;IncomeMult=3矿车采钱数倍率，如果设为3则每车矿的钱数是正常的三倍</span>
+<span class="k">[国家名称]</span>
+<span class="na">需要注册进[Countries]</span>
+<span class="na">UIName</span><span class="o">=</span><span class="s">Name:British</span>
+<span class="na">语言编辑CSF文件的对应项，从而可以在游戏中显示汉字名称</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">GreatBritain</span>
+<span class="na">说明文字，随便填，没什么意义</span>
+<span class="na">Suffix</span><span class="o">=</span><span class="s">Allied</span>
+<span class="na">后缀</span><span class="o">=</span><span class="s">联盟，即所属阵营</span>
+<span class="na">Prefix</span><span class="o">=</span><span class="s">G</span>
+<span class="na">前缀</span><span class="o">=</span><span class="s">G，所属阵营简称</span>
+<span class="na">Color</span><span class="w"> </span><span class="o">=</span>
+<span class="na">国家显示的默认颜色见[Colors]</span>
+<span class="na">Multiplay</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">是否能在多人游戏（包括遭遇战）中选择这个国家</span>
+<span class="na">MultiplayPassive</span><span class="o">=</span><span class="s">no</span>
+<span class="na">是否为消极所属方，例如原版中立治安，开局不会给予BaseUnit和部队，同时玩家的单位不会主动攻击，Ares已允许设定是否主动攻击，详见说明书</span>
+<span class="na">Side</span><span class="o">=</span><span class="s">GDI</span>
+<span class="na">所属阵营为GDI</span>
+<span class="c1">;WallOwner =</span>
+<span class="na">是否该国家拥有防护墙</span>
+<span class="c1">;SmartAI =</span>
+<span class="na">是否该国家拥有最聪明的AI，默认</span><span class="o">=</span><span class="s">no</span>
+<span class="c1">;VeteranInfantry=GHOST,SNIPE</span>
+<span class="na">初始的步兵(步兵列表内的)为一级，可多设</span>
+<span class="c1">;VeteranAircraft=ORCA</span>
+<span class="na">初始的战机(战机列表内的)为一级，可多设</span>
+<span class="c1">;VeteranUnits=FV,CARRIER,SHAD</span>
+<span class="na">初始的车船(载具列表内的)为一级，可多设</span>
+<span class="c1">;BuildTimeInfantryMult=.5</span>
+<span class="na">建造步兵时间为原来时间的0.5倍</span>
+<span class="c1">;BuildTimeAircraftMult=.5</span>
+<span class="na">建造空军</span>
+<span class="c1">;BuildTimeUnitsMult=.5</span>
+<span class="na">建造陆军</span>
+<span class="c1">;BuildTimeBuildingsMult=.5</span>
+<span class="na">建造建筑</span>
+<span class="c1">;BuildTimeDefensesMult=0.5</span>
+<span class="na">建造防御建筑(BuildCat</span><span class="o">=</span><span class="s">Combat)时间为原来时间的0.5倍</span>
+<span class="c1">;SpeedInfantryMult=1.5</span>
+<span class="na">步兵速度为原来的1.5倍</span>
+<span class="c1">;SpeedAircraftMult=1.5</span>
+<span class="na">空军</span>
+<span class="c1">;SpeedUnitsMult=1.5</span>
+<span class="na">陆军</span>
+<span class="c1">;SpeedBuildingsMult=1.5</span>
+<span class="na">建筑</span>
+<span class="c1">;CostInfantryMult=.5</span>
+<span class="na">步兵花费为原0.5倍</span>
+<span class="c1">;CostAircraftMult=.5</span>
+<span class="na">空军花费为原0.5倍</span>
+<span class="c1">;CostUnitsMult=.5</span>
+<span class="na">陆军花费为原0.5倍</span>
+<span class="c1">;CostBuildingsMult=.5</span>
+<span class="na">建筑花费为原0.5倍</span>
+<span class="c1">;CostDefensesMult=.5</span>
+<span class="na">防御建筑(BuildCat</span><span class="o">=</span><span class="s">Combat)花费为原0.5倍</span>
+<span class="c1">;ArmorInfantryMult=2.0</span>
+<span class="na">步兵血为原2倍</span>
+<span class="c1">;ArmorAircraftMult=2.0</span>
+<span class="na">飞机血为原2倍</span>
+<span class="c1">;ArmorUnitsMult=2.0</span>
+<span class="na">载具血为原2倍</span>
+<span class="c1">;ArmorBuildingsMult=2.0</span>
+<span class="na">建筑血为原2倍</span>
+<span class="c1">;ArmorDefensesMult=2.0</span>
+<span class="na">防御建筑(BuildCat</span><span class="o">=</span><span class="s">Combat)血为原2倍</span>
+<span class="na">特定的国家可以对该国家的单位和建筑物的价值和能力做特殊的调整</span>
+
+<span class="na">这种调整将影响该国家的所有单位和建筑物的价值和能力</span>
+<span class="na">这只适用于遭遇战和单人任务模式，在常态游戏中(是否指网络多人类玩家作战)所有价值是&quot;1.0&quot;</span>
+
+<span class="c1">;Airspeed</span>
+<span class="na">所有空中单位的速度，填的数值越大速度越快，默认</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;Armor =</span>
+<span class="na">所有单位和建筑的生命力，填的数值越大生命力越高，默认</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;Cost =</span>
+<span class="na">花费的金钱，填的数值越大则越费钱，默认</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;Firepower =</span>
+<span class="na">所有武器火力的调整，填的数值越大则损害越高，默认</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;Groundspeed =</span>
+<span class="na">所有地面部队的速度，填的数越大速度越快，默认</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;ROF =</span>
+<span class="na">对所有武器火力速度的调整，填的数越大则射速越慢，默认def</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;BuildTime =</span>
+<span class="na">所有建筑物的建造时间调整，填的数越大则建造的时间越长，默认</span><span class="o">=</span><span class="s">1.0</span>
+
+
+
+<span class="c1">;*******配色方案*******</span>
+<span class="na">配色方案，格式是HSV，H同样以255为最大，名字随意命名，可以用于几乎所有涉及Color的条目</span>
+<span class="k">[Colors]</span>
+<span class="c1">;第一个颜色会作为原版AltPalette和使用所属色不正确时所强制的颜色，也就是一般丢失所属色时所说的橙色读取自此</span>
+<span class="c1">;第三个颜色同时也作为超武就绪后右下角文本与所属色来回切换时的另一个颜色</span>
+<span class="c1">;CNCMapRenderer和gamemd.exe会强制用LightGrey作为中立色，所以即便第三个颜色更改了也必须保留名为LightGrey的配色方案，否则00655FE5</span>
+<span class="c1">;对于[Colors]后一半的颜色作为所属色时如果与自定义色盘搭配使用会导致不跟随地图光照改变亮度，需要自行调整（Phobos已修复）</span>
+<span class="na">LightGold</span><span class="o">=</span><span class="s">25,255,255</span>
+<span class="na">Gold</span><span class="o">=</span><span class="s">43,239,255</span>
+<span class="na">LightGrey</span><span class="o">=</span><span class="s">0,0,240</span>
+<span class="na">Grey</span><span class="o">=</span><span class="s">0,0,131</span>
+<span class="na">Red</span><span class="o">=</span><span class="s">20,255,184</span>
+<span class="na">DarkRed</span><span class="o">=</span><span class="s">0,230,255</span>
+<span class="na">Orange</span><span class="o">=</span><span class="s">25,230,255</span>
+<span class="na">Magenta</span><span class="o">=</span><span class="s">221,102,255</span>
+<span class="na">Purple</span><span class="o">=</span><span class="s">201,201,189</span>
+<span class="na">LightBlue</span><span class="o">=</span><span class="s">119,143,255</span>
+<span class="na">DarkBlue</span><span class="o">=</span><span class="s">153,214,212</span>
+<span class="na">NeonBlue</span><span class="o">=</span><span class="s">185,156,238</span>
+<span class="na">DarkSky</span><span class="o">=</span><span class="s">131,200,230</span>
+<span class="na">Green</span><span class="o">=</span><span class="s">104,241,195</span>
+<span class="na">DarkGreen</span><span class="o">=</span><span class="s">81,200,210</span>
+<span class="na">NeonGreen</span><span class="o">=</span><span class="s">0,0,0</span>
+<span class="na">Yellow</span><span class="o">=</span><span class="s">38,159,255</span>
+<span class="na">Purple2</span><span class="o">=</span><span class="s">211,201,189</span>
+<span class="na">Purple3</span><span class="o">=</span><span class="s">191,201,189</span>
+
+<span class="k">[ColorAdd]</span>
+<span class="na">染色部分，例如空袭时目标建筑被染成红色，格式RGB565，Phobos允许通过[AudioVisual] -&gt; ColorAddUse8BitRGB</span><span class="o">=</span><span class="s">true转为使用RGB888格式（毕竟对人类用户而言肯定还是RGB888更友好），为便于新手使用，YRStandard-INI项目已附赠转好的RGB888格式[ColorAdd]表，2025教程光速部署包中可直接开启</span>
+<span class="c1">;RGB 值名称	位值		颜色#</span>
+<span class="na">None</span><span class="o">=</span><span class="s">0,0,0</span>
+<span class="c1">;00000,000000,00000		0</span>
+<span class="na">StrongRed</span><span class="o">=</span><span class="s">31,0,0</span>
+<span class="c1">;11111,000000,00000		1</span>
+<span class="na">StrongGreen</span><span class="o">=</span><span class="s">0,63,0</span>
+<span class="c1">;00000,111111,00000		2</span>
+<span class="na">StrongBlue</span><span class="o">=</span><span class="s">0,0,31</span>
+<span class="c1">;00000,000000,11111		3</span>
+<span class="na">HighRed</span><span class="o">=</span><span class="s">24,0,0</span>
+<span class="c1">;11000,000000,00000		4</span>
+<span class="na">HighGreen</span><span class="o">=</span><span class="s">0,56,0</span>
+<span class="c1">;00000,111000,00000		5</span>
+<span class="na">HighBlue</span><span class="o">=</span><span class="s">0,0,24</span>
+<span class="c1">;00000,000000,11000		6</span>
+<span class="na">BrightWhite</span><span class="o">=</span><span class="s">31,63,31</span>
+<span class="c1">;11111,111111,11111		7</span>
+<span class="na">LowWhite</span><span class="o">=</span><span class="s">7,7,7</span>
+<span class="c1">;00111,000111,00111		8</span>
+<span class="na">HighWhite</span><span class="o">=</span><span class="s">24,56,24</span>
+<span class="c1">;11000,111000,11000		9</span>
+<span class="na">MidWhite</span><span class="o">=</span><span class="s">14,28,14</span>
+<span class="c1">;01110,011100,01110		10</span>
+<span class="na">Purple</span><span class="o">=</span><span class="s">15,0,15</span>
+<span class="c1">;01111,000000,01111		11</span>
+<span class="na">HighYellow</span><span class="o">=</span><span class="s">24,56,0</span>
+<span class="c1">;11000,111000,00000		12</span>
+<span class="na">TopYellow</span><span class="o">=</span><span class="s">16,32,0</span>
+<span class="c1">;10000,100000,00000		13</span>
+
+<span class="c1">;*******难度控制*******</span>
+<span class="k">[Easy]</span>
+<span class="na">仅以下五项有效</span>
+<span class="na">ROF</span><span class="o">=</span><span class="s">.8</span>
+<span class="na">攻击间隔帧数为原0.8倍</span>
+<span class="na">RepairDelay</span><span class="o">=</span><span class="s">.02</span>
+<span class="na">受损物体维修滞后0.02分钟</span>
+<span class="na">BuildDelay</span><span class="o">=</span><span class="s">.03</span>
+<span class="na">建造生产滞后0.03分钟</span>
+<span class="na">DestroyWalls</span><span class="o">=</span><span class="s">no</span>
+<span class="na">自动破坏周围敌军的墙</span>
+<span class="na">ContentScan</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">AI使用运输单位时，会将运输工具及乘客的Points和ThreatPosed都考虑进去。写no或[IQ]此项不满足的话则只考虑运输工具自身的。</span>
+
+<span class="na">简单难度：玩家使用[Easy]，电脑使用[Difficult]</span>
+<span class="na">中等难度：玩家和电脑都用[Normal]</span>
+<span class="na">困难难度：玩家使用[Difficult]，电脑使用[Easy]</span>
+</pre></div>
+</div>
+<p>最后修订日期20241106by九千天华</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>下一页</span>
+                </div>
+                <div class="title">2.单位属性rules词典</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>上一页</span>
+                </div>
+                
+                <div class="title">原版单位工具条对照表</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; 版权所有 2025, RA2DIY 教编组
+            </div>
+            使用 <a href="https://www.sphinx-doc.org/">Sphinx</a>及 <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a> 的
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a> 主题制作
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            当前页面
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">1.全局代码解释</a><ul>
+<li><a class="reference internal" href="#id2">常用概念与换算</a></li>
+<li><a class="reference internal" href="#id3">标准速度对照表</a></li>
+<li><a class="reference internal" href="#ini">最基本的INI格式</a></li>
+<li><a class="reference internal" href="#id4">读取规则</a></li>
+<li><a class="reference internal" href="#id5">常用注册列表</a></li>
+<li><a class="reference internal" href="#id6">全局修改</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=7d86a446"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

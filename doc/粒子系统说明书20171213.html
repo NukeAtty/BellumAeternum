@@ -1,0 +1,488 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="粒子系统说明书" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AF%B4%E6%98%8E%E4%B9%A620171213.html" />
+<meta property="og:site_name" content="RA2DIY" />
+<meta property="og:description" content="http://bbs.ra2diy.com/forum.php?mod=viewthread&tid=12917 基础知识：什么是粒子和粒子系统？ 粒子和动画、单位等一样，是游戏中的一种“物体”，粒子系统则是控制粒子产生的一种逻辑 举个例子：工程师步兵车维修时会冒出火花，每一个火花“点”都是一个粒子，而控制这些粒子的产生数量、分布方式和产生速度的是粒子系统 其他的还有病毒狙击手的病毒、坦克损..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_粒子系统说明书20171213_dd9626fc.png" />
+<meta property="og:image:alt" content="http://bbs.ra2diy.com/forum.php?mod=viewthread&tid=12917 基础知识：什么是粒子和粒子系统？ 粒子和动画、单位等一样，是游戏中的一种“物体”，粒子系统则是控制粒子产生的一种逻辑 举个例子：工程师步兵车维修时会冒出火花，每一个火花“点”都是一个粒子，而控制这些粒..." />
+<meta name="description" content="http://bbs.ra2diy.com/forum.php?mod=viewthread&tid=12917 基础知识：什么是粒子和粒子系统？ 粒子和动画、单位等一样，是游戏中的一种“物体”，粒子系统则是控制粒子产生的一种逻辑 举个例子：工程师步兵车维修时会冒出火花，每一个火花“点”都是一个粒子，而控制这些粒子的产生数量、分布方式和产生速度的是粒子系统 其他的还有病毒狙击手的病毒、坦克损..." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="prev" title="8.污染物和Voxel碎片及杂项词典" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>粒子系统说明书 - RA2DIY 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c6a23ec1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>内容</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>菜单</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>扩展</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>自动深浅色 - 浅色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>自动深浅色 - 深色模式</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">隐藏导航栏</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">隐藏目录栏</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">跳转至内容</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">开关页面侧边导航</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RA2DIY  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">开关侧边栏目录</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">RA2DIY  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="【搜索|没搬完前基本没法用】" name="q" aria-label="【搜索|没搬完前基本没法用】">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">写在前面的话</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E5%AD%A6%E4%B9%A0%E7%AF%87.html">入门指南：学习篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E9%80%90%E6%B5%AAmod%E5%9C%88.html">逐浪 ＭＯＤ 圈</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非词典类资料</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E5%85%A8%E8%A7%A3.html">武器系统全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2022%E5%B9%B41%E6%9C%88%E7%89%88AI%E6%95%99%E7%A8%8B.html">AI的艺♂术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AI%E5%85%A8%E8%A7%A3.html">AI全解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EIP%E6%9F%A5%E9%94%99%E6%8C%87%E5%8D%97.html">EIP查错指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html">原版单位工具条对照表</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">词典</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E5%85%A8%E5%B1%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A2024.html">1.全局代码解释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html">2.单位属性rules词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%AD%A6%E5%99%A8%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%A0%81%E8%AF%8D%E5%85%B82024.html">3.武器系统代码词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="art%E8%AF%8D%E5%85%B82024.html">4.art词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%B6%85%E7%BA%A7%E6%AD%A6%E5%99%A8%E8%AF%8D%E5%85%B8.html">5.超级武器词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E5%9C%B0%E5%BD%A2%E5%AF%B9%E8%B1%A1%E8%AF%8D%E5%85%B8.html">6.地形对象词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E8%A6%86%E7%9B%96%E7%89%A9%E8%AF%8D%E5%85%B8.html">7.覆盖物词典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html">8.污染物和Voxel碎片及杂项词典</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">粒子系统说明书</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>回到顶部</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/粒子系统说明书20171213.md.txt" title="查看页面源码">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">查看页面源码</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">切换亮／暗／自动颜色主题</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">开关侧边栏目录</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>粒子系统说明书<a class="headerlink" href="#id1" title="链接到此标题">¶</a></h1>
+<p>http://bbs.ra2diy.com/forum.php?mod=viewthread&amp;tid=12917</p>
+<p>基础知识：什么是粒子和粒子系统？
+粒子和动画、单位等一样，是游戏中的一种“物体”，粒子系统则是控制粒子产生的一种逻辑
+举个例子：工程师步兵车维修时会冒出火花，每一个火花“点”都是一个粒子，而控制这些粒子的产生数量、分布方式和产生速度的是粒子系统
+其他的还有病毒狙击手的病毒、坦克损伤时的烟雾、喷火器、轨道炮等</p>
+<p>粒子不一定必须由粒子系统产生 例如动画也能直接产生粒子</p>
+<p>粒子和粒子系统皆须注册才能使用。
+反正某些自学能力低下的菜逼找个注册表都懒得找，就直接贴上来吧
+[ParticleSystems]粒子系统
+[Particles]粒子</p>
+<p>粒子及粒子系统的调用方式:</p>
+<p>1 下文的[XXXWeapon]为在武器上调用粒子系统的方式</p>
+<p>注：武器发射粒子系统时 必须等上一次发射的粒子消失 才能再次发射
+举个栗子:某轨道炮武器burst=2 粒子持续时间为20 则第二发要等20帧才能发出来</p>
+<p>注2：同一单位同一级别下不能同时携带两个带有粒子系统的武器，否则可能无法正常开火。
+举个栗子：主武器、副武器、盖特武器</p>
+<p>2 动画调用粒子(非系统) 动画结束产生粒子
+art里
+[XXXAnim]
+…
+SpawnsParticle=填写粒子名
+NumParticles=粒子数量</p>
+<p>3 弹头调用粒子系统
+[XXXXWH]
+…
+Particle= 填写粒子系统名称 (你可以做个远程维修车 火花在被维修的目标上产生)</p>
+<p>4 覆盖物调用粒子系统 (比如打死金矿后刷出一团毒气)
+[TIB01];一种金矿
+…
+Explodes=yes ;必须
+BarrelParticle=填写粒子系统名称</p>
+<p>5 单位损伤调用粒子系统 (坦克残血冒烟)
+[MTNK]
+…
+DamageParticleSystems= 填粒子系统名称
+(ares有更多相关功能 具体看ares说明书)
+运用实例 来自mk 受损粒子刷维修罩:http://bbs.ra2diy.com/forum.php?mod=viewthread&amp;tid=10177</p>
+<p>6 ares新功能 抛射体调用烟雾粒子系统 具体看ares说明书</p>
+<p>粒子系统通用代码
+[XXXSys]
+HoldsWhat = 粒子系统产生的粒子名称
+BehavesLike= 填写系统类型  Gas Smoke Fire Spark Railgun</p>
+<p>注:粒子系统和粒子的BehavesLike不一定是同类的。你完全可以用smoke系统产生毒气粒子
+例如:Railgun粒子系统如果用smoke粒子形态就可以自定义轨道炮粒子的图像，用GAS的话更可以直接散布大量毒气粒子</p>
+<p>毒气粒子系统 无甚可说 (弹头和覆盖物刷毒气专用?)
+[GasCloudSys]
+HoldsWhat=GasCloud1
+BehavesLike=Gas
+硬编码移动速度2无法强制固定位置不移动</p>
+<p>烟雾粒子系统(车辆黄血冒烟等)
+[SmallGreySSys]
+HoldsWhat=SmallGreySmoke
+Spawns=yes 是否用此系统不停刷出粒子
+SpawnFrames=10 和上一句连用，刷粒子的间隔
+SpawnRadius=5 产生粒子的范围 单位为像素
+Slowdown=.0025 系统速率衰减
+ParticleCap=7 最高同时存在的粒子数目
+SpawnCutoff=13.0 多长时间后停止产生粒子
+SpawnTranslucencyCutoff=12.5 多长时间后粒子变为半透明
+BehavesLike=Smoke</p>
+<p>喷火粒子系统和喷火粒子 放在一起
+特征为射出一团向目标运动的粒子
+(西木SB 逻辑糟糕 懒得说明 也就改改什么速度、伤害、图像、持续时间之类的吧)
+中文解释参考坛友双杀步枪做好的实例→http://bbs.ra2diy.com/forum.php?mod=viewthread&amp;tid=14734
+[XXXWeapon]
+…
+UseFireParticles=yes
+AttachedParticleSystem=FireStreamSys
+[FireStreamSys]
+HoldsWhat=FireStream
+Spawns=yes
+SpawnFrames=4
+BehavesLike=Fire
+Image=TWLT036
+Lifetime=30
+[FireStream]
+Image=FLAMEALL
+Deacc=0.01
+Velocity=28.0
+BehavesLike=Fire
+MaxEC=400
+MaxDC=1
+Warhead=Fire
+Damage=4
+StartStateAI=1
+EndStateAI=19
+StateAIAdvance=6
+Translucent50State=15
+Translucent25State=10
+DeleteOnStateLimit=yes
+Normalized=yes
+FinalDamageState=14
+Report=FLAMTNK1</p>
+<p>火花粒子系统(维修车)
+[XXXWeapon]
+…
+UseSparkParticles=yes
+AttachedParticleSystem=WeldingSys
+[WeldingSys]
+HoldsWhat=WeldingSpark
+BehavesLike=Spark
+ParticleCap=15 此粒子系统最高产生的粒子数目
+SparkSpawnFrames=20 产生粒子的所用的帧数
+SpawnSparkPercentage=.4 每次产生粒子的几率
+LightSize=25 闪光大小
+OneFrameLight=true 是否产生闪光</p>
+<p>轨道炮粒子系统(特征为 在发射者和目标之间的连线上立刻产生一列螺旋分布的粒子)
+[XXXWeapon]
+…
+IsRailgun=true
+AttachedParticleSystem=PsyBeamSys
+[XXXRailgunSys]
+HoldsWhat=XXXPart (该粒子类型非Railgun时 粒子不会运动)
+BehavesLike=Railgun
+SpiralRadius=6 轨道炮粒子扩散的最大半径
+ParticlesPerCoord=a 这是粒子密度,越大越密 算法为 1/a (例:填写.05 即每1/.05=20个像素产生一个粒子)
+SpiralDeltaPerCoord=b 波长 控制粒子排列的弯曲度 越大弯曲度越小 算法为b/a (例:填写 .3 即.3/.05=6 每像素粒子方向绕圆柱轴心旋转.3，那么每相邻的两个粒子之间角度相差6)以上两条具体算法来自耗神
+VelocityPerturbationCoefficient=0 速度扰动系数 算法不明 影响railgun粒子出膛后的运动速度
+MovementPerturbationCoefficient=0 运动扰动系数 算法不明 影响railgun粒子出膛后的运动方向
+PositionPerturbationCoefficient=0 位置扰动系数 算法不明 影响railgun粒子出膛后的位置
+增大以上三条的数值能让轨道炮粒子的弥散运动更加不确定
+Laser=yes 是否产生一条激光细线
+LaserColor=255,0,255 线的颜色</p>
+<p>;粒子注释
+;乱七八糟的太多 说几个常见的 (以下代码并非对所有类型粒子都有效，建议用的时候复制原版写好的粒子再改数据)
+; BehavesLike= 粒子类型
+Spark   火花(维修车)
+Smoke   烟雾(车辆损伤等)
+Fire    火焰(喷火)
+Gas  毒气
+RailGun 轨道炮
+; Image = 此粒子的外形 直接写shp名 无需且无法在art里定义 色盘默认为anim (Spark和RailGun无效)
+; Translucency= 图像透明度 25 50 75
+; MaxEC = 此粒子的存在时间
+; StartFrame = 粒子动画的起始帧号
+; EndStateAI = 粒子动画的结束帧号
+; StateAIAdvance= 图像每帧持续多少帧时间 控制图像播放速度 越大越慢（相当于art里的rate，算法相反）
+; Damage = 每次产生的伤害
+; Warhead = 用来产生伤害的弹头(弹头范围无效)
+; MaxDC = 间隔多少帧产生一次伤害
+; NumLoopFrames =多少帧是一个循环
+; NextParticle= 循环结束后产生另一粒子的名称
+; ColorList=(255,0,0),(150,150,150) 轨道炮粒子颜色渐变始末
+; ColorSpeed=.009 变色速度
+; Persistent =永远是yes，当成无效代码好了
+; WindEffect = 风力影响，改数值貌似没用
+; Velocity = 粒子运动的速度，默认0
+; Deacc= 速度衰减
+; DeleteOnStateLimit=yes 图像播放结束后立刻移除粒子
+; Radius = 伤害范围？貌似无效，粒子最多影响1X1</p>
+<p>编写修订： 紫色放逐
+协力：moderKenosis</p>
+<p>2017 03 12</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="%E6%B1%A1%E6%9F%93%E7%89%A9%E5%92%8CVoxel%E7%A2%8E%E7%89%87%E5%8F%8A%E6%9D%82%E9%A1%B9%E8%AF%8D%E5%85%B8.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>上一页</span>
+                </div>
+                
+                <div class="title">8.污染物和Voxel碎片及杂项词典</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                &#169; 版权所有 2025, RA2DIY 教编组
+            </div>
+            使用 <a href="https://www.sphinx-doc.org/">Sphinx</a>及 <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a> 的
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a> 主题制作
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=7d86a446"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>
