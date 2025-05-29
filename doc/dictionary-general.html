@@ -1,55 +1,44 @@
 <!doctype html>
 <html class="no-js" lang="zh-CN" data-content_root="./">
-  <head><meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="1.全局代码解释" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="%E5%85%A8%E5%B1%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A2024.html" />
-<meta property="og:site_name" content="RA2DIY" />
-<meta property="og:description" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数 所以 1 分钟换算为 900 帧，但这里说的..." />
-<meta property="og:image:width" content="1146" />
-<meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_全局代码解释2024_2dac0f22.png" />
-<meta property="og:image:alt" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游..." />
-<meta name="description" content="常用概念与换算: 1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见 https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218 1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数 所以 1 分钟换算为 900 帧，但这里说的..." />
-<meta name="twitter:card" content="summary_large_image" />
-<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="next" title="2.单位属性rules词典" href="%E5%8D%95%E4%BD%8D%E5%B1%9E%E6%80%A7rules%E8%AF%8D%E5%85%B82024.html" /><link rel="prev" title="原版单位工具条对照表" href="%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E5%B7%A5%E5%85%B7%E6%9D%A1%E5%AF%B9%E7%85%A7%E8%A1%A8.html" />
+    <link rel="icon" type="image/svg" href="../src/favicon.svg">
+    <link rel="index" title="索引" href="genindex.html" /><link rel="search" title="【搜索|没搬完前基本没法用】" href="search.html" /><link rel="next" title="2.单位属性rules词典" href="dictionary-units.html" /><link rel="prev" title="原版单位工具条对照表" href="vanilla-name.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>1.全局代码解释 - RA2DIY 文档</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <title>1.全局代码解释 - RA2DIY 文档</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c6a23ec1" />
-    
-    
 
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
+    <style>
+      body {
+        --color-code-background: #f8f8f8;
+      --color-code-foreground: black;
+      
       }
-    }
-  }
-</style></head>
+      @media not print {
+        body[data-theme="dark"] {
+          --color-code-background: #202020;
+      --color-code-foreground: #d0d0d0;
+      
+        }
+        @media (prefers-color-scheme: dark) {
+          body:not([data-theme="light"]) {
+            --color-code-background: #202020;
+      --color-code-foreground: #d0d0d0;
+      
+          }
+        }
+      }
+    </style>
+  </head>
   <body>
     
     <script>
