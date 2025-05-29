@@ -32,30 +32,8 @@
 </head>
 
 <body>
-	<header>
-		<div class="navigation-buttons">
-			<div class="navigation-button">
-				<a href="https://ra2be.com/zh/">主页</a>
-			</div>
-			<div class="navigation-button">
-				<a href="archives.html">档案库</a>
-			</div>
-			<div class="navigation-button">
-				<a href="blog.html">博客</a>
-			</div>
-			<div class="navigation-button">
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-		<div class="responsive-navigation">
-			<a href="https://ra2be.com/zh/"><img src="../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
-			<div class="responsive-navigation-buttons">
-				<a href="archives.html">档案库</a>
-				<a href="blog.html">博客</a>
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-	</header>
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
 		<div class="blog">
@@ -75,8 +53,8 @@
 					<h2 id="disclaimer">免责条例</h2>
 					<p>《万世之战》的开发者没有责任提供任何对于修改该Mod的技术支持，因私自修改Mod导致的任何问题都视为未经授权的改动。</p>
 					<h2 id="property">知识产权</h2>
-					<p></p>
 					<p>《万世之战》的资产（包括但不限于其设计、代码和素材）受知识产权法保护。未经作者事先书面同意，您不得复制、修改、分发、出售或转让该Mod的任何部分。</p>
+					<p>​未经原作者授权​售卖本Mod，侵犯了原Mod创作者的​复制权、发行权、信息网络传播权​（《著作权法》第10条）。​若违法所得超过​5万元​，或非法经营额超过​25万元​，可能构成刑事犯罪，最高可处​7年有期徒刑​。长期以营利为目的倒卖Mod，可能被认定为“非法经营互联网文化产品”（需结合具体案情）。</p>
 				</div>
 			</div>
 		</div>
@@ -92,40 +70,14 @@
 				<div class="lang-selector">
 					<p>语言</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com/terms-of-use.html">EN</a>
-						<a href="https://ra2be.com/zh/terms-of-use.html">中</a>
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
 					</div>
 				</div>
 			</div>
-			<div class="footer-right">
-				<div class="footer-column">
-				<p>阵营</p>
-				<ul>
-					<li><a href="allied.html">盟军</a></li>
-					<li><a href="soviet.html">苏联</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>资料</p>
-				<ul>
-					<li><a href="archives.html">档案库</a></li>
-					<li><a href="blog.html">博客</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>关于</p>
-				<ul>
-					<li><a href="faq.html">常见问题</a></li>
-					<li><a href="contact.html">联系作者</a></li>
-					<li><a href="terms-of-use.html">使用条例</a></li>
-				</ul>
-				</div>
-			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
-		<div class="footer-portals">
-			<a href="https://qm.qq.com/q/30o7dOtm0w" target="_blank"><img src="../src/icons/qq.svg" width="24px" height="24px">万世之战QQ群</a>
-			<a href="https://space.bilibili.com/3546721533561614" target="_blank"><img src="../src/icons/bilibili.svg" width="24px" height="24px">关注Bilibili：NUKE_核大人</a>
-		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
 </body>
 </html>
