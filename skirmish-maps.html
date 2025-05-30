@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="preload" href="../src/font/furore.otf" as="font" />
+<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
+<link rel="preload" href="src/background-pattern.webp" as="image">
+<meta name="description" content="Skirmish maps list of Bellum Æternum, a Red Alert 2 Yuri's Revenge mod, for players to understand the information, background story, and details of skirmish maps. ">
+<link rel="icon" type="image/svg" href="/src/favicon.svg">
+<link rel="alternate" hreflang="x-default" href="https://ra2be.com" />
+<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/" />
+<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
+<meta http-equiv="ontent-security-policy" content="script-src https:; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPEL1Y72V6');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
+<!-- End Google Tag Manager -->
+<title> Skirmish Maps | Bellum Æternum: A More Realistic Red Alert 2</title>
+<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "BreadcrumbList",
+	  "itemListElement": [
+		  {
+			  "@type": "ListItem",
+			  "position": 1,
+			  "name": "Bellum Æternum",
+			  "item": "https://ra2be.com"
+		  }
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Skirmish Maps",
+			"item": "https://ra2be.com/skirmish-maps.html"
+		}
+	  ]
+	}
+  </script>
+  <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+	<!--Main-->
+	<main>
+		<main>
+		<div class="overview">
+			<h1>Skirmish Maps</h1>
+            <p><b>Bellum Æternum</b>: A More Realistic Red Alert 2</p>
+		</div>
+        <div class="maps-section">
+            <div class="map-selector" id="map-selector">
+                <button class="map-selector-button selected-button" onclick="mapFilterSelection('all')">All Maps</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('1v1')">2 Players Maps</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('2v2')">4 Players Maps</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('3v3')">6 Players Maps</button>
+            </div>
+            <div class="map-list">
+                <div class="map-type 1v1">
+                    <div class="map">
+                        <img src="src/maps/skirmish-verdant-hills.webp" alt="苍翠丘陵" width="1280px" height="1108px">
+                        <div class="map-description">
+                            <h3>Verdant Hills</h3>
+                            <p>因被茂密的森林包裹而得名的山丘。从中世纪开始，住在山丘上的领主就世世代代地统治着这里。尔后，地下蕴藏的石油将战火引致此处，古老而宁静的村庄也成为了兵家必争之地。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>Mode</th>
+                                        <td>
+                                            <ul>
+                                                <li>Standard</li>
+                                                <li>Meat Grinder</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tech Buildings</th>
+                                        <td>
+                                            <ul>
+                                                <li>Tech Oil Derrick</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-type 2v2">
+                    <div class="map">
+                        <img src="src/maps/skirmish-leavenworth.webp" alt="利文沃斯" width="1280px" height="637px">
+                        <div class="map-description">
+                            <h3>Leavenworth</h3>
+                            <p>地处阿尔卑斯山脚，曾是一个被世人遗忘的山间小镇。二战期间，这里层一度被德军所用作后勤补给点，并修筑了铁路和高速公路。战后，小镇恢复了往日的平静，然而新的战争使得这个被遗忘的小镇再次成为战略要地。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>Mode</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                                <li>市民医院</li>
+                                                <li>机械车间</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <img src="../src/maps/skirmish-frost-reach.webp" alt="寒霜流域" width="1280px" height="643px">
+                        <div class="map-description">
+                            <h3>寒霜流域</h3>
+                            <p>一条流向北冰洋的河流穿过这座名不见经传的北欧小镇，要不是因为发现了石油，战火也无法烧到这里。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>Mode</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-type 3v3">
+                    <div class="map">
+                        <img src="../src/maps/skirmish-mt-thunderhead.webp" alt="雷云山脉" width="1280px" height="374px">
+                        <div class="map-description">
+                            <h3>雷云山脉</h3>
+                            <p>连接着阿尔卑斯山脉，本是一个无人问津的村庄。战争爆发后，这里的山顶常常出现奇怪的雷暴现象——即便在山脚，也能清楚地看见闪电。许多当地人表示，这种现象是盟军在进入了这片区域后才开始的，但这种声音很快就被官方否定了。如今，这里已经成为一个理想的露营地，周边城镇居民也纷纷驾车前来欣赏奇观。</p>
+                            <div class="map-info-table">
+                                <table>
+                                    <tr>
+                                        <th>Mode</th>
+                                        <td>
+                                            <ul>
+                                                <li>作战</li>
+                                                <li>小队作战</li>
+                                                <li>生死斗</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>科技建筑</th>
+                                        <td>
+                                            <ul>
+                                                <li>科技钻油井</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Map Filter-->
+        <script>
+            mapFilterSelection("all")
+            function mapFilterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("map-type");
+                if (c == "all") c = "";
+                // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show-maps");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show-maps");
+                }
+                }
+
+                // Show filtered elements
+                function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                    }
+                }
+                }
+
+                // Hide elements that are not selected
+                function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+                }
+
+                // Add active class to the current control button (highlight it)
+                var btnContainer = document.getElementById("map-selector");
+                var btns = btnContainer.getElementsByClassName("map-selector-button");
+                for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("selected-button");
+                    current[0].className = current[0].className.replace(" selected-button", "");
+                    this.className += " selected-button";
+                });
+            }
+        </script>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>Bellum<br>Æternum</p>
+				</div>
+				<div class="lang-selector">
+					<p>LANGUAGE</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com">EN</a>
+						<a href="https://ra2be.com/zh/">中</a>
+					</div>
+				</div>
+			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
+		</div>
+		<div class="footer-portals">
+			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
+		</div>
+	</footer>
+</body>
+</html>
