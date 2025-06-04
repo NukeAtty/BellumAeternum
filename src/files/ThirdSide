@@ -16,8 +16,8 @@ ThirdSide:	P.L.A.
 			ID: ZAWEAP
 			Prerequisite: ZAPOWR,ZABRCK
 
-		Intelligence Bureau（情报局） $1000
-			ID: ZAINTB
+		Radar（雷达） $1000
+			ID: ZARADR
 			Prerequisite: ZAPOWR,ZAREFN
 
 		Airpad（停机坪） $1000
@@ -59,6 +59,10 @@ ThirdSide:	P.L.A.
 			Prerequisite: ZAINTE
 			Tunnel Advancing（地道掘进）
 
+		Field Artillery（火炮阵地） $2500
+			ID: ZAARTY
+			Prerequisite: ZARADR
+
 		[SW]Shockwave Device（微波发射器） $5000
 
 	Infantries: (BSE,AT,ENGI,ASLT,ADV)
@@ -87,14 +91,20 @@ ThirdSide:	P.L.A.
 		211 Amphibious Tank（两栖坦克） $1000
 
 		Type 60 Mine Layer（布雷车）$800
+			ID: MLAY
+			Primary: MineLayer
 
 		Type 59 Kunlun Howitzer（昆仑榴弹炮）$1600
+			ID: KLHO
+			Primary: 152mm Type 59
 
 		T3:
 		111-6 Draconis Tank（真龙坦克）$2500
+			ID: DTNK
+			Primary: 130mm Type 62
 
 	Aircraft:
 		T2:
-		Type 56 Eagle Attacker （雄鹰攻击机）$1800
+		Q-5 Eagle Attacker （雄鹰攻击机）$1800
 
 		T3:
