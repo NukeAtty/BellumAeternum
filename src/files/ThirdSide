@@ -94,8 +94,8 @@ ThirdSide:	P.L.A.
 			ID: MLAY
 			Primary: MineLayer
 
-		Type 59 Kunlun Howitzer（昆仑榴弹炮）$1600
-			ID: KLHO
+		Type 59 Thunder Howitzer（昆仑榴弹炮）$1600
+			ID: THOW
 			Primary: 152mm Type 59
 
 		T3:
