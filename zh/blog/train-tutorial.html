@@ -48,9 +48,23 @@
 					</ol>
 					<h2>实现火车逻辑的步骤</h2>
 					<h3>在地图铺设轨道</h3>
-					<p></p>
+					<p>在地图铺设轨道之前，确保你安装了TX地形包，或者你自制的地形拥有完整的轨道覆盖图文件。</p>
+					<p>铺设轨道有三个点需要注意：</p>
+					<ol>
+						<li>如果不是断头轨道，不要超出地图视界（蓝线框），否则火车会出了地图回不来。</li>
+						<li>如果是遭遇战，那么最好用环线轨道，否则火车就不会一直动了。</li>
+						<li>火车在上山和下山的效果比较差，所以最好不要使用斜坡。</li>
+					</ol>
 					<h3>为火车单位写代码</h3>
-					<p>火车的<code>Locomotor</code>和其他地面载具相同，但主要是<code>SpeedType</code>需要限定为特殊地形，也就是轨道<code>Track</code>。</p>
+					<p>火车的代码可以照抄TS的，也可以直接抄任意中立单位的代码，但需要注意关键语句的正确。</p>
+					<p>火车的移动方式<code>Locomotor</code>和其他地面载具相同，都使用<code>Drive</code>（即<code>{4A582741-9839-11d1-B709-00A024DDAFD1}</code>），但主要是<code>MovementRestrictedTo</code>需要限定为特殊的<code>LandType</code>，也就是轨道<code>RailRoad</code>。</p>
+					<p>同时，火车语句<code>IsTrain</code>也需要设置为<code>true</code>。这条语句的作用包含以下几点：</p>
+					<ol>
+						<li>让火车在撞到任何物体时都可以用<code>C4Warhead=</code>将其一击必杀。</li>
+						<li>让火车的不会原地掉头。</li>
+						<li>让火车无法被<code>VehicleThief</code>单位劫持。</li>
+						<li></li>
+					</ol>
 					<h3>在地图上预放置火车</h3>
 					<h3>为火车的移动写脚本</h3>
 					<h2>已知存在的问题</h2>
