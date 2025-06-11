@@ -9,7 +9,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<!--HTMX JS-->
 	<script src="../../src/js/htmx.min.js"></script>
-	<title> | 万世之战：为红警2带来前所未有的体验</title>
+	<title>红警火车教程 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
 		span{
 			font-size: 16px;
@@ -26,7 +26,7 @@
 			<h1></h1>
 			<div class="blog-info">
 				<div class="update-time">
-					<p>最后更新时间：<time datetime="2024-07-05 18:00">2024/07/08</time></p>
+					<p>最后更新时间：<time datetime="2025-06-11 18:00">2025/06/11</time></p>
 				</div>
 			</div>			
 			<div class="blog-main">
@@ -39,6 +39,29 @@
 					</div>
 				</div>
 				<div class="blog-content">
+					<h2>火车逻辑运作的原理</h2>
+					<p>火车逻辑实际上并没有什么花样，火车只是拥有特殊运动模式的单位，下面介绍一下实现火车的三个要素：</p>
+					<ol>
+						<li>对火车单位设置特殊的运动模式。</li>
+						<li>为轨道地形赋予对应的运动模式。</li>
+						<li>在地图上设置火车。</li>
+					</ol>
+					<h2>实现火车逻辑的步骤</h2>
+					<h3>在地图铺设轨道</h3>
+					<p></p>
+					<h3>为火车单位写代码</h3>
+					<p>火车的<code>Locomotor</code>和其他地面载具相同，但主要是<code>SpeedType</code>需要限定为特殊地形，也就是轨道<code>Track</code>。</p>
+					<h3>在地图上预放置火车</h3>
+					<h3>为火车的移动写脚本</h3>
+					<h2>已知存在的问题</h2>
+					<p>实际上，火车逻辑在红警2中并不好用，其中包含以下几个问题：</p>
+					<ol>
+						<li>在TX地形中，火车桥梁不可用，除非用火车桥梁替换其他桥梁。</li>
+						<li>因为实现原理的限定，通过触发刷出来的火车无法实现跟随。</li>
+						<li>火车在离开地图可视范围后无法回到可视范围之内。</li>
+						<li>火车偶尔会有覆盖问题。</li>
+						<li>如果火车头在隧道外停车，且火车其他车厢还在隧道内，那么隧道内的车厢将不会跟随火车头继续移动。</li>
+					</ol>
 				</div>
 			</div>
 		</div>
@@ -79,5 +102,4 @@
 			});
 		});
 	</script>
-	<script src="../../src/js/navbar.js"></script>
 </body>
