@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="preload" href="../src/font/furore.otf" as="font" />
+	<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
+	<link rel="preload" href="../src/background-pattern.webp" as="image">
+	<meta name="description" content="红色警戒2：尤里的复仇Mod《万世之战》遭遇战地图介绍。">
+	<link rel="icon" type="image/x-icon" href="../src/favicon.svg">
+	<link rel="alternate" hreflang="x-default" href="https://ra2be.com/skirmish-maps.html"/>
+	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/skirmish-maps.html" />
+	<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
+	<meta http-equiv="ontent-security-policy" content="script-src https:; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"/>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-LPEL1Y72V6');
+	</script>
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+	<title>作战模式 | 万世之战：为红警2带来前所未有的体验</title>
+</head>
+
+<body>
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+	<!--Main-->
+	<main>
+		<div class="overview">
+			<h1>作战模式</h1>
+            <p><b>万世之战</b>：更具真实感的红色警戒2</p>
+		</div>
+        <div class="map-modes">
+            <div class="map-mode-container">
+                <div class="mode-info">
+                    <h3>标准模式</h3>
+                    <p>标准模式中，玩家可以使用所有单位。如果一方获得胜利即游戏结束。</p>
+                </div>
+                <div class="general-table">
+                    
+                </div>
+            </div>
+            <div class="map-mode-container">
+                <div class="mode-info">
+                    <h3>团队联盟</h3>
+                    <p>在团队联盟中，玩家可以使用所有单位。所有联盟成员被击败算作联盟战败。</p>
+                </div>
+                <div class="general-table">
+                    
+                </div>
+            </div>
+            <div class="map-mode-container">
+                <div class="mode-info">
+                    <h3>生死斗</h3>
+                    <p>标准模式中，玩家可以使用所有单位。如果一方获得胜利即游戏结束。</p>
+                </div>
+                <div class="general-table">
+                    
+                </div>
+            </div>
+            <div class="map-mode-container">
+                <div class="mode-info">
+                    <h3>攻防战</h3>
+                    <p>攻防战模式中，玩家分为进攻方和防守方。进攻方</p>
+                </div>
+                <div class="general-table">
+                    
+                </div>
+            </div>
+        </div>
+	</main>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="../src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>万世<br>之战</p>
+				</div>
+				<div class="lang-selector">
+					<p>语言</p>
+					<div class="lang-list">
+						<a href="https://ra2be.com.html">EN</a>
+						<a href="https://ra2be.com/zh/skirmish-maps.html">中</a>
+					</div>
+				</div>
+			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
+		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	</footer>
+</body>
+</html>

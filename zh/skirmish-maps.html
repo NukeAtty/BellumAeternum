@@ -38,13 +38,13 @@
         <div class="maps-section">
             <div class="map-selector" id="map-selector">
                 <button class="map-selector-button selected-button" onclick="mapFilterSelection('all')">所有地图</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('1v1')">2人地图</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('2v2')">4人地图</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('3v3')">6人地图</button>
-                <button class="map-selector-button" onclick="mapFilterSelection('4v4')">8人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('2p')">2人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('4p')">4人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('6p')">6人地图</button>
+                <button class="map-selector-button" onclick="mapFilterSelection('8p')">8人地图</button>
             </div>
             <div class="map-list">
-                <div class="map-type 1v1">
+                <div class="map-type 2p">
                     <div class="map">
                         <img src="../src/maps/skirmish-verdant-hills.webp" alt="苍翠丘陵" width="1280px" height="1108px">
                         <div class="map-description">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="map-type 2v2">
+                <div class="map-type 4p">
                     <div class="map">
                         <img src="../src/maps/skirmish-leavenworth.webp" alt="利文沃斯" width="1280px" height="637px">
                         <div class="map-description">
@@ -106,11 +106,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-type 2v2">
-                        <img src="../src/maps/skirmish-frost-reach.webp" alt="寒霜流域" width="1280px" height="643px">
+                </div>
+                <div class="map-type 4p">
+                    <div class="map">
+                        <img src="../src/maps/skirmish-frost-reach.webp" alt="寒霜流域" width="1280px" height="637px">
                         <div class="map-description">
                             <h3>寒霜流域</h3>
-                            <p>一条流向北冰洋的河流穿过这座常年覆雪的北欧小镇，在苏联和盟军于北冰洋的冲突中，这里一度成为了后勤枢纽，双方也为争夺这里不断进行着战斗。</p>
+                            <p>一条流向北冰洋的河流穿过这座名不见经传的北欧小镇，要不是因为发现了石油，战火也无法烧到这里。</p>
                             <div class="map-info-table">
                                 <table>
                                     <tr>
@@ -128,6 +130,8 @@
                                         <td>
                                             <ul>
                                                 <li>科技钻油井</li>
+                                                <li>市民医院</li>
+                                                <li>机械车间</li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -136,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="map-type 3v3">
+                <div class="map-type 6p">
                     <div class="map">
                         <img src="../src/maps/skirmish-mt-thunderhead.webp" alt="雷云山脉" width="1280px" height="374px">
                         <div class="map-description">
@@ -167,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="map-type 4v4">
+                <div class="map-type 8p">
                     <div class="map">
                         <img src="../src/maps/skirmish-sturmburg.webp" alt="暴风城堡" width="1280px" height="374px">
                         <div class="map-description">
@@ -197,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="map-type 4v4">
+                <div class="map-type 8p">
                     <div class="map">
                         <img src="../src/maps/skirmish-modern-times.webp" alt="摩登时代" width="1280px" height="374px">
                         <div class="map-description">
