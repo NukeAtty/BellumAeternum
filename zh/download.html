@@ -9,6 +9,7 @@
 	<link rel="alternate" hreflang="x-default" href="https://ra2be.com/download.html" />
 	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/download.html" />
 	<title>下载 | 万世之战：为红警2带来前所未有的体验</title>
+	<script src="../../src/js/htmx.min.js"></script>
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -50,30 +51,8 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6M9N6VK"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<header>
-		<div class="navigation-buttons">
-			<div class="navigation-button">
-				<a href="https://ra2be.com/zh/">主页</a>
-			</div>
-			<div class="navigation-button">
-				<a href="archives.html">档案库</a>
-			</div>
-			<div class="navigation-button">
-				<a href="blog.html">博客</a>
-			</div>
-			<div class="navigation-button">
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-		<div class="responsive-navigation">
-			<a href="https://ra2be.com/zh/"><img src="../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
-			<div class="responsive-navigation-buttons">
-				<a href="archives.html">档案库</a>
-				<a href="blog.html">博客</a>
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-	</header>
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
 		<div class="download">
@@ -89,7 +68,7 @@
 					</div>
 					<div class="other-download">
 						<h3>ModDB</h3>
-						<a href="https://www.moddb.com/mods/bellum-aeternum/downloads/bellum-aeternum-beta-test-v11" title="Download Bellum Aeternum Beta Test V1.1 - ModDB" target="_blank"><img src="https://button.moddb.com/download/medium/289498.png" alt="Bellum Aeternum Beta Test V1.1" /></a>
+						<a href="https://www.moddb.com/mods/bellum-aeternum/downloads/bellum-aeternum-beta-test-v1-2" title="Download Bellum Aeternum Beta Test V1 2 - ModDB" target="_blank"><img src="https://button.moddb.com/download/medium/291851.png" alt="Bellum Aeternum Beta Test V1 2" /></a>
 					</div>
 				</div>
 				<div class="specific-progress">
@@ -236,39 +215,13 @@
 				<div class="lang-selector">
 					<p>语言</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com/download.html">EN</a>
-						<a href="https://ra2be.com/zh/download.html">中</a>
+						<a href="../download.html">EN</a>
+						<a href="download.html">中</a>
 					</div>
 				</div>
 			</div>
-			<div class="footer-right">
-				<div class="footer-column">
-				<p>阵营</p>
-				<ul>
-					<li><a href="allied.html">盟军</a></li>
-					<li><a href="soviet.html">苏联</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>资料</p>
-				<ul>
-					<li><a href="archives.html">档案库</a></li>
-					<li><a href="blog.html">博客</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>关于</p>
-				<ul>
-					<li><a href="faq.html">常见问题</a></li>
-					<li><a href="contact.html">联系作者</a></li>
-					<li><a href="terms-of-use.html">使用条例</a></li>
-				</ul>
-				</div>
-			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
-		<div class="footer-portals">
-			<a href="https://qm.qq.com/q/30o7dOtm0w" target="_blank"><img src="../src/icons/qq.svg" width="24px" height="24px">万世之战QQ群</a>
-			<a href="https://space.bilibili.com/3546721533561614" target="_blank"><img src="../src/icons/bilibili.svg" width="24px" height="24px">关注Bilibili：NUKE_核大人</a>
-		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
 </body>
