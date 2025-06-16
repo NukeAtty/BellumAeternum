@@ -28,6 +28,7 @@ General Rules:
 	7. There are three towers on the map, capturing the tower autobuild a gate.
 	8. Each tower has a guard vehicle, change sides upon destroyed.
 	9. A juncture in the middle provides additional credits.
+	10. All infantries gain self heal.
 
 Map:
 	[Tribulatio Mons]
