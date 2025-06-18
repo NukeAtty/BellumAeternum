@@ -1,29 +1,24 @@
 Allied:
+	USA: [Prism/Airforce]
 
-	French:
+	UK:	[Stealth/Howitzer]
 		Vehicles
-			CMIN -> SHRV	;[Speed Miner]Speed Miner
-			MTNK -> LTNK	;[Lillet Tank]Lillet Tank
-			FV -> EBR		;[EBR]EBR (Engin Blindé de Reconnaissance)
-				;Original: EBR
-				;GI: Light EBR
-				;GGI: Rocket EBR
-				;ENGI: Repair EBR
-				;SNIPE: Sniper EBR
-				;GHOST: Gattling EBR
-			MGTK -> ELC		;[Light Tank]Light Tank
-
-			SREF -> HOWI	;[Howitzer]Howitzer
-			BFRT -> FTNK	;[Foch]Foch Assault Cannon
-
-	British:
-		Vehicles
-			CMIN -> HMIN	;[Heavy Miner]Heavy Miner
+			CMIN
 			MTNK -> CTNK	;[Centurion Tank]Centurion Tank
 			FV	-> SFV		;[Saladin I.F.V.]Saladin I.F.V.
 			
-			MGTK -> MGTK
-			SHAD -> AVRE	;[AVRE]Black Prince AVRE
+			MGTK
+			SHAD
 
-			SREF -> OBLT	;[Obliterator]FV215D Obliterator
-			BFRT -> CONQ	;[Conqueror Tank]Conqueror Tank
+			SREF -> AVRE	;[AVRE]Black Prince AVRE
+			BFRT -> OBLT	;[Obliterator]FV215C Obliterator
+	France: [Autoloader/Mobility]
+Soviet:
+	USSR: [Nuclear/Tank]
+
+	Vehicles:
+		TTNK -> 
+
+	Czechslovakia [Tesla/]
+
+	Poland [Turbine]
