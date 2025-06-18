@@ -481,9 +481,9 @@ footer {
 
 .features-section {
 	display: flex;
-	flex-flow: row;
+	flex-flow: row wrap;
 	justify-content: center;
-	width: 75%;
+	width: 90%;
 	margin: auto;
 }
 
