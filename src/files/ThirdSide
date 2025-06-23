@@ -22,11 +22,11 @@ ThirdSide:	P.L.A.
 
 		Airpad（停机坪） $1000
 			ID: ZAAIRC
-			Prerequisite: ZAPOWR,ZAINTB
+			Prerequisite: ZAPOWR,ZARADR
 
 		Battle Lab（作战实验室） $3000
 			ID: ZATECH
-			Prerequisite: ZAWEAP,ZAINTB
+			Prerequisite: ZAWEAP,ZARADR
 
 		Nitro Unit (AddOn)（氮气装置） $300
 			ID: ZAUPWR
