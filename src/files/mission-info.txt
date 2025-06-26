@@ -1,0 +1,15 @@
+ALL00: Echoes of the Past - Dunkirk
+ALL01: God Bless the Queen - Dover
+ALL02: The Vesper - Rotterdam
+ALL03:  - Casablanca
+ALL04: Blackout - Le Havre
+ALL05: Arctic Mayhem - Greenland
+ALL06: Operation Emperor - Normandy
+
+SOV00: No Quarter - Brussels
+SOV01: Mettres les Voiles - Brest
+SOV02: Honor of the Waves - Andorra
+SOV03: Strike on Void - Zaragoza
+SOV04: Whisper of Thunder - Vladivostok
+SOV05: A Crack In The Ice - Petropavlovsk
+SOV06: Dark N' Stormy - Bermuda Islands

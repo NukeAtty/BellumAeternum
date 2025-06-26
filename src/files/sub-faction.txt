@@ -1,0 +1,33 @@
+Subfactions
+
+Allied : 
+    USA :
+        Tactics:
+            Paradrop Tanks
+        Vehicles:
+            Stealth Tank -> Cobra Chopper
+            Dawnhawk Transport -> Nighthawk Chopper
+    UK :
+        Vehicles:
+            Grizzly Tank -> Centurion Tank
+            Prism Tank -> AVRE
+            Battle Fortress -> Devastator Tank
+    France :
+        Vehicles:
+            Grizzly Tank -> Lorraine Tank
+            Dawnhawk Transport -> Mobile Stealth Generator
+
+Soviet:
+    USSR : 
+        Vehicles:
+            Flak Track -> SPAAG
+            Mobile Radar -> APC
+            
+    Czechoslovakia:
+        Vehicles: 
+            Tesla Tank -> 
+            
+    Poland : 
+        Vehicles: 
+            Rhino Tank -> Bison Tank
+            Tesla Tank -> Reaper Chopper
