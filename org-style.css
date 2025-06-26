@@ -490,7 +490,8 @@ footer {
 .features-container {
 	display: flex;
 	flex-flow: column;
-	margin: 2vh 2vw;
+	margin: 2vh 1vw;
+	width: 30%;
 }
 
 .features-image {
