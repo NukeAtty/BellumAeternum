@@ -2,6 +2,8 @@ Subfactions
 
 Allied : 
     USA :
+        Tactics:
+            Paradrop Tanks
         Vehicles:
             Stealth Tank -> Cobra Chopper
             Dawnhawk Transport -> Nighthawk Chopper
@@ -13,18 +15,17 @@ Allied :
     France :
         Vehicles:
             Grizzly Tank -> Lorraine Tank
-            Battle Fortress -> Richelieu Tank
+            Dawnhawk Transport -> Mobile Stealth Generator
 
 Soviet:
     USSR : 
         Vehicles:
-            Tesla Tank -> 
-            Apocalypse Tank -> Catastrophe Tank
-            Kirov Airship -> Tesla Airship
+            Flak Track -> SPAAG
+            Mobile Radar -> APC
             
     Czechoslovakia:
         Vehicles: 
-            Rhino Tank -> 
+            Tesla Tank -> 
             
     Poland : 
         Vehicles: 
