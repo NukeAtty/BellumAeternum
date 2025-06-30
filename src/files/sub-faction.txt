@@ -20,11 +20,12 @@ Allied :
 Soviet:
     USSR : 
         Vehicles:
-            Flak Track -> SPAAG
+            Flak Track -> Shilka SPAAG
             Mobile Radar -> APC
             
     Czechoslovakia:
         Vehicles: 
+            Rhino Tank -> TVP T-58 
             Tesla Tank -> 
             
     Poland : 
