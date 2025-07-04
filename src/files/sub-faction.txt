@@ -12,23 +12,21 @@ Allied :
             Grizzly Tank -> Centurion Tank
             Prism Tank -> AVRE
             Battle Fortress -> Devastator Tank
-    France :    Autoloader
-        Vehicles:
-            Grizzly Tank -> Lorraine Tank
-            Dawnhawk Transport -> Mobile Stealth Generator
 
 Soviet: Tesla / Nuclear
-    USSR : Nuclear / 
+    USSR : Nuclear Special
+        General:
+            Veteran Desolator
+
         Vehicles:
             Flak Track -> Shilka SPAAG
-            Mobile Radar -> APC
+            Mobile Radar -> Radar APC
+            Kirov Airship -> Nuclear Kirov Airship
             
-    Czechoslovakia: Heavy Armour
+    Czechoslovakia: Tesla Special
+        Infantries:
         Vehicles: 
-            Rhino Tank -> TVP Vz.58 
-            Tesla Tank -> 
-            
-    Poland : Mobility
-        Vehicles: 
-            Rhino Tank -> Bison Tank
-            Tesla Tank -> Reaper Chopper
+            Rhino Tank -> TVP Vz.58 Wolfhound Tank (Vlkodav) [100mm D-10T]
+            Apocalypse Tank -> Skoda Vz.60 Boxer Tank [130mm D-30]
+
+China: Microwave / Amphibious
