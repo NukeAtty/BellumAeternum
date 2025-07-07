@@ -7,7 +7,11 @@ Camera: Allied S.A.M. Site
 Location: Zaragoza, Spain
 
 Zofia: Commander, here we are, Zaragoza.
-Zofia: The Allied have built a S.A.M. site near the city, and our paratroopers couldn't approach at all.
+Zofia: Our aero reconnaissance is heading to the city.
+
+[Spy plane shot down]
+
+Zofia: It look like the Allied have built a S.A.M. site near the city, and our aircraft couldn't approach at all.
 Zofia: Your mission is to launch an attack from the hill, destroy the S.A.M. site.
 
 [EVA_ReinforcementsHaveArrived]
@@ -17,9 +21,11 @@ Camera: Hill
 [Stage 2] Prerequisite: SAM Site destroyed.
 
 [Reinforcement]
-Zofia: Comrade, our paratroopers has been spotted by the Allied air force base.
-Zofia: Defend the deploy site until our MCV arrived.
+Zofia: Well done comrade, our paratroopers will head to the city now.
 
+[Air raid siren]
+Zofia: Our paratroopers has been spotted by the Allied air force base, commander.
+Zofia: The nearby Allied ground force is closing in, defend the deploy site until our MCV arrives.
 
 [Stage 3] Prerequisite: MCV Deployed
 
