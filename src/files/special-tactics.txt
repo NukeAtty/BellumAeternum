@@ -3,8 +3,8 @@ Special Tactics:
 		WEAP:
 			Repair Crane: Repairs Buildings and Vehicles
 
-		WEAP + AIRC:
-			Land Mine
+		WEAP + BRCK:
+			Landmine
 
 		TECH + AIRC:
 			Airborne Tanks

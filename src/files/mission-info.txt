@@ -10,6 +10,6 @@ SOV00: No Quarter - Brussels
 SOV01: Mettres les Voiles - Brest
 SOV02: Honor of the Waves - Andorra
 SOV03: Strike on Void - Zaragoza
-SOV04: Whisper of Thunder - Vladivostok
+SOV04: Distant Thunder - Vladivostok
 SOV05: A Crack In The Ice - Petropavlovsk
 SOV06: Dark N' Stormy - Bermuda Islands
