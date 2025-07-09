@@ -27,6 +27,4 @@ Soviet: Tesla / Nuclear
         Infantries:
         Vehicles: 
             Rhino Tank -> TVP Vz.58 Wolfhound Tank (Vlkodav) [100mm D-10T]
-            Apocalypse Tank -> Skoda Vz.60 Boxer Tank [130mm D-30]
-
-China: Microwave / Amphibious
+            Apocalypse Tank -> Skoda Vz.60  Tank [130mm D-30]

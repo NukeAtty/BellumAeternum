@@ -1,0 +1,14 @@
+Naval:
+    Allied:
+        T2: 
+            Corvette
+                Primary: 
+
+        T3:
+
+    Soviet:
+        T2:
+            Torpedo Boat
+                Primary: 25mm AA Gun
+        T3:
+            Missile Boat

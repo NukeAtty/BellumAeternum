@@ -94,12 +94,12 @@ ThirdSide:	P.L.A.
 			ID: MLAY
 			Primary: MineLayer
 
-		Type 59 Thunder Howitzer（昆仑榴弹炮）$1600
+		Type 59 Thunder Howitzer（霹雳榴弹炮）$1600
 			ID: THOW
 			Primary: 152mm Type 59
 
 		T3:
-		111-6 Draconis Tank（真龙坦克）$2500
+		111-6 Kunlun Tank（昆仑坦克）$2500
 			ID: DTNK
 			Primary: 130mm Type 62
 
@@ -108,3 +108,4 @@ ThirdSide:	P.L.A.
 		Q-5 Eagle Attacker （雄鹰攻击机）$1800
 
 		T3:
+		
