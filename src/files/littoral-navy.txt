@@ -7,7 +7,9 @@ Naval:
                     M29 Mortar
 
         T3:
-            Monitor
+            Dolphin Monitor (海豚重炮舰)
+                Primary:
+                    203mm Mk9
             
 
     Soviet:
