@@ -6,6 +6,8 @@ Naval:
                     20mm Colt AutoCannon
                     M29 Mortar
 
+            Sea Horse Transport (海马运兵艇)
+
         T3:
             Dolphin Monitor (海豚重炮舰)
                 Primary:
@@ -18,8 +20,7 @@ Naval:
                 Primary: 2x 533mm Torpedo
                 Secondary: 14.5mm KPVT
 
-            Project 183-Z Sea Scorpion (海螺防空艇)
-                Primary: 25mm 2M3 AutoCannon
+            Armored Transport (装甲运兵船)
 
         T3:
             Project 183-RU Sea Snail Missile Boat (海螺导弹艇)
