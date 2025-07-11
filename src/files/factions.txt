@@ -3,22 +3,37 @@ Allied:
 
 	UK:	[Stealth/Howitzer]
 		Vehicles
-			CMIN
+			CMIN -> HMIN	;Heavy Miner
 			MTNK -> CTNK	;[Centurion Tank]Centurion Tank
-			FV	-> SFV		;[Saladin I.F.V.]Saladin I.F.V.
 			
 			MGTK
-			SHAD
+			SHAD 
 
 			SREF -> AVRE	;[AVRE]Black Prince AVRE
 			BFRT -> OBLT	;[Obliterator]FV215C Obliterator
 	France: [Autoloader/Mobility]
+		Vehicles
+			CMIN -> LMIN	;Light Miner
+			MTNK -> LTNK	;Lorraine Tank
+
+			MGTK
+			SHAD
+
+			SREF -> HOWI 	;Howitzer
+			BFRT -> 
 Soviet:
 	USSR: [Nuclear/Tank]
 
 	Vehicles:
 		TTNK -> 
 
-	Czechslovakia [Tesla/]
+	Czechslovakia
+		HARV -> 
+		HTNK -> WTNK	;Wolfhound Tank
+			[100mm]
+		
+		TTNK -> 		;Light Destroyer
+
+		APOC -> 
 
 	Poland [Turbine]
