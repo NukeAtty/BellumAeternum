@@ -29,10 +29,10 @@ Soviet:
 
 	Czechslovakia
 		HARV -> 
-		HTNK -> WTNK	;Wolfhound Tank
+		HTNK -> WTNK	;TVP Vz.58 Wolfhound Tank
 			[100mm]
 		
-		TTNK -> 		;Light Destroyer
+		TTNK -> 	;
 
 		APOC -> 
 
