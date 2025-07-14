@@ -42,10 +42,17 @@ ThirdSide:	P.L.A.
 			ID: ZAWALL
 			Prerequisite: ZACNST
 
-		Battle Bunker（战斗碉堡）$500
-			ID: ZABNKR
-			Prerequisite: ZABRCK
-			MaxOccupants: 5
+		Component Tower（组件塔）$500
+			ID: ZACTWR
+
+		Machinegun Turret（机枪炮塔）$300
+			ID: ZAMACG
+
+		AA Turret（防空炮塔）$500
+			ID: ZAAAGN
+
+		Cannon Turret（加农炮塔）$1000
+			ID: ZACANN
 
 		Tank Bunker（坦克碉堡） $500
 			ID: ZATBKR
