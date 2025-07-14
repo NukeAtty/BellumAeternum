@@ -4,4 +4,4 @@ PlayerScatter=no        ; Will player units scatter, of their own accord, from t
 
 test the code above
 
-add GAZ-64 as Soviet JEEP
+add GAZ-69 as Soviet JEEP
