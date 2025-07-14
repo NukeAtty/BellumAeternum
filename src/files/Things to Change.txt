@@ -3,3 +3,5 @@ PlayerReturnFire=no     ; More aggressive return fire from player controlled obj
 PlayerScatter=no        ; Will player units scatter, of their own accord, from threats and damage?
 
 test the code above
+
+add GAZ-64 as Soviet JEEP
