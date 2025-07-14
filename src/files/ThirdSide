@@ -45,6 +45,7 @@ ThirdSide:	P.L.A.
 		Battle Bunker（战斗碉堡）$500
 			ID: ZABNKR
 			Prerequisite: ZABRCK
+			MaxOccupants: 5
 
 		Tank Bunker（坦克碉堡） $500
 			ID: ZATBKR
@@ -65,7 +66,7 @@ ThirdSide:	P.L.A.
 
 		[SW]Shockwave Device（微波发射器） $5000
 
-	Infantries: (BSE,AT,ENGI,ASLT,ADV)
+	Infantries: 
 		Vanguard（尖兵）$100
 
 		Tank Hunter（反坦克兵）$300
@@ -80,12 +81,17 @@ ThirdSide:	P.L.A.
 
 	Vehicles: (T1:MINR/TNK/AATK/ T2:UTIL1/UTIL2/UTIL3 T3: TNK/SIEGE)
 		T1:
-		Type 63 Amphibious Miner（两栖采矿车）$1200
+		Type 63K Amphibious Miner（两栖采矿车）$1200
+			ID: AMIN
 
 		120 Bastion Tank (堡垒坦克) $1400
+			ID: BTNK
+			Primary: 100mm 
 
 		301 Flak Tank（防空坦克） $800
 			特征：62式底盘+二连装37毫米高炮
+			ID: FTNK
+			Primary: 2x 37mm AA Gun
 
 		T2:
 		211 Amphibious Tank（两栖坦克） $1000
@@ -95,17 +101,17 @@ ThirdSide:	P.L.A.
 			Primary: MineLayer
 
 		Type 59 Thunder Howitzer（霹雳榴弹炮）$1600
-			ID: THOW
+			ID: PHOW
 			Primary: 152mm Type 59
 
 		T3:
-		111-6 Kunlun Tank（昆仑坦克）$2500
-			ID: DTNK
+		111-1 Kunlun Tank（昆仑坦克）$2500
+			ID: KTNK
 			Primary: 130mm Type 62
 
 	Aircraft:
 		T2:
-		Q-5 Eagle Attacker （雄鹰攻击机）$1800
+		Q-5 Eagle Attacker （鹰击攻击机）$1800
 
 		T3:
 		

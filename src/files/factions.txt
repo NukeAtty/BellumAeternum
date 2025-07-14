@@ -22,7 +22,7 @@ Allied:
 			SREF -> HOWI 	;Howitzer
 			BFRT -> 
 Soviet:
-	USSR: [Nuclear/Tank]
+	USSR: [Nuclear/Tesla]
 
 	Vehicles:
 		TTNK -> 

@@ -1,15 +1,15 @@
-ALL00: Echoes of the Past - Dunkirk
-ALL01: God Bless the Queen - Dover
-ALL02: The Vesper - Rotterdam
-ALL03:  - Casablanca
-ALL04: Blackout - Le Havre
-ALL05: Arctic Mayhem - Greenland
-ALL06: Operation Emperor - Normandy
+ALL00: Echoes of the Past（往昔回响） - Dunkirk - Need Improve
+ALL01: God Bless the Queen（天佑女王） - Dover  - Need Revise Triggers
+ALL02: The Vesper（黄昏微光） - Rotterdam       - WIP
+ALL03: Sandswept Raid（沙略突袭） - Casablanca  - Not yet
+ALL04: Blackout（灯火管制） - Le Havre          - Not yet
+ALL05: Arctic Mayhem（极地混乱） - Greenland    - Need Revise Triggers
+ALL06: Operation Emperor（帝王行动） - Normandy - Not yet
 
-SOV00: No Quarter - Brussels
-SOV01: Mettres les Voiles - Brest
-SOV02: Honor of the Waves - Andorra
-SOV03: Strike on Void - Zaragoza
-SOV04: Distant Thunder - Vladivostok
-SOV05: A Crack In The Ice - Petropavlovsk
-SOV06: Dark N' Stormy - Bermuda Islands
+SOV00: No Quarter（绝不留情） - Brussels        - Need Polish
+SOV01: Mettres les Voiles（扬帆起航） - Brest   - Need Polish
+SOV02: Honor of the Waves（荣誉之波） - Andorra - Need Polish
+SOV03: Strike on Void（趁虚而入） - Zaragoza    - WIP
+SOV04: Distant Thunder（雷鸣天涯） - Vladivostok    - Not yet
+SOV05: A Crack In The Ice（破冰行动） - Petropavlovsk   - Need Revise Triggers
+SOV06: Dark N' Stormy（黑暗风暴） - Bermuda Islands - Not yet
