@@ -16,7 +16,9 @@ SOV06: Dark N' Stormy（黑暗风暴） - Bermuda Islands - Not yet
 
 
 S1: (1958-1960) European Campaign
-ALL01: 
+随着帝王行动的成功，盟军发挥了其空军和海军的优势，在法国境内彻底展开。
+1958年初，盟军彻底成功占领巴黎，并利用天气控制仪向南北两侧迅速进攻。
+ALL01: Back to 
 
 S2: (1960-1962) South American Campaign
 S3: (1962-1964) East Asian Campaign
