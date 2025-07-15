@@ -15,6 +15,9 @@ SOV05: A Crack In The Ice（破冰行动） - Petropavlovsk   - Need Revise Trig
 SOV06: Dark N' Stormy（黑暗风暴） - Bermuda Islands - Not yet
 
 
-S1: (1958-1960) European Campaign : 低地战役（Battle of Low Countries）/法国战役/德国战役
-S2: (1960-1962) 
-S3: (1962-1964)
+S1: (1958-1960) European Campaign
+ALL01: 
+
+S2: (1960-1962) South American Campaign
+S3: (1962-1964) East Asian Campaign
+S4: (1964-1969) South East Asian Campaign
