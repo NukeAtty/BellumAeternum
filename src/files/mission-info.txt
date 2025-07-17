@@ -1,7 +1,7 @@
 ALL00: Echoes of the Past（往昔回响） - Dunkirk - Need Improve
 ALL01: God Bless the Queen（天佑女王） - Dover  - Need Revise Triggers
 ALL02: The Vesper（黄昏微光） - Rotterdam       - WIP
-ALL03: Sandswept Raid（沙略突袭） - Casablanca  - Not yet
+ALL03: Sandswept Raid（沙掠突袭） - Tangier     - Not yet
 ALL04: Blackout（灯火管制） - Le Havre          - Not yet
 ALL05: Arctic Mayhem（极地混乱） - Greenland    - Need Revise Triggers
 ALL06: Operation Emperor（帝王行动） - Normandy - Not yet

@@ -27,6 +27,26 @@ EVA: Commander, this is our Stealth Tank, it is equipped with quad recoilless gu
 EVA: which can destroy an enemy tank in a cycle of shot.
 EVA: However, it has very low muzzle velocity, and reveals when firing.
 
+[Seeing Bridge]
+EVA: The bridge to the evac zone has been destroyed during the Soviet invasion.
+EVA: Don't worry commander, our engineer is on the way there.
+
 [George Blake Rescued]
-George Blake: Greetings, dear lady.
-George Blake: I hope 
+Blake: Greetings.
+
+[Reached Bridge]
+EVA: Bad news, commander.
+EVA: Our engineer has been pulled over by local cops, they are trying to arrest him.
+EVA: Order Tanya to get rid of those cops if you can.
+
+[Cops killed]
+Engineer: Thanks, now let me fix the bridge.
+
+[Bridge Fixed]
+EVA: Commander, it seems the Soviets have raised their alert level.
+EVA: Clear all troops and secure the evac zone.
+
+[Troops Cleared]
+[No contorl]
+EVA: Good work, commander, the transport has arrived.
+
