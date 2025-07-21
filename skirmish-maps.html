@@ -50,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	  ]
 	}
   </script>
-  <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+  <script src="src/js/htmx.min.js" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -59,7 +59,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
-		<main>
 		<div class="overview">
 			<h1>Skirmish Maps</h1>
             <p><b>Bellum Æternum</b>: A More Realistic Red Alert 2</p>
@@ -137,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                     </div>
                     <div class="map">
-                        <img src="../src/maps/skirmish-frost-reach.webp" alt="Frost Reach" width="1280px" height="643px">
+                        <img src="src/maps/skirmish-frost-reach.webp" alt="Frost Reach" width="1280px" height="643px">
                         <div class="map-description">
                             <h3>Frost Reach</h3>
                             <p>A river flowing to the Arctic Ocean runs through this obscure Nordic town. If oil hadn't been discovered, the flames of war would never have reached here.</p>
@@ -168,7 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="map-type 3v3">
                     <div class="map">
-                        <img src="../src/maps/skirmish-mt-thunderhead.webp" alt="Mt.Thunderhead" width="1280px" height="374px">
+                        <img src="src/maps/skirmish-mt-thunderhead.webp" alt="Mt.Thunderhead" width="1280px" height="374px">
                         <div class="map-description">
                             <h3>Mt.Thunderhead</h3>
                             <p>Connected to the Alps, it was originally a village that attracted little attention. After the war broke out, strange thunderstorms began appearing frequently over its mountaintops—lightning clearly visible even at its base. Many locals claimed this phenomenon only started after Allied forces entered the area, though such claims were swiftly dismissed by officials. Today, it has become an ideal campsite, with residents from surrounding towns driving here to witness the spectacle.</p>
@@ -199,7 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="map-type 4v4">
                     <div class="map">
-                        <img src="../src/maps/skirmish-sturmburg.webp" alt="Sturmburg" width="1280px" height="374px">
+                        <img src="src/maps/skirmish-sturmburg.webp" alt="Sturmburg" width="1280px" height="374px">
                         <div class="map-description">
                             <h3>Sturmburg</h3>
                             <p>Since the Middle Ages, the lord of this secluded mountain village has held sway over the land. Yet, the war's outbreak and its resulting scarcity of resources have inflamed tensions, with various powers now plotting to seize control. Even the lord of Sturmburg is now reaching out to outside forces, preparing to defend the legacy painstakingly built over generations.</p>
@@ -324,16 +323,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<div class="lang-selector">
 					<p>LANGUAGE</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com">EN</a>
-						<a href="https://ra2be.com/zh/">中</a>
+						<a href="skirmish-maps.html">EN</a>
+						<a href="/zh/skirmish-maps.html">中</a>
 					</div>
 				</div>
 			</div>
 			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
-		<div class="footer-portals">
-			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
-		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
 </body>
 </html>

@@ -27,6 +27,10 @@
       <changefreq>always</changefreq>
    </url>
    <url>
+      <loc>https://ra2be.com/skirmish-maps.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
       <loc>https://ra2be.com/download.html</loc>
       <changefreq>always</changefreq>
    </url>
@@ -55,6 +59,10 @@
       <changefreq>always</changefreq>
    </url>
    <url>
+      <loc>https://ra2be.com/blog/beta-v1-2.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
       <loc>https://ra2be.com/gadget/foids.html</loc>
       <changefreq>always</changefreq>
    </url>
@@ -80,6 +88,10 @@
    </url>
    <url>
       <loc>https://ra2be.com/zh/secret-units.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
+      <loc>https://ra2be.com/zh/skirmish-maps.html</loc>
       <changefreq>always</changefreq>
    </url>
    <url>
@@ -112,6 +124,10 @@
    </url>
    <url>
       <loc>https://ra2be.com/zh/blog/beta-v1-1.html</loc>
+      <changefreq>always</changefreq>
+   </url>
+   <url>
+      <loc>https://ra2be.com/zh/blog/beta-v1-2.html</loc>
       <changefreq>always</changefreq>
    </url>
 </urlset>

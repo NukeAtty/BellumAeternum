@@ -45,7 +45,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
 	<!-- End Google Tag Manager -->
-	 <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+	<script src="src/js/htmx.min.js"></script>
 	</head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
@@ -155,7 +155,7 @@
 			</div>
 		</div>
 	</main>
-		<!--Footer-->
+	<!--Footer-->
 	<footer>
 		<div class="footer-container">
 			<div class="footer-left">
@@ -171,9 +171,9 @@
 					</div>
 				</div>
 			</div>
-			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML">
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
-		<div hx-get="footer-portal" hx-trigger="load" hx-swap="outerHTML"></div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
 </body>
 </html>

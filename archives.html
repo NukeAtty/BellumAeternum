@@ -45,6 +45,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
 	<!-- End Google Tag Manager -->
+	<script src="src/js/htmx.min.js"></script>
 </head>
 
 <body>
@@ -99,11 +100,11 @@
 						<a href="allied.html">
 							<img src="src/allied-impression.webp" alt="Allied" width="512px" height="512px">
 							<div class="factions-description">
-		            <h3>Allied</h3>
-		          </div>
-		        </a>
-		      </div>
-				</div>
+							<h3>Allied</h3>
+						</div>
+						</a>
+		    	</div>
+			</div>
 			</div>
 			<!---------------------------------------->
 			<!------------Mechanics Module------------>
@@ -115,39 +116,6 @@
 					<a href="secret-units.html">★★★ Secret Units ★★★</a>
 				</div>
 			</div>		
-			<!----------------------------------->
-			<!------------Maps Module------------>
-			<!----------------------------------->
-			<div class="maps">
-				<h2>Maps</h2>
-				<h3>Skirmish | 2 Players</h3>
-				<div class="map-section">
-					<a class="map-container">
-						<img src="src/maps/skirmish-verdant-hills.webp" alt="Verdant Hills" width="1280px" height="1108px">
-						<h4>Verdant Hills</h4>
-					</a>
-				</div>
-				<h3>Skirmish | 4 Players</h3>
-				<div class="map-section">
-					<a class="map-container">
-						<img src="src/maps/skirmish-leavenworth.webp" alt="Leavenworth" width="1280px" height="637px">
-						<h4>Leavenworth</h4>
-					</a>
-				</div>
-				<div class="map-section">
-					<a class="map-container">
-						<img src="src/maps/skirmish-frost-reach.webp" alt="Frost Reach" width="1280px" height="643px">
-						<h4>Frost Reach</h4>
-					</a>
-				</div>
-				<h3>Skirmish | 6 Players</h3>
-				<div class="map-section">
-					<a class="map-container">
-						<img src="src/maps/skirmish-mt-thunderhead.webp" alt="Mt.Thunderhead" width="1280px" height="374px">
-						<h4>Mt.Thunderhead</h4>
-					</a>
-				</div>
-			</div>
 		</div>
 	</main>
 	<!--Footer-->
@@ -161,39 +129,14 @@
 				<div class="lang-selector">
 					<p>LANGUAGE</p>
 					<div class="lang-list">
-						<a href="https://ra2be.com/archives.html">EN</a>
-						<a href="https://ra2be.com/zh/archives.html">中</a>
+						<a href="archives.html">EN</a>
+						<a href="/zh/archives.html">中</a>
 					</div>
 				</div>
 			</div>
-			<div class="footer-right">
-				<div class="footer-column">
-				<p>Factions</p>
-				<ul>
-					<li><a href="allied.html">Allied</a></li>
-					<li><a href="soviet.html">Soviet</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>Resources</p>
-				<ul>
-					<li><a href="archives.html">Archives</a></li>
-					<li><a href="blog.html">Blog</a></li>
-				</ul>
-				</div>
-				<div class="footer-column">
-				<p>About</p>
-				<ul>
-					<li><a href="faq.html">F.A.Q.</a></li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="terms-of-use.html">Terms of Use</a></li>
-				</ul>
-				</div>
-			</div>
+			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
-		<div class="footer-portals">
-			<a href="https://www.moddb.com/mods/bellum-aeternum" title="View Bellum Aeternum on ModDB" target="_blank"><img src="https://media.moddb.com/images/global/moddb.png" alt="Bellum Aeternum" /></a>
-		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
 </body>
 </html>
