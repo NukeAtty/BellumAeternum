@@ -1,0 +1,33 @@
+关于探照灯
+探照灯是命令与征服2：泰伯利亚之日中的逻辑，在原版红色警戒2以及尤里的复仇中，如果为建筑添加HasSpotlight=yes，将会IE。
+Ares修复了探照灯逻辑报错的问题，并为其添加了控制标签。
+
+HasSpotlight=yes			;是否开启探照灯功能
+Spotlight.StartHeight=430		;探照灯的初始高度，单位Lepton
+Spotlight.Distance=1024		;探照灯的距离，单位Lepton
+Spotlight.AttachedTo=body		;探照灯光源绑定的单位部件，body为主体，turret为炮塔。
+Spotlight.DisableRed=no		;探照灯是否禁用红色。
+Spotlight.DisableGreen=no		;探照灯是否禁用绿色。
+Spotlight.DisableBlue=no		;探照灯是否禁用蓝色。
+Spotlight.DisableColor=no		;探照灯是否禁用所有颜色，开启后探照灯将会变成黑色。
+
+在Ares环境下，探照灯逻辑的行为仍然遵循全局设置。
+
+[General]
+...
+SpotlightSpeed=.0015    		;探照灯的速度
+SpotlightMovementRadius=2000 	;探照灯运动的周长
+SpotlightLocationRadius=1000	;探照灯于建筑正前方时的最大距离
+SpotlightAcceleration=.0025		;探照灯转向的加速度
+SpotlightAngle=.5       		;探照灯扫描的角度
+
+探照灯拥有以下特性：
+1. 在默认全局设置下，探照灯会进行左右扇形扫描。其扫描范围默认朝向北面，即32。改变探照灯扫描的区域可以通过建筑预设的方向改变。
+2. 探照灯建筑在Powered=yes时，建筑断电探照灯自动熄灭。
+3. 探照灯的扫描距离似乎是硬编码，Ares中Spotlight.Distance=1024代表探照灯跟踪单位时的最大距离。
+4. 当全局设置中SpotlightLocationRadius > SpotlightMovementRadius时会IE。
+
+Bug：
+1. 和泰伯利亚之日中不同，Ares环境下的探照灯需要在加载地图后进行初始化，所以不能直接作用于地图预置的建筑上。如果想让探照灯正常工作，必须使用触发52号触发动作将绑定的探照灯建筑初始化。
+2. 35号触发条件无视隐形和伪装，只要进入探照灯灯光范围即做判定。
+3. Ares的66号事件和35号事件最大的不同就是，35号事件是进入探照灯则触发，而66号事件则是判定目前敌人是否在探照灯内。
