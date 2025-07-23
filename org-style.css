@@ -118,7 +118,7 @@ figure {
 }
 
 @keyframes lightup {
-	0% {filter:brightness(0.3);}
+	0% {filter:brightness(0.8);}
 	100% {filter:brightness(1.0);}
 }
 
@@ -483,20 +483,19 @@ footer {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	width: 90%;
+	width: 60%;
 	margin: auto;
 }
 
 .features-container {
 	display: flex;
 	flex-flow: column;
-	margin: 2vh 1vw;
-	width: 30%;
+	padding: 1vw;
+	width: 33%;
 }
 
 .features-image {
-	margin: auto;
-	border: 3px solid #CC000075;
+	margin: 0;
 	border-radius: 0px;
 	display: flex;
 	flex-flow: column;
@@ -504,26 +503,41 @@ footer {
 }
 
 .features-image img {
-	filter: brightness(0.3);
+	filter: brightness(0.8);
 	max-width: 100%;
 	height: auto;
+	margin: auto;
+	border: 3px solid #900;
 }
 
-.features-image img:hover {
+.features-container:hover img{
 	animation-name: lightup;
 	animation-timing-function: ease-in-out;
 	animation-duration: 0.5s;
 	animation-fill-mode: both;
 	animation-direction: alternate;
-	box-shadow: 0 0 24px #FF000075;
+	box-shadow: 0 0 5px #f00;
 }
 
 .features-container h3 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 800;
+	font-weight: 600;
 	font-size: 24px;
 	text-align: center;
 	color: #FFFFFF;
+	margin: 0.5em;
+}
+
+.features-container p {
+	width: 100%;
+	line-height: 1.25em;
+	color:#fff;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	text-shadow: 0 1px 0 #666;
 }
 
 /*----------Navigation Module----------*/
@@ -582,11 +596,10 @@ footer {
 	display: flex;
 	flex-flow: row;
 	padding: 1vw;
-	width: 75%;
+	width: 60%;
 	margin: auto;
-	border: 5px outset #ccc;
+	border: 2px outset #ccc;
 	background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%);
-	border-radius: 30px;
 }
 
 .news h2{
@@ -652,7 +665,7 @@ footer {
 	font-size: 20px;
 	border-left: 5px solid #c00;
 }
-
+/*
 .gallery-section {
 	width: 50%;
 }
@@ -663,6 +676,42 @@ footer {
 	margin: auto;
 	width: 100%;
 	height: auto;
+}*/
+
+.stay-connected {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	width: 60%;
+	margin: auto;
+}
+
+.stay-connected h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 48px;
+	text-align: center;
+}
+
+.main-social-media {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	width: 40%;
+	margin: auto;
+}
+
+.main-social-media a {
+	margin: auto;
+}
+
+
+.main-social-media a:hover {
+	filter:drop-shadow(0 0 3px #fff);
+}
+
+.main-social-media img{
+	width: 100%;
+	aspect-ratio: 1/1;
 }
 
 /*--------------------------------*/
