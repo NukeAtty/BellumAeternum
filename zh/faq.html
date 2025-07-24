@@ -29,40 +29,19 @@
 		]
 	}
 	</script>
+	<script src="../src/js/htmx.min.js"></script>
 </head>
 
 <body>
-	<header>
-		<div class="navigation-buttons">
-			<div class="navigation-button">
-				<a href="https://ra2be.com/zh/">主页</a>
-			</div>
-			<div class="navigation-button">
-				<a href="archives.html">档案库</a>
-			</div>
-			<div class="navigation-button">
-				<a href="blog.html">博客</a>
-			</div>
-			<div class="navigation-button">
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-		<div class="responsive-navigation">
-			<a href="https://ra2be.com/zh/"><img src="../src/favicon.svg" alt="logo" width="36px" height="36px"></a>
-			<div class="responsive-navigation-buttons">
-				<a href="archives.html">档案库</a>
-				<a href="blog.html">博客</a>
-				<a href="download.html">下载</a>
-			</div>
-		</div>
-	</header>
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
 	<!--Main-->
 	<main>
 		<div class="blog">
 			<h1>常见问题</h1>
 			<div class="blog-info">
 				<div class="update-time">
-					<p>最后更新： <time datetime="2025-03-02 18:00">2025/3/2</time></p>
+					<p>最后更新： <time datetime="2025-03-02 18:00">2025/7/24</time></p>
 				</div>
 			</div>			
 			<div class="faq-main">
@@ -93,7 +72,7 @@
 					</div>
 					<h3 class="collapsible">《万世之战》的素材是否可以使用？</h3>
 					<div class="col-content">
-						<p>《万世之战》中的任何原创素材都不允许在未经文字授权的情况下使用。</p>
+						<p>《万世之战》中的任何原创素材都不允许在未经作者授权的情况下使用。</p>
 					</div>
 				</div>
 			</div>
