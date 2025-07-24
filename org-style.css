@@ -3401,7 +3401,7 @@ footer {
 		line-height: 1em;
 		margin: auto 0.5em;
 		border: 2px ridge #333;
-		background: linear-gradient(180deg, #d60408 0%, #900000 40%, #9d0000 50%, #850000 60%, #710000 70%, #400000 80%, #482428 100%);
+		background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
 		padding: 0.5em;
 	}
 
@@ -3585,18 +3585,16 @@ footer {
 	}
 
 	.features h2 {
-		font-size: 24px;
+		font-size: 32px;
 	}
 
 	.features-section {
 		flex-flow: column;
+		width: 100%;
 	}
 
 	.features-container {
 		width: 100%;
-	}
-
-	.features-image {
 	}
 
 	.features-image img {
@@ -3620,7 +3618,7 @@ footer {
 
 	.quick-nav h2 {
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 24px;
+		font-size: 32px;
 		text-align: center;
 	}
 
@@ -3672,15 +3670,15 @@ footer {
 		padding: 1vw;
 		width: 90%;
 		margin: auto;
-		border: 5px outset #ccc;
+		border: 2px outset #ccc;
+		border-radius: 0;
 		background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%);
-		border-radius: 10px;
 	}
 
 	.news h2{
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 18px;
-		text-align: left;
+		font-size: 32px;
+		text-align: center;
 		margin: 0.5em;
 		color: #333;
 		line-height: 1em;
@@ -3709,7 +3707,6 @@ footer {
 		text-align: center;
 		background-color: #000;
 		border: 2px inset #333;
-		border-radius: 10px;
 		padding: 0.5em;
 		background-image: url("src/pattern.svg");
 		background-blend-mode: lighten;
@@ -3741,7 +3738,7 @@ footer {
 		border-left: 5px solid #c00;
 	}
 
-	.gallery-section {
+	/*.gallery-section {
 		width: 100%;
 	}
 
@@ -3751,6 +3748,41 @@ footer {
 		margin: auto;
 		width: 100%;
 		height: auto;
+	}*/
+
+	.stay-connected {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		width: 100%;
+		margin: auto;
+	}
+
+	.stay-connected h2 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 32px;
+		text-align: center;
+	}
+
+	.main-social-media {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		width: 60%;
+		margin: auto;
+	}
+
+	.main-social-media a {
+		margin: auto;
+	}
+
+	.main-social-media a:hover {
+		filter:drop-shadow(0 0 3px #fff);
+	}
+
+	.main-social-media img{
+		width: 75%;
+		aspect-ratio: 1/1;
 	}
 
 	/*----------Features Zigzag----------*/
