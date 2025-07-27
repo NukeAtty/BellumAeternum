@@ -25,7 +25,7 @@ SpotlightAngle=.5       		;探照灯扫描的角度
 1. 在默认全局设置下，探照灯会进行左右扇形扫描。其扫描范围默认朝向北面，即32。改变探照灯扫描的区域可以通过建筑预设的方向改变。
 2. 探照灯建筑在Powered=yes时，建筑断电探照灯自动熄灭。
 3. 探照灯的扫描距离似乎是硬编码，Ares中Spotlight.Distance=1024代表探照灯跟踪单位时的最大距离。
-4. 当全局设置中SpotlightLocationRadius > SpotlightMovementRadius时会IE。
+4. 当全局设置中SpotlightLocationRadius >= SpotlightMovementRadius时会00436766。
 
 Bug：
 1. 和泰伯利亚之日中不同，Ares环境下的探照灯需要在加载地图后进行初始化，所以不能直接作用于地图预置的建筑上。如果想让探照灯正常工作，必须使用触发52号触发动作将绑定的探照灯建筑初始化。
