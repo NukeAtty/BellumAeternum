@@ -5,3 +5,8 @@
 .content p img ~ em {
   display: block;
 }
+
+article[role=main] .highlight pre {
+    line-height: 1.5;
+    text-wrap: wrap;
+}
