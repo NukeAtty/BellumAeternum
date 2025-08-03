@@ -1,7 +1,0 @@
-PlayerAutoCrush=no      ; Will player controlled units automatically try to crush enemy infantry?
-PlayerReturnFire=no     ; More aggressive return fire from player controlled objects?
-PlayerScatter=no        ; Will player units scatter, of their own accord, from threats and damage?
-
-test the code above
-
-add GAZ-69 as Soviet JEEP
