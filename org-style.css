@@ -4659,7 +4659,6 @@ footer {
 		width: auto;
 		margin: auto;
 		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-		border-radius: 36px;
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
 	}
@@ -4672,16 +4671,17 @@ footer {
 	}
 
 	.chaps {
-		background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
-		background-blend-mode: hard-light;
-		border-radius: 24px;
+		background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
+		background-blend-mode: luminosity;
+		border-radius: 12px;
 		margin: 0.5em;
 		padding: 0.5em;
 	}
 
 	.chaps a {
 		text-decoration: none;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: monospace;
+		font-size: 12px;
 		display: block;
 		color: #fff;
 		margin: 0.5em;
@@ -4712,7 +4712,6 @@ footer {
 		margin: 1em auto;
 		padding: 1em;
 		width: 90%;
-		border-radius: 25px;
 		background-color: #333333;
 		box-shadow: 0 0 12px #000;
 	}
