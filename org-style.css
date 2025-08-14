@@ -1959,8 +1959,12 @@ footer {
 }
 
 .blog h1 {
-	font-size: 48px;
+	font-size: 36px;
 	text-align: center;
+	margin-bottom: 3vw;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px 1px #000;
 }
 
 .blog-main {
@@ -1978,9 +1982,8 @@ footer {
 .update-time {
 	display: inline-flex;
 	margin: auto;
-	padding: 0.5em;
+	padding: 0.25em;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 12px;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
 }
@@ -1988,10 +1991,10 @@ footer {
 .update-time p{
 	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
 	background-blend-mode: hard-light;
-	border-radius: 6px;
-	margin: 0.5em;
+	border-radius: 3px;
+	margin: 0.25em;
 	padding: 0.5em;
-	font-family: Neon, monospace;
+	font-family: monospace;
 	font-size: 14px;
 	font-weight: normal;
 	color: #00ff00;
@@ -2005,18 +2008,18 @@ footer {
 	padding: 1vw;
 }
 
-.blog.right {
-	width: 5%;
+.blog-right {
+	width: 20%;
+	padding: 1vw;
 }
 
 .chap-nav {
 	position: sticky;
 	top: 7vw;
 	display: block;
-	width: auto;
+	width: 100%;
 	margin: auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
 }
@@ -2029,9 +2032,9 @@ footer {
 }
 
 .chaps {
-	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
 	background-blend-mode: hard-light;
-	border-radius: 24px;
+	border-radius: 5px;
 	margin: 0.5em;
 	padding: 0.5em;
 }
@@ -2044,12 +2047,13 @@ footer {
 
 .chaps a {
 	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: monospace;
+	font-size: 12px;
 	display: block;
-	color: #fff;
+	color: #0f0;
 	margin: 0.5em;
 	padding: 0.5em;
-	text-shadow: 1px 0 1px #000;
+	text-shadow: 0 1px 1px #090;
 }
 
 #h2 {
@@ -2067,17 +2071,79 @@ footer {
 .chaps a:hover {
 	display: block;
 	color: #fff;
-	background: radial-gradient(circle, #dd9000 20%, #e30000 90%, #660000 100%);
+	background-color:#00cc00;
 	border-radius: 5px;
-	box-shadow: 0 0 5px #ff000060;
+	box-shadow: 0 0 5px #00cc0060;
+}
+
+.blog-cta {
+	position: sticky;
+	top: 7vw;
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	margin: auto;
+	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
+	border: 4px outset #ddd;*/
+	box-shadow: 0 0 24px #000;
+	border: 2px ridge #ccc;
+}
+
+.blog-cta p{
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px 2px #000;
+	/*color: #0c0;
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
+	background-blend-mode: hard-light;
+	border-radius: 5px;
+	margin: 0.5em;
+	padding: 0.5em;*/
+}
+
+.blog-cta a{
+	display: block;
+	margin: 0.5em;
+	align-items: center;
+	text-align: center;
+	font-size: 16px;
+	font-family: Furore, Arial, Helvetica, sans-serif;
+	font-weight: 800;
+	padding: 0.5em;
+	color: goldenrod;
+	border: 2px solid #000000;
+	border-style: ridge;
+	background: rgb(214,4,8);
+	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%);
+	box-shadow: 0 0 5px #000000 inset;
+	text-decoration: none;
+	width: auto;
+}
+
+.blog-cta a:hover{
+	color: lightgoldenrodyellow;
+	text-shadow: 0 0 5px gold;
+	background: rgb(255,174,0);
+	background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%);
+	box-shadow: 0 0 2px darkred inset;
+}
+
+.blog-cta img {
+	max-width: 90%;
+	height: auto;
+	margin: 3px auto;
+	border-radius: 10px;
+	border: 5px solid #000;
 }
 
 .blog-content {
 	display: block;
 	margin: 1vw auto;
 	padding: 2vw;
-	width: 70%;
-	border-radius: 25px;
+	width: 60%;
 	background-color: #333333;
 	box-shadow: 0 0 12px #000;
 }
@@ -2187,7 +2253,7 @@ footer {
 .blog-content h2{
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: black;
-	font-size: 36px;
+	font-size: 28px;
 	text-align: left;
 	color:#fff;
 	margin-bottom: 0.25em;
@@ -2198,7 +2264,7 @@ footer {
 .blog-content h3{
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 22px;
 	text-align: left;
 	color:#fff;
 	line-height: 1.25em;
@@ -2208,7 +2274,7 @@ footer {
 .blog-content h4{
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 18px;
 	text-align: left;
 	color:#fff;
 	line-height: 1.25em;
