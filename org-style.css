@@ -1989,8 +1989,8 @@ footer {
 }
 
 .update-time p{
-	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%);
-	background-blend-mode: hard-light;
+	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
+	background-blend-mode: luminosity;
 	border-radius: 3px;
 	margin: 0.25em;
 	padding: 0.5em;
@@ -2033,7 +2033,7 @@ footer {
 
 .chaps {
 	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
-	background-blend-mode: hard-light;
+	background-blend-mode: luminosity;
 	border-radius: 5px;
 	margin: 0.5em;
 	padding: 0.5em;
@@ -2048,12 +2048,17 @@ footer {
 .chaps a {
 	text-decoration: none;
 	font-family: monospace;
-	font-size: 12px;
+	font-size: 10px;
 	display: block;
 	color: #0f0;
 	margin: 0.5em;
 	padding: 0.5em;
 	text-shadow: 0 1px 1px #090;
+}
+
+.chaps a:before {
+	content: ' \220E';
+	margin-right: 0.5em;
 }
 
 #h2 {
@@ -2083,25 +2088,28 @@ footer {
 	flex-flow: column;
 	width: 100%;
 	margin: auto;
-	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border: 4px outset #ddd;*/
+	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
+	padding-top: 10vw;
+	background: url('src/eva.avif'),url('src/blue-pattern.svg');
+	background-blend-mode: screen;
+	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
-	border: 2px ridge #ccc;
+	border: 4px outset #ccc;
 }
 
 .blog-cta p{
 	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 18px;
+	font-family: monospace;
+	font-size: 14px;
 	font-weight: bold;
-	color: #fff;
-	text-shadow: 0 1px 2px #000;
-	/*color: #0c0;
+	text-shadow: 0 1px 1px #0c0;
+	margin: 1em 0;
+	color: #0f0;
 	background: linear-gradient(-45deg, #000000 0, #333333 50%, #000000 100%), url(src/techtree-pattern.svg);
-	background-blend-mode: hard-light;
+	background-blend-mode: luminosity;
 	border-radius: 5px;
 	margin: 0.5em;
-	padding: 0.5em;*/
+	padding: 0.5em;
 }
 
 .blog-cta a{
@@ -4639,6 +4647,10 @@ footer {
 		width: 90%;
 		padding: 0;
 		margin: 3vh auto;
+	}
+
+	.blog-right {
+		display:none;
 	}
 
 	.chap-nav {
