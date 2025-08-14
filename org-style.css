@@ -2090,7 +2090,8 @@ footer {
 	margin: auto;
 	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
 	padding-top: 10vw;
-	background: url('src/eva.avif'),url('src/blue-pattern.svg');
+	background: url('src/eva.avif') no-repeat, url('src/blue-pattern.svg');
+	background-size: cover;
 	background-blend-mode: screen;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
