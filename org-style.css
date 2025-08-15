@@ -765,37 +765,60 @@ footer {
 }
 
 .factions-impression {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
 	box-shadow: 0 1px 10px #000;
 	margin: auto;
 	padding: auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border-radius: 36px;
 	border: 4px outset #ddd;
 	box-shadow: 0 0 24px #000;
 	width: 60%;
 }
 
-.factions-container {
-	margin: 1em;
-	width: 50%;
-	position: relative;
+.factions-impression a{
+	width: 320px;
+	height: 320px;
 }
 
-.factions-container a{
-	width: 50%;
+.factions-impression h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	color: #FFFFFF;
+	text-align:center;
+	margin-top: 18vw;
+}
+
+.factions-impression a:first-child {
+	background:linear-gradient(-45deg, #000000 0, #999999 50%, #000000 100%),url('src/icons/soviet.svg'),url('src/red-pattern.svg');
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position-y:50%;
+	background-position-x:50%;
+	background-blend-mode: overlay;
+}
+
+.factions-impression a:last-child {
+	background: linear-gradient(-45deg, #000000 0, #999999 50%, #000000 100%),url('src/icons/allied.svg'),url('src/blue-pattern.svg');
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position-y:50%;
+	background-position-x:50%;
+	background-blend-mode: overlay;
+}
+
+.factions-impression a:hover {
+	filter:brightness(120%);
 }
 
 .factions-container img{
-  width: 100%;
-  height: auto;
-  border: 4px inset #000;
- 	border-radius: 20px;
+	width: 100%;
+	height: auto;
  	z-index: -1;
- 	filter:brightness(50%);
- 	aspect-ratio: 1/1;
+	padding: 1vw;
+	margin: auto;
+	filter:brightness(50%);
 }
 
 .factions-container img:hover{
@@ -2093,9 +2116,8 @@ footer {
 	background: url('src/eva.avif') no-repeat, url('src/blue-pattern.svg');
 	background-size: cover;
 	background-blend-mode: screen;
-	border: 4px outset #ddd;
+	border: 4px ridge #ccc;
 	box-shadow: 0 0 24px #000;
-	border: 4px outset #ccc;
 }
 
 .blog-cta p{
@@ -3139,62 +3161,16 @@ footer {
 	}
 
 	.factions-impression {
-	  display: flex;
-	  flex-flow: row;
-	  justify-content: center;
+	 	display: flex;
+	 	flex-flow: row;
+	  	justify-content: center;
 		box-shadow: 0 1px 10px #000;
 		margin: auto;
 		padding: auto;
 		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-		border-radius: 36px;
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
-		width: 80%;
-	}
-
-	.factions-container {
-		margin: 1em;
-		width: 50%;
-		position: relative;
-	}
-
-	.factions-container a{
-		width: 50%;
-	}
-
-	.factions-container img{
-	  width: 100%;
-	  height: auto;
-	  border: 4px inset #000;
-	 	border-radius: 20px;
-	 	z-index: -1;
-	 	filter:brightness(50%);
-	 	aspect-ratio: 1/1;
-	}
-
-	.factions-container img:hover{
-		filter:brightness(100%);
-	}
-
-	.factions-description {
-	  position: absolute;
-	  width: 100%;
-	  bottom: 4%;
-	 	margin: 0;
-	  border-radius: 20px;
-	  padding: 0;
-	  box-sizing: border-box;
-	  z-index: 1;
-	  color: #ffffff;
-	}
-
-	.factions-description h3{
-		font-size: 28px;
-		margin: 0.2em 0;
-		/*border-bottom: 2px solid #fff;*/
-		text-align: center;
-		text-shadow: 2px 2px 2px #000;
-		line-height: 1.0em;
+		width: 90%;
 	}
 
 	/*---------- Mechanics Module -----------*/
@@ -3943,64 +3919,23 @@ footer {
 
 	.factions-impression {
 		display: flex;
-		flex-flow: column;
+		flex-flow: row;
 		justify-content: center;
 		box-shadow: 0 1px 10px #000;
 		margin: auto;
 		padding: 0;
 		background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-		border-radius: 24px;
 		border: 4px outset #ddd;
 		box-shadow: 0 0 24px #000;
 		width: 100%;
 	}
 
-	.factions-container {
-		margin: 0.5em auto;
-		width: 95%;
-		height: auto;
-		aspect-ratio: 1/1;
-		position: relative;
+	.factions-impression a{
+		width: 50%;
 	}
 
-	.factions-container a{
-	}
-
-	.factions-container img{
-		display: block;
-		margin: auto;
-	  width: 100%;
-	  height: auto;
-	 	border-radius: 20px;
-	 	z-index: -1;
-	 	filter:brightness(100%);
-	}
-
-
-	.factions-description {
-	  position: absolute;
-	  width: 100%;
-	  bottom: 1%;
-	 	margin: 0.5em 0;
-	  padding: 0 1em;
-	  box-sizing: border-box;
-	  z-index: 1;
-	  color: #ffffff;
-	}
-
-	.factions-description h3{
-		font-size: 24px;
-		margin: 0.25em 0;
-		text-align: center;
-		text-shadow: 2px 2px 2px #000;
-		line-height: 1.5em;
-	}
-
-	.factions-description p{
-		font-size: 12px;
-	  text-align: left;
-		text-shadow: 2px 2px 2px #000;
-		line-height: 1.25em;
+	.factions-impression h3 {
+		margin-top: 15vh;
 	}
 
 	/*---------- Mechanics Module -----------*/
@@ -4020,6 +3955,7 @@ footer {
 	.mechanics p{
 		margin: auto;
 		line-height: 1em;
+		text-align: center;
 	}
 
 	.mechanics-container {
