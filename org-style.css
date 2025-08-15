@@ -225,9 +225,10 @@ main {
 	display: block;
 	margin: auto;
 	padding: 5vw 0;
-	background-image:url('src/bg.avif');
+	background:url('src/background.svg'),linear-gradient(180deg, #FFFFFF00 0%, #181818 1%, #FFFFFF00 100%);
+	background-size: contain;
+	background-blend-mode: screen;
 	background-repeat: no-repeat;
-	background-position-x: center;
 }
 
 /*-------------------------*/
@@ -413,12 +414,12 @@ footer {
 .overview h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 72px;
-	font-weight: 700;
+	font-weight: 900;
 	font-variant: small-caps;
 	line-height: 0.5em;
 	margin: 1em auto;
 	text-align: center;
-	color: #F00;
+	color: #FFF;
 	text-shadow: 0 0 10px #F00;
 }
 
@@ -772,22 +773,24 @@ footer {
 	margin: auto;
 	padding: auto;
 	background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);
-	border: 4px outset #ddd;
+	border: 4px outset #ccc;
 	box-shadow: 0 0 24px #000;
-	width: 60%;
+	width:55%;
 }
 
 .factions-impression a{
 	width: 320px;
 	height: 320px;
+	margin: 0.25vw;
 }
 
 .factions-impression h3 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 36px;
+	font-size: 48px;
 	color: #FFFFFF;
 	text-align:center;
-	margin-top: 18vw;
+	margin-top: 14vw;
+	mix-blend-mode:soft-light;
 }
 
 .factions-impression a:first-child {
@@ -809,7 +812,18 @@ footer {
 }
 
 .factions-impression a:hover {
-	filter:brightness(120%);
+	background-blend-mode:soft-light;
+	filter:brightness(150%);
+}
+
+.factions-impression a:first-child:hover h3 {
+	mix-blend-mode: lighten;
+	text-shadow: 0 0 5px #FF0000;
+}
+
+.factions-impression a:last-child:hover h3 {
+	mix-blend-mode: lighten;
+	text-shadow: 0 0 5px #0099FF;
 }
 
 .factions-container img{
@@ -863,6 +877,7 @@ footer {
 .mechanics p{
 	margin: auto;
 	line-height: 1em;
+	text-align:center;
 }
 
 .mechanics-container {
@@ -3470,6 +3485,9 @@ footer {
 	/*----------Main----------*/
 	main {
 		width: 100%;
+		background-size:cover;
+		background-position: center;
+		background-attachment: fixed;
 	}
 
 	/*---------Footer----------*/
