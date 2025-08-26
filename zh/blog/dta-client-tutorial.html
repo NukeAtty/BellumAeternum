@@ -77,7 +77,7 @@
 						<li>可以为Mod提供自动更新功能。</li>
 						<li>可以为Mod提供多语言功能。</li>
 					</ol>
-					<p>实际上，DTA客户端对于追求游戏质量Mod作者来说是必要的，因为其带来的便捷性是直接使用游戏菜单所无法比拟的。并且，大部分国外或者国内的高质量Mod都在使用DTA客户端，比如心灵终结、幽灵计划、复仇时刻等。</p>
+					<p>实际上，DTA客户端对于追求游戏质量Mod作者来说是必要的，因为其带来的便捷性是直接使用游戏菜单所无法比拟的。并且，大部分国外或者国内的高质量Mod都在使用DTA客户端，比如心灵终结、幽灵计划、万世之战等。</p>
 					<h2 id="obtain">如何获取DTA客户端？</h2>
 					<p>目前来说，最新的DTA客户端可以通过github上获取，比如CnCNet的客户端文件。DTA客户端分成了两个部分，一是主程序的源代码，二是主程序的文件。</p>
 					<h3>DTA客户端源码</h3>
@@ -91,11 +91,12 @@
 					<h3>Mod适配</h3>
 					<p>Mod适配主要分为以下几个部分：</p>
 					<ol>
+						<li>客户端适配：在Resources/ClientDefinition.ini中定义。</li>
 						<li>游戏适配：在Resources/GameOptions.ini中定义。</li>
-						<li>地图适配：在INIs/MPMaps.ini中定义。</li>
-						<li>战役适配：在INIs/Battle.ini中定义。</li>
-						<li>模式适配：在INIs/Modes/的ini文件定义。</li>
+						<li>地图适配：在Maps文件夹以及INIs/MPMaps.ini中定义。</li>
 					</ol>
+					<h4>客户端适配</h4>
+					<p>客户端适配指的是定义客户端的类型、默认分辨率以及各类文件的路径。打开<code>Resource/ClientDefinition.ini</code>，便可以看到客户端的适配选项。</p>
 					<h4>游戏适配</h4>
 					<p>我们直接打开Resource文件夹中的GameOptions.ini，便可以编辑其代码来适配你的Mod。这里我直接用万世之战的代码做举例：</p>
 					<div class="code-presentation">
@@ -105,6 +106,7 @@
 						<p>StartingLocationAngularVelocity=0.01 ;这句和下面一句指定的是地图上选择初始位置动画的转动速度。</p>
 						<p>ReservedStartingLocationAngularVelocity=0.01</p>
 					</div>
+					<h4>地图适配</h4>
 					<h3>界面定制</h3>
 					<p>界面定制也是通过各种ini来实现。</p>
 					<h3>功能定制</h3>
