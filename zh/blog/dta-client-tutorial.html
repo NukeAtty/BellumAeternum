@@ -108,7 +108,36 @@
 					</div>
 					<h4>地图适配</h4>
 					<h3>界面定制</h3>
-					<p>界面定制也是通过各种ini来实现。</p>
+					<p>界面定制也是通过各种ini来实现，下表表示不同的界面所对应的ini配置文件。</p>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>窗口</th>
+								<th>配置文件</th>
+								<th>继承自</th>
+							</tr>
+							<tr>
+								<td>主界面</td>
+								<td>MainMenu.ini</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>战役任务界面</td>
+								<td>CampaignSelector.ini</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>遭遇战界面</td>
+								<td>SkirmishLobby.ini</td>
+								<td>GameLobby.ini</td>
+							</tr>
+							<tr>
+								<td>局域网对战界面</td>
+								<td>LANLobby.ini</td>
+								<td>GameLobby.ini</td>
+							</tr>
+						</table>
+					</div>
 					<h3>功能定制</h3>
 					<p>功能定制比较复杂，需要对源代码进行修改，同时需要重新编译客户端才能实现。</p>
 					<h2 id="misc">其他</h2>
