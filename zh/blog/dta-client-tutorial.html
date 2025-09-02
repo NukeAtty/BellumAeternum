@@ -64,7 +64,7 @@
 				<div class="blog-content">
 					<h2 id="overview">了解DTA客户端</h2>
 					<h3>什么是DTA客户端？</h3>
-					<p>DTA客户端原本是一个叫做《Dawn of the Tiberium Age》的Mod的启动器，经过多个版本的迭代以及修改，发展成为了一个可以适配原版尤里的复仇以及Mod的启动器，同时可以连接CnCNet进行连接。</p>
+					<p>DTA客户端原本是一个叫做《Dawn of the Tiberium Age》的Mod的启动器，经过多个版本的迭代以及修改，发展成为了一个可以适配原版尤里的复仇以及Mod的启动器，同时可以连接CnCNet进行多人游戏。</p>
 					<h3>什么是CnCNet？</h3>
 					<p>CnCNet是命令与征服玩家社区发展的一个联机平台，在Westwood工作室关闭后，继续提供线上对战的服务。详情可以访问<a href="https://cncnet.org/" target="_blank">CnCNet官方网站</a>进行了解。</p>
 					<h3>DTA客户端的优势是什么？</h3>
@@ -77,9 +77,9 @@
 						<li>可以为Mod提供自动更新功能。</li>
 						<li>可以为Mod提供多语言功能。</li>
 					</ol>
-					<p>实际上，DTA客户端对于追求游戏质量Mod作者来说是必要的，因为其带来的便捷性是直接使用游戏菜单所无法比拟的。并且，大部分国外或者国内的高质量Mod都在使用DTA客户端，比如心灵终结、幽灵计划、万世之战等。</p>
+					<p>实际上，DTA客户端对于追求游戏质量Mod作者来说是必要的，因为其带来的便捷性是直接使用游戏菜单所无法比拟的。并且，大部分高质量Mod都在使用DTA客户端，比如心灵终结、幽灵计划、万世之战等。</p>
 					<h2 id="obtain">如何获取DTA客户端？</h2>
-					<p>目前来说，最新的DTA客户端可以通过github上获取，比如CnCNet的客户端文件。DTA客户端分成了两个部分，一是主程序的源代码，二是主程序的文件。</p>
+					<p>目前来说，最新的DTA客户端可以通过<a href="https://github.com/CnCNet/xna-cncnet-client" target="_blank" rel="nofollow">github</a>获取源代码，然后自己编译。或者，如果你是新手，强烈建议直接用现成的基础包。</p>
 					<h3>DTA客户端源码</h3>
 					<p>主程序的源代码是用C#写的，如果你是一个入门的Modder，可以忽略这部分。修改DTA的源码目的就只有一个，那就是客户端内的功能定制。</p>
 					<p>打个比方，phobos可以实现任务可自定义速度，而这个界面就需要通过修改DTA客户端源代码来实现。</p>
@@ -105,6 +105,7 @@
 						<p>InternalSideIndices=0,8	;国家序号，这个连接上面阵营和rules.ini中阵营的桥梁。比如上面的Allied，在rules.ini中对应的是0号国家，而Soviet则对应的是8号国家。</p>
 						<p>StartingLocationAngularVelocity=0.01 ;这句和下面一句指定的是地图上选择初始位置动画的转动速度。</p>
 						<p>ReservedStartingLocationAngularVelocity=0.01</p>
+						<p></p>
 					</div>
 					<h4>地图适配</h4>
 					<h3>界面定制</h3>
@@ -138,10 +139,11 @@
 							</tr>
 						</table>
 					</div>
-					<h3>功能定制</h3>
-					<p>功能定制比较复杂，需要对源代码进行修改，同时需要重新编译客户端才能实现。</p>
+					<h3>选项定制</h3>
+					<p>在遭遇战或者对战大厅中的游戏选项也同样是可以通过INI定制的。</p>
 					<h2 id="misc">其他</h2>
 				</div>
+				<div class="blog-right"></div>
 			</div>
 		</div>
 	</main>
