@@ -12,6 +12,23 @@
 			font-size: 16px;
 			font-weight: bold;
 		}
+
+		pre {
+			font-size: 16px;
+			border: 2px solid #FFF;
+			border-radius: 10px;
+			color: #0C0;
+			white-space: pre-wrap;
+			background: url('../../src/pattern.svg');
+			text-align:left;
+			padding: 1em;
+		}
+
+		#ini-comment {
+			font-size: 14px;
+			color: #999;
+			font-weight: 300;
+		}
 	</style>
 </head>
 <body>
@@ -99,14 +116,13 @@
 					<p>客户端适配指的是定义客户端的类型、默认分辨率以及各类文件的路径。打开<code>Resource/ClientDefinition.ini</code>，便可以看到客户端的适配选项。</p>
 					<h4>游戏适配</h4>
 					<p>我们直接打开Resource文件夹中的GameOptions.ini，便可以编辑其代码来适配你的Mod。这里我直接用万世之战的代码做举例：</p>
-					<div class="code-presentation">
-						<p>[General]	;这一部分是对于阵营的全局设定，包含了一些杂项。</p>
-						<p>Sides=Allied,Soviet	;阵营，这里的阵营是在遭遇战设置界面的阵营，和rules.ini无关。</p>
-						<p>InternalSideIndices=0,8	;国家序号，这个连接上面阵营和rules.ini中阵营的桥梁。比如上面的Allied，在rules.ini中对应的是0号国家，而Soviet则对应的是8号国家。</p>
-						<p>StartingLocationAngularVelocity=0.01 ;这句和下面一句指定的是地图上选择初始位置动画的转动速度。</p>
-						<p>ReservedStartingLocationAngularVelocity=0.01</p>
-						<p></p>
-					</div>
+					<pre>
+<span style="color:#C60;">[General]</span>	<span id="ini-comment">;这一部分是对于阵营的全局设定，包含了一些杂项。</span>
+<span style="color:#0F0;">Sides=</span>Allied,Soviet	<span id="ini-comment">;阵营，这里的阵营是在遭遇战设置界面的阵营，和rules.ini无关。</span>
+<span style="color:#0F0;">InternalSideIndices=</span>0,8	<span id="ini-comment">;国家序号，这个连接上面阵营和rules.ini中阵营的桥梁。比如上面的Allied，在rules.ini中对应的是0号国家，而Soviet则对应的是8号国家。</span>
+<span style="color:#0F0;">StartingLocationAngularVelocity=</span>0.01 <span id="ini-comment">;这句和下面一句指定的是地图上选择初始位置动画的转动速度。</span>
+<span style="color:#0F0;">ReservedStartingLocationAngularVelocity=</span>0.01
+					</pre>
 					<h4>地图适配</h4>
 					<h3>界面定制</h3>
 					<p>界面定制也是通过各种ini来实现，下表表示不同的界面所对应的ini配置文件。</p>
