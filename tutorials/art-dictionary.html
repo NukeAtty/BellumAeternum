@@ -51,28 +51,41 @@
         </div>
         <div class="label">
             <code id="key">Cameo</code>
-                    <div class="general-table">
-                        <table>
-                            <tr>
-                                <th>值类型</th>
-                                <td>文件名（无后缀）</td>
-                            </tr>
-                            <tr>
-                                <th>默认值</th>
-                                <td>xxicon</td>
-                            </tr>
-                            <tr>
-                                <th>适用类型</th>
-                                <td>建筑、步兵、载具、飞行器</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <p>指定该单位使用哪个SHP文件作为图标（就是你点的那个东西来建造它）。如果该对象没有图标，游戏默认使用“Missing
-            Cameo”图标（文件名为xxicon.shp）作为它的图标（就是那个红警2样的图标）。每个图标都必须是SHP格式，并且调色盘要求是红警2的cameo.pal文件
-            Ares允许微观定义每个ART对象的图标色盘，但是无法分离定义Cameo与AltCameo的色盘
-            然而Ares允许使用256索引PCX作为图标抛弃SHP格式
-            Phobos更是允许使用24位全彩RGB的PCX文件作为图标
-            另外，原版Westwood图标的大小标准是60*48像素，即宽60像素，高48像素，虽然并不强制，但更大的尺寸还是更多的帧数在RA2中并没有任何特殊效果，除非你改程序对侧边栏的结构进行大幅度修改</p>
+                <div class="general-table">
+                    <table>
+                        <tr>
+                            <th>值类型</th>
+                            <td>文件名（无后缀）</td>
+                        </tr>
+                        <tr>
+                            <th>默认值</th>
+                            <td>xxicon</td>
+                        </tr>
+                        <tr>
+                            <th>适用类型</th>
+                            <td>建筑、步兵、载具、飞行器</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>指定该单位使用哪个SHP文件作为图标（就是你点的那个东西来建造它）。如果该对象没有图标，游戏默认使用“Missing Cameo”图标（文件名为xxicon.shp）作为它的图标（就是那个红警2样的图标）。每个图标都必须是SHP格式，并且调色盘要求是红警2的cameo.pal文件，Ares允许微观定义每个ART对象的图标色盘，但是无法分离定义Cameo与AltCameo的色盘。</p>
+                <p>然而Ares允许使用256索引PCX作为图标抛弃SHP格式，Phobos更是允许使用24位全彩RGB的PCX文件作为图标。</p>
+                <p>另外，原版Westwood图标的大小标准是60*48像素，即宽60像素，高48像素，虽然并不强制，但更大的尺寸还是更多的帧数在RA2中并没有任何特殊效果，除非你改程序对侧边栏的结构进行大幅度修改。</p>
+            <details>
+                <summary>原游戏中的图标排序规则如下</summary>
+                <p>对于超级武器：</p>
+                <ul>
+                    <li><code>RechargeTime</code>更短的优先</li>
+                    <li><code>UIName</code>字母顺序在前优先</li>
+                </ul>
+                <p>对于单位列表：</p>
+                <ul>
+                    <li><code>AIBasePlanningSide</code>为玩家阵营的优先</li>
+                    <li>非建筑情况下常规单位优先，<code>Naval=yes</code>的其后，<code>ConsideredAircraft=yes</code>的再后</li>
+                    <li>TechLevel 更低的优先</li>
+                    <li>Cost 更低的优先</li>
+                    <li>UIName 字母顺序在前优先</li>
+                </ul>
+            </details>
         </div>
         <div class="label">
             <code id="key">AltCameo</code>

@@ -66,6 +66,10 @@ a:visited {
     color: #FF0000;
 }
 
+li {
+    line-height: 1.5em;
+}
+
 pre {
     font-family: monospace;
     color: #FFFFFF;
@@ -78,8 +82,31 @@ pre {
 }
 
 code {
+    font-size: 12px;
     font-family: monospace;
-    color: #009900;
+    color: #00FF00;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 2px;
+    margin: 0 2px;
+    background-color: #080808;
+}
+
+summary {
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding-left: 1vw;
+}
+
+summary:hover {
+    color: #FC0;
+}
+
+details {
+    background-color: #666;
+    padding-left: 1vw;
+    box-shadow: 0 2px 2px #000;
 }
 
 #key {
