@@ -25,29 +25,137 @@
         <p>建议不要删除已经存在的片断头，因为游戏会引用某些片断头，删除的话有可能由于游戏找不到其引用的头而导致崩溃。（这句话的意思就是别没事找事胡乱删除原本就有的东西，哪怕你觉得这部分没啥作用……存在必有道理……）</p>
         <p>游戏中的坐标系大多有XYZ和FLH两种 FLH就是前左高，常用于开火坐标和炮塔偏移位置等涉及根据本体朝向更改实际位置的计算，单位Lepton XYZ则有多种细分，一种最典型的X,Y,Z就是+X代表正东（屏幕右下）方向，+Y代表正南（平面左下）方向，+Z代表高度向上，单位Lepton 也常用X,Y的形式，此时+X代表屏幕右方向，+Y代表屏幕下方向，单位Pixel，即像素值，也就是你直接用疼逊截个图一框都能立即读数使用 这种情况下YSort和ZAdjust用于调整图层遮挡关系。</p>
         <h2>通用标签</h2>
-        <code id="key">Image=</code>
-        <div class="general-table">
-            <table>
-                <tr>
-                    <th>值类型</th>
-                    <td>文件名（无后缀）</td>
-                </tr>
-                <tr>
-                    <th>默认值</th>
-                    <td>所在段落名</td>
-                </tr>
-                <tr>
-                    <th>适用类型</th>
-                    <td>建筑、动画</td>
-                </tr>
-            </table>
+        <div class="label">
+            <code id="key">Image</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>文件名（无后缀）</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>所在段落名</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>建筑、动画</td>
+                    </tr>
+                </table>
+            </div>
+            <p>这个ART段落实际使用的文件名称。例如原版很多建筑的动画_A和_AD代表健康和残损，但是_AD中Image=_A通过设定播放的帧数来与_A区分
+    [NAPOWR_AD]
+    Image=NAPOWR_A
+    那么NAPOWR_AD这个动画实际上使用napowr_a.shp
+    可用于动画和建筑，Phobos下也支持了所有TechnoType（Infantry、Vehicle、Aircraft、Building）</p>
         </div>
- 
-        <p>这个ART段落实际使用的文件名称。例如原版很多建筑的动画_A和_AD代表健康和残损，但是_AD中Image=_A通过设定播放的帧数来与_A区分
-[NAPOWR_AD]
-Image=NAPOWR_A
-那么NAPOWR_AD这个动画实际上使用napowr_a.shp
-可用于动画和建筑，Phobos下也支持了所有TechnoType（Infantry、Vehicle、Aircraft、Building）</p>
+        <div class="label">
+            <code id="key">Cameo</code>
+                    <div class="general-table">
+                        <table>
+                            <tr>
+                                <th>值类型</th>
+                                <td>文件名（无后缀）</td>
+                            </tr>
+                            <tr>
+                                <th>默认值</th>
+                                <td>xxicon</td>
+                            </tr>
+                            <tr>
+                                <th>适用类型</th>
+                                <td>建筑、步兵、载具、飞行器</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>指定该单位使用哪个SHP文件作为图标（就是你点的那个东西来建造它）。如果该对象没有图标，游戏默认使用“Missing
+            Cameo”图标（文件名为xxicon.shp）作为它的图标（就是那个红警2样的图标）。每个图标都必须是SHP格式，并且调色盘要求是红警2的cameo.pal文件
+            Ares允许微观定义每个ART对象的图标色盘，但是无法分离定义Cameo与AltCameo的色盘
+            然而Ares允许使用256索引PCX作为图标抛弃SHP格式
+            Phobos更是允许使用24位全彩RGB的PCX文件作为图标
+            另外，原版Westwood图标的大小标准是60*48像素，即宽60像素，高48像素，虽然并不强制，但更大的尺寸还是更多的帧数在RA2中并没有任何特殊效果，除非你改程序对侧边栏的结构进行大幅度修改</p>
+        </div>
+        <div class="label">
+            <code id="key">AltCameo</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>文件名（无后缀）</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>xxicon</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>建筑、步兵、载具、飞行器</td>
+                    </tr>
+                </table>
+            </div>
+            <p>指定当该单位升级之后使用的图标。升级是指玩家使用间谍渗透对方的兵营或战车工厂之后，单位所产生的变化。规则和Cameo=标签相同。建筑也可以正常使用，例如奴隶矿场就有AltCameo</p>
+        </div>
+        <div class="label">
+            <code id="key">Voxel</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>布尔值</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>载具、飞行器</td>
+                    </tr>
+                </table>
+            </div>
+            <p>指定该图像是否使用 Voxel 资源文件而不是 Shape。部分语句仅在该标签为 yes 的情况下才生效
+    Shape 载具自动调用 Voxel 炮管并不需要这句，但与 Voxel 单位一样仅在炮塔朝向玩家时炮管的图层才在炮塔之上</p>
+        </div>
+        <div class="label">
+            <code id="key">UseBuffer</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>布尔值</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>载具、飞行器</td>
+                    </tr>
+                </table>
+            </div>
+            <p>游戏是否使用螺旋桨模式来处理这个 Voxel 资源文件，用于控制游戏处理多组件 Voxel 资源文件的方式，如果启用那么可以正常地根据 3D 空间交叠方式显示位于一个大组件空置区域的小组件，而不是简单地让其中一个位于更高图层的组件整个绘制在另一组件之上导致将另一组件完全遮挡</p>
+        </div>
+        <div class="label">
+            <code id="key">xxxxxxxx</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>xxx</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>xxx</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>xxx</td>
+                    </tr>
+                </table>
+            </div>
+            <p>……</p>
+        </div>
+        
     </main>
     <footer></footer>
 </body>

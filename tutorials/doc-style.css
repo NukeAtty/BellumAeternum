@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #333;
+    background-color: #080808;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -84,13 +84,25 @@ code {
 
 #key {
     font-family: monospace;
-    font-size: 18px;
-    color: #00cc00;
+    font-size: 14px;
+    color: #00ff00;
     background-color: #000;
-    border: 2px ridge #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     line-height: 2em;
     padding: 0.5em;
     margin: 0.5em auto;
+}
+
+#key:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+#key::selection {
+    color: #FFFFFF;
+    text-shadow: 0 0 2px #00FF00;
+    background-color: #009900;
 }
 
 #ini-section {
@@ -104,13 +116,19 @@ code {
 }
 
 .general-table {
-    margin: 1em auto;
+    margin: 1em 0;
+    width: 50%;
 }
 
 .general-table table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
+}
+
+.general-table tr:nth-child(even) {
+    border-top: 1px solid #FFFFFF50;
+    border-bottom: 1px solid #FFFFFF50;
 }
 
 .general-table th,td {
@@ -121,13 +139,25 @@ code {
     font-weight: 600;
     background-color: #933;
     padding: 1em;
-}
-
-.general-table:nth-child(even) {
-    background-color: #C66;
+    width: 30%;
 }
 
 .general-table td {
     background-color: #666;
     padding: 1em;
+}
+
+.label {
+    background-color: #333;
+    box-shadow: 0 2px 5px #000000;
+    padding: 1em;
+    margin: 0.5em 0;
+}
+
+.description {
+    display: none;
+}
+
+.description .active {
+    display: block;
 }
