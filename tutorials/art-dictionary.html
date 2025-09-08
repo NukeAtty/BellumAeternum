@@ -43,11 +43,9 @@
                     </tr>
                 </table>
             </div>
-            <p>这个ART段落实际使用的文件名称。例如原版很多建筑的动画_A和_AD代表健康和残损，但是_AD中Image=_A通过设定播放的帧数来与_A区分
-    [NAPOWR_AD]
-    Image=NAPOWR_A
-    那么NAPOWR_AD这个动画实际上使用napowr_a.shp
-    可用于动画和建筑，Phobos下也支持了所有TechnoType（Infantry、Vehicle、Aircraft、Building）</p>
+            <p>这个ART段落实际使用的文件名称。例如原版很多建筑动画_A和_AD代表普通状态和残损状态，而这两种状态的动画通常整合在同一个SHP文件里。</p>
+            <p>比如，NAPOWR_AD动画中的Image=NAPOWR_A代表调用的动画文件是napowr_a.shp，其通过设定播放的帧数来与_A区分，并在建筑破损时播放该动画。</p>
+            <p>可用于动画和建筑，Phobos下也支持了所有<code>TechnoType</code>（Infantry、Vehicle、Aircraft、Building）</p>
         </div>
         <div class="label">
             <code id="key">Cameo</code>
@@ -125,8 +123,8 @@
                     </tr>
                 </table>
             </div>
-            <p>指定该图像是否使用 Voxel 资源文件而不是 Shape。部分语句仅在该标签为 yes 的情况下才生效
-    Shape 载具自动调用 Voxel 炮管并不需要这句，但与 Voxel 单位一样仅在炮塔朝向玩家时炮管的图层才在炮塔之上</p>
+            <p>指定该图像是否使用 Voxel 资源文件而不是 Shape。部分语句仅在该标签为 yes 的情况下才生效。</p>
+            <p>Shape 载具自动调用 Voxel 炮管并不需要这句，但与 Voxel 单位一样仅在炮塔朝向玩家时炮管的图层才在炮塔之上</p>
         </div>
         <div class="label">
             <code id="key">UseBuffer</code>
@@ -149,6 +147,46 @@
             <p>游戏是否使用螺旋桨模式来处理这个 Voxel 资源文件，用于控制游戏处理多组件 Voxel 资源文件的方式，如果启用那么可以正常地根据 3D 空间交叠方式显示位于一个大组件空置区域的小组件，而不是简单地让其中一个位于更高图层的组件整个绘制在另一组件之上导致将另一组件完全遮挡</p>
         </div>
         <div class="label">
+            <code id="key">DisableVoxelCache</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>布尔值</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>Voxel载具、Voxel飞行器</td>
+                    </tr>
+                </table>
+            </div>
+            <p>游戏是否缓存这个 Voxel 对象的数据，禁用也不会引发什么绘图问题，事实上对于幻影伪装和原版下用超时空超武移动一个还未从工厂开出来的载具如果使用这个标签反而会导致一些颜色错误，倒是也可以一定程度上缓解多组件多帧 Voxel 素材抖动问题。功能设计的本意大概是减少缓存可动 Voxel 素材引起的内存消耗，然而如果屏幕上 Voxel 素材过多那么禁用反而会因为游戏不断重新绘制导致性能暴跌</p>
+        </div>
+        <div class="label">
+            <code id="key">DisableShadowCache</code>
+            <div class="general-table">
+                <table>
+                    <tr>
+                        <th>值类型</th>
+                        <td>布尔值</td>
+                    </tr>
+                    <tr>
+                        <th>默认值</th>
+                        <td>no</td>
+                    </tr>
+                    <tr>
+                        <th>适用类型</th>
+                        <td>Voxel载具、Voxel飞行器</td>
+                    </tr>
+                </table>
+            </div>
+            <p>游戏是否缓存这个Voxel 对象投射的影子，禁用缓存会让游戏为使用该素材对象的 hva 每帧单独渲染一个影子而不是仅绘制第一帧。可以修复 Voxel 组件导致的影子绘制的空洞并防止 Jumpjet 运动模式的载具降落在地面上时其影子绘制绘制在自身主体组件之上。</p>
+        </div>
+        <div class="label">
             <code id="key">xxxxxxxx</code>
             <div class="general-table">
                 <table>
@@ -168,7 +206,6 @@
             </div>
             <p>……</p>
         </div>
-        
     </main>
     <footer></footer>
 </body>
