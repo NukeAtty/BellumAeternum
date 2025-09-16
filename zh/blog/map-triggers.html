@@ -8,9 +8,22 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>红警地图教程：触发事件和动作 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
-		span{
+		.general-table td:first-child{
+			width: 25%;
+			text-align: left;
+		}
+
+		.general-table td:nth-child(3){
+			width: 60%;
 			font-size: 16px;
-			font-weight: bold;
+			text-align: left;
+		}
+
+		#caution {
+			border-left: 5px solid #F33;
+			padding: 0.25em;
+			padding-left: 1em;
+			background-color: #FF333375;
 		}
 	</style>
 </head>
@@ -37,7 +50,6 @@
 				</div>
 				<div class="blog-content">
 					<h2>触发事件</h2>
-					<h2>触发动作</h2>
 					<div class="general-table">
 						<table>
 							<tr>
@@ -59,6 +71,413 @@
 								<td>4 关联对象被玩家发现</td>
 								<td>无</td>
 								<td>附带该标签的对象被玩家以探索的手段打开战争迷雾发现时触发，显示全地图、间谍卫星打开战争迷雾不算。</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<h2>触发行为</h2>
+					<div class="general-table">
+						<table>
+							<tr>
+								<th>行为编号</th>
+								<th>参数</th>
+								<th>解析</th>
+							</tr>
+							<tr>
+								<td>0 - 无事件</td>
+								<td>无</td>
+								<td>
+									<p>什么也不会发生，作为占位符使用。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>1 - 所属方胜利</td>
+								<td>所属方</td>
+								<td>
+									<p>参数指定的所属方胜利，一切该所属方的敌人失败。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>2 - 所属方失败</td>
+								<td>所属方</td>
+								<td>
+									<p>参数指定的所属方失败，一切该所属方的敌人胜利。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>3 - 开始生产</td>
+								<td>所属方</td>
+								<td>
+									<p>参数指定的所属方开始生产单位。</p>
+									<p>这个动作主要用于所属方的IQ达不到Production的值时，让所属方自动生产单位。比如你不想让某个所属方自动维修，但可以生产小队，那么就可以将所属方的IQ设置为低于RepairSell规定的值，然后用该触发行为在合适的时间让所属方生产规定的小队。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>4 - 创建小队</td>
+								<td>小队</td>
+								<td>
+									<p>触发定义的所属方将会创建参数定义的小队。小队的招募取决于小队的<code>AutoCreate</code>、<code>Recruiter</code>、地图预放置单位的<code>AUTOCREATE_NO_RECRUITABLE</code>和<code>AUTOCREATE_YES_RECRUITABLE</code>，详情见<a href="/ai-tutorials.html">AI教程</a>的小队章节。</p>
+									<p>招募小队的原则是，优先招募离小队所指定的路径点附近的单位；也就是说，如果你想招募地图中放置的某个单位，你可以在其所在的单元格放置一个路径点，并在小队中设置这个路径点。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>5 - 解散小队</td>
+								<td>小队名称</td>
+								<td>
+									<p>解散所有参数定义的小队，小队成员会立刻恢复默认任务，并可以被再次招募。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>6 - 全部开始寻敌</td>
+								<td>所属方</td>
+								<td>
+									<p>参数定义的所属方拥有的所有单位进入<code>Hunt</code>任务，包括无武器的单位。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>7 - 增援小队</td>
+								<td>小队</td>
+								<td>
+									<p>在地图上刷出参数定义的小队，小队刷出的位置取决于小队中的路径点（<code>Waypoint</code>）参数。</p>
+									<p>需要注意的是，小队人数不要一次性刷太多，否则会卡在原地动不了。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>8 - 播放空降点动画</td>
+								<td>路径点</td>
+								<td>
+									<p>在参数指定的路径点播放空降动画，并打开路径点周围的黑幕。</p>
+									<p>空降动画为<code>AudioVisual</code>中的<code>DropZoneAnim</code>指定，打开黑幕的距离由<code>AudioVisual</code>中的<code>DropZoneRadius</code>指定，这两个标签均在<code>rulesmd.ini</code>中。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>9 - 变卖所有建筑</td>
+								<td>所属方</td>
+								<td>
+									<p>参数指定的所属方变卖所有建筑。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>10 - 播放影片</td>
+								<td>影片类型</td>
+								<td>
+									<p>全屏播放影片，此时游戏强制暂停，并在影片结束后恢复。</p>
+									<p>影片类型必须在<code>artmd.ini</code>中的<code>[Movie]</code>片段下定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>11 - 文本触发</td>
+								<td>CSF文本</td>
+								<td>
+									<p>在画面左上角显示参数指定的CSF文本标签，同时播放文本显示的提示音。</p>
+									<p>该提示音可以通过<code>AudioVisual</code>中的<code>IncomingMessage</code>来修改第一个字符的提示音，还可以通过<code>AudioVisual</code>中的<code>MessageCharTyped</code>来修改每个字符显示时的提示音。</p>
+									<p>CSF文本标签可以通过SadPencil所开发的<a href="https://github.com/SadPencil/Ra2CsfToolsGUI" target="_blank" rel="nofollow">RA2 CSF Tool</a>来实现更高效的编辑。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>12 - 摧毁触发</td>
+								<td>触发ID</td>
+								<td>摧毁参数指定的触发所创建的所有实例。</td>
+							</tr>
+							<tr>
+								<td>13 - 开始自动创建小队</td>
+								<td>所属方</td>
+								<td>无效行为。</td>
+							</tr>
+							<tr>
+								<td>14 - 更改所属方</td>
+								<td>所属方</td>
+								<td>
+									<p>所有绑定了改触发标签的单位全部改变为参数指定的所属方。</p>
+									<p>需要特别注意的是，载具的乘员是不会更改所属方的。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>15 - 允许胜利</td>
+								<td>无</td>
+								<td>无效行为。</td>
+							</tr>
+							<tr>
+								<td>16 - 打开全图黑幕</td>
+								<td>无</td>
+								<td>
+									<p>为玩家打开全图黑幕。</p>
+									<p id="caution">注意，联机时不要使用本触发行为，否则会RE。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>17 - 打开范围黑幕</td>
+								<td>路径点</td>
+								<td>
+									<p>为玩家打开参数指定的路径点周围区域的黑幕。</p>
+									<p>打开黑幕的半径可以通过修改<code>AudioVisual</code>中的<code>RevealTriggerRadius</code>来定义。</p>
+									<p>特别注意的是，当路径点处于高度大于0的位置时，打开黑幕的范围会有位移。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>18 - 打开区域黑幕</td>
+								<td>路径点</td>
+								<td>
+									<p>为玩家打开参数指定的路径点所在区域的黑幕。</p>
+									<p>区域（Zone）的基本定义是：<code>MovementZone=Normal</code>的单位可以通过寻路到达的位置。也就是说，水面、悬崖和无法通过的覆盖物均可切割区域。</p>
+									<p>另外，使用了这个触发行为之后，被打开的黑幕和剩余黑幕之间会产生不正常的锯齿形边缘，需要切换镜头之后才能恢复，因此不建议在玩家视野内使用该触发行为。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>19 - 播放音效</td>
+								<td>音效类型</td>
+								<td>
+									<p>播放参数指定的音效类型。</p>
+									<p>音效类型必须在<code>soundmd.ini</code>中定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>20 - 播放音乐</td>
+								<td>音乐类型</td>
+								<td>
+									<p>播放参数指定的音乐类型。</p>
+									<p>音乐类型必须在<code>thememd.ini</code>中定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>21 - 播放语音</td>
+								<td>语音类型</td>
+								<td>
+									<p>播放参数指定的语音类型。</p>
+									<p>语音类型必须在<code>evamd.ini</code>中定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>22 - 强制触发</td>
+								<td>触发ID</td>
+								<td>
+									<p>强制发动参数指定的触发。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>23 - 计时开始</td>
+								<td>无</td>
+								<td>
+									<p>让计时器开始倒计时。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>24 - 计时停止</td>
+								<td>无</td>
+								<td>
+									<p>让计时器停止倒计时。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>25 - 计时延长</td>
+								<td>时间</td>
+								<td>
+									<p>为计时器增加参数指定的时间除以10分钟。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>26 - 计时缩短</td>
+								<td>时间</td>
+								<td>
+									<p>为计时器减去参数指定的时间除以10分钟。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>27 - 计时器设置</td>
+								<td>时间</td>
+								<td>
+									<p>设置一个计时器，初始时间为参数指定的时间除以10分钟。</p>
+									<p>计时器全局只能拥有一个。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>28 - 设置全局变量</td>
+								<td>全局变量</td>
+								<td>
+									<p>将参数指定的全局变量设置为1。可以理解为开关打开。</p>
+									<p>全局变量需要在<code>rulesmd.ini</code>中的<code>[GlobalVariable]</code>片段下定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>29 - 清除全局变量</td>
+								<td>全局变量</td>
+								<td>
+									<p>将参数指定的全局变量设置为0。可以理解为开关关闭。</p>
+									<p>全局变量需要在<code>rulesmd.ini</code>中的<code>[GlobalVariable]</code>片段下定义。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>30 - 自动建设基地</td>
+								<td>0或1</td>
+								<td>
+									<p>当设置为1时，电脑将会根据<code>aimd.ini</code>，即遭遇战的AI进行小队生产。</p>
+									<p>同时，所有所属方也会根据基地节点开始建造建筑。</p>
+									<p>当然，如果没有基地节点的情况下，AI是不会自动建造建筑的。</p>
+									<p id="caution">注意：此行为一旦被设置为1就无法关闭。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>31 - 黑幕延伸</td>
+								<td>无</td>
+								<td>黑幕延伸一个单元格。</td>
+							</tr>
+							<tr>
+								<td>32 - 摧毁单位</td>
+								<td>无</td>
+								<td>将绑定改触发标签的单位摧毁。</td>
+							</tr>
+							<tr>
+								<td>33 - 添加一次性超级武器</td>
+								<td>超级武器类型</td>
+								<td>为触发的所属方添加参数指定的超级武器，但只能用一次。</td>
+							</tr>
+							<tr>
+								<td>34 - 添加永久超级武器</td>
+								<td>超级武器类型</td>
+								<td>为触发的所属方添加参数指定的超级武器，可以重复使用。</td>
+							</tr>
+							<tr>
+								<td>35 - 超级武器首选目标</td>
+								<td>目标类型</td>
+								<td>
+									<p>为超级武器设置参数指定的超级武器首选目标。</p>
+									<p>如果不设置，AI则会以基地中心释放超级武器。</p>
+									<p>目标类型如下：</p>
+									<ul>
+										<li>0: 无，超级武器无法释放。</li>
+										<li>1: 任意敌方对象。</li>
+										<li>2: 敌方建筑。</li>
+										<li>3: 敌方矿场或矿车。</li>
+										<li>4: 敌方步兵。</li>
+										<li>5: 敌方地面载具。</li>
+										<li>6: 敌方工厂。</li>
+										<li>7: 敌方防御建筑。</li>
+										<li>8: 敌方进攻单位。</li>
+										<li>9: 敌方电厂。</li>
+										<li>10: 可进驻建筑。</li>
+										<li>11: 科技建筑。</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>36 - 全部更改所属</td>
+								<td>所属方</td>
+								<td>
+									<p>触发所属方所有的单位均改变所属方为到参数指定的所属方。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>37 - 结盟</td>
+								<td>所属方</td>
+								<td>
+									<p>触发所属方强制与参数指定的所属方结盟。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>38 - 宣战</td>
+								<td>所属方</td>
+								<td>
+									<p>触发所属方强制与参数指定的所属方宣战。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>39 - 改变雷达视野范围</td>
+								<td>特殊参数</td>
+								<td>
+									<p>雷达的显示范围会根据参数更改为指定范围。参数详情如下：</p>
+									<ul>
+										<li>1: 普通范围，即当前视野范围。</li>
+										<li>2: 全局范围，即全图视野范围。</li>
+									</ul>
+									<p>雷达的初始显示范围可以在<code>AudioVisual</code>中的<code>ZoomInFactor</code>进行修改。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>40 - 改变玩家视野</td>
+								<td>左，顶，宽，高</td>
+								<td>
+									<p>改变玩家所能到达的区域，参数指定的左和顶为玩家所能到达的最左上角的区域，而宽和高分别定义从左上角开始，玩家最远到达地图的哪一位置。</p>
+								</td>
+							</tr>
+							<tr>
+								<td>41 - 播放动画在</td>
+								<td>动画类型、路径点</td>
+								<td>
+									<p>在参数指定的路径点播放参数指定的动画类型。</p>
+									<p>注意，这里的动画类型参数使用的是动画的注册表序号，但实际会有序号漂移的情况，所以尽量在确定了注册表的情况下使用。</p>
+									<p>同时，如果动画是无限循环（如<code>LoopCount=-1</code>），那么这个动画将永远无法擦除，而解决方法则是将动画的<code>LoopCount</code>写为1，然后将触发设置为重复触发，触发条件为流逝时间，然后根据动画帧数和速度计算出流逝时间的值，以达到完美的不间断循环。</p>
+									<p>动画帧数计算公式如下：</p>
+									<p id="tip">流逝时间 = 60 / (动画帧数 * (900 / Rate)) * 游戏速度 </p>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td></td>
