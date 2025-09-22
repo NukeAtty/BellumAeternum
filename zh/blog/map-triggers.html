@@ -25,6 +25,27 @@
 			padding-left: 1em;
 			background-color: #FF333375;
 		}
+
+		#caution::before {
+			content:"\26A0";
+			margin-right: 0.5em;
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		#comment {
+			border-left: 5px solid #3AF;
+			padding: 0.25em;
+			padding-left: 1em;
+			background-color: #3399FF75;
+		}
+
+		#comment::before {
+			content:"\2691";
+			margin-right: 0.5em;
+			font-size: 16px;
+			font-weight: 500;
+		}
 	</style>
 </head>
 <body>
@@ -558,12 +579,12 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 									<p>在参数指定的路径点上建立参数指定的雷达事件。</p>
 									<p>雷达事件指的是地图上不同颜色的方框，以下是可使用的参数：</p>
 									<ul>
-										<li>1 - 战斗: 红框</li>
-										<li>2 - 非战斗: 黄框</li>
-										<li>3 - 空降区: 黄框</li>
-										<li>4 - 基地受到攻击: 红框</li>
-										<li>5 - 矿车受到攻击: 红框</li>
-										<li>6 - 发现敌军: 蓝框</li>
+										<li>0 - 战斗: 红框</li>
+										<li>1 - 非战斗: 黄框</li>
+										<li>2 - 空降区: 黄框</li>
+										<li>3 - 基地受到攻击: 红框</li>
+										<li>4 - 矿车受到攻击: 红框</li>
+										<li>5 - 发现敌军: 蓝框</li>
 									</ul>
 								</td>
 							</tr>
@@ -585,7 +606,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>58 - 流星雨</td>
 								<td>流星雨规模、路径点</td>
 								<td>
-									<p></p>
+									<p>无效行为。</p>
 								</td>
 							</tr>
 							<tr>
@@ -638,13 +659,13 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 							</tr>
 							<tr>
 								<td>67 - 宣告胜利</td>
-								<td></td>
-								<td></td>
+								<td>无</td>
+								<td>宣告玩家胜利，不会显示横幅。</td>
 							</tr>
 							<tr>
 								<td>68 - 宣告失败</td>
-								<td></td>
-								<td></td>
+								<td>无</td>
+								<td>宣告玩家失败，不会显示横幅。</td>
 							</tr>
 							<tr>
 								<td>69 - 强制结束</td>
@@ -739,13 +760,13 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>编组</td>
 								<td>
 									<p>地图上所有参数指定编组的单位的状态从<code>harmless</code>或者<code>sleep</code>转变为<code>guard</code>。</p>
-									<p>编组通过特遣部队设置。</p>
+									<p>编组通过预放置单位或者特遣部队设置。</p>
 								</td>
 							</tr>
 							<tr>
 								<td>85 - 藤蔓生长</td>
 								<td>布尔值（0/1）</td>
-								<td></td>
+								<td>无效行为。</td>
 							</tr>
 							<tr>
 								<td>86 - 矿石生长</td>
@@ -766,10 +787,9 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>88 - 在路径点生成粒子</td>
 								<td>粒子类型、路径点</td>
 								<td>
-									<p>在参数指定的路径点生成参数指定的粒子类型（不是粒子系统）。</p>
-									<!--以下需要测试-->
-									<p>这个粒子会一直生成，除非使用89号触发行为。</p>
+									<p>在参数指定的路径点生成参数指定的粒子系统（ParticleSystem）类型。</p>
 									<p>在原版中，这个触发被用来做着陆点烟雾信号弹效果。</p>
+									<p id="caution">注意：<code>BehavesLike=Gas</code>的粒子系统无效。</p>
 								</td>
 							</tr>
 							<tr>
@@ -832,8 +852,8 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>97 - 火车木箱开关</td>
 								<td>无</td>
 								<td>
-									<p>开启或关闭火车被摧毁后是否掉落工具箱。</p>
-									<p>默认设置可以在<code>[Basic]</code>中的<code>TrainCrate</code>定义。</p>
+									<p>无效行为。</p>
+									<p id="comment"><code>[Basic]</code>中的<code>TrainCrate</code>也是无效语句。</p>
 								</td>
 							</tr>
 							<tr>
@@ -898,6 +918,34 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td></td>
 								<td></td>
 								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>111 - 驱逐驻军</td>
+								<td>无</td>
+								<td>
+									<p>驱逐触发标签关联建筑的驻军，只对第一个关联的建筑有效。</p>
+									<p id="caution">注意：此行为对生化反应炉无效。</p>
+								</td>
 							</tr>
 							<tr>
 								<td></td>
