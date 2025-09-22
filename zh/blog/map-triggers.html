@@ -839,37 +839,55 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 							<tr>
 								<td>98 - 在随机路径点播放音效</td>
 								<td>音效类型</td>
-								<td></td>
+								<td>
+									<p>在随机路径点播放参数指定的音效。</p>
+								</td>
 							</tr>
 							<tr>
-								<td>99 - </td>
-								<td></td>
-								<td></td>
+								<td>99 - 在路径点播放音效</td>
+								<td>音效类型、路径点</td>
+								<td>
+									<p>在参数指定的路径点播放参数指定的音效。</p>
+									<p id="caution">注意：如果路径点上有建筑或单位，那么这个音效将会循环。</p>
+								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>100 - 在雷达播放影片</td>
+								<td>影片类型</td>
+								<td>
+									<p>在雷达处播放影片，此时的游戏不会暂停，玩家依然可以操控。</p>
+									<p>在影片播放开始前，将会伴生语音<code>EVA_IncomingTransmission</code>。</p>
+									<p>影片播放时，会先播放雷达打开动画，并在影片结束后播放雷达关闭动画，动画可以在<code>[AudioVisual]</code>下的<code>MovieOn</code>和<code>MovieOff</code>自定义。</p>
+								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>101 - 黑幕覆盖路径点</td>
+								<td>路径点</td>
+								<td>
+									<p>在参数指定的路径点覆盖黑幕，覆盖的范围为<code>[AudioVisual]</code>下的<code>RevealTriggerRadius</code>所定义的值。</p>
+								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>102 - 闪电风暴打击路径点</td>
+								<td>路径点</td>
+								<td>
+									<p>在参数指定的路径点释放闪电风暴。</p>
+									<p id="caution">注意：全图只能有一个闪电风暴。</p>
+								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>103 - 设置计时器文本</td>
+								<td>CSF文本</td>
+								<td>
+									<p>为计时器设置文本，文本需要在<code>ra2md.csf</code>中定义。</p>
+								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>104 - 闪烁小队</td>
+								<td>小队名称、时间</td>
+								<td>
+									<p>让所有参数指定的小队闪烁参数指定的时间。</p>
+								</td>
 							</tr>
 							<tr>
 								<td></td>
