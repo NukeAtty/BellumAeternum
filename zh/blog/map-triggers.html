@@ -8,6 +8,12 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>红警地图教程：触发事件和行为 | 万世之战：为红警2带来前所未有的体验</title>
 	<style>
+		pre {
+			color: #0f0;
+			background-color: #080808;
+			padding: 1em;
+			user-select: text;
+		}
 		.general-table td:first-child{
 			width: 25%;
 			text-align: left;
@@ -50,6 +56,10 @@
 		#obsolete {
 			text-decoration-line: line-through;
 		}
+
+		#ini-section {
+			color: #0f0;
+		}
 	</style>
 </head>
 <body>
@@ -74,7 +84,6 @@
 					</div>
 				</div>
 				<div class="blog-content">
-					<h2>触发的原理</h2>
 					<h2>一些基本解析</h2>
 					<h3>时间概念</h3>
 					<p>众所周知，在原版中，超级武器的时间实际上比现实中的时间快，这实际上是因为游戏速度的原因。</p>
@@ -253,7 +262,7 @@
 								<td>路径点</td>
 								<td>
 									<p>在参数指定的路径点播放空降动画，并打开路径点周围的黑幕。</p>
-									<p>空降动画为<code>AudioVisual</code>中的<code>DropZoneAnim</code>指定，打开黑幕的距离由<code>AudioVisual</code>中的<code>DropZoneRadius</code>指定，这两个标签均在<code>rulesmd.ini</code>中。</p>
+									<p>空降动画为<code id="ini-section">[AudioVisual]</code>中的<code>DropZoneAnim</code>指定，打开黑幕的距离由<code id="ini-section">[AudioVisual]</code>中的<code>DropZoneRadius</code>指定，这两个标签均在<code>rulesmd.ini</code>中。</p>
 								</td>
 							</tr>
 							<tr>
@@ -268,7 +277,7 @@
 								<td>影片类型</td>
 								<td>
 									<p>全屏播放影片，此时游戏强制暂停，并在影片结束后恢复。</p>
-									<p>影片类型必须在<code>artmd.ini</code>中的<code>[Movie]</code>片段下定义。</p>
+									<p>影片类型必须在<code>artmd.ini</code>中的<code id="ini-section">[Movie]</code>片段下定义。</p>
 								</td>
 							</tr>
 							<tr>
@@ -276,7 +285,7 @@
 								<td>CSF文本</td>
 								<td>
 									<p>在画面左上角显示参数指定的CSF文本标签，同时播放文本显示的提示音。</p>
-									<p>该提示音可以通过<code>AudioVisual</code>中的<code>IncomingMessage</code>来修改第一个字符的提示音，还可以通过<code>AudioVisual</code>中的<code>MessageCharTyped</code>来修改每个字符显示时的提示音。</p>
+									<p>该提示音可以通过<code id="ini-section">[AudioVisual]</code>中的<code>IncomingMessage</code>来修改第一个字符的提示音，还可以通过<code id="ini-section">[AudioVisual]</code>中的<code>MessageCharTyped</code>来修改每个字符显示时的提示音。</p>
 									<p>CSF文本标签可以通过SadPencil所开发的<a href="https://github.com/SadPencil/Ra2CsfToolsGUI" target="_blank" rel="nofollow">RA2 CSF Tool</a>来实现更高效的编辑。</p>
 								</td>
 							</tr>
@@ -316,7 +325,7 @@
 								<td>路径点</td>
 								<td>
 									<p>为玩家打开参数指定的路径点周围区域的黑幕。</p>
-									<p>打开黑幕的半径可以通过修改<code>AudioVisual</code>中的<code>RevealTriggerRadius</code>来定义。</p>
+									<p>打开黑幕的半径可以通过修改<code id="ini-section">[AudioVisual]</code>中的<code>RevealTriggerRadius</code>来定义。</p>
 									<p>特别注意的是，当路径点处于高度大于0的位置时，打开黑幕的范围会有位移。</p>
 								</td>
 							</tr>
@@ -378,7 +387,7 @@
 								<td>25 - 计时延长</td>
 								<td>时间</td>
 								<td>
-									<p>为计时器增加参数指定的时间除以10分钟。</p>
+									<p>为计时器增加参数指定的时间（单位：秒）。</p>
 								</td>
 							</tr>
 							<tr>
@@ -401,7 +410,7 @@
 								<td>全局变量</td>
 								<td>
 									<p>将参数指定的全局变量设置为1。可以理解为开关打开。</p>
-									<p>全局变量需要在<code>rulesmd.ini</code>中的<code>[GlobalVariable]</code>片段下定义。</p>
+									<p>全局变量需要在<code>rulesmd.ini</code>中的<code id="ini-section">[GlobalVariable]</code>片段下定义。</p>
 								</td>
 							</tr>
 							<tr>
@@ -409,7 +418,7 @@
 								<td>全局变量</td>
 								<td>
 									<p>将参数指定的全局变量设置为0。可以理解为开关关闭。</p>
-									<p>全局变量需要在<code>rulesmd.ini</code>中的<code>[GlobalVariable]</code>片段下定义。</p>
+									<p>全局变量需要在<code>rulesmd.ini</code>中的<code id="ini-section">[GlobalVariable]</code>片段下定义。</p>
 								</td>
 							</tr>
 							<tr>
@@ -495,7 +504,7 @@
 										<li>1: 普通范围，即当前视野范围。</li>
 										<li>2: 全局范围，即全图视野范围。</li>
 									</ul>
-									<p>雷达的初始显示范围可以在<code>AudioVisual</code>中的<code>ZoomInFactor</code>进行修改。</p>
+									<p>雷达的初始显示范围可以在<code id="ini-section">[AudioVisual]</code>中的<code>ZoomInFactor</code>进行修改。</p>
 								</td>
 							</tr>
 							<tr>
@@ -584,14 +593,12 @@
 										<li>2 - 探照灯360度旋转</li>
 										<li>3 - 探照灯跟随目标</li>
 									</ul>
-									<p>其中，1号行为可以在<code>rulesmd.ini</code>中的<code>[General]</code>下定义，定义的键以下内容：</p>
-									<pre>
-SpotlightSpeed=.015     ;探照灯旋转的速度
+									<p>其中，1号行为可以在<code>rulesmd.ini</code>中的<code id="ini-section">[General]</code>下定义，定义的键为以下内容：</p>
+									<pre>SpotlightSpeed=.015     ;探照灯旋转的速度
 SpotlightMovementRadius=2000 ;探照灯扫描的角度
 SpotlightLocationRadius=1000 ;探照灯扫描的距离
 SpotlightAcceleration=.0025    ;探照灯扫描的加速度
-SpotlightAngle=.5       ;探照灯扫描的最大角度
-									</pre>
+SpotlightAngle=.5       ;探照灯扫描的最大角度</pre>
 									<p>以上键值是原版中的值（大抵来自泰伯利亚之日），原版中探照灯的行为会按照一个弧线进行扫描，如果没有特殊需求尽量不要改动。</p>
 									<p>这个触发最显著的用法是3号探照灯行为，即探照灯跟随目标。配合35号事件，可以实现探照灯在照到敌人时灯罩给敌人一个高光效果。</p>
 								</td>
@@ -676,7 +683,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>63 - 在路径点造成100伤害</td>
 								<td>路径点</td>
 								<td>
-									<p>在参数指定的路径点使用<code>[HE]</code>弹头造成100点伤害。</p>
+									<p>在参数指定的路径点使用<code id="ini-section">[HE]</code>弹头造成100点伤害。</p>
 									<p>这个行为主要用于炸桥或者引爆油桶。</p>
 								</td>
 							</tr>
@@ -734,13 +741,19 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 							</tr>
 							<tr>
 								<td>74 - AI触发开启</td>
-								<td></td>
-								<td></td>
+								<td>所属方</td>
+								<td>
+									<p>开启参数指定所属方的AI触发。</p>
+									<p>这些AI触发是地图内置而非<code>aimd.ini</code>中定义的全局触发，如果想启用全局触发，需要在地图基本设置中关闭“忽略全局AI”选项。</p>
+								</td>
 							</tr>
 							<tr>
 								<td>75 - AI触发关闭</td>
-								<td></td>
-								<td></td>
+								<td>所属方</td>
+								<td>
+									<p>关闭参数指定所属方的AI触发。</p>
+									<p>和74号行为一样，关闭的是地图中定义的AI触发，而非全局触发。</p>
+								</td>
 							</tr>
 							<tr>
 								<td>76 - AI触发小队概率</td>
@@ -811,7 +824,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>布尔值（0/1）</td>
 								<td>
 									<p>矿石开始生长。</p>
-									<p>需要在地图<code>[Basic]</code>中设置<code>TiberiumGrowthEnabled=yes</code>。</p>
+									<p>需要在地图<code id="ini-section">[Basic]</code>中设置<code>TiberiumGrowthEnabled=yes</code>。</p>
 								</td>
 							</tr>
 							<tr>
@@ -870,7 +883,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>路径点</td>
 								<td>
 									<p>在参数指定的路径点引爆离子炮弹头。</p>
-									<p>离子炮弹头可以在<code>rulesmd.ini</code>中的<code>[CombatDamage]</code>下通过<code>IonCannonWarhead</code>设置，同时也可以用<code>IonCannonDamage</code>设置伤害。</p>
+									<p>离子炮弹头可以在<code>rulesmd.ini</code>中的<code id="ini-section">[CombatDamage]</code>下通过<code>IonCannonWarhead</code>设置，同时也可以用<code>IonCannonDamage</code>设置伤害。</p>
 									<p>在原版中，离子炮的动画调色盘错误。</p>
 								</td>
 							</tr>
@@ -887,11 +900,12 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td></td>
 							</tr>
 							<tr>
-								<td id="obsolete">97 - 火车木箱开关</td>
+								<td>97 - 火车木箱开关</td>
 								<td>无</td>
 								<td>
-									<p>无效行为。</p>
-									<p id="comment"><code>[Basic]</code>中的<code>TrainCrate</code>也是无效语句。</p>
+									<p>开启或关闭火车被摧毁后留下工具箱的选项。</p>
+									<p>火车被摧毁后会掉落工具箱的选项在<code id="ini-section">[Basic]</code>中的<code>TrainCrate=</code>设置，如果<code>TrainCrate=yes</code>，那么该行为会将<code>TrainCrate</code>设置为<code>yes</code>，反之则然。</p>
+									<p id="comment">为了确保火车工具箱能正常使用，你的火车单位起码需要拥有两条标签，即<code>IsTrain=yes</code>和<code>CarriesCrate=yes</code>，缺一不可。</p>
 								</td>
 							</tr>
 							<tr>
@@ -915,14 +929,14 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>
 									<p>在雷达处播放影片，此时的游戏不会暂停，玩家依然可以操控。</p>
 									<p>在影片播放开始前，将会伴生语音<code>EVA_IncomingTransmission</code>。</p>
-									<p>影片播放时，会先播放雷达打开动画，并在影片结束后播放雷达关闭动画，动画可以在<code>[AudioVisual]</code>下的<code>MovieOn</code>和<code>MovieOff</code>自定义。</p>
+									<p>影片播放时，会先播放雷达打开动画，并在影片结束后播放雷达关闭动画，动画可以在<code id="ini-section">[AudioVisual]</code>下的<code>MovieOn</code>和<code>MovieOff</code>自定义。</p>
 								</td>
 							</tr>
 							<tr>
 								<td>101 - 黑幕覆盖路径点</td>
 								<td>路径点</td>
 								<td>
-									<p>在参数指定的路径点覆盖黑幕，覆盖的范围为<code>[AudioVisual]</code>下的<code>RevealTriggerRadius</code>所定义的值。</p>
+									<p>在参数指定的路径点覆盖黑幕，覆盖的范围为<code id="ini-section">[AudioVisual]</code>下的<code>RevealTriggerRadius</code>所定义的值。</p>
 								</td>
 							</tr>
 							<tr>
@@ -957,7 +971,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 										<li>1 - ?</li>
 										<li>2 - *</li>
 									</ul>
-									<p id="comment">对话气泡可以通过改变<i>talkbubl.shp</i>自定义效果，调色盘为<i>palette.pal</i>。同时，也可以通过修改<code>rulesmd.ini</code>中<code>[General]</code>下的<code>TalkBubbleTime</code>来自定义对话气泡的持续时间。</p>
+									<p id="comment">对话气泡可以通过改变<i>talkbubl.shp</i>自定义效果，调色盘为<i>palette.pal</i>。同时，也可以通过修改<code>rulesmd.ini</code>中<code id="ini-section">[General]</code>下的<code>TalkBubbleTime</code>来自定义对话气泡的持续时间。</p>
 								</td>
 							</tr>
 							<tr>
@@ -972,7 +986,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度
 								<td>小队ID、路径点</td>
 								<td>
 									<p>参数指定的小队以超时空的方式在参数指定的路径点刷出。</p>
-									<p>超时空到路径点的小队将会有一个延迟，延迟时间在<code>rulesmd.ini</code>中<code>[General]</code>下的<code>ChronoReinfDelay</code>定义。</p>
+									<p>超时空到路径点的小队将会有一个延迟，延迟时间在<code>rulesmd.ini</code>中<code id="ini-section">[General]</code>下的<code>ChronoReinfDelay</code>定义。</p>
 								</td>
 							</tr>
 							<tr>
