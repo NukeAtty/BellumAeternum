@@ -60,6 +60,22 @@
 		#ini-section {
 			color: #0f0;
 		}
+
+		#ares::after {
+			display: block;
+			justify-items: center;
+			content: "ARES";
+			color: #FFF;
+			font-size: 0.5em;
+			font-weight: bold;
+			background-color: #039;
+			padding: 0.25em 0.5em;
+			border-radius: 2px;
+			margin: 0.5em 0;
+			line-height: 1em;
+			width: 25%;
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
@@ -1168,7 +1184,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度</pre>
 								</td>
 							</tr>
 							<tr>
-								<td>92 - 启动火风暴墙</td>
+								<td id="ares">92 - 启动火风暴墙</td>
 								<td>无</td>
 								<td>
 									<p>启动触发所属方的火风暴墙，无视所属方的火风暴超级武器充能进度。此时火风暴墙不会吸收充能，但当所属方电力不足时仍会停止。</p>
@@ -1259,6 +1275,7 @@ SpotlightAngle=.5       ;探照灯扫描的最大角度</pre>
 								<td>CSF文本</td>
 								<td>
 									<p>为计时器设置文本，文本需要在<code>ra2md.csf</code>中定义。</p>
+									<p id="caution">虽然计时器是全局的，但计时器文本不是。每次新的计时器出现都需要重新设置文本。</p>
 								</td>
 							</tr>
 							<tr>
