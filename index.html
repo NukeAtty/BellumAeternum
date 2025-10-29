@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 			<p>Bellum Æternum is also available in: <a id="lang-portal" href="https://ra2be.com/zh/">中文</a></p>
 		</div>
-		<div class="features">
+		<div class="features reveal hidden">
 			<h2>What Makes Bellum Æternum More Realistic?</h2>
 			<div class="features-section">
 				<!--Feature 1-->
@@ -113,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</div>
 		</div>
-		<div class="quick-nav">
+		<div class="quick-nav reveal hidden">
 			<h2>Quick Navigation</h2>
 			<div class="quick-nav-section">
 				<div class="main-nav">
@@ -139,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</div>
 		</div>
-		<div class="news">
+		<div class="news reveal hidden">
 			<div class="news-section">
 				<h2>News</h2>
 				<div class="news-container">
@@ -192,7 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</div>
 		</div>
-		<div class="stay-connected">
+		<div class="stay-connected reveal hidden">
 			<h2>Stay Connected</h2>
 			<div class="main-social-media">
 				<a href="https://www.youtube.com/@BellunAeternum" title="View Bellum Æternum on YouTube" target="_blank"><img src="src/icons/youtube.svg" alt="Bellum Æternum Youtube Channel" width="48px" height="48px"></a>
@@ -220,5 +220,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const revealElements = document.querySelectorAll('.reveal');
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+						observer.unobserve(entry.target); // Stop observing once animated (optional, for one-time effect)
+					}
+				});
+			}, {
+				threshold: 0.1 // Trigger when 10% of the element is visible (adjust as needed)
+			});
+
+			revealElements.forEach(el => observer.observe(el));
+		});
+	</script>
 </body>
 </html>

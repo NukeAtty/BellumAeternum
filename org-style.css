@@ -85,6 +85,19 @@ figure {
 	background:linear-gradient(0deg, #ffffff 0%, #aeb2ba 5%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 95%, #ffffff 100%);
 }
 
+/*Visible n hidden effect*/
+.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Starts below its position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state with animation */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slides up to normal position */
+}
+
 /*================================*/
 /*========== Animations ==========*/
 /*================================*/

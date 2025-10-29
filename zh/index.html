@@ -41,7 +41,7 @@
 				<a id="zh-main-download" href="download.html" target="_blank">下载</a>
 			</div>
 		</div>
-		<div class="features">
+		<div class="features reveal hidden">
 			<h2>万世之战的特色</h2>
 			<div class="features-section">
 				<!--Feature 1-->
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="quick-nav">
+		<div class="quick-nav reveal hidden">
 			<h2>快速导航</h2>
 			<div class="quick-nav-section">
 				<div class="main-nav">
@@ -96,7 +96,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="news">
+		<div class="news reveal hidden">
 			<div class="news-section">
 				<h2>新闻</h2>
 				<div class="news-container">
@@ -170,5 +170,23 @@
 		</div>
 		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const revealElements = document.querySelectorAll('.reveal');
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+						observer.unobserve(entry.target); // Stop observing once animated (optional, for one-time effect)
+					}
+				});
+			}, {
+				threshold: 0.1 // Trigger when 10% of the element is visible (adjust as needed)
+			});
+
+			revealElements.forEach(el => observer.observe(el));
+		});
+	</script>
 </body>
 </html>
