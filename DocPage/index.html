@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红警DIY官方教程2025 | 红色警戒尤里的复仇Mod制作</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/htmx.min.js"></script>
+    <script src="js/marked.umd.js"></script>
+    <script src="js/marked-alert.js"></script>
+    <script src="js/marked-code-preview.js"></script>
+</head>
+<body>
+    <script src="js/app.js"></script>
+    <div class="container">
+        <header id="main-header" hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+
+        <div class="main-layout">
+            <nav id="main-nav" hx-get="nav.html" hx-trigger="load" hx-swap="outerHTML"></nav>
+
+            <main id="content-area">
+                <h2>Welcome back Commander!</h2>
+                <p>Loading default content...</p>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        loadMarkdown('content/home.md');
+                    });
+                </script>
+            </main>
+        </div>
+
+        <footer id="main-footer" hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+/************************/
+/********** PC **********/
+/************************/
+
+/* Universal Reset*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+body {
+    max-width: 100vw;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+}
+
+nav {
+    flex: 0 0 200px; /* Fixed width for navigation */
+    background-color: #333;
+    padding: 1.5rem;
+    border-right: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+/* General list reset */
+.nav-list, .nav-sublist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles for the sub-list */
+.nav-sublist {
+    /* Optional: Add slight padding/indentation to sub-links */
+    padding-left: 15px; 
+    border-left: 2px solid #ddd;
+    margin-bottom: 0.8rem;
+    margin-top: 5px;
+}
+
+.nav-sublist a {
+    font-size: 14px;
+}
+
+/* Hide the sub-list when the 'hidden' class is applied by JS */
+.nav-sublist.hidden {
+    display: none;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #333;
+    overflow: hidden;
+    color: #FFF;
+}
+
+#content-area {
+    padding: 1vw;
+}
+
+/* ------------------------------------------------------------------ */
+/* Folder Toggle Button Styling */
+/* ------------------------------------------------------------------ */
+
+.folder-toggle {
+    /* Reset button appearance */
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
+    font-weight: bold;
+    color: #fff; /* Darker color for emphasis */
+    width: 100%; /* Important: makes the whole area clickable */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes the folder icon/indicator to the right */
+    transition: color 0.2s ease;
+}
+
+.folder-toggle:hover {
+    color: #007bff;
+}
+
+/* Add a visual indicator (like an arrow) */
+.folder-toggle::after {
+    content: '▶'; /* Closed state arrow */
+    font-size: 0.7em;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+/* Rotate the arrow when the folder is open */
+.folder-toggle.is-open::after {
+    transform: rotate(90deg);
+}
+
+/* Style for the nested links inside the sub-list */
+.nav-sublist a {
+    display: block;
+    padding: 0.3rem 0;
+    font-weight: normal; /* Less bold than the folder title */
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-sublist a:hover {
+    color: #007bff;
+}
+
+main {
+    flex-grow: 1; /* Take remaining space */
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* Basic Markdown styling */
+main h2, main h3, main h4, main h5, main h6 {
+    color: #ff9900;
+    margin-top: 1.5em;
+}
+main h2 {
+    border-left: 5px solid #ff9900;
+    line-height: 1.25em;
+    padding: 0.25em 0 0.25em 0.5em;
+    background-color: #FFFFFF25;
+    margin: auto;
+    font-size: 24px;
+}
+main h3 {
+    font-size: 20px;
+}
+main p {
+    line-height: 2em;
+}
+main ul, main ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+main code {
+    background-color: #000;
+    padding: 0.2em 0.4em;
+    border: 1px solid #666;
+    border-radius: 3px;
+    font-family: monospace;
+}
+main pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+main pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+main blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 1em;
+    color: #666;
+    margin-left: 0;
+}
+main table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    overflow: scroll;
+}
+main th, main td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+}
+main th {
+    background-color: #ff9900;
+}
+
+.markdown-alert {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    border-left: 6px solid; /* Use the border for color distinction */
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Alert Title/Icon Styling */
+.markdown-alert-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.markdown-alert p:last-child {
+    margin-bottom: 0; /* Clean up bottom margin inside alerts */
+}
+
+/* Specific Alert Colors */
+
+/* NOTE Alert (Blue/Info) */
+.markdown-alert-note {
+    border-left-color: #007bff; /* Blue */
+    background-color: #e6f7ff;
+}
+
+/* TIP Alert (Green/Success) */
+.markdown-alert-tip {
+    border-left-color: #28a745; /* Green */
+    background-color: #e6ffee;
+}
+
+/* WARNING Alert (Yellow/Warning) */
+.markdown-alert-warning {
+    border-left-color: #ffc107; /* Yellow */
+    background-color: #fffde6;
+}
+
+/* IMPORTANT Alert (Red/Danger) */
+.markdown-alert-important {
+    border-left-color: #dc3545; /* Red */
+    background-color: #ffe6e6;
+}
+
+code.language-ini {
+    /* Ensures the code block is dark and distinct */
+    background-color: #31333f; 
+    color: #f8f8f2;
+    padding: 1em;
+    display: block; /* Ensures it takes up the full width */
+    border-radius: 6px;
+    border: 1px solid #444;
+    overflow-x: auto;
+}
+
+/* Ensure the <pre> tag inside your content area is styled */
+main pre code.language-ini {
+    /* Override any default styles that might interfere */
+    background: none; 
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.octicon {
+    margin-right: 0.5em;
+}

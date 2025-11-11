@@ -1,0 +1,2472 @@
+# 1.全局代码解释
+> [!NOTE]
+> 对于 AI 控制的全局语句 WW 在难度顺序上很多都是错误的，词典已加以纠正
+
+## 常用概念与换算
+1 单元格=256 leptons对应 30√2≈42.5 个体素点，对应屏幕上60x30像素的菱形格子，可见[https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218](https://bbs.ra2diy.com/forum.php?mod=redirect&goto=findpost&ptid=24951&pid=140218)
+
+1 游戏秒=15 游戏帧，也就是 2 速下每秒最大帧数
+所以 1 分钟换算为 900 帧，但这里说的**游戏**时间而**非现实**时间，也就是你的硬件环境足够好可以 FPS（帧速率）高达几万帧/秒那么游戏时间的 1 分钟对你来说依然是一眨眼
+
+水下： RA2 中出现了潜艇类单位，实际上所谓的水下就是隐形效果，用 `Naval` 一句相关的判定限制武器攻击筛选，属于 WW 自身对于 TS 原有逻辑的特殊运用。但对应的许多隐形探测相关的内容就也对所谓的「潜水」单位同样有效了。
+
+## 标准速度对照表
+游戏速度分为0-6共7个级别，下面给出不同速度的FPS最大值对照表
+
+|对应游戏速度|0|1|2|3|4|5|6|
+|----------|--|--|--|--|--|--|--|
+|单人游戏标准|10|12|15|20|30|60|无上限（取决于硬件）|
+|多人游戏标准|10|12|15|20|30|45|60|
+
+## 最基本的INI格式
+
+```ini preview title="INI Configuration"
+[Section]
+Key=Value
+;Comment
+```
+
+总之除非从引擎读写机制或外部工具上做额外支持否则绝对不会是什么
+
+```ini preview title="INI Configuration"
+{TRER01}
+SuperWeapon=[
+   NukeSpecial,             ;苏维埃之怒
+   LightningStormSpecial,   ;擅癫疯爆
+   PsychicDominatorSpecial  ；性灵只因酉己
+]
+```
+
+这种样式的大聪明写法
+
+## 读取规则
+> [!IMPORTANT]
+> 注册名**不应超过** 24 个字符，否则超出部分不会被读入，进而造成读取对应错误  
+> Ares 3.0RC2开始特意为此添加了一个提示框，**此前没有不代表此前没有这个问题！**  
+> **语句大小写必须规范**，大多类型如果大小写不正确则根本不会正常工作  
+
+;RA2 中任何一个 `[Section]` 下面必须拥有一个赋值的语句以生效，这是 Westwood 在读取方式上的优化，没有任何语句的 `[Section]` 会被简单的忽略掉
+非 Ares 使用 include 逻辑拆分的子 INI 中，也就是总的 `rulesmd.ini`、`artmd.ini` 中不应该出现同名 `[Section]` 否则内容无效乃至被关联内容引发崩溃
+
+原版下一个标签所在行所可以正常读取的长度为 128 个字符，Ares 下拓展到了 512 个字符，超出部分会被自动切掉，地图编辑器一个触发器带太多结果也是同理
+
+原版下大多 Shape 格式的素材只能读取打包好的 mix 中的 `*.shp` 而不能读取根目录下的，FA2、FA2SP也是如此，在 Ares 引擎或 FA2SPHE 的情况下则可以正常读取根目录下的文件
+
+由于微软系统底层判定对于填「真／伪」的布尔值实际上只检查第一个字符，若为 `1、y、t` 则视为「真」，若为 `0、n、f` 则视为「伪」，也就是说 **114514=TP=yse=yes=ture=true=真**
+
+
+大多可以填百分比<percent>类值的地方同样可以填小数<float>类数值
+
+一些值的类型看不明白可以见[2025教程\2025工具附件包\引擎相关\ARES3.0说明书20241122.chm\关于 Ares 的一切\特殊用语]一页
+
+```{seealso}
+Westwood 原始 INI 中残留的错误很多，可以前往 <https://gitee.com/PB_LAB/yrstandard-ini> 获取修复后的 INI 文件作为 YRMOD 开发基底，2025教程光速部署包中已附赠
+```
+旧有词典各个语句的赋值类型相关信息残缺过多，于是本版词典中对旧有词典校补过程中添加的语句也选择抹掉值类型以统一格式，在下一版词典中可能会大规模整改
+同时将旧有词典中作为标签的行中末尾的=前添加了一个空格，来和其他语句注释中提及这个语句的情况区分，以方便小白们用哪怕使用最基础的文本浏览工具也可以针对标签名进行搜索
+在2025版教程中新增的几部来自九千天华个人资料库中的词典中则保留了原文的格式
+即 `[BuildingType] -> Buildup=<filename, excluding the .shp extension>` 的这种形式（倒也不至于全是这种（
+以便于用户使用，并且因为=后面有一个<已经满足搜索便捷要求，故不添加空格
+
+## 常用注册列表
+```{note}
+完整的注册表解释见本文档 `[WallModel] -> WallPenetratorThreshold=` 标签注解下面的部分
+```
+
+`[InfantryTypes]`  
+注册步兵
+`[VehicleTypes]`  
+注册载具（车辆直升机飞艇飞碟海军）
+
+```{hint}
+原版的夜莺直升机、基洛夫空艇、雌鹿直升机等实际上属于「使用飞行运动模式的载具」也就是 Vehicle，而非 Aircraft
+```
+
+`[AircraftTypes]`  
+注册空军（机场飞机，伞兵机）
+
+```{note}
+红血时每帧有 10% 概率生成名为 `[SGRYSMK1]` 的动画，被坠毁时每帧有 80% 概率，Ares 下允许微观定义动画类型和生成概率
+```
+
+`[BuildingTypes]`  
+注册建筑
+`[SuperWeaponTypes]`  
+注册超武，原版无法正常新增超武，需要 Ares
+`[Animations]`  
+注册动画
+
+```{hint}
+Ares 必须每条动画都注册（包括原版存在但是未注册的动画），否则无法显示。
+```
+
+```{note}
+注册表中的序号在地图触发中会被重新计算映射为内部序号使用，因此哪怕你觉得 WW 写的序号依托构式又是跳号又是重号的，在你真正明白注册表序号的算法之前请不要乱动，把新增的内容都放到最后，否则原版战役和地图可能出现各种问题。当然，如果你就是打算直接一脚踹掉原版的内容单纯基于红色警戒2的引擎来构建自己的世界、书写自己的故事，那也就随意发挥了。只不过 Ares 已经提供了更好的方法，详见教程配套的 Ares 说明书
+```
+
+`[WeaponTypes]`  
+注册武器
+
+```{hint}
+并非原版注册表，而是 Ares 新引入的。
+```
+```{note}
+原版光棱、精英磁能攻击到单位和树木等地形对象时会溅射出几条新的激光/电弧，实际上是从爆点生成了原武器的子武器。而子武器必须得到注册才能使用，而武器的注册则是只要有一个有效单位使用了这个武器即算注册，因此才有了 `[XCOMET]`（位置定标器）、`[WEEDGUY]`（化学兵）、`[DeathDummy]` 这类单位。虽然这个有效单位可以除了武器代码以外一行都没有，但是每次挂载都需要找新的武器空位和考虑注册挂载单位都是一件烦事，并且难以整理。在 Ares 下你就可以把这套东西全都写进这个新的注册表而无需用单位挂载了，地图触发等地方计算武器序号也变得更加方便。
+```
+
+`[Warheads]`  
+注册弹头
+
+## 全局修改
+### [General]
+#### 升级系数
+```ini
+VeteranRatio=3.0
+升级一次所必须破坏的价值为自身价值（特指 Cost）的 3 倍
+VeteranCombat=1.1
+升级后的攻击力为原来的 1.1 倍
+VeteranSpeed=1.2
+升级后的速度为原 1.2 倍
+VeteranSight=0.0
+升级后的视野如果乘完超过最大值（11）会被写回最大值
+VeteranArmor=1.5
+升级后装甲为原 1.5 倍 ，实际上只是所受杀伤除此处倍率
+VeteranROF=0.6
+升级后的攻击间隔（例如原来 10 帧一次现在 6 帧一次）
+VeteranCap=2
+最大可升 2 级改了也没什么用，军衔还是武器还是升级效果等各种相关系统都没做支持
+InitialVeteran=no
+初始部队开局老兵级别，要写进地图 [SpecialFlags] 里，Rules 里没用
+```
+#### 维修和装填
+```ini
+RefundPercent=50%
+出售价格为建造的 50%，可用 Soylent 直接指定数值覆盖
+ReloadRate=.3
+战机每格弹药重装时间间隔：0.3 分钟，也是停在 UnitReload=yes 的建筑上时的维修间隔( 类[ 维修厂 ] ) Ares 允许 Aircraft 上微观定义，Phobos 允许建筑上微观定义维修间隔
+RepairPercent=15%
+把一个东西由 0 修到满血耗费的钱为建造钱的 15%
+RepairRate=.016
+每 2 次【扳手】闪动的时间间隔为 0.016 分钟，同时影响 { SelfHealing } 的单位
+RepairStep=8
+每次恢复 8 点血(控制【扳手】和 [ 维修厂 ] )
+URepairRate=.016
+每 2 次维修的时间间隔为 0.016 分钟( [ 维修厂 ] )用于 UnitRepair=yes 的建筑，Phobos 允许微观控制维修间隔
+IRepairRate=.001
+每2次恢复的时间间隔为 0.001 分钟(医院治疗)
+IRepairStep=20
+每次恢复的血为 20 点(医院治疗)
+TiberiumHeal=.010
+在泰伯利亚之石中每 2 次恢复的间隔为 0.01 分钟，TS 残留无效，Ares 已复原，详见说明书
+SelfHealInfantryFrames=50
+步兵每2次自我恢复的时间间隔为 50 帧（医院自动回血）
+SelfHealInfantryAmount=20
+步兵每次自我恢复能恢复 20 生命（医院自动回血）
+SelfHealUnitFrames=75
+自疗单位每2次自我恢复的时间间隔为 75 桢（科技商店自动回血）
+SelfHealUnitAmount=5
+自疗单位每次自我恢复能恢复 5 生命（科技商店自动回血）
+```
+#### 收入和生产
+```ini
+;BailCount=28
+;矿车携带资金的数量，RA1 残留已无效，TS 开始使用矿车自身属性，见 Storage 词条
+BuildSpeed=.7
+生产建筑时每用 1000 元要花费的时间为 0.7 分钟，Ares 允许建筑微观定义
+BuildupTime=.06
+一个建筑放置展开时要花费拔起时间 0.06 分钟，同时也是建筑出售收起所需的时间
+*根据全局置顶中所述的 1 分钟=900 帧，可得原版 0.06 分钟即 54 帧
+Ares 允许建筑微观定义以及出售与拔起分离定义，对于 Buildup 动画过长的建筑来说是非常有必要的
+如果 Buildup 时间不够 Buildup 动画逐帧播放一遍那么可能在功能运作时会表现为瞬间完成等非正常方式，见art词典 Buildup= 一条下方描述
+GrowthRate=5
+泰伯利亚矿石每 5 分钟生长一次
+TiberiumGrows=yes
+泰伯利亚矿石可以生长
+TiberiumSpreads=yes
+泰伯利亚矿石可以延伸到本来没有的地方
+;以上两个标签会被地图[SpecialFlags]中的同名标签覆盖
+SeparateAircraft=yes
+是否第一架战机必须拥有一个机场后进行生产，如果被设置为 no 则所有带 HoverPad=yes 的建筑会自动生成 PadAircraft= 的第一个单位
+SurvivorRate=0.4
+一个建筑出售掉 原本制造的钱*0.4 换算为残兵出现，算法为 Num(Infantry)=Cost*SurvivorRate/SurvivorDivisor
+;SurvivorDivisor=100
+;计算残兵数量的除数，TS 残留无效，RA2 已换成下面三句分离定义
+AlliedSurvivorDivisor=500
+盟军制造的建筑出售计算残兵数量的除数
+SovietSurvivorDivisor=250
+苏军制造的建筑出出售计算残兵数量的除数
+ThirdSurvivorDivisor=750
+尤里制造的建筑出售计算残兵数量的除数
+PlacementDelay=.05
+等待0.05分钟后再次尝试摆放建筑（900*0.05=45Frames），见 [General] -> MaximumBuildingPlacementFailures= 一条
+WeedCapacity=56
+只有 Weeder 矿车收集的泰伯利亚废矿达到该量后化学飞弹才可以开始加载（TS 残留，废弃，相关逻辑 Phobos 已复原，详见说明书）
+;下面几句是原版INI中有效但并没有列出的语句
+RevealByHeight=yes
+是否根据高差限制可探开的视野范围，若改 no 则在悬崖下方也可探开悬崖上方的视野
+HarvesterDumpRate=0.06
+矿车在矿场倒矿用时，越小越快，单位为分钟
+HarvesterLoadRate=2
+矿车采集每单位矿物用时，越小越快，若小于 1 则会永远装不满
+EngineerCaptureLevel=
+多工程师模式语句，RA2 下残留部分效果，但依然残废，Ares 已复原，详见说明书
+TalkBubbleTime=
+指定地图操作或脚本触发时气泡图像在单位上方显示的时长，强制类 Normalized=yes 的效果，也就是哪怕 6 速下 FPS 高达 1 秒 3 万帧也不会闪一下瞬间没了。硬编码使用 talkbubl.shp 和 palette.pal，前者可以自行去 TS 提取或自己制作，RA2 中并不存在，或前往 20400prosperous.ys168.com 获取一份提取好的
+ZoomInFactor=2.0
+地图触发 49 号结果缩放行为的倍数定义，只能放大不能缩小，放大后应使用 50 号结果复原，如果直接使用 47 号结果解除 49 号结果的禁止玩家操作效果会导致错误的底边栏绘制效果且光标并不会显示
+ConditionYellowSparkingProbability=0.02
+当 Cyborg=yes 的 Infantry 进入黄血时生成 [TechnoType] -> DamageParticleSystems=<ParticleSystems> 中 Spark 类粒子系统的概率
+ConditionRedSparkingProbability=0.01
+当 Cyborg=yes 的 Infantry 进入红血时生成 [TechnoType] -> DamageParticleSystems=<ParticleSystems> 中 Spark 类粒子系统的概率
+LightningPrintText=yes
+控制闪电风暴接近是否有文本提示（原版 ini中 没有写但是有效）
+```
+#### 电脑与活动控制
+```ini
+CurleyShuffle=yes
+战机是否可以在发射 2 发炮弹间移动位置，用于悬停式战机，no 的话可以固定在一个位置持续射击，效果见上古 MOD《共和国之辉》中的的 CN 入侵者，但是悬停地点下方有垫材会影响开火
+BaseBias=2
+当敌人靠近 AI 基地时，AI 对敌人威胁的判定倍数，会影响 AI 对单位威胁值的敏锐度。可以调高。
+BaseDefenseDelay=.25
+AI 派出防御部队处理基地威胁的延迟时间。(单位:分钟)
+CloseEnough=2.25
+AI 执行"移动到"指令时，距离目的地多近就视为完成接近。
+DamageDelay=1
+建筑微损伤语句，TS 残留无效，Ares 已复原相关逻辑，详见说明书
+GameSpeedBias=1.6
+单人游戏中物体速度 1.6 倍于原来速度，TS 残留，RA2 中已无效
+Stray=2.0
+一个小队在执行任务时，偏离这个距离之内时不会导致小队重组。会影响路经点判定，可以适当增加，但最好不超过 2.9。
+RelaxedStray=3.0
+执行"集结"指令(应该是指 53,54 号指令)时，以这个数值替代 Stray。可以适当增加以便 AI 可以使用大部队。
+CloakDelay=.02
+进入隐形之前的显形时间，同时也是 RA2 种水下单位露出睡眠后重新下潜所需的时间，因为本质上就是隐形加了 Naval=yes 依靠 NavalTargeting= 限制能否攻击
+SuspendDelay=2
+中止的AI队伍将会保持中止的时间为 2 分钟
+SuspendPriority=1
+当基本防御展开时低优先权(<1)任务将被中止
+FlightLevel=1500
+飞机默认飞行的高度，可以在单位上微观控制
+ParachuteMaxFallRate=-3
+有降落伞最大下降速度，用于常规伞兵，Ares 允许单位微观定义
+NoParachuteMaxFallRate=-100
+无降落伞最大下降速度，例如降落伞动画播放结束后不再拥有降落伞或是从被毁的桥上掉下，Ares 允许单位微观定义
+GuardModeStray=2.0
+保护其他单位的警戒距离
+
+
+MissileSpeedVar=.25
+导弹速度衰减速率（Degenerates=yes）
+MissileROTVar=.25
+导弹转弯衰减速率（Degenerates=yes）
+MissileSafetyAltitude=750
+导弹安全高度，对空导弹在目标被摧毁后升到这个高度再爆开
+
+;-RTO
+TeamDelays=2000,2500,3500
+(困难、中等、简单)的 AI 创造部队时间间隔。(单位:帧)
+
+AIHateDelays=30,50,70AI
+(困难、中等、简单)的 AI 选择敌人的时间间隔。(单位:帧)
+AIAlternateProductionCreditCutoff=1000
+只有 AI 资金高于这个数值才会消费
+NodAIBuildsWalls=no
+当电脑作为 NOD 时候是否制造墙壁(无效)
+AIBuildsWalls=no
+电脑是否建造墙壁(无效)
+
+;-RTO*
+MultiplayerAICM=400,0,0
+(困难、中等、简单)的 AI 开局时的金钱【百分比】。公式为：AI 开局金钱=玩家开局金钱*(X+100)/100。
+AIVirtualPurifiers=4,2,0
+(困难、中等、简单)遭遇战 AI 矿石采集换算系数，冷酷 ai 一车矿 1000 块它就有实际收入 1000*4=4000 块
+AISlaveMinerNumber=4,3,2
+(困难、中等、简单)的 AI 奴隶矿车数
+HarvestersPerRefinery=2,2,1
+(困难、中等、简单)的 AI 每矿最多矿车数
+AIExtraRefineries=2,1,0
+(困难、中等、简单)额外矿场数（Ares 的建议是不给矿场加 [BuildingType] -> AIBuildCounts=，如果需要增加矿场数量的话用 [BuildingType] -> AIExtraCounts=）
+HealScanRadius=10
+医疗兵种能自动医疗的范围
+FillEarliestTeamProbability=100,100,100
+(困难、中等、简单)的 AI 制造第一个部队的时间。(单位:帧)
+
+;-RTO
+MinimumAIDefensiveTeams=1,1,1
+(困难、中等、简单)的 AI 最少守家部队(IsBaseDefense=yes)数量。
+MaximumAIDefensiveTeams=2,2,2
+(困难、中等、简单)的 AI 最多守家部队数量。
+注：(Min 和 Max 即使都写 0,0,0 也会至少造 1 队守家部队)
+
+TotalAITeamCap=30,30,30
+(困难、中等、简单)的 AI 可以同时使用的部队总数。
+UseMinDefenseRule=yes
+电脑 AI 在没有任何部队时（一般是遭遇战开局）只会从有 IsBaseDefense=yes 标签的小队里挑选生产，直到这些小队达到 MinimumAIDefensiveTeams= 指定的数量。无论 UseMinDefenseRule= 写啥AI都会至少先造 1 个守家部队，但是写 no 的话 AI 不会因为没有可造的守家部队而傻掉。所以如果 UseMinDefenseRule=yes，要保证每个阵营【至少有一个】(不是只有一个!)可用的 IsBaseDefense=yes 的小队，否则 AI 不会出兵。
+DissolveUnfilledTeamDelay=5000
+AI 在多久后会解散一个不完整的部队。
+理论上不应降低，否则 AI 制造成员较多的部队时会在制造完毕之前就解散该队伍。(单位:帧)
+LargeVisceroid=VISC_LRG
+全局定义（两个小器官兽合并成的）大型器官兽，填载具，TS 残留无效，Ares 已复原相关逻辑，详见说明书
+SmallVisceroid=VISC_SML
+全局定义步兵在泰矿上死亡变成的小型器官兽单位，填载具，TS 残留无效，Ares 已复原相关逻辑，详见说明书
+```
+#### AIIonCannonValue
+```{note}
+TS 的离子炮超武目标选取权重系统，RA2 用于核弹、闪电风暴，分别对应困难、中等、简单难度的 AI 优先级参数，其中困难 AI 还会等待最优目标生产完成
+```
+```ini
+AIIonCannonConYardValue=100,100,100
+;用于	ConstructionYard=yes		的对象
+AIIonCannonWarFactoryValue=100,100,100
+;用于	WeaponsFactory=yes		的对象
+AIIonCannonPowerValue=60,100,100
+;用于	Power > 0			的对象
+AIIonCannonTechCenterValue=100,100,100
+;用于	[AI]BuildTech=中		的对象
+AIIonCannonEngineerValue=1,1,1
+;用于	Engineer=yes			的对象
+AIIonCannonThiefValue=1,1,1
+;用于	Thief=yes			的对象
+AIIonCannonHarvesterValue=1,1,1
+;用于	Harvester=yes			的对象
+AIIonCannonMCVValue=1,1,1
+;用于	[General]BaseUnit=中		的对象
+AIIonCannonAPCValue=1,1,1
+;用于	Category=Transport		的对象
+AIIonCannonBaseDefenseValue=35,35,35
+;用于	IsBaseDefense=yes		的对象
+;-------------------------------------------------
+AIIonCannonPlugValue=40,40,40
+;用于	IsPlug=yes			的对象
+AIIonCannonHelipadValue=20,20,20
+;用于	HoverPad=yes			的对象
+AIIonCannonTempleValue=40,40,40
+;用于	IsTemple=yes			的对象
+```
+```{note}
+最后三句在 RA2 中未被使用，如果使用也会由于优先级相对其他标签更低而表现得不够明显。
+
+例如发电厂同时拥有 `IsTemple=yes` 的话 `Power>0` 实际上会让它使用 `AIIonCannonPowerValue` 而非 `AIIonCannonTempleValue`。
+```
+
+#### 离子风暴（闪电风暴）规则
+```{note}
+这套东西是从 TS 中的离子风暴演变来的
+```
+```ini
+LightningDeferment=250
+闪电风暴从警告到降临的间隔桢数
+LightningDamage=250
+闪电风暴打击的伤害
+LightningStormDuration=180
+闪电风暴的持续时间
+LightningWarhead=IonWH
+闪电风暴用的弹头
+LightningHitDelay=10
+每多少时间进行一次仅限中心单位格的打击
+LightningScatterDelay=5
+每2次随机闪电打击间隔的帧数以及每次生成的雷云数量
+LightningCellSpread=10
+闪电风暴的范围大小
+LightningSeparation=3
+每两个云／闪电间的距离为3
+IonStorms=no
+地图中是否随机产生风暴，TS 残留无效，即便在 TS 中也需要写入地图 [SpecialFlags] 中而不是使用 Rules.ini 控制
+```
+#### 力场护盾控制
+```ini
+ForceShieldRadius=4
+力场护盾的有效范围，单位格
+ForceShieldDuration=500
+力场护盾的持续作用帧数
+ForceShieldBlackoutDuration=1000
+使用力场护盾后的停电时间
+ForceShieldPlayFadeSoundTime=75
+力场护盾在作用时间结束前75帧开始播放 [SuperWeaponType] -> SpecialSound=指定的音效
+MutateExplosion=yes
+控制 [SuperWeaponType] -> Type=GeneticMutator 的超级武器也就是原版基因突变超武是否引爆
+设置为 yes 则使用 [SpecialWeapons] -> MutateExplosionWarhead= 的弹头并造成 10000 伤害
+设置为 no 则默认只对 3x3 范围内步兵使用 [SpecialWeapons] -> MutateWarhead= 的弹头并秒杀
+```
+
+#### 光棱塔控制
+```ini
+PrismType=ATESLA
+使用该逻辑的建筑名称
+PrismSupportModifier=150%
+每增加一个反射光塔就增加 150% 的威力
+由于 WW 代码写的有问题，原版地图模式 ini 和地图内置 ini 如果写了 [General] 而未重新指定该语句的值则在读取时前面两者有一个乘一百，Ares 已修复
+PrismSupportMax=8
+最多能同时反射 8 个
+PrismSupportDelay=45
+反射光延迟 45 桢
+PrismSupportDuration=15
+发射出的光的消失时间 15 桢（图像残留）
+PrismSupportHeight=420
+该光传到光塔高 420 的地方（无效）
+```
+```{seealso}
+Ares 已允许自定义光棱塔，并附赠了一份 xlsx 以便计算，详见说明书
+```
+
+#### V3火箭控制
+```ini
+V3RocketPauseFrames=0
+倾斜开始前滞留 0 桢
+V3RocketTiltFrames=60
+倾斜到发射位置（角度）需要 60 帧
+V3RocketPitchInitial=0.21
+导弹初始倾斜为 0.21*90 度
+V3RocketPitchFinal=0.5
+导弹点火倾斜为 0.5*90 度
+V3RocketTurnRate=0.05
+导弹拐弯速率
+V3RocketRaiseRate=1
+巡航导弹每次升高多少
+V3RocketAcceleration=0.4
+发射加速度 0.4
+V3RocketAltitude=768
+巡航导弹达到这么高后水平移动
+V3RocketDamage=200
+伤害 200
+V3RocketEliteDamage=400
+精英伤害 400
+V3RocketBodyLength=256
+导弹长 256 Leptons，用于导弹碰撞判定点计算实际撞击位置，也会影响导弹轨迹计算
+V3RocketLazyCurve=yes
+是否是抛物线弹道，也就是不使用巡航导弹使用的 RaiseRate 和 Altitude 两个参数。并且如果 PitchFinal 设定成了垂直于地面的 90°，那么即便是初中生也知道这会导致导弹再也飞不回来
+```
+```{important}
+新增导弹需要 Ares  
+总有新手对着原版的 DMISL 和 CMISL 自创一个 EMISL 之类的写在这里，然而程序读取的键值里根本就没有这个名为 `EMislPauseFrames` 的东西又怎么会生效呢，要写在导弹自身的代码里！！！
+```
+
+#### 伞兵控制
+```ini
+ParadropRadius=1024
+降落半径 1024 leptons
+```
+
+#### 杂项
+```ini
+FogOfWar=no
+是否拥有战争迷雾，TS 残留无效，即便在 TS 中也需要写入地图 [SpecialFlags] 中而不是使用 Rules.ini 控制
+Visceroids=no
+是否随机生成器官兽，TS 残留无效，即便在 TS 中也需要写入地图 [SpecialFlags] 中而不是使用 Rules.ini 控制，Ares 已复原，详见说明书
+Meteorites=no
+随机被流星砸，TS 残留无效，即便在 TS 中也需要写入地图 [SpecialFlags] 中而不是使用 Rules.ini 控制
+CrewEscape=50%
+乘车人员有 50% 机会从被毁车中逃生
+CameraRange=9
+间谍飞机每次探开地图范围 9 个单元格
+FineDiffControl=no
+有5个难度级别实际上显示 3 个
+Pilot=E1
+飞机上跳伞的兵种是 E1，RA1 残留无效
+;Crew =
+;被摧毁或售卖的建筑给予什么步兵，TS 残留，RA2 开始已经换成下面三句分离定义，Ares 新阵营的定义详见 Ares 说明书
+AlliedCrew=E1
+盟军被毁建筑中出来的是 E1
+SovietCrew=E2
+苏方被毁建筑中出来的是 E2
+ThirdCrew=INIT
+尤里被毁建筑中出来的是 INIT
+Technician=CTECH
+中立建筑被毁出来的是 CTECH
+Engineer=ENGINEER
+建造厂类建筑被毁额外给予 ENGINEER
+以上生还者特殊效果在 Ares 允许单位微观为所有阵营设置
+PParatrooper=E1
+步兵部队将和伞兵 E1 一样，RA1 残留无效
+并且语句都是 WW 写错的，程序中只有 Paratrooper 没有 PParatrooper
+```
+
+#### 超时空计时
+```ini
+ChronoDelay=60
+传送达到后僵直 60 帧时间才恢复正常
+这是单位超时空移动的相关定义
+超时空传送超武硬编码从起点离开 0 真抵达终点后 60 帧
+ChronoReinfDelay=180
+传送到达后僵直 180 帧，这是任务触发第 107 条：超时空传送援军的相关定义
+ChronoDistanceFactor=48
+超时空行动方式传送倒目标点的「速度」(恢复所需的额外时间)不得为 0，算法 Num(Frames)=256/ChronoDistanceFactor
+ChronoTrigger=yes
+是否让僵直时间和距离相关，是的话，距离越长僵直越久，每格多僵直的时间由 ChronoDistanceFactor= 控制，否则将始终是个恒量
+ChronoMinimumDelay=16
+超时空移动最小冷冻时间16
+ChronoRangeMinimum=0
+在这个范围内的超时空移动，均被视为硬直时间为 ChronoMinimumDelay= 定义的时间
+以上 Chrono 相关内容 Phobos 已允许单位微观定义，并开启了原版未用上的 WarpIn= 动画解除了超武硬编码 Delay，以及 WarpIn、WarpOut 都可以自定义了
+```
+
+#### 伞兵特殊规则
+```ini
+;AmerParaDropInf=E1,GHOST,ENGINEER
+空降部队的种类（每个都需要一个飞机）
+;AmerParaDropNum=6,6,6
+空降部队对应数目
+```
+```{note}
+在 YR 里 `AmerParaDropInf` 部队的种类数同时也会影响苏军的侦察机数量
+```
+**Amer美国**
+```ini
+AmerParaDropInf=E1
+AmerParaDropNum=8
+```
+
+**Ally盟军**
+```ini
+AllyParaDropInf=E1
+AllyParaDropNum=6
+```
+
+**Sov苏联**
+```ini
+SovParaDropInf=E2
+SovParaDropNum=9
+```
+
+**Yuri尤里**
+```ini
+YuriParaDropInf=INIT
+YuriParaDropNum=6
+```
+
+#### 动画刷兵
+```ini
+AnimToInfantry=BRUTE
+```
+动画可以生成那些步兵单位，可写多个，由 art 中 `[Animation] -> MakeInfantry=` 调用该列表中的对应对象
+
+#### 秘密科技实验室
+占领秘密科技实验室后可生产的兵种（遭遇战列表）
+```ini
+SecretInfantry=SNIPE,TERROR,DESO,YURI
+SecretUnits=TNKD,TTNK,DTRUCK
+SecretBuildings=GTGCAN
+```
+特殊兵种登记，事实就是确实没有支持 Aircraft 类对象，Ares 已重做这套逻辑使用新方式支持，详见说明书
+```{note}
+实际上算法存在问题概率并不均等，建议用 Ares 语句在建筑上重新微观定义
+```
+
+#### 间谍相关
+以下三句指定了间谍默认出厂时候的样子
+```ini
+AlliedDisguise=E1
+对盟军假装为 E1
+SovietDisguise=E2
+对苏方假装为 E2
+ThirdDisguise=INIT
+对尤里假装为 INIT
+
+SpyPowerBlackout=1000
+进入电场让其停电 1000 帧
+SpyMoneyStealPercent=.5
+进入矿场可偷其现金的 0.5 倍（对方也减少这么多）
+AttackCursorOnDisguise=yes
+对可进行假装的人／物光标可以变为攻击样式
+DefaultMirageDisguises=TREE01,TREE02,TREE03,TREE04
+幻影坦克默认伪装类型，填 Terrain（地形对象）例如石头、矿井、电线杆等
+InfantryBlinkDisguiseTime=20
+间谍 20 帧闪烁一次
+
+MaximumCheerRate=300
+玩家通过键盘（默认 C）或面板下达欢呼指令的间隔
+第一次欢呼也要达到游戏开始经过这里指定的帧数之后
+```
+#### 新AI控制
+相对于 TS 和以前的游戏而言的 新
+```ini
+AISafeDistance=20
+AI集结( 53、54 号指令)部队距离敌方基地多远，同时适用于自己基地和敌方基地。Ares 下集结在友军基地（54 号指令）可使用 [General] -> AIFriendlyDistance= 独立定义，详见说明书
+
+AIMinorSuperReadyPercent=.7
+当一个铁幕或超时空传送加载达到这个进度后 AI 才会考虑使用这个超武关联的小队并等待超武就绪
+
+HarvesterTooFarDistance=5
+ChronoHarvTooFarDistance=50
+全局控制普通矿车（奴矿用另外的东西）寻矿的有三句，分别是
+TiberiumLongScan（奴矿用 SlaveMinerLongScan）
+TiberiumShortScan（奴矿用 SlaveMinerShortScan）（奴隶用 SlaveMinerSlaveScan）
+HarvesterTooFarDistance（Teleporter 用 ChronoHarvTooFarDistance ）
+当一个矿车刚采完一格矿时，使用 Short 的范围来找接下来要采的矿
+当一个矿车倒矿完，他会使用 Long 的范围来找接下来要采的矿，用 TooFar 的范围来决定哪个范围外的矿不去考虑
+Long 和 TooFar 没有必然的大小关系
+SlaveMinerScanCorrection 是控制奴矿建筑和矿的距离的
+SlaveMinerKickFrameDelay 是奴隶在 TooFar 时呆住多久的
+Ares 3.0 开始已允许在单位上微观定义
+
+AlliedBaseDefenseCounts=25,20,6
+SovietBaseDefenseCounts=25,22,6
+ThirdBaseDefenseCounts=25,22,6
+三个阵营在(困难、中等、简单)时的防御建筑数量系数。计算公式：((已有建筑的价格-2000)/1500 * GDIBaseDefenseCoefficient) + 3*(该系数-1)
+AIPickWallDefensePercent=50,25,10
+(困难、中等、简单)的AI选择围墙来替代防御建筑的概率。仍有需要补围墙的建筑才会生产防御建筑时考虑替换
+AIRestrictReplaceTime=400
+AI 建筑被摧毁后，用电厂／防御建筑／围墙替代被摧毁建筑的时间。（单位：帧）
+ThreatPerOccupant=10
+每在可驻军建筑中加入一个兵增加威胁度 10
+ApproachTargetResetMultiplier=1.5
+与目标距离超过 1.5 倍射程则停止追击
+CampaignMoneyDeltaEasy=0
+选简单级难度将这么多金额添加到所有 [House] -> PlayerControl=yes 的所属方正常难度资金总额中，仅地图内置生效
+CampaignMoneyDeltaHard=0
+选困难级将这么多金额添加到所有 [House] -> PlayerControl=yes 的所属方正常难度资金总额中，仅地图内置生效
+GuardAreaTargetingDelay=36
+区域警戒模式下AI在范围内搜寻目标的延迟为 36，最好比下一句大，因为它的范围比下句大了两倍，单位帧
+NormalTargetingDelay=27
+闲置状态下 AI 搜索目标的延迟，单位帧。这两句调起来比较尴尬，调小游戏会导致游戏变慢，调大单位会变得比较愣
+AINavalYardAdjacency=20
+船厂距离 AI 的建造厂最大不超过 20 格
+DisabledDisguiseDetectionPercent=15,5,2
+(困难、中等、简单)的AI 发现幻影的几率，这用于每个附近的单位，也就是如果周围一大群单位那么即便这里的数值很低也会被几乎瞬间觉察
+AIAutoDeployFrameDelay=15,25,100
+(困难、中等、简单)的AI 部署／反部署同一个步兵这么多帧后才会再次下令，大概本来 WW 是用这个避免AI一直部署／反部署大兵导致大兵上蹿下跳的没完的，但是事实证明这最多是缓解而没有解决
+MaximumBuildingPlacementFailures=3
+电脑摆放3次建筑失败则过 [General] -> PlacementDelay= 指定的时间再摆放
+失败原因可能是没有空地或临时有单位通过
+仅对 [BuildingType] -> Wall=yes 的建筑有效，其他建筑放一次失败就不会继续尝试放置这个建筑
+同时会正常检测目标单元格是否存在与建筑 [BuildingImage] -> ToOverlay= 的对象相同的覆盖物，以此可以让AI正常的在破损的围墙上建造围墙
+然而由于破损墙体这个逻辑自身的限制，这个「正常检测」反而会出问题，具体见单位词典 [BuildingType] -> Wall= 词条注解
+
+```{note}
+该逻辑仅限遭遇战有效，战役里建筑节点会一直试个不停
+```
+```ini
+TiberiumShortScan=6
+TiberiumLongScan=48
+此2句均为矿车找矿设置，TS 残留，RA2 已使用新的方式替代
+SlaveMinerShortScan=8
+奴隶矿车本体范围 8 以内没有矿时则会尝试移动
+SlaveMinerSlaveScan=14
+每个奴隶的矿区搜索范围
+
+SlaveMinerLongScan=48
+奴隶矿车侦测矿区距离，若地图中的矿区超过 48 距离则视为太远，不会尝试移动。
+SlaveMinerScanCorrection=3
+一个展开的奴隶矿车离最近的矿超过 3 则需要前进以靠近矿区
+SlaveMinerKickFrameDelay=150
+当没矿可采时（进入 Guard 状态）150 桢后自动寻找 [General] -> SlaveMinerLongScan= 范围内有矿的地方
+
+相关具体算法见上面 [General] -> HarvesterTooFarDistance= 下的讲述，且已写入2025教程附件配套的新版 Ares 中文chm说明书此逻辑的微观定义页面
+如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的
+
+AISuperDefenseProbability=90,50,10
+当一个超武瞄准 [General] -> AISafeDistance= 限制区域外发射时 AI 使用力场护盾的几率（困难，中等，简单）。
+AISuperDefenseFrames=50
+进入自卫警报的持续时间，持续时间内 AI 触发使用力场护盾时即使没有就绪也会在这 50 帧内依旧重复尝试使用立场护盾。
+AISuperDefenseDistance=12
+对AI的基地中心半径 12 以内使用超级武器才会触发 AI 使用力场护盾防御自己。
+
+AI 在默认情况下对被心灵控制的敌方部队的使用，会被 AI 触发小队中的设置覆盖
+AICaptureNormal=75,5,5,15
+当无任务状态时
+AICaptureWounded=15,40,40,5
+当单位伤残时
+AICaptureLowPower=15,5,75,5
+当电力不足时
+AICaptureLowMoney=15,75,5,5
+当资金不足时
+四个数值分别代表：加入 AI 的军队，将其放入回收站，将其放入生化反应炉，进入狩猎模式，如果某个行为执行失败例如选择塞进回收站但实际上不存在回收站那么单位会进入狩猎模式
+AICaptureLowMoneyMark=2000
+低于 2000 钱才被上面的标签视为金钱短缺
+AICaptureWoundedMark=.25
+损达 0.25 生命才被上面的标签视为伤残状态
+```
+
+#### 矿石精炼器
+```ini
+PurifierBonus=.25
+矿石精炼器增加矿石价值的百分比，增值 25%
+```
+
+#### 空降仓
+```ini
+DropPodWeapon=Vulcan2
+空降仓使用的武器是 Vulcan2
+释放 DropPod 时每个单位将要落到的地点都会持续发射该武器
+Ares 下已强制内置为 [WeaponTypes] 中的 0= 的对象，因此无需手动注册或挂载
+DropPodHeight=2000
+空降仓出现的高度是 2000
+DropPodSpeed=75
+空降仓下降的速度是 75
+DropPodAngle=0.79
+空降仓下降角度是 0.79
+WW注释中给出两个参考值：0.40为 扁平 1.18为 陡峭
+```
+```{seealso}
+Phobos 已允许在【步兵】上微观设置相关参数，详见说明书
+```
+
+#### 悬浮载具运动特性
+```ini
+HoverHeight=120
+地面悬浮单位的高度 120 lepton
+HoverDampen=40%
+悬浮载具振动的阻尼效果幅度
+HoverBob=.04
+垂直晃动间隔时间 0.04 分钟
+HoverBoost=150%
+直线移动时的速度为 150% 原速
+HoverAcceleration=.02
+开始移动多少分钟后加到满速
+HoverBrake=.03
+抵达目标多少分钟后完全停止
+BalloonHoverHeight=1000
+空中悬浮单位高度 1000
+BalloonHoverDampen=20%
+空中悬浮载具振动的阻尼效果幅度
+BalloonHoverBob=1.2
+垂直晃动间隔时间 1.2 分钟
+BalloonHoverBoost=150%
+此状态下的速度为 150% 原速
+BalloonHoverAcceleration=.04
+开始移动多少分钟后加到满速
+BalloonHoverBrake=.03
+抵达目标多少分钟后完全停止
+```
+
+#### 潜地运动载具特性
+```ini
+TunnelSpeed=1
+钻地速度，指钻地运动方式载具向下钻和钻取时转身的速度倍率，使用单位 Speed*此值 求得下潜速度
+```
+```{note}
+地下水平移动速度硬编码 7.5，地下水平移动深度硬编码 -256
+```
+```{seealso}
+Phobos 已允许微观定义地下移动的水平速度和高度（TunnelSpeed：这对吗？）
+```
+
+#### 生产 & 电力 效果
+```ini
+MultipleFactory=0.8
+每个工厂制造加速原 0.8 倍时间，在 TS 中使用 ProduceSpeed=MultipleFactory*(n-1) 而在 RA2 中为直接折扣倍率，也就是 0.8 下所得倍率为 1, .8, .64, .512 而不是 1, 1, 1.25，Ares 允许建筑微观定义
+MinLowPowerProductionSpeed=.5
+电力不足时能达到的最低生产速度，Ares 允许建筑微观定义
+MaxLowPowerProductionSpeed=.8
+电力不足时能达到的最高生产速度，防止你只少 10 单位电就掉到很低，Ares 允许建筑微观定义
+LowPowerPenaltyModifier=1
+电力惩罚倍数，此处倍率*缺少的电量得出生产所用时间的实际电力惩罚倍率，Ares 允许建筑微观定义
+```
+
+#### 一些建筑编码
+```ini
+GDIGateOne=GADUMY
+盟军闸门
+GDIGateTwo=GADUMY
+盟军闸门
+原版下闸门只会自动与 GAWALL 和 NAWALL 链接，Ares 解除了这个限制
+WallTower=GADUMY
+TS 里 GDI 的防御塔，可以直接建造在覆盖物围墙上（实际检查覆盖物注册表第 3 个对象）
+Shipyard=GAYARD,NAYARD,YAYARD
+定义船厂
+NodGateOne=GADUMY
+苏军闸门
+NodGateTwo=GADUMY
+苏军闸门
+NodRegularPower=NAPOWR
+苏军基础电力设施
+NodAdvancedPower=NANRCT
+苏军拓展电力设施
+GDIPowerPlant=GAPOWR
+盟军基础电力设施
+GDIPowerTurbine=GAPOWRUP
+盟军拓展电力设施，TS 中为 GDI 动力涡轮（加载物）
+AIUseTurbineUpgradeProbability =
+盟军阵营AI选择为电厂建造 [General] -> GDIPowerTurbine= 指定的加载物升级而不是建造新的 [General] -> GDIPowerPlant= 指定的电厂的概率，且该逻辑与 [General] -> NodAdvancedPower= 不同的是它附带自动搜索己方已有电厂效果。仅对 [GDI] 也就是原版盟军阵营有效
+GDIHunterSeeker=GHUNTER
+盟军阵营放出的 HunterSeeker，TS 残留无效，Ares 已复原，并可直接在阵营内设定，详见说明书
+NodHunterSeeker=NHUNTER
+苏军阵营放出的 HunterSeeker，TS 残留无效，Ares 已复原，并可直接在阵营内设定，详见说明书
+GDIFirestormGenerator=GAFIRE
+FS中有一个 [SuperWeaponType] -> Type=Firestorm & UseChargeDrain=yes 的超武叫做 FireStorm
+这个建筑则是维持 FireStorm 超武存在
+当此建筑被破坏（或停电）时会检查所属方拥有的其他建筑物以确认是否依然存在 FireStorm
+如果所有此建筑均被破坏（或停电）则自动关闭 FireStorm 系统
+TS 残留无效，Ares 已复原，详见说明书
+ThirdPowerPlant=YAPOWR
+尤里基础电力设施
+RepairBay=GADEPT,NADEPT,CAOUTP
+定义修理厂
+BaseUnit=AMCV,SMCV,PCV
+定义基地车，RA21.0 允许多个，RA21.006 只能 2 个 YR 只能 3 个，这也是为什么共和国之辉里 CN 的 CMCV 不会开局暴毙的原因。Ares 重新解除了限制
+HarvesterUnit=HARV,CMIN
+定义矿车，新阵营的矿车没注册会导致 AI 无限起矿场
+PadAircraft=ORCA,BEAG
+定义需要在机场降落的飞机，如果不在这里声明那么会机场没有空位了也仍然可以点击图标而不会灰掉，但是 RA2 中点击以后会卡在一半的生产进度而不继续
+```
+
+#### Bret（名）的编码部分
+```ini
+TreeStrength=200
+地形对象的默认血量，实际上是作为概率计算的除数
+WindDirection=1
+风向，0-7，0 为正北（游戏画面右上）
+TrackedUphill=1.0
+规定[TechnoType] -> SpeedType=Track的物体上山速度倍率
+TrackedDownhill=1.2
+规定[TechnoType] -> SpeedType=Track的物体下山速度倍率
+WheeledUphill=1.0
+规定[TechnoType] -> SpeedType=Wheel的物体上山速度倍率
+WheeledDownhill=1.2
+规定[TechnoType] -> SpeedType=Wheel的物体下山速度倍率
+LeptonsPerSightIncrease=2000
+高度 2000+ 的物体获得额外视野
+LeptonsPerFireIncrease=2000
+高度 2000+ 的物体获得额外 射程（取地图高度的绝对值而非开火单位和目标相对高度）
+AttackingAircraftSightRange=2
+机场起飞的飞机的视野，废弃，请用单位上的 Sight 定义
+BlendedFog=yes
+在 RA2 中无效，决定 DirectX 绘制 FogOfWar 时方式为 blended 还是 dithered
+CliffBackImpassability=2
+在悬崖下多少格内不能造建筑和通行单位
+IceCrackingWeight=50.0
+这个重量的物体将压裂冰层，TS 残留无效
+IceBreakingWeight=50.0
+这个重量的物体将压碎冰层，TS 残留无效
+
+ShipSinkingWeight=3.0
+海面上的船只 [TechnoType] -> Weight= 高于这个重量的被毁将下沉而非爆炸，沉没速度为硬编码每帧下沉 5 Leptons 直到高度达到 -400 Leptons 结束喂鱼，沉没声音使用载具自身的语句来指定，《2.单位属性rules词典2024.ini》中自寻，如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的
+CloakingStages=9
+要经过多少层才能进入隐形状态（水下单位下潜本质是隐形）越小越快，每一层对应不同的透明度
+结合单位自身 [TechnoType] -> CloakingSpeed= 规定的每阶段保持多久来计算实际进入隐形的总时长，Ares 已允许单位微观定义
+TiberiumTransmogrify=40
+被泰矿击杀的步兵转化为 [General] -> SmallVisceroid= 指定的小型器官兽的概率，TS 残留，Ares 已复原相关逻辑，详见说明书
+TreeFlammability=0.0
+树木着火几率，TS 残留森林大火逻辑无效，Ares 已复原相关逻辑，详见说明书
+CraterLevel=1
+陨石坑深度控制首次出现弹坑时的大小，取值 0-4，TS 残留无效
+;StatisticTimeInterval=30
+;控制计分板计算数据需要多少秒，TS 残留，TS 的计分板会有一个计算效果而不是 RA2 那样直接把数据列出来
+BridgeVoxelMax=3
+每一段桥被摧毁后最大碎片数目
+WallBuildSpeedCoefficient=3.0
+墙的建造速度为普通物体制造速度的多少倍
+AllowShroudedSubteranneanMoves=yes
+钻地单位能否进入黑幕区域，实际无效，仅使用 [TechnoType] -> MoveToShroud= 来控制
+AircraftFogReveal=6
+雷达/机场视野，废弃，请用 Sight 定义
+MaximumQueuedObjects=29
+制造栏可以额外预订的生产序列数量为 29 ，也就是除了正在生产的单位外可以有 29 个排在序列中，因此原版中一次可以订购 1+29=30 个单位（有一个正在生产）
+MaxWaypointPathLength=15
+最大路径点 15 个
+```
+
+#### 火风暴防御系统控制
+原版无效，Ares 已复原相关逻辑，详见说明书
+```ini
+ChargeToDrainRatio=.333
+火风暴语句，[SuperWeaponType] -> UseChargeDrain=yes 的超武激活时间占准备时间的比例
+DamageToFirestormDamageCoefficient=.1
+火风暴语句，摧毁物体所消耗持续时间的乘数
+```
+
+#### 泰伯利亚藤蔓洞参数
+TS 残留无效（Phobos B39 复原了相关逻辑，详见说明书）
+```ini
+;VeinholeMonsterStrength=1000
+;废弃语句，请用 VeinholeTypeClass 对象的 Strength 定义而不是全局定义
+VeinholeGrowthRate=300
+泰伯利亚废矿的生长速度
+VeinholeShrinkRate=100
+泰伯利亚废矿的收缩速度（矿洞被消灭）
+MaxVeinholeGrowth=2000
+泰伯利亚废矿最大生长值
+VeinDamage=0
+泰伯利亚废矿对其上没有 [TechnoType] -> ImmuneToVeins=yes 的对象的伤害
+VeinholeTypeClass=VEINTREE
+泰伯利亚藤蔓洞使用的 TerrainType
+```
+
+#### AI触发加权参数
+```ini
+AITriggerSuccessWeightDelta=20
+如果这个触发成功的话触发权重 +20(可以写负值)
+AITriggerFailureWeightDelta=-50
+如果这个触发失败的话触发权重 -50(通常是负值)
+AITriggerTrackRecordCoefficient=1
+触发权重变化系数(建议写 1)
+负责 [AITriggerTypes] 中权重变化的三个数值。计算方法是每当 AI 的部队执行一次 49 号指令，就会在该 AITrigger 中增加 [General] -> AITriggerSuccessWeightDelta= 的权重。如果被消灭之前没能执行 49 号指令，则减少 [General] -> AITriggerFailureWeightDelta= * [General] -> AITriggerTrackRecordCoefficient= 的权重。
+```
+
+----------↓威胁值相关:（By马王神）↓----------
+```ini
+; default threat evaluation controls
+MyEffectivenessCoefficientDefault=num		;当 AI 的单位与威胁等级高于自身的目标交战时，会在计算威胁时乘以这个系数。帮助 AI 恃强凌弱。
+TargetEffectivenessCoefficientDefault=num	      ;当 AI 的单位与威胁等级高于自身的目标交战时，会在计算威胁时乘以这个系数。防止 AI 以卵击石。
+TargetSpecialThreatCoefficientDefault=num	      ;当 AI 目标具有 SpecialThreatValue 时，会在计算威胁时考虑这个系数。
+TargetStrengthCoefficientDefault=num		;当 AI 的单位将目标指向生命比自己高的单位时，会根据敌方生命百分比考虑这个系数。
+TargetDistanceCoefficientDefault=num		;当 AI 的单位选择目标时，会根据距离考虑这个系数。
+; defaults for dumb threat evaluation		;与 default threat evaluation controls 基本相同，但是适用于 HasStupidGuardMode=yes 的单位。
+DumbMyEffectivenessCoefficient=num
+DumbTargetEffectivenessCoefficient=num
+DumbTargetSpecialThreatCoefficient=num
+DumbTargetStrengthCoefficient=num
+DumbTargetDistanceCoefficient=num
+EnemyHouseThreatBonus=num					;敌方目标威胁系数
+```
+以上数值都不是百分数，而官方给的数值却是按百分数填的。都除以 100 可能会获得较为明显的效果。
+
+附:威胁值计算公式
+```cpp
+float Threat = Attacker's best weapon's Verses against Defender * Target Effectiveness;
+
+if(Attacker is currently targeting Defender) { Threat = Threat * (-1)}
+
+float tempValue = Special Threat Value * Special Threat Coefficient;
+Threat = Threat + tempValue;
+
+if(Defender is currently considering Attacker owner house as the Enemy House) {Threat = Threat + [General]→EnemyHouseThreatBonus=}
+tempValue = Defender's best weapon's Verses against Attacker * Self Effectiveness;
+Threat = Threat + tempValue;
+
+tempValue = Target Strength * Attacker current health percentage;
+Threat = Threat + tempValue;
+
+tempValue = Target Distance * Distance between Defender and Attacker;
+Threat = Threat + tempValue;
+
+Threat = Threat + 100000.0;
+```
+
+粗(JI)翻：
+```cpp
+Threat = 攻击单位武器对目标的Versus * TargetEffectiveness;
+如果进攻者已经在攻击目标，Threat=Threat * (-1)
+
+tempValue = 单位的SpecialThreatValue * TargetSpecialThreatCoefficient;
+Threat = Threat + tempValue;
+
+如果AI作为防御方把进攻者视为敌对方，Threat = Threat + EnemyHouseThreatBonus;
+
+tempValue = 防御方武器对进攻者的Versus * MyEffectiveness;
+Threat = Threat + tempValue;
+
+tempValue = TargetStrengthCoefficient * 攻击者当前的生命百分比;
+Threat = Threat + tempValue;
+
+tempValue = TargetDistanceCoefficient * 防御者和攻击者之间的距离;
+Threat = Threat + tempValue;
+
+Threat = Threat + 100000.0;
+```
+----------↑威胁值相关:（By马王神）↑----------
+
+#### 一些探照灯控制
+```ini
+SpotlightSpeed=.015
+探照灯旋转速度，以弧度为单位
+SpotlightMovementRadius=2000
+探照灯范围参数，写 0 就是正圆
+SpotlightLocationRadius=1000
+探照灯旋转相对建筑的距离
+SpotlightAcceleration=.0025
+探照灯旋转的加速度，以弧度为单位
+SpotlightAngle=.5
+探照灯旋转角度（弧度）6.3 为完整圆圈
+```
+
+#### 雷达事件控制器
+```ini
+;事件种类
+;(1)GenericCombatEvent
+战斗事件
+;(2)GenericNoncombatEvent
+非战斗事件
+;(3)DropzoneEvent
+TS空投区域标注
+;(4)BaseUnderAttackEvent
+建筑被攻击事件
+;(5)HarvesterUnderAttackEvent
+矿车被攻击事件
+;(6)EnemyObjectSensedEvent
+探测到敌方物体事件
+此外还有如下事件，序号对应下面三个语句每个逗号分开的值
+(7)UnitProducedEvent
+单位生产事件
+(8)UnitLostEvent
+单位被消灭事件
+(9)UnitRepairedEvent
+单位被修复事件
+(10)BuildingInfiltratedEvent
+建筑被渗透事件
+(11)BuildingCapturedEvent
+建筑被占领事件
+(12)BeaconPlacedEvent
+信标放出，用于联机
+(13)SuperWeaponDetectedEvent
+发现超武事件
+(14)SuperWeaponActivatedEvent
+激活超武事件
+(15)BridgeRepairedEvent
+桥被修好事件
+(16)GarrisonedAbandonedEvent
+要塞被迫放弃(红血)事件
+(17)AllyBaseAttackedEvent
+盟国被攻击事件
+RadarEventSuppressionDistances=8,8,8,8,8,6
+雷达过这么长时间再汇报
+RadarEventVisibilityDurations=200,200,200,200,200,200
+雷达事件可见保持时间
+RadarEventDurations=400,400,400,400,400,400
+雷达事件的保留时间
+FlashFrameTime=7
+闪烁一次的时间
+RadarCombatFlashTime=49
+总闪烁时间(为闪烁时间奇数倍)
+RadarEventMinRadius=8
+由被捕捉的目标到雷达上所产生捕捉目标之间的距离
+RadarEventSpeed=1.2
+雷达所捕捉的目标在雷达操作者屏幕上的运行速度
+RadarEventRotationSpeed=.05
+雷达所捕捉的目标在雷达操作者屏幕上的旋转速度
+RadarEventColorSpeed=.1
+雷达所捕捉的目标颜色改変的速率
+RevealTriggerRadius=9
+显示路径点周围区域触发所揭示的视野范围，最大为 11，单位格
+```
+
+#### 粒子系统与Voxel碎片
+```ini
+ExplosiveVoxelDebris=GASTANK,PIECE
+爆炸产生的 Voxel 碎片【列表】
+TireVoxelDebris=TIRE
+爆出的 VXL 轮胎【名称】
+ScrapVoxelDebris=PIECE
+爆出的 VXL 金属碎片【名称】
+OKBuildingSmokeSystem=SmokeStackSys
+建筑的烟雾粒子名称
+DamagedBuildingSmokeSystem=SmallSmokeSys
+被伤害的建筑烟雾粒子名称
+DamagedUnitSmokeSystem=VSSmokeSys
+被伤害的载具烟雾粒子名称
+DebrisSmokeSystem=VSSmokeSys
+建筑倒塌的烟雾粒子名称
+```
+
+#### 先决条件组
+```ini
+PrerequisitePower=GAPOWR,NAPOWR,NANRCT,YAPOWR
+注册电场
+PrerequisiteFactory=GAWEAP,NAWEAP,YAWEAP
+注册战车工厂
+PrerequisiteBarracks=NAHAND,GAPILE,YABRCK
+注册兵营
+PrerequisiteRadar=GAAIRC,NARADR,AMRADR,NAPSIS
+注册雷达
+PrerequisiteTech=GATECH,NATECH,YATECH
+注册高科
+PrerequisiteProc=GAREFN,NAREFN,YAREFN
+注册矿场
+PrerequisiteProcAlternate=SMIN
+注册被视为矿场的载具，仅限一个，添加更多需要使用 Ares 的 GenericPrerequisites 逻辑
+```
+
+#### TS狩猎者逻辑
+Ares 已复原，见 Ares 说明书
+```ini
+HunterSeekerDetonateProximity=150
+能够引爆目标所需的 Lepton
+HunterSeekerDescendProximity=700
+距离目标开始下降的 Lepton
+HunterSeekerAscentSpeed=40
+爬升时的飞行速度
+HunterSeekerDescentSpeed=50
+降低高度时的速度
+HunterSeekerEmergeSpeed=6
+从建筑中发射出去时的初始速度
+```
+
+#### 优化的威胁评级体系
+适当设置可以防止 AI 按生成 ID 顺序寻敌而不是距离
+**默认威胁评估控制**
+```ini
+MyEffectivenessCoefficientDefault=2.00
+TargetEffectivenessCoefficientDefault=-2.00
+TargetSpecialThreatCoefficientDefault=2.00
+TargetStrengthCoefficientDefault=-2.00
+TargetDistanceCoefficientDefault=-0.10
+```
+**默认愚蠢威胁评估控制**
+```ini
+DumbMyEffectivenessCoefficient=2.00
+DumbTargetEffectivenessCoefficient=2.00
+DumbTargetSpecialThreatCoefficient=2.00
+DumbTargetStrengthCoefficient=2.00
+DumbTargetDistanceCoefficient=-0.1
+```
+```ini
+EnemyHouseThreatBonus=4.00
+```
+相关说明及计算公式见 `AITriggerTrackRecordCoefficient` 条目下方引述
+
+除 `EnemyHouseThreatBonus` 外，上面两组数据根据单位 `HasStupidGuardMode` 的不同决定使用那一组，也可以在单位上定义
+
+**在此列出单位上与上面两组值对应的标签名**
+```ini
+MyEffectivenessCoefficient=
+TargetEffectivenessCoefficient=
+TargetSpecialThreatCoefficient=
+TargetStrengthCoefficient=
+TargetDistanceCoefficient=
+```
+
+#### 动画标签
+```ini
+DamageFireTypes=FIRE01,FIRE02,FIRE03
+残血的建筑着火的火焰样式，建筑被损伤到 [AudioVisual] -> ConditionYellow= 的比率时开始播放，对于 [BuildingType] -> CanBeOccupied=yes 的则为 [AudioVisual] -> ConditionRed= 的比率，若修复则立即移除动画
+TreeFire=FIRE2,FIRE1
+TS 残留森林火灾逻辑无效，拥有 [Warhead] -> Sparky=yes 的弹头点燃树木时的动画，Ares 已复原，与 TS同样仅使用前两个动画，详见说明书
+OnFire=FIRE3,FIRE2,FIRE1
+建筑被 [Warhead] -> Sparky=yes 的弹头损伤到 [AudioVisual] -> ConditionRed= 的比率时的动画，原版不存在定义因而导致拥有 [Warhead] -> Sparky=yes 的弹头攻击建筑到红血会崩溃
+这并不是单纯是红血版本的 [General] -> DamageFireTypes= 列表，这是 Sparky 逻辑的一部分，对应的这里的动画如果播放时间足够长那么并不会因为建筑维修回血而消失
+对于 [General] -> OnFire= 列表中三个动画的选用遵循下述规则：
+为每个建筑从 [0,长+宽+5] 的域内抽取一个数值
+      [1,5] 选择第一个动画
+      [6,8] 选择第二个动画
+{9}         选择第三个动画
+{0}∪(9,+∞) 无动画
+这代表 [BuildingImage] -> Foundation= 过小的建筑可能只能在第一个动画和无动画间随机
+SmallFire=FIRE3
+TS 纵火武器逻辑，Ares 已复原，详见说明书
+LargeFire=FIRE2
+TS 纵火武器逻辑，Ares 已复原，详见说明书
+OreTwinkle=TWNK1
+矿石的闪光动画，在 RA2 中这个标签在 [AudioVisual] 下，YR中才移到 [General] 中
+BarrelExplode=EXPLOLRG
+矿物爆炸动画
+BarrelDebris=GASTANK,PIECE
+爆炸产生的 Voxel 碎片
+BarrelParticle=SmallGreySSys
+爆炸产生的粒子系统
+NukeTakeOff=NUKETO
+核弹起飞气浪动画，原版下该动画硬编码 ZAdjust=-100，Ares 已允许正常设定
+Wake=WAKE1
+单位在水中移动留下的波纹的图象，碎片飞行过程中也会绘制在其正下方的水面上，以及被乌贼拍打、沉江喂鱼时也使用，Phobos 已允许微观指定和分离定义
+DropPod=DROPPOD,DROPPOD2
+空降仓落地图象，TS 残留无效，Ares 已复原相关逻辑，详见说明书
+DeadBodies=DEATH_A,DEATH_B,DEATH_C,DEATH_D,DEATH_E,DEATH_F
+步兵常规死亡地面留下的尸骨动画，可在单位上微观定义覆盖全局
+MetallicDebris=DBRIS1LG,DBRIS2LG,DBRIS3LG,DBRIS4LG,DBRIS5LG,DBRIS6LG,DBRIS7LG,DBRIS8LG,DBRIS9LG,DBRS10LG,DBRIS1SM,DBRIS2SM,DBRIS3SM,DBRIS4SM,DBRIS5SM,DBRIS6SM,DBRIS7SM,DBRIS8SM,DBRIS9SM,DBRS10SM
+爆炸产生的金属碎片名
+BridgeExplosions=TWLT026,TWLT036,TWLT050,TWLT070
+桥梁破坏动画
+IonBlast=RING1
+离子炮气波动画，YR 下也作为基因突变超武动画
+IonBeam=IONBEAM
+离子炮光束，与上句均用于 TS 离子炮超武，RA2 下仅能使用地编 94 号 Action 触发
+WeatherConClouds=WCCLOUD1,WCCLOUD2,WCCLOUD3
+闪电风暴云的动画
+WeatherConBolts=WCLBOLT1,WCLBOLT2,WCLBOLT3
+闪电风暴闪电的动画，WCLBOLT2 在原版中未被注册，Ares 下所有 rules 中调用的动画都需要严格注册，可换用顶端链接 YRStandard-INI
+WeatherConBoltExplosion=EXPLOLB
+闪电风暴弹头的动画，同时非 Ares 下也会覆盖 [General] -> LightningWarhead= 所指定弹头的 [Warhead] -> AnimList= 设置
+```
+
+#### 心灵支配控制
+```ini
+DominatorWarhead=DominatorWH
+心灵支配杀伤弹头
+DominatorDamage=1000
+心灵控制器杀伤效果伤害值
+DominatorCaptureRange=1
+心灵控制器对单位控制的范围
+DominatorFirstAnim=PDFXCLD
+心灵控制器动画_1，开始时播放，尤里大头
+DominatorSecondAnim=PDFXLOC
+心灵控制器动画_2，生效时播放，心灵波
+DominatorFireAtPercentage=20
+到总桢数的 20% 的时候才实际生效
+```
+
+#### 其他动画相关
+```ini
+ChronoPlacement=CHRONOAR
+选择好转换前的地点用这个动画
+ChronoBeam=CHRONOBM
+转换时的动画，开发阶段废弃语句，无效
+ChronoBlast=CHRONOFD
+单位被转换前的地点的动画
+ChronoBlastDest=CHRONOTG
+转换后的地点用这个动画
+WarpIn=WARPIN
+超时空运动方式【单位】移动【来】的动画，原版无效，用下一句，Phobos 已支持，并允许在单位上微观定义 WarpIn
+WarpOut=WARPOUT
+超时空运动方式【单位】移动【走】的动画，包括超时空【超武】移动【来和走】单位的动画，Phobos 允许在单位上使用 WarpOut 与 WarpAway 分别对应【单位】移动【走】和【超武】移动【走】的情况
+WarpAway=WARPAWAY
+超时空【弹头】抹除物体的动画，Ares 允许弹头微观定义，全局 WarpAway 并不影响超时空【超武】移动单位的动画，需要全局 WarpOut 或 Phobos 在单位上微观定义的 WarpAway 标签
+IronCurtainInvokeAnim=IRONBLST
+铁幕效果动画
+ForceShieldInvokeAnim=FORCSHLD
+力场护盾效果动画
+WeaponNullifyAnim=IRONFX
+铁幕加身后被攻击动画，仅非AOE连带杀伤的直接目标触发
+ChronoSparkle1=CHRONOSK
+超时空移动解除僵直前的动画
+拥有 [Warhead] -> Temporal=yes 的弹头冻结目标时会有 24 帧的延迟
+拥有 [Warhead] -> Temporal=yes 的弹头冻结建筑时如果建筑可驻军则在每个 [BuildingType] -> MuzzleFlashX= 处播放
+Phobos 已允许【全局】定义 [Warhead] -> Temporal=yes 的弹头的这两条性质
+
+以下 7*2 行对应 [Warhead] -> InfDeath= 的 3-10
+InfantryExplode=S_BANG34
+单位爆炸动画，也是Cyborg残血和步兵在空中被击杀的动画
+FlamingInfantry=FLAMEGUY
+步兵着火死动画
+———InfantryElectrocuted=ELECTRO
+——— Ares 新增 [Warhead] -> InfDeath=5 死亡动画定义，原版强制使用 [Animations] 的第二个
+InfantryHeadPop=YURIDIE
+尤里造成的大脑爆炸死动画
+InfantryNuked=NUKEDIE
+步兵被辐射死动画
+InfantryVirus=VIRUSD
+步兵被病毒侵袭导致爆炸的动画
+InfantryMutate=GENDEATH
+基因变异为狂兽人的动画
+InfantryBrute=BRUTDIE
+被狂兽人砸死动画
+
+Behind=BEHIND
+物体被挡在其他物体后的标注动画，可在ESC开关
+MoveFlash=RING
+光标选择物体命令他移动的光标动画，在移动的目标单元格播放
+Parachute=PARACH
+降落伞图象动画，空降伞兵会用，Ares 允许单位微观定义
+BombParachute=PARABOMB
+空中落下的炸弹与Parachuted抛射体的降落伞动画
+DropZoneAnim=BEACON
+触发结果中DropZone的光标动画，TS 残留，地编可触发但没什么用
+EMPulseSparkles=EMP_FX01
+被EMP单位身上附加的动画，TS 残留，Ares 已复原并允许微观定义，详见说明书
+```
+
+#### Jumpjet 飞行规则
+JUMPJET的运动模式参数的全局默认值
+```ini
+[JumpjetControls]
+TurnRate=4
+转弯速度4
+Speed=14
+直行速度14
+Climb=5
+爬升速度5
+CruiseHeight=500
+巡航高度500，[TechnoType] -> JumpjetHeight= 的默认值
+Acceleration=2
+加速度2
+WobblesPerSecond=.15
+每秒浮动0.15次
+WobbleDeviation=40
+浮动幅度40
+CloakDetectionRadius =
+仅限 FS，Jumpjet单位反隐形的半径
+```
+
+### 超武控制
+```ini
+[SpecialWeapons]
+NukeWarhead=Nuke
+RA1 残留语句，无效，RA2 核弹定义见名为 [NukePayload] 的武器
+NukeDown=NukeDown
+RA1 残留语句，无效
+NukeProjectile=NukeUp
+RA1 残留语句，无效
+EMPulseWarhead=EMPuls
+TS 残留语句，无效
+EMPulseProjectile=PulsPr
+TS 残留语句，无效
+MutateWarhead=Mutate
+基因突变的弹头
+MutateExplosionWarhead=MutateExplosion
+基因突变（爆炸）的弹头
+基因突变的两个标签如何使用见 [General] -> MutateExplosion= 一句的规则
+```
+
+### 音频／视频 规则
+```ini
+[AudioVisual]
+DetailMinFrameRateNormal=15
+如果帧速率(FPS)低于 15 那么各种高级视觉效果将被关闭，例如中速以下会禁用动画透明和粒子显示等
+DetailMinFrameRateMovie=20
+同上，但用于小电影
+DetailBufferZoneWidth=5
+要恢复效果，FPS 必须等于或超过 MinFrameRate 加上此值
+
+LineTrailColorOverride=0,0,0
+小导弹的线性尾烟颜色
+WW注：仅用于地图，Rules 中不应修改
+ChronoBeamColor=128,200,255
+超时空兵光线的颜色，也就是 [Warhead] -> Temporal=yes 时 [Weapon] -> IsRadBeam=yes（辐射波）开启所绘制的颜色
+MagnaBeamColor=255,200,255
+磁电坦克光波的颜色，然而疑似 WW 在 YR 开发阶段留下的，实际上为硬编码颜色，Ares 已允许微观定义包括但不限于 [Weapon] -> IsMagBeam=yes 所绘制波的颜色
+OreTwinkleChance=30
+矿石闪光的几率，进入地图时，每个有矿石的单元格有 1/30 的几率获得 [General] -> OreTwinkle= 指定的闪烁动画
+CreateInfantrySound =
+制造新步兵时的声音
+CreateUnitSound =
+制造新单位时的声音，可于各类生产建筑上微观定义，哪怕实际生产的不是载具类，也都用这个标签，属于 WW 设计上的一种简化
+CreateAircraftSound =
+制造新战机（停于机场）时的声音
+IFVTransformSound =
+IFV转换炮塔时播放的声音，原版中实际使用单位上的 [TechnoType] -> EnterTransportSound= 控制
+SpySatActivationSound=SpyUplinkOn
+连接上间谍卫星时的声音
+SpySatDeactivationSound=SpyUplinkOff
+间谍卫星被切断连接时的声音
+PsychicSensorDetectSound=PsychicSensorDetects
+心灵探测器被攻击的声音，全局被注释的 PsychicSensorDetectAttach 是 Westwood 的错误拼写且即便恢复使用也并不读取
+UpgradeVeteranSound=UpgradeVeteran
+升级为老兵时的声音
+UpgradeEliteSound=UpgradeElite
+升级为精英时的声音
+BaseUnderAttackSound=BaseUnderAttackSiren
+建筑被攻击的声音
+BuildingGarrisonedSound=BuildingGarrisoned
+建筑中驻军时的声音
+BuildingRepairedSound=BuildingRepaired
+建筑被修复时的声音
+CheerSound=Cheer
+欢呼的声音
+PlaceBeaconSound=BeaconPlaced
+心灵信标建立时的声音
+BuildingAbandonedSound =
+指定 [BuildingType] -> CanBeOccupied=yes建筑被放弃时的声音
+DirectRockingCoefficient=1.5
+被 [Warhead] -> DirectRocker=yes 的弹头的武器冲击后单位掀起的速度是普通 Rocker 的 1.5 倍
+FallBackCoefficient=0.1
+被 [Warhead] -> DirectRocker=yes 的弹头的武器冲击后单位回落的速度是普通 Rocker 的 0.1 倍
+
+LaserTargetColor=4
+召唤米格飞机的时给建筑染上的颜色，以下四句对应 [ColorAdd] 中的序号
+IronCurtainColor=0
+铁幕的颜色
+BerserkColor=4
+混乱烟雾的颜色（就是 YR 中被神经突击车作用的颜色）
+ForceShieldColor=6
+力场护盾的颜色
+
+StartPlanningModeSound=PlanningModeStart
+进入路径点模式时的声音
+EndPlanningModeSound=PlanningModeEnd
+退出路径点模式时的声音
+AddPlanningModeCommandSound=PlanningModeAdd
+增加路径点时的声音
+ExecutePlanSound =
+执行路径点的声音
+```
+
+#### 箱子里面获取东西播放的声音
+```ini
+CratePromoteSound=CratePromoted
+经验提升
+CrateMoneySound=CrateMoney
+金钱
+CrateRevealSound=CrateReveal
+全部地图
+CrateFireSound=CrateFirePower
+加强火力
+CrateArmourSound=CrateArmor
+加强护甲
+CrateSpeedSound=CrateSpeed
+加强速度
+CrateUnitSound=CrateFreeUnit
+免费单位
+```
+```ini
+SinkingSound=GenLargeWaterDie
+载具落水声音
+ImpactWaterSound=ExplosionWaterLarge
+坠毁进入水里喂鱼的声音
+ImpactLandSound =
+坠毁以头抢地吃土的声音
+BombTickingSound=CrazyIvanBombTick
+定时炸弹倒计时声音
+ChronoInSound=ChronoMinerTeleport
+超时空转换开始声音
+ChronoOutSound=ChronoMinerTeleport
+超时空转换结束声音
+BombAttachSound=CrazyIvanAttack
+定时炸弹附着上去的声音
+YuriMindControlSound=YuriMindControl
+心灵控制的声音
+```
+```ini
+;UnloadingHarvester=HORV
+TS 里的全局定义矿车倒矿图像，RA2 已废弃，使用单位上的 [TechnoType] -> UnloadingClass= 控制，见同目录下的《2.单位属性rules词典2024.ini》，如果你获得本文档的同时没有配套这一文件，说明你的文档并非从原正式发布渠道获取，而是已经被第三方未经许可拆分修改过的
+PoseDir=2
+战机降落朝向，对降落在机场外和机场算法不同但共用此句，相当混乱，不建议动
+原版下降落到机场总是使用机场建筑的朝向（手动建造与地图预置不同），Phobos 改为了默认本句
+DeployDir=2
+单位展开朝向（同上），Ares 已允许单位微观设置
+WaypointAnimationSpeed=10
+路径点动画速度
+DigSound=NukeSiren
+钻地声，同时也是核弹超武发射音效，因为 WW 觉得 RA2 里用不着钻地运动的逻辑了干脆就直接沿用同一个标签，就是这么蛋疼。Ares 已允许在超武上通过 [SuperWeaponType] -> SW.ActivationSound= 定义，详见说明书
+Dig =
+钻地运动方式钻地动画，Ares 已允许微观定义
+DropPodPuff =
+空降仓撞击地面时的动画
+AtmosphereEntry =
+空降仓进入大气图像
+GateUp=Dummy
+闸门打开的声音，Ares 允许微观定义
+GateDown=Dummy
+闸门关闭的声音，Ares 允许微观定义
+ShroudGrow=no
+黑幕是否扩展（探开的地方逐渐变为未探开状态）RA1 残留逻辑，如果全图的黑幕都探开了就会停止，需要 [MultiplayerDialogSettings] -> Shourd=no 并且和间谍卫星逻辑配合不好，对于空中的 [TechnoType] -> BalloonHover=yes 的 Jumpjet 类单位会视为不存在直接扩张覆盖
+ScrollMultiplier=.07
+默认鼠标速度的倍率
+ShakeScreen=400
+大于此生命的单位被摧毁时屏幕震荡，无效，并且原版下设置为 0 会导致崩溃（Ares 已修复）
+CloakSound=NavalUnitEmerge
+隐形和解除隐形的音效，也用于水下单位，Ares 允许分离控制解除隐形的音效，并且进入隐形与解除隐形的音效均可在单位上微观定义，详见说明书
+SellSound=SellBuilding
+出售物体的声音，维修厂出售载具也用
+GameClosed=GameClosed
+游戏关闭的声音
+IncomingMessage=MessageText
+传入消息的声音
+MessageCharTyped=TextBleep
+开始输入的声音
+SystemError=GenericBeep
+系统错误声的声音
+OptionsChanged=OptionsChanged
+选项改变的声音
+GameForming=NewGame
+游戏创建的声音
+PlayerLeft=PlayerLeft
+玩家离开的声音
+PlayerJoined=PlayerJoined
+玩家加入的声音
+Construction=Dummy
+造东西的声音
+CreditTicks=CreditUp,CreditDown
+资金变动的声音
+BuildingDieSound=BuildingGenericDie
+建筑倒塌的声音
+BuildingSlam=PlaceBuilding
+建筑展开时的声音
+RadarOn=RadarOn
+打开雷达的声音
+RadarOff=RadarOff
+雷达关闭的声音
+MovieOn=MovieOn
+电影打开的声音
+MovieOff=MovieOff
+电影关闭的声音
+ScoldSound=MenuScold
+通用辱骂音效
+TeslaCharge=TeslaCoilPowerUp
+磁暴线圈放电前的声音
+TeslaZap =
+磁暴线圈放电时的声音
+BuildingDamageSound=BuildingDamaged
+建筑黄血的声音
+ChuteSound=ParachuteDrop
+降落伞收起的声音
+GenericClick=MenuClick
+通用点击音效
+GenericBeep=GenericBeep
+通用蜂鸣音效
+BuildingDrop=PlaceBuilding
+载具/兵展开为建筑时的声音
+StopSound=CommandBar
+让单位停下来的声音
+GuardSound=CommandBar
+让单位防御的声音
+ScatterSound=CommandBar
+让单位散开的声音
+DeploySound =
+让单位部署的声音（无效，并不从INI中读取）
+StormSound=WeatherIntro
+闪电风暴来临时的声音
+LightningSounds=WeatherStrike
+闪电风暴放电的声音
+ShellButtonSlideSound =
+菜单按钮滑动到位的音效
+```
+
+#### 资料片新音效
+```ini
+VoiceIFVRepair=IFVMove
+IFV维修命令响应音效
+SlavesFreeSound=SlaveWorkerLiberated
+奴隶被解放的声音
+SlaveMinerDeploySound=SlaveMinerDeploy
+奴隶矿车展开的声音
+SlaveMinerUndeploySound=SlaveMinerDeploy
+奴隶矿车收起的声音
+BunkerWallsUpSound=TankBunkerUp
+坦克进入坦克碉堡类建筑的声音
+BunkerWallsDownSound=TankBunkerDown
+坦克离开坦克碉堡类建筑的声音
+RepairBridgeSound=BridgeRepaired
+桥被修复的声音
+PsychicDominatorActivateSound=PsychicDominatorActivate
+心灵控制器的声音
+GeneticMutatorActivateSound=GeneticMutatorActivate
+基因突变器的声音
+PsychicRevealActivateSound=PsychicRevealActivate
+心灵信标的声音
+MasterMindOverloadDeathSound=MasterMindOverloadVoice
+精神控制车过载挂掉的声音
+MindClearedSound=MindCleared
+精神控制车控制的单位脱离控制的声音
+EnterGrinderSound=GrinderGrinding
+部队回收厂回收的声音
+LeaveGrinderSound =
+脱离部队回收厂回收的声音
+EnterBioReactorSound=BioReactorEnter
+复制中心回收的声音
+LeaveBioReactorSound=BioReactorEnter
+脱离复制中心回收的声音
+ActivateSound =
+单位激活的声音
+DeactivateSound =
+单位被EMP或没电而禁用的声音
+AirstrikeAbortSound=MIGMissionAborted
+空袭单位进入地图的声音，Ares 已允许单位微观设定
+AirstrikeAttackVoice=MIGMove
+空袭目标被提前摧毁（丢失目标）的声音，Ares 已允许单位微观设定
+SpyPlaneCamera=SpyPlaneSnapshot
+间谍飞机拍照的声音
+SpyPlaneCameraFrames=16
+间谍飞机拍照声音16帧响1下，如果太大会一直等待影响间谍飞机完成指令而表现为绕圈
+DiskLaserChargeUp=FloatingDiscChargeUp
+飞碟激光开始充能的声音，武器上的Report实际上在激光形成环状后播放
+LetsDoTheTimeWarpOutAgain=ChronoScreenSound
+时间旅行启程的声音（YR 第一关就有）
+LetsDoTheTimeWarpInAgain=ChronoScreenSoundAgain
+时间旅行抵达的声音（YR 第一关就有）
+```
+```ini
+Smoke=xxxx
+遗留自 TS 开发版本的废弃语句，用于控制建筑物爆炸后从地面升起的烟雾，但实际上硬编码使用 SMOKE_M
+;FirestormActiveAnim=GAFSDF_A
+;FirestormIdleAnim=FSIDLE
+;FirestormGroundAnim=FSGRND
+;FirestormAirAnim=FSAIR
+;TS 残留火风暴设定语句，Ares 已复原相关逻辑，详见说明书
+
+EliteFlashTimer=150
+精英闪烁的时间，定义老兵级别闪烁时间需要 Ares
+AllyReveal=yes
+盟友是否共享雷达图
+ConditionRed=25%
+剩余血低于 25% 时血条红色
+处于区域警戒模式下的工程师会自动修复附近达到红血的建筑
+ConditionYellow=50%
+剩余血低于 50% 时血条黄色
+DropZoneRadius=4
+揭露特定区域 DROPZONE 周边的范围
+EnemyHealth=yes
+是否显示选定敌人血条
+Gravity=6
+重力为 6，影响炮弹抛射体的弹道，越大抛射体飞得越快，0 为直线，Phobos 已允许微观定义
+IdleActionFrequency=.15
+步兵闲置动作（例如擦枪，坐下）每 0.15 分钟一次
+MessageDelay=.6
+左上角信息显示 0.6 分钟后自然消失
+MovieTime=.06
+录像时长，仅用于 WW 的 Debug 版本
+NamedCivilians=no
+是否显示平民建筑真实名称
+SavourDelay=.1
+关卡结束/胜利到显示胜利的时间 0.1 分钟
+ShroudRate=4
+黑幕扩展的时间，单位分钟
+FogRate=.01
+战争迷雾扩展的时间，单位分钟
+IceGrowthRate=1.5
+冰生长速度，TS 残留冰生长逻辑，RA2 已废弃
+IceSolidifyFrameTime=1000
+破裂的冰层这么多帧后重新固结，TS 残留冰生长逻辑，RA2 已废弃
+IceCrackSounds =
+把冰层压碎的声音，TS 残留冰生长逻辑，RA2 已废弃
+
+下面两句用于地图 73 号 Action 的默认值
+AmbientChangeRate=.2
+地图光照改变的变化率，会被地图 72 号 Action 覆盖
+AmbientChangeStep=.2
+地图光照改变时的步幅，会被地图 71 号 Action 覆盖
+
+SpeakDelay=2
+每 2 分钟后才能再重复一次任务信息和电力不足等提示
+但是不控制探测到潜地和隐形单位的警报，每次检测到都会提示一次，想要控制需要 Ares 提供的新语句，详见说明书
+TimerWarning=2
+任务时间低于 2 分钟则倒计时变红字
+ExtraUnitLight=.2
+载具额外发光 0.2
+ExtraInfantryLight=.2
+步兵额外发光 0.2
+ExtraAircraftLight=.2
+战机额外发光 0.2
+以上三句内置 INI 时存在类似光棱塔掉 % 的不重新声明即丢失问题
+LocalRadarColor=0,255,0
+你自己家在雷达中的颜色（无效）
+```
+
+### 箱子规则
+```ini
+[CrateRules]
+CrateMaximum=255
+箱子数值不超过 255
+CrateMinimum=1
+箱子数值不低于 1
+CrateRadius=3.0
+箱子里的属性提升可以给 3 单位长内的人
+CrateRegen=3
+每3分钟随机产生箱子
+SilverCrate=HealBase
+单人游戏中可以产生的箱子类型
+SoloCrateMoney=5000
+单人游戏中钱箱的钱数，会有一个 900 的上下浮动值，Ares 允许手动设定
+UnitCrateType=none
+单位的箱子可以产生任何 [TechnoType] -> CreatGoddie=yes的单位，否则固定此处对象，CreatGoddie 单位的权重在 Phobos 下可以设置，详见说明书
+WoodCrate=Money
+木箱中的东西，用于决定单人游戏中通过[TechnoType] -> CarriesCrate=等产生的未指定类型的箱子中将使用哪种类型，遭遇战则使用[Powerups]中的权重系统决定
+WaterCrate=Money
+水箱中的东西
+HealCrateSound=HealCrate
+获取生命(+血)箱子的声音
+WoodCrateImg=CRATE
+木箱的形态
+CrateImg=CRATE
+箱子的形态
+WaterCrateImg=WCRATE
+水中箱子的形态
+FreeMCV=yes
+能随机产生基地车
+```
+### 箱子权重和特殊设定
+控制箱子内容的相关参数分别控制权重，动画，是否在水上出现，相关数值（比如钱数、属性提升倍数）
+```{caution}
+权重总和不得小于 100！！！否则EIP：0048337E
+```
+```{warning}
+是否在水上出现仅影响开箱时特定箱子被开出来的可行与否，不影响覆盖物刷在水上  
+如果希望禁止箱子生成在水上请使用 Phobos 新增逻辑【全局】设置，详见说明书
+```
+```ini
+[Powerups]
+Armor=10,ARMOR,yes,1.5;血量提升，实际作为受伤除数
+Firepower=10,FIREPOWR,yes,2.0;攻击力加强
+HealBase=10,HEALALL,yes;维修所有单位
+Money=20,MONEY,yes,2000;金钱
+Reveal=10,REVEAL,yes;开全图
+Speed=10,SPEED,yes,1.2;加速
+Veteran=20,VETERAN,yes,1;升级
+Unit=20,<none>,no;送单位（动画无效）
+场上存在超过50个单位后会变成钱箱，最大载具数量在 Phobos 可自行设定，详见说明书
+所属方没有建造厂时根据资金是否>=1500给予[General] -> BaseUnit=列表中的对象，资金值在 Phobos 可自行设定，详见说明书
+所属方没有矿车但有矿场的情况下在前一条之后判定是否给予矿车
+Invulnerability=0,ARMOR,yes,1.0;无敌，仅动画有效
+IonStorm=0,<none>,yes;离子风暴（貌似无效）
+Gas=0,<none>,yes,100;泰矿气体（产生大量gas粒子）
+Tiberium=0,<none>,no;产生一片矿
+Pod=0,<none>,no;空降仓
+Cloak=0,CLOAK,yes;隐身
+Darkness=0,SHROUDX,yes;覆盖地图
+Explosion=0,<none>,yes,500;爆炸
+ICBM=0,CHEMISLE,yes;获得核弹（核弹超武）实际上是 Action=Nuke 的任何超武，并且如果是核弹的话这个核弹将会在没井的情况下硬编码生成自地表以上 20000 高度处生成 [NukePayload] 而有井的情况下瞬间充能完毕
+Napalm=0,<none>,no,600;爆炸（步兵燃烧死亡）
+Squad=0,<none>,no;写着随机步兵（实际上还是送钱）
+```
+```{seealso}
+也可参见 RA2DIY 论坛帖子<https://bbs.ra2diy.com/forum.php?mod=viewthread&tid=24904>
+```
+```{important}
+如果一个 Powerups 设定为不应当出现在水上的箱子被强制生成，那么打开时会强制转为钱箱
+```
+```{note}
+并不是所有箱子类型都能使用，有些只能播放动画，有些连动画都不播放。但打开箱子的动画仍然是标准的 Animation 对象，你仍可借动画跳板实现你想要的其他效果
+```
+### 战斗和伤害规则
+```ini
+[CombatDamage]
+RailgunDamageRadius=2147483647
+轨道炮武器穿透伤害距离，从目标点向开火方向延伸，例如 0 就只杀伤目标，32 就稳定地额外影响距离开火来源更近的一个单元格
+AmmoCrateDamage=200
+一个 [OverlayType] -> Explodes=yes 的覆盖物的死亡杀伤
+IonCannonDamage=751
+离子炮伤害，由 TS 离子炮超武或地图触发 94 号 Action 使用
+HarvesterImmune=no
+矿车是否对普通伤害免疫，要写进地图 [SpecialFlags] 里，Rules 里没用
+DestroyableBridges=yes
+桥是否能被破坏，要写进地图 [SpecialFlags] 里，Rules 里没用
+TiberiumExplosive=no
+泰伯利亚之日语句，无效，Ares 已复原相关逻辑，见说明书
+Scorches=BURN01,BURN02,BURN03,BURN04
+污染类型(小弹坑)
+Scorches1=BURN05,BURN06,BURN07
+污染类型
+Scorches2=BURN08,BURN09,BURN10
+污染类型
+Scorches3=BURN11,BURN12,BURN13
+污染类型
+Scorches4=BURN14,BURN15,BURN16
+污染类型
+此处原版值存在问题，导致有时候不能稳定生成，见 YRStandard-INI项目中的修复
+TiberiumExplosionDamage=0
+泰伯利亚之日语句，无效，Ares 已复原相关逻辑，见说明书
+TiberiumStrength=-1
+泰伯利亚之日语句，从 TS到 YR一直无效
+Craters=CR1,CR2,CR3,CR4,CR5,CR6
+弹坑类型，TS 开发过程中残留下来正式版本中无用的标签，只要有 Crater=yes 的 SmudgeType 就会生成而并不依赖全局列表
+AtomDamage=1000
+核弹伤害1000，RA1 残留无效
+BallisticScatter=1.0
+误差攻击最大距离目标 1 长度，用于 [Projectile] -> Inaccurate=yes的Arcing抛射体与 [Projectile] -> FlakScatter=yes的Inviso抛射体，Ares 允许微观定义前者的BallisticScatter并设定最大值与最小值，Phobos 允许使用相同语句微观定义后者
+BridgeStrength=1500
+桥的生命为 1500，实际算法为 Damage/Strength= 被摧毁到的概率
+C4Delay=.03
+放置 C4 后多少时间 C4 爆炸（分钟）
+C4Warhead=Super
+C4的弹头
+泰矿连锁反应弹头
+矿井（地形对象）被摧毁的弹头
+战机坠毁使用该弹头 [Warhead] -> AnimList=的最后一个
+铁幕用于生物体上的弹头，对应的可以使用 [Warhead] -> AffectsAllies=no 等来使特定方步兵加铁幕，但需要使用 Ares 铁幕弹头赋予的铁幕而不能使用原版铁幕超武，此效果 Phobos 下有专门逻辑支持
+火车摧毁路障的弹头
+大型爆炸箱子的弹头
+建筑微损伤弹头
+脑车受伤弹头
+……（各种特殊伤害基本都是这个）
+名为 [INVISO] 的动画的默认弹头，Ares 下允许在动画上自由定义
+```
+#### 原版导弹子机杀伤
+```ini
+V3Warhead=V3WH
+V3火箭的弹头
+DMislWarhead=DMISLWH
+无畏火箭的弹头
+V3EliteWarhead=V3EWH
+精英V3火箭的弹头
+DMislEliteWarhead=DMISLEWH
+精英无畏火箭的弹头
+CMislWarhead=CMISLWH
+雷鸣导弹的弹头
+CMislEliteWarhead=CMISLEWH
+精英雷鸣导弹的弹头
+CrushWarhead=Crush
+载具碾压所使用的虚拟弹头
+```
+
+#### 疯狂伊文相关
+```ini
+IvanWarhead=IvanWH
+疯狂伊文炸弹弹头
+IvanDamage=450
+疯狂伊文炸弹伤害
+IvanTimedDelay=450
+疯狂伊文炸弹延迟时间
+CanDetonateTimeBomb=no
+是否能手动引爆炸弹
+CanDetonateDeathBomb=no
+是否能手动引爆装于自己部队上的炸弹，没做完的功能，Ares 已完成，详见说明书
+IvanIconFlickerRate=8
+炸弹跳动率，每这么多帧后图标在 6 个 2 帧动画组中交替播放，Ares 说明书有更详细的解释，详见说明书
+```
+```{seealso}
+Ares 对IvanBomb整套逻辑进行了拓展，详见说明书
+```
+
+#### 巷战参数
+```ini
+OccupyDamageMultiplier=1.2
+占领建筑物后向外攻击，威力加强为原来的 1.2 倍
+OccupyROFMultiplier=1.2
+占领建筑物后向外攻击，射速加强为原来的 1.2 倍
+OccupyWeaponRange=5
+占领建筑物后向外攻击，驻军武器统一射程为 5，在大型建筑中因占地面积大会获得更大的实际射程
+```
+
+#### 坦克碉堡
+```ini
+BunkerDamageMultiplier=1.3
+坦克碉堡中坦克伤害加强为原来的 1.3 倍
+BunkerROFMultiplier=1.3
+坦克碉堡中坦克射速加强为原来的 1.3 倍
+BunkerWeaponRangeBonus=2
+坦克碉堡中坦克射程比原来的多2
+```
+
+#### 脑车过载
+```ini
+OverloadCount=3,6,10,50
+超过这个数量时过载的"等级"
+OverloadDamage=0,50,100,500
+对应"等级"受到的伤害
+OverloadFrames=30,60,60,60
+每多少时间受到上述的伤害
+ControlledAnimationType=MINDANIM
+被控制的物体的附加图象
+PermaControlledAnimationType=MINDANIMR
+被永久控制的物体的附加图象
+MindControlAttackLineFrames=20
+精神控制线的闪动多少时间一次
+```
+
+#### 镭射幽浮吸取
+```ini
+DrainMoneyFrameDelay=30
+镭射幽浮吸取钱多少时间一次
+DrainMoneyAmount=30
+一次吸取多少钱
+DrainAnimationType=DISKRAY
+吸取的图象，应当为一个 [Animation] -> LoopEnd=-1 的动画
+```
+
+#### 磁电
+```ini
+FallingDamageMultiplier=1.0
+掉落伤害乘以 1 倍
+CurrentStrengthDamage=yes
+扣血按照当前血百分比 NO 代表按照最大值的百分比
+```
+
+#### 战斗要塞
+```ini
+OpenToppedRangeBonus=2
+部队在可对外射击的运输工具中射程增加 2
+OpenToppedDamageMultiplier=1.2
+部队在可对外射击的运输工具中伤害加强到原来的 1.2 倍
+OpenToppedWarpDistance=7
+超时空军团这么远后放弃目标（否则保持锁定和计时状态，这是对超时空弹头冻结效果的专门处理）
+```
+```ini
+DeathWeapon=DefaultDeathWeapon
+单位 [TechnoType] -> Explodes=yes 而主武器与死亡武器都没设定时的默认死亡武器，杀伤使用单位生命值/2
+IronCurtainDuration=750
+铁幕持续时间 750 帧，有个 YR 新增的硬编码效果是 AI 和主动寻敌会忽略带铁幕的对象
+FirestormWarhead=FirestormWH
+火风暴语句，无效，Ares 已复原相关逻辑，见说明书
+IonCannonWarhead=IonCannonWH
+离子炮弹头，强制一发击毁桥梁
+VeinholeWarhead=VeinholeWH
+泰伯利亚废矿伤害弹头，TS 残留无效，Phobos 已复原相关逻辑，见说明书
+PsychicRevealRadius=15
+心灵探测探开范围的半径
+```
+
+#### 粒子系统默认
+```ini
+DefaultFirestormExplosionSystem=FirestormSparkSys
+火风暴语句，无效
+DefaultLargeGreySmokeSystem=BigGreySmokeSys
+大灰色烟雾粒子系统
+DefaultSmallGreySmokeSystem=SmallGreySSys
+小灰色烟雾粒子系统
+DefaultSparkSystem=SparkSys
+火花粒子系统
+DefaultLargeRedSmokeSystem=BigGreySmokeSys
+大烟雾粒子系统
+DefaultSmallRedSmokeSystem=SmallGreySSys
+小烟雾粒子系统
+DefaultDebrisSmokeSystem=SmallGreySSys
+碎片粒子系统
+DefaultFireStreamSystem=FireStreamSys
+喷火粒子系统
+DefaultTestParticleSystem=TestSmokeSys
+测试粒子系统的粒子系统，残留物
+DefaultRepairParticleSystem=WeldingSys
+一单位修复另一单位的粒子系统
+```
+```ini
+Crush=1.8
+距离这么近时 AI 会尝试用碾压代替开火。写高点的话 AI 的载具更容易直接碾压玩家步兵。
+ExpSpread=.7
+对于爆炸的物体每 100 点伤害扩散这么多单元格
+FireSupress=1
+设置了 [Weapon] -> Supress=yes 的武器在目标这个距离内有我方单位时避免开火
+FlameDamage=Fire
+泰伯利亚之日残留，无效，Ares 已复原相关逻辑，见说明书
+FlameDamage2=Fire2
+泰伯利亚之日残留，无效，Ares 已复原相关逻辑，见说明书
+同时也指定了非 [INVISO] 动画挂伤害默认使用的弹头
+HomingScatter=2.0
+不准确的导向投射体最大误差范围（格），TS/RA2 并不使用该值
+MaxDamage=10000
+单次常规类型的最大伤害不超过 10000
+MinDamage=1
+最小伤害不低于 1（无效）
+PlayerAutoCrush=no
+人类玩家操纵的单位是否自动尝试碾压敌人单位，AI 使用 [IQ] -> AutoCrush= 的设置
+PlayerReturnFire=no
+人类玩家操纵的单位是否侵略性还击敌人单位，略难用，哪怕在交战中如果被A到都会掉头去打伤害来源方，可单位上微观定义
+PlayerScatter=no
+人类玩家操纵的单位是否能够自动规避来袭炮火，AI 使用 [IQ] -> Scatter= 的设置
+SplashList=H2O_EXP3,H2O_EXP2,H2O_EXP1
+水中爆炸的水花
+根据武器 [Weapon] -> Damage= 的值 /35 后向下取整选择其一
+对于 [Animation]/[VoxelAnimType] -> IsMeteor=yes 的碎片始终使用该列表最后一个
+常规碎片始终使用该列表第一个
+Phobos 允许弹头和碎片微观定义，详见说明书，在 Build33-Build43 版本间部分规则被 Phobos 干废了，Build44 才修复回来
+TreeTargeting=no
+鼠标在树上时是否自动出现准星
+yes 的结果就是对战时对方的坦克在你的幻影坦克上没有自动变换为攻击准星而暴露幻影
+武器上的 [Weapon] -> TerrainFire= 逻辑独立工作
+TurboBoost=1.5
+对于 [Weapon] -> TurboBoost=yes 的导弹类武器其对空中物体为原速度的 1.5 倍
+（然而实际上这个语句已经没用了）
+Incoming=10
+当投射物射向目标的速度小于或等于此值，目标处单位将试图逃离目标区
+CollapseChance=100
+被击中时可坍塌悬崖的坍塌百分比，具体参考「滑坡的悬崖」变成大斜坡
+Ares 修改了相关的逻辑，Ares 下任意类型的伤害均可造成悬崖坍塌
+BerzerkAllowed=no
+泰伯利亚之日残留，[InfantryType] -> Cyborg=yes 的步兵黄血时是否会发狂，RA2 无效
+```
+
+### 全局辐射定义
+```ini
+[Radiation]
+RadDurationMultiple=1
+辐射系数（RedLevel*RadDurationMultiple为辐射持续的桢数）
+RadApplicationDelay=16
+每 16 桢造成一次伤害
+RadLevelMax=500
+每个单元格 RedLevel 最大不超过 500，原版最小不得低于 100
+RadLevelDelay=90
+辐射级别的衰减程度
+RadLightDelay=90
+辐射的光效果衰减程度
+RadLevelFactor=0.2
+每个 RedLevel 造成 0.2 伤害
+RadLightFactor=0.1
+辐射光强系数
+RadTintFactor=1.0
+辐射色调系数
+
+RadColor=0,255,0
+辐射的颜色、[Weapon] -> IsRadBeam=yes（辐射波）也使用此句，Ares 下可武器微观定义、[Weapon] -> IsRadEruption=yes也使用此句
+RadSiteWarhead=RadSite
+辐射的弹头
+```
+
+### 高程对开火的影响
+```ini
+[ElevationModel]
+ElevationIncrement=4
+高差的单位高度
+ElevationIncrementBonus=2
+增幅系数的倍率（在 [ElevationModel] -> ElevationBonusCap= 之后计算）
+ElevationBonusCap=2
+增幅系数的上限
+```
+仅在 `[ProjectileType] -> SubjectToElevation=yes` 时工作
+```ini
+增幅系数=(开火者高度-目标高度)/ElevationIncrement
+```
+`ElevationBonusCap` 规定了最大增幅系数，超过会写回 `ElevationBonusCap`
+```ini
+射程增量=增幅系数*ElevationIncrementBonus
+```
+
+### [WallModel]
+```ini
+AlliedWallTransparency=no
+友军是否可以穿墙射击（RA3 高科墙）
+部分地图可能会导致莫名奇怪的 IE，慎用
+WallPenetratorThreshold=50%
+在打墙内人的时候有 50% 是打墙了（其他的消失了）
+```
+```{seealso}
+Ares 为建筑添加了这样的效果，详见 Ares 说明书实体建筑相关内容
+```
+
+### 原版注册表
+```ini
+;***国家列表***
+[Countries]
+0=Americans
+写上国家名就算完事
+;*******阵营列表*******
+[Sides]
+GDI=British,French,Germans,Americans,Alliance
+GDI 阵营国家注册
+Nod=Russians,Africans,Confederation,Arabs
+NOD 阵营国家注册
+ThirdSide=YuriCountry
+YURI 阵营国家注册
+;*******步兵列表*******
+[InfantryTypes]
+1=E1
+步兵注册
+;*******载具列表*******
+[VehicleTypes]
+1=AMCV
+载具注册
+;*******战机列表*******
+[AircraftTypes]
+1=APACHE
+战机注册
+;*******建筑列表*******
+[BuildingTypes]
+1=GAPOWR
+建筑注册
+;***污染物列表***
+[SmudgeTypes]
+1=CR1
+战争残留污染（小弹坑、灼痕）注册
+;***地形对象列表***
+[TerrainTypes]
+0=BOXES01
+游戏内地形装饰类实体，注意地形对象（TerrainType）与地形（Tileset）完全是两回事，前者是路灯矿柱树木，后者是地板水面悬崖
+;***覆盖物列表***
+[OverlayTypes]
+1=GASAND
+覆盖物注册，序号关联程序内部表决定的不同对象的行为，除非你真的知道自己在做什么，不要乱动覆盖物注册表的顺序
+;***动画列表***
+[Animations]
+1=TWLT100
+动画注册
+;***Voxel动画列表***
+[VoxelAnims]
+1=PIECE
+VXL动画（VXL碎片）注册
+;***粒子列表***
+[Particles]
+1=GasCloud1
+粒子注册
+;***粒子系统列表**
+[ParticleSystems]
+1=GasCloudSys
+粒子系统注册
+;***超武列表**
+[SuperWeaponTypes]
+1=NukeSpecial
+超武注册
+;***弹头列表**
+[Warheads]
+1=EMPuls
+弹头注册
+```
+
+
+
+
+### 单人游戏设置
+```ini
+[MultiplayerDialogSettings]
+MinMoney=5000
+可选钱数最小值
+Money=10000
+可选钱数默认值
+MaxMoney=10000
+可选钱数最大值
+MoneyIncrement=100
+钱最小单位100
+MinUnitCount=0
+最小可带兵数
+UnitCount=10
+默认可带兵数
+MaxUnitCount=10
+最大可带兵数
+TechLevel=10
+最大科技等级（当物体所需等级比它大时则无法建造）
+GameSpeed=1
+起始游戏速度（现在使用 RA2MD.ini）中的设置
+AIDifficulty=0
+AI 难度设置 0 简单 2 困难，TS 残留废弃，RA2 下已经允许每个独立设置
+AIPlayers=0
+AI 玩家数量设置，TS 残留废弃，RA2 下已经允许手动设置
+BridgeDestruction=yes
+桥可破坏否
+ShadowGrow=no
+是否黑幕区扩张
+Shroud=yes
+是否需要自己探测地图（NO 的话地图全开）
+然而这个功能并没有它字面上说的那么好使
+事实上你可以理解为它把自然黑幕的黑幕区与明区倒置了过来
+也正因此，虽然确实初始地图全开，还能直接观测黑幕蔓延
+但也有一个很大的问题
+例如原版敌方单位在黑幕区内开火那么它周围一片区域会变为明区（武器 [Weapon] -> RevealOnFire=no）
+当这个选项为 no 时会反过来——敌方单位在明区开火会在其周围绘制黑幕……倒是也曾拿来做过移动版黑幕产生器
+Bases=yes
+开始时是否有基地车
+TiberiumGrows=yes
+矿石是否自动增长
+Crates=yes
+箱子是否出现，若为 no 则载具箱子也无法出现
+CaptureTheFlag=no
+是否为抢旗模式
+HarvesterTruce=no
+矿车是否无敌，要写进地图 [SpecialFlags] 里，Rules 里没用
+MultiEngineer=no
+RA1一样多工程师，废弃，Ares 已复原，详见说明书
+AlliesAllowed=no
+是否可以结盟
+ShortGame=yes
+是否为快速游戏
+FogOfWar=no
+是否拥有战争迷雾，TS 残留无效
+MCVRedeploys=yes
+是否基地可以收起，（现在使用 RA2MD.ini）中的设置
+AllyChangeAllowed=yes
+是否可以中途解盟
+```
+
+### [Maximums]
+```ini
+Players=8
+最大8人游戏
+```
+ipx 层面将此最大限制为 8，无法更多
+
+### AI控制
+```ini
+[AI]
+建筑注册是新阵营必须的
+BuildConst=GACNST,NACNST,YACNST
+基地注册（可以不是 [BuildingType] -> Factory=BuildingType 的建筑）
+在 Ares 里，决定 [Country] -> StartInMultiplayer.WithConst=yes 时开局给的【建筑】
+BuildPower=NAPOWR,GAPOWR,YAPOWR
+电场注册，开局必然会先造一个，因此如果有给某个阵营使用昂贵电力加载物作为电力供给的情况，请把兵营或其他开局就能造的建筑注册到电力列表里。
+
+BuildRefinery=NAREFN,GAREFN,YAREFN
+矿场注册
+BuildBarracks=NAHAND,GAPILE,YABRCK
+兵营注册
+BuildTech=NATECH,GATECH,YATECH
+高科注册
+前三项分别对应 RequiresStolenAlliedTech/RequiresStolenSovietTech/RequiresStolenThirdTech 三条语句的关联建筑
+同时这个列表中的建筑不受所挂超武 [SuperWeaponType] -> DisableableFromShell=yes 的影响，如果关闭超武而禁用了其所挂载的超武也不会禁止建筑建造，仅表现为建造后不提供对应超武（YR力场护盾）
+BuildWeapons=GAWEAP,NAWEAP,YAWEAP
+战车工厂注册
+;BuildDefense=
+;基础防御建筑
+;BuildPDefense=
+;高级防御建筑
+;BuildAA=
+;防空建筑
+;BuildHelipad=
+;机场建筑
+;以上 4 句在 YR 之前使用，不区分阵营
+;YR 的机场和雷达完全使用 BuildRadar= 的列表
+;YR 的防御注册使用 [AlliedBaseDefenses|SovietBaseDefenses|ThirdBaseDefenses] 三个列表对应三个阵营，Ares 允许阵营设置中定义，详见说明书
+BuildRadar=GAAIRC,NARADR,AMRADR,NAPSIS
+雷达注册
+不弹框的最低要求是有基地、电厂，并且兵营和工厂没同时被禁（当然，这并不意味着AI真的能造，只要让AI以为自己能造就可以）。
+ConcreteWalls=GAWALL,NAWALL,GAFWLL
+墙注册
+NSGates=GADUMY
+南北向门注册，可以造在墙上与墙自动连接，Ares 进行了完善
+EWGates=GADUMY
+东西向门注册，可以造在墙上与墙自动连接，Ares 进行了完善
+BuildNavalYard=NAYARD,GAYARD,YAYARD
+船厂注册
+BuildDummy=GAPILL,NALASR,YAGGUN
+基本防御注册
+NeutralTechBuildings=CAAIRP,CATHOSP,CAOILD,CAOUTP,CAMACH,CAPOWR
+中立科技建筑注册，Ares 允许被占领的中立科技建筑在所属方被消灭时回归中立所属而非一同被毁，详见说明书
+AlliedBaseDefenses=GAPILL,ATESLA,NASAM
+盟军防御建筑注册
+SovietBaseDefenses=NALASR,NABNKR,TESLA,NAFLAK
+苏军防御建筑注册
+ThirdBaseDefenses=YAGGUN,YAPSYT,NATBNK
+尤里防御建筑注册
+应当注意的是防御建筑使用单独的计算方式而不遵循AIBuildThis设置
+AIForcePredictionFudge=5,25,80
+(困难、中等、简单)的 AI 根据敌方拥有单位的造价总和，按照此处数值的百分比选择防空，反装甲或反步兵的防御建筑。（数值越小越敏感），AI会根据 [BuildingType] -> AntiAirValue=/AntiArmorValue=/AntiInfantryValue= 所设定的各建筑对各类目标评级来选择建造哪个防御建筑
+GDIWallDefense=6
+墙最长可以延伸到 6 长（一个墙就一个点，另一个墙可以在 6 格外，中间自动连接，没连的 AI 还会逐个格子补完）
+GDIWallDefenseCoefficient=3
+AI 将 [General] -> WallTower= 的建筑放在墙上的数量所比己方陆地单位 [TechnoType] -> ThreatPosed= 之和的倍率
+NodBaseDefenseCoefficient=1.2
+泰伯利亚之日语句，无效，使用 [General] -> SovietBaseDefenseCounts= 控制
+GDIBaseDefenseCoefficient=1.5
+泰伯利亚之日语句，无效，使用 [General] -> AlliedBaseDefenseCounts= 控制
+MaximumBaseDefensevalue=60
+最大防御值60，无效，使用 [AI] -> AIForcePredictionFudge= 控制
+ComputerBaseDefenseResponse=3
+电脑防御反应速度
+
+AttackInterval=0.5
+平均电脑进攻间隔(分钟)，废弃，使用 [General] -> TeamDelays= 控制
+AttackDelay=0.5
+第一波进攻在开局 0.5 分钟时
+PatrolScan=.016
+AI 执行巡逻任务时搜索敌人的时间。(单位:分钟)
+CreditReserve=100
+电脑现金低于 100 时将不会维修和建造
+PathDelay=.01
+道路被堵塞时电脑每 0.01 分钟试一次
+BlockagePathDelay=60
+如果 60 桢后还没通则绕道
+AutocreateTime=1
+平均 1 分钟制造一队具有 [TeamType] -> Autocreate=yes 标签的小队
+InfantryReserve=50000
+钱多于 50000 始终制造步兵
+InfantryBaseMult=1
+假如制造建筑总数量乘以 1 比步兵量多则一直制造步兵
+PowerSurplus=50
+电力富余低于 50 则制造电场，适当调大防止 AI 炸一个电厂就断电
+事实上这个语句在原版是废弃的，Phobos 下可以通过在本小节（例如该语句下一行）添加一句 [AI] -> EnablePowerSurplus=true来开启
+BaseSizeAdd=3
+AI的基地规模不会大于人类玩家基地规模的这个倍数
+RefineryRatio=.16
+矿场制造几率
+RefineryLimit=4
+最多制造多少个矿场
+BarracksRatio=.16
+兵营制造几率
+BarracksLimit=2
+最多制造多少个兵营
+WarRatio=.1
+战车工厂制造几率
+WarLimit=2
+最多制造多少个战车工厂
+DefenseRatio=.4
+防御制造几率
+DefenseLimit=40
+最多制造多少个防御
+AARatio=.14
+对空防御制造几率，当 AI 拥有雷达且发现敌方拥有空军单位时使用，RA1 残留无效
+AALimit=10
+最多制造多少个对空防御，当 AI 拥有雷达且发现敌方拥有空军单位时使用，RA1 残留无效
+TeslaRatio=.16
+高级防御制造几率
+TeslaLimit=10
+最多制造多少个高级防御
+HelipadRatio=.1
+机场制造几率
+HelipadLimit=2
+最多制造多少个机场
+AirstripRatio=.12
+飞机跑道制造几率，RA1 残留无效
+AirstripLimit=0
+最多制造多少个飞机跑道，达到限制后仅在建筑被毁后会补充而不再会继续扩建，RA1 残留无效
+CompEasyBonus=no
+当超过一个人类玩家在此游戏中则电脑变为简单模式
+Paranoid=yes
+电脑是否在形势不好时结盟AI私下进行PY交易共同对抗玩家（RA21.004 以后已无效）
+PowerEmergency=75%
+假如电力供应低于需求的75%则出售建筑以保持电力
+AIBaseSpacing=1
+电脑建筑间隔大于 1，写 0 会无法正常摆建筑，稍微增大可以缓解 AI 堵车
+```
+
+### [IQ]
+```ini
+MaxIQLevels=5
+最大可达到的 IQ 等级 5
+SuperWeapons=4
+使用超武所需 IQ 等级 4，不支持人类玩家所属方使用该项
+Production=5
+自动生产所需 IQ 等级 5，YR 下不支持人类玩家所属方使用该项
+同时也会让 AI 倾向于主动立即部署自己所拥有的 MCV 从而影响一些预设的小队脚本行为
+GuardArea=2
+单位自动进入区域警戒模式所需 IQ 等级 2
+RepairSell=1
+维修或变卖（变卖还需看 [IQ] -> SellBack= 进行双层判定）受损建筑所需 IQ 等级 1
+属于最经典的小玩意，玩家自动维修的一种经典做法就是把这条改为 0
+AutoCrush=2
+自动碾压所需 IQ 等级 2
+人类玩家使用 [CombatDamage] -> PlayerAutoCrush= 设置
+Scatter=2
+自动规避有弹道的抛射体所需 IQ 等级 2
+人类玩家使用 [CombatDamage] -> PlayerScatter= 设置
+ContentScan=3
+使 [Easy]/[Normal]/[Difficult] -> ContentScan=yes 生效所需 IQ 等级 3
+Aircraft=3
+自动补充战机所需 IQ 等级 3
+Harvester=2
+自动补充矿车所需 IQ 等级 2
+SellBack=2
+出售建筑所需 IQ 等级 2，疑似人类玩家仅在战役中可用该项
+额外判定资金是否低于 [AI] -> CreditReserve= 设定的值
+```
+
+玩家所属方的 AI（这里的 AI 不是 AIPlayer 而是自动执行行为的系统）正常状态下相当于 `IQ=0`，所以将 `RepairSell` 改为 0 即可达到玩家建筑自动维修的效果  
+但并不是所有行为都可以简单的凭借将所需 IQ 改 0 来让玩家得以使用，例如玩家所属方的系统替代手动操作执行自动生产这一行为除了 Dune2000 外都并不支持  
+自动使用超武也同样并不支持人类玩家所属方，不过在 Ares 中有一个 `-AI-Control` 功能可以让 AI 接过玩家指挥权的功能，详见 Ares 说明书
+
+### 国家参数
+```ini
+;IncomeMult=3矿车采钱数倍率，如果设为3则每车矿的钱数是正常的三倍
+[国家名称]
+需要注册进 [Countries]
+UIName=Name:British
+语言编辑CSF文件的对应项，从而可以在游戏中显示汉字名称
+Name=GreatBritain
+说明文字，随便填，没什么意义
+Suffix=Allied
+后缀=联盟，即所属阵营
+Prefix=G
+前缀=G，所属阵营简称
+Color =
+国家显示的默认颜色见 [Colors]
+Multiplay=yes
+是否能在多人游戏（包括遭遇战）中选择这个国家
+MultiplayPassive=no
+是否为消极所属方，例如原版中立治安，开局不会给予 [General] -> BaseUnit= 的单位和部队，同时玩家的单位不会主动攻击他们，Ares 已允许设定是否主动攻击，详见说明书
+Side=GDI
+所属阵营为GDI
+;WallOwner =
+是否该国家拥有防护墙
+;SmartAI =
+是否该国家拥有最聪明的 AI，默认no
+;VeteranInfantry=GHOST,SNIPE
+初始的步兵(步兵列表内的)为一级，可多设
+;VeteranAircraft=ORCA
+初始的战机(战机列表内的)为一级，可多设
+;VeteranUnits=FV,CARRIER,SHAD
+初始的车船(载具列表内的)为一级，可多设
+;BuildTimeInfantryMult=.5
+建造步兵时间为原来时间的 0.5 倍
+;BuildTimeAircraftMult=.5
+建造空军
+;BuildTimeUnitsMult=.5
+建造陆军
+;BuildTimeBuildingsMult=.5
+建造建筑
+;BuildTimeDefensesMult=0.5
+建造防御建筑（[BuildingType] -> BuildCat=Combat）时间为原来时间的 0.5 倍
+;SpeedInfantryMult=1.5
+步兵速度为原来的 1.5 倍
+;SpeedAircraftMult=1.5
+空军
+;SpeedUnitsMult=1.5
+陆军
+;SpeedBuildingsMult=1.5
+建筑
+;CostInfantryMult=.5
+步兵花费为原 0.5 倍
+;CostAircraftMult=.5
+空军花费为原 0.5 倍
+;CostUnitsMult=.5
+陆军花费为原 0.5 倍
+;CostBuildingsMult=.5
+建筑花费为原 0.5 倍
+;CostDefensesMult=.5
+防御建筑（[BuildingType] -> BuildCat=Combat）花费为原 0.5 倍
+;ArmorInfantryMult=2.0
+步兵血为原2倍
+;ArmorAircraftMult=2.0
+飞机血为原2倍
+;ArmorUnitsMult=2.0
+载具血为原2倍
+;ArmorBuildingsMult=2.0
+建筑血为原2倍
+;ArmorDefensesMult=2.0
+防御建筑（[BuildingType] -> BuildCat=Combat）血为原 2 倍
+```
+
+特定的国家可以对该国家的单位和建筑物的价值和能力做特殊的调整
+
+这种调整将影响该国家的所有单位和建筑物的价值和能力
+
+这只适用于遭遇战和单人任务模式，在常态游戏中所有价值是"1.0"
+
+```ini
+;Airspeed =
+所有空中单位的速度，填的数值越大速度越快，默认=1.0
+;Armor =
+所有单位和建筑的生命力，填的数值越大生命力越高，默认=1.0
+;Cost =
+花费的金钱，填的数值越大则越费钱，默认=1.0
+;Firepower =
+所有武器火力的调整，填的数值越大则损害越高，默认=1.0
+;Groundspeed =
+所有地面部队的速度，填的数越大速度越快，默认=1.0
+;ROF =
+对所有武器火力速度的调整，填的数越大则射速越慢，默认def=1.0
+;BuildTime =
+所有建筑物的建造时间调整，填的数越大则建造的时间越长，默认=1.0
+```
+
+
+### 配色方案
+配色方案，格式是 HSV，H 同样以 255 为最大，名字随意命名，可以用于几乎所有涉及 Color 的条目
+- 第一个颜色会作为原版 `AltPalette` 和使用所属色不正确时所强制的颜色，也就是一般丢失所属色时所说的橙色读取自此
+  - Phobos 中允许使用 `[AudioVisual] -> AnimRemapDefaultColorScheme=` 手动定义
+- 第三个颜色同时也作为超武就绪后右下角文本与所属色来回切换时的另一个颜色
+  - Phobos 中允许使用 `[AudioVisual] -> TimerBlinkColorScheme=` 手动定义
+- CNCMapRenderer 和 gamemd.exe 会强制用 `LightGrey` 作为中立色，所以即便第三个颜色更改了也必须保留名为 `LightGrey` 的配色方案，否则00655FE5
+- 对于 `[Colors]` 后一半的颜色作为所属色时如果与自定义色盘搭配使用会导致不跟随地图光照改变亮度，需要自行调整（Phobos 已修复）
+```ini
+[Colors]
+LightGold=25,255,255
+Gold=43,239,255
+LightGrey=0,0,240
+Grey=0,0,131
+Red=20,255,184
+DarkRed=0,230,255
+Orange=25,230,255
+Magenta=221,102,255
+Purple=201,201,189
+LightBlue=119,143,255
+DarkBlue=153,214,212
+NeonBlue=185,156,238
+DarkSky=131,200,230
+Green=104,241,195
+DarkGreen=81,200,210
+NeonGreen=0,0,0
+Yellow=38,159,255
+Purple2=211,201,189
+Purple3=191,201,189
+```
+
+### 染色部分
+
+例如空袭时目标建筑被染成红色，格式 RGB565  
+Phobos 允许通过 `[AudioVisual] -> ColorAddUse8BitRGB=true` 转为使用 RGB888 格式（毕竟对人类用户而言肯定还是 RGB888 更友好）  
+为便于新手使用，YRStandard-INI 项目已附赠转好的 RGB888 格式 `[ColorAdd]` 表，2025教程光速部署包中可直接开启
+```ini
+[ColorAdd]
+;RGB 值名称	位值		颜色#
+None=0,0,0
+;00000,000000,00000		0
+StrongRed=31,0,0
+;11111,000000,00000		1
+StrongGreen=0,63,0
+;00000,111111,00000		2
+StrongBlue=0,0,31
+;00000,000000,11111		3
+HighRed=24,0,0
+;11000,000000,00000		4
+HighGreen=0,56,0
+;00000,111000,00000		5
+HighBlue=0,0,24
+;00000,000000,11000		6
+BrightWhite=31,63,31
+;11111,111111,11111		7
+LowWhite=7,7,7
+;00111,000111,00111		8
+HighWhite=24,56,24
+;11000,111000,11000		9
+MidWhite=14,28,14
+;01110,011100,01110		10
+Purple=15,0,15
+;01111,000000,01111		11
+HighYellow=24,56,0
+;11000,111000,00000		12
+TopYellow=16,32,0
+;10000,100000,00000		13
+```
+### 难度控制
+仅以下五项有效
+```ini
+[Easy]
+ROF=.8
+攻击间隔帧数为原 0.8 倍
+RepairDelay=.02
+受损物体维修滞后 0.02 分钟
+BuildDelay=.03
+建造生产滞后 0.03 分钟
+DestroyWalls=no
+自动破坏周围敌军的墙
+ContentScan=yes
+AI使用运输单位时，会将运输工具及乘客的 [TechnoType] -> ThreatPosed= 都考虑进去。写 no 或 [IQ] 此项不满足的话则只考虑运输工具自身的。
+```
+```{note}
+简单难度：玩家使用 `[Easy]`，电脑使用 `[Difficult]`  
+中等难度：玩家和电脑都用 `[Normal]`  
+困难难度：玩家使用 `[Difficult]`，电脑使用 `[Easy]`
+```
+
+最后修订日期20241106by九千天华
