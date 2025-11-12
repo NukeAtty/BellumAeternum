@@ -283,6 +283,101 @@ footer {
 	margin: auto 0.5em;
 }
 
+.language-selector {
+	position: relative;
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #00FF00;
+}
+
+.selected-language {
+	background: #00CC0050;
+	padding: 0.25em;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	user-select: none;
+	transition: background 0.2s;
+	width: 10vw;
+}
+
+.selected-language:hover {
+	background: #00FF0050;
+	color: #FFFFFF;
+	text-shadow: 0 0 2px #00FF00;
+}
+
+.language-dropdown {
+	display: none;
+	position: absolute;
+	left: 0;
+	background: url('src/pattern.svg');
+	border-radius: 0;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	overflow: hidden;
+	z-index: 100;
+}
+
+.language-dropdown a:visited {
+	color: #00FF00;
+}
+
+.language-dropdown a:hover {
+	color: #FFFFFF;
+	text-shadow: 0 0 2px #00FF00;
+}
+
+.language-dropdown.active {
+	display: block;
+	animation: fadeIn 0.15s ease;
+}
+
+.language-option {
+	display: flex;
+	align-items: center;
+	transition: background 0.2s;
+	text-decoration: none;
+	color: #00FF00;
+	width: 10vw;
+	padding: 0.25em;
+}
+
+.language-option:hover {
+	background: #009900;
+	color: #FFFFFF;
+}
+
+.language-option.current-lang {
+  /*opacity: 0.6;*/
+  cursor: default;
+}
+
+.language-option.current-lang::after {
+  content: "\25C2";
+  /*color: #a0ffa0;*/
+  color:#00CC00;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  animation: blinkCursor 0.2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* blinking with color + glow pulse */
+@keyframes blinkCursor {
+  0%, 100% {
+    color: #FFFFFF;
+    text-shadow: 0 0 4px #00FF00;
+  }
+  50% {
+    color: #009900; /* dimmer green for "off" state */
+    text-shadow: none;
+  }
+}
+
 .lang-selector {
 	display: flex;
 	flex-flow: column;
@@ -292,15 +387,6 @@ footer {
 	border: 2px inset #333;
 	padding: 0.5em;
 	width: 50%;
-}
-
-.lang-selector p {
-	padding: 0.25em auto;
-	margin: 0.25em auto;
-	color: #fff;
-	font-size: 12px;
-	text-shadow: 0 0 2px #0c0;
-	border-bottom: 1px solid #fff;
 }
 
 .lang-list {

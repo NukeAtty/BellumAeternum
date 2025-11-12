@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../org-style.css">
 <link rel="preload" href="../src/font/furore.otf" as="font" />
 <link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
 <link rel="preload" href="src/background-pattern.webp" as="image">
@@ -116,24 +116,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h2>Быстрая навигация</h2>
 			<div class="quick-nav-section">
 				<div class="main-nav">
-					<h3>Story</h3>
-					<a href="lore.html">Lore</a>
+					<h3>История</h3>
+					<a href="lore.html">Лор</a>
 				</div>
 				<!--<div class="main-nav">
 					<h3>游戏玩法</h3>
 					<a href="game-modes.html">作战模式</a>
 				</div>-->
 				<div class="main-nav">
-					<h3>Game Mechanism</h3>
-					<a href="secret-units.html">Stolen Tech</a>
+					<h3>Игровой механизм</h3>
+					<a href="secret-units.html">Украденные технологии</a>
 					<!--<a href="crates.html">Crates</a>-->
 					<!--<a href="secret-lab.html">Secret Tech</a>-->
 				</div>
 				<div class="main-nav">
-					<h3>Information</h3>
-					<a href="allied.html">Allied Units</a>
-					<a href="soviet.html">Soviet Units</a>
-					<a href="skirmish-maps.html">Skirmish Maps</a>
+					<h3>Информация</h3>
+					<a href="allied.html">Силы союзников</a>
+					<a href="soviet.html">Силы СССР</a>
+					<a href="skirmish-maps.html">Карты схваток</a>
 					<!--<a href="campaign.html">Campaign Mission</a>-->
 				</div>
 			</div>
@@ -192,10 +192,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</div>
 		<div class="stay-connected reveal hidden">
-			<h2>Stay Connected</h2>
+			<h2>Оставайтесь на связи</h2>
 			<div class="main-social-media">
-				<a href="https://www.youtube.com/@BellunAeternum" title="View Bellum Æternum on YouTube" target="_blank"><img src="src/icons/youtube.svg" alt="Bellum Æternum Youtube Channel" width="48px" height="48px"></a>
-				<a href="https://x.com/NukeBlastfield" title="Follow Bellum Æternum on X" target="_blank"><img src="src/icons/x.svg" alt="Bellum Æternum X Channel" width="48px" height="48px"></a>
+				<a href="https://www.youtube.com/@BellunAeternum" title="View Bellum Æternum on YouTube" target="_blank"><img src="../src/icons/youtube.svg" alt="Bellum Æternum Youtube Channel" width="48px" height="48px"></a>
+				<a href="https://x.com/NukeBlastfield" title="Follow Bellum Æternum on X" target="_blank"><img src="../src/icons/x.svg" alt="Bellum Æternum X Channel" width="48px" height="48px"></a>
 			</div>
 		</div>
 	</main>
@@ -208,12 +208,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<p>Bellum<br>Æternum</p>
 				</div>
 				<div class="lang-selector">
-					<p>LANGUAGE</p>
-					<div class="lang-list">
-						<a href="https://ra2be.com">EN</a>
-						<a href="https://ra2be.com/zh/">中</a>
-						<a href="https://ra2be.com/ru/">RU</a>
-					</div>
+					<div hx-get="../lang-selector.html" hx-trigger="load"></div>
+					<script src="../src/js/language-selector.js" defer></script>
 				</div>
 			</div>
 			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>

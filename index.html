@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="org-style.css">
 <link rel="preload" href="../src/font/furore.otf" as="font" />
 <link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
 <link rel="preload" href="src/background-pattern.webp" as="image">
@@ -209,11 +209,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<p>Bellum<br>Æternum</p>
 				</div>
 				<div class="lang-selector">
-					<p>LANGUAGE</p>
-					<div class="lang-list">
-						<a href="https://ra2be.com">EN</a>
-						<a href="https://ra2be.com/zh/">中</a>
-					</div>
+					<div hx-get="lang-selector.html" hx-trigger="load"></div>
+					<script src="../src/js/language-selector.js" defer></script>
 				</div>
 			</div>
 			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
