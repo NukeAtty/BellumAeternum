@@ -498,6 +498,30 @@ footer {
 	filter: drop-shadow(0 0 4px #ff99cc) brightness(110%);
 }
 
+/*-----------------------------------------*/
+/*---------- Universal Component ----------*/
+/*-----------------------------------------*/
+
+.small-note {
+	margin-top: 0.5em;
+}
+
+.small-note p {
+	font-size: 14px;
+	color: #ccc;
+	text-align: center;
+}
+
+.small-note a {
+	font-size: 14px;
+	display: inline;
+	color: #CC0000;
+}
+
+.small-note a:hover {
+	color: #FF0000;
+}
+
 /*------------------------------*/
 /*----------Lobby Page----------*/
 /*------------------------------*/
@@ -1547,6 +1571,13 @@ footer {
 /*----------Download Page----------*/
 /*---------------------------------*/
 
+.download {
+	width: 60vw;
+	margin: auto;
+	display: flex;
+	flex-flow: column;
+}
+
 .download h1{
 	font-size: 36px;
 	text-align: center;
@@ -1590,13 +1621,31 @@ footer {
 	height: auto;
 }
 
+.download-information {
+	margin: 10vh auto;
+	background-color: #00000050;
+	backdrop-filter: blur(4px);
+	border-left: 4px solid #FF0000;
+	padding: 1em;
+}
+
+.download-information h2 {
+	font-size: 24px;
+	font-variant: normal;
+	color: #CC0000;
+}
+
+.download-information li {
+	margin: 1em auto;
+}
+
 .download-section {
+	position: relative;
 	margin: 5vh auto;
 	padding: 1vw;
-	/*background:linear-gradient(0deg, #c8c8c8 0%, #ffffff 15%, #c8c8c8 65%, #adadad 90%, #939393 100%);*/
-	background:linear-gradient(0deg, #999 0%, #a1a1a1 15%, #999 65%, #c8c8c8 90%, #999 100%);
-	border-radius: 12px;
-	border: 4px outset #ccc;
+	background-color: #00000050;
+	backdrop-filter: blur(4px);
+	border: 1px solid #333333;
 	box-shadow: 0 0 24px #000;
 	width: 60%;
 }
@@ -1606,13 +1655,9 @@ footer {
 	font-family: Arial, Helvetica, sans-serif;
 	font-variant: normal;
 	text-align: center;
-	color: #000;
+	color: #FFFFFF;
 	margin: 0.5em auto;
 	text-shadow: none;
-}
-
-.download-section a {
-	margin: auto;
 }
 
 .download-section-img {
@@ -1624,6 +1669,25 @@ footer {
 	margin: 1em auto;
 	max-width: 100%;
 	height: auto;
+}
+
+.download-buttons {
+	margin: 20px auto;
+	width: 60vw;
+}
+
+.download-buttons a {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	margin: auto;
+	text-align: center;
+	max-width: 30%;
+}
+
+.download-button img {
+	margin: auto;
+	width: auto;
 }
 
 .download-list {
@@ -3698,17 +3762,17 @@ footer {
 	}
 
 	.language-option.current-lang {
-	/*opacity: 0.6;*/
-	cursor: default;
+		/*opacity: 0.6;*/
+		cursor: default;
 	}
 
 	.language-option.current-lang::after {
-	content: "\25C2";
-	/*color: #a0ffa0;*/
-	color:#00CC00;
-	font-size: 0.9em;
-	margin-left: 0.25em;
-	animation: blinkCursor 0.2s ease-in-out infinite;
+		content: "\25C2";
+		/*color: #a0ffa0;*/
+		color:#00CC00;
+		font-size: 0.9em;
+		margin-left: 0.25em;
+		animation: blinkCursor 0.2s ease-in-out infinite;
 	}
 
 	.footer-right {
