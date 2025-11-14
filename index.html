@@ -11,6 +11,7 @@
 <link rel="icon" type="image/svg" href="/src/favicon.svg">
 <link rel="alternate" hreflang="x-default" href="https://ra2be.com" />
 <link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/" />
+<link rel="prefetch" href="header.html" />
 <meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
 <meta http-equiv="ontent-security-policy" content="script-src https:; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"/>
 <!-- Google tag (gtag.js) -->
@@ -65,13 +66,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		}
 		}
 	</script>
-  <script src="src/js/htmx.min.js"></script>
+  <script src="src/js/htmx.min.js" defer></script>
 </head>
 
 <body>
 	<!-- End Google Tag Manager (noscript) -->
 	<!-- HTMX header -->
-	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+	<header class="nav-wrapper" hx-get="header.html" hx-trigger="intersect once" hx-swap="outerHTML toggle:0.3s" hx-boost="false"></header>
 	<!--Main-->
 	<main>
 		<div class="overview">

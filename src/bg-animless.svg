@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 857" width="2000" height="857" style="background-color: transparent;">
+  <!-- 同心圆刻度 -->
+  <circle cx="1000" cy="428.5" r="400" stroke="#FF0000" stroke-width="2" fill="none" stroke-dasharray="10,10"/>
+  <circle cx="1000" cy="428.5" r="300" stroke="#FF0000" stroke-width="2" fill="none" stroke-dasharray="10,10"/>
+  <circle cx="1000" cy="428.5" r="200" stroke="#FF0000" stroke-width="2" fill="none" stroke-dasharray="10,10"/>
+  <circle cx="1000" cy="428.5" r="100" stroke="#FF0000" stroke-width="2" fill="none" stroke-dasharray="10,10"/>
+  
+  <!-- 中心十字线 -->
+  <line x1="1000" y1="28.5" x2="1000" y2="828.5" stroke="#FF0000" stroke-width="2"/>
+  <line x1="600" y1="428.5" x2="1400" y2="428.5" stroke="#FF0000" stroke-width="2"/>
+  
+  <!-- 角度刻度线 (每30度一条) -->
+  <g stroke="#FF0000" stroke-width="2">
+    <!-- 0度 -->
+    <line x1="1000" y1="28.5" x2="1000" y2="8.5"/>
+    <!-- 30度 -->
+    <line x1="1346" y1="133" x2="1366" y1="143"/>
+    <!-- 60度 -->
+    <line x1="1346" y1="724" x2="1366" y1="714"/>
+    <!-- 90度 -->
+    <line x1="1000" y1="828.5" x2="1000" y2="848.5"/>
+    <!-- 120度 -->
+    <line x1="654" y1="724" x2="634" y1="714"/>
+    <!-- 150度 -->
+    <line x1="654" y1="133" x2="634" y1="143"/>
+    <!-- 180度 -->
+    <line x1="600" y1="428.5" x2="580" y2="428.5"/>
+    <!-- 210度 -->
+    <line x1="654" y1="133" x2="634" y1="143" transform="rotate(180,1000,428.5)"/>
+    <!-- 240度 -->
+    <line x1="654" y1="724" x2="634" y1="714" transform="rotate(180,1000,428.5)"/>
+    <!-- 270度 -->
+    <line x1="1000" y1="28.5" x2="1000" y2="8.5" transform="rotate(180,1000,428.5)"/>
+    <!-- 300度 -->
+    <line x1="1346" y1="724" x2="1366" y1="714" transform="rotate(180,1000,428.5)"/>
+    <!-- 330度 -->
+    <line x1="1346" y1="133" x2="1366" y1="143" transform="rotate(180,1000,428.5)"/>
+  </g>
+  
+  <!-- 刻度标签 -->
+  <text x="1000" y="8.5" fill="#FF0000" font-size="24" text-anchor="middle">0°</text>
+  <text x="1460" y="143" fill="#FF0000" font-size="24" text-anchor="middle">30°</text>
+  <text x="1460" y="714" fill="#FF0000" font-size="24" text-anchor="middle">60°</text>
+  <text x="1000" y="868.5" fill="#FF0000" font-size="24" text-anchor="middle">90°</text>
+  <text x="540" y="714" fill="#FF0000" font-size="24" text-anchor="middle">120°</text>
+  <text x="540" y="143" fill="#FF0000" font-size="24" text-anchor="middle">150°</text>
+  <text x="560" y="428.5" fill="#FF0000" font-size="24" text-anchor="middle">180°</text>
+  
+  <!-- 距离刻度标签 -->
+  <text x="1400" y="428.5" fill="#FF0000" font-size="24" text-anchor="start">400</text>
+  <text x="1300" y="428.5" fill="#FF0000" font-size="24" text-anchor="start">300</text>
+  <text x="1200" y="428.5" fill="#FF0000" font-size="24" text-anchor="start">200</text>
+  <text x="1100" y="428.5" fill="#FF0000" font-size="24" text-anchor="start">100</text>
+  
+  <!-- 中心点 -->
+  <circle cx="1000" cy="428.5" r="10" fill="#FF0000"/>
+</svg>
