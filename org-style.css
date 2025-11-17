@@ -1621,6 +1621,7 @@ footer {
 	background-color: #00000050;
 	width: 100%;
 	padding: 1em;
+	backdrop-filter: blur(20px);
 }
 
 .download-guide p {
