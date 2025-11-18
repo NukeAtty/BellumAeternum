@@ -116,14 +116,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 		<div class="main-factions reveal hidden">
 			<div class="main-factions-selection">
-				<button class="main-faction-button active" onclick="changeFaction(event,'main-allied-description')"><img src="src/icons/allied.svg" width="120px" height="120px"></button>
-				<button class="main-faction-button" onclick="changeFaction(event,'main-soviet-description')"><img src="src/icons/soviet.svg" width="120px" height="120px"></button>
+				<button class="main-faction-button faction-active" onclick="changeFaction(event,'main-allied-description')"><img src="src/icons/allied-banner.avif" width="180px" height="180px"></button>
+				<button class="main-faction-button" onclick="changeFaction(event,'main-soviet-description')"><img src="src/icons/soviet-banner.avif" width="180px" height="180px"></button>
 			</div>
 			<div class="main-factions-description">
 				<div class="main-faction-description" id="main-allied-description">
+					<h3>ALLIED</h3>
 					<p>Allied Description</p>
 				</div>
 				<div class="main-faction-description" id="main-soviet-description">
+					<h3>SOVIET</h3>
 					<p>Soviet Description</p>
 				</div>
 			</div>
@@ -136,10 +138,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				}
 				tablinks = document.getElementsByClassName("main-faction-button");
 				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
+					tablinks[i].className = tablinks[i].className.replace(" faction-active", "");
 				}
 				document.getElementById(faction).style.display = "block";
-				evt.currentTarget.className += " active";
+				evt.currentTarget.className += " faction-active";
 			}
 			</script>
 		</div>

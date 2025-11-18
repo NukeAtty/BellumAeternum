@@ -53,6 +53,11 @@ a:visited {
 	color: #FFFFFF;
 }
 
+button {
+	border: none;
+	background-color: none;
+}
+
 figure {
     display: block;
     margin-block-start: 0;
@@ -723,19 +728,43 @@ footer {
 	flex-flow: row;
 	width: 100vw;
 	margin: auto;
+	background-color: #000000;
 }
 
 .main-factions-selection {
 	width: 33%;
-	margin: auto;
+	margin: 10vh auto;
 }
 
 .main-faction-button {
-	background-color: #00000000;
+	background-color: #000000;
+	border-radius: 50%;
+	margin: 1vw;
+	padding: 0;
+	width: 180px;
+	height: 180px;
 }
 
-.active {
-	background-color: #00000000;
+.main-faction-button img{
+	border: 3px solid #666;
+	border-radius: 50%;
+}
+
+.faction-active {
+	animation-name: button-slight-lift;
+	animation-duration: 0.2s;
+	animation-iteration-count:1;
+	animation-fill-mode: both;
+}
+
+.faction-active:first-child {
+	transition-duration: 0.2s;
+	box-shadow: 0 0 90px 2px #0066CC;
+}
+
+.faction-active:last-child {
+	transition-duration: 0.2s;
+	box-shadow: 0 0 90px 2px #CC0000;
 }
 
 .main-factions-description {
@@ -748,6 +777,10 @@ footer {
 	padding: 6px 12px;
 	border-top: none;
 	margin: auto;
+}
+
+.main-facition-description h3 {
+	font-size: 32px;
 }
 
 /*----------News Module----------*/
