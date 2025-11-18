@@ -717,6 +717,39 @@ footer {
 	text-decoration: underline;
 }
 
+/*----------Factions----------*/
+.main-factions {
+	display: flex;
+	flex-flow: row;
+	width: 100vw;
+	margin: auto;
+}
+
+.main-factions-selection {
+	width: 33%;
+	margin: auto;
+}
+
+.main-faction-button {
+	background-color: #00000000;
+}
+
+.active {
+	background-color: #00000000;
+}
+
+.main-factions-description {
+	width: 66%;
+	margin: auto;
+}
+
+.main-faction-description {
+	display: none;
+	padding: 6px 12px;
+	border-top: none;
+	margin: auto;
+}
+
 /*----------News Module----------*/
 .news {
 	display: flex;
