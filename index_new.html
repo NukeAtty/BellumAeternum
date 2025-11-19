@@ -130,19 +130,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</div>
 			<script>
-			function changeFaction(evt, faction) {
-				var i, tabcontent, tablinks;
-				tabcontent = document.getElementsByClassName("main-faction-description");
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
+				document.getElementById('main-allied-description').style.display = "block";
+				function changeFaction(evt, faction) {
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("main-faction-description");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("main-faction-button");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" faction-active", "");
+					}
+					document.getElementById(faction).style.display = "block";
+					evt.currentTarget.className += " faction-active";
 				}
-				tablinks = document.getElementsByClassName("main-faction-button");
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" faction-active", "");
-				}
-				document.getElementById(faction).style.display = "block";
-				evt.currentTarget.className += " faction-active";
-			}
 			</script>
 		</div>
 		<div class="quick-nav reveal hidden">
