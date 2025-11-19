@@ -726,14 +726,14 @@ footer {
 .main-factions {
 	display: flex;
 	flex-flow: row;
-	width: 100vw;
-	margin: auto;
+	width: 100%;
+	margin: 5vh auto;
 	background-color: #000000;
 }
 
 .main-factions-selection {
 	width: 33%;
-	margin: 10vh auto;
+	margin: auto;
 }
 
 .main-faction-button {
@@ -750,6 +750,14 @@ footer {
 	border-radius: 50%;
 }
 
+.main-faction-button:first-child:hover img{
+	border: 3px solid #0066FF;
+}
+
+.main-faction-button:last-child:hover img{
+	border: 3px solid #FF0000;
+}
+
 .faction-active {
 	animation-name: button-slight-lift;
 	animation-duration: 0.2s;
@@ -760,6 +768,14 @@ footer {
 .faction-active:first-child {
 	transition-duration: 0.2s;
 	box-shadow: 0 0 90px 2px #0066CC;
+}
+
+.faction-active:first-child img {
+	border: 3px solid #0066FF;
+}
+
+.faction-active:last-child img {
+	border: 3px solid #FF0000;
 }
 
 .faction-active:last-child {
@@ -777,10 +793,37 @@ footer {
 	padding: 6px 12px;
 	border-top: none;
 	margin: auto;
+	height: 436px;
+	max-width: 100%;
 }
 
 .main-faction-description h3 {
-	font-size: 32px;
+	font-size: 48px;
+}
+
+.main-faction-description p {
+	font-size: 18px;
+	text-shadow: 0 1px 2px #000;
+	width: 50%;
+	line-height: 1.25em;
+}
+
+.main-faction-description:first-child h3 {
+	color: #FFFFFF;
+	text-shadow: 0 0 20px #0066FF;
+}
+
+.main-faction-description:last-child h3 {
+	color: #FFFFFF;
+	text-shadow: 0 0 20px #FF0000;
+}
+
+.main-faction-description:first-child {
+	background-image:url('src/allied-banner.avif');
+}
+
+.main-faction-description:last-child {
+	background-image:url('src/soviet-banner.avif');
 }
 
 /*----------News Module----------*/
