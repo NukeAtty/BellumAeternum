@@ -818,6 +818,64 @@ footer {
 	text-shadow: 0 0 20px #FF0000;
 }
 
+.main-faction-description:first-child a {
+	display: block;
+	margin: 3vh 0;
+	align-items: center;
+	text-align: center;
+	font-size: 1.5vw;
+	font-family: Furore, Arial, Helvetica, sans-serif;
+	font-weight: 800;
+	padding: 0.5em;
+	color: white;
+	border: 2px solid #000000;
+	border-style: ridge;
+	background: rgb(4, 113, 214);
+	background: radial-gradient(circle, #047bd6 0%, #004cce 10%, #00479d 30%, #003c85 50%, #002f71 70%, #001740 90%, #243048 100%), url('src/blue-pattern.svg');
+	background-blend-mode: lighten;
+	box-shadow: 0 0 5px #000000 inset;
+	text-decoration: none;
+	width: 20%;
+}
+
+.main-faction-description:first-child a:hover{
+	color: #FFFFFF;
+	text-shadow: 0 0 5px #0066FF;
+	background: #FFFFFF;
+	background: radial-gradient(circle, #bdddff 0%, #8ad8ff 10%, #00ddff 30%, #00c3ff 50%, #00a6e2 70%, #008ada 90%, #043989 100%), url('src/blue-pattern.svg');
+	background-blend-mode: lighten;
+	box-shadow: 0 0 2px darkblue inset;
+}
+
+.main-faction-description:last-child a {
+	display: block;
+	margin: 3vh 0;
+	align-items: center;
+	text-align: center;
+	font-size: 1.5vw;
+	font-family: Furore, Arial, Helvetica, sans-serif;
+	font-weight: 800;
+	padding: 0.5em;
+	color: goldenrod;
+	border: 2px solid #000000;
+	border-style: ridge;
+	background: rgb(214,4,8);
+	background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%), url('src/red-pattern.svg');
+	background-blend-mode: lighten;
+	box-shadow: 0 0 5px #000000 inset;
+	text-decoration: none;
+	width: 20%;
+}
+
+.main-faction-description:last-child a:hover{
+	color: lightgoldenrodyellow;
+	text-shadow: 0 0 5px gold;
+	background: rgb(255,174,0);
+	background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%), url('src/red-pattern.svg');
+	background-blend-mode: lighten;
+	box-shadow: 0 0 2px darkred inset;
+}
+
 .main-faction-description:first-child {
 	background-image:url('src/allied-banner.avif');
 }
