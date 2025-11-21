@@ -67,6 +67,16 @@ figure {
     unicode-bidi: isolate;
 }
 
+main {
+	display: block;
+	margin: auto;
+	padding: 5vw 0;
+	background:url('src/background-animless.svg'),linear-gradient(180deg, #FFFFFF00 0%, #181818 1%, #FFFFFF00 100%);
+	background-size: contain;
+	background-blend-mode: screen;
+	background-repeat: no-repeat;
+}
+
 /*---------- Scroll Bar ----------*/
 ::-webkit-scrollbar {
   width: 12px;
@@ -236,19 +246,6 @@ nav {
 	background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%), url('src/red-pattern.svg');
 	background-blend-mode: lighten;
 	box-shadow: 0 0 2px darkred inset;
-}
-
-/*------------------------*/
-/*----------Main----------*/
-/*------------------------*/
-main {
-	display: block;
-	margin: auto;
-	padding: 5vw 0;
-	background:url('src/background-animless.svg'),linear-gradient(180deg, #FFFFFF00 0%, #181818 1%, #FFFFFF00 100%);
-	background-size: contain;
-	background-blend-mode: screen;
-	background-repeat: no-repeat;
 }
 
 /*-------------------------*/
@@ -529,9 +526,9 @@ footer {
 	color: #FF0000;
 }
 
-/*------------------------------*/
-/*----------Lobby Page----------*/
-/*------------------------------*/
+/*-------------------------------*/
+/*---------- Main Page ----------*/
+/*-------------------------------*/
 
 /*----------Overview Module----------*/
 .overview {
@@ -598,19 +595,20 @@ footer {
 	animation-iteration-count:1;
 	animation-fill-mode: both;
 }
+
 /*----------Features Module----------*/
-.features {
+.main-features {
 	margin: 1vh auto;
 	width: 100%;
 }
 
-.features h2{
+.main-features h2{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 48px;
 	text-align: center;
 }
 
-.features-section {
+.main-features-section {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -618,14 +616,14 @@ footer {
 	margin: auto;
 }
 
-.features-container {
+.main-features-container {
 	display: flex;
 	flex-flow: column;
 	padding: 1vw;
 	width: 33%;
 }
 
-.features-image {
+.main-features-image {
 	margin: 0;
 	border-radius: 0px;
 	display: flex;
@@ -633,7 +631,7 @@ footer {
 	justify-content: center;
 }
 
-.features-image img {
+.main-features-image img {
 	filter: brightness(0.8);
 	max-width: 100%;
 	height: auto;
@@ -641,7 +639,7 @@ footer {
 	border: 3px solid #900;
 }
 
-.features-container:hover img{
+.main-features-container:hover img{
 	animation-name: lightup;
 	animation-timing-function: ease-in-out;
 	animation-duration: 0.5s;
@@ -659,7 +657,7 @@ footer {
 	margin: 0.5em;
 }
 
-.features-container p {
+.main-features-container p {
 	width: 100%;
 	line-height: 1.25em;
 	color:#fff;
