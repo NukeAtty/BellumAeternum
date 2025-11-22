@@ -904,12 +904,10 @@ footer {
 /*----------News Module----------*/
 .news {
 	display: flex;
-	flex-flow: row;
+	flex-flow: column;
 	padding: 1vw;
-	width: 60%;
+	width: 100%;
 	margin: auto;
-	border: 2px outset #ccc;
-	background: linear-gradient(180deg, #ffffff 0%, #dddddd 1%, #afafaf 50%, #cccccc50 100%);
 }
 
 .news h2{
@@ -917,64 +915,54 @@ footer {
 	font-size: 32px;
 	text-align: left;
 	margin: 0.5em;
-	color: #333;
+	color: #FFFFFF;
 	line-height: 1em;
 }
 
 .news-section {
-	padding: 1em;
+	padding: 0;
 	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: auto;
+}
+
+.news-section a {
+	text-align: center;
+	line-height: 2em;
+	color: #FFFFFF;
+	font-size: 24px;
+	border: 2px solid #660000;
+	margin: 1vw;
+}
+
+.news-section a:hover {
+	box-shadow: 0 0 20px #990000;
+	animation-name: button-slight-lift;
+  	animation-duration: 0.2s;
+	animation-iteration-count:1;
+	animation-fill-mode: both;
+}
+
+.news-section a:visited {
+	color: #FFFFFF;
 }
 
 .news-container {
 	display: flex;
-	flex-flow: row;
-	margin: 0.5em 0;
-}
-
-.news-container-left {
-	width: 20%;
-	margin: auto 0;
-}
-
-.news-container-left time{
-	color: #0f0;
-	font-family: Neon, monospace;
-	font-size: 18px;
-	text-align: center;
-	background-color: #000;
-	border: 2px inset #333;
-	border-radius: 10px;
-	padding: 0.5em;
-	background-image: url("src/pattern.svg");
-	background-blend-mode: lighten;
-	text-shadow: 0 0 3px #0f0;
-	box-shadow: 0 0 5px #33333375;
-}
-
-.news-container-right {
-	display: flex;
 	flex-flow: column;
-	width: 70%;
-	margin: 0;
+	background-color: #00000050;
 }
 
-.news-container-right a{
-	color: #333;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	font-size: 20px;
-	margin: 0.5em 0;
-	padding: 0.5em;
-	background-color: #ffffff;
-	border-left: 3px solid #333;
+.news-container time {
+	border-radius: 3px;
+	text-align: right;
+	font-size: 12px;
+	margin: 0 2em;
 }
 
-.news-container-right a:hover {
-	color: #f00;
-	font-size: 20px;
-	border-left: 5px solid #c00;
-}
+
 
 /*---------- Main CTA ----------*/
 .main-cta {
