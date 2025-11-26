@@ -933,7 +933,7 @@ footer {
 	line-height: 2em;
 	color: #FFFFFF;
 	font-size: 24px;
-	border: 2px solid #660000;
+	border: 2px solid #00000025;
 	margin: 1vw;
 }
 
@@ -953,6 +953,12 @@ footer {
 	display: flex;
 	flex-flow: column;
 	background-color: #00000050;
+}
+
+.news-container img {
+	width: 360px;
+	height: 270px;
+	aspect-ratio: 360/270;
 }
 
 .news-container time {
