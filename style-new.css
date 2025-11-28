@@ -262,6 +262,14 @@ footer {
 	border-style: outset;
 }
 
+footer::after {
+	content:'© 2025 Nuke Blastfield';
+	color: #999999;
+	text-shadow: 0 -1px 0 #CCCCCC;
+	filter: drop-shadow(0 1px 1px #666666);
+	margin: 0.5em auto;
+}
+
 .footer-container {
 	display: flex;
 	flex-flow: row;
@@ -474,6 +482,8 @@ footer {
 	padding: 0 1vw;
 	/*background: linear-gradient(-45deg, #000000 0, #666666 40%, #000000 60%, #666666 80%, #000000 100%);*/
 	background-color: #000000;
+	background-image: url('src/techtree-pattern.svg');
+	background-blend-mode: luminosity;
 	border-radius: 12px;
 	border: 3px solid #333333;
 	display: flex;
@@ -937,9 +947,10 @@ footer {
 	text-align: center;
 	line-height: 2em;
 	color: #FFFFFF;
-	font-size: 24px;
+	font-size: 18px;
 	border: 2px solid #CC000050;
 	margin: 1vw;
+	width: 20%;
 }
 
 .news-section a:hover {
@@ -961,8 +972,8 @@ footer {
 }
 
 .news-container img {
-	width: 360px;
-	height: 270px;
+	width: 100%;
+	height: auto;
 	aspect-ratio: 360/270;
 }
 
