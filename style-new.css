@@ -716,11 +716,11 @@ footer::after {
 	border-radius: 50%;
 }
 
-.main-faction-button:first-child:hover img{
+#gdi.main-faction-button:hover img{
 	border: 3px solid #0066FF;
 }
 
-.main-faction-button:last-child:hover img{
+#nod.main-faction-button:hover img{
 	border: 3px solid #FF0000;
 }
 
@@ -731,20 +731,20 @@ footer::after {
 	animation-fill-mode: both;
 }
 
-.faction-active:first-child {
+#gdi img {
+	border: 3px solid #0066FF;
+}
+
+#nod img {
+	border: 3px solid #FF0000;
+}
+
+#gdi.faction-active{
 	transition-duration: 0.2s;
 	box-shadow: 0 0 90px 2px #0066CC;
 }
 
-.faction-active:first-child img {
-	border: 3px solid #0066FF;
-}
-
-.faction-active:last-child img {
-	border: 3px solid #FF0000;
-}
-
-.faction-active:last-child {
+#nod.faction-active {
 	transition-duration: 0.2s;
 	box-shadow: 0 0 90px 2px #CC0000;
 }
@@ -774,17 +774,17 @@ footer::after {
 	line-height: 1.25em;
 }
 
-.main-faction-description:first-child h3 {
+#main-allied-description.main-faction-description h3 {
 	color: #FFFFFF;
 	text-shadow: 0 0 20px #0066FF;
 }
 
-.main-faction-description:last-child h3 {
+#main-soviet-description.main-faction-description h3 {
 	color: #FFFFFF;
 	text-shadow: 0 0 20px #FF0000;
 }
 
-.main-faction-description:first-child a {
+#main-allied-description.main-faction-description a {
 	display: block;
 	margin: 3vh 0;
 	align-items: center;
@@ -804,7 +804,7 @@ footer::after {
 	width: 20%;
 }
 
-.main-faction-description:first-child a:hover{
+#main-allied-description.main-faction-description a:hover{
 	color: #FFFFFF;
 	text-shadow: 0 0 5px #0066FF;
 	background: #FFFFFF;
@@ -813,7 +813,7 @@ footer::after {
 	box-shadow: 0 0 2px darkblue inset;
 }
 
-.main-faction-description:last-child a {
+#main-soviet-description.main-faction-description a {
 	display: block;
 	margin: 3vh 0;
 	align-items: center;
@@ -833,7 +833,7 @@ footer::after {
 	width: 20%;
 }
 
-.main-faction-description:last-child a:hover{
+#main-soviet-description.main-faction-description a:hover{
 	color: lightgoldenrodyellow;
 	text-shadow: 0 0 5px gold;
 	background: rgb(255,174,0);
@@ -842,11 +842,11 @@ footer::after {
 	box-shadow: 0 0 2px darkred inset;
 }
 
-.main-faction-description:first-child {
+#main-allied-description.main-faction-description {
 	background-image:url('src/allied-banner.avif');
 }
 
-.main-faction-description:last-child {
+#main-soviet-description.main-faction-description {
 	background-image:url('src/soviet-banner.avif');
 }
 

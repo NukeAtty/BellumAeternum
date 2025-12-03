@@ -15,3 +15,12 @@ archives
     - maps: panjandrum rampage
 blog
 contact
+
+get-started[new pillar page]
+    - what is Bellum Æternum?
+    - how to install Bellum Æternum?
+    - how to launch after installation?
+    - how to set the game to preference?
+
+game-guide [new pillar page]
+    - what's the difference to vanilla YR?
