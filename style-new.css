@@ -930,6 +930,9 @@ footer::after {
 	justify-content: center;
 	width: 100%;
 	margin: 10vh auto 0 auto;
+	background-image:url('src/cta_bg.avif');
+	background-size: cover;
+	background-position-y: -10vh;
 }
 
 .main-cta h2 {
