@@ -72,7 +72,7 @@ figure {
 main {
 	display: block;
 	margin: auto;
-	padding: 5vw 0;
+	padding: 5vw 0 0 0;
 	background:url('src/background.svg'),linear-gradient(180deg, #FFFFFF00 0%, #FFFFFF00 95%, #990000 100%);
 	background-size: contain;
 	background-blend-mode: screen;
@@ -996,8 +996,7 @@ footer::after {
 	flex-flow: column;
 	justify-content: center;
 	width: 100%;
-	margin: 10vh auto;
-	background: url('src/cta_bg.avif');
+	margin: 10vh auto 0 auto;
 }
 
 .main-cta h2 {
@@ -1048,7 +1047,7 @@ footer::after {
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
-	width: 60%;
+	width: 100%;
 	margin: auto;
 }
 

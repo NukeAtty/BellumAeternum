@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="style-new.css">
-<link rel="preload" href="../src/font/furore.otf" as="font" />
-<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font" />
-<link rel="preload" href="src/background-pattern.webp" as="image">
-<meta name="description" content="Bellum Aeternum is a Red Alert 2 Yuri's Revenge mod that improves graphics and reality. With ascended level of details, it maximize your joy of gameplay.">
-<link rel="icon" type="image/svg" href="/src/favicon.svg">
-<link rel="alternate" hreflang="x-default" href="https://ra2be.com" />
-<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/" />
-<link rel="prefetch" href="header.html" />
-<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
-<meta http-equiv="ontent-security-policy" content="script-src https:; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script';"/>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-LPEL1Y72V6');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
-<!-- End Google Tag Manager -->
-<title>Bellum Æternum | A More Realistic Red Alert 2</title>
-<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [
-			{
-				"@type": "ListItem",
-				"position": 1,
-				"name": "Bellum Æternum",
-				"item": "https://ra2be.com"
-			}
-		]
-	}
-  </script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="muAet5NwsQ7sxLzUH0sJReh1RIc5OY_y2FmFZ9OiTIg" />
+	<link rel="stylesheet" type="text/css" href="style-new.css">
+	<link rel="preload" href="../src/font/furore.otf" as="font" type="font/otf" crossorigin/>
+	<link rel="preload" href="../src/font/MonaspaceNeon-Regular.otf" as="font/otf" crossorigin/>
+	<link rel="preload" href="src/background.svg" as="image">
+	<title>Bellum Æternum | A More Realistic Red Alert 2</title>
+	<meta name="description" content="Bellum Aeternum is a Red Alert 2 Yuri's Revenge mod that improves graphics and reality. With ascended level of details, it maximize your joy of gameplay.">
+	<link rel="icon" type="image/svg" href="/src/favicon.svg">
+	<link rel="prefetch" href="header.html" />
+	<link rel="prefetch" href="sitemap.html"/>
+	<link rel="prefetch" href="footer-portal.html"/>
+	<!-- hreflang -->
+	<link rel="alternate" hreflang="x-default" href="https://ra2be.com" />
+	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/" />
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
+	<!-- End Google Tag Manager -->
+	<script src="src/js/htmx.min.js" defer></script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Bellum Æternum",
+					"item": "https://ra2be.com"
+				}
+			]
+		}
+	</script>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -66,12 +60,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			}
 		}
 	</script>
-	<script src="src/js/htmx.min.js" defer></script>
 </head>
-
 <body>
 	<!-- HTMX header -->
-	<header class="nav-wrapper" hx-get="header.html" hx-trigger="intersect once" hx-swap="outerHTML toggle:0.3s" hx-boost="false"></header>
+	<header class="nav-wrapper" hx-get="header.html" hx-trigger="intersect once" hx-swap="outerHTML" hx-boost="false"></header>
 	<!-- Main -->
 	<main>
 		<div class="overview">
