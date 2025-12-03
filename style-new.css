@@ -79,6 +79,11 @@ main {
 	background-repeat: no-repeat;
 }
 
+section {
+	margin: 0;
+	padding: 0;
+}
+
 /*---------- Scroll Bar ----------*/
 ::-webkit-scrollbar {
   width: 12px;
@@ -588,27 +593,6 @@ footer::after {
 	color: #f90;
 }
 
-.link-button{
-	display: flex;
-	justify-content: center;
-	width: 20%;
-	margin: 2vw auto;
-}
-
-.link-button img{
-	box-shadow: 0 0 10px #c00;
-	border: 1px solid #f00;
-	margin: auto;
-}
-
-.link-button img:hover {
-	box-shadow: 0 0 20px #f33;
-	animation-name: button-slight-lift;
-  	animation-duration: 0.2s;
-	animation-iteration-count:1;
-	animation-fill-mode: both;
-}
-
 /*----------Features Module----------*/
 .main-features {
 	margin: 0 auto;
@@ -684,58 +668,7 @@ footer::after {
 	text-shadow: 0 1px 0 #666;
 }
 
-/*----------Quick Navigation Module----------*/
-.quick-nav {
-	margin: 5vh auto;
-	width: 100%;
-}
-
-.quick-nav h2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 48px;
-	text-align: center;
-}
-
-.quick-nav-section {
-	display: flex;
-	flex-flow: row wrap;
-	width: 60%;
-	margin: auto;
-}
-
-.quick-nav-section h3 {
-	font-size: 24px;
-	margin: 0;
-	margin-bottom: 0.5em;
-	padding: 0;
-	padding-bottom: 0.5em;
-	border-bottom: 1px solid #FFFFFF;
-	line-height: 1em;
-}
-
-.main-nav {
-	display: flex;
-	flex-flow: column wrap;
-	width: 45%;
-	margin: 1vw;
-	background-color: #FFFFFF30;
-	padding: 1vw;
-	border: 1px solid #FFFFFF;
-}
-
-.main-nav a {
-	width: 100%;
-	font-size: 18px;
-	color: #FFFFFF;
-	margin: auto;
-	line-height: 1.5em;
-}
-
-.main-nav a:hover {
-	text-decoration: underline;
-}
-
-/*----------Factions----------*/
+/*---------- Factions ----------*/
 .main-factions {
 	display: flex;
 	flex-flow: row;
@@ -1079,9 +1012,9 @@ footer::after {
 	aspect-ratio: 1/1;
 }
 
-/*--------------------------------*/
-/*----------Archive Page----------*/
-/*--------------------------------*/
+/*-----------------------------------*/
+/*---------- Archives Page ----------*/
+/*-----------------------------------*/
 
 .archives {
 	margin: 3vw auto;
@@ -3152,7 +3085,15 @@ footer::after {
 	/*------------------------------*/
 	/*----------Lobby Page----------*/
 	/*------------------------------*/
-	.overview {
+
+	.main-faction-description:first-child {
+		background-image:url('src/allied-banner.avif');
+		background-position: 0;
+	}
+
+	.main-faction-description:last-child {
+		background-image:url('src/soviet-banner.avif');
+		background-position: 0;
 	}
 	
 	/*-------------------------*/
