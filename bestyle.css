@@ -950,6 +950,8 @@ footer::after {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	margin: 10vh auto 0 auto;
+	width: 60vw;
 }
 
 .archives-container {
