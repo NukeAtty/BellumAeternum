@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="bestyle.css">
+	<link rel="icon" type="image/svg" href="/src/favicon.svg">
+	<link rel="alternate" hreflang="x-default" href="https://ra2be.com/archive.html" />
+	<link rel="alternate" hreflang="zh-Hans" href="https://ra2be.com/zh/archive.html" />
+	<title>Archives | Bellum Æternum: A More Realistic Red Alert 2</title>
+	<meta name="description" content="Archive of Command and Conquer: Red Alert 2 Yuri's Revenge mod - Bellum Æternum, including factions, units and maps.">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Bellum Æternum",
+				"item": "https://ra2be.com"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Archives",
+				"item": "https://ra2be.com/archives.html"
+			}
+		]
+	}
+	</script>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6M9N6VK');</script>
+	<!-- End Google Tag Manager -->
+	<script src="src/js/htmx.min.js"></script>
+</head>
+<body>
+	<!-- HTMX header -->
+	<header hx-get="header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+	<!--Main-->
+	<main>
+		<h1>Bellum Æternum Archives</h1>
+		<p>Information of Bellum Æternum: the Best Realistic Yuri's Revenge Mod</p>
+		<div class="archives-board">
+			<section class="archives-container">
+				<h2>Factions</h2>
+				<div class="archives-links">
+					<a href="allied.html" target="_blank">Allied</a>
+					<a href="soviet.html" target="_blank">Soviet</a>
+				</div>
+			</section>
+			<section class="archives-container">
+				<h2>Mechanics</h2>
+				<div class="archives-links">
+					<a href="stolen-tech.html">Stolen Tech</a>
+					<a href="secret-lab.html">Secret Lab</a>
+				</div>
+			</section>
+			<section class="archives-container">
+				<h2>Game Modes</h2>
+				<div class="archives-links">
+					<a href="skirmish.html">Skirmish</a>
+					<a href="arcade.html">Arcade</a>
+					<a href="siege.html">Siege</a>
+					<a href="panjandrum-rampage.html">Panjandrum Rampage</a>
+				</div>
+			</section>
+			<section class="archives-container">
+				<h2>Story</h2>
+				<div class="archives-links">
+					<a href="lore.html">Lore</a>
+				</div>
+		</div>
+	</main>
+	<!--Footer-->
+	<footer>
+		<div class="footer-container">
+			<div class="footer-left">
+				<div class="footer-logo">
+					<img src="src/favicon.svg" alt="Bellum Aeternum" width="64" height="64">
+					<p>Bellum<br>Æternum</p>
+				</div>
+				<div class="lang-selector">
+					<div hx-get="lang-selector.html" hx-trigger="load"></div>
+					<script src="../src/js/language-selector.js" defer></script>
+				</div>
+			</div>
+			<div hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+		</div>
+		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
+	</footer>
+</body>
+</html>
