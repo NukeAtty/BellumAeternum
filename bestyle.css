@@ -531,6 +531,39 @@ footer::after {
 	text-shadow: 0 2px 2px #000000;
 }
 
+.cta-btn {
+	display: flex;
+	margin: auto;
+	width: 50%;
+	padding: 32px;
+}
+
+.cta-btn a{
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	font-family: Furore, sans-serif;
+	font-weight: 800;
+	color: darkred !important;
+	box-shadow: 0 0 5px white inset;
+	padding: 0.5em;
+	background:
+		linear-gradient(0deg, #999, #ddd) padding-box, /*this is your grey background*/
+		linear-gradient(0deg, red, black) border-box;
+	border: 5px solid transparent;
+	border-radius: 20px;
+    text-decoration: none;
+}
+
+.cta-btn a:hover {
+	color: yellow !important;
+	text-shadow: 0 0 5px gold;
+	box-shadow: 0 0 2px black inset;
+	animation: btn-anim 1s infinite;
+	filter: drop-shadow(0 0 10px #ff0000);
+}
+
 #lang-portal{
 	color: #f90;
 }
@@ -958,6 +991,7 @@ footer::after {
 	width: 28vw;
 	border: 2px solid #FFFFFF50;
 	margin: 1vw;
+	padding: 1em;
 	background-image: url('src/background-pattern.webp');
 }
 
