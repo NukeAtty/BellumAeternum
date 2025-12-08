@@ -1,5 +1,5 @@
 function initLanguageSelector(context = document) {
-  const supportedLangs = ["en", "zh", "ru"];
+  const supportedLangs = ["en", "zh"];
   const currentPath = window.location.pathname;
   const [, firstSegment, ...rest] = currentPath.split("/");
   const isLangPrefixed = supportedLangs.includes(firstSegment);
