@@ -1061,7 +1061,56 @@ footer::after {
 
 
 	/*========== Universal Modules ==========*/
-	/*---------Footer----------*/
+	/*----------Navigation----------*/
+	.navigation-buttons{
+		display: flex;
+		justify-items: center;
+		margin: auto;
+		padding-inline-start: 0;
+		width: 100%;
+	}
+
+	.navigation-button{
+		display: flex;
+		flex-flow: column;
+		align-items: stretch;
+		margin: auto;
+		background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
+		border: 1px solid #898d85;
+		border-style: outset;
+		padding: 1vw;
+		width: 100%;
+	}
+
+	.navigation-button a{
+		display: block;
+		margin: auto;
+		align-items: center;
+		text-align: center;
+		font-size: 1.5vh;
+		font-family: Furore, Arial, Helvetica, sans-serif;
+		font-weight: 800;
+		padding: 0.5em;
+		color: goldenrod;
+		border: 2px solid #000000;
+		border-style: ridge;
+		background: rgb(214,4,8);
+		background: radial-gradient(circle, #d60408 0%, #ce0000 10%, #9d0000 30%, #850000 50%, #710000 70%, #400000 90%, #482428 100%), url('src/red-pattern.svg');
+		background-blend-mode: lighten;
+		box-shadow: 0 0 5px #000000 inset;
+		text-decoration: none;
+		width: 100%;
+	}
+
+	.navigation-button a:hover{
+		color: lightgoldenrodyellow;
+		text-shadow: 0 0 5px gold;
+		background: rgb(255,174,0);
+		background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%), url('src/red-pattern.svg');
+		background-blend-mode: lighten;
+		box-shadow: 0 0 2px darkred inset;
+	}
+	/*----------Footer----------*/
 	.footer-container {
 		display: flex;
 		flex-flow: column;
