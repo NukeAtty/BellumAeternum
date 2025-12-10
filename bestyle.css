@@ -493,11 +493,32 @@ footer::after {
     animation: blinkCursor 0.2s ease-in-out infinite;
 }
 
+/*========== Small Note ==========*/
+.small-note {
+	margin-top: 0.5em;
+}
+
+.small-note p {
+	font-size: 14px;
+	color: #ccc;
+	text-align: center;
+}
+
+.small-note a {
+	font-size: 14px;
+	display: inline;
+	color: #CC0000;
+}
+
+.small-note a:hover {
+	color: #FF0000;
+}
+
 /*===============================*/
 /*========== Main Page ==========*/
 /*===============================*/
 
-/*----------Overview Module----------*/
+/*========== Overview Module ==========*/
 .overview {
 	display: block;
 	padding: 2vw;
@@ -576,7 +597,7 @@ footer::after {
 	color: #f90;
 }
 
-/*----------Features Module----------*/
+/*========== Features Module ==========*/
 .main-features {
 	margin: 0 auto;
 	padding: 1vh auto;
@@ -651,7 +672,7 @@ footer::after {
 	text-shadow: 0 1px 0 #666;
 }
 
-/*---------- Factions ----------*/
+/*========== Factions Module ==========*/
 .main-factions {
 	display: flex;
 	flex-flow: row;
@@ -826,7 +847,7 @@ footer::after {
 	background-image:url('src/soviet-banner.avif');
 }
 
-/*----------News Module----------*/
+/*========== News Module ==========*/
 .main-news {
 	display: flex;
 	flex-flow: column;
@@ -899,7 +920,7 @@ footer::after {
 	line-height: 1.25em;
 }
 
-/*---------- Main CTA ----------*/
+/*========== Main CTA ==========*/
 .main-cta {
 	display: flex;
 	flex-flow: column;
@@ -955,7 +976,9 @@ footer::after {
 	box-shadow: 0 0 2px darkred inset;
 }
 
+/*===================================*/
 /*========== Archives Page ==========*/
+/*===================================*/
 .archives h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 48px;
@@ -1020,9 +1043,170 @@ footer::after {
 	color: #FFFFFF;
 }
 
-/*----------================================----------*/
-/*----------========== Smart Phone==========----------*/
-/*----------================================----------*/
+/*===================================*/
+/*========== Download Page ==========*/
+/*===================================*/
+.download {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-flow: column;
+}
+
+.download section{
+	margin: 5vh auto;
+}
+
+.download h1{
+	font-size: 36px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 2em auto 0 auto;
+}
+
+.download h2{
+	font-size: 60px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-align: center;
+	margin: auto;
+	color: #FFFFFF;
+	text-shadow: 0 0 10px #F00;
+}
+
+.download-information {
+	margin: 10vh auto;
+	background-color: #00000050;
+	backdrop-filter: blur(4px);
+	border-left: 4px solid #FF0000;
+	padding: 1em;
+	width: 60vw;
+	background-image: url('src/red-pattern.svg');
+}
+
+.download-information h2 {
+	font-size: 24px;
+	font-variant: normal;
+	color: #FFFFFF;
+}
+
+.download-guide {
+	background-color: #00000050;
+	width: 100%;
+	padding: 1em;
+	backdrop-filter: blur(20px);
+	width: 60vw;
+	border: 1px solid #FF0000;
+}
+
+.download-guide p {
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #FFFFFF;
+	margin: 1em auto;
+	text-align: center;	
+}
+
+.download-guide h2 {
+	font-size: 24px;
+	font-variant: normal;
+	color: #FFFFFF;
+}
+
+.guide-buttons {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	margin: 2vh auto;
+	gap: 2vw;
+}
+
+.guide-button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #FF0000;
+	padding: 1em;
+	border-radius: 3px;
+	border: 1px solid #CC0000;
+	background-color: #CC000030;
+	background-image: url('src/red-pattern.svg');
+	background-blend-mode: luminosity;
+}
+
+.guide-button:hover {
+	background-color: #FF0050;
+	color: #FFFFFF;
+	text-shadow: 0 0 5px #FF6666;
+	box-shadow: 0 0 5px #FF000050;
+}
+
+.system-requirements {
+	display: flex;
+	flex-flow: row;
+	font-size: 14px;
+	margin: 2vh auto;
+}
+
+.download-information li {
+	margin: 1em auto;
+}
+
+.download-section {
+	position: relative;
+	margin: 5vh auto;
+	padding: 1vw;
+	background-color: #00000050;
+	backdrop-filter: blur(4px);
+	border: 1px solid #333333;
+	box-shadow: 0 0 24px #000;
+	width: 60%;
+}
+
+.download-section h2 {
+	font-size: 32px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-variant: normal;
+	text-align: center;
+	color: #FFFFFF;
+	margin: 0.5em auto;
+	text-shadow: none;
+}
+
+.download-section-img {
+	display: flex;
+	flex-flow: column;
+}
+
+.download-section-img img {
+	margin: 1em auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.download-buttons {
+	margin: 20px auto;
+	width: 60vw;
+}
+
+.download-buttons a {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	margin: auto;
+	text-align: center;
+	max-width: 30%;
+}
+
+.download-button img {
+	margin: auto;
+	width: auto;
+}
+
+/*----------=================================----------*/
+/*----------========== Smart Phone ==========----------*/
+/*----------=================================----------*/
+
 @media only screen and (max-width: 720px) {
 	/*=================================*/
 	/*=========== Meta Reset ==========*/
@@ -1059,9 +1243,11 @@ footer::after {
 		background-position: 50% 0;
 	}
 
-
+	/*=======================================*/
 	/*========== Universal Modules ==========*/
-	/*----------Navigation----------*/
+	/*=======================================*/
+
+	/*========== Navigation ==========*/
 	.navigation-buttons{
 		display: flex;
 		justify-items: center;
@@ -1110,7 +1296,7 @@ footer::after {
 		background-blend-mode: lighten;
 		box-shadow: 0 0 2px darkred inset;
 	}
-	/*----------Footer----------*/
+	/*========== Footer ==========*/
 	.footer-container {
 		display: flex;
 		flex-flow: column;
@@ -1281,8 +1467,11 @@ footer::after {
 		color: #aa0000;
 	}
 
+	/*===============================*/
 	/*========== Main Page ==========*/
-	/*----------Overview Module----------*/
+	/*===============================*/
+
+	/*========== Overview Module ==========*/
 	.overview {
 		margin: auto;
 		padding: 5vw;
@@ -1354,7 +1543,7 @@ footer::after {
 		filter: drop-shadow(0 0 10px #ff0000);
 	}
 
-	/*---------- Features Module ---------*/
+	/*========== Features Module ==========*/
 	.main-features {
 		width: 100%;
 	}
@@ -1381,7 +1570,7 @@ footer::after {
 		margin: 1em auto;
 	}
 
-	/*---------- Factions Module -----------*/
+	/*========== Factions Module ===========*/
 	.main-factions {
 		display: flex;
 		flex-flow: column;
@@ -1463,7 +1652,7 @@ footer::after {
 		width: 80%;
 	}
 
-	/*----------News Module----------*/
+	/*========== News Module ==========*/
 	.main-news {
 		display: flex;
 		flex-flow: column;
@@ -1536,7 +1725,7 @@ footer::after {
 		line-height: 1.25em;
 	}
 
-	/*---------- Main CTA ----------*/
+	/*========== Main CTA ==========*/
 	.main-cta {
 		display: flex;
 		flex-flow: column;
@@ -1594,5 +1783,4 @@ footer::after {
 		background-blend-mode: lighten;
 		box-shadow: 0 0 2px darkred inset;
 	}
-
 }
