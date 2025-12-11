@@ -30,15 +30,6 @@
 		]
 	  }
 	</script>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPEL1Y72V6"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-LPEL1Y72V6');
-	</script>
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -60,7 +51,17 @@
 		<h2>Bellum Æternum</h2>
 		<section class="download-links">
 			<div class="download-buttons">
-				<a href="https://www.moddb.com/mods/bellum-aeternum/downloads/bellum-aeternum-beta-test-v1-2" title="Download Bellum Aeternum Beta Test V1 2 - ModDB" target="_blank"><img src="https://button.moddb.com/download/medium/291851.png" alt="Bellum Aeternum Beta Test V1 2" /></a>
+				<a href="#" target="_blank">Download</a>
+				<p id="os-warning">Bellum Æternum might not support your device.</p>
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						const warningBox = document.getElementById('os-warning');
+						const userAgent = window.navigator.userAgent.toLowerCase();
+						if (!userAgent.includes('windows')) {
+							warningBox.style.display = 'block';
+						}
+					});
+				</script>
 			</div>
 			<div class="small-note">
 				<p>By clicking on Download I agree to the <a href="terms-of-use.html" target="_blank">Term of Use</a> and acknowledge that I have read and understand the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p>
@@ -104,7 +105,7 @@
 					<script src="../src/js/language-selector.js" defer></script>
 				</div>
 			</div>
-			<div hx-get="sitemap.html" hx-trigger="load" hx-swap="outerHTML"></div>
+			<div hx-get="footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
 		</div>
 		<div hx-get="footer-portal.html" hx-trigger="load" hx-swap="outerHTML"></div>
 	</footer>
