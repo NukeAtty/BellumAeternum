@@ -1788,7 +1788,79 @@ footer::after {
 		box-shadow: 0 0 2px darkred inset;
 	}
 
+	/*===================================*/
+	/*========== Archives Page ==========*/
+	/*===================================*/
+	.arvhives {
+		margin: 0 auto;
+		padding: 10vh auto;
+	}
 
+	.archives h1 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 48px;
+		text-align: center;
+		margin: 0 auto;
+		color: #FFFFFF;
+	}
+
+	.archives p {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 18px;
+		text-align: center;
+		margin: auto;
+		color: #FFFFFF;
+	}
+
+	.archives-board {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		margin: auto;
+		padding: 10vh 0;
+		width: 80%;
+	}
+
+	.archives-container {
+		width: 100%;
+		border: 2px solid #FFFFFF50;
+		margin: 1vw;
+		padding: 1em;
+		background-image: url('src/background-pattern.webp');
+		background-size: cover;
+	}
+
+	.archives-container h2 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 24px;
+		text-align: center;
+		color: #FFFFFF;
+		margin: 0.5em auto;
+	}
+
+	.archives-links {
+		display: flex;
+		flex-flow: column;
+	}
+
+	.archives-links a {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		color: #FFFFFF;
+		text-decoration: none;
+		text-align: left;
+		margin: 0.25em 1em;
+	}
+
+	.archives-links a:hover {
+		text-decoration: underline;
+		color: #FF0000;
+	}
+
+	.archives-links a:visited {
+		text-decoration: underline;
+		color: #FFFFFF;
+	}
 
 	/*===================================*/
 	/*========== Download Page ==========*/
