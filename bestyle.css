@@ -978,6 +978,11 @@ footer::after {
 /*===================================*/
 /*========== Archives Page ==========*/
 /*===================================*/
+.arvhives {
+	margin: 0 auto;
+	padding: 10vh auto;
+}
+
 .archives h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 48px;
@@ -998,7 +1003,8 @@ footer::after {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	margin: 10vh auto 0 auto;
+	margin: auto;
+	padding: 10vh 0;
 	width: 60vw;
 }
 
@@ -1008,6 +1014,7 @@ footer::after {
 	margin: 1vw;
 	padding: 1em;
 	background-image: url('src/background-pattern.webp');
+	background-size: cover;
 }
 
 .archives-container h2 {
