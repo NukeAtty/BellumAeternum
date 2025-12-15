@@ -291,6 +291,14 @@ footer::after {
 	box-shadow: 0 0 2px darkred inset;
 }
 
+#nav-logo {
+	display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
 /*-------------------------*/
 /*---------Footer----------*/
 /*-------------------------*/
@@ -1218,7 +1226,7 @@ footer::after {
 	/*=================================*/
 
 	html {
-		scroll-padding-top: 0;
+		scroll-padding-top: calc(2vh + 40px);
 	}
 
 	* {
@@ -1240,12 +1248,18 @@ footer::after {
 		display: block;
 		margin: auto;
 		padding: 0;
+		padding-top: calc(2vh + 40px);
 		width: 100%;
 		background:url('src/background-animless.svg'),linear-gradient(180deg, #FFFFFF00 0%, #FFFFFF00 95%, #990000 100%);
 		background-blend-mode: screen;
 		background-repeat: no-repeat;
 		background-size: 1920px;
 		background-position: 50% 0;
+	}
+
+	nav {
+		z-index: 10;
+		position: fixed;
 	}
 
 	/*=======================================*/
@@ -1255,10 +1269,22 @@ footer::after {
 	/*========== Navigation ==========*/
 	.navigation-buttons{
 		display: flex;
+		position: fixed;
+		top: calc(2vh + 40px);
+		right: 0;
+		flex-flow: column;
 		justify-items: center;
-		margin: auto;
+		margin: 0;
 		padding-inline-start: 0;
 		width: 100%;
+        overflow: hidden;
+        visibility: hidden;
+		transition: 
+			opacity 0.3s ease-out,
+			transform 0.3s ease-out, 
+			visibility 0s 0.3s;
+		opacity: 0;
+		transform: translateX(100px);
 	}
 
 	.navigation-button{
@@ -1269,7 +1295,7 @@ footer::after {
 		background:linear-gradient(0deg, #383838 0%, #595959 15%, #696969 65%, #898d85 90%, #aeb2ba 100%);
 		border: 1px solid #898d85;
 		border-style: outset;
-		padding: 1vw;
+		padding: 1vh;
 		width: 100%;
 	}
 
@@ -1278,7 +1304,7 @@ footer::after {
 		margin: auto;
 		align-items: center;
 		text-align: center;
-		font-size: 1.5vh;
+		font-size: 2vh;
 		font-family: Furore, Arial, Helvetica, sans-serif;
 		font-weight: 800;
 		padding: 0.5em;
@@ -1300,6 +1326,31 @@ footer::after {
 		background-blend-mode: lighten;
 		box-shadow: 0 0 2px darkred inset;
 	}
+
+	.navigation-button:first-child {
+		display: none;
+	}
+
+	#nav-logo {
+		display: block;
+		margin: 1vh auto 1vh 3vw;
+	}
+
+	#menu-toggle {
+		display: block;
+		margin: 1vh 3vw 1vh auto;
+	}
+
+	.navigation-buttons.menu-open {
+		opacity: 1;
+		transform: translateX(0);
+		max-height: 500px;
+		visibility: visible;
+		transition: 
+			opacity 0.3s ease-out,
+			transform 0.3s ease-out,
+			visibility 0s 0s;
+    }
 	/*========== Footer ==========*/
 	.footer-container {
 		display: flex;

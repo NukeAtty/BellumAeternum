@@ -1,4 +1,24 @@
+	<script>
+		document.body.addEventListener('click', function(event) {
+			const navContainer = document.querySelector('nav')
+			const menuToggle = event.target.closest('#menu-toggle');
+			const navButtons = navContainer.querySelector('.navigation-buttons');
+			if (menuToggle) {
+				const navContainer = menuToggle.parentElement; 
+				if (navButtons) {
+					navButtons.classList.toggle('menu-open');
+				}
+			}
+			document.addEventListener('click', function(event) {
+				const isClickInsideNav = navContainer.contains(event.target);
+				if (navButtons.classList.contains('menu-open') && !isClickInsideNav) {
+					navButtons.classList.remove('menu-open');
+				}
+			});
+		});
+	</script>
 	<nav>
+		<a id="nav-logo" href="https://ra2be.com"><img src="src/favicon.svg" alt="logo" width="36px" height="36px"></a>
 		<div class="navigation-buttons">
 			<div class="navigation-button">
 				<a href="https://ra2be.com">Home</a>
@@ -13,6 +33,7 @@
 				<a href="download.html">Download</a>
 			</div>
 		</div>
+		<div id="menu-toggle"><img src="src/icons/menu-toggle.svg" alt="menu toggle" width="36px" height="36px"></div>
 		<!--
 		<div class="responsive-navigation">
 			<a href="https://ra2be.com"><img src="src/favicon.svg" alt="logo" width="36px" height="36px"></a>
