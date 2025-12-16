@@ -378,7 +378,6 @@ footer::after {
 .footer-portals {
 	margin: 1vw;
 	padding: 0 1vw;
-	/*background: linear-gradient(-45deg, #000000 0, #666666 40%, #000000 60%, #666666 80%, #000000 100%);*/
 	background-color: #000000;
 	background-image: url('src/techtree-pattern.svg');
 	background-blend-mode: luminosity;
