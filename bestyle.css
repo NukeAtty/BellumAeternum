@@ -954,9 +954,9 @@ footer::after {
 	margin: auto;
 }
 
-.main-cta a {
+.main-cta-button a {
 	display: block;
-	margin: 10vh auto;
+	margin: 5vh auto;
 	align-items: center;
 	text-align: center;
 	font-size: 1.5vw;
@@ -974,13 +974,50 @@ footer::after {
 	width: 20%;
 }
 
-.main-cta a:hover {
+.main-cta-button a:hover {
 	color: lightgoldenrodyellow;
 	text-shadow: 0 0 5px gold;
 	background: rgb(255,174,0);
 	background: radial-gradient(circle, #ffae00 0%, #ffa500 10%, #ff8d00 30%, #ff7900 50%, #e25000 70%, #da4800 90%, #892404 100%), url('src/red-pattern.svg');
 	background-blend-mode: lighten;
 	box-shadow: 0 0 2px darkred inset;
+}
+
+.stay-connected {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	width: 60%;
+	margin: auto;
+	padding-bottom: 5vh;
+}
+
+.stay-connected h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+.main-social-media {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	width: 40%;
+	margin: auto;
+}
+
+.main-social-media a {
+	margin: auto;
+}
+
+
+.main-social-media a:hover {
+	filter:drop-shadow(0 0 3px #fff);
+}
+
+.main-social-media img{
+	width: 100%;
+	aspect-ratio: 1/1;
 }
 
 /*===================================*/
@@ -1215,6 +1252,253 @@ footer::after {
 	margin: 1em auto;
 }
 
+/*================================*/
+/*========== Units Page ==========*/
+/*================================*/
+
+.units {
+	width: 100%;
+	margin: auto;
+}
+
+.units h1{
+	font-family: Arial, Helvetica Black, sans-serif;
+	font-size: 72px;
+	font-weight: 900;
+	line-height: 1em;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+	text-shadow: 0 0 10px #000000;
+}
+
+.units h2{
+	font-size: 24px;
+	font-family: Arial, Helvetica Black, sans-serif;
+	text-align: center;
+}
+
+.faction-overview p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.5em;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+}
+
+/*---------- Techtree Module ----------*/
+.techtree {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	width: 100%;
+	margin: auto;
+}
+
+.techtree-container {
+	display: flex;
+	flex-flow: row;
+	background-image: url('src/techtree-pattern.svg');
+}
+
+.techtree-tier {
+	display: flex;
+	flex-flow: column;
+	width: 240px;
+	margin: 0;
+}
+
+.techtree-tier h3 {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.techtree-tier-content {
+	display: flex;
+	flex-flow: column;
+}
+
+.techtree-row {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	margin: 0;
+}
+
+.techtree-row a {
+	margin: 0;
+	height: 48px;
+}
+
+.techtree-row a:hover {
+	filter: brightness(1.5);
+}
+
+.techtree-row img {
+	margin: 0 auto;
+}
+
+.category-container {
+	margin: auto;
+	padding-bottom: 5vh;
+}
+
+.unit-board {
+	width: 80%;
+	margin: auto;
+}
+
+.unit-container {
+	display: flex;
+	flex-flow: column;
+	margin: 10px auto;
+	width: 80%;
+	background-color: #383838;
+	box-shadow: 0 0 12px #000;
+}
+
+.unit-container a{
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.unit-container-name {
+	display: flex;
+	flex-flow: row;
+	margin: 1vh auto 0 auto;
+	padding: 0.5em;
+	background-color: #FFFFFF30;
+	width: 50%;
+}
+
+.unit-container-name h3 {
+	width: 80%;
+	margin: auto 5em;
+}
+
+.unit-container-info {
+	display: flex;
+	flex-flow: row;
+	margin: 2vh auto;
+	padding: 0 0.5vw;
+	width: 100%;
+	justify-content: center;
+}
+
+.unit-container-info img{
+	margin: 0 0.5vw 0 0;
+	width: 360px;
+}
+
+.unit-container-desc {
+	display: flex;
+	flex-flow: column;
+	margin: 0 0.5vw;
+	width: calc((100% - 360px)/2);
+}
+
+.unit-container-desc p {
+	font-size: 16px;
+	background-color: #CCCCCC50;
+	padding: 1em;
+}
+
+.unit-container-desc ul {
+	list-style-type: square;
+	list-style-position: outside;
+}
+
+.unit-container-desc li {
+	font-size: 16px;
+}
+
+.unit-container-stats {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0 0.5vw;
+	width: calc((100% - 360px)/2);
+}
+
+.unit-container-stats p {
+	padding: 0.25em;
+	border: 1px solid #CCCCCC;
+	background-color: #99999950;
+	font-size: 14px;
+}
+
+.unit-container-left {
+	width: 28%;
+	padding: 12px;
+}
+
+.unit-container-left img{
+	border-radius: 20px;
+	max-width: 360px;
+	aspect-ratio: 4 / 3 !important;
+}
+
+.unit-container-mid{
+	display: grid;
+	width: 15%;
+	padding: 5% 0;
+}
+
+.unit-container-mid h3{
+	padding: 0.5em;
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+}
+
+.unit-container-mid img{
+	display: block;
+	position: relative;
+	margin: auto;
+	max-width: 60px;
+	/*margin-top: calc(50% - 24px);*/
+	margin: auto;
+}
+
+.unit-container-right{
+	display: grid;
+	width: 57%;
+}
+
+.unit-container-right p{
+	font-size: 18px;
+	padding: 1em;
+	line-height: 1.5em;
+	text-align: left;
+}
+
+.unit-container-right ul{
+	text-align: left;
+	columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.unit-container-right li{
+	font-size: 14px;
+	font-weight: 400;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.unit-container-right a{
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
 
 /*----------=================================----------*/
 /*----------========== Smart Phone ==========----------*/
@@ -1334,11 +1618,20 @@ footer::after {
 	#nav-logo {
 		display: block;
 		margin: 1vh auto 1vh 3vw;
+		height: 36px;
 	}
 
 	#menu-toggle {
 		display: block;
 		margin: 1vh 3vw 1vh auto;
+		border: 3px ridge #999;
+		border-radius: 12px;
+		background: linear-gradient(0deg, #333333 0%, #999999 100%);
+	}
+
+	#menu-toggle img{
+		filter: drop-shadow(0 2px 2px #00000075);
+		margin: auto;
 	}
 
 	.navigation-buttons.menu-open {
@@ -2072,4 +2365,183 @@ footer::after {
 		margin: auto;
 		width: auto;
 	}
+
+	/*-------------------------------*/
+	/*----------Units Page-----------*/
+	/*-------------------------------*/
+	.units {
+		width: 100%;
+	}
+	
+	.units h1{
+		font-family: Arial, Helvetica Black, sans-serif;
+		font-size: 36px;
+		font-weight: 900;
+		line-height: 1em;
+		margin: 2em auto;
+		margin-bottom: 1em;
+		text-align: center;
+		text-shadow: 0 0 10px #000000;
+	}
+
+	.faction-overview p{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.5em;
+		text-align: left;
+		margin: auto;
+		width: 90%;
+	}
+
+	/*---------- Techtree ----------*/
+	.techtree-container {
+		display: flex;
+		flex-flow: column;
+		background-image: url('src/techtree-pattern.svg');
+		border: 1px solid #007BE9;
+		box-shadow: 0 0 6px #007BE9;
+	}
+	
+	/*---------- Category Container ----------*/
+	.category-container {
+		margin: auto;
+		width: 90%;
+	}
+	/*---------- Unit Card ----------*/
+	.unit-board {
+		width: 100%;
+	}
+
+	.unit-container {
+		display: flex;
+		flex-flow: column;
+		margin: 10px auto;
+		width: 100%;
+		background-color: #383838;
+		box-shadow: 0 0 12px #000;
+		padding-bottom: 1em;
+	}
+	
+	.unit-container a{
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+	
+	.unit-container-name {
+		display: flex;
+		flex-flow: row;
+		margin: 10px auto;
+		padding: 0.25em;
+		background-color: #FFFFFF30;
+		width: 95%;
+	}
+	
+	.unit-container-name h3 {
+		width: 80%;
+		margin: auto 1em;
+	}
+	
+	.unit-container-info {
+		display: flex;
+		flex-flow: column;
+		margin: auto;
+		width: auto;
+		justify-content: center;
+	}
+	
+	.unit-container-info img{
+		margin: auto;
+		width: 360px;
+		max-width: 96%;
+		height: auto;
+	}
+	
+	.unit-container-desc {
+		display: flex;
+		flex-flow: column;
+		margin: 10px;
+		width: auto;
+	}
+	
+	.unit-container-desc p {
+		font-size: 16px;
+		background-color: #CCCCCC50;
+		padding: 1em;
+	}
+	
+	.unit-container-desc ul {
+		list-style-type: square;
+		list-style-position: outside;
+	}
+	
+	.unit-container-desc li {
+		font-size: 16px;
+	}
+	
+	.unit-container-stats {
+		display: flex;
+		flex-flow: column wrap;
+		margin: auto;
+		width: 90%;
+	}
+	
+	.unit-container-stats p {
+		padding: 0.25em;
+		border: 1px solid #CCCCCC;
+		background-color: #99999950;
+		font-size: 14px;
+	}	
+
+	.unit-container-left {
+		margin: auto;
+		width: 100%;
+		padding: 5px;
+	}
+
+	.unit-container-left img{
+		max-width: 90vw;
+		width: 100%;
+		height: auto;
+	}
+
+	.unit-container-mid{
+		display: flex;
+		width: 100%;
+	}
+
+	.unit-container-mid h3{
+		width: 60%;
+		text-align: center;
+		font-size: 18px;
+	}
+
+	.unit-container-mid img{
+		width: 40%;
+		max-width: 60px;
+		margin: 15px 30px;
+	}
+	
+	.unit-container-right{
+		display: block;
+		width: 100%;
+	}
+
+	.unit-container-right p{
+		width: 100%;
+		font-size: 18px;
+		padding: 0 5vw;
+		line-height: 1.5em;
+		text-align: left;
+	}
+
+	.unit-container-right ul{
+		width: 100%;
+		text-align: left;
+		padding: 2em 10vw;
+	}
+	
 }
