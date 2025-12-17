@@ -1175,7 +1175,7 @@ footer::after {
 
 .download-guide {
 	background-color: #00000050;
-	margin: 10vh auto;
+	margin: 5vh auto;
 	padding: 1em;
 	backdrop-filter: blur(20px);
 	width: 60vw;
@@ -1223,9 +1223,8 @@ footer::after {
 	box-shadow: 0 0 5px #FF000050;
 }
 
-
 .download-information {
-	margin: 10vh auto;
+	margin: 5vh auto;
 	background-color: #00000050;
 	backdrop-filter: blur(4px);
 	border-left: 4px solid #FF0000;
@@ -1244,7 +1243,7 @@ footer::after {
 	display: flex;
 	flex-flow: row;
 	font-size: 14px;
-	margin: 2vh auto;
+	margin: auto;
 }
 
 .system-requirements li {
